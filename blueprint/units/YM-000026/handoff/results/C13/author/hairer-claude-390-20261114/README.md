@@ -1,0 +1,38 @@
+# #390: corrected leading budget for the allarity recurrence (author note)
+
+- Session: `hairer-claude-390-20261114` (Claude, on behalf of @hairer).
+- Claim: https://github.com/hairer/humanise-yang-mills/issues/390#issuecomment-6879458799
+- Base: stacked on #389 → #387 → `codex/existence-monograph` @ `3166276`.
+- Pin: `3456e5e`.
+- Status: **draft, unreviewed**. It needs an independent review by an account other than `hairer`.
+
+## Output
+
+New `subsec:allarity-corrected-budget`, appended at the end of `manuscript/existence/allarity-marked-propagation.tex`. It contains:
+- **Reference factor commutes:** exp_*(−D_R) has field-independent coefficients and commutes with every push. So the leading family is D_Q − D_R.
+- **`lem:allarity-log-lipschitz`:** ‖log_*(1+X) − log_*(1+X′)‖₁ ≤ ‖X−X′‖₁ Σ_{j≤n} μ^{j−1}.
+- **`lem:allarity-corrected-pieces`:** from (M) the moment comparison ≤ H^{−3/2} and (V) the value comparison ≤ H^{−3/2}, the corrected pieces are ≤ H^{−31/32}, and the weighted budget is h = 2ⁿR_e H^{−27/32}.
+- **`lem:allarity-upper-retuned`:** the upper calculation with Y = 3T_e c H^{−27/32} in place of H^{−3} gives the same three outputs.
+- **`lem:allarity-forced-retuned`:** δ = H^{−1/2} with Z = Y. The purchases `eq:allarity-retuned-purchases` hold eventually (log log s ≥ 36), and the recurrence's conclusions are unchanged.
+- **Status:** (M) and (V) remain open inputs. A remark records the possible structural simplification (launch at ℓ) without resolving it.
+
+## Correspondence (textual)
+
+| Manuscript | Source |
+|---|---|
+| (M) | `Atlas.sizesXSky` (`Prom/Front/West/Mooncake.lean:21`): ‖Answer(…).part q − maxProfile(tested…).part q‖ ≤ bill(−3/2, β̂_k), from `Heating`, `BellSky`, `Wind`, `passingX`, `Meridian` |
+| Lipschitz step | `BalconSky.mind` (`Prom/Front/West/Equity.lean:43`), stated as a field (hypothesis) in the source. Here it is proved |
+| (V) | `ChastSky`'s `h4`/`hh` in `x_crushedSky` (`Equity.lean:46–68`) |
+| corrected budget H^{−31/32} | `warmingSky.hU` (`Prom/Hill/TableGate.lean:34`); the weight aperture ≤ bill(1/8) |
+| reference factor | `Read.cylinder D a = Poly.pass(−D) * bareP a` (`Next/RANK/Finite.lean:99`) |
+
+## Uncertainties
+
+- In the source, (V)'s error slot is shared with the Lipschitz slack: ‖C0 − f‖ + H^{−3/2} ≤ H^{−31/32}. I treated it as a separate H^{−3/2} bound.
+- I did not check against the source that "the leading family of the upper calculation" is exactly the corrected D_Q − D_R at every leading rung, as opposed to only at the launch level ℓ (see the remark).
+
+## Checks actually run
+
+- `latexmk -pdf -interaction=nonstopmode -halt-on-error existence.tex` (on top of #389): exit 0, 1048 pages, 0 undefined references. pp. 796–798 inspected.
+- `python3 scripts/check_blueprint.py`: see the PR.
+- No Lean elaboration.
