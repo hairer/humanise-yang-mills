@@ -319,11 +319,10 @@ one- and two-point measurements alone do not supply it.
 \label{subsec:rank-trace-chart-window}
 
 The pairwise receipt of the trace calibration uses two fields of its
-chart witness: a lawful constant-coupling history on the chart window
-$[w,k]$, and tested readings at level $k$. These are fields (F3) and (F5)
-of Section~\ref{sec:ex-lattice-firesky-gallery}. We show that the
-construction of this section supplies them at every sufficiently large
-level, with the window of the chart in place of the stage window.
+chart witness, (F3) and (F5) of Section~\ref{sec:ex-lattice-firesky-gallery}.
+We construct the constant-coupling auxiliary history on the chart window
+$[w,k]$ and the tested readout at level $k$ for every sufficiently large
+$k$. The remaining witness requirements are stated below.
 
 Fix a grade $d$, a bound $\bar b$ for the base arcs, and the finite menu
 of the trace tests at grade $d$. It has arities at most two, and the
@@ -421,16 +420,18 @@ only at the unbounded set of levels used for the rank tests above.
 \end{proof}
 
 \paragraph{Status.}
-Proposition~\ref{prop:rank-trace-chart-window} supplies (F5), and the
-constant-coupling history and coupling bounds of (F3), for the trace
-chart at every large level. Two inputs remain. One is the running
-estimate (R) with matched slope, which the argument outline lists as an
-input. The other is the local inputs already assumed in this section:
-the corrected mixed compiler, its reader comparisons, the calibrated
-insertion prices and the coordinate calibration. The remaining
-suppositions of (F3) at each level of the window concern the clip, the
-threshold, the remainder value bound and the loop bound of the auxiliary
-representation. They are those of the representations constructed in
-Section~\ref{sec:restarted-rank-history}, which this section already
-uses. Matching them item by item against the suppositions of
-Section~\ref{sec:rank-root-normalization} is left as a check.
+Under (R) with matched slope and the local inputs of this section,
+Proposition~\ref{prop:rank-trace-chart-window}(1) gives the auxiliary
+history and its coupling bound throughout $[w,k]$ for every $N\ge k$
+and $p$. To obtain (F3), one still has to verify that each resulting
+$P_j$ has the stage clip and row bound, the chart budget radius and
+prescribed threshold, and satisfies the representation bounds
+\[
+ \theta_{P_j}\le\theta_{\rm clock}(j),\qquad
+ \Lambda(P_j)\le\Lambda_{\rm clock}(j),\qquad \delta(P_j)\le1 .
+\]
+The numerical late-scale bounds of
+Section~\ref{sec:rank-root-normalization} concern the clock parameters. The comparisons above concern the actual
+auxiliary representations. Item~2 gives the tested readout part of (F5)
+for all sufficiently large $N$, uniformly in $p$. The stamp duty for
+(F5) still has to be established with that same readout.
