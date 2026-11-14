@@ -118,8 +118,9 @@ The buffered chamber estimate is this: if
  J_d=q\bigl(x_d-\beta y_d\bigr)
 \]
 and $g$ is any admissible coarse observable with supremum norm at most
-$\tau_j(150000)$, interior to the same locality window, with that window
-fitting in the available room, then at any two distinct coarse sites,
+$\tau_j(150000)$, interior to the fixed grade-four locality window of
+radius $l_4$ of Proposition~\ref{prop:ex-trace-crown-buffer}, with room
+for $l_4$ at scale $k$, then at any two distinct coarse sites,
 \begin{equation}
  \left|\mathbb E\left[(\mathcal B\mathscr S_0J)_d(x)\,
                     (\mathcal B g)(z)\right]\right|
@@ -146,7 +147,8 @@ $\rho_{\mathrm{archV}}Z_d=-Z_d$. Moreover, for every axis $d$,
 \item $U_d$ is chamber-interior and
   $\mathcal R(U_d-P_d)\leq\tau_j(-200)$;
 \item for every admissible bounded local test in
-  \eqref{eq:ex-trace-probe-buffered}, the separated-site pairing of $U_d$
+  \eqref{eq:ex-trace-probe-buffered}, that is, interior to the grade-four
+  window of radius $l_4$, the separated-site pairing of $U_d$
   with its pullback is at most $\tau_j(-200)$ in absolute value.
 \end{enumerate}
 Thus $P_d$ has exactly the coefficient, parity, root-error, and local-price
@@ -207,8 +209,16 @@ applied to the scale-$k$ field $f=(\mathscr S_0J)_d$. That proposition
 requires a Crown witness for this particular averaged combination,
 together with its seam, transfer and one-site inputs; the witness is a
 separate input of the construction and is produced neither there nor
-here. The scale bounds \eqref{eq:ex-trace-probe-scales} are likewise
-inputs, assumed for all sufficiently large $j$ and not proved in this
-monograph. In
+here. Two of the scale bounds \eqref{eq:ex-trace-probe-scales} reduce
+to inputs already used in Section~\ref{sec:ex-lattice-trace-bill-prices}.
+Indeed, $t=\widehat\beta_k$ with $k$ the summit index of $j$, and $t\ge1$,
+so $t\le t^4$. The scale-at-summit receipt is a rate-zero ticket for
+$t^4$, with gate $G_j=(\log\widehat\beta_j)^{48}$. Hence eventually
+$1+2t\le3t\le3\exp(229\,G_j/10^4)\le\tau_j(230)$, the last step because
+$3\le\tau_j(1)$ for large $j$. Moreover $6c\le t$ for large $j$, since $c$
+is a fixed constant and $\widehat\beta_k\to\infty$ as $k\ge j\to\infty$.
+The remaining scale bounds, $t\ge1$ and $0<\beta\le2t$, are inputs,
+assumed for all sufficiently large $j$ and not proved in this monograph.
+In
 particular, this section does not claim that arbitrary local components
 or an arbitrary chamber record satisfy those paid estimates.
