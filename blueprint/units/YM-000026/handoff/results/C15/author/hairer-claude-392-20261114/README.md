@@ -38,3 +38,7 @@ New `subsec:ex-lattice-firesky-witness` in `manuscript/existence/trace-firesky-g
 - `latexmk -pdf -interaction=nonstopmode -halt-on-error existence.tex`: exit 0, 1042 pages, 0 undefined references. pp. 887–888 inspected.
 - `python3 scripts/check_blueprint.py`: see the PR.
 - No Lean elaboration.
+
+## Revision (reuse of canonical units)
+
+`sec:actual-rank-purchases` already proves the reference inverse estimate `eq:rank-reference-inverse` (|v|₁ ≤ D_k|A v|₁, the counterpart of `reference_size`), the resulting bijectivity of the readout, and the solving identity `eq:rank-common-lifts`. So `lem:ex-lattice-firesky-solves` now cites them, and the injectivity hypothesis has been removed. Rebuilt: exit 0, 0 undefined references; p. 887 inspected.

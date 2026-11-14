@@ -154,20 +154,20 @@ $i$.
 
 \begin{lemma}[Corrected labels solve the reading equation]
 \label{lem:ex-lattice-firesky-solves}
-Assume that the calibrated entry map $a$ is injective. Then $T_{d'}$ is
-bijective, and $X_{N,p}e$ is the unique label $v$ with
+The reading $T_{d'}$ is bijective, and $X_{N,p}e$ is the unique label $v$
+with
 \begin{equation}\label{eq:ex-lattice-firesky-solves}
  S_\sigma\bigl(T_{d'}v\bigr)=W_me .
 \end{equation}
 \end{lemma}
 \begin{proof}
-If $T_{d'}v=0$, the half-accuracy bound gives
-$\|a(v)\|\le\frac12\|a(v)\|$. So $a(v)=0$, and $v=0$ by injectivity.
-Thus $T_{d'}$ is injective, hence bijective on the finite-dimensional
-label space. Next, $S_\sigma$ multiplies coordinates by powers of
-$\sigma\ne0$, so it is invertible with inverse $S_\sigma^{-1}$. Then
-$v$ solves \eqref{eq:ex-lattice-firesky-solves} if and only if
-$T_{d'}v=S_\sigma^{-1}W_me$, that is, if and only if $v=X_{N,p}e$.
+The calibrated entry map satisfies the reference inverse estimate
+\eqref{eq:rank-reference-inverse} of
+Section~\ref{sec:actual-rank-purchases}, $|v|_1\le D_k|a(v)|_1$. With the
+half-accuracy bound of (F5), the argument given there shows that $T_{d'}$
+is injective, hence bijective. Next, $S_\sigma$ is invertible. So the
+equation has the unique solution $X_{N,p}e$; this is
+\eqref{eq:rank-common-lifts} with $\rho=m$.
 \end{proof}
 
 \paragraph{Status.} Fields (F1)--(F5) are fields of the funded witness.
