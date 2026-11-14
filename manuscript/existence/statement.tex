@@ -8,6 +8,28 @@ infinity. The observables and bare action coefficients must be chosen coherently
 before either operation: changing the family in response to a requested sequence
 of periods would give a weaker statement.
 
+\paragraph{A caution about the target of this section.}
+The target formulated below is the statement that the source verifies by
+machine. Read on its own, it is weaker than a reader might expect from the
+words ``existence of four-dimensional Yang--Mills theory''. It can be
+satisfied by a generalized free scalar field, that is, a quantum field whose
+vacuum correlations are determined by its two-point function through sums
+over pairings, here with a continuous distribution of masses; and the lattice
+observables that the target asks for can then be chosen independently of the
+gauge configuration. Section~\ref{ex-target-free-witness} states this
+precisely and explains which features of the target allow it. The target
+alone therefore does not express the specifically Yang--Mills content of the
+construction. That content lies in how the later sections reach the target:
+they work with specific local gauge-invariant functions of the Wilson links,
+and every limiting object is obtained from the Wilson measure. The
+observation does not affect that construction. It does mean that a main
+theorem intended to express this content should also record the chosen
+lattice observables and their connections to the limiting theory. The source
+has such a detailed statement, and the group reviewing the source bases its
+assessment of these connections on a stronger target of this kind
+(Section~\ref{ex-target-free-witness}); formulating it as the main theorem of
+this article remains to be done.
+
 We assume familiarity with finite-dimensional Lie groups, probability Haar
 measure on compact groups, Lebesgue integration and dominated convergence,
 and elementary Hilbert-space theory. The specific compactness, quotient and
@@ -238,3 +260,173 @@ the links tied to the Wilson measure by the construction. The remark
 therefore concerns only what the displayed target certifies; it says nothing
 against the construction of the later sections.
 \end{remark}
+
+\subsection{The target is satisfied by a generalized free field}
+\label{ex-target-free-witness}
+
+Remark~\ref{rem:ex-target-adequacy} supplies the lattice clauses of the
+target, with insertions that do not depend on the gauge configuration, once
+hierarchy data are given that satisfy the remaining requirements and the
+grade-zero homogeneity hypothesis of the remark. Such data need not come from
+a gauge theory.
+
+\begin{proposition}[A generalized free-field solution of the target]
+\label{prop:ex-target-free-witness}
+For every group \(G\) as in this section, the existence target, including the
+operator-product requirements
+\eqref{ex-ope-coefficient}--\eqref{ex-ope-remainder} and the trace
+requirement \eqref{ex-trace-limit} with its profile exclusion, is satisfied by
+a regular lattice family whose insertions do not depend on \(U\) and by a
+hierarchy whose selected theory is the field system of Wick polynomials and
+derivatives of one generalized free scalar field. The continuum data depend
+on \(G\) only through \(\dim_{\mathbb R}\mathfrak g\) in the normalization of
+the grade-four field of the trace requirement.
+\end{proposition}
+
+The proposition has been verified by machine against the formal statement of
+the source, using that statement and none of the source's construction. The
+record, with the formal development and its reviews, is in the blueprint
+(unit YM-000026, result G01). We describe the construction and do not repeat
+the proofs; the formal proofs have been checked by machine but not yet read
+by a mathematician.
+
+\paragraph{The field.}
+Let \(\mu\) be the measure on \(\mathbb R^4\) with density
+\[
+ w(p)=\frac{(p^2)^2}{\log^2(e+p^2)},\qquad p^2=E^2-|\boldsymbol p|^2,
+\]
+on the closed forward cone \(\overline V_+\) and zero outside it. It is
+invariant under the proper orthochronous Lorentz group and polynomially
+bounded. Let \(\phi\) be the generalized free scalar field with two-point
+distribution \(\int e^{i\langle y-x,p\rangle}\,d\mu(p)\), where
+\(\langle\cdot,\cdot\rangle\) is the Euclidean pairing of \(\mathbb R^4\) and
+no normalizing factor is inserted. Relative to the invariant measure
+\(d^3\boldsymbol p/(2\sqrt{s+|\boldsymbol p|^2})\) on the mass shell of mass
+squared \(s\), its K\"all\'en--Lehmann measure is
+\(s^2\log^{-2}(e+s)\,ds\) on \(s\ge0\): the mass spectrum is continuous. Write
+\(\xi_\alpha=i^{\alpha_t}\partial^\alpha\phi\) for a multi-index
+\(\alpha\in\mathbb N_0^4\) with time component \(\alpha_t\); the factor \(i\)
+for each time derivative matches the Euclidean and relativistic conventions.
+The labels are the finite complex linear combinations of Wick monomials
+\(:\!\xi_{\alpha_1}\cdots\xi_{\alpha_k}\!:\). A monomial has grade
+\(\sum_j(4+|\alpha_j|)\), the empty monomial is the unit, and
+\(\mathcal F_d\) is the span of the monomials of grade at most \(d\), which
+is finite-dimensional. The density \(w\) is strictly positive in the interior
+of the forward cone. Together with the linear independence of the
+polynomials in the momenta that distinct Wick monomials produce, this shows
+that every nonzero label acts nontrivially.
+
+\paragraph{The relativistic theory.}
+The Hilbert space is the closed span of the vectors obtained by applying field
+words to the vacuum; these vectors are written down explicitly as families of
+square-integrable functions of \(k\) momenta, \(k\ge0\). The properties of
+Definition~\ref{ex-reconstructed} are verified directly: linearity, the
+adjoint, continuity in the test, Poincar\'e covariance, the support of the
+spectral measure in \(\overline V_+\), uniqueness of the vacuum (in every
+sector with \(k\ge1\) the total energy is positive almost everywhere; no mass
+gap is needed), and locality. Let
+\[
+ S(\xi)=\int e^{-|\xi|E}\,d\mu(p),\qquad \xi\in\mathbb R^4\setminus\{0\},
+\]
+which for \(\xi=(\boldsymbol u,\tau)\) with \(\tau>0\) equals
+\(\int e^{-\tau E+i\boldsymbol u\cdot\boldsymbol p}\,d\mu(p)\). At pairwise
+distinct insertion points, the selected correlations are sums over complete
+pairings of the individual factors \(\xi_\alpha\), with no pair joining two
+factors of the same Wick monomial; each pair contributes the corresponding
+derivative of \(S\), and the correlation vanishes if there is no such
+pairing. Their continuation to complex times and the boundary values
+\eqref{eq:public-selected-boundary} are obtained from the same momentum
+integrals.
+
+\paragraph{Operator products.}
+The expansion of a cluster of Wick monomials is given by Wick's theorem
+followed by Taylor expansion, about the base point, of the factors that are
+not contracted within the cluster. Each coefficient is a finite sum, over
+partial contractions and Taylor multi-indices, of products of derivatives of
+\(S\) at differences of cluster points with monomials in the displacements
+and inverse factorials. One family of coefficients serves every truncation
+degree. The Wick decomposition and the Taylor remainder, together with
+\(|\partial^\gamma S(\xi)|\le C_\gamma|\xi|^{-8-|\gamma|}\), give the powers of
+\(r\) required in \eqref{ex-ope-coefficient} and \eqref{ex-ope-remainder},
+at first with constants depending on the fields, the truncation degree and
+the geometry parameters. The separation of the spectators makes these
+estimates uniform in the allowed positions, and for fixed parameters the
+factor \(r^{-\epsilon}\) absorbs the constants.
+
+\paragraph{The trace requirement.}
+On the time axis, with \(e_t=(\boldsymbol0,1)\),
+\[
+ \lim_{r\downarrow0}r^8\log^2(r^{-1})\,S(re_t)=384\pi .
+\]
+Take \(\Theta=\lambda\phi\) with \(\lambda>0\) and
+\(\lambda^2=\dim_{\mathbb R}\mathfrak g/(128\pi^5)\). Then \(\Theta\) has grade
+four, its vacuum one-point functional vanishes, and \eqref{ex-trace-limit}
+holds with the required constant. The profile exclusion follows from this
+asymptotic alone, by Theorem~\ref{thm:profile-exclusion}.
+
+\paragraph{The lattice clauses.}
+The correlations just described are multilinear in the fields, so the unit
+\(u\in\mathcal F_0\) enters them homogeneously, and
+Remark~\ref{rem:ex-target-adequacy} applies: the tokens are the tags, the
+insertions are the constants \(m(A)\), the phase space has two points, and
+two grade-zero channels are added to the operator-product data. This
+completes the data. The formal proof uses a variant of the remark in which
+\(m\) is the indicator of the zero vector of \(\mathcal F_0\) and one
+channel with zero field is added in each grade; it relies on the vanishing
+of the correlations when a field is zero.
+
+\paragraph{Why the target admits this.}
+Three features of the target, each already noted above, combine.
+\begin{enumerate}
+\item The Wilson measure enters only through the mixed correlations, and
+these are tied to the selected theory only by the mixture identity and the
+common operator-product estimates. The target imposes no multilinearity on
+the phase and mixed correlation functions and no positivity or
+reconstruction at a non-selected phase.
+\item No particular nonconstant gauge-invariant observable is prescribed for
+a field of the hierarchy. Beyond the lattice conditions, the group and its
+representation enter the requirements only through
+\(\dim_{\mathbb R}\mathfrak g\) in \eqref{ex-trace-limit}.
+\item The profile exclusion constrains one two-point function. It excludes
+the specified finite sums of products of mass-shell kernels, while the
+continuous spectral weight chosen above gives exactly the required
+short-distance behaviour. The operator-product requirements are upper
+bounds, and they hold for this hierarchy of Wick polynomials. No clause
+imposes a condition on truncated correlations of higher order that would
+exclude a generalized free generating field.
+\end{enumerate}
+
+\paragraph{Relation to the review of the source.}
+The weakness of the target is not a new observation in its general form. The
+assessment of the source by its review group\footnote{Yang--Mills group,
+\emph{Validation of the OpenAI Yang--Mills construction}, release of
+10~November 2026, \url{https://github.com/yang-mills-group/YM}, Sections~7.3
+and~9.} records that the authors of the source informed the group that the
+original public target ``omitted some of the connections to the lattice
+construction established by its proof'', and it bases its assessment of
+these connections on a stronger combined target that retains the lattice observables, limits, phases
+and reconstructed fields of the construction itself. The same assessment
+notes that the trace requirement excludes the specified finite free-field
+descriptions ``but does not rule out every description in terms of composites
+of Gaussian fields''. Proposition~\ref{prop:ex-target-free-witness} and
+Remark~\ref{rem:ex-target-adequacy} make both remarks precise for the
+original target: the omitted connections can be dispensed with altogether,
+and the hierarchy of Wick polynomials and derivatives of one generalized free
+scalar field supplies the remaining continuum requirements. They give no
+information about the stronger combined target, which refers to the lattice
+family of the construction.
+
+\paragraph{What this does and does not say.}
+The proposition concerns the target as a specification. It shows that the
+target alone does not express the specifically Yang--Mills content of the
+construction: a proof of it need not involve Yang--Mills theory. It does not
+show any defect in the construction. The detailed theorem of the source
+concerns mixed correlations obtained as limits of Wilson expectations of a
+fixed family of local gauge-invariant insertions, a phase decomposition with
+a positive reconstruction at every phase, and a grade-four field identified
+with the centered trace of a stress tensor that satisfies translation and
+rotation Ward identities; none of this is touched by the proposition. Nor
+does the proposition bear on the question whether the theory so constructed
+could itself be a generalized free field. That question is not settled by
+the target, since the target is satisfied by one, and it is not addressed in
+this article.
