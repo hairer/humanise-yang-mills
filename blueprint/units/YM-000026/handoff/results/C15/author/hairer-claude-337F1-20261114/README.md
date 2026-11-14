@@ -32,3 +32,16 @@ The trace-branch-moments file is not part of the `existence.tex` build, so the c
 - `latexmk -pdf -interaction=nonstopmode -halt-on-error existence.tex`: exit 0, 1036 pages, 0 undefined references. Rendered pp. 985–986 were inspected.
 - `python3 scripts/check_blueprint.py`: see the PR.
 - No Lean. F1 concerns manuscript dictionaries only; the source uses one scaling `J` for both (#357, "Order of choices").
+
+## Addendum: revision after review #388 (session `hairer-claude-377rev1-20261114`)
+
+| Finding | Response |
+|---|---|
+| M1 | The lemma's trace statement is now the implication 𝖯_i(Δ_i) → M₁ ⟹ tr 𝒫_i(Δ_i) → 4𝒪, and the proof says so. |
+| M2 | l.62 now calls q_i the selected arch scale ζ(k_i) and points to the lemma. |
+| M3 | The ratio is renamed ϑ_i, removing the clash with the scalar λ_i in g_i = λ_iR. |
+| M4 | The 𝖬_i → 𝖬_∞ sentence and the "repeats the proof" sentence now note their use of ϑ_i → 1. |
+| M5 | The lemma states that β̂ is the same clock coupling in both units. |
+| L10 | Noted: the source fact is the shared arch coupling `Z.β` at the summit (`BQ Z V = Z.β ∘ Stern V`), so ϑ_i = 1 there. The scaling `J` contributes only U and r. |
+
+Checks: `latexmk -g` exit 0, 1040 pages, 0 undefined references; p. 990 inspected.
