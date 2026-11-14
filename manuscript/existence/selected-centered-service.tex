@@ -242,24 +242,32 @@ raised-response receipts.
 \begin{lemma}[Reserved slots on every selected entry]
 \label{lem:selected-reserved-slots}
 Keep the selected history. For every $N,p$ and every $0\le m\le N$,
-the stored representation $R_{N,p,m}$ is written in the fixed terminal
-dictionary of Proposition~\ref{prop:wilson-startup-family}, and its
-coefficients on the reserved labels vanish. Precisely:
+the stored representation $R_{N,p,m}$ is written in the dictionary given
+by the fixed construction of
+Proposition~\ref{prop:wilson-startup-family}, applied on the level-$m$
+torus at the level-$m$ budget point. Its coefficients on the reserved
+labels of that dictionary vanish. Precisely:
 \begin{enumerate}
-\item for every regular address and every natural number, the regular
+\item for every regular address, that is, a site together with a
+  nonempty support containing it, and every natural number, the regular
   coefficient of $R_{N,p,m}$ on the corresponding reserved regular
   label is zero;
 \item for every support $X$, every nonempty inventory $I\subseteq X$
-  and every natural number, the forced coefficient of $R_{N,p,m}$ on the
-  corresponding reserved forced label is zero. That label has support
-  $X$ and inventory $I$, and its additional predicate holds at every
-  configuration $U$ with $X\cap\operatorname{flags}(U)=I$.
+  and every natural number $n$, the forced coefficient of $R_{N,p,m}$ on
+  the corresponding reserved forced label is zero. That label has support
+  $X$ and inventory $I$. Its additional predicate holds at every
+  configuration $U$ with $X\cap\operatorname{flags}(U)=I$, where the
+  flags are taken at the threshold of level $m$.
 \end{enumerate}
 In particular, the preservation property assumed in
 Proposition~\ref{prop:selected-centered-retention} holds for every
 nonterminal selected entry. Every stored representation, terminal or
-not, has a Keeper, that is, an injective eligible assignment of a
-reserved forced address to every pair $\varnothing\ne I\subseteq X$.
+not, has a Keeper in the sense of the terminal Keeper of
+Section~\ref{sec:ex-marked-field-local}. That is an injective
+assignment, to every triple $(X,I,n)$ with $\varnothing\ne I\subseteq X$
+and $n\in\mathbb N$, of a forced address with zero coefficient, support
+$X$ and inventory $I$, eligible whenever
+$X\cap\operatorname{flags}(U)=I$.
 \end{lemma}
 
 \begin{proof}
@@ -271,35 +279,49 @@ and (2) for $F_\beta$.
 Let $m<N$. By the stored identities recalled in the proof of
 Proposition~\ref{prop:selected-centered-retention}, $R_{N,p,m}$ is the
 output of the interval return of step $m$ at the retained interval
-point. The return produces its output in the same fixed terminal
-dictionary as the startup. It reorganizes its renewed regular and
-forced arrays by the same fixed packing and grouping; see the first
-subsection of Section~\ref{sec:terminal-marked-construction}, where
-this is stated for the startup and every return. The proof of
-Proposition~\ref{prop:wilson-startup-family} shows that the vanishing
-on reserved labels is a property of this packing and grouping. It holds
-for every dictionary and every coefficient family to which they are
-applied. The packing injection takes values among the unreserved
-labels, and every entry outside its image is zero. A reserved forced
-label is the group formed by one reserved hard label alone. Every
-grouped label of the packed family consists of packed labels, so it is
-not a reserved forced label, and every grouped entry outside the image
-of the packed family is zero. Applying this to the renewed arrays of
-the return gives (1) and (2) for $R_{N,p,m}$.
+point. That output lives on the level-$m$ torus. It is obtained from
+the return's batch by the fixed packing and absorption
+(Section~\ref{sec:coupling-reset-selection}; the batch is that of
+Section~\ref{sec:physical-reset-reorganization}). This is the same
+packing and grouping as in the startup, now applied on the level-$m$
+torus at the level-$m$ budget point.
+
+The proof of Proposition~\ref{prop:wilson-startup-family} shows that the
+vanishing on reserved labels is a property of this packing and
+grouping. It holds for every torus, budget point and coefficient family
+to which they are applied:
+\begin{itemize}
+\item The packing injection takes values among the unreserved labels,
+  and every entry outside its image is zero.
+\item A reserved forced label is the group formed by one reserved hard
+  label alone. Its activity is therefore that packed hard coefficient,
+  times indicators, and this coefficient is zero.
+\item In the return, grouped labels may also contain logarithmic labels,
+  which are absent at the startup. This does not affect the reserved
+  singletons, which contain no other label.
+\item Every other grouped entry outside the image of the packed family
+  is zero.
+\end{itemize}
+Applying this to the renewed arrays of the return gives (1) and (2) for
+$R_{N,p,m}$.
 
 The support, inventory and additional predicate of a reserved label
-are data of the dictionary, not of the coefficients. They are therefore
-the same as for the startup family. Their predicate is the flag
-condition, by the construction recalled in the first subsection of
+are data of the dictionary, not of the coefficients. They are given by
+the same construction as for the startup family, on the level-$m$ torus.
+The predicate is the flag condition at the level-$m$ threshold, by the
+construction recalled in the first subsection of
 Section~\ref{sec:terminal-marked-construction}.
 
-For the preservation property, take any nonempty support. Its reserved
-regular label is a regular address of $R_{N,p,m}$ with zero
-coefficient. For a nonempty inventory $I\subseteq X$, its reserved
-forced label is a forced address with support $X$ and inventory $I$.
-That address is eligible whenever the actual flags in $X$ realize $I$.
-Choosing, for each pair $(X,I)$, the reserved forced label with serial
-number zero gives an injective assignment. This is the asserted Keeper.
+For the preservation property, take any regular address, that is, a
+site in a nonempty support. Its reserved regular label is a regular
+address of $R_{N,p,m}$ with that site and support and zero coefficient.
+For a nonempty inventory $I\subseteq X$ and every $n\in\mathbb N$, the
+reserved forced label of $(X,I,n)$ is a forced address with support $X$,
+inventory $I$ and zero coefficient. That address is eligible whenever
+the actual flags in $X$ realize $I$. Distinct triples have distinct
+reserved labels, so $(X,I,n)$ is mapped injectively. This is the
+asserted Keeper. Restricting to $n=0$ gives the assignment on pairs used
+in Proposition~\ref{prop:selected-zero-coordinate-coupon}.
 \end{proof}
 
 \subsection{The service at every reference level}
