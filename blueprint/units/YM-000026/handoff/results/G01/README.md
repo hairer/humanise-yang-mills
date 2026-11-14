@@ -31,6 +31,15 @@ Session `schmittj-claude-g01-rev1-20261113`, answering the independent review in
 
 The changed text of `adequacy.md` and the two new Lean files need renewed review; nothing here has been independently reviewed.
 
+## Revision 2 (14 November 2026)
+
+Session `schmittj-claude-statement-adequacy-20261114` (issue #379).
+
+- **The public statement is satisfied by a generalized free field.** `YangMills.jointExistence_of_freeField : YangMills.JointExistence` is proved in `formal/FreeField/` (PRs #236, #305, #339) from a scalar generalized free field, importing only the three public files, Mathlib, `Adequacy.lean` and `GroupIndependence.lean`. This answers review finding M4 and strengthens finding 1: no Yang–Mills input is needed to prove the public statement. An independent review of the result (PR #359) found no defect; it did not elaborate Lean.
+- **Kernel replay.** On 14 November the checker shipped with the pinned toolchain (`leanchecker`, Lean 4.32.0) replayed all 76 modules (the three public files, `Adequacy`, `GroupIndependence` and the 71 FreeField modules) on a second machine with exit status 0; details in `formal/FreeField/README.md`.
+- **Already known upstream, in general terms.** The review group of the source states in its assessment of 10 November 2026 (`github.com/yang-mills-group/YM`, `docs/assessment-1.pdf`, Section 9) that the authors informed it that the original public target `YangMills.jointExistence` "omitted some of the connections to the lattice construction established by its proof", and it bases its assessment on its own stronger target `YMReview.Acceptance.combined_acceptance`; Section 7.3 says the trace test "does not rule out every description in terms of composites of Gaussian fields". The G01 audit did not consult this document, which appeared two days before it. What G01 adds is the precise, machine-checked form of both remarks for the original target. None of the G01 results applies to the stronger target; whether that target admits a witness without Yang–Mills content was not examined.
+- **Manuscript.** `manuscript/existence/statement.tex` now has a cautionary paragraph and Section `ex-target-free-witness` stating the result in ordinary mathematical language with the relation to the assessment. Stating the main theorem of the monograph in a stronger form is left to the coordinator and C16.
+
 ## Proposed patches
 
 P1 definition of "regular"; P2 group hypotheses; P3 locality; P4 boundary values; P5 remark on phases; P6 scope paragraph; P7 pointer to the detailed theorem; P8 `source/build.md` manifest sentence; P9 additions for the #11 interface note. All are in `proposed-patches.md` with LaTeX or Markdown text, justification and Lean anchors. None removes a false mathematical statement; P4 removes a presupposition; the rest add precision or limitations. No patch is proposed for finding 1: whether and how the monograph should record it is a decision for the coordinator and C16 after independent review of `adequacy.md`.
