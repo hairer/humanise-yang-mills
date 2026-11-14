@@ -117,12 +117,15 @@ be its unmarked representative, and put $A_i^{\rm ev}(U)=\operatorname{eval}(A_i
 Assume the selected Wilson identities
 $A_N^{\rm ev}=R_N$ and $A_i^{\rm ev}=\operatorname{Push}_i A_{i+1}^{\rm ev}$ for $i<N$,
 where the push is the normalized transition in
-Section~\ref{ex-selected-birth-receipt}. Then for all $i\le N$,
+Section~\ref{ex-selected-birth-receipt}. Its kernel is that of step $i$
+at the coupling $\beta_{N,p,i+1}$, the same coupling used by the
+transfer and by the birth chain. Then
 \[
- (\mathcal B_i)_\varnothing=A_i^{\rm ev}
- \quad\text{and}\quad
- \int A_i^{\rm ev}\,d\mu_i=Z_{N,p}.
+ \int A_i^{\rm ev}\,d\mu_i=Z_{N,p}\quad\text{for all }i\le N,
+ \qquad
+ (\mathcal B_i)_\varnothing=A_i^{\rm ev}\quad\text{for }k\le i\le N,
 \]
+the range on which the chain $\mathcal B_i$ is defined.
 \end{lemma}
 \begin{proof}
 At $N$, the constant coefficient of the finite exponential is one,
@@ -135,9 +138,12 @@ push by the same finite-dimensional integration argument used in
  =\operatorname{Push}_i(\mathcal B_{i+1})_\varnothing
  =\operatorname{Push}_i A_{i+1}^{\rm ev}=A_i^{\rm ev}.
 \]
-Integrating and using the normalized transition mass at every step
-gives the claimed equality with the positive terminal partition
-function.
+For the integral identity, each $A_{i+1}^{\rm ev}$ is integrable. At
+$i+1=N$ it is continuous on a compact space. Below $N$ it is the push of
+an integrable function by the bounded normalized kernel, by the argument
+used for \eqref{ex-selected-birth-integral}. Integrating and using the
+normalized transition mass at every step gives the claimed equality
+with the positive terminal partition function.
 \end{proof}
 
 \paragraph{Common width and the vacuum cutoff.}
@@ -159,7 +165,13 @@ for the mesh spacing, take the single positive weight
 Multiplication by the local column-weighted price
 $\Gamma_k(a_k^{\rm mesh})^{-d}q_k(v)$ gives at most
 $\zeta_{d,k}$ for every label in the ball. The weight is independent
-of the terminal volume, period, site and particular label.
+of the terminal volume, period, site and particular label. Moreover
+$\zeta_{d,k}\le1$. This follows from the coin condition
+$\zeta_{d,k}\Gamma_k\le1$ of the purchased schedule, item~(R5) of
+Section~\ref{sec:actual-marked-portfolio-calibration}, together with
+$\Gamma_k\ge1$. So the small price $\mathfrak f_k=\zeta_{d,k}$ satisfies
+the hypothesis $\mathfrak f_k\le1$ of
+Theorem~\ref{thm:ex-selected-birth-moment}.
 
 On a served census at $k<N$, use the local prices
 $x=3\zeta_{d,k}$, $y=\zeta_{d,k}$ and reserve one in
@@ -180,8 +192,13 @@ allowance, and $0\le\beta\le2\widehat\beta_k$. The loop price is an
 affine function of the coupling with nonnegative slope, and the
 base budget is nonnegative. Replacing the coupling in both costs
 by $2\widehat\beta_k$ therefore gives at most the scheduled treasury
-at radius $s_k$. By Lemma~\ref{lem:ex-selected-birth-denominator}
-the denominator in this calculation is $Z_{N,p}$.
+at radius $s_k$. The denominator in this calculation is
+$\int\operatorname{eval}(A)\,d\mu_k$, where $A$ is the representative of
+the served representation at scale $k$. The served census input is
+taken over the history's own representative, that is $A=A_k$; this is
+part of the conditional served-census input below. Hence, by
+Lemma~\ref{lem:ex-selected-birth-denominator}, the denominator is
+$\int A_k^{\rm ev}\,d\mu_k=Z_{N,p}$.
 Thus, whenever the shared retention and transfer give the served
 census and its local response on the actual geometry, the bound
 \eqref{ex-selected-birth-bound} holds with this same width throughout
