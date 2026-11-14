@@ -470,10 +470,16 @@ representation, $S$ for the grade-$d$ local section with its fixed camera
 constant $C_d\ge1$, and $w^{\mathrm f}_N$ for the forced allowance of
 level $N$. A \emph{voice} at level $m$ is a complex-linear family
 $v\mapsto V(v)$ of coefficient fields on $R_{N,p,m}$, together with a
-linear coefficient index $x(v)\in F$ and a charge $c(v)\ge0$. We say that
-a voice is \emph{heard} at $m$ if all of the following hold for every
-$v$:
+coefficient index $v\mapsto x(v)$, which is a complex-linear
+isomorphism of $F$, and a charge $c(v)\ge0$. We say that a voice is
+\emph{heard} at $m$ if all of the following hold for every $v$:
 \begin{itemize}
+\item the lead, the regular part and the forced part of $V(v)$ are
+  complex-linear in $v$, and their supports do not depend on $v$;
+\item $x(a_N^de_0)=a_m^de_0$, where $e_0$ is the vacuum coordinate;
+\item $\operatorname{dens}V(v)$ is complex-linear in $v$, and for every
+  signed lattice motion $g$, with or without complex conjugation, the
+  density of $V(v)$ transported by $g$ is $\operatorname{dens}V(g\cdot v)$;
 \item $V(v)$ has the terminal format of
   Section~\ref{sec:selected-zero-coordinate-coupon} at the origin of
   $R_{N,p,m}$, and remainder bound $c(v)$ at weight
@@ -523,13 +529,13 @@ purchased schedule, and $F_\beta$ satisfies the retained-history
 conditions at level $N$.
 
 \emph{Hypothesis (1).} The forced arrays of $F_\beta$ have the locality,
-measurability and gauge invariance required of the dictionary.
-Proposition~\ref{prop:wilson-startup-family} bounds their forced cost by
-the forced allowance $\delta_K$ of level $N$. The forced cost is the
-rooted support sum
-$\sup_x\sum_{i:\,x\in X_i}e^{E\operatorname{cov}_B(X_i)}k_i$ of a
-majorant family $k_i\ge|K_i|$, with $E$ the support exponent; see the
-packet majorant in the proof there. This is (T3) with $w=\delta_K$.
+measurability and gauge invariance required of the dictionary. Among the
+retained-history conditions of Proposition~\ref{prop:wilson-startup-family}
+(second part) is the forced stage bound at the allowance $\delta_K$ of
+level $N$. That bound is the rooted support sum
+$\sup_x\sum_{i:\,x\in X_i}e^{E\operatorname{cov}_B(X_i)}k_i\le\delta_K$
+of a majorant family $k_i\ge|K_i|$, where $E$ and $B$ are the support
+exponent and cover radius of level $N$. This is (T3) with $w=\delta_K$.
 Moreover $\delta_K=\exp\{-M^{1/5}\}$ with
 $M=\exp((\log\log\widehat\beta_N)^2)$, which is the allowance
 $w(\widehat\beta_N)$ of Section~\ref{sec:terminal-marked-construction}.
@@ -539,20 +545,19 @@ This is the forced allowance $w^{\mathrm f}_N$ of the history.
 states that the fixed terminal dictionary contains, for every forced
 support $X$ with nonempty inventory $I$ and every natural number, a
 reserved forced label with support $X$ and inventory $I$. It also states
-that the forced coefficient of $F_\beta$ on every reserved label is zero.
-The additional predicate of such a label is the flag condition
-$X\cap\operatorname{flags}(U)=I$, by the construction of the dictionary
-recalled in the first subsection of
-Section~\ref{sec:terminal-marked-construction}. Hence hypothesis~(2)
-holds. Selecting one reserved label for each pair $(X,I)$ gives an
+that the forced coefficient of $F_\beta$ on every reserved label is
+zero, and that the additional predicate of such a label holds exactly
+when $X\cap\operatorname{flags}(U)=I$. Hence hypothesis~(2) holds. Selecting one reserved label for each pair $(X,I)$ gives an
 injective assignment of an address with tag $(X,I)$, eligible whenever
 $X\cap\operatorname{flags}(U)=I$. This is the Keeper of $R^\top$, and it
 is the property recorded in the nesting receipt of the run.
 
-\emph{Hypothesis (3).} The grade-$d$ local section is sound, and its
-axis values are bounded by the fixed camera constant $C_d\ge1$ at every
-configuration, as recorded in the service at every reference level
-above.
+\emph{Hypothesis (3).} The grade-$d$ local section is the fixed sound
+section of the frame. It is the section used in the selected root-test
+estimate of Section~\ref{ex-centered-public-service}, whose hypotheses
+include its soundness. Its axis values are bounded by the fixed camera
+constant $C_d\ge1$ at every configuration, as recorded in the service at
+every reference level above.
 
 \emph{Hypothesis (4).} Since $d\le J(N)$, the final sentence of
 Proposition~\ref{prop:terminal-marked-voice} applies at the admitted
@@ -571,12 +576,18 @@ $\operatorname{mass}(T_b,e)=M(T_b)e$, so the forced mass sum is at most
 $\sqrt{w^{\mathrm f}_N}\,a_{\rm f}$. The cone bound is
 $\|\operatorname{core}v\|_1\le s_N\|\operatorname{core}v\|_1$, since
 $s_N\ge1$. Subadditivity is the triangle inequality for the core norm.
-Covariance of the index is linearity of the motion action. Profile
-covariance at $N$ follows from assertion~(5) of
-Proposition~\ref{prop:terminal-marked-voice}, applied to the forced
-profile through assertion~(4) there. The singleton response satisfies
+Covariance of the index is linearity of the motion action. The index
+$x=\mathrm{id}$ is an isomorphism and satisfies
+$x(a_N^de_0)=a_N^de_0$. The lead, regular and forced entries are
+complex-linear in $v$ by the first conclusion of
+Proposition~\ref{prop:terminal-marked-voice}. The regular part is zero,
+and the forced entry at the address $s(b)$ has support $T_b$ for every
+$v$, so no support depends on $v$. Density linearity follows from (T5),
+and density covariance is assertion~(5) there. Profile covariance at $N$
+follows from assertion~(4) there: the singleton response satisfies
 $f_{g\cdot v}=g\cdot f_v$, and its attachment on $Y$ is transported by
-the motion together with the footprint.
+the motion together with the footprint, as in the covariance paragraph
+of the second subsection of Section~\ref{sec:terminal-marked-construction}.
 \end{proof}
 
 For the adjacent steps we use the following one-step input. It is the
@@ -592,7 +603,7 @@ Section~\ref{sec:selected-zero-coordinate-coupon}. This witness relates
 the upper input data of $V'(v)$ to the lower forced profile of $V(v)$:
 \begin{itemize}
 \item the exponential entry and the forced profile on $R_{N,p,m+1}$;
-\item the unit coordinate of $x'(v)$;
+\item the vacuum ($e_0$) coordinate of $x'(v)$;
 \item the physical factor $L_m^d$;
 \item input price
   $C_{\rm orb}\|x'(v)\|_1\,(\psi_m+2s_{m+1})$ and output price $c(v)$.
