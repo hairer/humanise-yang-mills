@@ -16,7 +16,7 @@ The key inputs are:
 - the stage-length recursion A_j − A_{j−1} ≥ 4A_{j−1} + 3;
 - the maximality of ℓ and w, which gives k − w = O((log k)²).
 
-**Remaining witness inputs:** the wheel bound of (F1), (F3) lawful history, and (F5) readings. (F4) is replaced by `prop:rank-root-output-ticket`.
+**Remaining witness inputs:** (F3) lawful history and (F5) readings. The wheel bound is immediate, since the clock factor of stage j is the block length L_j ≥ 3 (`RG/History.lean:99`, `sameFactor`). (F4) is replaced by `prop:rank-root-output-ticket`.
 
 ## Correspondence
 
