@@ -584,3 +584,183 @@ construction must buy all of these on the common history, including
 the later propagation below $l$. Neither the recurrence nor the
 scalar envelope asserts those upstream estimates without their
 corresponding purchases.
+
+\subsection{Transport to the output torus}
+\label{subsec:allarity-output-transport}
+
+We complete the propagation in the application to the pairwise receipt.
+The chart has level $k$, middle level $\ell$ and root depth $w\le\ell$, and
+the arity is $n=2$. We identify the marked density at the output, show
+that its pushed version below the middle level keeps prices at most one,
+and conclude with the coefficient price of
+Section~\ref{sec:rank-root-normalization}. As before, $s=\widehat\beta_k$,
+$H=\mathcal M_k$, $\omega=H^{1/(8u)}$, and the fixed constants
+$\alpha\ge8T_e$ and $q\ge6$ are those of
+Subsection~\ref{subsec:allarity-step-supply}.
+
+\paragraph{The invoice and its parts.}
+Let $f_0,f_1$ be the two finite-volume insertions of a fit configuration,
+as in Subsection~\ref{subsec:trace-rounded-receipt}. Let $S_0(T)$
+($T\subseteq\{0,1\}$) be the reference moments at the rounded
+configuration, with $S_0(\varnothing)=1$. In the marker algebra
+$\mathscr A_{\{0,1\}}$ of Section~\ref{sec:allarity-planted-compiler},
+the polynomial $\sum_TS_0(T)z_T$ has constant coefficient one. So it is
+$\exp_*D$ for a unique $D$ with zero constant coefficient, namely
+\[
+ D=j_0z_0+j_1z_1+\kappa z_0z_1,\qquad
+ j_c=S_0(\{c\}),\quad\kappa=S_0(\{0,1\})-j_0j_1 .
+\]
+Indeed $\exp_*D=1+D+D^2/2$ and $D^2=2j_0j_1z_0z_1$. The \emph{invoice} is
+\[
+ \mathcal I=\exp_*(-D)\,(1+f_0z_0)(1+f_1z_1).
+\]
+
+\begin{lemma}[The parts of the invoice]\label{lem:allarity-invoice-parts}
+The coefficients of $\mathcal I$ are
+\[
+ \mathcal I_{\{c\}}=f_c-j_c\quad(c=0,1),\qquad
+ \mathcal I_{\{0,1\}}=(f_0-j_0)(f_1-j_1)-\kappa ,
+\]
+that is, $\mathcal I_s=\Phi_s$ for every nonempty $s$.
+\end{lemma}
+\begin{proof}
+First,
+$\exp_*(-D)=1-D+D^2/2=1-j_0z_0-j_1z_1+(j_0j_1-\kappa)z_0z_1$.
+Multiply by $1+f_0z_0+f_1z_1+f_0f_1z_0z_1$, using $z_c^2=0$. The
+coefficient of $z_c$ is $f_c-j_c$. The coefficient of $z_0z_1$ is
+\[
+ f_0f_1-j_0f_1-j_1f_0+j_0j_1-\kappa
+ =(f_0-j_0)(f_1-j_1)-\kappa .\qedhere
+\]
+\end{proof}
+
+\paragraph{Cells and sites.}
+The cells of the centered tiling at depth $w$ of the level-$N$ torus are
+indexed by the sites of the level-$w$ torus, one cell for each site.
+Hence the number $q_0$ of replica cells equals the site count of the
+level-$w$ torus. This is the equality required in the scalar envelope:
+the output torus is the level-$w$ torus.
+
+\paragraph{Propagation below the middle level.}
+On the rungs $j$ with $w\le j<\ell$ there are no leading letters, and the
+lower calculation of Section~\ref{sec:actual-mixed-marked-compiler}
+applies. With incoming regular marker-root price $z\le H^{-1/2}$ and
+incoming forced budget $z\,\omega_j$, where $\omega_j\in[0,1]$ is the
+actual lower-interval attenuation, it gives two outputs:
+\begin{itemize}
+\item regular marker-root price at most
+ $\tfrac12(\alpha z+H^{1/2}z^2)\le\alpha z+H^{1/2}z^2$;
+\item forced site price at most $(e^{\Sigma}-1)/m\le G(y_j)$, where
+ $m=G(y_j)^{-1}$ and $y_j$ is the fine coupling of the rung.
+\end{itemize}
+These require the rung couplings to lie in $[s/2,s]$.
+
+\begin{lemma}[Lower propagation]\label{lem:allarity-lower-propagation}
+Assume the following.
+\begin{enumerate}
+\item At level $\ell$ the regular marker-root price is at most
+ $z_0\le H^{1-q}$.
+\item Every rung of $[w,\ell)$ satisfies the hypotheses of the lower
+ calculation, with couplings in $[s/2,s]$.
+\item The forced input of each lower rung is admissible:
+ $G(y_{j+1})\le z_{j}\,\omega_{j}$ along the iteration below. Prices are
+ upper bounds, so $z_j$ may be enlarged for this.
+\item The lower step count satisfies
+ \begin{equation}\label{eq:allarity-lower-count}
+  (\alpha+1)^{\ell-w}\le H^{q-3/2}.
+ \end{equation}
+\end{enumerate}
+Then at every level $w\le j\le\ell$ the regular marker-root price is at
+most $(\alpha+1)^{\ell-j}z_0\le H^{-1/2}\le1$, and every forced site price
+is at most $1$.
+\end{lemma}
+\begin{proof}
+Let $z_t$ be the bound after $t$ lower steps. If $H^{1/2}z_t\le1$, then
+\[
+ z_{t+1}\le(\alpha+H^{1/2}z_t)z_t\le(\alpha+1)z_t .
+\]
+By induction $z_t\le(\alpha+1)^tz_0$ for $t\le\ell-w$, as long as
+$H^{1/2}z_t\le1$. This condition holds throughout, because
+$(\alpha+1)^tz_0\le H^{q-3/2}H^{1-q}=H^{-1/2}$ by
+\eqref{eq:allarity-lower-count}. That is also the domain bound
+$z\le H^{-1/2}$ of the lower calculation. The forced outputs are at most
+$G(y_j)\le1$.
+\end{proof}
+
+The count \eqref{eq:allarity-lower-count} is a purchase of the same kind
+as the step count of Lemma~\ref{lem:allarity-step-purchases}. The root
+depth $w$ is the largest $j\le\ell$ with
+$a_j/a_\ell\ge c_k^{10}$, where $c_k$ is the clock's cover size at $k$.
+By maximality, $a_{w+1}/a_\ell<c_k^{10}$, so the same argument as there
+gives
+$(\ell-w-1)\log L_{J(k)-1}<10\log c_k$. Hence
+\eqref{eq:allarity-lower-count} holds whenever both of the following
+hold:
+\begin{itemize}
+\item $\log(\alpha+1)\,(1+10\log c_k/\log L_{J(k)-1})\le(q-3/2)\log H$;
+\item the stage condition $J(j)\ge J(k)-1$ holds on $[w,k]$.
+\end{itemize}
+
+\begin{proposition}[The coefficient price at the output]
+\label{prop:allarity-output-price}
+Assume the following.
+\begin{enumerate}
+\item The leading-interval conclusions of
+ Subsection~\ref{subsec:allarity-step-supply}, giving the price
+ $d_{k-\ell}\le H^{1-q}$ at the middle level.
+\item The hypotheses of Lemma~\ref{lem:allarity-lower-propagation}.
+\item The representation at the output level $w$ is lawful, with the
+ suppositions of Section~\ref{sec:rank-root-normalization} at the stage
+ of level $w$.
+\end{enumerate}
+Then, at the weight $\omega=H^{1/(8u)}$, the following hold for every
+nonempty $s\subseteq\{0,1\}$:
+\[
+ \omega^{q_0|s|}\,\bigl|\mathcal D_s^{\otimes}(U)\bigr|
+ \le\exp\{\operatorname{exponent}_P(U)+q_0(1+n)\}.
+\]
+Here $\mathcal D$ is the push to the level-$w$ torus of the replicated
+marked density of the invoice $\mathcal I$, and $\mathcal D_s^{\otimes}$
+is its coefficient carrying $s$ in every cell. This is the coefficient
+price $a^{q_0|s|}$ with per-site expense $X\le1+n\le1+M$ required by
+\eqref{eq:rank-root}, with $a=\omega$ when $u=M$. The normalizing
+denominator is the partition function of the same pushed density, by the
+unmarked coefficient identity at every step. Consequently, for
+$k\ge K_M$ of Proposition~\ref{prop:rank-root-output-ticket}, the root
+test of $\Phi_s$ on the centered tiling at depth $w$ is at most
+$\mathcal M_k^{-1/(16M)}$.
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{lem:allarity-lower-propagation}, at level $w$ the regular
+incidence price per mark is $\ell_w\le1$ and the forced site price is
+$L_w\le1$. By the cells-and-sites paragraph, the output torus has $q_0$
+sites, and there are $M_0=q_0n$ marks. The scalar envelope
+\eqref{eq:allarity-density-envelope} and the paragraph after it give the
+displayed inequality with expense $L_w+n\ell_w\le1+n$. By
+Lemma~\ref{lem:allarity-invoice-parts}, the coefficients of the
+invoice are the $\Phi_s$, so the replicated coefficient is that of
+$\Phi_s$ in every cell. The last statement is
+Proposition~\ref{prop:rank-root-output-ticket}, applied with $w(k)=w$,
+together with \eqref{eq:rank-root} and the lawful representation at $w$.
+\end{proof}
+
+\paragraph{Status of the output transport.}
+Lemma~\ref{lem:allarity-invoice-parts}, the cells-and-sites count and
+Lemma~\ref{lem:allarity-lower-propagation} are proved above.
+Proposition~\ref{prop:allarity-output-price} reduces the coefficient price
+to five inputs:
+\begin{enumerate}
+\item the leading-interval inputs listed at the end of
+ Subsection~\ref{subsec:allarity-step-supply};
+\item the plateau condition that the couplings of the rungs of $[w,\ell]$
+ lie in $[s/2,s]$;
+\item the admissible forced inputs of the lower rungs;
+\item the lower step count \eqref{eq:allarity-lower-count}, through a
+ bound on the cover size $c_k$ against $H$;
+\item the lawful representation at $w$.
+\end{enumerate}
+Items 2 and 5 are properties that the funded chart's actuation path and
+allowance must supply at every level of $[w,k]$. We have not located
+their display in Section~\ref{sec:ex-lattice-firesky-gallery}. Item 3
+requires a lower bound on the attenuations $\omega_j$, which we have not
+located.
