@@ -233,6 +233,104 @@ threshold does not depend on $p$, on the label, or on the fit
 configuration.
 \end{proof}
 
+\begin{lemma}[The clock supplies the dilation, depth, bracket and plateau]
+\label{lem:ex-lattice-firesky-clock-fields}
+Let the clock be the one of Section~\ref{sec:common-scale-selection}, so
+that $\widehat\beta_m=\beta_*+s_Gs_m$, $a_m=e^{-s_m}$,
+$s_{m+1}=s_m+\log L_{J(m+1)}$, $L_j\ge3$, and $J=j_*+J_0$. Let the
+monitor be $\mu_k=\exp((\log\log\widehat\beta_k)^2)$ and the cover size
+$c_k=\lceil(\log\widehat\beta_k)^2\rceil$. Fix $\bar b>0$. Then for all
+sufficiently large $k$ and every base arc $0<b\le\bar b$, the following
+hold.
+\begin{enumerate}
+\item The sets defining $\ell$ and $w$ are nonempty. Hence
+ $m\mu_k^2\le a_\ell/a_k$ and $c_k^{10}\le a_w/a_\ell$; these are the
+ dilation and depth of (F1).
+\item $J(k)-1\le J(j)$ for every $w\le j\le k$; this is the bracket of
+ (F1).
+\item $\widehat\beta_k/2\le\widehat\beta_j\le\widehat\beta_k$ for every
+ $w\le j\le k$; this is (F2).
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+\emph{Growth of the scale.} At every step $m$ with $J(m+1)>j_*$, the
+entry requirement \eqref{eq:common-stage-entries} gives
+$\log L_{J(m+1)}\le s_m/J(m+1)$. In particular $s_{m+1}\le2s_m$ once
+$J(m+1)\ge1$. Hence $s_k\le C_02^k$ for a constant $C_0$, and
+\[
+ \log\log\widehat\beta_k\le\log k+C_1
+\]
+for large $k$, with a constant $C_1$. On the other side,
+$s_k\ge k\log3$ by \eqref{eq:common-scale-brackets}.
+
+\emph{Item 1.} The set defining $\ell$ contains $j=0$ as soon as
+$a_0/a_k=e^{s_k}\ge m\mu_k^2=\mu_k^{b+2}$. Now
+$e^{s_k}\ge3^k$, while
+$\mu_k^{b+2}\le\exp\{(\bar b+2)(\log k+C_1)^2\}$, so this holds for large
+$k$. The defining inequality then holds at its maximum $\ell$. If $\ell<k$, maximality gives
+$3^{k-\ell-1}\le a_{\ell+1}/a_k<\mu_k^{b+2}$, because
+$a_{\ell+1}/a_k=\prod_{t=\ell+2}^kL_{J(t)}$ and $L_j\ge3$. Likewise, if
+$w<\ell$, then $3^{\ell-w-1}\le a_{w+1}/a_\ell<c_k^{10}$, once $w$ is
+defined. Hence
+\[
+ k-\ell\le1+\frac{(\bar b+2)(\log k+C_1)^2}{\log3},\qquad
+ \ell-w\le1+\frac{10\log c_k}{\log3}.
+\]
+The first bound gives $k-\ell=O((\log k)^2)$, so $\ell/k\to1$.
+Since $c_k\le2(\log\widehat\beta_k)^2$ for large $k$ and
+$\log\log\widehat\beta_k\le\log k+C_1$, we have
+$\log c_k=O(\log k)$. Thus $10\log c_k=o(\ell)$, and for large $k$,
+$a_0/a_\ell\ge3^\ell\ge c_k^{10}$. The set defining $w$ is therefore
+nonempty. Adding the two bounds gives a constant $C_2$ with
+\[
+ k-w\le C_2(\log k)^2 .
+\]
+
+\emph{Item 2.} Let $j=J_0(k)$, so $A_j\le k<A_{j+1}$ in the notation of
+Section~\ref{sec:common-scale-selection}. If $w\ge A_j$, every level of
+$[w,k]$ has $J_0=j$. Otherwise $w<A_j\le k$, and so
+$k-A_j\le k-w\le C_2(\log k)^2$. For large $k$ this forces
+$k\le2A_j$. By the recursion,
+\[
+ A_j-A_{j-1}=b_j+2k_{j-1}+1\ge4A_{j-1}+3 ,
+\]
+so $A_j-A_{j-1}\ge\tfrac45A_j$. For large $k$, and hence large $A_j$,
+\[
+ k-w\le C_2(\log2A_j)^2\le\tfrac45A_j\le A_j-A_{j-1}.
+\]
+Therefore $w\ge k-(A_j-A_{j-1})\ge A_{j-1}$, and every level of $[w,k]$
+has $J_0\ge j-1$.
+
+\emph{Item 3.} Since $s_m$ is increasing, $\widehat\beta_j\le\widehat\beta_k$
+for $j\le k$, and $\widehat\beta_j\ge\widehat\beta_w$ for $j\ge w$. Next,
+$\widehat\beta_k-\widehat\beta_w=s_G\log(a_w/a_k)$. Split $a_w/a_k$ into
+four factors:
+\[
+ \frac{a_w}{a_k}
+ =\frac{a_w}{a_{w+1}}\cdot\frac{a_{w+1}}{a_\ell}\cdot
+  \frac{a_\ell}{a_{\ell+1}}\cdot\frac{a_{\ell+1}}{a_k}.
+\]
+Omit the factors whose indices coincide. By maximality the second and
+fourth factors are below $c_k^{10}$ and $\mu_k^{b+2}$. The first and third
+are block lengths $L_{J(t+1)}$ with $t\ge w$. By the entry requirement
+each is at most $\exp(s_k/J(t+1))\le\exp(s_k/(J(k)-1))$, using item 2.
+Hence
+\[
+ \log\frac{a_w}{a_k}\le\frac{2s_k}{J(k)-1}+10\log c_k
+   +(\bar b+2)(\log k+C_1)^2 .
+\]
+Since $J(k)\to\infty$ and $s_k\ge k\log3$, the right side is at most
+$s_k/2$ for large $k$. Thus
+$\widehat\beta_k-\widehat\beta_w\le s_Gs_k/2\le\widehat\beta_k/2$,
+because $\widehat\beta_k\ge s_Gs_k$.
+\end{proof}
+
+The wheel bound of (F1) is also immediate: the clock factor of a stage
+$j$ is its block length $L_j\ge3$. Consequently, of the witness fields,
+only the lawful history (F3) and the readings (F5) remain inputs from the
+funded construction. (F4) is replaced by
+Proposition~\ref{prop:rank-root-output-ticket}.
+
 \subsection{Choosing scales and chart levels}
 
 \begin{lemma}[Strict scale selection]
