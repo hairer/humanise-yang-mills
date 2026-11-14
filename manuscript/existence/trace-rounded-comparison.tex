@@ -341,13 +341,17 @@ That section, however, takes a comparison at grid points as its own input
 \eqref{eq:three-grid} and passes from grid points to smeared tests; it
 does not state the root-test bounds
 \eqref{eq:trace-rounded-receipt-one}--\eqref{eq:trace-rounded-receipt-two}.
-We have not located a producer of (G3) in the present text, and this
-subsection does not prove it; it remains an open input. Its required
-content is exactly the displayed pair of root-test bounds, for every pair
-of basis vectors, every $N>k_i$ and every period, at every fit
-configuration whose rounding lies in $\mathcal W$, together with the width
-clause.
+Its required content is exactly the displayed pair of root-test bounds,
+for every pair of basis vectors, every $N>k_i$ and every period, at every
+fit configuration whose rounding lies in $\mathcal W$, together with the
+width clause. Subsection~\ref{subsec:trace-rounded-receipt} below derives
+(G3) from a scale allowance of the chart witnesses and a level-budget
+bound $\mu_k^{-1/(16n)}$ for the root tests
+(Proposition~\ref{prop:trace-rounded-receipt}). It also identifies the
+input that remains open there.
 The identification of the chart sequence with the comparison
 subsequence of the input, the moving-label and logarithmic clauses, and
 the reference normalization are separate inputs, discussed after
 Input~\ref{input:trace-scales}.
+
+\input{existence/trace-rounded-receipt}
