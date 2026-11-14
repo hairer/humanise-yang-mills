@@ -314,3 +314,124 @@ is exactly the finite measurement convergence used in the rank argument.
 Identification of the entire equation kernel additionally requires the
 all-spectator local equation comparison stated in that argument; finite
 one- and two-point measurements alone do not supply it.
+
+\subsection{The same construction on a trace chart window}
+\label{subsec:rank-trace-chart-window}
+
+The pairwise receipt of the trace calibration uses two fields of its
+chart witness, (F3) and (F5) of Section~\ref{sec:ex-lattice-firesky-gallery}.
+We construct the constant-coupling auxiliary history on the chart window
+$[w,k]$ and the tested readout at level $k$ for every sufficiently large
+$k$. The remaining witness requirements are stated below.
+
+Fix a grade $d$, a bound $\bar b$ for the base arcs, and the finite menu
+of the trace tests at grade $d$. It has arities at most two, and the
+marker allowance $M=d+2$ enters only through the marker weight, not
+through the history or the readout. For a chart at level $k$ with base
+arc $b\le\bar b$, let $\ell$ and $w$ be its middle level and root depth.
+Write $s=\widehat\beta_k$ and $y=\log\log s$.
+
+We use one further input, the running estimate of
+Section~\ref{sec:surviving-interval-shooting} with its slope identified
+with the clock slope $s_G$:
+\begin{enumerate}
+\item[(R)] for every $\eta>0$ there is $m_0(\eta)$ such that
+ $|\beta_{N,p,m}-\widehat\beta_m|\le|\bar\beta-\beta_*|+\eta s_m$ for
+ all $m\ge m_0(\eta)$, $N\ge m$ and $p$.
+\end{enumerate}
+
+\begin{lemma}[The endpoint coupling bound]
+\label{lem:rank-trace-endpoint}
+Under (R), for all sufficiently large $k$, every $N\ge k$ and every $p$,
+\[
+ |\beta_{N,p,k}-\widehat\beta_k|\le\widehat\beta_k/8 .
+\]
+\end{lemma}
+\begin{proof}
+Take $\eta=s_G/16$. Since $s_k\to\infty$, eventually
+$|\bar\beta-\beta_*|\le s_Gs_k/16$. Then the right side of (R) is at
+most $s_Gs_k/8\le\widehat\beta_k/8$, because
+$\widehat\beta_k=\beta_*+s_Gs_k\ge s_Gs_k$.
+\end{proof}
+
+\begin{proposition}[History and readout on the chart window]
+\label{prop:rank-trace-chart-window}
+Assume (R) and the local inputs of this section. Include in the
+all-stage payment \eqref{eq:common-allstage-payment} the thresholds of
+Section~\ref{sec:restarted-rank-history} and of the readout construction
+above, for each stage $j$ and for the finitely many block ratios
+$L_{j-1},L_j$, the width parameter $\bar b$ and the trace menu. These
+thresholds are fixed after the block lengths and before the coupling
+threshold. Then for every sufficiently large level $k$, every chart at
+level $k$ with base arc $b\le\bar b$, every $N\ge k$ and every $p$, the
+following hold.
+\begin{enumerate}
+\item The constant-coupling auxiliary history of
+ Section~\ref{sec:restarted-rank-history}, with coupling
+ $\beta_{N,p,k}$, exists on the whole window $[w,k]$. Its input costs are
+ at most $q_n\le s^{-1/400}$ for $0\le n\le k-w$, and it satisfies the
+ density identities and the endpoint retention stated there. At every
+ level $j$ of the window its coupling satisfies
+ $\beta_{N,p,k}\le4\widehat\beta_j$.
+\item For all sufficiently large $N$, uniformly in $p$, there is a readout
+ $T_{k,N,p}$ satisfying \eqref{eq:rank-common-tested}.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\emph{Window length.} By
+Lemma~\ref{lem:ex-lattice-firesky-clock-fields} and its proof,
+$k-w=O((\log k)^2)$ and $\log\log\widehat\beta_k\le\log k+C_1$. Directly,
+the two maximality bounds give
+\[
+ k-w\le2+\frac{(\bar b+2)y^2+10\log c_k}{\log3}\le y^4
+\]
+for large $s$, since $c_k=\lceil(\log s)^2\rceil$ gives
+$\log c_k\le y^2$ eventually. The construction of
+Section~\ref{sec:restarted-rank-history} uses its interval length only
+through $0\le n\le h\le y^4$ in \eqref{eq:restart-decay}. That decay
+bound is uniform for $n\le y^4$. So it applies verbatim to an interval
+of length $k-w$.
+
+\emph{Block ratios.} By the bracket of
+Lemma~\ref{lem:ex-lattice-firesky-clock-fields}, every step of $[w,k]$
+has block ratio $L_{J(k)}$ or $L_{J(k)-1}$. The ratio enters that
+construction only through the fixed factor $C_{L,a,t}$ and the thresholds
+after which its eventual inequalities hold. Taking the larger of the two
+constants and the later of the two thresholds covers both ratios. The
+thresholds depend only on the stage $J(k)$, on $\bar b$ and on the
+finite menu. They are therefore paid at every level by the all-stage
+payment, which gives $H_{J(k+1)}\le\widehat\beta_k$ for every $k$.
+
+\emph{Couplings.} By Lemma~\ref{lem:rank-trace-endpoint},
+$|\beta_{N,p,k}-s|\le s/8$ for large $k$. By the plateau of
+Lemma~\ref{lem:ex-lattice-firesky-clock-fields}, every level $j$ of the
+window has local scale $\widehat\beta_j\in[s/2,s]$. The joining argument
+of Section~\ref{sec:restarted-rank-history} then places the constant
+coupling in the purchased band, and gives
+$\beta_{N,p,k}\le9s/8\le\tfrac94\widehat\beta_j\le4\widehat\beta_j$.
+Item~1 follows by composition, as there.
+
+\emph{Readout.} The readout construction of this section uses the
+auxiliary history at level $k$, the calibrated insertion bounds (eventual
+in $N$, uniformly in $p$, for the finitely many rows), and the stage
+purchases. The last are now paid at every level. Its conclusion
+\eqref{eq:rank-common-tested} holds at every sufficiently large $k$, not
+only at the unbounded set of levels used for the rank tests above.
+\end{proof}
+
+\paragraph{Status.}
+Under (R) with matched slope and the local inputs of this section,
+Proposition~\ref{prop:rank-trace-chart-window}(1) gives the auxiliary
+history and its coupling bound throughout $[w,k]$ for every $N\ge k$
+and $p$. To obtain (F3), one still has to verify that each resulting
+$P_j$ has the stage clip and row bound, the chart budget radius and
+prescribed threshold, and satisfies the representation bounds
+\[
+ \theta_{P_j}\le\theta_{\rm clock}(j),\qquad
+ \Lambda(P_j)\le\Lambda_{\rm clock}(j),\qquad \delta(P_j)\le1 .
+\]
+The numerical late-scale bounds of
+Section~\ref{sec:rank-root-normalization} concern the clock parameters. The comparisons above concern the actual
+auxiliary representations. Item~2 gives the tested readout part of (F5)
+for all sufficiently large $N$, uniformly in $p$. The stamp duty for
+(F5) still has to be established with that same readout.
