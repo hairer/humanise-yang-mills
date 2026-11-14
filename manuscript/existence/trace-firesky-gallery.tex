@@ -75,6 +75,116 @@ The function $t\mapsto g_{b+t}(k)=a_km_k^{b+t}$ is continuous on
 $[0,1]$. The intermediate value theorem supplies the desired $t$.
 \end{proof}
 
+\subsection{The fields of a chart witness}
+\label{subsec:ex-lattice-firesky-witness}
+
+The producers of the pairwise receipt use several fields of the
+finite-volume chart witness. We list them here, with the two scale
+definitions they require, and prove the one property that follows from
+definitions alone. The witness itself is part of the funded chart receipt
+above, which remains an input of this section. In this subsection, $k$
+denotes the level of the chart and $\mu_k$ the monitor $m_k$ of
+\eqref{eq:ex-lattice-firesky-gap}. $J$ is the stage clock and $L_j$ are
+the block lengths of Section~\ref{sec:common-scale-selection}, and
+$c_k\ge1$ is the cover size of the clock at level $k$.
+
+\paragraph{Two levels attached to a chart.}
+Let the chart have base arc $b$, and put $m=\mu_k^b$. Its \emph{middle
+level} and \emph{root depth} are
+\[
+ \ell=\max\Bigl\{j\le k:\frac{a_j}{a_k}\ge m\mu_k^{2}\Bigr\},\qquad
+ w=\max\Bigl\{j\le\ell:\frac{a_j}{a_\ell}\ge c_k^{10}\Bigr\},
+\]
+with the convention $\max\varnothing=0$. Thus $w\le\ell\le k$. The middle
+cell of the chart is a cell of spacing $a_\ell$. The root tests and the
+chamber condition of the chart are taken on the centered tiling at depth
+$w$, whose cells are indexed by the sites of the level-$w$ torus.
+
+\paragraph{The witness fields.}
+A chart witness at level $k$ with base arc $b$ supplies the following
+fields. Here $M$ is the marker allowance of the chart, $N>k$ and $p$ are
+arbitrary.
+\begin{enumerate}
+\item[(F1)] \emph{Allowance.} Four conditions hold:
+ \begin{itemize}
+ \item dilation: $m\mu_k^2\le a_\ell/a_k$, so the set defining $\ell$
+  is nonempty;
+ \item depth: $c_k^{10}\le a_w/a_\ell$;
+ \item wheel: the smaller of the clock factors of the stages $J(k)$ and
+  $J(k)-1$ is at least $2$;
+ \item bracket: $J(k)-1\le J(j)$ for every $w\le j\le k$.
+ \end{itemize}
+\item[(F2)] \emph{Plateau.} $\widehat\beta_k/2\le\widehat\beta_j\le\widehat\beta_k$
+ for every $w\le j\le k$.
+\item[(F3)] \emph{Lawful history.} For each $N>k$ and $p$ there are
+ representations $P_j$ on the level-$j$ torus, $w\le j\le k$, along the
+ course of the chart. Each $P_j$ satisfies the suppositions of
+ Proposition~\ref{prop:rank-root-output-ticket}(2) at level $j$, with the
+ clip and row bound of the stage $\pi_{J(j)}$. Its budget radius is
+ $\lceil(\log\widehat\beta_j)^2\rceil^2$, and its threshold is the clock's
+ hatted coupling at $j$ times the corresponding healthy allowance.
+\item[(F4)] \emph{Ticket.} $T_M(\pi_{J(w)})\le\log\mu_k/(16M)$.
+\item[(F5)] \emph{Readings and stamps.} For every grade $d'\le d$ there is
+ a linear reading $T_{d'}$ of the grade-$d'$ label space with three
+ properties:
+ \begin{itemize}
+ \item it fixes the reference unit;
+ \item it commutes with the real structure;
+ \item it satisfies the half-accuracy bound
+  $\|a(v)-T_{d'}v\|\le\frac12\|a(v)\|$ in coefficient size, where $a$
+  is the calibrated entry map at level $k$ for $(N,p)$.
+ \end{itemize}
+ It also carries a stamp duty with the same reading.
+\end{enumerate}
+By (F1), every level of $[w,k]$ lies in the stage $J(k)$ or $J(k)-1$. Hence
+$J(w)\ge J(k)-1$, and $w\to\infty$ as $k\to\infty$ because $J$ diverges.
+
+\paragraph{Corrected labels.}
+Write $\sigma=\sigma_{k,N,p}=(\beta_{N,p,k}^{1/2}\,\theta_k)^{-1}>0$ for
+the shrink factor, where $\theta_k$ is the clock threshold. Write $W_\rho$
+for the linear map multiplying the grade-$j$ component of a label by
+$\rho^j$, and $S_\sigma$ for the frame scaling by $\sigma$. The
+\emph{corrected label} of a basis vector $e$ is
+\[
+ X_{N,p}e=T_{d'}^{-1}\bigl(S_{\sigma}^{-1}W_me\bigr).
+\]
+These are the linear maps $X^{(i)}_{N,p}$ of input (G2) in
+Subsection~\ref{subsec:trace-rounded-comparison}, for the chart selected at index
+$i$.
+
+\begin{lemma}[Corrected labels solve the reading equation]
+\label{lem:ex-lattice-firesky-solves}
+The reading $T_{d'}$ is bijective, and $X_{N,p}e$ is the unique label $v$
+with
+\begin{equation}\label{eq:ex-lattice-firesky-solves}
+ S_\sigma\bigl(T_{d'}v\bigr)=W_me .
+\end{equation}
+\end{lemma}
+\begin{proof}
+The calibrated entry map satisfies the reference inverse estimate
+\eqref{eq:rank-reference-inverse} of
+Section~\ref{sec:actual-rank-purchases}, $|v|_1\le D_k|a(v)|_1$. With the
+half-accuracy bound of (F5), the argument given there shows that $T_{d'}$
+is injective, hence bijective. Next, $S_\sigma$ is invertible. So the
+equation has the unique solution $X_{N,p}e$; this is
+\eqref{eq:rank-common-lifts} with $\rho=m$.
+\end{proof}
+
+\paragraph{Status.} Fields (F1)--(F5) are fields of the funded witness.
+This section records them but does not construct them. Their source
+construction is the cost and staging construction of the funded run,
+which this section already takes as input. With these fields, three
+of the inputs listed elsewhere are now displayed rather than missing:
+\begin{itemize}
+\item the allowance and the root-depth identification used in
+ Subsection~\ref{subsec:trace-rounded-receipt};
+\item the bracket property used in
+ Subsection~\ref{subsec:rank-root-output-ticket};
+\item the ticket at the output level.
+\end{itemize}
+The plateau (F2) and the lawful history (F3) are the properties that the
+propagation to the output torus requires at every level of $[w,k]$.
+
 \subsection{Choosing scales and chart levels}
 
 \begin{lemma}[Strict scale selection]
