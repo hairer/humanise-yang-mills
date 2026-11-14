@@ -278,3 +278,108 @@ and corrected two-point coefficients themselves. The local marked
 construction must supply their displayed coefficient price on the
 same auxiliary density; no estimate for a different denominator is
 used here.
+
+\subsection{The ticket and the harmonic premise at a chart's output level}
+\label{subsec:rank-root-output-ticket}
+
+The purchase $T_M\le I_k$ above was stated for a comparison depth on a
+constant-profile interval. We now prove it, together with the premise
+\begin{equation}\label{eq:rank-root-premise}
+ P_R(X)-4D\log g/q\le T_M ,
+\end{equation}
+at the output level of a chart of level $k$. That level need not lie on
+the same constant-profile interval as $k$. Here $q$ is the cell count of
+the terminal tiling, as above.
+
+Recall the selected stage clock $J(m)$ and stage profiles $\pi_j$ of
+Section~\ref{sec:public-run-binding}. At level $m$ the clip constants,
+the row bound $A$ and the path constants of the clock stage are those of
+$\pi_{J(m)}$. The ticket $T_M$ displayed above is computed from these
+constants, from $N_{\mathcal A}$, and from the Haar data $h,c_-$ of $G$.
+Write $T_M(\pi)$ for the value computed from a profile $\pi$; it is a
+real number fixed once $\pi$ and $M$ are fixed. The clock monitor is
+$\mathcal M_k=\exp((\log\log\widehat\beta_k)^2)$, as in
+Section~\ref{sec:ex-lattice-trace-clock-cap}, so
+\[
+ I_k=\frac{\log\mathcal M_k}{16M}=\frac{(\log\log\widehat\beta_k)^2}{16M}.
+\]
+
+\begin{proposition}[Ticket and premise at the output level]
+\label{prop:rank-root-output-ticket}
+Include in the countable family of numerical requests of
+\eqref{eq:common-countable-payment} the requests
+\begin{equation}\label{eq:rank-root-ticket-requests}
+ F_{M,i}=1+\sqrt{16M\,\max\{T_M(\pi_i),0\}}\qquad(M\ge1,\ i\ge0).
+\end{equation}
+Let $w(k)\le k$ be levels with $w(k)\to\infty$. Then for every
+$M\ge1$ there is $K_M$ such that for all $k\ge K_M$:
+\begin{enumerate}
+\item the ticket at the profile of the output level is bought:
+ $T_M(\pi_{J(w(k))})\le I_k$;
+\item \eqref{eq:rank-root-premise} holds at the output level $m=w(k)$,
+ with $T_M=T_M(\pi_{J(w(k))})$. It holds for every period, every
+ lawful representation $R$ on the torus of level $w(k)$ satisfying the
+ suppositions $\theta_R\le\theta_{\rm clock}$, $\Lambda\le\Lambda_{\rm clock}$,
+ $\delta\le1$ and $\beta\le4\widehat\beta_{w(k)}$ of the preceding
+ subsection with the clip and row bound of $\pi_{J(w(k))}$, and every
+ expense $X\le1+M$.
+\end{enumerate}
+Consequently, for every coefficient of the pushed marked density at the
+output level with the coefficient price $a^{q|I|}$, $a=e^{2I_k}$, and
+expense $X\le1+M$, the right side of \eqref{eq:rank-root} is at most
+$e^{-I_k}=\mathcal M_k^{-1/(16M)}$ for $k\ge K_M$.
+\end{proposition}
+\begin{proof}
+\emph{Ticket.} Requests added to the countable family before the
+sequence is constructed are paid in the sense of
+\eqref{eq:common-countable-payment}: for fixed $M$ there is $m_M$ such
+that for every $m\ge m_M$ and every $i\le J(m+1)$,
+\[
+ F_{M,i}\le1+\log\log\widehat\beta_m .
+\]
+The conclusion of that payment uses only a lower bound on the entry
+thresholds actually paid. Enlarging the family therefore preserves the
+earlier purchases of Section~\ref{sec:common-scale-selection}. Take
+$K'_M=m_M$ and $k\ge K'_M$. Since $J$ is nondecreasing and $w(k)\le k$,
+the index $i=J(w(k))$ satisfies $i\le J(k)\le J(k+1)$. Hence
+\[
+ \sqrt{16M\max\{T_M(\pi_i),0\}}\le\log\log\widehat\beta_k .
+\]
+The left side is nonnegative, so squaring preserves the inequality:
+$16M\,T_M(\pi_i)\le16M\max\{T_M(\pi_i),0\}\le(\log\log\widehat\beta_k)^2$.
+Dividing by $16M>0$ gives $T_M(\pi_i)\le I_k$.
+
+\emph{Premise.} The preceding subsection proves
+\eqref{eq:rank-root-premise} at an output level $m$ for every
+representation satisfying the stated suppositions with the stage's clip
+and row bound. It uses three facts: $\beta\le4\widehat\beta_m$, the
+harmonic bound $8D\widehat\beta_m/q\le1$, and the late-scale purchases
+$\widehat\beta_m\theta_{\rm clock}^3\le1$,
+$\widehat\beta_m\theta_{\rm clock}^4\le1$ and
+$\Lambda_{\rm clock}\theta_{\rm clock}^2\le1$. Together they give
+$r\le1+8A+1$, hence $P_R(X)+1\le T_M$ for $X\le1+M$, and the final $1$ of
+$T_M$ pays $-4D\log g/q\le8D\widehat\beta_m/q\le1$. The harmonic bound and
+the late-scale purchases hold for all $m$ beyond a threshold $m'$ that is
+uniform in the period, because the minimal site count grows at least
+exponentially in the logarithmic scale, as shown there. The threshold
+$m'$ does not depend on $M$, since $M$ enters only through $X\le1+M$
+and the term $1+M$ of $T_M$. Since $w(k)\to\infty$, there is $K''$ with
+$w(k)\ge m'$ for $k\ge K''$.
+
+Put $K_M=\max(K'_M,K'')$. For $k\ge K_M$ both items hold. The
+consequence follows from \eqref{eq:rank-root} and the two items: its
+right side is at most $\exp\{T_M\}/a^{|I|}\le e^{I_k}/a=e^{-I_k}$,
+because $|I|\ge1$ and $a\ge1$.
+\end{proof}
+
+For a funded chart at level $k$ with base arc $b$, the output level
+$w(k)$ is its root depth. Every level $j$ with $w(k)\le j\le k$ lies in
+the current or the previous clock stage: $J(k)-1\le J(j)$. In
+particular $J(w(k))\ge J(k)-1\to\infty$, and since $J$ is nondecreasing
+this forces $w(k)\to\infty$. So the proposition applies at the root
+depth, with $M$ the marker allowance of the chart. This bracket property
+is part of the chart's scale allowance. Like the allowance itself, it
+is not displayed in Section~\ref{sec:ex-lattice-firesky-gallery} and is
+an input there. The lawful-representation suppositions at the output
+level and the coefficient price are supplied by the output transport of
+the marked density, not here.
