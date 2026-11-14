@@ -106,14 +106,14 @@ A `grep` for `Echo C`, `echo_tab`, `graduated_echo`, `actual_echo`, `echo_with_s
   (I) That is a sup bound over characters, so it holds at whichever χ_* was selected. No intersection with a further a.e. set is needed, and no subsequence depends on χ. The subsequences in `input:trace-scales` are fixed by the comparison data before any character enters.
 - **One place where "the selected character" is singled out.** (Ph3) asks for the null relations "for the selected character χ" (`trace-rounded-comparison.tex` 153–158). By Proposition `ex-no-new-null` and the outline, these hold for every character. (U) I did not check that proposition's detector hypotheses against the C15 use.
 
-(I) The monograph therefore follows the source's *headline* design: select by condition 1, then prove the trace law at the selected phase for all phases uniformly. It does not follow the Echo design: select by conditions 1 and 2.
+(I) The monograph follows the source's *headline* design: select by condition 1, then apply the trace argument at the selected character. Step 2 gives character-uniform bounds under the comparison hypotheses. Step 3 identifies the correlations at any character where the null-relation clause of (Ph3) holds, in particular at the selected character under that assumption.
 
-The monograph's limit `r^8 log²(r^{-1}) T(r) → 3 dim g/π^4` is a full limit. It is strictly stronger than the Echo condition. The Echo condition follows from it after centring with the right `e`, but not for every `e`. (I) Write `e_0` for the vacuum value of `τ` at χ_*. Then `τ_e = Θ + (e_0 − e)·1`, so
+The monograph's limit `r^8 log²(r^{-1}) T(r) → 3 dim g/π^4` is a full limit. It is strictly stronger than the Echo condition. The Echo condition follows from it for every fixed real shift `e`. (I) Write `μ` for the vacuum value of `τ` at χ_*. Then `τ_e = Θ + (μ − e)·1`, so
 
-`S(τ_e(0)τ_e(r e_0)) = T(r) + (e_0 − e)² + 2(e_0 − e)·S(Θ)`.
+`S(τ_e(0)τ_e(r e_0)) = T(r) + (μ − e)² + 2(μ − e)·S(Θ)`.
 
 - The last term is zero, because the one-point function of Θ vanishes (`assembly.tex` 52).
-- The constant term satisfies `r^8 (e_0 − e)² → 0`.
+- The constant term satisfies `r^8 (μ − e)² → 0`.
 - By the trace law, `r^8 T(r) = O(log^{-2} r^{-1}) → 0`.
 
 Hence condition 2 holds for every `e`, along every sequence. It is a *consequence* of the monograph's conclusion at χ_*, not an extra requirement.
@@ -122,7 +122,7 @@ Hence condition 2 holds for every `e`, along every sequence. It is a *consequenc
 
 ## 5. Recommendations (for C04/C15 and the statement section; nothing is changed here)
 
-1. **Add one sentence after `ex-pure-ground` or in outline Step 6.** For example: "The selection uses only the one-dimensional ground space. The trace asymptotic of Section … is then proved at the selected character; the comparison bounds of `subsec:trace-rounded-comparison` hold uniformly in χ ∈ Ξ." This answers the assessment's description directly.
+1. **Add one sentence after `ex-pure-ground` or in outline Step 6.** For example: "The selection uses only the one-dimensional ground space. The trace asymptotic of Section … is then proved at the selected character; the bounds of Step 2 in `subsec:trace-rounded-comparison` are uniform over χ ∈ Ξ, and Step 3 identifies the correlations using the null relations at the selected character." This answers the assessment's description directly.
 2. **Optionally, add a remark for readers of the assessment.** The source also contains a variant (the Echo route) that selects by an additional vanishing condition `r_{n_k}^8 S^χ(τ_eτ_e) → 0` along one subsequence for all shifts `e`. This condition follows from the trace law of `ex-trace-limit` at the selected character (section 4 above), so no change to the target is implied. AGENTS.md forbids Lean names in the main text, so the remark should describe the condition mathematically.
 3. **Correct the #381 report's item 7 reconstruction (G01, author's call).** The formula for E has exponent 8, no logarithm, limit 0, and quantifies over all shifts e ∈ ℝ, as reconstructed. The new information is that this is the Echo construction, not the one behind the headline `Final`.
 4. **For (U) in section 3, if wanted:** a used-constants query on `YM.Nonperturbative.existence` at the pin, run by someone who can build, would confirm that `echo_tab` is not in the proof. Expected outcome: absent.
