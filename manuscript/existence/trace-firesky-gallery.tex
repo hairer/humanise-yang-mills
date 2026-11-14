@@ -276,10 +276,12 @@ defined. Hence
  k-\ell\le1+\frac{(\bar b+2)(\log k+C_1)^2}{\log3},\qquad
  \ell-w\le1+\frac{10\log c_k}{\log3}.
 \]
-In particular $\ell\to\infty$. Hence $a_0/a_\ell\ge3^\ell\ge c_k^{10}$
-for large $k$, since $c_k\le2(\log\widehat\beta_k)^2$ is at most a fixed
-power of $C_02^k$. So the set defining $w$ is nonempty too. Adding the
-two bounds gives a constant $C_2$ with
+The first bound gives $k-\ell=O((\log k)^2)$, so $\ell/k\to1$.
+Since $c_k\le2(\log\widehat\beta_k)^2$ for large $k$ and
+$\log\log\widehat\beta_k\le\log k+C_1$, we have
+$\log c_k=O(\log k)$. Thus $10\log c_k=o(\ell)$, and for large $k$,
+$a_0/a_\ell\ge3^\ell\ge c_k^{10}$. The set defining $w$ is therefore
+nonempty. Adding the two bounds gives a constant $C_2$ with
 \[
  k-w\le C_2(\log k)^2 .
 \]
