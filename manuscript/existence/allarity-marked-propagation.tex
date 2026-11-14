@@ -1032,3 +1032,21 @@ outputs are at most $G(y_j)\le1$ as before.
 
 Consequently item~3 of the status list of
 Subsection~\ref{subsec:allarity-output-transport} is also discharged.
+
+\begin{lemma}[The amplitude of the principal insertions]
+\label{lem:allarity-amplitude}
+Assume (M) and (V) of Subsection~\ref{subsec:allarity-corrected-budget}.
+Then, for all large $s$, every actual leading piece is bounded on its
+healthy region by $n\mu^n+1$, where $\mu=2^n(C_{\mathcal W}+1)$.
+Consequently the amplitude $\tau$ in
+Lemma~\ref{lem:allarity-step-discrepancy} is bounded by a constant, has
+upper exponent $0<1/2$, and that lemma applies.
+\end{lemma}
+\begin{proof}
+By the proof of Lemma~\ref{lem:allarity-corrected-pieces},
+$\|X_Q\|_1\le\mu$ once $H^{-3/2}\le1$. Hence
+$\|D_Q\|_1\le\sum_{j=1}^n\mu^j/j\le n\mu^n$, using $\mu\ge1$ and
+submultiplicativity. So every coefficient of $D_Q$ has absolute value at
+most $n\mu^n$. By (V), each actual leading piece is within
+$H^{-3/2}\le1$ of such a coefficient.
+\end{proof}
