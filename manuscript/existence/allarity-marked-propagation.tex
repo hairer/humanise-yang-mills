@@ -1035,18 +1035,19 @@ Subsection~\ref{subsec:allarity-output-transport} is also discharged.
 
 \begin{lemma}[The amplitude of the principal insertions]
 \label{lem:allarity-amplitude}
-Assume (M) and (V) of Subsection~\ref{subsec:allarity-corrected-budget}.
-Then, for all large $s$, every actual leading piece is bounded on its
-healthy region by $n\mu^n+1$, where $\mu=2^n(C_{\mathcal W}+1)$.
-Consequently the amplitude $\tau$ in
+Under the hypotheses of Lemma~\ref{lem:allarity-corrected-pieces} there is
+a constant $C_*$, depending on the fixed word and the compact window,
+such that for all large $s$ every actual leading piece is bounded by
+$C_*$ on its healthy region. Consequently the amplitude $\tau$ in
 Lemma~\ref{lem:allarity-step-discrepancy} is bounded by a constant, has
 upper exponent $0<1/2$, and that lemma applies.
 \end{lemma}
 \begin{proof}
-By the proof of Lemma~\ref{lem:allarity-corrected-pieces},
-$\|X_Q\|_1\le\mu$ once $H^{-3/2}\le1$. Hence
-$\|D_Q\|_1\le\sum_{j=1}^n\mu^j/j\le n\mu^n$, using $\mu\ge1$ and
-submultiplicativity. So every coefficient of $D_Q$ has absolute value at
-most $n\mu^n$. By (V), each actual leading piece is within
-$H^{-3/2}\le1$ of such a coefficient.
+The reference moment polynomial $1+X_R$ varies continuously on the
+compact window, which consists of configurations with distinct points.
+So $\|X_R\|_1\le M_{\mathcal W}$ for a constant $M_{\mathcal W}$, and
+$\|D_R\|_1\le\sum_{j=1}^n M_{\mathcal W}^j/j$ by submultiplicativity. By
+Lemma~\ref{lem:allarity-corrected-pieces}, each actual leading piece is
+within $H^{-31/32}\le1$ of a coefficient of $D_R$. Take
+$C_*=1+\sum_{j=1}^nM_{\mathcal W}^j/j$.
 \end{proof}
