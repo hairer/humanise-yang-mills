@@ -185,6 +185,54 @@ of the inputs listed elsewhere are now displayed rather than missing:
 The plateau (F2) and the lawful history (F3) are the properties that the
 propagation to the output torus requires at every level of $[w,k]$.
 
+\begin{lemma}[Chamber interiority at the root depth]
+\label{lem:ex-lattice-firesky-chamber}
+Consider a chart at level $k$ with base arc $b$, middle level $\ell$ and
+root depth $w$. Let $x$ be fit for the chart: the grid configuration
+$z=a_k\lceil mx\rceil$ is coordinatewise separated and
+$|z_{c,\alpha}|\le a_\ell/8$ for $c=0,1$ and $\alpha=1,\dots,4$. Fix a grade
+$d$, and let $Z_d$ bound the coordinates of the finite stencil $S_d$ of
+the grade-$d$ insertions. Then, for every $N$ with
+\begin{equation}\label{eq:ex-lattice-firesky-chamber-mesh}
+ a_N(Z_d+2)<\tfrac38\,a_w ,
+\end{equation}
+every period $p$ and every grade-$d$ label, the insertion at the site
+$z_c$ ($c=0,1$) has every link of its stencil, including both endpoints,
+strictly inside the home chamber of the centered tiling at depth $w$. It
+is therefore in the chamber-local domain of that tiling. Condition
+\eqref{eq:ex-lattice-firesky-chamber-mesh} holds for all large $N$, with
+a threshold depending only on $w$ and $d$. In particular (G4) of
+Subsection~\ref{subsec:trace-rounded-comparison} holds with $w_i=w$ for
+the chart selected at index $i$.
+\end{lemma}
+\begin{proof}
+Measure positions in mesh steps of the level-$N$ lattice. The depth-$w$
+cell has an odd number $q=a_w/a_N$ of steps along each axis, as in the
+interiority argument of Section~\ref{ex-centered-construction}. Its home
+cell consists of the offsets $u$ with $|u_\alpha|\le(q-1)/2$ from the
+centre. Since $a_k/a_N$ is an integer, the site $z_c$ has integer
+offset $u=z_c/a_N$. By fitness, and because $w\le\ell$ implies
+$a_\ell\le a_w$,
+\[
+ |u_\alpha|\le\frac{a_\ell}{8a_N}\le\frac{q}{8}.
+\]
+A link of the stencil at $z_c$ has endpoints $u+s$ and $u+s+e$, with
+$s\in S_d$ and $e$ a unit vector. Each coordinate of an endpoint is at
+most $q/8+Z_d+1$ in absolute value. By
+\eqref{eq:ex-lattice-firesky-chamber-mesh},
+$Z_d+2<3q/8$. Hence
+\[
+ \frac q8+Z_d+1<\frac q2-1<\frac{q-1}2 ,
+\]
+so both endpoints lie strictly inside the home cell. The insertion is a
+bounded, measurable, gauge-invariant function of these links. It is
+therefore chamber-admissible, exactly as in the argument cited above.
+Finally, $a_N\to0$ while $a_w>0$ and $Z_d$ are fixed, so
+\eqref{eq:ex-lattice-firesky-chamber-mesh} holds for all large $N$. The
+threshold does not depend on $p$, on the label, or on the fit
+configuration.
+\end{proof}
+
 \subsection{Choosing scales and chart levels}
 
 \begin{lemma}[Strict scale selection]
