@@ -243,8 +243,11 @@ $\mathcal P_i$ be the scaled pullback of a stress tensor, and put
 $\mathcal Y_i=q_i^{-1}\mathcal P_i$. The scaled pullback is the
 chart map multiplied by its positive crown normalization; by definition,
 $\mathcal P_i=q_i\mathcal Y_i$ on every tensor. Here
-$q_i$ is the effective coupling at the selected level and the crown
-normalization is $q_i$ times the fourth power of the chart radius. The defining corrected tensor is
+$q_i=\zeta(k_i)$ is the arch scale at the selected level (see the clock
+paragraph below), and the crown normalization is $q_i$ times the fourth
+power of the chart radius. We do not assert that $q_i$ equals the
+effective coupling of the branch unit; the two are compared in
+Lemma~\ref{lem:ex-lattice-scribe-normalization-ratio} below. The defining corrected tensor is
 \begin{equation}
  T_i=q_iL_i+c_i^0\Omega_i+c_i^1\Delta_i.
  \label{eq:ex-lattice-scribe-corrected-tensor}
@@ -293,10 +296,17 @@ conclusions of the separately owned branch unit,
 the external unit YM-000034 (file \texttt{trace-branch-moments.tex},
 label \texttt{sec:ex-trace-branch-moments}), under the following
 identification. The tensors are $L_i=t^0_{k_i}$, $\Omega_i=t^-_{k_i}$
-and $\Delta_i=t^+_{k_i}$, at the same level $k_i$ as above. The scaled
-pullback $\mathcal P_i$ is the entrywise application of the map
-$\mathsf P_i=\omega_iU_i^{-1}$ of that section, with
-$\omega_i=q_ir_i^4$, and $\mathsf M_i$ is its centered moment map. The
+and $\Delta_i=t^+_{k_i}$, at the same level $k_i$ as above. That
+section uses the map $\mathsf P_i=\omega_iU_i^{-1}$ with
+$\omega_i=\beta_Z(k_i)r_i^4$, where $\beta_Z$ is its effective coupling,
+whereas the present crown normalization uses the arch scale $q_i$ in
+place of $\beta_Z(k_i)$. Thus, with
+\[
+ \lambda_i=\frac{\beta_Z(k_i)}{q_i}>0,
+\]
+the scaled pullback $\mathcal P_i$ is the entrywise application of
+$\lambda_i^{-1}\mathsf P_i$, and $\mathsf M_i$ is its centered moment
+map, which is $\lambda_i^{-1}$ times that of $\mathsf P_i$. The
 ordered labels are $W_i^Q=W^{b}_{k_i}$ for the branch $b=\nu_Q$, and
 $M_0=M(w^0)$, $M_\Omega=M(w^-)$, $M_1=M(w^+)$.
 Its proposition `Three branch field limits' (label
@@ -311,6 +321,61 @@ $\operatorname{tr}M_1=4\mathcal O$. Those propositions are conditional on
 their own recording, transport and chart inputs. They are used here as
 external inputs; the finite-array argument written out above repeats the
 proof of the first of them under the same hypotheses.
+
+Those conclusions are stated for $\mathsf P_i$. They transfer to
+$\mathcal P_i=\lambda_i^{-1}\mathsf P_i$ because of the following lemma.
+
+\begin{lemma}[The two normalizations agree asymptotically]
+\label{lem:ex-lattice-scribe-normalization-ratio}
+Assume the scale ratio $\beta_Z(j)/\widehat\beta_j\to1$ of the branch
+unit (proved in its scale-ratio paragraph, after the display labelled
+\texttt{eq:ex-branch-lift-beta-ratio}, from its running estimate and
+fixed-scale limit), and the first clock input
+$\zeta(j)/\widehat\beta_j\to1$ of
+\eqref{eq:ex-lattice-scribe-clock-inputs}. Then $\lambda_i\to1$.
+Consequently, for $Q_i\in\{L_i,\Omega_i,\Delta_i\}$ with reference
+tensors $M_0,M_\Omega,M_1$,
+\begin{gather*}
+ \mathsf P_i(Q_i)\to M\ \Longrightarrow\ \mathcal P_i(Q_i)\to M,
+ \qquad
+ \operatorname{tr}\mathcal P_i(\Delta_i)\to4\mathcal O,\\
+ z_i\operatorname{tr}\mathsf P_i(Q_i)\to0\ \Longrightarrow\
+ z_i\operatorname{tr}\mathcal P_i(Q_i)\to0 .
+\end{gather*}
+\end{lemma}
+\begin{proof}
+The summit index $k_i$ is a level not below the frame level $j_i$, and
+$j_i\to\infty$, so $k_i\to\infty$. Hence both ratio limits hold along
+$j=k_i$. The quantities $\beta_Z(k_i)$, $q_i=\zeta(k_i)$ and
+$\widehat\beta_{k_i}$ are positive, and
+\[
+ \lambda_i=\frac{\beta_Z(k_i)/\widehat\beta_{k_i}}
+               {\zeta(k_i)/\widehat\beta_{k_i}}
+ \longrightarrow\frac11=1 .
+\]
+In particular $\lambda_i^{-1}\to1$, and $\lambda_i^{-1}\le2$ for all
+large $i$. Entrywise, $\mathcal P_i(Q_i)=\lambda_i^{-1}\mathsf P_i(Q_i)$
+in the finite product of copies of $\mathcal F_4^0$; the product of a
+convergent scalar sequence and a convergent vector sequence converges to
+the product of the limits, which gives the first implication. The trace is
+linear and continuous on that finite product, so
+$\operatorname{tr}\mathcal P_i(\Delta_i)=\lambda_i^{-1}
+\operatorname{tr}\mathsf P_i(\Delta_i)\to\operatorname{tr}M_1
+=4\mathcal O$. Finally
+$\|z_i\operatorname{tr}\mathcal P_i(Q_i)\|
+=\lambda_i^{-1}\|z_i\operatorname{tr}\mathsf P_i(Q_i)\|
+\le2\|z_i\operatorname{tr}\mathsf P_i(Q_i)\|$ for large $i$, which tends
+to zero when the right side does.
+\end{proof}
+
+Since $z_i=\widehat\beta_{k_i}$, the washout limits of the branch unit
+with $p=1$ are exactly the hypotheses
+$z_i\operatorname{tr}\mathsf P_i(Q_i)\to0$ for $Q_i\in\{L_i,\Omega_i\}$.
+By the lemma, the field limits and the exponent-one principal and false
+trace limits used below hold for $\mathcal P_i$, conditional on the
+inputs of the branch unit and on the first clock input. The exact
+identity for $\mathcal Y_i(T_i)$ below uses only
+$\mathcal P_i=q_i\mathcal Y_i$ and linearity, so it is unaffected.
 
 These are the field receipts used below:
 \begin{align}
