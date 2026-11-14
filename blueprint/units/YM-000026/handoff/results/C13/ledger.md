@@ -592,6 +592,24 @@ with all hypotheses and constants in the separate prose supplier and its
 actual output/dictionary identities; the presence of the zero-order renewal
 alone does not establish that full match.
 
+Update (#323; audit #325, independent check #342, phase 2 by
+`hairer-claude-323p2-20261114`). The "order zero" of `Station.anew` is the
+weight exponent of `Cash.Renewed` (`thinPay k = ours 0 k 0 0 = reward k`),
+not a derivative order, and `anew` is never projected. The derivative order
+is the `Station` parameter `j`. On the C13 route `swaths → bannersL`
+(`he : B.order ≤ j`), the ordered prices come from the same stations
+(`deposits`):
+- D1: `N.conduit`/`Utopia.stream`;
+- D2: `N.permitAverage`;
+- D3: `army.applies` ← `purchases`, consumed in `E6/Bandle.lean`;
+- `fleets`.
+
+The caveat in `selected-history-limits.tex` now states that no value-order
+continuity theorem is needed. The remaining input is the matching statement
+S1: the auxiliary chartlet of `selected-nonlinear-offering.tex` satisfies the
+local hypotheses of `sec:activity-jet-assembly` and
+`sec:parameter-comparison-suppliers`. It is tracked as follow-up #368.
+
 The separate `reviews/parent-mixed-compiler-review.md` independently records
 a bounded conditional pass at the current mixed-compiler hash
 `a082a48ada2824588270987ed27e303d9ca247cb7525f608359a68b2654eb020`.
