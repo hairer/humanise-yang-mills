@@ -1,0 +1,219 @@
+% Producer of the pairwise receipt (G3) of subsec:trace-rounded-comparison.
+% Issue #372 (parent #56, C15). Correspondence and evidence:
+% blueprint/units/YM-000026/handoff/results/C15/author/hairer-claude-372-20261114/.
+\subsection{The pairwise receipt from the level budget}
+\label{subsec:trace-rounded-receipt}
+
+We now derive the receipt (G3) of
+Subsection~\ref{subsec:trace-rounded-comparison} from two properties of
+the funded chart witnesses of
+Section~\ref{sec:ex-lattice-firesky-gallery}: a scale allowance, stated in
+(A) below, and a root-test bound at each level whose size is an explicit
+negative power of the clock monitor, stated in (B) below. The width clause
+uses only (A) and the growth of the monitor. The two root-test bounds
+\eqref{eq:trace-rounded-receipt-one}--\eqref{eq:trace-rounded-receipt-two}
+use only (B) and the growth of the monitor. The selection of the chart
+levels then supplies (G3) at the cost $\varepsilon_i=(i+1)^{-1}$. At the
+end of the subsection we show how the replica-root estimate of
+Section~\ref{sec:rank-root-normalization} yields (B), and isolate what
+remains open.
+
+\paragraph{Charts at a fixed level.}
+Throughout, $\mu_k\ge1$ is the clock monitor of (G1), with
+$\mu_k\to\infty$; it is the diverging monitor $\mathcal M_k$ of
+Section~\ref{sec:rank-root-normalization}. Fix a grade cutoff $d$ and
+let $n=d+2$ be the arity cap of the funded chart family at grade $d$.
+Consider a chart of that family at level $k$ with base arc $b>0$. Put
+\[
+ m=\mu_k^{\,b},\qquad r=a_km,
+\]
+so that $r=g_b(k)$ in the notation of \eqref{eq:ex-lattice-firesky-gap}.
+Let $a_{\ell}$ be the spacing of the middle cell of the chart, and let $w$
+be its root depth, the depth of the centered tiling on which root tests
+are taken. A configuration $x\in(\mathbb R^4)^2$ is \emph{fit for the
+chart} if the grid configuration $a_k\lceil mx\rceil$ is coordinatewise
+separated and each of its coordinates has absolute value at most
+$a_\ell/8$. For the chart selected at index $i$, with
+$(k,b)=(k_i,b_i)$, this is exactly fitness at level $i$ as defined in
+Subsection~\ref{subsec:trace-rounded-comparison}. As there, for a fit
+$x$ and $e,e'\in E_{d'}$ with $d'\le d$, we write $f_0^{N,p}$,
+$f_1^{N,p}$ for the finite-volume insertions of the chart labels of $e$
+and $e'$ at the two sites of $a_k\lceil mx\rceil$. We write
+$j_0,j_1,\kappa$ for the reference values at $q=\rho_m(x)$, and
+$\Phi_s$ ($s\subseteq\{0,1\}$) for the parts of the corrected polynomial
+defined there. Thus $\Phi_{\{c\}}=f_c^{N,p}-j_c$ and
+$\Phi_{\{0,1\}}=(f_0^{N,p}-j_0)(f_1^{N,p}-j_1)-\kappa$.
+
+We use the following two properties of the funded chart witnesses.
+\begin{enumerate}
+\item[(A)] \emph{Allowance.} Every chart of the family at level $k$ with
+ base arc $b$ satisfies
+ \begin{equation}\label{eq:trace-receipt-allowance}
+  m\,\mu_k^{2}\le\frac{a_\ell}{a_k},
+  \qquad\text{equivalently}\qquad r\,\mu_k^2\le a_\ell .
+ \end{equation}
+\item[(B)] \emph{Level budget.} There is $K_B=K_B(d)$ with the following
+ property. Let $k\ge K_B$ and consider any chart of the family at level
+ $k$, any grade $d'\le d$, any basis vectors $e,e'$ of $E_{d'}$, any
+ $N>k$, any period $p$, and any $x$ fit for the chart with
+ $\rho_m(x)\in\mathcal W$. Then, for every nonempty
+ $s\subseteq\{0,1\}$, the root test of the centered tiling at depth $w$
+ for the Wilson law at $(N,p)$ satisfies
+ \begin{equation}\label{eq:trace-receipt-budget}
+  \|\Phi_s\|_{\mathrm{root}}\le\mu_k^{-1/(16n)} .
+ \end{equation}
+\end{enumerate}
+In (B) the threshold $K_B$ depends on the grade cutoff, the chosen bases
+and the window $\mathcal W$. It does not depend on the chart, on
+$(N,p)$, or on $x$. Since there are finitely many grades $d'\le d$ and
+finitely many pairs of basis vectors, a threshold for each fixed pair
+yields one for all of them by taking the maximum.
+
+\begin{lemma}[The width clause]\label{lem:trace-receipt-width}
+Assume (A). Let $R>0$ and suppose $\mu_k^2\ge8R$. For a chart at level
+$k$ with base arc $b$, let $t\in(\mathbb Z^4)^2$ be such that
+$y=m^{-1}t$ is coordinatewise separated and $|y|\le R$. Then $y$ is fit
+for the chart. In particular, if $\mu_k^2\ge800$, the width clause of
+(G3) holds for that chart.
+\end{lemma}
+\begin{proof}
+Since $my=t$ has integer coordinates, $\lceil my\rceil=t$, and the grid
+configuration of $y$ is
+\[
+ z=a_k\lceil my\rceil=a_kt=a_kmy=ry .
+\]
+Multiplication by $r>0$ preserves the strict order of real numbers, so
+$z$ is coordinatewise separated because $y$ is. Each coordinate
+satisfies $|z_{c,\nu}|=r|y_{c,\nu}|\le r|y|\le rR$, because a coordinate
+of a vector in $\mathbb R^{8}$ is bounded by its Euclidean norm. By
+\eqref{eq:trace-receipt-allowance} and $\mu_k^2\ge8R$,
+\[
+ rR\le\frac{a_\ell}{\mu_k^2}\,R\le\frac{a_\ell}{8R}\,R=\frac{a_\ell}{8}.
+\]
+Hence $y$ is fit. The width clause of (G3) is the case $R=100$, and
+there $8R=800$.
+\end{proof}
+
+\begin{lemma}[Cost of the root tests]\label{lem:trace-receipt-cost}
+Assume (B), and let $0<\varepsilon\le1$. If $k\ge K_B$ and
+$\mu_k\ge\varepsilon^{-16n}$, then for every chart of the family at level
+$k$ the bounds
+\eqref{eq:trace-rounded-receipt-one}--\eqref{eq:trace-rounded-receipt-two}
+hold with $\varepsilon$ in place of $\varepsilon_i$. This holds for every
+grade $d'\le d$, all basis vectors $e,e'$ of $E_{d'}$, all $N>k$, all
+$p$, and every $x$ fit for the chart with $\rho_m(x)\in\mathcal W$.
+\end{lemma}
+\begin{proof}
+The function $t\mapsto t^{-1/(16n)}$ is decreasing on $(0,\infty)$, so
+$\mu_k\ge\varepsilon^{-16n}$ gives
+$\mu_k^{-1/(16n)}\le(\varepsilon^{-16n})^{-1/(16n)}=\varepsilon$. By
+(B), $\|\Phi_s\|_{\mathrm{root}}\le\varepsilon$ for each nonempty
+$s\subseteq\{0,1\}$. By the identities recalled above, the left sides
+of \eqref{eq:trace-rounded-receipt-one} and
+\eqref{eq:trace-rounded-receipt-two} are exactly
+$\|\Phi_{\{c\}}\|_{\mathrm{root}}$ and
+$\|\Phi_{\{0,1\}}\|_{\mathrm{root}}$.
+\end{proof}
+
+Since $\mu_k\to\infty$, the conditions of the two lemmas,
+\[
+ k\ge K_B(d),\qquad \mu_k^2\ge800,\qquad \mu_k\ge\varepsilon^{-16n},
+\]
+hold at all sufficiently large levels $k$. We write $K(d,\varepsilon)$
+for the least level beyond which they all hold.
+
+\begin{proposition}[Producer of the pairwise receipt]
+\label{prop:trace-rounded-receipt}
+Assume (A) and (B) at every grade cutoff. Suppose that at index $i$ the
+gallery selection of Section~\ref{sec:ex-lattice-firesky-gallery}, with
+grade cutoff $d=i$ and cost index $l=i$, takes its chart at a level
+\begin{equation}\label{eq:trace-receipt-level}
+ k_i\ge K\bigl(i,(i+1)^{-1}\bigr).
+\end{equation}
+Then the selected data satisfy (G3) at the cost
+$\varepsilon_i=(i+1)^{-1}$, including its width clause. Moreover
+\eqref{eq:trace-receipt-level} can always be arranged, and it is
+compatible with the other requirements of the selection.
+\end{proposition}
+\begin{proof}
+Fix $i$, and let $n=i+2$ be the arity cap at grade cutoff $i$. The selected
+chart has level $k_i\ge K(i,(i+1)^{-1})$ and base arc $b_i$, so
+$m=\mu_{k_i}^{b_i}=m_i$ and the fitness of the previous paragraphs is
+fitness at level $i$. Since $\mu_{k_i}^2\ge800$,
+Lemma~\ref{lem:trace-receipt-width} with $R=100$ gives the width clause:
+every $y=m_i^{-1}t$ that is coordinatewise separated with $|y|\le100$ is
+fit at level $i$. Since $k_i\ge K_B(i)$ and
+$\mu_{k_i}\ge(i+1)^{16n}=\varepsilon_i^{-16n}$,
+Lemma~\ref{lem:trace-receipt-cost} with $\varepsilon=\varepsilon_i$ gives
+\eqref{eq:trace-rounded-receipt-one}--\eqref{eq:trace-rounded-receipt-two}.
+These hold for every grade $d'\le i$, all basis vectors of $E_{d'}$, all
+$N>k_i$, all $p$, and every $x$ fit at level $i$ with
+$\rho_{m_i}(x)\in\mathcal W$. This is (G3).
+
+For the last assertion, recall from
+Section~\ref{sec:ex-lattice-firesky-gallery} how the one-step chart
+theorem produces its output at grade cutoff $i$. It returns a level curve
+tending to infinity and selects one point on it. All the other
+requirements of the selection hold at all sufficiently late points of
+that curve: the requested scale below the given threshold, the index
+beyond the previous one, and the remaining finite-level receipts. The
+condition \eqref{eq:trace-receipt-level} also holds at all sufficiently
+late points, because the levels tend to infinity. A finite intersection
+of sets of late points is again such a set, and in particular nonempty.
+So the selected point can be taken in it. Strict scale selection
+(Lemma~\ref{lem:ex-lattice-firesky-selection}) uses only the output of
+the one-step theorem and is unchanged.
+\end{proof}
+
+\paragraph{Supply of the level budget.}
+The bound \eqref{eq:trace-receipt-budget} is the replica-root estimate of
+Section~\ref{sec:rank-root-normalization} at marker allowance $M=n$.
+There, with
+\[
+ I_k=\frac{\log\mu_k}{16n},\qquad a=e^{2I_k}=\mu_k^{1/(8n)}\ge1 ,
+\]
+a coefficient whose pushed marked density has the local estimate with
+coefficient price $a^{q|I|}$ and per-site expense $X\le1+n$ satisfies
+\eqref{eq:rank-root}. If moreover the stage ticket satisfies
+$T_n\le I_k$, then the right side of \eqref{eq:rank-root} is at most
+$e^{I_k}/a^{|I|}$. For a nonempty marker subset $|I|\ge1$ and $a\ge1$,
+so this is at most $e^{I_k}/a=e^{-I_k}=\mu_k^{-1/(16n)}$. The marker
+subsets $I$ are the nonempty $s\subseteq\{0,1\}$. The coefficients are
+the one-point and corrected two-point parts $\Phi_s$ themselves, as
+Section~\ref{sec:rank-root-normalization} requires. The coefficient
+price $a^{q_0|I|}$ with $X\le1+n$ on the same pushed density is obtained
+in Section~\ref{sec:allarity-marked-propagation}, from the scalar
+envelope \eqref{eq:allarity-density-envelope} at the constant marker
+weight \eqref{eq:allarity-marker-weight} with $u=M=n$. That derivation
+is conditional on the one-step purchases of the recurrence there,
+\eqref{eq:allarity-step-purchases}--\eqref{eq:allarity-step-small}, on
+the common history.
+
+\paragraph{Status.}
+Proposition~\ref{prop:trace-rounded-receipt} produces (G3) from (A) and
+(B). The steps from (A), (B) and the divergence of the monitor to (G3)
+are proved above, including the choice of the selected levels. The
+allowance (A) is a scale constraint of the chart at its level; it
+belongs to the funded chart witness of
+Section~\ref{sec:ex-lattice-firesky-gallery}, which records the witness
+but does not display this inequality. The numerical part of (B), from a
+coefficient price $a^{q|I|}$ with $X\le1+n$ and the purchase
+$T_n\le I_k$ to \eqref{eq:trace-receipt-budget}, is the computation just
+given. The input that remains open is the following.
+For every $k\ge K_B(d)$ and every chart witness of the funded family at
+level $k$, the pushed marked density of the two-site corrected
+polynomial on the centered tiling at depth $w$ must satisfy two
+conditions:
+\begin{enumerate}
+\item it has the coefficient price $a^{q|I|}$ with $a=\mu_k^{1/(8n)}$
+ and $X\le1+n$, on a lawful representation satisfying the hypotheses of
+ Section~\ref{sec:rank-root-normalization};
+\item the stage ticket satisfies $T_n\le I_k$.
+\end{enumerate}
+Both must hold uniformly in $N>k$, in $p$, in the fit $x$ with rounding
+in $\mathcal W$, and in the basis labels of grades at most $d$.
+The first unsupported implication is from the finite-volume chart witness
+(its chart, invoice, legacy-cost, actuation and stamp data) to the
+one-step purchases of Section~\ref{sec:allarity-marked-propagation} on
+the history of that witness. We have not located a derivation of this
+implication in the present text.
