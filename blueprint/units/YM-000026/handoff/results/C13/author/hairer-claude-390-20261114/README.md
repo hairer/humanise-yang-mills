@@ -36,3 +36,23 @@ New `subsec:allarity-corrected-budget`, appended at the end of `manuscript/exist
 - `latexmk -pdf -interaction=nonstopmode -halt-on-error existence.tex` (on top of #389): exit 0, 1048 pages, 0 undefined references. pp. 796–798 inspected.
 - `python3 scripts/check_blueprint.py`: see the PR.
 - No Lean elaboration.
+
+## Revision (reuse of canonical units)
+
+I found that `sec:allarity-cumulant-comparison` already proves:
+- the moment error ≤ H^{−3/2} (`eq:allarity-moment-error` with its scale powers);
+- the finite-logarithm stability and corrected cumulant bound (`eq:allarity-cumulant-error`, ≤ H^{−31/32}).
+
+I also found that `sec:marked-healthy-cumulant-launch` proves the healthy local error ≤ H^{−3/2} (the former input (V)).
+
+Following AGENTS.md (reuse canonical proof units), the following changes were made:
+- `lem:allarity-log-lipschitz` and the inputs (M)/(V) are removed;
+- `lem:allarity-corrected-pieces` now cites those results;
+- the status paragraph lists their hypotheses as the remaining inputs:
+  - the reader covariance and vertex bounds at ξ = ε = H^{−2};
+  - the low-grade calibration;
+  - the mixed compiler's row and covariance comparison;
+  - the terminal paid insertion bound;
+  - the common purchases.
+
+Rebuilt: exit 0, 1048 pages, 0 undefined references; pp. 796–797 inspected.

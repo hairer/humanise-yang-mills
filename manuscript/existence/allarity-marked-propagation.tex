@@ -790,76 +790,43 @@ pushed invoice is $\exp_*(D_Q-D_R)$. The leading family to be
 propagated is therefore the \emph{corrected} connected polynomial
 $D_Q-D_R$, not $D_Q$ itself.
 
-\paragraph{A Lipschitz bound for the marker logarithm.}
-On $\mathscr A_V$ with $|V|=n$, let $\|\cdot\|_1$ be the unweighted
-coefficient $\ell^1$ norm. It is submultiplicative: this is the case
-$\omega=1$ of Section~\ref{sec:allarity-marked-propagation}. For $X$ with
-zero constant coefficient, $X^{j}=0$ for $j>n$. Put
-\[
- \log_*(1+X)=\sum_{j=1}^{n}\frac{(-1)^{j+1}}{j}X^j ,
-\]
-the inverse of $\exp_*$ on such elements.
-
-\begin{lemma}\label{lem:allarity-log-lipschitz}
-If $X,X'$ have zero constant coefficient and
-$\|X\|_1,\|X'\|_1\le\mu$, then
-\[
- \|\log_*(1+X)-\log_*(1+X')\|_1
- \le\|X-X'\|_1\sum_{j=1}^{n}\mu^{j-1}.
-\]
-\end{lemma}
-\begin{proof}
-Write $X^j-X'^j=\sum_{i=0}^{j-1}X^i(X-X')X'^{\,j-1-i}$. This uses only
-commutativity. By submultiplicativity each of the $j$ terms has norm at
-most $\mu^{j-1}\|X-X'\|_1$. Divide by $j$ and sum over
-$1\le j\le n$.
-\end{proof}
-
 \paragraph{The corrected budget.}
-We use two inputs at the launch level, uniformly in $N>k$, $p$, the fit
-point with rounding in $\mathcal W$, and the basis labels, for all large
-$s$.
-\begin{enumerate}
-\item[(M)] \emph{Moment comparison.} The Gaussian-history moments $q_T$
- of the launched labels differ from the reference moments $S_0(T)$ by at
- most $H^{-3/2}$, for every $T\subseteq\{0,\dots,n-1\}$.
-\item[(V)] \emph{Value comparison.} On the required healthy regions,
- each actual leading piece differs from the corresponding coefficient
- of $D_Q$ by at most $H^{-3/2}$.
-\end{enumerate}
+The bound on the corrected pieces is already proved in
+Section~\ref{sec:allarity-cumulant-comparison}. There the free moment
+polynomial $q'$ is the reference moment polynomial $1+X_R$, and the
+moment polynomial $q$ of the same Gaussian history is $1+X_Q$. If the
+coefficientwise moment error is at most $H^{-3/2}$, then
+\eqref{eq:allarity-cumulant-error} gives
+$\|D_Q-D_R\|_1+H^{-3/2}\le H^{-31/32}$ for all large $s$. That moment
+error is \eqref{eq:allarity-moment-error} at the powers of its scale
+paragraph. The actual healthy local error between a planted leading
+coefficient and the coefficient of $D_Q$ is at most $H^{-3/2}$ by
+Section~\ref{sec:marked-healthy-cumulant-launch}. Both statements hold
+under the hypotheses stated in those sections, which are recalled in the
+status paragraph below.
 
 \begin{lemma}[Corrected leading pieces]
 \label{lem:allarity-corrected-pieces}
-Let $C_{\mathcal W}$ bound the reference moments $|S_0(T)|$ over the
-rounded configurations in the compact window $\mathcal W$ and the
-finitely many basis labels. Assume (M) and (V). Then, for all large
-$s$, every corrected leading piece, that is, an actual leading piece
-minus the corresponding coefficient of $D_R$, is at most $H^{-31/32}$ on
-its healthy region. Consequently its incidence price at the weight
-$\omega$ is at most
+Assume the moment error $H^{-3/2}$ of
+Section~\ref{sec:allarity-cumulant-comparison} and the healthy local error
+$H^{-3/2}$ of Section~\ref{sec:marked-healthy-cumulant-launch}, at the
+launch level. Then, for all large $s$, every corrected leading piece, that
+is, an actual leading piece minus the corresponding coefficient of $D_R$,
+is at most $H^{-31/32}$ on its healthy region. Its incidence price at the
+weight $\omega$ is at most
 \[
  h=c\,H^{-27/32},\qquad c=2^nR_e .
 \]
 \end{lemma}
 \begin{proof}
-The constant $C_{\mathcal W}$ is finite. The reference moments are
-continuous on the compact window, which consists of configurations with
-distinct points, and there are finitely many labels. Write $1+X_Q$ and
-$1+X_R$ for the moment polynomials, so that $D_Q=\log_*(1+X_Q)$ and
-$D_R=\log_*(1+X_R)$. By (M), $\|X_Q-X_R\|_1\le2^nH^{-3/2}$. Also
-$\|X_R\|_1\le2^nC_{\mathcal W}$, so both norms are at most
-$\mu=2^n(C_{\mathcal W}+1)$ once $H^{-3/2}\le1$.
-Lemma~\ref{lem:allarity-log-lipschitz} gives
-\[
- \|D_Q-D_R\|_1\le2^nn\mu^{n-1}H^{-3/2}.
-\]
-Adding the value comparison (V), each corrected piece is at most
-$(2^nn\mu^{n-1}+1)H^{-3/2}\le H^{-31/32}$ once
-$H^{3/2-31/32}=H^{17/32}\ge2^nn\mu^{n-1}+1$. For the weighted incidence
-price, a piece of mode $I$ carries weight
-$\omega^{|I|}\le H^{1/8}$ by \eqref{eq:allarity-weight-cap}, and support
-charge at most $R_e$ by Lemma~\ref{lem:allarity-step-charge}. At most
-$2^n$ modes contain a given mark. Hence the incidence price is at most
+The first assertion is the triangle inequality applied to the healthy
+local error and \eqref{eq:allarity-cumulant-error}, as in the last
+paragraph of Section~\ref{sec:allarity-cumulant-comparison}. Each
+coefficient is bounded by the coefficient $\ell^1$ norm. For the price, a
+piece of mode $I$ carries weight $\omega^{|I|}\le H^{1/8}$ by
+\eqref{eq:allarity-weight-cap}, and support charge at most $R_e$ by
+Lemma~\ref{lem:allarity-step-charge}. At most $2^n$ modes contain a given
+mark. Hence the incidence price is at most
 $2^nR_eH^{1/8}H^{-31/32}=cH^{-27/32}$.
 \end{proof}
 
@@ -942,11 +909,20 @@ replace three things: the budget $H^{-4}$ of
 Lemma~\ref{lem:allarity-step-outputs}, the incidence $H^{-2}$, and the
 purchases with $\delta=H^{-1}$. In their place they use the actual
 corrected budget $cH^{-27/32}$, the incidence $Y$, and $\delta=H^{-1/2}$.
-The remaining inputs here are the moment comparison (M) and the value
-comparison (V) at the launch level. We have not located a manuscript
-derivation of (M). It concerns the Gaussian forecast of the launched
-labels at the middle level and the reference moments at the tested
-point, and is the counterpart of the chart's scale-calibration data.
+The two $H^{-3/2}$ inputs are proved in
+Sections~\ref{sec:allarity-cumulant-comparison}
+and~\ref{sec:marked-healthy-cumulant-launch}, conditionally on the
+hypotheses stated there:
+\begin{itemize}
+\item the reader covariance and vertex bounds at the powers
+ $\xi=\varepsilon=H^{-2}$, $B=H^{\lambda}$;
+\item the exact low-grade calibration of
+ Section~\ref{sec:allarity-coordinate-calibration};
+\item the actual mixed compiler's per-step row and covariance comparison;
+\item the terminal paid insertion bound;
+\item the common purchases.
+\end{itemize}
+These are the remaining inputs of the corrected budget.
 
 The application also uses a structural simplification, which we only
 record here. The leading family need only be launched once, at the
