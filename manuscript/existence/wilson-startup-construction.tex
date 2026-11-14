@@ -376,7 +376,9 @@ number, a reserved forced label with that support and inventory;
 these lists do not depend on $\beta$. The regular and forced address
 lists of $F_\beta$ are those of the fixed dictionary, and the
 regular, respectively forced, coefficient of $F_\beta$ on every
-reserved label is zero.
+reserved label is zero. The additional predicate of the reserved forced
+label with support $X$ and inventory $I$ holds at a configuration $U$
+exactly when $X\cap\operatorname{flags}(U)=I$.
 
 Suppose in addition that the stationary plan of the history has the
 startup path as its terminal path at $(N,N)$, as in
@@ -398,7 +400,11 @@ its image is zero. A reserved forced label is the group consisting of
 one reserved hard label alone. Every grouped label of the packed
 family consists of packed labels, so a reserved forced label is not
 among them, and every grouped entry outside the image of the packed
-family is zero. For the second part, the retained-history conditions at
+family is zero. A reserved forced label is read as the group of one
+reserved hard label of shape $(X,I)$. Reading it recovers exactly the
+support $X$ and the inventory $I$, and its additional predicate is the
+original test for that single shape. That test is the flag condition
+$X\cap\operatorname{flags}(U)=I$. For the second part, the retained-history conditions at
 level $N$ are: the path is the terminal path of the plan, the clip
 and budget are those of level $N$, the arrays satisfy the stage
 bounds at the allowances $\delta_E,\delta_K$, the path satisfies its
