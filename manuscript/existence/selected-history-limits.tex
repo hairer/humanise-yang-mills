@@ -185,8 +185,117 @@ satisfy the local hypotheses of
 Sections~\ref{sec:activity-jet-assembly}
 and~\ref{sec:parameter-comparison-suppliers}, on the same input, path
 and dictionaries, with the healthy-mask, width and cutoff premises
-retained there. Together with the transition hypotheses above, this
-matching is the input retained by the convergence conclusion below.
+retained there. Lemma~\ref{lem:selected-chartlet-matching} reduces
+this matching to the auxiliary stationary-service input that
+Section~\ref{sec:selected-nonlinear-offering} already lists. Together
+with the transition hypotheses above, this is the input retained by the
+convergence conclusion below.
+
+\begin{lemma}[The auxiliary chartlet meets the comparison hypotheses]
+\label{lem:selected-chartlet-matching}
+Fix a stage and a point $x$ of an input interval. Consider the auxiliary
+torus of Section~\ref{sec:selected-nonlinear-offering}, carrying the
+same block bridge, the same two paths and clips, and the fine threshold,
+radius and band at $\beta_F(x_0)$. Consider its reference fine
+representation, the bare path action with the zero activity array.
+Assume the auxiliary stationary-service input of that section: a
+uniform stationary service for the same incoming path on the auxiliary
+one-step datum, the identification of its branch with the branch of the
+stationary plan, and the transfer of the thermal estimate. Then this
+representation satisfies the incoming hypotheses of
+Sections~\ref{sec:activity-jet-assembly}
+and~\ref{sec:parameter-comparison-suppliers}, at every fixed derivative
+order $j$, as follows:
+\begin{enumerate}
+\item \emph{Incoming activity budgets.} The regular and forced arrays
+  are zero. Hence their regular and forced costs vanish, and every
+  activity budget, packet hypothesis and cluster hypothesis imposed on
+  them holds trivially.
+\item \emph{Sector and shell access.} The block equation, the two
+  adjacent kernel bounds and the all-period positive lower bounds are
+  those of the selected horizon. They apply on every auxiliary torus, so
+  the local expansion and its differentiated remainder bounds are
+  available there. The shell-access constants are those of the same
+  sector construction.
+\item \emph{Warnings.} The deterministic safety and plateau inequalities
+  of Section~\ref{sec:gaussian-warnings} hold, with their safety
+  conditions produced in Section~\ref{sec:warning-safety}. That
+  production concerns the fixed sector data and does not involve the
+  activity array.
+\item \emph{Protected chart.} The comparison chart is the stationary
+  chart of Section~\ref{sec:uniform-stationary-chart}, restricted to the
+  coarse horizon. Its identification with the graph used in the
+  stationary estimates is the branch identification in the assumed
+  auxiliary stationary-service input, on the same block, path and
+  clipping data.
+\item \emph{Running-curve data.} The renewed price bounds are the zero
+  costs of (1) together with the fine path bounds and the clock
+  inequality for the loop allowance. The geometric bounds on the
+  downward map are the kernel bounds of (2). The initial action is the
+  admissible bare path action. The inequality
+  $\operatorname{preExponent}/B\le\operatorname{width}/2$ is
+  \eqref{eq:selected-offer-width}, which gives
+  $A_c/B_c\le\sigma_c/4$. The clipping, the path and the regular and
+  forced dictionaries are those of the physical comparison, with
+  elementary labels identified by the identity. The displayed output is
+  the constructed output of the local expansion on that torus.
+\end{enumerate}
+The healthy-support condition on a tested family of labels is not a
+property of the representation. It is a premise of
+Section~\ref{sec:activity-jet-assembly} for each family to which the
+product estimate is applied, and it is retained there unchanged.
+Consequently the supplier construction of
+Section~\ref{sec:parameter-comparison-suppliers} applies to the
+auxiliary chartlet at order $j$. It yields the ordered derivative
+prices at every order through $j$ by the same estimates as the value
+prices.
+\end{lemma}
+
+\begin{proof}
+Each item is read off from the construction of the auxiliary data in
+the subsection ``Keeping the physical and auxiliary data fixed'' of
+Section~\ref{sec:selected-nonlinear-offering}, together with the
+sections cited in the statement.
+
+(1) The array is zero, so every coefficient vanishes. Regular and
+forced costs are suprema of sums of nonnegative multiples of the
+absolute values of these coefficients, hence zero. Every incoming
+budget of the two cited sections is an upper bound by a nonnegative
+allowance, so it holds.
+
+(2) The cited subsection states that the auxiliary tori carry the same
+block bridge and paths, and that the all-period kernel bounds apply on
+every such torus, so that the local expansion and its differentiated
+remainder bounds are available there. The shell-access constants are
+constants of the sector construction on the selected horizon, which is
+the same on these tori.
+
+(3) The safety and plateau inequalities are deterministic statements
+about the fixed sector, warning catalogue and thresholds, produced in
+Section~\ref{sec:warning-safety}. They do not involve the activity
+array.
+
+(4) This is the protected-chart requirement of
+Section~\ref{sec:parameter-comparison-suppliers}. That section
+identifies a stationary chart with the graph of its estimates exactly
+when its representative is a critical point of the same tested action
+in the fine zone. On the auxiliary torus, this is the identification of
+the auxiliary stationary branch with the plan's branch, which is part
+of the assumed stationary-service input. Its eventual protected-field
+condition holds because $\tau(x)\to0$.
+
+(5) Each clause is quoted from the cited subsection and from
+\eqref{eq:selected-offer-width}, since
+$A_c/B_c\le\sigma_c/4\le\sigma_c/2$. The output identification holds
+because the auxiliary output is, by definition, the output of the local
+expansion applied to this representation.
+
+Finally, Section~\ref{sec:parameter-comparison-suppliers} chooses its
+thresholds before the incoming representation is supplied, and then
+instantiates its constants at that representation. Its conclusions
+therefore apply to every representation satisfying (1)--(5), and in
+particular to the chartlet.
+\end{proof}
 
 When these same-input hypotheses are supplied, all hypotheses of
 Section~\ref{sec:coupled-background-convergence} are on one and the
