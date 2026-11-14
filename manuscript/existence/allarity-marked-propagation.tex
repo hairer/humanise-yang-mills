@@ -1002,3 +1002,33 @@ $(\alpha+1)^{\ell-w}\le H^{q-\kappa-1/2}$, which holds by
 Lemma~\ref{lem:allarity-lower-count-free} with $q-\kappa-1/2>0$ in place
 of $q-3/2$. Its proof applies verbatim to any fixed positive exponent.
 \end{proof}
+
+\begin{lemma}[The forced inputs of the lower rungs]
+\label{lem:allarity-lower-forced}
+In Lemma~\ref{lem:allarity-lower-propagation}, hypothesis~3 can be
+dropped. More precisely, take the incoming forced budget of each lower
+rung to be the forced output $G(y)$ of the preceding rung, at the
+transition the forced output $G(x_\ell)^2$ of the leading interval, and
+replace the bounds $z_t$ by $\max(z_t,H^{-q})$. Then the conclusions of
+that lemma hold for all large $s$.
+\end{lemma}
+\begin{proof}
+The lower calculation of Section~\ref{sec:actual-mixed-marked-compiler}
+uses its incoming forced budget $\eta$ in exactly two places: the
+marker-root term $T_e\eta$, and the site term
+$\mathcal W(B_c)L^4T_e\eta$. With $\eta=z\omega_j\le z$, it bounds them by
+$T_ez$ and by $K/16$ for $z\le H^{-1/2}$. Both bounds hold verbatim for
+any $\eta\le z$. Now $G$, and hence $G^2$, decays faster than every power
+of $H$ uniformly on $[s/2,s]$. So for large $s$ every incoming forced
+budget is at most $H^{-q}\le\max(z_t,H^{-q})$. Replacing $z_t$ by
+$\max(z_t,H^{-q})$ keeps the induction of
+Lemma~\ref{lem:allarity-lower-propagation}. Indeed, if
+$H^{-q}\le z_t$, then
+$\max(\alpha z_t+H^{1/2}z_t^2,H^{-q})\le(\alpha+1)z_t$, since
+$\alpha\ge1$. The starting value $\max(z_0,H^{-q})$ is at most
+$H^{\kappa-q}$ under Lemma~\ref{lem:allarity-upper-count-power}. The forced
+outputs are at most $G(y_j)\le1$ as before.
+\end{proof}
+
+Consequently item~3 of the status list of
+Subsection~\ref{subsec:allarity-output-transport} is also discharged.

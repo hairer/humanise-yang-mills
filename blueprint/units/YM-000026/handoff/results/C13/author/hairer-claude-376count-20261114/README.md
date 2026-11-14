@@ -20,3 +20,9 @@ New `subsec:allarity-lower-count` at the end of `allarity-marked-propagation.tex
 
 - `latexmk … existence.tex` (stacked): exit 0, 1049 pages, 0 undefined references. pp. 798–799 inspected.
 - `python3 scripts/check_blueprint.py`: see the PR.
+
+## Addendum: lower forced inputs
+
+`lem:allarity-lower-forced` drops hypothesis 3 of `lem:allarity-lower-propagation`. The lower calculation uses its incoming forced budget only through T_eη and 𝒲(B_c)L⁴T_eη, so any η ≤ z works. Take η to be the previous forced output G(y), which is ≤ H^{−q} eventually, and floor the z_t at H^{−q}. This discharges #389 item 3. The source's lower step (`ExhibitsSky`) uses the forced input z·w(u). The manuscript argument avoids needing a lower bound on w(u).
+
+Checks: `latexmk` exit 0, 0 undefined references; p. 799 inspected.
