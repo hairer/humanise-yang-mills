@@ -383,3 +383,39 @@ is not displayed in Section~\ref{sec:ex-lattice-firesky-gallery} and is
 an input there. The lawful-representation suppositions at the output
 level and the coefficient price are supplied by the output transport of
 the marked density, not here.
+
+\subsection{The clock threshold and loop capacity}
+\label{subsec:rank-root-clock-threshold}
+
+The suppositions above use a clock threshold $\theta_{\rm clock}$ and a
+clock loop capacity $\Lambda_{\rm clock}$ at the output level $m$. They
+are the following functions of the clock of
+Section~\ref{sec:common-scale-selection}:
+\[
+ \theta_{\rm clock}(m)=\widehat\beta_m^{-1/2}\,\mathcal M_m,\qquad
+ \Lambda_{\rm clock}(m)=2\,\mathcal M_m^{\vartheta_{J(m)}},
+\]
+where $\mathcal M_m=\exp((\log\log\widehat\beta_m)^2)$ and
+$\vartheta_j\ge0$ is the loop exponent of the stage profile $\pi_j$.
+
+\begin{lemma}[The late-scale purchases]
+\label{lem:rank-root-late-scale}
+Include the thresholds $H_j$ below for each stage $j$ in
+the all-stage payment \eqref{eq:common-allstage-payment}. Then at every
+level $m$ with $J(m)>j_*$,
+\[
+ \widehat\beta_m\theta_{\rm clock}(m)^3\le1,\qquad
+ \widehat\beta_m\theta_{\rm clock}(m)^4\le1,\qquad
+ \Lambda_{\rm clock}(m)\theta_{\rm clock}(m)^2\le1 .
+\]
+\end{lemma}
+\begin{proof}
+Write $x=\widehat\beta_m$ and $u=\log\log x$. The three quantities are
+$x^{-1/2}e^{3u^2}$, $x^{-1}e^{4u^2}$ and
+$2x^{-1}e^{(\vartheta_{J(m)}+2)u^2}$. Each is at most one as soon as
+$(\vartheta_{J(m)}+4)u^2+\log2\le\tfrac12\log x=\tfrac12e^{u}$. For fixed
+$j$ this holds for all $x$ beyond a threshold $H'_j$, because
+$u^2e^{-u}\to0$. Put $H_j=\max(H'_j,H'_{j-1})$. The all-stage payment
+gives $H_{J(m+1)}\le\widehat\beta_m$. Since $J(m)\le J(m+1)\le J(m)+1$,
+this covers the stage $J(m)$ of level $m$.
+\end{proof}
