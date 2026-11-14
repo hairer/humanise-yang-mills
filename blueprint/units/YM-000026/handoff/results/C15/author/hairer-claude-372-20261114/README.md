@@ -51,3 +51,26 @@ Allowance (A) is part of the source witness (`AllowedSky` inside `LegacyCostSky.
 - `latexmk -pdf -interaction=nonstopmode -halt-on-error existence.tex` in `manuscript/`: exit 0, 1034 pages, 0 undefined references. Rendered pp. 1006–1008 were inspected.
 - `python3 scripts/check_blueprint.py`: see the PR body.
 - No Lean was elaborated, because the network blocks Mathlib.
+
+## Addendum: revision after review #383 (session `hairer-claude-372rev1-20261114`)
+
+- Claim: https://github.com/hairer/humanise-yang-mills/issues/372#issuecomment-6878353810
+- Base: `codex/existence-monograph` @ `bdd348c`.
+- Review: `results/C15/review/stalex444-claude-373rev-20261114/` (stalex444). That record is not edited.
+
+| Finding | Response |
+|---|---|
+| M1 (required) | The "Moreover" proof now uses only stated gallery facts. The producer is called with θ' = min(θ, min_{j<K} a_j); the radius g_b(k) = a_k μ_k^b ≥ a_k forces k ≥ K. `lem:ex-lattice-firesky-selection` applies verbatim with the reduced thresholds. The Status sentence was adjusted. |
+| M2 (required) | `prop:trace-rounded-receipt` now identifies w_i of (G4) with the selected chart's root depth w and requires (G4) at that depth. The root depth is glossed as the depth of both the receipt and the chamber condition. "Root depth" was added as item 3 of the open list. |
+| M3 | (A) is now open item 1. The missing definition of the middle cell is noted. The parent Status now says "the inputs". |
+| M4 | The supply paragraph states the premise P_R(X) − 4D log g/q_0 ≤ T_M and all clock conditions of `sec:rank-root-normalization`. Open item 2(b) asks for the eventual harmonic threshold as a level threshold in K_B. |
+| M5 | The supply paragraph lists every allarity input: step purchases, compiler outputs, terminal-source purchase, step-count purchase, and propagation to the q_0-site output torus. |
+| M6 | n is renamed to the marker allowance M = M_d = d+2, explicitly distinguished from the gallery's arity cap l. The gallery is not edited. |
+| M7 | K(d,ε) is now the least K such that the conditions hold for every k ≥ K. The proposition's hypothesis is stated for every i. |
+| M8 | q_0 is used for the replica cell count throughout; q appears only through ρ_m(x). |
+| M9 | n no longer appears in the note. |
+| L1 | The quantifier of (B) is made explicit: thresholds are fixed before the chart is chosen. The note says the chart-uniform form is used by the M1 argument, and that a per-curve form would suffice for the first assertion only. |
+| C12 | (A) is now stated for k ≥ K_A(d), and K_A is added to K(d,ε). |
+| L15 | Recorded: the μ_k ≥ 1 filter of `open_readSky` is not needed by the argument. |
+
+Checks run: `latexmk -pdf -interaction=nonstopmode -halt-on-error existence.tex` → exit 0, 1039 pages, 0 undefined references; rendered pp. 1011–1013 inspected. `python3 scripts/check_blueprint.py` → OK.
