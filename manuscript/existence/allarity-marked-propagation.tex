@@ -764,3 +764,169 @@ allowance must supply at every level of $[w,k]$. We have not located
 their display in Section~\ref{sec:ex-lattice-firesky-gallery}. Item 3
 requires a lower bound on the attenuations $\omega_j$, which we have not
 located.
+
+\subsection{The corrected leading budget}
+\label{subsec:allarity-corrected-budget}
+
+Lemma~\ref{lem:allarity-step-outputs} assumed a leading family of
+weighted marker budget $H^{-4}$. The actual leading family is much
+larger: it is controlled at the level $H^{-27/32}$. We show that this
+is enough, after re-tuning two parameters of the upper calculation and
+of the forced purchase. We keep the notation of
+Subsections~\ref{subsec:allarity-step-supply}
+and~\ref{subsec:allarity-output-transport}. In particular
+$\mathcal I=\exp_*(-D_R)\prod_c(1+f_cz_c)$ is the invoice, with
+$D_R=D$ the reference cumulant polynomial.
+
+\paragraph{The reference factor commutes with every push.}
+The polynomial $\exp_*(-D_R)$ has field-independent coefficients. Every
+block integration and every push acts linearly and coefficientwise on
+the marker algebra. So each of them commutes with multiplication by
+$\exp_*(-D_R)$. Hence the pushed invoice at any level is
+$\exp_*(-D_R)$ times the pushed product of the insertions. If the
+latter has principal part $\exp_*(D_Q)$, with $D_Q$ the connected
+polynomial of the same Gaussian history, then the principal part of the
+pushed invoice is $\exp_*(D_Q-D_R)$. The leading family to be
+propagated is therefore the \emph{corrected} connected polynomial
+$D_Q-D_R$, not $D_Q$ itself.
+
+\paragraph{The corrected budget.}
+The bound on the corrected pieces is already proved in
+Section~\ref{sec:allarity-cumulant-comparison}. There the free moment
+polynomial $q'$ is the reference moment polynomial $1+X_R$, and the
+moment polynomial $q$ of the same Gaussian history is $1+X_Q$. If the
+coefficientwise moment error is at most $H^{-3/2}$, then
+\eqref{eq:allarity-cumulant-error} gives
+$\|D_Q-D_R\|_1+H^{-3/2}\le H^{-31/32}$ for all large $s$. That moment
+error is \eqref{eq:allarity-moment-error} at the powers of its scale
+paragraph. The actual healthy local error between a planted leading
+coefficient and the coefficient of $D_Q$ is at most $H^{-3/2}$ by
+Section~\ref{sec:marked-healthy-cumulant-launch}. Both statements hold
+under the hypotheses stated in those sections, which are recalled in the
+status paragraph below.
+
+\begin{lemma}[Corrected leading pieces]
+\label{lem:allarity-corrected-pieces}
+Assume the moment error $H^{-3/2}$ of
+Section~\ref{sec:allarity-cumulant-comparison} and the healthy local error
+$H^{-3/2}$ of Section~\ref{sec:marked-healthy-cumulant-launch}, at the
+launch level. Then, for all large $s$, every corrected leading piece, that
+is, an actual leading piece minus the corresponding coefficient of $D_R$,
+is at most $H^{-31/32}$ on its healthy region. Its incidence price at the
+weight $\omega$ is at most
+\[
+ h=c\,H^{-27/32},\qquad c=2^nR_e .
+\]
+\end{lemma}
+\begin{proof}
+The first assertion is the triangle inequality applied to the healthy
+local error and \eqref{eq:allarity-cumulant-error}, as in the last
+paragraph of Section~\ref{sec:allarity-cumulant-comparison}. Each
+coefficient is bounded by the coefficient $\ell^1$ norm. For the price, a
+piece of mode $I$ carries weight $\omega^{|I|}\le H^{1/8}$ by
+\eqref{eq:allarity-weight-cap}, and support charge at most $R_e$ by
+Lemma~\ref{lem:allarity-step-charge}. At most $2^n$ modes contain a given
+mark. Hence the incidence price is at most
+$2^nR_eH^{1/8}H^{-31/32}=cH^{-27/32}$.
+\end{proof}
+
+\begin{lemma}[The upper calculation at the corrected budget]
+\label{lem:allarity-upper-retuned}
+Make the assumptions of Lemma~\ref{lem:allarity-step-outputs}, except that
+the leading family has marker budget at most $h=cH^{-27/32}$. Put
+\[
+ Y=3T_ecH^{-27/32},\qquad
+ l=\max\Bigl(1,\frac{Y}{\alpha z+H^{-q}}\Bigr),\qquad m=G(x_i)^{-2}.
+\]
+Then, for all large $s$, the upper calculation of
+Section~\ref{sec:actual-mixed-marked-compiler} holds with $Y$ in place of
+$H^{-3}$. Its output has:
+\begin{enumerate}
+\item nonleading regular marker-root price at most $(\alpha+1)z$;
+\item leading marker-root price at most $Y$;
+\item forced site price at most $G(x_i)^2$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+We recheck the three numerical facts that the upper calculation uses.
+\begin{itemize}
+\item \emph{Marker-root price.} Here $T_e\eta+a\le Y$, where
+ $a=lT_ez+2T_eh$ and $\eta=G(y_i)$. If $l>1$, then
+ $lT_ez\le YT_ez/(\alpha z)\le Y/8$ because $\alpha\ge8T_e$. If $l=1$,
+ then $T_ez\le T_eH^{-4}\le Y/8$ for large $s$. Next,
+ $2T_eh=\tfrac23Y$. Finally $T_e\eta\le Y/8$ for large $s$, since $G$
+ decays faster than every power of $H$. The sum is at most
+ $(\tfrac18+\tfrac23+\tfrac18)Y<Y$.
+\item \emph{Site price.} The site price satisfies $\Sigma\le K/4$ with
+ $K=H^{-1/8}$. Its new term is $\mathcal W(B_c)\,n\,a\le\mathcal W(B_c)nY$.
+ Since $\mathcal W(B_c)=H^{o(1)}$, this is $H^{o(1)-27/32}\le K/16$ for
+ large $s$. The other two terms are as before.
+\item \emph{Shadow condition.} The condition $lx_i^{-1}\le1$ holds, since
+ $l\le\max(1,YH^{q})\le H^{q}$ and $H^{q}=x_i^{o(1)}$.
+\end{itemize}
+The outputs then follow exactly as in the proof of
+Lemma~\ref{lem:allarity-step-outputs}, with $Y$ in place of $H^{-3}$. The
+nonleading price is at most $Y/l\le\alpha z+H^{-q}\le(\alpha+1)z$. The
+leading price is at most $T_e\eta+a\le Y$. The forced site price is at most
+$(e^\Sigma-1)/m\le G(x_i)^2$.
+\end{proof}
+
+\begin{lemma}[The forced step at the corrected budget]
+\label{lem:allarity-forced-retuned}
+Let $Z=Y$ be the principal incidence price and put $\delta=H^{-1/2}$.
+Then, for all large $s$, uniformly in the leading rungs,
+\begin{equation}\label{eq:allarity-retuned-purchases}
+ G_i+nYR_{e+1}\le\delta,\qquad(2B_i+1)^4\delta\le1,\qquad
+ e^{\delta}-1\le1 .
+\end{equation}
+Hence \eqref{eq:allarity-realign-forced-input} holds with $s=G_i^2$,
+$g=g_i$ and this $\delta$. The regrouped forced price is at most
+$e^{-g_i}(e^{\delta}-1)\le G_i$. The recurrence of this section therefore
+holds with \eqref{eq:allarity-retuned-purchases} in place of the second
+purchase in \eqref{eq:allarity-step-purchases} and of
+\eqref{eq:allarity-step-small}. Its conclusions are unchanged: remainder
+$d_{k-i}$, forced price $G_i$, and the exact prescribed principal
+polynomial.
+\end{lemma}
+\begin{proof}
+First, $G_i=G(x_i)\le\delta/2$ for large $s$. Second,
+$nYR_{e+1}=3nT_ecR_{e+1}H^{-27/32}\le\delta/2$ once
+$H^{11/32}\ge6nT_ecR_{e+1}$. As in
+Lemma~\ref{lem:allarity-step-purchases},
+$(2B_i+1)^4\le\exp\{4\log9+16\log\log s\}$. This is at most
+$H^{1/2}=\exp\{(\log\log s)^2/2\}$ once $\log\log s\ge36$. Last,
+$e^{\delta}-1\le1$ since $\delta\le1$. With $e^{g_i}G_i^2=G_i$, the first
+inequality is the first condition of
+\eqref{eq:allarity-realign-forced-input}. The output bound is
+\eqref{eq:allarity-realign-forced-output}, and
+$e^{-g_i}(e^\delta-1)\le e^{-g_i}=G_i$. The regular realignment and the
+discrepancy purchase are unaffected.
+\end{proof}
+
+\paragraph{Status.}
+Lemmas~\ref{lem:allarity-corrected-pieces}--\ref{lem:allarity-forced-retuned}
+replace three things: the budget $H^{-4}$ of
+Lemma~\ref{lem:allarity-step-outputs}, the incidence $H^{-2}$, and the
+purchases with $\delta=H^{-1}$. In their place they use the actual
+corrected budget $cH^{-27/32}$, the incidence $Y$, and $\delta=H^{-1/2}$.
+The two $H^{-3/2}$ inputs are proved in
+Sections~\ref{sec:allarity-cumulant-comparison}
+and~\ref{sec:marked-healthy-cumulant-launch}, conditionally on the
+hypotheses stated there:
+\begin{itemize}
+\item the reader covariance and vertex bounds at the powers
+ $\xi=\varepsilon=H^{-2}$, $B=H^{\lambda}$;
+\item the exact low-grade calibration of
+ Section~\ref{sec:allarity-coordinate-calibration};
+\item the actual mixed compiler's per-step row and covariance comparison;
+\item the terminal paid insertion bound;
+\item the common purchases.
+\end{itemize}
+These are the remaining inputs of the corrected budget.
+
+The application also uses a structural simplification, which we only
+record here. The leading family need only be launched once, at the
+middle level, rather than propagated step by step from $k$. By the
+commuting reference factor, the launch only has to produce
+$\exp_*(D_Q-D_R)$ at that level. Whether the per-step recurrence on
+$[\ell,k)$ can be replaced in this way is left open.
