@@ -59,8 +59,11 @@ principal and two correction directions. The correction map is
  \mathsf S_i(c_0,c_1)=c_0\Omega_i+c_1\Delta_i,
  \qquad \mathsf B_i=\mathsf K_i\mathsf S_i.
 \]
-Let $q_i>0$ be the selected effective coupling and $\rho_i$ its positive
-response-size price; these are the scales in the paid bounds below.
+Let $q_i>0$ be the selected arch scale at the summit level (the
+quantity $\zeta(k_i)$ of the clock paragraph below; it is compared with
+the branch unit's effective coupling in
+Lemma~\ref{lem:ex-lattice-scribe-normalization-ratio}) and $\rho_i$ its
+positive response-size price; these are the scales in the paid bounds below.
 The optical comparison identity, which is an input here, states that on
 the selected tail the comparison map is the divergence followed by the
 scaled inverse chart: for every $Q\in E$ and every axis $a$,
@@ -272,7 +275,11 @@ the two ordered indices gives the chart formula
 \end{equation}
 The selected coefficient convergence gives $W_i^Q(a,b)\to
 W_{\nu_Q}(a,b)$, and the fourth-order maps converge in operator norm,
-$\mathsf M_i\to\mathsf M_\infty$. Thus, entry by entry in the finite
+$\mathsf M_i\to\mathsf M_\infty$; for the present normalization this
+uses $\vartheta_i\to1$ of
+Lemma~\ref{lem:ex-lattice-scribe-normalization-ratio}, since $\mathsf M_i$
+is $\vartheta_i^{-1}$ times the branch unit's moment map. Thus, entry by
+entry in the finite
 stress array,
 \[
  \mathcal P_i(Q_i)\longrightarrow\mathcal B_{\nu_Q},\qquad
@@ -302,11 +309,11 @@ $\omega_i=\beta_Z(k_i)r_i^4$, where $\beta_Z$ is its effective coupling,
 whereas the present crown normalization uses the arch scale $q_i$ in
 place of $\beta_Z(k_i)$. Thus, with
 \[
- \lambda_i=\frac{\beta_Z(k_i)}{q_i}>0,
+ \vartheta_i=\frac{\beta_Z(k_i)}{q_i}>0,
 \]
 the scaled pullback $\mathcal P_i$ is the entrywise application of
-$\lambda_i^{-1}\mathsf P_i$, and $\mathsf M_i$ is its centered moment
-map, which is $\lambda_i^{-1}$ times that of $\mathsf P_i$. The
+$\vartheta_i^{-1}\mathsf P_i$, and $\mathsf M_i$ is its centered moment
+map, which is $\vartheta_i^{-1}$ times that of $\mathsf P_i$. The
 ordered labels are $W_i^Q=W^{b}_{k_i}$ for the branch $b=\nu_Q$, and
 $M_0=M(w^0)$, $M_\Omega=M(w^-)$, $M_1=M(w^+)$.
 Its proposition `Three branch field limits' (label
@@ -320,10 +327,11 @@ and its trace formula (label \texttt{eq:ex-branch-three-traces}) gives
 $\operatorname{tr}M_1=4\mathcal O$. Those propositions are conditional on
 their own recording, transport and chart inputs. They are used here as
 external inputs; the finite-array argument written out above repeats the
-proof of the first of them under the same hypotheses.
+proof of the first of them under the same hypotheses, together with
+$\vartheta_i\to1$ of Lemma~\ref{lem:ex-lattice-scribe-normalization-ratio}.
 
 Those conclusions are stated for $\mathsf P_i$. They transfer to
-$\mathcal P_i=\lambda_i^{-1}\mathsf P_i$ because of the following lemma.
+$\mathcal P_i=\vartheta_i^{-1}\mathsf P_i$ because of the following lemma.
 
 \begin{lemma}[The two normalizations agree asymptotically]
 \label{lem:ex-lattice-scribe-normalization-ratio}
@@ -332,12 +340,15 @@ unit (proved in its scale-ratio paragraph, after the display labelled
 \texttt{eq:ex-branch-lift-beta-ratio}, from its running estimate and
 fixed-scale limit), and the first clock input
 $\zeta(j)/\widehat\beta_j\to1$ of
-\eqref{eq:ex-lattice-scribe-clock-inputs}. Then $\lambda_i\to1$.
+\eqref{eq:ex-lattice-scribe-clock-inputs}. Here $\widehat\beta_j$ is the
+same clock coupling in both statements: the branch unit and this section
+use the hatted coupling of the one selected clock. Then $\vartheta_i\to1$.
 Consequently, for $Q_i\in\{L_i,\Omega_i,\Delta_i\}$ with reference
 tensors $M_0,M_\Omega,M_1$,
 \begin{gather*}
  \mathsf P_i(Q_i)\to M\ \Longrightarrow\ \mathcal P_i(Q_i)\to M,
  \qquad
+ \mathsf P_i(\Delta_i)\to M_1\ \Longrightarrow\
  \operatorname{tr}\mathcal P_i(\Delta_i)\to4\mathcal O,\\
  z_i\operatorname{tr}\mathsf P_i(Q_i)\to0\ \Longrightarrow\
  z_i\operatorname{tr}\mathcal P_i(Q_i)\to0 .
@@ -349,21 +360,22 @@ $j_i\to\infty$, so $k_i\to\infty$. Hence both ratio limits hold along
 $j=k_i$. The quantities $\beta_Z(k_i)$, $q_i=\zeta(k_i)$ and
 $\widehat\beta_{k_i}$ are positive, and
 \[
- \lambda_i=\frac{\beta_Z(k_i)/\widehat\beta_{k_i}}
+ \vartheta_i=\frac{\beta_Z(k_i)/\widehat\beta_{k_i}}
                {\zeta(k_i)/\widehat\beta_{k_i}}
  \longrightarrow\frac11=1 .
 \]
-In particular $\lambda_i^{-1}\to1$, and $\lambda_i^{-1}\le2$ for all
-large $i$. Entrywise, $\mathcal P_i(Q_i)=\lambda_i^{-1}\mathsf P_i(Q_i)$
+In particular $\vartheta_i^{-1}\to1$, and $\vartheta_i^{-1}\le2$ for all
+large $i$. Entrywise, $\mathcal P_i(Q_i)=\vartheta_i^{-1}\mathsf P_i(Q_i)$
 in the finite product of copies of $\mathcal F_4^0$; the product of a
 convergent scalar sequence and a convergent vector sequence converges to
 the product of the limits, which gives the first implication. The trace is
 linear and continuous on that finite product, so
-$\operatorname{tr}\mathcal P_i(\Delta_i)=\lambda_i^{-1}
+if $\mathsf P_i(\Delta_i)\to M_1$, then
+$\operatorname{tr}\mathcal P_i(\Delta_i)=\vartheta_i^{-1}
 \operatorname{tr}\mathsf P_i(\Delta_i)\to\operatorname{tr}M_1
-=4\mathcal O$. Finally
+=4\mathcal O$ by the trace formula of the branch unit. Finally
 $\|z_i\operatorname{tr}\mathcal P_i(Q_i)\|
-=\lambda_i^{-1}\|z_i\operatorname{tr}\mathsf P_i(Q_i)\|
+=\vartheta_i^{-1}\|z_i\operatorname{tr}\mathsf P_i(Q_i)\|
 \le2\|z_i\operatorname{tr}\mathsf P_i(Q_i)\|$ for large $i$, which tends
 to zero when the right side does.
 \end{proof}
