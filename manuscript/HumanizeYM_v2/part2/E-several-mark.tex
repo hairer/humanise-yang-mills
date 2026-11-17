@@ -1,0 +1,230 @@
+\paragraph{Replicated sources.}
+Several insertions are carried at once by giving each a nilpotent mark. This is the device of the observable field in~\cite[Section~2.3]{BauerschmidtBrydgesSlade2015}, where only terms of order at most one in each external field are retained. For a finite set of slots $I_0$, work in the commutative algebra $\C[z_i:i\in I_0]/(z_i^2:i\in I_0)$. Write $z_I=\prod_{i\in I}z_i$ for the mode~$I$. The exact source density starts at
+\begin{equation}\label{eq:E-multiple-density}
+ \mathcal H_N(z;U)=\density\rho_N(U)\prod_{i\in I_0}(1+z_iF_i(U)),
+ \qquad \mathcal H_m=\blockmap{m}_{\beta_{N,p,m+1}}\mathcal H_{m+1}.
+\end{equation}
+Thus its normalized $z_I$ integral is the cutoff moment of the corresponding physical insertions. At level~$m$ write its local representation as
+\begin{equation}\label{eq:E-source-form}
+\begin{aligned}
+ &e^{\Phi_m(U)+\sum_i z_if_{i,m}(U)+\sum_X H_{m,X}(z;U)}
+ \\
+ &\quad\cdot\sum_{\mathcal A\ {\rm eligible}}
+ \prod_{Y\in\mathcal A}
+ \left(K_{m,Y}(U)+\sum_i z_i k_{i,m,Y}(U)+K^{\ge2}_{m,Y}(z;U)\right).
+\end{aligned}
+\end{equation}
+Here $\Phi_m$ is the unmarked exponent, $f_{i,m}$ and $k_{i,m,Y}$ are the complete one-insertion exponential and forced terms, including their physical spacing factors. The polynomials $H_{m,X}$ and $K^{\ge2}_{m,Y}$ contain only modes $z_I$ with $|I|\ge2$. Their support contains every anchor indexed by a nonzero mode. The regular terms include their health masks, and each forced term retains its eligibility test. For a single mark, $z_1^2=0$ gives $e^{\Phi_m+z_1f_{1,m}}=e^{\Phi_m}(1+z_1f_{1,m})$, and~\eqref{eq:E-source-form} is the representation of Definition~\ref{def:D26} with
+\begin{equation*}
+ f_{1,m}=a_m^{-d}\Bigl\{x_0+\mathbf1_{\Sigma_d\,\mathrm{healthy}}P_d[t_m^{-\factorcount}\mathbf x_m^\circ]+\sum_i\mathbf1_{Z_i\,\mathrm{healthy}}R_i\Bigr\},
+ \qquad k_{1,m,Y_i}=a_m^{-d}Q_i,
+\end{equation*}
+at $\mathbf v=\mathsf Z^{-1}_{N,p,d}c$. The higher modes record the connected terms that integration creates between different marks. Rescaling mark~$h$ by $\mathsf w_h>0$, its \emph{mark weight}, multiplies the coefficient of $z_I$ by $\prod_{h\in I}\mathsf w_h$; a bound of order one on the rescaled source therefore bounds that coefficient by $\prod_{h\in I}\mathsf w_h^{-1}$.
+
+At the cutoff, the healthy and unhealthy parts of different insertions
+must be assembled together. A single forced support can meet more than
+one unhealthy stencil, even when their anchors are far apart. The
+following construction gives the higher forced modes required in that
+case; no activity is divided by.
+
+For a two-mark example, let $K(U)$ be a selected eligible forced
+activity, and let $b_1(U),b_2(U)$ be two unhealthy complement factors
+whose stencils meet its support. Suppressing the common field~$U$, the
+part formed using these factors is
+\[
+ K(1+z_1b_1)(1+z_2b_2)
+ =K+z_1Kb_1+z_2Kb_2+z_1z_2Kb_1b_2.
+\]
+The coefficient of $z_1z_2$ contains the original activity once. A
+product that repeats a mark, such as $z_1(z_1z_2)$, is zero. This exact
+algebra does not by itself give the support estimates needed for
+propagation.
+
+\begin{lemma}[Joint terminal forced modes]\label{lem:E-joint-terminal}
+Fix a finite set of allowed degrees $\mathcal D$ and a finite family of
+primary insertions of degrees $d_h\in\mathcal D$, with distinct anchors.
+Assume their stencils have the fixed radii of their degrees and their
+positive mark weights at $N$ satisfy
+$\mathsf w_{h,N}a_N^{-d_h}|\mathbf x_{h,N}|_1\le\zeta_{d_h,N}$.
+At a sufficiently late Wilson start of Lemma~\ref{lem:D3}, the exact polynomial
+\eqref{eq:E-multiple-density} admits the form~\eqref{eq:E-source-form}:
+its regular higher modes vanish, and its forced higher modes are
+indexed by connected unions of unhealthy stencils and selected original
+forced supports. Each retains the original eligibility tests, the union
+of their inventories, and the product of each selected activity once.
+For a fixed degree set the weighted forced sums, including the higher
+modes, obey the attachment bound of
+Lemma~\ref{lem:E-source-attachments} on a sufficiently late terminal
+level, uniformly in the number of marks, cutoff and period, provided
+there is at most one anchor at each site. The singleton terms agree with
+the construction in Lemma~\ref{lem:E2.1}.
+\end{lemma}
+\begin{proof}
+Expand the finite product in~\eqref{eq:E-multiple-density}, and split
+each chosen section into its healthy term and its unhealthy complement.
+Fix a term and an eligible family of original forced activities. Join
+each complement stencil to the selected supports it meets, and join
+intersecting complement stencils. Every complement contains a flag, so
+exact coverage gives it at least one incident selected support. Collapse
+each connected component containing a complement to one new address:
+its support and inventory are the unions of those of its constituents,
+and its value is the product of the complements and selected activities,
+with their original eligibility tests and the exact flag test on the
+union. Leave untouched selected supports in the cover. The collapsed
+supports are disjoint, and expansion of their constituent indices
+recovers the original selection and the assignment of marks uniquely.
+Thus this is an identity coefficient by coefficient, including at zeros
+of the original activities. Add zero unmarked slots for these indexed
+addresses when needed. For one complement the component is exactly the
+merged address of Lemma~\ref{lem:E2.1}.
+
+For the bound, use the complete stencil as the read support and the
+absolute majorant of each complement. The weighted singleton estimate
+used in~\eqref{eq:E-attachment-allowance} bounds its size by
+$A_{j,d_h}\widehat\beta_N^{q^{\rm ht}_{d_h}}\zeta_{d_h,N}$, with the
+fixed stencil and support factors included. It is at most
+$A_{j,d_h}\widehat\beta_N^{-4}$. At most a fixed number of stencils of
+each admitted degree can meet a site, because anchor occupancy is one;
+the finite maximum of their radii and constants gives one site bound,
+independent of the number of marks. The original Wilson forced
+majorants have, at every fixed larger support exponent, a site sum
+bounded by a polynomial in $B_N$ times $\exp(-c\beta_Nt_N^2)$, by the
+counting estimate in the proof of Lemma~\ref{lem:D3}. The extra
+exponent absorbs the union support. Every new forced component contains
+at least one original forced support. Charge half of each such support's
+Wilson suppression before applying the rooted tree bound of
+Lemma~\ref{lem:D-rooted}; root at a constituent containing the site
+being tested, which may be an original forced support rather than a
+stencil. Summing the possible site roots and dividing by
+$\epsilon_N^{\rm for}$ gives, for fixed stage constants $C_j,c_j>0$,
+\[
+ (2B_N+1)^4\sup_x\sum_{a:x\in Z_{a,N}}v^{\rm new,for}_{a,N}
+ \le C_j(1+B_N)^{C_j}\widehat\beta_N^{C_j}
+ \frac{e^{-c_j\beta_Nt_N^2}}{\epsilon_N^{\rm for}}
+ \le\frac{\eta_N^{\rm att}}4.
+\]
+The forced normalization is $\kappa_N=(\epsilon_N^{\rm for})^{1/2}$;
+dividing by the smaller $\epsilon_N^{\rm for}\le1$ gives the stronger
+upper bound displayed here.
+The remaining halves of the suppressions make the forced-support tree
+sum convergent; the stencil site bound includes all degrees together.
+Since $\beta_Nt_N^2\ge(\cutoffsize_N)^2/2$ and
+$\epsilon_N^{\rm for}=e^{-(\cutoffsize_N)^{1/5}}$, the prefactor tends
+to zero on the selected late terminal levels. Increasing the entry makes
+this contribution and the regular singleton contribution each fit one
+quarter of the attachment threshold; the latter uses the strengthened
+entry bound~\eqref{eq:E-attachment-allowance}. Their sum fits the
+combined site bound in Lemma~\ref{lem:E-source-attachments}. All
+estimates precede summation over the finite marker family and are
+uniform in the period. Absolute convergence permits the countable
+forced-address sums and their regrouping.
+\end{proof}
+
+Connected terms with at least two marks need large supports, because distinct marked anchors are far apart. We record this once, since the stopping estimate uses it again.
+\begin{lemma}[Marked covering estimate]\label{lem:E-cover}
+Let $B\ge8$. If a support $X$ contains $n\ge2$ anchors at pairwise periodic max-distance at least $B^2$, then
+\begin{equation}\label{eq:E-marked-cover}
+ Bn\le64\cover_{B}(X).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Take a minimal cover of $X$ by $M=\cover_B(X)$ radius-$B$ balls with connected union. Join their centers by a tree with edges of length at most $2B+1$. Its doubled traversal has length at most $6B(M-1)$. Assign each anchor to one covering center. Distinct anchors have distinct centers, and the distance between any two assigned centers is at least $B^2-2B$. Visit these centers in their cyclic order in the traversal. The triangle inequality gives $n(B^2-2B)\le6B(M-1)$, so $n(B-2)\le6M$. For $B\ge8$ we have $B-2\ge\tfrac34B$, hence $Bn\le8M\le64M$. The argument uses the periodic max-distance and needs no nonwrapping assumption.
+\end{proof}
+The estimate permits each source weight to be enlarged by $e^{\delta B/64}$ per mark when $\delta$ units of the support exponent are removed.
+
+The rooted expansion needs a bound on all the other marked factors. We verify it for the primary insertions of Definition~\ref{def:D08}, with their selected coefficient graphs, before taking any replicated integral. For mark~$h$ of degree $d_h$ at level~$i$ let $\mathbf x_{h,i}$ be its dimensionless singleton coefficient, let $b_{h,i}=a_i^{-d_h}|\mathbf x_{h,i}|_1$, and let $v_{a,i}^{\rm src}$ be the weighted integrated majorants of the other marked factors on their complete read supports $Z_{a,i}$, with derivative and support weights as in Lemma~\ref{lem:D-connected}.
+\begin{lemma}[Marked attachments]\label{lem:E-source-attachments}
+Fix a finite set of degrees $\mathcal D$ and let $\max_{d\in\mathcal D}\reflevel{d}\le k\le N$, with $d\le J_i$ for every $d\in\mathcal D$ and $i\ge k$. Consider finitely many primary insertions of degrees $d_h\in\mathcal D$ on one selected trajectory, whose anchors have level-$i$ ancestors pairwise at periodic distance at least $B_i^2$ for $k\le i\le N$. Give mark~$h$ weights with $\mathsf w_{h,i+1}=\widehat\beta_{i+1}^{-1}\mathsf w_{h,i}$ and $\mathsf w_{h,k}b_{h,k}\le\zeta_{d_h,k}$. Then, for $k\le i\le N$,
+\begin{equation*}
+ (2B_i+1)^4\sup_x\sum_{a:x\in Z_{a,i}}v_{a,i}^{\rm src}\le\eta^{\rm att}_i/2,
+\end{equation*}
+uniformly in the cutoff, the period and the number of marks.
+\end{lemma}
+\begin{proof}
+The proof is an induction down the levels: the rooted clause of Lemma~\ref{lem:D-connected} bounds each step, the covering estimate controls the changing mark weights. Closing the bound also requires the higher-mode estimate identified below. The singleton coefficients are controlled by Lemma~\ref{lem:E-marked-step} and their format by Lemma~\ref{lem:E2.2a}.
+
+For the local expansion, give a mode $z_I$ the weight $\prod_{i\in I}w_i$, with $w_i>0$. The resulting coefficient norm is submultiplicative: multiplication sums over disjoint splittings of~$I$, exactly the splittings in the product of the two weighted norms. The coefficientwise rooted clause of Lemma~\ref{lem:D-connected} applies in this algebra, with the attachment bound at the preceding stage of the construction. Derivative and support weights are included in the separate majorants $v_{a,i}$; no submultiplicativity is asserted for them. Connected terms with at least two marks obey~\eqref{eq:E-marked-cover} with $B=B_k$, because distinct anchors are separated by $B_k^2$ and $B_k\ge8$.
+
+The weight change from $\mathsf w_{h,i+1}$ to $\mathsf w_{h,i}$ introduces the factor $\widehat\beta_{i+1}^{|I|}$ on a mode~$I$. For $|I|\ge2$, Lemma~\ref{lem:E-cover} at level~$i$ gives
+\begin{equation*}
+ \widehat\beta_{i+1}^{|I|}
+ \le\exp\!\left\{\frac{64\log\widehat\beta_{i+1}}{B_i}
+                        \cover_{B_i}(X)\right\}.
+\end{equation*}
+The coefficient of the covering number tends to zero at fixed stage, since $B_i\asymp(\log\widehat\beta_i)^2$ and $\widehat\beta_{i+1}/\widehat\beta_i\to1$. The source entry bounds therefore absorb this increase into the extra support exponent at each step. The singleton terms use the coefficient and graph bounds established below. This controls the varying weights on all modes with at least two marks.
+
+The weights $\mathsf w_{h,i}$ estimate the intermediate source polynomials; the weight in the final integral remains $\mathsf w_{h,k}$. The inverse estimate of Lemma~\ref{lem:E-marked-step} gives $b_{h,i+1}\le\ell_i^{d_h} C^{\rm col}_{J_{i+1}}b_{h,i}$. Applying~\eqref{eq:E-source-allowance-transport} to each $d_h$ gives
+\begin{equation*}
+ \mathsf w_{h,i}b_{h,i}\le\zeta_{d_h,i}\qquad(k\le i\le N).
+\end{equation*}
+For each $h$ the graph norm has the same bound with its column constant included in $A_{j,d_h}$. The normalized forced terms retain their original eligibility events. Their remaining large-field suppression absorbs the fixed derivative factors before the forced normalization is divided out.
+
+Here is the conversion from a marked-anchor bound to the site sum required by Lemma~\ref{lem:D-connected}. Each support contains its marked anchor. If it also contains a site~$x$ at distance $R$ from that anchor, its connected covering number is at least $R/(2B_i+1)$. One reserved unit of support exponent thus gives a factor at most $e^{-R/(2B_i+1)}$. Distinct anchors have occupancy one, so summing this factor over them is bounded by
+\begin{equation*}
+ \sum_{z\in\Z^4}e^{-|z|_\infty/(2B_i+1)}\le C(1+B_i)^4.
+\end{equation*}
+This estimate also bounds the periodic sum, by lifting the distinct anchors to nearest representatives. For a mark of degree $d_h$, the finite derivative products and polynomial evaluations are bounded by $A_{j,d_h}\widehat\beta_i^{q^{\rm ht}_{d_h}}$. Rooted attachment sums use the other reserved support unit to absorb $e^{\eta^{\rm att}_in_\star}$; summing their convergent tree majorants enlarges the bound by at most two, after decreasing $\eta^{\rm att}_i$ if necessary. For the singleton weighted majorants $v_{a,i}^{(1)}$ this gives
+\begin{equation*}
+ (2B_i+1)^4\sup_x\sum_{a:x\in Z_{a,i}}v_{a,i}^{(1)}
+ \le2A_{j,*}(2B_i+1)^4(1+B_i)^4\widehat\beta_i^{-4}\le\eta^{\rm att}_i/4,
+\qquad A_{j,*}=\max_{d\in\mathcal D}A_{j,d}.
+\end{equation*}
+The last inequality is the maximum of the finitely many corresponding
+inequalities~\eqref{eq:E-attachment-allowance}; occupancy is used once
+for the combined family, not once per degree. The joint terminal
+representation of Lemma~\ref{lem:E-joint-terminal} also supplies a
+forced higher-mode site bound at the initial level. To complete the
+induction, one must propagate a stronger anchored majorant for the
+already-formed higher modes and the new joins, at a fine support
+exponent that retains the output reserve after reweighting. The
+singleton estimate above does not by itself establish that propagation.
+The application of the complete attachment bound at later levels is
+therefore conditional on this remaining estimate.
+\end{proof}
+
+The next estimate is the source of all volume-uniform bounds. Place one copy of the insertion in every cell of the level-$m$ tiling, give each copy a nilpotent mark, and integrate down to a level~$k$ at which every cell contains $(a_m/a_k)^4$ sites. The marks stay at distance at least $B_i^2$ at every intermediate level. The attachment condition for their complete source depends on the higher-mode propagation still required in Lemma~\ref{lem:E-source-attachments}; the following bound is conditional on that input. At level~$k$ each mark contributes the factor $e^6/\mathsf w_k$, where $\mathsf w_k^{-1}=a_k^{-d}e^{o(s_k)}$ is the size of the transported insertion, and each site contributes the unmarked normalization $e^{q_k}$ of Lemma~\ref{lem:E-normalization-cost}. Taking the $|\mathcal C^{\rm tile}_m|$-th root gives the per-insertion bound $\mathsf w_k^{-1}e^{6+(a_m/a_k)^4q_k}$.
+
+We also use the estimate for a residual observable~$E$ with an exact source representation. Call $\mathsf wE$ controlled at level~$k$ when its weighted singleton exponential bound is at most~$3$, its forced singleton bound is at most~$1$, and the connected regular and forced bounds contribute at most one each per mark, with the original eligibility tests. The source evolution from its initial level down to~$k$ must retain these bounds and satisfy the attachment bounds~\eqref{eq:E-attachment-allowance} at every intervening level. This condition concerns the complete source, including its forced terms.
+Fix $d$ and a bounded coefficient ball. A stopping pair is a pair of levels $\reflevel{d}\le m\le k$ with $B_k^2\le a_m/a_k$.
+\begin{lemma}[Replicated source bound]\label{lem:E-replication}
+There are mark weights $\mathsf w_k>0$, independent of~$p$, such that, for each stopping pair, some $N_0(d,\text{ball},m,k)$ gives, for all $N\ge N_0$ and all~$p$,
+\begin{equation*}
+ \mathsf w_k^{|\mathcal C^{\rm tile}_m|}
+ \left|\left\langle\prod_{C\in\mathcal C^{\rm tile}_m}(O(c))_C\right\rangle_{N,p}\right|
+ \le e^{|\Lambda_{n_{p,k}}|q_k+6|\mathcal C^{\rm tile}_m|}.
+\end{equation*}
+For every $\varepsilon'>0$, there is $k_0(\varepsilon')$ with $6-\log\mathsf w_k\le(d+\varepsilon')s_k$ for all $k\ge k_0(\varepsilon')$.
+The same integral bound holds with $O(c),\mathsf w_k$ replaced by $E,\mathsf w$ whenever $\mathsf wE$ is controlled at~$k$.
+\end{lemma}
+The proof bounds the complete source before taking its replicated integral.
+\begin{proof}
+The marks are attached through Lemma~\ref{lem:E-source-attachments}, the expansion of Lemma~\ref{lem:D-connected} bounds the higher modes, and Lemma~\ref{lem:E-normalization-cost} bounds the unmarked ratio; Lemmas~\ref{lem:E-marked-step} and~\ref{lem:E2.2a} control the singleton coefficients and their format. Enlarge the fixed coefficient radius to include its signed and conjugated images. Put
+\begin{equation*}
+ E_k=R' C^{\rm col}_{J_k}\prod_{i<k}C^{\rm col}_{J_{i+1}},\qquad
+ \mathsf w_k=a_k^d\widehat\beta_k^{-w_d}/E_k,
+\end{equation*}
+where $R'>0$ depends on the coefficient ball and $w_d$ is a fixed nonnegative integer large enough for its finite polynomial evaluations and forced counterparts. The transport inequality of Lemma~\ref{lem:E2.1}, iterated from $\reflevel{d}$, bounds the level-$k$ coefficients by the product in $E_k$. Threshold powers introduce only a fixed power of $\widehat\beta_k$; enlarging $w_d$ includes them. Increase $w_d$ to at least $q^{\rm ht}_d+4$. Multiplying every mark by $\mathsf w_k$ then bounds its full singleton size by $\widehat\beta_k^{-w_d}\le\zeta_{d,k}$.
+
+The reflected anchors at level~$k$ have spacing $a_m/a_k\ge B_k^2$, and their parents agree under each block map. Since $B_{i+1}^2\le2B_i^2$ and $\ell_i\ge3$, their spacing is at least $B_i^2$ at every finer level. Apply Lemma~\ref{lem:E-source-attachments} with initial weight $\mathsf w_k$. Its full-interval bound verifies the hypothesis of the rooted clause of Lemma~\ref{lem:D-connected}. Use the mode-weighted coefficient norm of that proof; derivative and support weights remain in the separate majorants.
+
+Singleton terms are bounded directly by their one-mark norms. Taylor's product rule introduces at most the factorial of the derivative order; the stage column constant was chosen above this factorial. With $j=J_{k+1}$, the rooted clause of Lemma~\ref{lem:D-connected} supplies the derivative bound at support exponent $\sigma_{J_k}+3$ and the forced bound $v_\star e^{\eta^{\rm att}_kn_\star}e^{-r_j\beta'_u t_{k+1}^2}$ at exponent $\sigma_{J_k}+2$, where $v_\star$ is the integrated majorant of the distinguished factor and $n_\star$ its covering number. Multiplying by a mark weight changes only the distinguished factor in its tree sum. Item~\ref{it:E-columns} bounds the derivative factorial. The weighted sums therefore retain those bounds; decreasing the final exponent from $100$ to any value in $[98,100]$ only decreases the sums. The forced normalization uses half the suppression, leaving the other half for the marked derivative and attachment losses. Their spatial anchor is always one of the marks; a nonzero mode is assigned only to a support containing all its marked anchors. This proves the support assertion in~\eqref{eq:E-source-form}, as well as its absolute convergence. Restricting the set of marks commutes with the construction, since every operation takes disjoint unions of their modes.
+
+At the stopping level, the weighted supremum of each complete singleton exponential term is at most $3$, and that of its forced profile is at most~$1$. Indeed, its polynomial part is at most its coefficient bound, its marked regular sum is at most that bound, and the normalization of the forced part is at most one; Lemma~\ref{lem:E2.1} and the definition of $E_k$ bound the sum by~$3$. The forced profile follows from its $\kappa_k$ normalization. For~\eqref{eq:E-source-form}, the local absolute sums give an additional two per mark: exponentiation of the connected regular terms and the eligible forced sum each contribute at most one. Integrating the remaining scalar-free unmarked exponent and dividing by the unmarked partition function gives at most $e^{|\Lambda_{n_{p,k}}|q_k}$, by Lemma~\ref{lem:E-normalization-cost}. Thus coefficient extraction in the weighted source norm yields
+\begin{equation*}
+ \mathsf w_k^{|I_0|}\left|\left\langle\prod_{i\in I_0}F_i\right\rangle_{N,p}\right|
+ \le\exp\{|\Lambda_{n_{p,k}}|q_k+(3+1+2)|I_0|\}.
+\end{equation*}
+Exact integration preserves these normalized coefficients, proving the first assertion. The ratio of site and cell counts is $(a_m/a_k)^4$. For a residual source controlled at weight~$\mathsf w$, the same coefficient extraction uses $\mathsf w$ in place of~$\mathsf w_k$; only the bounds $3+1+2$ and the unmarked ratio enter this calculation. Taking the cell root gives
+\begin{equation}\label{eq:E-residual-root}
+ \|E\|_{\mathcal C^{\rm tile}_m}
+ \le \mathsf w^{-1}\exp\{(a_m/a_k)^4q_k+6\}.
+\end{equation}
+In particular $\mathsf w=c\mathsf w_0$ gives a bound $C_{m,k,\mathsf w_0}/c$, uniformly in the cutoff and period. This proves the residual clause, for which $E$ need not be a primary insertion.
+
+Finally~\eqref{eq:E-log-cost}, summed as in~\eqref{eq:E-running}, gives
+\begin{equation*}
+ \sum_{i<k}\log C^{\rm col}_{J_{i+1}}=o(s_k),\qquad
+ \log\widehat\beta_k=o(s_k).
+\end{equation*}
+The separate final column is included in this sum for $k>0$. Hence, for every $\varepsilon'>0$, there is $k_0(\varepsilon')$ with $6-\log\mathsf w_k\le(d+\varepsilon')s_k$ for all $k\ge k_0(\varepsilon')$. All choices precede the period, and all the estimates are on full cutoff tails.
+\end{proof}

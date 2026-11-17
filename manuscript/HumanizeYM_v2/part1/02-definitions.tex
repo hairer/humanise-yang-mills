@@ -1,0 +1,302 @@
+
+\section{Definitions}\label{sec:definitions}
+
+This section defines the objects needed to state the main theorem: the gauge group and the Wilson measure, families of lattice theories and the convergence of their separated correlations, the local fields, the Euclidean properties of the limit, its field spaces, Wightman theories, and the quantities of the trace and product statements. The renormalization-group objects that construct the family are defined in Section~\ref{sec:renormalization}, where they are used.
+
+\subsection{The gauge group and the Wilson measure}\label{sec:wilson}
+
+The matrix normalization fixes both the Wilson energy and the coefficient of the logarithmic coupling flow.
+
+\begin{definition}[Gauge normalization]\label{def:D01}
+Fix $n_G\ge1$ and a closed subgroup $G\subset U(n_G)$ with simple nonabelian real Lie algebra
+\begin{equation*}
+\g=\{X\in M_{n_G}(\C):\exp(tX)\in G\text{ for every }t\in\R\},
+\qquad \langle X,Y\rangle_\g=-n_G^{-1}\operatorname{Re}\tr(XY)\,.
+\end{equation*}
+For an orthonormal basis $(e_\alpha^{\g})$, put
+\begin{align*}
+\dimG&=\dim_\R\g,&
+\casimir&=-\dimG^{-1}\sum_\alpha\operatorname{tr}_{\g}\bigl(\operatorname{ad}(e_\alpha^{\g})^2\bigr),\\
+b_0&=\frac{11\casimir}{48\pi^2},& \slope&=2b_0\,.
+\end{align*}
+\end{definition}
+
+Here $\operatorname{ad}(X)Y=[X,Y]$ and $\operatorname{tr}_{\g}$ is the real operator trace on~$\g$. Simplicity means $[\g,\g]\ne0$ and no proper nonzero real ideal; connectedness of~$G$ is not assumed. The adjoint maps are skew-adjoint for this metric, so nonabelianity gives $\casimir>0$ and $\slope>0$. For $u\in G$ the plaquette energy and the normalized chord are
+\begin{equation}\label{eq:I12-price-chord}
+\wilsonterm(u)=1-n_G^{-1}\operatorname{Re}\tr u,\qquad
+\chord(u)=n_G^{-1/2}\|u-1\|_{\rm F},\qquad
+\chord(u)^2=2\wilsonterm(u)\,;
+\end{equation}
+both are invariant under conjugation and inversion, and the chord measures the distance of a plaquette holonomy from the identity.
+
+\begin{remark}[The normalization for $SU(n)$]\label{rem:SUn}
+For $G=SU(n)$ in its defining representation, $\dimG=n^2-1$, $\casimir=2n^2$ and $\slope=11n^2/(12\pi^2)$. With the conventional Wilson coupling $\beta=2n/g^2$, the running law~\eqref{eq:intro-running} reads $g^{-2}(a)\sim(11n/24\pi^2)\log(1/a)$, the leading behaviour of the one-loop law $\mu\,dg/d\mu=-(11n/48\pi^2)g^3$ with $\mu=1/a$.
+\end{remark}
+
+\begin{definition}[Wilson measure]\label{def:D02}
+For an integer $s\ge1$ and $\beta\in\R$, $\mu_{s,\beta}$ is the probability measure~\eqref{eq:intro-wilson} on the configurations of $\Lambda_s=(\Z/s\Z)^4$, with plaquette holonomies $U_{y;ab}$, Wilson energy $E_s^{\rm W}(U)=\sum_{y}\sum_{a<b}\wilsonterm(U_{y;ab})$ and normalizing constant
+\begin{equation*}
+Z_{s,\beta}=\int e^{-\beta E_s^{\rm W}(U)}\prod_{y,a}dh(U(y,a))\,.
+\end{equation*}
+\end{definition}
+
+The integrand of $Z_{s,\beta}$ is continuous and strictly positive on the compact configuration space, so $0<Z_{s,\beta}<\infty$. The link variable $U(y,a)$ carries a row vector $\psi\in\C^{n_G}$ at~$y$ to $\psi U(y,a)$ at~$y+e_a$, and the ordered product along a nearest-neighbour path $y_0,\ldots,y_k$, with inverses on reversed links, carries row vectors from $y_0$ to~$y_k$. A site gauge transformation $\gamma_{\rm g}:\Lambda_s\to G$ changes the frame at each site, $\psi\mapsto\psi\gamma_{\rm g}(y)^{-1}$, and acts on links by $U^{\gamma_{\rm g}}(y,a)=\gamma_{\rm g}(y)U(y,a)\gamma_{\rm g}(y+e_a)^{-1}$. In the product along a path the intermediate factors $\gamma_{\rm g}(y_i)^{-1}\gamma_{\rm g}(y_i)$ cancel, so the product is multiplied by $\gamma_{\rm g}(y_0)$ on the left and $\gamma_{\rm g}(y_k)^{-1}$ on the right: only the endpoints remain. Around a plaquette the path closes:
+\begin{align*}
+U^{\gamma_{\rm g}}_{y;ab}
+&=\gamma_{\rm g}(y)U(y,a)\gamma_{\rm g}(y{+}e_a)^{-1}\cdot\gamma_{\rm g}(y{+}e_a)U(y{+}e_a,b)\gamma_{\rm g}(y{+}e_a{+}e_b)^{-1}\\
+&\quad\cdot\gamma_{\rm g}(y{+}e_a{+}e_b)U(y{+}e_b,a)^{-1}\gamma_{\rm g}(y{+}e_b)^{-1}\cdot\gamma_{\rm g}(y{+}e_b)U(y,b)^{-1}\gamma_{\rm g}(y)^{-1}
+=\gamma_{\rm g}(y)U_{y;ab}\gamma_{\rm g}(y)^{-1}.
+\end{align*}
+Hence the energy is gauge invariant, and invariance of Haar measure under left and right multiplication makes the measure gauge invariant. The size of a single link variable therefore carries no gauge-invariant information: the configuration $U(y,a)=\gamma_{\rm g}(y)\gamma_{\rm g}(y+e_a)^{-1}$, the transform of the identity configuration, has links far from~$1$ when $\gamma_{\rm g}$ varies rapidly, yet every plaquette holonomy equals~$1$. Fields are measured by gauge-invariant quantities such as plaquette chords. For a smooth $\g$-valued field $\mathcal A$ and links $U(y,a)=\exp(h_{\rm lat}\mathcal A_a(h_{\rm lat}y))$ at a small spacing~$h_{\rm lat}$, expansion to second order gives
+\begin{equation*}
+U_{y;ab}=1+h_{\rm lat}^2F_{ab}(h_{\rm lat}y)+O(h_{\rm lat}^3),\qquad F_{ab}=\partial_a\mathcal A_b-\partial_b\mathcal A_a+[\mathcal A_a,\mathcal A_b]\,:
+\end{equation*}
+the deviation of the plaquette holonomy from~$1$, divided by the enclosed area~$h_{\rm lat}^2$, tends to the curvature, and $\chord(U_{y;ab})=h_{\rm lat}^2|F_{ab}(h_{\rm lat}y)|_\g+O(h_{\rm lat}^3)$ in the norm of Definition~\ref{def:D01}. The measure is also invariant under the lattice isometries $x\mapsto hx+b$, $h\in\hypercubic$, which transport links and invert reversed ones (Section~\ref{sec:A-equations}).
+
+\subsection{Wilson families and their correlations}\label{sec:continuum}\label{sec:families}
+
+A Wilson family, indexed by $N,p\in\N$, consists of strictly increasing positive integer sequences $(D_N)$ and $(L_p)$, real couplings $\beta_{N,p}$, a set $\mathcal T$ of insertion labels, and complex insertions $I_{N,p}(v,y;U)$, functions of the configurations on $\Lambda_{L_pD_N}$ for $v\in\mathcal T$ and sites~$y$. The index $N$ controls the spacing and $p$ the physical volume:
+\begin{equation}\label{eq:I12-physical-placement}
+a_N=D_N^{-1},\qquad
+\mu_{N,p}=\mu_{L_pD_N,\beta_{N,p}},\qquad
+\hat y=a_N\bigl(r_{L_pD_N}(y^a)\bigr)_{a=1}^4\,,
+\end{equation}
+where $r_s(j)$ is the integer representative of $j\in\Z/s\Z$ in $(-s/2,s/2]$. The lattice has $L_pD_N$ sites per side at physical distance~$a_N$, so its physical side is~$L_p$; $\hat y$ places a site in the centered period cell.
+
+\begin{definition}[Lattice moments]\label{def:D03}
+For $v\in\mathcal T^n$, sites $y\in\Lambda_{L_pD_N}^n$ and a test $f:(\R^4)^n\to\C$, define
+\begin{align*}
+\latmoment_{N,p}(v;y)&=\int\prod_{i=1}^n I_{N,p}(v_i,y_i;U)\,d\mu_{N,p}(U),\\
+\latsmear_{N,p}(v;f)&=a_N^{4n}\sum_{y\in\Lambda_{L_pD_N}^n}f(\hat y)\latmoment_{N,p}(v;y)\,.
+\end{align*}
+\end{definition}
+
+The moment is the expectation of a product of insertions; the smeared correlation is its Riemann sum against a test, the factor $a_N^{4n}$ being the lattice volume element. The main theorem concerns a family with the following regularity.
+
+\begin{definition}[Q1. Regular Wilson family]\label{def:Q1}
+A Wilson family is regular if
+\textup{(a)} each insertion $U\mapsto I_{N,p}(v,y;U)$ is continuous and gauge invariant;
+\textup{(b)} for each $v\in\mathcal T$ there is a finite $\Sigma_v\subset\Z^4$, independent of $N,p,y$, such that $I_{N,p}(v,y;U)$ depends only on the links with both endpoints in $y+\Sigma_v$ modulo $L_pD_N$;
+\textup{(c)} for some $b_*>0$, $\beta_{N,p}/\log(1/a_N)\to b_*$ as $N\to\infty$, uniformly in~$p$.
+\end{definition}
+
+The physical diameter of the stencil $y+\Sigma_v$ tends to zero with $a_N$, so the insertions are local. Condition~(c) is a logarithmic growth law for the bare inverse coupling, uniform in the volume.
+
+Correlations are tested on separated configurations. For positions in~$(\R^4)^n$ put
+\begin{equation*}
+\Conf{n}=\{x:x_i\ne x_j\text{ for }i\ne j\},\qquad
+\sepinf(x)=\min_{i\ne j}|x_i-x_j|_\infty\,,
+\end{equation*}
+with $\sepinf(x)=+\infty$ for $n\le1$. A \emph{separated test} is a smooth function on~$(\R^4)^n$ with compact closed support in~$\Conf{n}$; it need not be a product of one-point tests. It is \emph{$p$-admissible}, or supported inside volume~$p$, if its support lies in~$((-L_p/2,L_p/2)^4)^n$. The following definition keeps the order of the two limits explicit.
+
+\begin{definition}[Ordered convergence]\label{def:D09}
+A Wilson family converges to kernels~$K$ along~$P:\N\to\N$ if, for every $n$, $v\in\mathcal T^n$ and separated test~$f$, the test is eventually $P(k)$-admissible and there are numbers $C_p^{\rm UV}(v;f)$ with
+\begin{align*}
+\latsmear_{N,p}(v;f)&\longrightarrow C_p^{\rm UV}(v;f)\quad(N\to\infty)
+&&\text{at every admissible }p,\\
+C_{P(k)}^{\rm UV}(v;f)&\longrightarrow\int f(x)K_n(v;x)\,dx\quad(k\to\infty)\,.
+\end{align*}
+\end{definition}
+
+The inner limit uses the full sequence of spacings at every volume containing the support of the test; only the outer limit runs along~$P$. At volumes not containing the support, $C_p^{\rm UV}$ is unconstrained. In Theorem~\ref{thm:B} the same~$P$ serves every arity, list of labels and test (Figure~\ref{fig:two-limits}).
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[x=1.05cm,y=0.62cm,>=Stealth,font=\small]
+\foreach \p in {1,...,7}{
+  \draw[->,thick,gray!70] (\p,3.2) -- (\p,0.35);
+  \foreach \n in {3.2,2.6,2.0,1.4}{\fill[gray!70] (\p,\n) circle (1.4pt);}
+}
+\foreach \p in {2,3,5,7}{\draw[thick,paperlink] (\p,0) circle (4pt);}
+\draw[->,thick,paperlink] (1.6,-0.7) -- (7.6,-0.7);
+\node[anchor=west] at (7.7,-0.7) {$k\to\infty$ along $P=\mathsf p\circ\mathsf q$};
+\node[anchor=west] at (7.7,1.8) {$N\to\infty$ at each fixed $p$};
+\node[anchor=east] at (0.6,1.8) {spacing $a_N$};
+\node[anchor=east] at (0.6,-0.7) {volume $L_p$};
+\end{tikzpicture}
+\caption{The two limits of Definition~\ref{def:D09}. At every fixed volume the full sequence of spacings is used (vertical arrows); the volume limit then runs along the retained indices $P(k)$ (circled), chosen once for all fields and tests.}\label{fig:two-limits}
+\end{figure}
+
+\subsection{Local fields}\label{sec:local-fields}
+
+Two examples orient this subsection. The unit label has the constant insertion one at every sufficiently fine cutoff. The curvature square $c_{F^2}=\frac14\sum_{a,b}\langle F_{ab},F_{ab}\rangle_\g$, the Yang--Mills density at a point, is read to leading order by the clover average $P^{\rm cl}=\frac14\sum_\square\wilsonterm(U_\square)$ over the $24$ plaquettes with a corner at the site: since $\wilsonterm=\frac12\chord^2$, the expansion of Section~\ref{sec:wilson} gives each of them $\frac12h_{\rm lat}^4|F_{ab}|_\g^2+O(h_{\rm lat}^5)$ for the links of a smooth field, so $P^{\rm cl}=h_{\rm lat}^4c_{F^2}+O(h_{\rm lat}^5)$ with $F$ taken at the site. The construction itself uses the local sections below, normalized by a linear map (Definition~\ref{def:D08}).
+
+In general, local fields are labelled by invariant polynomials in the Taylor coefficients of a connection. The labels use radial, or Fock--Schwinger, gauge, in which the radial component of the connection vanishes. In this gauge a smooth connection satisfies $\mathcal A_a(x)=\int_0^1t\,x^bF_{ba}(tx)\,dt$, so its homogeneous part of degree $k+1$ is determined by the $k$th Taylor coefficients of the curvature at the origin.
+
+\begin{definition}[Polynomial labels]\label{def:D07}
+Let $\mathcal J$ consist of formal $\g$-valued arrays $\mathcal A_a(x)=\sum_{k\ge0}\mathcal A_{k,a}(x)$, with $\mathcal A_{k,a}$ homogeneous of degree $k+1$ and $\sum_a x^a\mathcal A_{k,a}(x)=0$. A coordinate of $\mathcal A_k$ has bidegree $(k+2,1)$: engineering weight $k+2$ and factor count one. Put
+\begin{equation*}
+V_d=\C[\mathcal J]^{\operatorname{Ad}(G)}_{\mathrm{weight}\le d}\,,
+\end{equation*}
+with fixed bihomogeneous bases $b_{d,i}$ of bidegree $(w_i,k_i)$, the supremum coefficient norm, conjugation and the induced $\hypercubic$ action.
+\end{definition}
+
+For instance, at $d=4$ the retained part is $\mathcal A_0+\mathcal A_1+\mathcal A_2$: for a smooth connection in radial gauge, with the curvature and its derivatives taken at the origin and repeated indices summed,
+\begin{equation*}
+\mathcal A_a(x)=\tfrac12x^bF_{ba}+\tfrac13x^bx^c\partial_cF_{ba}+\tfrac18x^bx^cx^e\partial_c\partial_eF_{ba}+O(|x|^4)\,,
+\end{equation*}
+so the labels in~$V_4$ are invariant polynomials in the curvature and its first two derivatives at the origin. Curvature has weight two and each derivative adds one; for instance $c_{F^2}$ has bidegree $(4,2)$. Three gradings play different roles below:
+\begin{itemize}[nosep]
+\item the engineering weight $w$ fixes the power of the spacing in the Taylor normalization~\eqref{eq:I12-section-Taylor};
+\item the factor count $k$ fixes the scaling by the small-field threshold, through the operator $\factorcount b_{d,i}=k_ib_{d,i}$ and $t^{\factorcount}b_{d,i}=t^{k_i}b_{d,i}$;
+\item the degree $d$ of the space $V_d$ fixes the factor $\ell_m^d$ in the transfer of insertions under blocking and the physical prefactor $a_N^{-d}$.
+\end{itemize}
+A polynomial of weight at most $d\le e$ lies in $V_d$ and in~$V_e$; its two insertions differ, since the normalization below depends on the degree.
+
+Lattice holonomies are compared with smooth connection jets. For $\mathsf j=(\mathcal A_k)_k\in\mathcal J$, put $\mathcal A^{\le d}=\sum_{k+2\le d}\mathcal A_k$. The test holonomies at spacing $h_{\rm lat}$ are, on a positive link $(y,a)$ with $y\in\Z^4$,
+\begin{equation}\label{eq:I12-test-holonomy}
+U(h_{\rm lat},\mathsf j)(y,a)=u(1),\qquad
+u'(t)=u(t)h_{\rm lat}\mathcal A_a^{\le d}(h_{\rm lat}(y+te_a)),\qquad u(0)=1_G\,,
+\end{equation}
+and the jet dilation is $\operatorname{sc}_{h_{\rm lat}}\mathsf j=(h_{\rm lat}^{k+2}\mathcal A_k)_k$, so that $U(h_{\rm lat},\mathsf j)=U(1,\operatorname{sc}_{h_{\rm lat}}\mathsf j)$. For a function~$O$ of the links near the origin, its \emph{Taylor map} $\taylormap_dO$ is the part of weight at most~$d$ of the Taylor series at $\mathsf j=0$ of $\mathsf j\mapsto O(U(1,\mathsf j))$. Lemma~\ref{lem:A1} constructs a \emph{local section} $\localsection{d}[\mathbf c](y;U)$, linear in $\mathbf c\in V_d$ and polynomial in the real and imaginary parts of the link entries on a fixed finite stencil $y+\Sigma_d$; it is gauge invariant, commutes with complex conjugation, is $\hypercubic$ covariant, sends $\mathbf1$ to one, and satisfies, for $0\le q\le d$,
+\begin{equation}\label{eq:I12-section-Taylor}
+\left.\frac{d^q}{dh_{\rm lat}^q}\localsection{d}[\mathbf c](0;U(h_{\rm lat},\mathsf j))\right|_{h_{\rm lat}=0}
+=\left.\frac{d^q}{dh_{\rm lat}^q}\mathbf c(\operatorname{sc}_{h_{\rm lat}}\mathsf j)\right|_{h_{\rm lat}=0}\,.
+\end{equation}
+Equivalently, $\taylormap_d\localsection{d}[\mathbf c]=\mathbf c$: the local section is a right inverse of the Taylor map, which explains its name. A homogeneous label of weight $w$ specifies the coefficient of $h_{\rm lat}^w$; for example $\taylormap_4P^{\rm cl}=c_{F^2}$. Smooth connections enter only as test configurations that define and normalize lattice observables; the labels assert nothing about differentiability of a continuum field.
+
+An \emph{insertion label} is a pair $v=(d,\mathbf c)$ with $d\in\N$ and $\mathbf c\in V_d$; the set of insertion labels is $\mathcal T=\bigsqcup_dV_d$. The insertions of the construction are normalized at a fixed physical scale. Section~\ref{sec:renormalization} fixes, for each $d$, a reference level $\reflevel{d}$, the small-field threshold $t_N$ at the cutoff~\eqref{eq:I12-scales}, and, along the trajectories of Theorem~\ref{prop:MT}, an invertible linear map $\mathsf Z_{N,p,d}$ of $V_d$, the terminal map: it sends a coefficient vector given at the cutoff to the coefficient vector of the blocked insertion at level $\reflevel{d}$ (Section~\ref{sec:marked}). For $N<\reflevel{d}$ it is a fixed invertible map.
+
+\begin{definition}[Renormalized insertions]\label{def:D08}
+For every $N,p$, $(d,\mathbf c)\in\mathcal T$ and site~$y$, put
+\begin{equation*}
+I_{N,p}((d,\mathbf c),y;U)=O^{(d)}_{N,p}(\mathbf c,y;U)
+=a_N^{-d}\localsection{d}\bigl[t_N^{-\factorcount}\mathsf Z_{N,p,d}^{-1}\mathbf c\bigr](y;U)\,.
+\end{equation*}
+The unit coefficient is $\mathbf u_d=a_{\reflevel{d}}^d\mathbf1$.
+\end{definition}
+
+The inverse terminal map makes the transferred coefficient equal to the prescribed $\mathbf c$ at the reference level, so $\mathbf c$ is specified at the fixed physical scale $a_{\reflevel{d}}$, in that level's lattice units; $t_N^{-\factorcount}$ measures each factor in units of the small-field threshold, and $a_N^{-d}$ converts to physical units. Because blocking can mix labels of different weight within $V_d$, the normalization is an invertible linear map of $V_d$ rather than a factor for each label. As a first check, the insertion of $\mathbf u_d$ is the constant one for $N\ge\reflevel{d}$: the terminal map sends $a_N^d\mathbf1$ to $a_{\reflevel{d}}^d\mathbf1$ (Lemma~\ref{lem:E2.1a}), $t_N^{-\factorcount}\mathbf1=\mathbf1$, and the section sends $\mathbf1$ to one. Part~II follows the curvature square through these maps (Section~\ref{sec:A-example}); the following table summarizes the data of a smeared correlation.
+\begin{center}\small
+\begin{tabular}{@{}p{0.22\textwidth}p{0.3\textwidth}p{0.4\textwidth}@{}}
+\toprule
+\raggedright Object & \raggedright Role & \raggedright Example\tabularnewline
+\midrule
+\raggedright label $v=(d,\mathbf c)\in\mathcal T$ & \raggedright chooses the local measurement & \raggedright $(4,c_{F^2})$\tabularnewline
+\raggedright insertion $I_{N,p}(v,y;U)$ & \raggedright its cutoff recipe on the stencil $y+\Sigma_d$ & \raggedright $a_N^{-4}\bigl(\lambda_{N,p}t_N^{-2}\localsection{4}[c_{F^2}](y;U)+\delta^{F^2}_{N,p}\bigr)$ for $N\ge\reflevel{4}$\tabularnewline
+\raggedright separated test $f$ & \raggedright weights the positions in $\latsmear_{N,p}(v;f)$ & \raggedright $f_1(x_1)f_2(x_2)$, with $f_1,f_2$ of disjoint supports\tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+Here $\lambda_{N,p}\ne0$ and $\delta^{F^2}_{N,p}$ are real; the multiple of the unit accounts for mixing of the curvature square with the constant under blocking. The trace of the holonomy around a fixed lattice loop is also continuous, gauge invariant and local on a finite stencil, but it is not thereby an insertion of the family constructed here, and no limit is asserted for loops of fixed physical size, whose stencils grow as $a_N\to0$.
+
+\subsection{Euclidean properties}\label{sec:euclidean-properties}
+
+A \emph{table}, or family of Schwinger functions, assigns to each degree list $(d_i)_{i=1}^n$ and $x\in\Conf{n}$ a complex multilinear function $S_n(c;x)$ of $c_i\in V_{d_i}$. For $v_i=(d_i,c_i)$ write $S_n(v;x)$, and for the word $w=(v_i(x_i))_{i=1}^n$ write $S(w)$; the product of words concatenates their lists. Conjugation and $\hypercubic$ act on labels as in Definition~\ref{def:D07}, and $h\in\hypercubic$ acts on positions linearly. Thus two insertion labels $v_1,v_2$ and two distinct points $x_1\ne x_2$ select one number $S_2(v;x_1,x_2)$, and a separated test~$f$ on~$(\R^4)^2$ selects the number $\int f(x)S_2(v;x)\,dx$. In the main theorem this number is the ordered limit~\eqref{eq:intro-ordered-limit}: the full cutoff limit at each fixed volume, then the volume limit along a refinement that may depend on the prescribed sequence~$\mathsf p$ and serves every label list and test. A table has no values on the collision diagonals. Values assigned there are invisible to separated tests (Step~\ref{step:deduction-hierarchy} of Section~\ref{sec:deduction}); a contact extension (Section~\ref{sec:short-distance-defs}) is instead a distribution on all of~$(\R^4)^n$ that agrees with the table on separated tests, and Theorem~\ref{prop:CT} constructs one.
+
+\begin{definition}[E1--E3. Euclidean symmetries]\label{def:E1-E3}
+For every $n$, degree list, $c$ and $x\in\Conf{n}$:
+\begin{enumerate}[label=\textup{(E\arabic*)},ref=E\arabic*,nosep]
+\item\label{it:E1} $S_0=1$, $S_n(c_\pi;x_\pi)=S_n(c;x)$ for every permutation $\pi$ of the slots, and $S_{n+1}(\mathbf u_d,c;x_0,x)=S_n(c;x)$;
+\item\label{it:E2} $S_n(hc;hx)=S_n(c;x)$ for $h\in\hypercubic$, and $S_n(\bar c;x)=\overline{S_n(c;x)}$;
+\item\label{it:E3} $S_n(c;x+z)=S_n(c;x)$ for $z\in\R^4$, with $x+z=(x_i+z)_i$.
+\end{enumerate}
+\end{definition}
+
+A word is positive-side for the axis~$a$ when all its positions have positive $a$th coordinate. For a word $w$, let $\theta_aw=\mathsf s_a^{\rm refl}(w^*)$, where $w^*$ reverses the word and applies conjugation to its labels, and $\mathsf s_a^{\rm refl}$ reflects positions and acts on labels through~$\hypercubic$.
+
+\begin{definition}[E4--E5. Reflection positivity]\label{def:E4-E5}
+\begin{enumerate}[label=\textup{(E\arabic*)},ref=E\arabic*,start=4,nosep]
+\item\label{it:E4} For every axis~$a$, positive-side separated words~$w_i$ and $z_i\in\C$, $\sum_{i,j}\bar z_iz_jS(\theta_a(w_i)\,w_j)\ge0$.
+\item\label{it:E5} The same positivity holds for finite sums of words smeared against joint smooth compactly supported tests on positive-side separated configurations, and every mixed pairing is absolutely integrable.
+\end{enumerate}
+\end{definition}
+
+For a fixed label list, $D_x^k$ is the $k$th Fr\'echet derivative in the positions, with the product Euclidean norm. The last condition controls the approach to collisions uniformly over translations and over configurations of large diameter.
+
+\begin{definition}[E6--E7. Euclidean regularity]\phantomsection\label{def:E6-E7}
+\begin{enumerate}[label=\textup{(E\arabic*)},ref=E\arabic*,start=6,nosep]
+\item\label{it:E6} Each $S_n(c;\cdot)$ is smooth on~$\Conf{n}$.
+\item\label{it:E7} For all $n,d,c,k$ there are $C(n,d,c,k)\ge0$ and an integer $A(n,d,c,k)\ge0$ such that $\|D_x^kS_n(c;x)\|\le Cr^{-A}$ whenever $0<r\le1$ and $\sepinf(x)\ge r$.
+\end{enumerate}
+\end{definition}
+
+\subsection{Field spaces and phases}\label{sec:field-spaces}
+
+A field is described in three successive ways. An insertion label $(d,c)$ specifies a lattice insertion. Its class $[c]$ identifies labels with the same separated correlations: two labels represent the same field when every spectator sees the same answer. The response $\iota_d[c]$ records those correlations against every spectator list and places fields of all degrees in one space. Write $v(x)=(v_1(x_1),\ldots,v_n(x_n))$ for a spectator word.
+
+\begin{definition}[Observable fields]\label{def:D10}
+For a table~$S$ put
+\begin{align*}
+\nullspace{d}(S)&=\bigl\{c\in V_d:S_{n+1}(c(x_0),v(x))=0\text{ for every }n,v\text{ and }(x_0,x)\in\Conf{n+1}\bigr\},\\
+F_d&=V_d/\nullspace{d}(S),\qquad \overline{[c]}=[\bar c],\qquad h[c]=[hc]\quad(h\in\hypercubic),\\
+\iota_d[c](v;x_0,x)&=S_{n+1}(c(x_0),v(x)),\qquad
+\mathcal L=\operatorname{span}\bigcup_d\iota_dF_d\,,
+\end{align*}
+with conjugation-invariant quotient norms on the finite-dimensional spaces~$F_d$.
+\end{definition}
+
+By~\ref{it:E2}, $\nullspace{d}(S)$ is invariant under conjugation and~$\hypercubic$, so both actions on $F_d$ are well defined. By~\ref{it:E1}, correlations do not depend on representatives in any slot: for $\boldsymbol A=([c_1],\ldots,[c_n])$ put $S_n(\boldsymbol A;x)=S_n(c;x)$. The unit field is $\unitfield{d}=[\mathbf u_d]$. Write $\mathbb F=\bigsqcup_dF_d$, $\deg(d,A)=d$ and $\iota(d,A)=\iota_dA$; the elements of $\mathcal L$ are the field labels.
+
+\paragraph{Phases.}
+The main theorem writes the limiting table as an average $S=\int_{\phases}S^\xi\,d\nu(\xi)$ of tables $S^\xi$ on the same field spaces, over a compact metric space $\phases$ with a fully supported probability measure~$\nu$; the points~$\xi$ are the phases. A phase is not a set of configurations: Section~\ref{sec:phases} obtains the phases as the characters of a commutative algebra of operators.
+
+\subsection{Wightman theories}\label{sec:wightman-defs}
+
+Write $\mathcal S_n=\mathcal S(\R^{4n};\C)$ for the Schwartz space and $\mathcal S=\mathcal S_1$. Let $\mathcal P=SO^+(1,3)\ltimes\R^4$ be the proper orthochronous Poincar\'e group, where $SO^+(1,3)$ consists of the linear maps of determinant one that preserve $\minksquare$ and $\forwardcone$; write $\gamma=(\Lambda_\gamma,z_\gamma)$ and $(\gamma\cdot f)(x)=f(\Lambda_\gamma^{-1}(x-z_\gamma))$.
+
+\begin{definition}[Relativistic datum]\label{def:D14a}\label{def:D14b}
+A relativistic datum consists of a complex Hilbert space $\mathcal H$, a complex vector space $\mathcal L$ of field labels, a linear subspace $\mathcal D\subset\mathcal H$, a vacuum $\Omega\in\mathcal D$, and fields $\Phi(\ell,f):\mathcal D\to\mathcal D$, linear operators that are complex bilinear in $(\ell,f)\in\mathcal L\times\mathcal S$; an antilinear map $\ell\mapsto\ell^*$; strongly continuous unitary translations $\mathsf T(z)$, $z\in\R^4$; a Borel projection-valued measure $\mathsf E$ on~$\R^4$ with finite diagonal measures $\mu_\psi(B)=\langle\psi,\mathsf E(B)\psi\rangle$; a strongly continuous unitary representation $\mathsf U$ of~$\mathcal P$ with $\mathsf U(1,z)=\mathsf T(z)$; and linear bijections $\rho_{\rm lab}(\gamma)$ of~$\mathcal L$.
+\end{definition}
+
+\begin{definition}[Wightman theory]\label{def:wightman}
+A relativistic datum is a Wightman theory if:
+\begin{enumerate}[label=\textup{(W\arabic*)},ref=W\arabic*,start=0,nosep]
+\item\label{def:W0} $\langle\psi,\mathsf T(z)\psi\rangle=\int e^{i\mathbf p\cdot z}\,d\mu_\psi(\mathbf p)$ for all $\psi,z$, with the Euclidean pairing; $\mathsf E(\R^4\setminus\forwardcone)=0$; and every vector fixed by all translations lies in $\C\Omega$.
+\item\label{def:W1} $\|\Omega\|=1$; $\mathcal D$ is dense and spanned by the vectors $\Phi(\ell_1,f_1)\cdots\Phi(\ell_k,f_k)\Omega$, $k\ge0$; each $f\mapsto\Phi(\ell,f)\psi$ is continuous from $\mathcal S$ to~$\mathcal H$; and $\langle\Phi(\ell,f)\psi,\chi\rangle=\langle\psi,\Phi(\ell^*,\bar f)\chi\rangle$ for $\psi,\chi\in\mathcal D$.
+\item\label{def:W2} $\rho_{\rm lab}$ is a representation; $\mathsf U(\gamma)\mathcal D\subset\mathcal D$, $\mathsf U(\gamma)\Omega=\Omega$ and $\mathsf U(\gamma)\Phi(\ell,f)\psi=\Phi(\rho_{\rm lab}(\gamma)\ell,\gamma\cdot f)\mathsf U(\gamma)\psi$ for $\psi\in\mathcal D$.
+\item\label{def:W3} $[\Phi(\ell,f),\Phi(\ell',h)]\psi=0$ for $\psi\in\mathcal D$ whenever $\minksquare(x-y)<0$ for all $x\in\operatorname{supp}f$, $y\in\operatorname{supp}h$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Faithful labels]\label{def:D14c}
+The labels are faithful if, for every nonzero $\ell\in\mathcal L$, some $f\in\mathcal S$ has $\Phi(\ell,f)\ne0$.
+\end{definition}
+
+Reconstruction uses one function in two limits: at imaginary times it equals the Euclidean correlation, and approaching real times from the ordered tube gives the Wightman distributions. We first specify the continuation, then its boundary value.
+
+\begin{definition}[Ordered-time continuation]\label{def:D15}
+For a phase~$\xi$, put $\mathcal Z_n=\{z\in\C^n:\operatorname{Im}z_1<\cdots<\operatorname{Im}z_n\}$. A continuation $\mathsf F_n^\xi(\boldsymbol A;z,\vec x)$, for $\boldsymbol A\in\mathbb F^n$, is holomorphic in $z\in\mathcal Z_n$ at each fixed real spatial configuration and satisfies
+\begin{equation*}
+\mathsf F_n^\xi(\boldsymbol A;(it_i)_i,\vec x)=S_n^\xi(\boldsymbol A;(\vec x_i,t_i)_i)\qquad(t_1<\cdots<t_n)\,.
+\end{equation*}
+\end{definition}
+
+\begin{definition}[Boundary condition]\label{def:D14f}
+For a phase $\xi$, a relativistic datum $(\mathcal H_\xi,\mathcal L,\mathcal D_\xi,\Omega_\xi,\Phi_\xi,\ldots)$, the maps $\iota_d$ and a continuation $\mathsf F_n^\xi$, require, for every $n$, $\boldsymbol A\in\mathbb F^n$, real $h_1<\cdots<h_n$ and $f_i\in\mathcal S$, that the integrand below be integrable for every $r>0$ and
+\begin{multline*}
+\lim_{r\downarrow0}\int\mathsf F_n^\xi(\boldsymbol A;(x_i^4+irh_i)_i,(\vec x_i)_i)\prod_i f_i(x_i)\,dx\\
+=\langle\Omega_\xi,\Phi_\xi(\iota(A_1),f_1)\cdots\Phi_\xi(\iota(A_n),f_n)\Omega_\xi\rangle\,.
+\end{multline*}
+\end{definition}
+
+A phase $S^\xi$ is the \emph{Euclidean continuation} of a Wightman theory when continuations satisfying Definitions~\ref{def:D15} and~\ref{def:D14f} exist for that theory and the response maps of Definition~\ref{def:D10}.
+
+\subsection{The trace and product statements}\label{sec:short-distance-defs}
+
+For a phase $\xi$ and a field $\Theta\in F_4$, the time-axis two-point function is
+\begin{equation*}
+\tracetwopoint(r)=S_2^{\xi}(\Theta,\Theta;-re_4/2,re_4/2)\qquad(r>0)\,.
+\end{equation*}
+The trace law is compared with free fields through the following class. Fix $m_{\rm sh}\ge0$, integers $j_h,k_E\ge0$ and a continuous real $h_{\rm mom}$ on $\R^3$ with $h_{\rm mom}(t\mathbf k)=t^{j_h}h_{\rm mom}(\mathbf k)$ for $t>0$.
+
+\begin{definition}[Finite Wick profiles]\label{def:D17}
+Put $\omega_{m_{\rm sh}}(\mathbf k)=\sqrt{m_{\rm sh}^2+|\mathbf k|^2}$ and, for $r>0$,
+\begin{equation*}
+K_{m_{\rm sh},k_E,h_{\rm mom}}(r)=\int_{\R^3}\frac{\omega_{m_{\rm sh}}(\mathbf k)^{k_E}h_{\rm mom}(\mathbf k)}{2\omega_{m_{\rm sh}}(\mathbf k)}e^{-r\omega_{m_{\rm sh}}(\mathbf k)}\,d^3\mathbf k\,.
+\end{equation*}
+A finite Wick profile is a function $W_{\rm Wick}(r)=\sum_{i=1}^{N}c_i\prod_{j=1}^{n_i}K_{m_{ij},k_{ij},h_{ij}}(r)$, $r>0$, with $c_i\in\C$ and finitely many terms and factors of this kind; empty products are one.
+\end{definition}
+
+The momentum integrals converge absolutely for $r>0$. For a free scalar field of mass $m_{\rm sh}$ the time-axis two-point function is $(2\pi)^{-3}K_{m_{\rm sh},0,1}(r)$; derivatives give momentum factors, and Wick contractions give finite sums of products at the same radius.
+
+The product expansion replaces a cluster of nearby fields by fields at one point, inside correlations with distant spectators. For finite index sets $I_{\rm cl},I_{\rm sp}$, write $S^\zeta(\boldsymbol A,x;\boldsymbol B,y)$ for the correlation of the concatenated lists, in a fixed enumeration of $I_{\rm cl}\sqcup I_{\rm sp}$, where $\zeta\in\phases\sqcup\{\mathrm{mix}\}$ indexes a phase or the mixture, $S^{\rm mix}=S$. A pair $(x,o)$, with $x\in(\R^4)^{I_{\rm cl}}$ and $o\in\R^4$, is an $(r,M_{\rm geo},\eta)$-cluster if $|x_i-o|\le M_{\rm geo}r$ and $|x_i-x_{i'}|\ge\eta r$ for distinct slots; spectators $y\in(\R^4)^{I_{\rm sp}}$ are $\delta_{\rm sp}$-clear if $|o-y_j|\ge\delta_{\rm sp}$ and $|y_j-y_{j'}|\ge\delta_{\rm sp}$ for distinct slots. The expansion uses finite channel sets $\channels{j}$, real fields $O_{j,\lambda}\in F_j$ forming bases of conjugation-invariant complements of $F_{j-1}$ in $F_j$ ($F_{-1}=0$), and coefficient functions $c_{j,\lambda}(\boldsymbol A;x,o)$, all fixed once before spectators, states and truncations; Section~\ref{sec:trace-products} describes how they are read off. Put $|\boldsymbol A|_{\deg}=\sum_i\deg A_i$.
+
+\begin{definition}[Product remainder]\label{def:D18}
+For $D\in\N$, $\boldsymbol A\in\mathbb F^{I_{\rm cl}}$ and $\boldsymbol B\in\mathbb F^{I_{\rm sp}}$, put
+\begin{equation*}
+\mathcal R_D^\zeta=S^\zeta(\boldsymbol A,x;\boldsymbol B,y)-\sum_{j=0}^D\sum_{\lambda\in\channels{j}}c_{j,\lambda}(\boldsymbol A;x,o)S^\zeta(O_{j,\lambda}(o),\boldsymbol B(y))\,.
+\end{equation*}
+\end{definition}
+
+If $M_{\rm geo}r<\delta_{\rm sp}$, the concatenated positions are separated, $|x_i-y_j|\ge\delta_{\rm sp}-M_{\rm geo}r>0$, so the remainder is defined in the small-radius range used below. A \emph{contact extension} of $S_n^\zeta(\boldsymbol A;\cdot)$ is a distribution on $\R^{4n}$ whose value on every separated test~$f$ is $\int f(x)S_n^\zeta(\boldsymbol A;x)\,dx$; Theorem~\ref{prop:CT} constructs one by an explicit subtraction.

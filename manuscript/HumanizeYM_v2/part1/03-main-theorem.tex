@@ -1,0 +1,35 @@
+\section{The main theorem}\label{sec:main-theorem}\label{sec:main-theorems}
+
+The main theorem concerns one Wilson family~$\mathcal W$, fixed before any sequence of volumes is prescribed: the renormalized insertions of Definition~\ref{def:D08} on the bare couplings of the multiscale theorem (Theorem~\ref{prop:MT}), for a fixed block penalty. These couplings are tuned, volume by volume, so that the running coupling reaches one common endpoint coupling~$\bar\beta$ at the unit scale (Section~\ref{sec:trajectories}). Clause~(ii) also packages the objects of clauses~(iii)--(v) as hierarchy data satisfying the conditions Q2--Q6 (Section~\ref{sec:correspondence}); there $\nu$ is the measure of the phase decomposition (Theorem~\ref{prop:PH}), $\xi_*$ the selected phase (Section~\ref{sec:phases}) and $\Theta$ the centered stress trace (Definition~\ref{def:D16}), and Section~\ref{sec:deduction} assembles the hierarchy data from these objects.
+
+The conclusions below depend on the unresolved estimates and convergence inputs listed in \hyperref[par:proof-status]{the proof-status notice}. Their proofs are conditional on those inputs.
+
+\setcounter{maintheorem}{1}
+\begin{maintheorem}[Main theorem]\label{thm:B}
+For every gauge group~$G$ of Definition~\ref{def:D01} and~$\blockpenalty>0$, the renormalized insertions (Definition~\ref{def:D08}) on the penalty-$\blockpenalty$ trajectories of Theorem~\ref{prop:MT} form a regular Wilson family~$\mathcal W$ with $a_N\downarrow0$, $L_p\uparrow\infty$ and $\beta_{N,p}/\log(1/a_N)\to\slope$ uniformly in~$p$. Moreover:
+\begin{enumerate}[label=\textup{(\roman*)},ref=\roman*]
+\item\label{it:B1} For every~$p$, $v\in\mathcal T^n$ and $p$-admissible separated~$f$, $\latsmear_{N,p}(v;f)\to\int fM^{\rm UV}_{p,v}$ as $N\to\infty$.
+\item\label{it:B2} For every strictly increasing~$\mathsf p$ there are a strictly increasing~$\mathsf q$, a table~$S$ satisfying E1--E7 and hierarchy data over~$\mathcal W$ satisfying Q2--Q6 with $\mathcal W\to S$ and $\mathcal W\to S^{\rm mix}\circ\pi_{\rm quo}$ along~$P=\mathsf p\circ\mathsf q$. In (iii)--(v), $S$ is this table, $F_d=V_d/\nullspace{d}(S)$, and $\nu$, $\xi_*$, $\Theta$ are those of these hierarchy data.
+\item\label{it:B3} $S=\int_{\phases}S^\xi\,d\nu(\xi)$ with $\nu$ a fully supported probability measure on a compact metric space; each~$S^\xi$ is the Euclidean continuation of a faithful Wightman theory with unique vacuum.
+\item\label{it:B4} A conserved stress tensor is normalized by its shell fluxes (Theorem~\ref{prop:ST}); in the selected phase~$\xi_*$ its centered trace~$\Theta$ has
+\begin{equation*}
+r^8\log^2(1/r)\tracetwopoint(r)\to3\dimG/\pi^4,
+\end{equation*}
+and $\tracetwopoint$ agrees with no finite Wick profile on any interval~$(0,\delta)$.
+\item\label{it:B5} The fields~$F_d$ have an operator product expansion with spectator-independent coefficients and
+\begin{equation*}
+|\mathcal R_D^\zeta|\le r^{D+1-|\boldsymbol A|_{\deg}-\varepsilon},
+\end{equation*}
+with the quantifiers and uniformity of Theorem~\ref{prop:OP}, and contact extensions from the same prescription.
+\end{enumerate}
+\end{maintheorem}
+
+The kernel $M^{\rm UV}_{p,v}$ of clause~(i) is the fixed-volume limit of Theorem~\ref{prop:UV}, the convergence $\mathcal W\to S$ in clause~(ii) is that of Definition~\ref{def:D09}, and $\pi_{\rm quo}(d,\mathbf c)=(d,[\mathbf c])$ sends an insertion label to its field. Section~\ref{sec:deduction} deduces the theorem from the principal results of Sections~\ref{sec:renormalization} and~\ref{sec:continuum-results}, subject to the stated proof inputs.
+
+\paragraph{Order of choices.}
+The gauge group, its realization and the block penalty are fixed first. The lattice family, with its couplings and insertions, is then fixed before the volume sequence~$\mathsf p$. The refinement~$\mathsf q$, the table~$S$, the field spaces, the phases, the selected phase, the relativistic theories, the product coefficients and the trace field may depend on~$\mathsf p$. One refinement serves every arity, every list of insertion labels and every separated test. The lattice limit in clause~(ii) is the mixture~$S$; the relativistic theories of clause~(iii) belong to the phases, and the trace law of clause~(iv) is stated in the selected phase.
+
+\paragraph{What the theorem does not assert.}
+It does not prove a mass gap, that is, a positive lower bound on the nonzero energies; uniqueness of the vacuum means only that the zero-energy space is one-dimensional, and no clause excludes nonzero energies accumulating at zero. It does not assert that the infinite-volume limit, the phase space or the selected phase is unique, nor that different block penalties give the same theory, and it does not take the spacing and volume limits simultaneously. It does not show that widely separated groups of observations become independent in the mixed state, or that any one phase is itself a limit of lattice states. The lattice correlations converge against separated tests; the contact extensions are constructed afterwards from the separated correlations, are not limits of unsubtracted lattice correlations at coincident points, and are not asserted to be unique, positive or to satisfy contact Ward identities. The product expansion is an estimate at each finite truncation degree, not the convergence of a series as that degree tends to infinity. The trace law is asserted in the selected phase only, and it excludes the finite Wick profiles of Definition~\ref{def:D17}; a generalized free field with the spectral measure of~$\Theta$ has the same two-point function.
+
+Section~\ref{sec:correspondence} states Theorem~\ref{thm:A}, a weaker existence statement with conditions Q0--Q6, and deduces it from Theorem~\ref{thm:B} with any $\blockpenalty>0$.

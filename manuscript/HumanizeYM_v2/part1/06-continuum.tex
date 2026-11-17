@@ -1,0 +1,301 @@
+\section{The continuum limit, stress, phases, trace and products}\label{sec:continuum-results}
+
+The lattice family of Section~\ref{sec:renormalization} is now fixed; its couplings and insertions were chosen before any sequence of volume indices. This section takes the volume limit and identifies the continuum fields: their calculus, the stress tensor and the rotations, the phases and their reconstruction, the trace law and the products. Constants may depend on the group, its realization, the penalty and the construction choices of Section~\ref{sec:constants}; further dependence is stated.
+
+\subsection{The volume limit and the field calculus}\label{sec:volume-limit}
+
+One volume refinement serves every field and all later constructions.
+\nopagebreak
+\begin{theorem}[IV. Infinite-volume limit]\label{prop:IV}\label{thm:IV}
+For every strictly increasing $\mathsf p:\N\to\N$, there are a strictly increasing $\mathsf q:\N\to\N$ and a multilinear table~$S$ such that the Wilson family converges to~$S$ along $P=\mathsf p\circ\mathsf q$ in the sense of Definition~\ref{def:D09}. The table satisfies E1--E7.
+\end{theorem}
+\begin{remark}[Dependence on the volume sequence]\label{rem:volume-choice}
+The limiting table~$S$ may depend on the prescribed sequence~$\mathsf p$ and the refinement~$\mathsf q$, hence on the retained volume indices~$P=\mathsf p\circ\mathsf q$.
+\end{remark}
+Fix~$\mathsf p$, $\mathsf q$, $P$ and~$S$ from now on.
+
+\emph{Idea of the proof} (Lemmas~\ref{lem:F1}--\ref{lem:F3}).
+\begin{enumerate}[label=\textup{Step \arabic*.},leftmargin=4.2em,nosep]
+\item Proposition~\ref{prop:UB} bounds the correlations and all their lattice differences uniformly in the volume; a diagonal extraction along~$\mathsf p$ gives local smooth limits on~$\Conf{n}$ (E6). At each admissible volume the fixed-volume kernels are those of Theorem~\ref{prop:UV}, so the full inner limit is kept; only the outer limit uses a subsequence.
+\item The chessboard seminorm, the cost of repeating one observation throughout the box, gives~\ref{it:E7} at order zero, and the corrected derivative maps below give it at positive orders; lattice reflection positivity passes to the limit, giving~\ref{it:E5} and then~\ref{it:E4}.
+\item A further refinement fixes finitely many coefficient maps in each degree. This auxiliary subsequence concerns finite-dimensional coefficients only; the limits of the correlations are the full ultraviolet limits already established.
+\end{enumerate}
+
+The coefficient maps are needed because the normalization $a_N^{-d}\mathsf Z_{N,p,d}^{-1}$ depends on the degree. The same $c\in V_d\subset V_e$ defines different lattice fields as $(d,c)$ and as $(e,c)$, and a lattice difference of a degree-$d$ insertion is a degree-$(d+1)$ object with yet another normalization; the naive inclusion $V_d\to V_e$ does not preserve correlations. Lemma~\ref{lem:F2} constructs linear \emph{corrected coefficient maps} relating these normalizations, and they induce the inclusions and derivatives of the next proposition. Its dimension statement uses a Gaussian comparison theory, introduced by its covariance.
+
+\begin{definition}[Free Maxwell comparison]\label{def:D11}
+For $\dimG$ independent colours, let $A_a^\alpha$ be centred generalized Gaussian fields on~$\R^4$ with
+\begin{equation*}
+\mathbb E A_a^\alpha(x)A_b^\beta(y)
+=\delta_{\alpha\beta}\delta_{ab}\Gamma(x-y),\qquad
+\Gamma(x)=\frac1{4\pi^2|x|^2},\qquad F_{ab}=\partial_aA_b-\partial_bA_a\,,
+\end{equation*}
+the derivatives taken in the sense of distributions. Let $\maxwellspace{d}$ consist of the complex $\operatorname{Ad}(G)$-invariant Wick polynomials in curvature jets of weight at most~$d$, modulo antisymmetry, the linear Bianchi identities and $\sum_a\partial_aF_{ab}=0$. Their separated Wick correlations are~$\maxwellcorr$.
+\end{definition}
+
+Each component of~$A$ is a massless free field, with covariance $(-\Delta)^{-1}$ since $-\Delta\Gamma=\delta_0$, and $F$ is the free Maxwell field. Wick polynomials in curvature jets at distinct points have smooth correlations, computed by Wick's theorem from derivatives of~$\Gamma$ at nonzero arguments. The relations are of two kinds. Antisymmetry and the Bianchi identities $\partial_aF_{bc}+\partial_bF_{ca}+\partial_cF_{ab}=0$ hold identically, since $F$ is a derivative of~$A$. The equation $\sum_a\partial_aF_{ab}=0$ holds only in separated correlations: by $-\Delta\Gamma=\delta_0$,
+\begin{equation*}
+\mathbb E\Bigl(\sum_a\partial_aF^\alpha_{ab}\Bigr)(x)\,F^\beta_{cd}(y)=\delta_{\alpha\beta}\bigl(\delta_{bd}\partial_{x^c}-\delta_{bc}\partial_{x^d}\bigr)\delta_0(x-y)\,,
+\end{equation*}
+which vanishes for $x\ne y$, so every separated Wick correlation with a factor of the divergence vanishes; but the divergence is not the zero distribution, since its covariance is $\delta_{\alpha\beta}(\partial_b\partial_d-\delta_{bd}\Delta)\delta_0(x-y)$. The quotient by this equation thus records a relation among separated correlations, not an identity of distributions. The comparison of Proposition~\ref{prop:MC} likewise concerns separated correlations at short distances; it does not identify the constructed fields with this Gaussian reference.
+
+The constant one is the Maxwell unit, coefficient conjugation gives the real structure, and inclusions keep the same polynomial at a larger weight bound. Free differentiation is $\partial_a^{\rm Max}(:P:)=:\partial_aP:$, and the rotation action $R_d^{\rm Max}(h)(:P:)=:hP:$ is determined by $hF_{ab}^\alpha=\sum_{i,j}h_{ia}h_{jb}F_{ij}^\alpha$ and $h\partial_a=\sum_ih_{ia}\partial_ih$ for $h\in O(4)$; these operations preserve the defining relations.
+
+\begin{proposition}[FC. Field calculus]\label{prop:FC}
+For the table~$S$ of Theorem~\ref{prop:IV}, there are complex linear maps $\jmath_{d,e}:F_d\to F_e$ for $d\le e$ and $\partial_a:F_d\to F_{d+1}$ for every $d,a$ such that, for every $A\in F_d$,
+\begin{gather*}
+\iota_e\circ\jmath_{d,e}=\iota_d,\qquad
+\iota_{d+1}(\partial_aA)=\partial_{x_0^a}\iota_d(A),\\
+\dim_\C F_d=\dim_\C\maxwellspace{d}\,.
+\end{gather*}
+\end{proposition}
+
+The proof is Lemma~\ref{lem:F2}. The corrected coefficient maps supply representatives of inclusions and derivatives; the equation and rank comparisons of Lemmas~\ref{lem:E2.6}--\ref{lem:E2.10} bound $\dim F_d$ from above, and the free tests of Lemma~\ref{lem:E2-free-tests}, with the free positivity of Lemma~\ref{lem:G1.1}, bound it from below. Each $\iota_d$ is injective by Definition~\ref{def:D10}, so the inclusions are unique and injective, $\jmath_{e,f}\jmath_{d,e}=\jmath_{d,f}$, $\jmath_{d,d}=\mathrm{id}$, and by~\ref{it:E1} they carry $\unitfield{d}$ to~$\unitfield{e}$. Their images are nested, so $\mathcal L=\bigcup_d\iota_dF_d$. Permutation symmetry gives, for $\boldsymbol A\in\prod_iF_{d_i}$, $x\in\Conf{n}$, slot~$i$ and axis~$a$,
+\begin{equation*}
+\partial_{x_i^a}S_n(\boldsymbol A;x)=S_n(A_1,\ldots,\partial_aA_i,\ldots,A_n;x)\,,
+\end{equation*}
+and~\ref{it:E2} with injectivity of the responses makes inclusions and derivatives commute with conjugation, inclusions commute with~$\hypercubic$, and $h\partial_a=\sum_bh_{ba}\partial_bh$ for $h\in\hypercubic$.
+
+The table also defines reflection Hilbert spaces along the coordinate axes. They and their slab bounds use only the volume limit and the field calculus (Lemmas~\ref{lem:F3}, \ref{lem:F4} and Proposition~\ref{prop:FC}), and they enter the rotation argument of Section~\ref{sec:stress} before continuous rotations are available.
+
+\begin{definition}[Coordinate reflection spaces]\label{def:D14}
+For an axis~$a$, let $\mathcal H_a^{\rm OS}$ be the completion of the complex span of words at distinct points in $\{x^a>0\}$ modulo the null space of $\langle w,v\rangle_a=S(\theta_a(w)\,v)$, and put $e^{-tH_a^{\rm OS}}[v]=[\tau_{te_a}v]$ for $t\ge0$. Let $\Omega_a^{\rm OS}$ be the class of the empty word and $P^0_a$ the projection onto $\ker H_a^{\rm OS}$.
+\end{definition}
+
+By~\ref{it:E4} the form is positive semidefinite; with~\ref{it:E7}, the translations $\tau_{te_a}$, $t\ge0$, preserve its null space and define a strongly continuous self-adjoint contraction semigroup, whose generator is $H_a^{\rm OS}\ge0$ (proof of Lemma~\ref{lem:H1.1}). Inserting a word between positive-time vectors is bounded after a positive time translation (Lemma~\ref{lem:H1.1}); these slab bounds are the coordinate estimates used before rotations.
+
+\subsection{Stress and rotations}\label{sec:stress}
+
+The fields are compared with Maxwell fields at small distances, through bases that may vary with the radius to accommodate mixing, and a conserved tensor is then normalized by its shell fluxes. The volume refinement and~$S$ remain fixed; the subsequences below concern comparison radii only.
+
+\begin{definition}[Scaling frames]\label{def:D12}
+A scaling sequence consists of $r_k>0$, $r_k\to0$, and complex linear isomorphisms $\scaleframe{k}{d}:\maxwellspace{d}\to F_d$. It is stable if, for every $D\in\N$, these maps eventually preserve conjugation, $\hypercubic$, units and inclusions exactly in all degrees $d\le e\le D$. Scaling dimensions are included in the maps: a comparison insertion is $\scaleframe{k}{d}u$ at~$r_kx$, with no further factor~$r_k^d$.
+\end{definition}
+
+After rescaling positions the interacting correlations approach their Maxwell counterparts; one sequence serves every fixed list of fields.
+
+\begin{proposition}[MC. Maxwell comparison]\label{prop:MC}
+There is one stable scaling sequence such that, for every arity~$n$, degree list $(d_i)$ and $u_i\in\maxwellspace{d_i}$,
+\begin{equation*}
+S_n(\scaleframe{k}{d_i}u_i;r_k\,\cdot\,)\longrightarrow\maxwellcorr_n(u;\cdot)
+\quad\text{in }L^1_{\rm loc}(\Conf{n})\,.
+\end{equation*}
+\end{proposition}
+
+\emph{Idea of the proof} (Lemma~\ref{lem:G2.1}). The lattice comparison stops near the requested physical scale and compares the correlations with the free Gaussian ones. Finitely many separating correlations make the comparison maps injective, the upper bound $\dim_\C F_d\le\dim_\C\maxwellspace{d}$ of Proposition~\ref{prop:FC} makes them isomorphisms, and finite-dimensional corrections impose the eventual equalities. Local $L^1$ convergence is equivalent, by duality and smooth approximation on slightly larger separated compact sets, to convergence uniform over smooth tests with $\|f\|_\infty\le1$ and fixed compact support. This weaker form is used to construct and normalize the conserved current, before the stress tensor exists.
+
+To read translation and angular charge, integrate a conserved symmetric tensor through a shell surrounding one insertion. In a free model the shell integral can be computed, and it differentiates the enclosed correlation. Let $\phi$ be a massless free scalar field with covariance~$\Gamma$, write $\langle\cdot\rangle$ for its Wick correlations, and put $T^\phi_{ab}=-{:}\partial_a\phi\,\partial_b\phi{:}+\frac12\delta_{ab}{:}|\nabla\phi|^2{:}$, the negative of the canonical tensor. With $\Gamma_0=\Gamma(y-x_0)$ and $\Gamma_1=\Gamma(y-x)$,
+\begin{equation*}
+\langle T^\phi_{ab}(y)\phi(x_0)\phi(x)\rangle=-\partial_a\Gamma_0\,\partial_b\Gamma_1-\partial_b\Gamma_0\,\partial_a\Gamma_1+\delta_{ab}\nabla\Gamma_0\cdot\nabla\Gamma_1\,,
+\end{equation*}
+whose divergence in~$y$ vanishes away from $x_0$ and~$x$, where $\Delta\Gamma_0=\Delta\Gamma_1=0$. Take a smooth compactly supported $\chi$ equal to one on the ball of radius $\epsilon<|x-x_0|$ about~$x_0$ and vanishing near~$x$. The divergence theorem turns the flux $-\sum_a\int\partial_a\chi(y)\langle T^\phi_{ab}(y)\phi(x_0)\phi(x)\rangle\,dy$ into the integral of $\sum_a\langle T^\phi_{ab}(y)\phi(x_0)\phi(x)\rangle n_a$ over the boundary sphere of that ball, with outer normal~$n$. There $\nabla\Gamma_0=-n/(2\pi^2\epsilon^3)$, the last two terms cancel, and the integrand is $\partial_b\Gamma_1/(2\pi^2\epsilon^3)$. The sphere has area $2\pi^2\epsilon^3$ and $\partial_b\Gamma(\cdot-x)$ is harmonic on the ball, so the mean value property gives the flux $\partial_b\Gamma(x_0-x)=\partial_{x_0^b}\langle\phi(x_0)\phi(x)\rangle$. This free calculation illustrates the identity that Theorem~\ref{prop:ST} establishes for the constructed fields by a different route.
+
+We normalize the stress tensor in the same way, so that its translation flux acts as $+\partial_{x_0^b}$ on the enclosed insertion; with the minus sign in the flux below, this gives the negative of the usual Euclidean canonical Maxwell tensor (displayed after Theorem~\ref{prop:ST}). Let $A\in F_d$, let $\boldsymbol B$ be a list of~$n$ spectator fields at~$x$, and take $(x_0,x)\in\Conf{n+1}$.
+
+\begin{definition}[Shell fluxes]\label{def:D13}
+For $J_{ab}=J_{ba}\in F_4$ with $\sum_a\partial_aJ_{ab}=0$ and $K_{\rm rot}\in\mathfrak{so}(4)$, choose a real shell cutoff $\chi\in C_c^\infty(\R^4)$ equal to one near~$x_0$ and supported away from the spectators. Define
+\begin{align*}
+\mathcal P_b^J&=-\sum_a\int\partial_a\chi(y)
+S(J_{ab}(y),A(x_0),\boldsymbol B(x))\,dy,\\
+\mathcal Y_{K_{\rm rot}}^J&=-\sum_{a,b}\int\partial_a\chi(y)(K_{\rm rot}(y-x_0))_b
+S(J_{ab}(y),A(x_0),\boldsymbol B(x))\,dy\,.
+\end{align*}
+\end{definition}
+
+The integrals avoid every insertion point, and they do not depend on the shell cutoff: two choices differ by a function vanishing near every insertion, integration by parts with Proposition~\ref{prop:FC} removes the divergence term, and the extra angular term is $\sum_{a,b}(K_{\rm rot})_{ba}J_{ab}=0$ since $K_{\rm rot}$ is skew and $J$ symmetric. Conservation makes the flux independent of the radius of the shell; it does not by itself control a flux through a distant surface. A field is real when fixed by conjugation; a family $J_{ab}\in F_4$ is $\hypercubic$-tensorial when $hJ_{ab}=\sum_{i,j}h_{ia}h_{jb}J_{ij}$ for $h\in\hypercubic$, conserved when $\sum_a\partial_aJ_{ab}=0$ in~$F_5$ for every~$b$, and centered when every component has zero one-point function.
+
+\begin{proposition}[Conserved line]\label{prop:conserved-line}
+The centered real symmetric $\hypercubic$-tensorial conserved families $(J_{ab})$ in~$F_4$ form a real vector space of dimension one.
+\end{proposition}
+
+This is the first assertion of Lemma~\ref{lem:G2.2}; its proof shows that divergence maps the centered real symmetric tensorial families onto the corresponding vectors in degree five, with one-dimensional kernel. Along a refinement of the sequence of Proposition~\ref{prop:MC}, positive multiples of the rescaled nonzero member approach the free stress line in the degree-four frames. For a nonzero member~$J$, Lemma~\ref{lem:G2.3} constructs complex linear charge maps $\mathsf p_b:F_d\to F_{d+1}$ and $\mathsf Y_{K_{\rm rot}}:F_d\to F_d$, the latter real linear in~$K_{\rm rot}$, with $\mathcal P_b^J=S((\mathsf p_bA)(x_0),\boldsymbol B(x))$ and $\mathcal Y_{K_{\rm rot}}^J=S((\mathsf Y_{K_{\rm rot}}A)(x_0),\boldsymbol B(x))$ for every degree, field, spectator list, separated configuration and shell cutoff.
+
+These charges restore the rotations. Conservation of~$J$ turns the sum of the angular charges of the insertions, each combining $\mathsf Y_{K_{\rm rot}}$ at its own point with the translation charge weighted by the rotated position, into the integral of~$J$ against the derivative of a vector field equal to $y\mapsto K_{\rm rot}y$ on a large anisotropic box. For configurations on a coordinate axis through the origin, the coordinate reflection spaces of Definition~\ref{def:D14} show that this integral tends to zero as the box grows (Lemma~\ref{lem:G-collinear-flux}; Section~\ref{sec:strategy-rotations} explains the mechanism), so the angular sum vanishes there. Finite Ward tests then identify $\mathsf p_b$ with $c_\star\partial_b$, and analyticity extends the identity, infinitesimal rotation invariance, to all separated configurations. Lemma~\ref{lem:G3.1} thereby constructs continuous complex linear representations $R_d$ of~$O(4)$, extending~$\hypercubic$, fixing units and commuting with conjugation and inclusions; for a real $c_\star\ne0$ common to every degree,
+\begin{equation*}
+\mathsf L_d(K_{\rm rot})=\left.\frac{d}{dt}R_d(e^{tK_{\rm rot}})\right|_{t=0},
+\qquad \mathsf p_b=c_\star\partial_b,\qquad
+\mathsf Y_{K_{\rm rot}}=c_\star\mathsf L_d(K_{\rm rot})\,.
+\end{equation*}
+Integrating gives full covariance (Lemma~\ref{lem:G3.1}): $S_n(R_{d_i}(h)A_i;hx)=S_n(\boldsymbol A;x)$ for every $\boldsymbol A\in\prod_iF_{d_i}$, $x\in\Conf{n}$ and $h\in O(4)$. A family is $O(4)$-tensorial if $R_4(h)J_{ab}=\sum_{i,j}h_{ia}h_{jb}J_{ij}$ for every $h\in O(4)$. The common constant~$c_\star$ fixes the normalization of the stress tensor by its action on fields.
+
+\begin{theorem}[ST. Stress tensor]\label{prop:ST}\label{thm:ST}
+There is a real symmetric $O(4)$-tensorial family $T_{ab}\in F_4$ with $\sum_a\partial_aT_{ab}=0$ such that, for every degree, field, spectator list, separated configuration and shell cutoff of Definition~\ref{def:D13}, every~$b$ and every $K_{\rm rot}\in\mathfrak{so}(4)$,
+\begin{equation*}
+\mathcal P_b^T=\partial_{x_0^b}S(A(x_0),\boldsymbol B(x)),\qquad
+\mathcal Y_{K_{\rm rot}}^T=S((\mathsf L_d(K_{\rm rot})A)(x_0),\boldsymbol B(x))\,.
+\end{equation*}
+\end{theorem}
+
+The proof is in Lemmas~\ref{lem:G3.1}--\ref{lem:G3.2}: divide $J$ by~$c_\star$ and average its tensor transform over~$O(4)$ with probability Haar measure. Covariance and the transformation laws of derivatives and generators give the same shell Ward identities for each transformed current, and integration preserves them, as well as symmetry, reality, centering and conservation. Fix this tensor; it is centered, since $J$ is and $R_4$ preserves zero one-point values. The free stress $\maxwellstress$ is normalized by the same shell Ward identities, with $\partial_a^{\rm Max}$ and the free generators $\mathsf L_d^{\rm Max}$ (Section~\ref{sec:partII-G.1}):
+\begin{equation*}
+\maxwellstress_{ab}=-\sum_{c,\alpha}:F_{ac}^\alpha F_{bc}^\alpha:
++\frac{\delta_{ab}}4\sum_{i,j,\alpha}:F_{ij}^\alpha F_{ij}^\alpha:\,.
+\end{equation*}
+
+The last comparison includes stress insertions. For a free list $u_1,\ldots,u_n$, $u_i\in\maxwellspace{d_i}$, a stress-slot choice is a subset $I\subset\{1,\ldots,n\}$ with component pairs $(a_i,b_i)$ for $i\in I$; put $A_i^0=\maxwellstress_{a_ib_i}$ for $i\in I$ and $A_i^0=u_i$ otherwise. The shell Ward identities fix the stress normalization, so its comparison insertion needs only the engineering factor~$r_k^4$. Below, $D_x^j$ differentiates the whole function $x\mapsto S_n(\boldsymbol A_k;r_kx)$.
+
+\begin{proposition}[SC. Differentiated short-distance comparison]\label{prop:SC}
+Along the refinement of the scaling sequence of Proposition~\ref{prop:MC} chosen in Lemma~\ref{lem:G2.2}, for every fixed free list and stress-slot choice, every derivative order~$j$ and compact $\mathcal K\subset\Conf{n}$, with $A_{k,i}=r_k^4T_{a_ib_i}$ on~$I$ for the fixed tensor of Theorem~\ref{prop:ST} and $A_{k,i}=\scaleframe{k}{d_i}u_i$ elsewhere,
+\begin{equation*}
+D_x^jS_n(\boldsymbol A_k;r_kx)\longrightarrow D_x^j\maxwellcorr_n(\boldsymbol A^0;x)
+\quad\text{uniformly on }\mathcal K\,.
+\end{equation*}
+\end{proposition}
+Fix this refined sequence $(r_k,\scaleframe{k}{d})$ from now on. The proof follows Lemma~\ref{lem:G3.3}; with $I=\varnothing$ and $j=0$ it gives Proposition~\ref{prop:MC} in uniform form, but the earlier comparison is needed first, to construct the tensor. Along this sequence, for fixed $d,a,K_{\rm rot}$, the transported infinitesimal actions converge in operator norm: $r_k(\scaleframe{k}{d+1})^{-1}\partial_a\scaleframe{k}{d}\to\partial_a^{\rm Max}$ and $(\scaleframe{k}{d})^{-1}\mathsf L_d(K_{\rm rot})\scaleframe{k}{d}\to\mathsf L_d^{\rm Max}(K_{\rm rot})$.
+
+\subsection{Phases and reconstruction}\label{sec:phases}
+
+Compression to zero energy separates the mixed correlations into phases. In the reflection space of the time axis, a long empty time interval removes the positive-energy components; the word insertions that survive commute on the zero-energy space, and a character of the algebra they generate assigns compatible scalar values to all of them. The phases are these characters. We now use the fourth coordinate as time.
+
+\begin{definition}[Compression]\label{def:compression}
+For $h_{\rm sl}>0$ and a word $w$ with times in $(0,h_{\rm sl})$, let $\mathsf B_{h_{\rm sl}}(w)$ be the bounded extension to $\mathcal H_4^{\rm OS}$ (Lemma~\ref{lem:H1.1}) of the slab insertion $A_wv=w\,\tau_{h_{\rm sl}e_4}v$ on positive-time words~$v$, and put $M^0(w)=P^0_4\mathsf B_{h_{\rm sl}}(w)|_{\ker H_4^{\rm OS}}$.
+\end{definition}
+
+The slab insertion places $w$ in the slab $(0,h_{\rm sl})$ below the translated state. A separated word is translated into a slab to define its compression; Lemma~\ref{lem:H1.2} proves independence of width and placement and that the compressed operators generate a separable commutative unital C$^*$-algebra
+\begin{equation*}
+\mathfrak A_0=C^*(M^0(w):w\text{ separated})
+\end{equation*}
+with cyclic and separating vector $\Omega_4^{\rm OS}$. Its vacuum state $a\mapsto\langle\Omega_4^{\rm OS},a\Omega_4^{\rm OS}\rangle$ satisfies $S(w)=\langle\Omega_4^{\rm OS},M^0(w)\Omega_4^{\rm OS}\rangle$ by translation invariance; the measure below represents this state on the character space, and the separating property gives full support. Call a character $\xi$ a phase and $S^\xi$ its table.
+
+\begin{theorem}[PH. Phase decomposition]\label{prop:PH}
+The algebra $\mathfrak A_0$ has a compact metric character space $\phases$ with a full-support probability measure $\nu$ such that, for every separated word $w$,
+\begin{equation*}
+S^\xi(w)=\xi(M^0(w)),\qquad S(w)=\int_{\phases}S^\xi(w)\,d\nu(\xi)\,.
+\end{equation*}
+Each phase satisfies E1--E7 and has exactly the null spaces $\nullspace{d}(S^\xi)=\nullspace{d}(S)$. The identities of FC, $O(4)$ covariance and ST hold with $S^\xi$ in place of $S$, for the same maps and tensor $T$. For fixed $w$, $\xi\mapsto S^\xi(w)$ is continuous.
+\end{theorem}
+
+\emph{Idea of the proof} (Lemmas~\ref{lem:H1.1}, \ref{lem:H1.2} and~\ref{lem:H1.3}). The matrix element $\langle[u],M^0(w_1)M^0(w_2)[v]\rangle$ is a limit of correlations of four words placed far apart in time; the long time intervals project onto $\ker H_4^{\rm OS}$. The same four words can instead be spread along a second positive coordinate direction, so that the two middle words occur in the opposite order. By $O(4)$ covariance (Lemma~\ref{lem:G3.1}) both arrangements have the same limit, so $M^0(w_1)M^0(w_2)=M^0(w_2)M^0(w_1)$: rotation covariance is an input to the phase decomposition. Reflection positivity holds in each phase because the compressed reflected Gram matrices are positive operators and characters are positive; that no field becomes null in a phase uses the free tests at short distances. Commutativity alone gives neither.
+
+For each phase apply Definitions~\ref{def:D14} and~\ref{def:compression} to $S^\xi$, obtaining $\mathcal H_{4,\xi}^{\rm OS}$, $H_{4,\xi}^{\rm OS}$ and $\Omega_\xi^{\rm OS}$. Fix $\xi_*$ in the full-measure set with one-dimensional time-axis reflection ground space supplied by Lemma~\ref{lem:H1.3}; Theorem~\ref{prop:RC} extends ground-space uniqueness to every phase. Two further notions enter the reconstruction and the trace law.
+
+\begin{definition}[Bounded weak commutant]\label{def:D14d}
+A bounded operator $B$ belongs to the weak commutant if, for every smeared field $\Phi$ and all $u,v\in\mathcal D$, one has $u\in\operatorname{Dom}\Phi^*$ (automatic by~\ref{def:W1}) and $\langle\Phi^*u,Bv\rangle=\langle u,B\Phi v\rangle$, where $\Phi^*$ is the Hilbert-space adjoint.
+\end{definition}
+
+\begin{definition}[Hermitian scalar labels]\label{def:D14e}
+A label is Hermitian if $\ell^*=\ell$, and Lorentz scalar if $\rho_{\rm lab}(\Lambda,0)\ell=\ell$ for every $\Lambda\in SO^+(1,3)$.
+\end{definition}
+
+For the theory at a phase $\xi$ write $\mathcal H_\xi$, $\mathcal D_\xi$, $\Omega_\xi$, $\Phi_\xi$, $\mathsf T_\xi$, and define its energy by $\mathsf T_\xi(te_4)=e^{itH_\xi}$. Its reflection comparison map is the linear isometry $\mathsf J_\xi^{\rm OS}:\mathcal H_\xi\to\mathcal H_{4,\xi}^{\rm OS}$ with $\mathsf J_\xi^{\rm OS}\Omega_\xi=\Omega_\xi^{\rm OS}$ that sends each product of smeared fields applied to the vacuum to the norm limit of its heat-regularized positive-time reflection vectors as the ordered heights tend to zero (proofs of Lemmas~\ref{lem:H2.1} and~\ref{lem:H2.2}).
+
+\begin{theorem}[RC. Reconstruction]\label{prop:RC}
+For every $\xi\in\phases$, there are a faithful Wightman theory (Definition~\ref{def:wightman}) on $\mathcal L$ and functions $\mathsf F_n^\xi$ satisfying Definitions~\ref{def:D15} and~\ref{def:D14f} with the response maps $\iota_d$ of Definition~\ref{def:D10}. Its OS comparison map $\mathsf J_\xi^{\rm OS}$ is unitary, intertwines spatial translations and satisfies $\mathsf J_\xi^{\rm OS}e^{-sH_\xi}=e^{-sH_{4,\xi}^{\rm OS}}\mathsf J_\xi^{\rm OS}$ for $s\ge0$, and
+\begin{equation*}
+\ker H_\xi=\C\Omega_\xi,\qquad \ker H_{4,\xi}^{\rm OS}=\C\Omega_\xi^{\rm OS}\,.
+\end{equation*}
+Every bounded operator in the weak commutant of its fields is scalar.
+\end{theorem}
+
+\emph{Idea of the proof} (Lemmas~\ref{lem:H2.1}--\ref{lem:H2.4}). Reflection positivity supplies the Hilbert spaces and the nonnegative energy; the slab bounds supply the growth estimates behind the boundary values; the restored rotations, continued to boosts, supply Lorentz covariance and, with the continuation, locality. The uniform low-energy estimate of Section~\ref{sec:strategy-reconstruction}, continuity of the vacuum-subtracted heat pairings and full support of~$\nu$ extend vacuum uniqueness from almost every phase to every phase, so the choice of~$\xi_*$ stays valid. The same lemmas give joint Schwartz distributions, phase averages and stress continuation.
+
+The label maps are common to all phases. The adjoint is induced by time reflection followed by conjugation, $(\iota_dA)^*=\iota_d(R_d(\mathsf s_4^{\rm refl})\overline A)$ (Lemma~\ref{lem:H-fields}). The Lorentz label action is the continuation of~$R_d$~\cite{FrohlichOsterwalderSeiler1983}: spatial rotations keep their Euclidean action, and for $i=1,2,3$ the boost along $e_i$ has generator $-i\mathsf L_d(K_{4i})$, where $K_{4i}=e_4e_i^{\mathsf T}-e_ie_4^{\mathsf T}$ generates rotation in the $(e_4,e_i)$ plane. In particular, a real $O(4)$-invariant field gives a Hermitian Lorentz scalar label. Retain the theory at $\xi_*$ and suppress its subscript in $\mathcal H,\mathcal D,\Omega,\Phi$ and the other relativistic data.
+
+\subsection{Trace and products}\label{sec:trace-products}
+
+Several ultraviolet statements of different strength are proved, and they should not be confused.
+\begin{center}\small
+\begin{tabular}{@{}p{0.27\textwidth}p{0.66\textwidth}@{}}
+\toprule
+Statement & What it asserts\\
+\midrule
+Running (Theorem~\ref{prop:MT}) & A volume-uniform leading logarithmic slope of the bare coupling of the tuned family\\
+Maxwell comparison (Proposition~\ref{prop:MC}) & Convergence along a sequence of radii, through scale-dependent frames that include field renormalization and mixing; not a perturbative expansion of each composite correlation\\
+Stress comparison (Proposition~\ref{prop:SC}) & The same, with derivatives and with the normalized stress insertions\\
+Trace law (Theorem~\ref{prop:TR}) & A specific asymptotic through all positive radii, in the selected phase\\
+\bottomrule
+\end{tabular}
+\end{center}
+The trace is centered in the phase already selected.
+
+\begin{definition}[Centered trace]\label{def:D16}
+For the tensor $T$ fixed after Theorem~\ref{prop:ST} and $r>0$, put
+\begin{align*}
+\tau&=\sum_{a=1}^4T_{aa},&e_{\rm tr}&=S^{\xi_*}(\tau),&\Theta&=\tau-e_{\rm tr}\unitfield{4},\\
+\tracetwopoint(r)&=S_2^{\xi_*}(\Theta,\Theta;-re_4/2,re_4/2),&\traceamplitude&=\frac{3\dimG}{\pi^4}\,.
+\end{align*}
+\end{definition}
+
+The one-point value is position independent, and centering removes the vacuum contribution in the selected phase. Adding a real multiple of $\delta_{ab}\unitfield{4}$ to $T$ preserves its shell Ward identities, the limit in Proposition~\ref{prop:SC} and $\Theta$. The fixed stress tensor is centered in the mixture; the selected-phase centering subtracts its own one-point value.
+
+\begin{theorem}[TR. Trace law]\label{prop:TR}
+The selected field $\Theta$ is nonzero, real and $O(4)$ invariant; its label $\iota_4\Theta$ is Hermitian and Lorentz scalar (Definition~\ref{def:D14e}). For every $f\in\mathcal S$,
+\begin{equation*}
+\langle\Omega,\Phi(\iota_4\Theta,f)\Omega\rangle=0\,.
+\end{equation*}
+As $r\downarrow0$ through all positive radii,
+\begin{equation*}
+\lim_{r\downarrow0}r^8\log^2(1/r)\tracetwopoint(r)=\traceamplitude>0\,.
+\end{equation*}
+\end{theorem}
+
+The amplitude comes from the free scalar curvature square, with $\alpha=1,\ldots,\dimG$ indexing an orthonormal colour basis:
+\begin{equation*}
+\curvaturesquare=\frac14\sum_{a,b,\alpha}:F_{ab}^{\alpha}F_{ab}^{\alpha}:,\qquad
+\maxwellcorr_2(\curvaturesquare,\curvaturesquare;-e_4/2,e_4/2)=\frac{3\dimG}{\pi^4}\,.
+\end{equation*}
+At running coupling $\beta$ the scalar trace coefficient is $4d_2/\beta$, with $d_2=-b_0/2$, computed from a lattice Ward identity and the conserved line (Section~\ref{sec:strategy-trace}, Proposition~\ref{prop:I-coefficient}); since $\slope=2b_0$, its leading value at radius $r$ is $4d_2/(\slope\log(1/r))=-1/\log(1/r)$, and squaring it with the free correlation gives~$\traceamplitude$ (Section~\ref{sec:strategy-trace}). The comparison needs fourth-order information beyond Proposition~\ref{prop:MC}, with the rate that the slowly growing coefficients require; its estimates are uniform in the phase, although the theorem is stated at~$\xi_*$ only.
+
+\emph{Idea of the proof} (Section~\ref{sec:partII-I}; Lemmas~\ref{lem:I1.1}, \ref{lem:I1.2}, \ref{lem:I-radii} and~\ref{lem:I-transfer}). The trace-coefficient step uses the raw right-inverse convergence in Lemma~\ref{lem:I-transfer}; that convergence remains open, so the following outline is conditional on it.
+\begin{enumerate}[label=\textup{Step \arabic*.},leftmargin=4.2em,nosep]
+\item Begin with any sequence of positive radii tending to zero.
+\item Adjustable stopping levels give the comparison along a subsequence, at generic configurations, not at the time-axis pair defining~$\tracetwopoint$.
+\item The positive spectral representation below makes $\tracetwopoint$ real and nonincreasing; the monotone function is $\tracetwopoint$ itself, not $r^8\log^2(1/r)\tracetwopoint(r)$.
+\item By $O(4)$ invariance, generic separations slightly below and slightly above the target radius bound $\tracetwopoint$ there from both sides.
+\item Every starting sequence thus has a subsequence with the same normalized limit, which gives the limit through all radii.
+\end{enumerate}
+The same proof identifies centering on the word domain, $\Phi(\iota_4\Theta,f)=\Phi(\iota_4\tau,f)-e_{\rm tr}(\int f)\mathrm{Id}_{\mathcal H}$, and constructs the unique positive tempered spectral measure $\tracespectrum$, supported in $\forwardcone$, with
+\begin{equation*}
+d\mu_{\Phi(\iota_4\Theta,f)\Omega}=|\fourierplus{f}|^2\,d\tracespectrum,\qquad \tracetwopoint(r)=\int e^{-r\mathbf p^4}\,d\tracespectrum(\mathbf p)\quad(r>0)\,,
+\end{equation*}
+where $\fourierplus{f}(\mathbf p)=\int e^{i\mathbf p\cdot x}f(x)\,dx$. Its Lorentz invariance and high-energy limits are Lemmas~\ref{lem:I1.2} and~\ref{lem:I1.3}. Finite Wick profiles cannot reproduce the factor $r^{-8}\log^{-2}(1/r)$.
+
+\begin{proposition}[NF. Finite-profile exclusion]\label{prop:NF}
+For every finite Wick profile $W_{\rm Wick}$ and every $\delta>0$, there is $0<r<\delta$ such that
+\begin{equation*}
+\tracetwopoint(r)\ne W_{\rm Wick}(r)\,.
+\end{equation*}
+\end{proposition}
+
+The reason is the form of the expansions (Lemma~\ref{lem:I2.1}). Each mass-shell kernel has an expansion to every finite order in integer powers of $r$ and nonnegative powers of $\log r$, so a finite profile is, to bounded error, a finite sum of monomials $r^a(\log r)^k$ with $a\in\Z$, $k\in\N$. Multiplication by $r^8\log^2(1/r)$ makes the terms with $a>-8$ vanish and the leading remaining nonzero term diverge, so a finite limit must be zero; the positive limit of Theorem~\ref{prop:TR} excludes equality on every interval $(0,\delta)$. Lemma~\ref{lem:I2.2} treats polynomial mass-shell comparisons, and Lemmas~\ref{lem:I2.3} and~\ref{lem:I2.4} give Fock countertests with their own comparison classes.
+
+The phase quantifiers differ from statement to statement, and the following table records them.
+\begin{center}\small
+\begin{tabular}{@{}p{0.4\textwidth}p{0.53\textwidth}@{}}
+\toprule
+Statement & Scope\\
+\midrule
+Slab, comparison and low-energy estimates & Uniform in the phase\\
+Vacuum uniqueness in the proof of Theorem~\ref{prop:PH} & Almost every phase (an intermediate step)\\
+Reconstruction, Theorem~\ref{prop:RC} & Every phase\\
+Trace law, Theorem~\ref{prop:TR} & The selected phase $\xi_*$; uniform estimates in its proof do not change this\\
+Product expansion, Theorem~\ref{prop:OP} & Every phase and the mixture; degree cutoff and spectators fixed before the threshold, states and positions after it\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The product expansion is a decoder, stated for the tables $S^\zeta$, $\zeta\in\phases\sqcup\{\mathrm{mix}\}$, on the common quotient fields. For each degree~$j$, finitely many probe words placed away from the origin, with biorthogonal coordinate functionals, distinguish the fields of~$F_j$. Applied to a cluster of fields at positions~$x$ around a centre~$o$, the probes read off the field with the same answers, averaged over $O(4)$ and conjugation; lower degrees are removed before the next one is read, and the coordinates in the basis $O_{j,\lambda}$ are the coefficients $c_{j,\lambda}(\boldsymbol A;x,o)$ (Definitions~\ref{def:D31}--\ref{def:D33}). For two fields, $A(x)B(0)\sim C^{\mathbf1}_{AB}(x)\mathbf1+\sum_\lambda C^\lambda_{AB}(x)O_\lambda(0)+\cdots$ is tested inside every correlation with distant spectators, and the error after degree $D$ is at most $r^{D+1-d_A-d_B-\varepsilon}$: for small $D$ it may still be singular, and what improves with $D$ is its order. The probes, the bases and the coefficients are fixed once from the mixed table, before spectators, state indices and truncations; spectator and state independence hold by construction, and the content of the theorem is the size of the remainder of Definition~\ref{def:D18}. The coefficients depend on this prescription, the table and the probes; they are not a canonical expansion, and the theorem concerns this one coefficient system.
+
+\begin{theorem}[OP. Operator product expansion]\label{prop:OP}
+For every finite list $\boldsymbol A$, $M_{\rm geo}\ge0$, $\eta,\varepsilon>0$, $j\in\N$ and $\lambda\in\channels{j}$, some $r_0>0$ gives, for $0<r<r_0$ and every $(r,M_{\rm geo},\eta)$-cluster,
+\begin{equation*}
+|c_{j,\lambda}(\boldsymbol A;x,o)|\le r^{j-|\boldsymbol A|_{\deg}-\varepsilon}\,.
+\end{equation*}
+For every pair of finite lists $\boldsymbol A,\boldsymbol B$, $M_{\rm geo}\ge0$, $\eta,\delta_{\rm sp},\varepsilon>0$ and $D\in\N$, some $r_1>0$ gives, for $0<r<r_1$, such clusters, $\delta_{\rm sp}$-clear spectators and all state indices~$\zeta$,
+\begin{equation*}
+|\mathcal R_D^\zeta|\le r^{D+1-|\boldsymbol A|_{\deg}-\varepsilon}\,.
+\end{equation*}
+\end{theorem}
+
+\emph{Idea of the proof} (Lemmas~\ref{lem:J1.1}--\ref{lem:J1.2}). The discarded part is bounded in the compression algebra; evaluation at a character or at the vacuum state does not increase the bound, so it holds in every phase and in the mixture. The bound enters through moments (Lemma~\ref{lem:H-roots}): lattice cluster replacement makes a group of insertions minus its matched field, one insertion at the centre, small in chessboard seminorm; the chessboard estimate applied to $2n$ widely translated, alternately conjugated copies bounds the $n$th vacuum moment of the compressed remainder~$U$, so that $\int|\xi(U)|^{2n}\,d\nu(\xi)\le B^{2n}$ for every~$n$, and continuity in~$\xi$ with full support of~$\nu$ gives $\sup_\xi|\xi(U)|\le B$. Lattice estimates at three scales, the resolution of the insertions, the fusion scale and the exterior cell, give the degree count $D+1-|\boldsymbol A|_{\deg}$ up to factors $e^{o(\log(1/r))}$, which $r^{-\varepsilon}$ absorbs for small~$r$. The two thresholds have the separate dependencies of the statement. The estimate holds at each finite truncation~$D$; no series in~$D$ is claimed to converge. Lemmas~\ref{lem:J1.4}--\ref{lem:J1.5} and Remark~\ref{lem:J1.3} give nested and integrated estimates.
+
+Contact subtractions use the same original fields and correlations, with separate projections that extract fields through finite correlation probes; their clearance is a radius keeping the collapsed cluster separated from these probes, independent of the spectator clearance~$\delta_{\rm sp}$. A collision forest is a family of subsets of slots, any two disjoint or nested. Since $S_n^\zeta$ satisfies~\ref{it:E7}, some contact extension exists by the standard extension theorem for kernels of polynomial growth at the diagonals; the content of the next theorem is that the explicit subtraction of normal Taylor jets along collision forests produces one, with the local order bounds of Lemma~\ref{lem:J2.3}.
+
+\begin{theorem}[CT. Contact extension]\label{prop:CT}
+For every state index $\zeta$, arity $n$ and list $\boldsymbol A\in\mathbb F^n$, the contact construction of Section~\ref{sec:partII-J.2}, fixed on the underlying prescription of Lemma~\ref{lem:J1.1}, gives a distribution $\mathfrak D_{\boldsymbol A}^\zeta$ on $\R^{4n}$ such that, for every separated test $f$,
+\begin{equation*}
+\mathfrak D_{\boldsymbol A}^\zeta(f)=\int f(x)S_n^\zeta(\boldsymbol A;x)\,dx\,.
+\end{equation*}
+\end{theorem}
+
+The proof is in Lemmas~\ref{lem:J2.1}--\ref{lem:J2.3}. For two insertions, write the test in the centroid and one relative coordinate; for each contact degree $w$ below the critical order~$L$ of the pair, subtract the degree-$w$ contact projection of the pair at the centroid, tested against the Taylor jet of order $L-1-w$ of the test in the relative coordinate, and the subtracted expression gains in each shell; three or more insertions bring partial collisions and nested or disjoint forests. A separated test extended by zero has vanishing normal jets on every collision diagonal, so only the correlation integral remains. For a general test, first form each signed root arm and its Taylor-subtracted test, then localize that prepared test. A maximal collision set that crosses the localization partition has zero Taylor jet on the masked test; the signed layer estimate of Lemma~\ref{lem:J-signed-layer} and an induction over the remaining nested or disjoint blocks in Lemma~\ref{lem:J2.2} give summable dyadic shell bounds. Lemma~\ref{lem:J2.1} supplies covariant contact projections with real bases. The projections and cutoff are the choices supplied with the same constructed hierarchy; no independence from other contact choices is asserted. The extension is a later construction from the separated correlations, not a limit of unsubtracted lattice correlations at coincident points; neither uniqueness, positivity nor contact Ward identities are asserted.

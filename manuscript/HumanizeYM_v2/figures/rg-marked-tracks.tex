@@ -1,0 +1,19 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,font=\small,
+  box/.style={draw,rounded corners=2pt,align=center,inner sep=4pt},
+  ar/.style={->,thick}]
+\node[box] (history) at (0,0) {one unmarked\\density $\rho_{m+1}$};
+\node[box] (step) at (4.1,0) {same block step\\and history};
+\node[box] (output) at (8.7,0) {density $\rho_m$\\and its activities};
+\draw[ar] (history) -- (step); \draw[ar] (step) -- (output);
+\node[box] (insertions) at (0,-1.9) {marked insertions\\at separated sites};
+\node[box] (single) at (4.2,-1.9) {single-insertion\\coefficients and remainders};
+\node[box] (mixed) at (8.8,-1.9) {mixed components\\joining insertions};
+\draw[ar] (insertions) -- (single);
+\draw[ar] (insertions.south) -- ++(0,-0.55) -| (mixed.south);
+\draw[ar,dashed] (step) -- node[right,font=\footnotesize] {same $\rho$} (single);
+\draw[ar,dashed] (output) -- node[right,font=\footnotesize] {same $\rho$} (mixed);
+\end{tikzpicture}
+\caption{Bookkeeping for marked insertions. The single-insertion decomposition has regular and forced remainders over the same unmarked density; components joining different insertions require their own estimates. Both tracks use the same underlying integration history.}\label{fig:rg-marked-tracks}
+\end{figure}

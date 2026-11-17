@@ -1,0 +1,151 @@
+\section{A weaker existence statement}\label{sec:correspondence}
+
+This section considers a weaker existence statement for abstract hierarchy data constrained by Q0--Q6, of which Q1 is Definition~\ref{def:Q1}. These conditions do not impose every property in Theorem~\ref{thm:B}: the correlations need not be multilinear, the logarithmic slope $b_*$ is only required to be positive, and the degree-four field~$\Theta$ is not identified as a stress trace. Section~\ref{sec:formal-conventions} records the conventions used for these hierarchy data. Theorem~\ref{thm:A} is deduced from Theorem~\ref{thm:B}, and the example below illustrates what the weaker conditions allow.
+
+\subsection{Hierarchy data and the conditions Q0--Q6}\label{sec:hierarchy-data}
+
+\begin{definition}[Q0. Hierarchy data]\label{def:Q0}
+Hierarchy data over a Wilson family~$\mathcal W$ consist of:
+\begin{itemize}[nosep]
+\item complex Hilbert and vector spaces~$\mathcal H,\mathcal L$, and a relativistic datum with the group of Remark~\ref{rem:formal-poincare};
+\item finite-dimensional complex normed spaces~$F_d$, linear maps~$\iota_d:F_d\to\mathcal L$, and $\pi_{\rm quo}:\mathcal T\to\mathbb F$, where $\mathbb F=\bigsqcup_dF_d$;
+\item a compact metric space~$\phases$, a Borel measure~$\nu$ and $\xi_*\in\phases$;
+\item functions $S_n^\zeta:\mathbb F^n\times(\R^4)^n\to\C$ for $\zeta\in\phases\sqcup\{\mathrm{mix}\}$, and $\mathsf F_n:\mathbb F^n\times\C^n\times(\R^3)^n\to\C$;
+\item finite sets~$\channels{j}$, fields~$O_{j,\lambda}\in F_j$, and coefficients $c_{j,\lambda}:\mathbb F^{I_{\rm cl}}\times(\R^4)^{I_{\rm cl}}\times\R^4\to\C$ for every finite index set~$I_{\rm cl}$;
+\item an element~$\Theta\in F_4$.
+\end{itemize}
+\end{definition}
+
+The spaces, maps and functions of Q0 are arbitrary on the displayed domains; put $\deg(d,A)=d$ and $\iota(d,A)=\iota_dA$. The conditions below constrain the correlations at separated positions. In Q2--Q6 all cited definitions and formulas are read with these hierarchy data and with the conventions of Section~\ref{sec:formal-conventions}; in definitions indexed by a phase, read $\Omega_{\xi_*}$, $\Phi_{\xi_*}$ and $\mathsf F_n^{\xi_*}$ as the $\Omega$, $\Phi$ and $\mathsf F_n$ of these data.
+
+\begin{definition}[Q2. Wightman axioms]\label{def:Q2}
+The relativistic datum of Q0 is a Wightman theory in the sense of Definition~\ref{def:wightman}.
+\end{definition}
+
+\begin{definition}[Q3. Labels and phases]\label{def:Q3}
+\textup{(a)} Every nonzero~$\ell\in\mathcal L$ has $\Phi(\ell,f)\ne0$ for some~$f\in\mathcal S$.
+\textup{(b)} Each~$\iota_d$ is injective, their images cover~$\mathcal L$, and $\pi_{\rm quo}$ is onto.
+\textup{(c)} $\Phi(\iota(A),f)\ne0$ for some~$A\in\mathbb F$ and $f\in\mathcal S$.
+\textup{(d)} The measure~$\nu$ is a probability measure of full support, and for every $n$, $\boldsymbol A\in\mathbb F^n$ and $x\in\Conf{n}$, $\xi\mapsto S_n^\xi(\boldsymbol A;x)$ is continuous and $S_n^{\rm mix}(\boldsymbol A;x)=\int_{\phases}S_n^\xi(\boldsymbol A;x)\,d\nu(\xi)$.
+\textup{(e)} Each~$S_n^\zeta$ is simultaneously permutation symmetric and smooth on~$\Conf{n}$.
+\end{definition}
+
+\begin{definition}[Q4. Selected continuation]\label{def:Q4}
+The functions~$\mathsf F_n$ satisfy the ordered-time continuation condition of Definition~\ref{def:D15} and the boundary condition of Definition~\ref{def:D14f} at~$\xi_*$, read as in Remark~\ref{rem:integral-zero}, using the relativistic datum and the maps~$\iota_d$ of the hierarchy data.
+\end{definition}
+
+\begin{definition}[Q5. Products]\label{def:Q5}
+For the channels, fields, coefficients and tables~$S^\zeta$ of Q0, form~$\mathcal R_D^\zeta$ by Definition~\ref{def:D18}. These coefficients and remainders satisfy the two inequalities of Theorem~\ref{prop:OP}: the coefficient threshold depends on $I_{\rm cl},\boldsymbol A,M_{\rm geo},\eta,\varepsilon,j,\lambda$; the remainder threshold depends on $I_{\rm cl},I_{\rm sp},\boldsymbol A,\boldsymbol B,M_{\rm geo},\eta,\delta_{\rm sp},\varepsilon,D$. Each threshold is uniform in positions and state indices.
+\end{definition}
+
+\begin{definition}[Q6. Trace test]\label{def:Q6}
+For the chosen~$\Theta\in F_4$, with $\tracetwopoint$ its time-axis two-point function in the phase~$\xi_*$ (Section~\ref{sec:short-distance-defs}) and $\traceamplitude=3\dimG/\pi^4$, require $\langle\Omega,\Phi(\iota_4\Theta,f)\Omega\rangle=0$ for every $f\in\mathcal S$,
+\begin{equation*}
+\lim_{r\downarrow0}r^8\log^2(1/r)\tracetwopoint(r)=\traceamplitude>0
+\quad\text{in }\C\,,
+\end{equation*}
+and the finite-profile exclusion of Proposition~\ref{prop:NF}.
+\end{definition}
+
+For the lattice limit, $S^{\rm mix}\circ\pi_{\rm quo}$ denotes the kernels $K_n(v;x)=S_n^{\rm mix}(\pi_{\rm quo}(v_1),\ldots,\pi_{\rm quo}(v_n);x)$.
+
+The deduction from Theorem~\ref{thm:B} is conditional on the unresolved inputs listed in \hyperref[par:proof-status]{the proof-status notice}. The separate example below supplies hierarchy data directly.
+
+\setcounter{maintheorem}{0}
+\begin{maintheorem}[Existence]\label{thm:A}
+For every gauge group of Definition~\ref{def:D01}, there is a regular \textup{(Q1)} Wilson family~$\mathcal W$ such that, for every strictly increasing~$\mathsf p:\N\to\N$, there are a strictly increasing~$\mathsf q$ and hierarchy data over~$\mathcal W$ \textup{(Q0)} satisfying \textup{Q2--Q6}, with
+\begin{equation*}
+\mathcal W\longrightarrow S^{\rm mix}\circ\pi_{\rm quo}
+\quad\text{along }P=\mathsf p\circ\mathsf q
+\quad\text{in the sense of Definition~\ref{def:D09}}\,.
+\end{equation*}
+\end{maintheorem}
+
+Theorem~\ref{thm:A} fixes the lattice theory before the volume sequence. Q2 gives relativistic fields; Q3 and Q4 express the limiting correlations as a phase average and continue the selected phase to those fields; Q5 approximates local products uniformly in the state and in separated spectators; Q6 fixes the vacuum centering and the short-distance law of the distinguished degree-four field.
+
+\begin{proof}[Deduction of Theorem~\ref{thm:A} from Theorem~\ref{thm:B}]
+Subject to the proof inputs for Theorem~\ref{thm:B}, the following argument gives Theorem~\ref{thm:A}.
+\begin{enumerate}[label=\textup{\arabic*.},ref=\arabic*,start=10]
+\item\label{step:deduction-conclusion} Steps~\ref{step:deduction-choice}--\ref{step:deduction-products} of Section~\ref{sec:deduction} give Theorem~\ref{thm:B} and hierarchy data satisfying Q2--Q6 on the same family and volume refinement. Fix any~$\blockpenalty>0$, for instance~$\blockpenalty=1$. The regular family precedes~$\mathsf p$; its refinement and hierarchy data follow it, with the ordered convergence of Step~\ref{step:deduction-hierarchy}. This proves Theorem~\ref{thm:A}.\qedhere
+\end{enumerate}
+\end{proof}
+
+Q0--Q3 do not require $S_n^\zeta$ to be multilinear in the fields; in the construction they are, since $S$ and every $S^\xi$ are tables (Theorems~\ref{prop:IV} and~\ref{prop:PH}). Theorem~\ref{thm:A} leaves $b_*>0$ unspecified; Theorem~\ref{prop:MT} supplies $b_*=\slope=2b_0=11\casimir/(24\pi^2)$.
+
+\begin{remark}[Nontriviality]\label{rem:nontriviality}
+Q3(c) requires a nonzero smeared field; given Q3(a)--(b) this is equivalent to $\mathcal L\ne0$, and in the construction it is met by the unit field (Step~\ref{step:deduction-hierarchy}). Nontriviality comes from the trace: $\Theta\ne0$ (Theorem~\ref{prop:TR}), so faithfulness gives $\Phi(\iota_4\Theta,f)\ne0$ for some~$f$, while its vacuum expectation vanishes; hence it is not a multiple of the identity. Q6 gives the positive limit $3\dimG/\pi^4$ of $r^8\log^2(1/r)\tracetwopoint(r)$, and on no interval $(0,\delta)$ does $\tracetwopoint$ agree with a finite Wick profile. Thus every Gaussian or finite free-field realization whose two-point profile for~$\Theta$ belongs to the class of Definition~\ref{def:D17} is excluded.
+\end{remark}
+
+\subsection{A generalized free-field example}\label{sec:public-witness}
+
+The following example illustrates the scope of Q0--Q6. In Q0 the channels and their actors are arbitrary finite families; Q5 requires the remainder formula and estimates, but not the complement-basis prescription used for Theorem~\ref{thm:B}. The example concerns the conditions in Theorem~\ref{thm:A}. It does not identify the limit in Theorem~\ref{thm:B}.
+
+\paragraph{Selected theory.} On the forward momentum cone put $d\mu(p)=w(p)\,d^4p$, with
+\begin{equation*}
+w(p)=\frac{\minksquare(p)^2}{\log^2(e+\minksquare(p))},\qquad \minksquare(p)=(p^4)^2-|\vec p|^2,
+\end{equation*}
+and take zero measure outside the cone. Use no $(2\pi)$ factor in this normalization. Let $\phi$ be the generalized free scalar with this two-point measure, and let $F_d$ be the span of Wick monomials in $\xi_\alpha=i^{\alpha_4}\partial^\alpha\phi$ of total grade at most $d$, with each factor assigned grade $4+|\alpha|$ and the empty monomial the unit~$u$. These spaces are finite dimensional; take $\mathcal L=\bigcup_dF_d$ and let $\iota_d$ be the inclusions. Their ordinary field operations and the vacuum give the selected Wightman data. A nonzero label has a nonzero symmetric momentum polynomial in its highest nonvanishing particle sector; positivity of $w$ in the cone interior then gives faithfulness. The unit supplies Q3(c). The corresponding Euclidean correlations $S$ are the Wick sums with ordinary Euclidean derivatives after continuation.
+
+For these assertions, construct the field on symmetric Fock space over $L^2(\mu)$. The measure is Lorentz invariant and polynomially bounded, is supported in the forward cone, and has positive energy almost everywhere. Its mass-squared decomposition has density $s^2/\log^2(e+s)$ with respect to $ds$. The commutator is the corresponding superposition of free mass-shell commutators, so it vanishes at spacelike separation. The positive-energy sectors have no translation-invariant vector, leaving the vacuum unique. Wick polynomials and their derivatives inherit locality and covariance; their common invariant domain is the span of finite words of smeared fields applied to the vacuum, dense by scalar-field cyclicity.
+
+For the continuation, direct each contraction edge~$e$ from its earlier slot $i(e)$ to its later slot $j(e)$ and write $p_e$ for its forward-cone momentum. Let $q_j$ be the sum of incoming momenta at slot~$j$ minus the outgoing ones. Then
+\begin{equation*}
+\sum_j j q_j^4=\sum_e(j(e)-i(e))p_e^4\ge\sum_e p_e^4\,.
+\end{equation*}
+The right side controls the Euclidean norm of every $p_e$ on the cone. Thus the polynomially weighted Wick measures pushed forward to the $q_j$ are tempered. Positive adjacent imaginary-time gaps make their Fourier--Laplace integrals absolutely convergent and holomorphic; the same energy bound and product Schwartz tests give dominated convergence to the Wightman boundary values as the gaps shrink. At Euclidean times these integrals give the stated Wick correlations, establishing the selected continuation of Q4.
+
+For the common product coefficients take a Wick basis of each exact intrinsic grade as the actors, and use partial Wick contractions within the cluster, followed by Taylor expansion of the uncontracted fields at the centre. If a monomial cluster has total intrinsic grade $w_{\rm cl}$ and a term has uncontracted base grade $a$, its internal contractions have degree $w_{\rm cl}-a$. When $a\le D$, retain Taylor orders through $D-a$; when $a>D$, omit the whole term. For the scalar two-point kernel $C(x)=S_2(\phi,\phi;x,0)$, the bounds $|\partial^\gamma C(x)|\le C_\gamma|x|^{-8-|\gamma|}$ and the separation of spectators give the coefficient and remainder powers in Q5. In the Taylor remainder the intermediate points remain separated from spectators on the full ball $M_{\rm geo}r<\delta_{\rm sp}/2$; when $a>D$, the omitted term has power $a-w_{\rm cl}\ge D+1-w_{\rm cl}$. Extend by finite linearity to arbitrary tags: their intrinsic cluster degrees are at most the sum of their tag degrees, which is the weight used in Q5. At fixed fields and geometric parameters, shrinking the threshold absorbs the constants into $r^{-\varepsilon}$. One coefficient family works for every truncation, spectator list and state.
+
+On the time axis, polar coordinates and scaling give
+\begin{equation*}
+\lim_{r\downarrow0}r^8\log^2(1/r)\,S_2(\phi,\phi;re_4,0)=384\pi.
+\end{equation*}
+Choose $\Theta=\lambda\phi\in F_4$ with $\lambda^2=\dimG/(128\pi^5)$. Its vacuum expectation is zero and its two-point function has the constant required by Q6. The small-$r$ expansion argument in the proof of Lemma~\ref{lem:I2.1} excludes agreement with a finite Wick profile.
+
+\paragraph{Lattice and phases.} Let the tokens be all graded tags and let $\pi_{\rm quo}$ be the identity. Put $m(A)=1$ for the single tag $A=(0,u)$ and $m(A)=0$ otherwise, and write $M_{\boldsymbol A}=\prod_i m(A_i)$, including $M_\varnothing=1$. Choose $D_N=N+2$, $L_p=p+1$, $\beta_{N,p}=\log(N+2)$ and the constant insertions $I_{N,p}(A,y;U)=m(A)$. They are continuous and gauge invariant with empty stencils, and have $b_*=1$. Their moments are $M_{\boldsymbol A}$; ordinary Riemann sums give the full fixed-volume limit and the volume limit along every increasing sequence, with the identity refinement $\mathsf q(k)=k$.
+
+Take phases $\{+,-\}$ with equal masses, select $+$, and define
+\begin{equation*}
+S^+=S,\qquad S^-=2M-S,\qquad S^{\rm mix}=M.
+\end{equation*}
+Assign the phase and mixture tables arbitrary values on collisions, for example zero, to complete their domains. The finite discrete phase space has full support, its tables are symmetric and smooth on separated configurations, the selected continuation is unchanged and the mixture identity holds. To keep Q5, add two grade-zero channels with actors $u,2u$ and coefficients $h,-h/2$, where
+\begin{equation*}
+h(\boldsymbol A;x,o)=M_{\boldsymbol A}-\sum_{\lambda\in\channels0}c_{0,\lambda}(\boldsymbol A;x,o)\,m((0,O_{0,\lambda})).
+\end{equation*}
+This defect depends only on the cluster labels and positions, not on spectators, state or truncation. Homogeneity of the selected correlations makes the added terms cancel in $S^+$. In the mixture they correct the old grade-zero contribution to $M$ exactly; all positive-grade actors have $m=0$. The new remainder at $-$ is therefore minus that at $+$. The new coefficients satisfy the grade-zero bound: apply the old bounds with a smaller $\varepsilon$ and shrink the threshold to absorb the finite sum and fixed factors. The nonselected phase need not be positive or multilinear. Thus Q0--Q6 permit a lattice family whose insertions are independent of the gauge configuration, while the selected theory is generated by a generalized free field.
+
+
+
+\subsection{Conventions for hierarchy data}\label{sec:formal-conventions}
+
+The hierarchy data in Theorem~\ref{thm:A} use the following conventions.
+
+\begin{remark}[Abstract Poincar\'e group]\label{rem:formal-poincare}
+For these hierarchy data, a relativistic datum carries a set $\mathcal P'$ with a unit, a product and a topology, and a homeomorphism $\kappa_{\rm P}:\mathcal P'\to SO^+(1,3)\ltimes\R^4$ respecting the identity and the products (which makes $\mathcal P'$ a topological group), a strongly continuous unitary representation $\mathsf U$ of $\mathcal P'$ with $\mathsf U(\kappa_{\rm P}^{-1}(1,z))=\mathsf T(z)$, label maps $\rho_{\rm lab}$ on~$\mathcal P'$, and the action on tests through $\kappa_{\rm P}$. Transport along $\kappa_{\rm P}$ turns such a datum into one for the ordinary group of Definition~\ref{def:D14a}, and conversely, and it preserves W0--W3. The resulting axioms are therefore equivalent to Definition~\ref{def:wightman}.
+\end{remark}
+
+\begin{remark}[Nonintegrable integrands]\label{rem:integral-zero}
+In the boundary condition of Q4 integrability is not required: a nonintegrable function is assigned integral zero. For the continuations constructed in Theorem~\ref{prop:RC} the integrands are integrable for every $r>0$ (by the bound~\eqref{eq:H-poly} and rapid decay of the tests), so this convention is never used for them, and Definition~\ref{def:D14f} requires integrability.
+\end{remark}
+
+A further form of the volume limit is local uniform convergence, on $\Gen{n}$, of the fixed-volume kernels $M^{\rm UV}_{P(k),v}$ restricted to the periodic generic domains $\{x:x_i^a-x_j^a\notin L_{P(k)}\Z\ (i\ne j,\ a=1,\ldots,4)\}$. This form follows from~\eqref{eq:F-conf}: a compact subset of~$\Gen{n}$ has bounded diameter and positive minimal coordinate separation, so it eventually lies in the periodic generic domain, and $\Gen{n}\subset\Conf{n}$.
+
+\subsection{An averaged countertest}\label{sec:averaged-countertest}
+
+The averaged Fock countertest of Section~\ref{sec:partII-I} gives a further comparison: it compares the trace field with free comparison vectors modified by arbitrary maps that preserve physical inner products and fix $U\mathcal H$. Its integrands are constant, so the convention of Remark~\ref{rem:integral-zero} is not needed for them.
+
+Let $n\ge0$ and let $U$ be a comparison (Definition~\ref{def:D30}), with $\mathcal F_n$ as in Definition~\ref{def:D29}. For a probability space $(Z,\lambda)$, let each $P_z:\mathcal F_n\to\mathcal F_n$ preserve physical inner products and fix $U\mathcal H$ pointwise, without assuming linearity.
+The maps $P_z$ model transformations of the free comparison vectors that fix every embedded interacting state in $U\mathcal H$. Because physical inner products are preserved, neither matrix element in Lemma~\ref{lem:I2.3} changes, so the averaged inequality states that averaging these transformations cannot restore the relative-locality identity.
+\begin{lemma}[Localized averaged countertest]\label{lem:I2.4}
+For every such $n,U,(Z,\lambda),(P_z)$ and $r>0$, there are open $A,B$, with $\overline A\subset B(0,r)$ and $\minksquare(x-y)<0$ on $\overline A\times\overline B$, and tests $f,h$ as in Lemma~\ref{lem:I2.3}, supported respectively in $A,B$, such that
+\begin{equation*}
+\int_Z\langle P_z\mathcal E(-h),\psi_U(f)\rangle\,d\lambda(z)
+\ne\int_Z\langle\psi_U(\bar f),P_z\mathcal E(h)\rangle\,d\lambda(z)\,.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+For physical $v$ and $w\in U\mathcal H$ (Definition~\ref{def:D30}), $\langle P_zv,w\rangle=\langle P_zv,P_zw\rangle=\langle v,w\rangle$.
+Thus averaging preserves both integrands.
+
+Apply Lemma~\ref{lem:I2.3} in $B(0,r/2)$. Compactness and strict spacelike separation give support neighbourhoods $A,B$ with spacelike separated closures and $\overline A\subset B(0,r)$.
+\end{proof}

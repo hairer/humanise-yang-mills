@@ -1,0 +1,37 @@
+\section{Deduction of the main theorem}\label{sec:deduction}
+
+The principal results of Sections~\ref{sec:renormalization} and~\ref{sec:continuum-results} concern one lattice family and one volume refinement; the deduction assembles them in the order of their choices. The fixed-volume limit, quotient construction, trace law, operator product and contact extension inherit the unresolved inputs listed in \hyperref[par:proof-status]{the proof-status notice}; the deductions below are conditional on those inputs.
+
+\begin{proof}[Proof of Theorem~\ref{thm:B}]
+\begin{enumerate}[label=\textup{\arabic*.},ref=\arabic*,itemsep=0.25em]
+\item\label{step:deduction-choice} Fix~$G$ and~$\blockpenalty>0$, and make the common choices in the order of Section~\ref{sec:constants}. The Wilson start~\eqref{eq:I12-Wilson-initialization} begins the induction, Theorem~\ref{prop:RG} advances it, and Theorem~\ref{prop:MT} selects trajectories reaching the common endpoint. These choices precede any volume sequence.
+
+\item\label{step:deduction-family} Fix the local sections, reference levels and terminal maps on these trajectories; Definition~\ref{def:D08} defines every insertion, also below its reference level. The local sections are polynomials in the links of their fixed stencils, hence continuous and local, and the terminal maps change only their coefficients, which preserves gauge invariance. Theorem~\ref{prop:MT} at $m=N$ gives the volume-uniform running law with $b_*=\slope>0$. Thus $\mathcal W$ is regular (Definition~\ref{def:Q1}).
+
+\item\label{step:deduction-uv} Theorem~\ref{prop:UV} gives the full fixed-volume limit for every field and difference list, so every admissible separated test has a full inner limit before any volume extraction. This proves~(i).
+
+\item\label{step:deduction-volume} Given a strictly increasing~$\mathsf p$, Theorem~\ref{prop:IV} chooses~$\mathsf q$ and~$S$ with ordered convergence along $P=\mathsf p\circ\mathsf q$ and properties E1--E7; the same extraction fixes the corrected coefficient maps. This proves the table part of~(ii).
+
+\item\label{step:deduction-stress} Define $F_d=V_d/\nullspace{d}(S)$ and~$\mathcal L$ by Definition~\ref{def:D10}. Proposition~\ref{prop:FC} gives the inclusions and derivatives, with injective response maps whose images cover~$\mathcal L$, and Theorem~\ref{prop:ST} gives the conserved tensor, normalized by its shell fluxes, on these fields.
+
+\item\label{step:deduction-phase} Theorem~\ref{prop:PH} gives $\phases,\nu,S^\xi$ on these quotient spaces. Choose~$\xi_*$ in the full-measure set with one-dimensional time-axis reflection ground space (Lemma~\ref{lem:H1.3}). Theorem~\ref{prop:RC} reconstructs every phase with a unique vacuum, which proves~(iii); retain the theory and continuation at~$\xi_*$.
+
+\item\label{step:deduction-hierarchy} Set $\pi_{\rm quo}(d,\mathbf c)=(d,[\mathbf c])$; representatives make it onto. The unit response is nonzero since its one-point function is one, so faithfulness in Theorem~\ref{prop:RC} gives a nonzero acting field and, with Step~\ref{step:deduction-stress}, the label clauses of Q3. Theorem~\ref{prop:PH} gives its phase clauses, and the reconstruction gives Q2 and Q4. Assign arbitrary values to the quotient mixture and phase correlations on the collision diagonals; this supplies the function domains of Q0 and has no distributional content, unlike the contact extensions constructed in Step~\ref{step:deduction-products}. Separated tests vanish there, so ordered convergence is unchanged, and representative independence gives $S_n^{\rm mix}(\pi_{\rm quo}v;x)=S_n(v;x)$ on~$\Conf{n}$. This identifies the lattice limit $\mathcal W\to S^{\rm mix}\circ\pi_{\rm quo}$ of~(ii).
+
+\item\label{step:deduction-trace} Center the trace of the fixed tensor in the selected phase by Definition~\ref{def:D16}. Theorem~\ref{prop:TR} gives vacuum centering, the positive amplitude and the full-radius law, and Proposition~\ref{prop:NF} excludes every finite Wick profile; these give Q6 and~(iv).
+
+\item\label{step:deduction-products} Choose the underlying prescription of Lemma~\ref{lem:J1.1} once, with its original fields and correlation table. Theorem~\ref{prop:OP} gives Q5 and its error bounds. Theorem~\ref{prop:CT} and Lemmas~\ref{lem:J2.1}--\ref{lem:J2.3} use the same prescription, with separate contact projections, separating functionals and clearance, to construct real bases of the contact strata and the contact extensions; the contact proof uses the lattice-derived estimates of Lemma~\ref{lem:J-power-separated} and the signed transfer of Lemma~\ref{lem:J-signed-layer}. This proves~(v) and completes~(ii).\qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{remark}[Further results]\label{rem:further-results}
+Further conclusions about these same objects are proved in Part~II. Lemma~\ref{lem:E3.2} gives convergence at moving points, and Lemma~\ref{lem:H2.3} the uniform low-energy bounds. For the field~$\Theta$ of Step~\ref{step:deduction-trace}, Lemma~\ref{lem:I1.1} gives the operator identity of centering, Lemma~\ref{lem:I1.2} the unique spectral measure and Lemma~\ref{lem:I1.3} its high-energy limits. Lemmas~\ref{lem:I2.2}, \ref{lem:I2.3} and~\ref{lem:I2.4} give further polynomial and Fock countertests in the selected phase, and Lemmas~\ref{lem:J1.4}--\ref{lem:J1.5} and Remark~\ref{lem:J1.3} nested and integrated product estimates for the same prescription.
+\end{remark}
+
+\begin{remark}[Endpoint tuning]\label{prop:endpoint-tuning}
+The specified recursion also varies the endpoint analytically. There is a width $w_{\rm tun}>0$, independent of~$N,p$, such that, for every~$N,p$ and $s\in[-1,1]$, exactly one bare coupling~$\beta_{N,p}(s)$ starts a trajectory of the specified recursion reaching $\bar\beta+w_{\rm tun}s$ at level zero. It satisfies $\beta_{N,p}(0)=\beta_{N,p}$ and has a holomorphic extension~$b_{N,p}$ to $|z|<1$ with
+\begin{equation}\label{eq:I12-endpoint-tuning}
+b_{N,p}(s)=\beta_{N,p}(s)\qquad(-1<s<1)\,.
+\end{equation}
+This is Lemma~\ref{lem:E1.3}; the proofs above do not use it.
+\end{remark}

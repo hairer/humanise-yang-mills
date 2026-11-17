@@ -1,0 +1,66 @@
+Local matching converts a local observable of controlled size into an insertion of the same degree. It makes no assumption on the size of the physical coefficient it produces; it bounds its inverse terminal coordinate, which is the quantity in~\eqref{eq:F-subpower}. The derivative bound below controls Taylor extraction, and the supremum bound controls the forced complement.
+\begin{lemma}[Local comparison]\phantomsection\label{lem:E-local-comparison}
+\begin{enumerate}
+\item[(i)] \emph{Local matching.} Let $F_{N,p}(y)$ be local observables such that $a_N^{d'}F_{N,p}$ is continuous on a fixed stencil and regular on healthy configurations in the sense of Definition~\ref{def:D05a}, with derivative bounds and a supremum bound over all configurations of subpower growth. Then there are tame $b_{N,p}\in V_{d'}$ with $O^{(d')}(b)-F$ negligible.
+\item[(ii)] \emph{Auxiliary equation insertions.} For the auxiliary section of Lemma~\ref{lem:A-R4}, there are invertible $P_{N,p}$, with $\|P_{N,p}^{-1}\|_1\le2$ eventually uniformly in~$p$, such that, with $B_{d,N,p}=\mathsf Z_{N,p,d}P_{N,p}t_N^{\factorcount}\mathsf R_d$, the comparison~\eqref{eq:E-equation-comparison} holds for every equation label $\pi_{N,p}\in\mathcal I_d$ with tame $B_{d,N,p}\pi_{N,p}$.
+\end{enumerate}
+\end{lemma}
+Here $\mathcal I_d$ is the equation ideal described in the proof of Lemma~\ref{lem:E2.6}, and the comparison is
+\begin{equation}\label{eq:E-equation-comparison}
+ O^{(d)}_{N,p}(B_{d,N,p}\pi_{N,p},y)
+ -a_N^{-d}V_d^{\rm aux}[\mathsf R_d\pi_{N,p}](y)
+ \quad\text{is negligible}.
+\end{equation}
+Both parts use the same backward coefficient correction.
+\begin{proof}
+We represent the observable as a one-mark source at the cutoff, carry the difference with the selected primary insertion backwards with the marked step (Lemma~\ref{lem:E-marked-step}), and bound its replicated seminorm by Lemma~\ref{lem:E-replication}. Write $h_N=a_N^{d'}F_{N,p}(0)$. Enlarge its stencil by the section stencil. The radial Taylor coefficients through degree~$d'$ (in the sections of Lemma~\ref{lem:A1}) give a coefficient $v_N$ and a remainder. They are bounded by a fixed multiple of the derivative bound: it is a linear map on a finite jet space. Subtract the section with that coefficient on the healthy part. Its regular remainder has zero value and zero radial jet through degree~$d'$. Assign the complementary observable to the forced supports meeting the enlarged stencil. This gives an exact one-mark representation of $\density\rho_N h_N$, with
+\begin{equation}\label{eq:E-local-start}
+ |v_N|_1+r_N\le E_{N,p},\qquad
+ \text{forced majorant}\le E'_{N,p},
+\end{equation}
+where $E,E'$ have subpower growth. The support weight of this fixed enlarged stencil is bounded by $e^{81\sigma_{J_N}}$ eventually; its $B_N$ covering number is at most~$81$. Threshold powers, the Taylor-coefficient bound and this support weight are included in $E,E'$. The entry conditions make each of them subpower. No division by the forced normalization is made on the uncontrolled complement: it is retained with its original eligibility tests and the supremum bound $E'$.
+
+To compare with the selected graph, carry this representation backwards and at the reference level choose the primary coefficient with the same polynomial coordinate. Subtract the corresponding selected inserted density. Its polynomial coordinate at the reference level is zero. The following calculation carries this matching condition towards the fine scale.
+
+For one step, let $u,v$ be the coarse and fine coordinates, $R,T$ their remainder bounds, $Y=|\mathsf S_Lv|_1$, $K$ the norm bound for the leading map and its inverse, $\varepsilon_L=L^{-3/8}$ and $\vartheta_L=L^{1/8}$. The marked-step inequalities give
+\begin{equation}\label{eq:E-match-cone}
+ Y\le K\bigl(|u|_1+\varepsilon_L(Y+T)\bigr),\qquad R\le KY+\varepsilon_L T.
+\end{equation}
+Suppose $a|u|_1\le R$, with $a=32(1+C^{\rm col}_{J_i})^2\ge4K^2$. Then $4K|u|_1\le Y+\varepsilon_L T$. Substitution in the first inequality, using $4K\varepsilon_L\le1$, gives $Y\le4K\varepsilon_L T$. Item~\ref{it:E-match} in Lemma~\ref{lem:E1.1} gives
+\begin{equation*}
+ 4K\,32(1+C^{\rm col}_{J_{i+1}})^2\varepsilon_L\le1,\qquad
+ (4K^2+1)\vartheta_L\varepsilon_L\le1.
+\end{equation*}
+Consequently $32(1+C^{\rm col}_{J_{i+1}})^2|v|_1\le T$ and $\vartheta_L R\le T$. The matching condition starts this induction with $u=0$ at the reference level. Multiplying the second inequality through the interval gives the inverse-scale gain, while the finest-level bound is closed by absorbing the coefficient contribution into its remainder bound. In particular, with subpower $E''$ absorbing $E,E'$,
+\begin{equation}\label{eq:E-backward-match}
+ |\Delta_N|_1\le\frac{2(1+C^{\rm col}_{J_N})E''_{N,p}}{\ell_{N-1}^{1/8}},\qquad
+ R_k\le2(1+C^{\rm col}_{J_N})E''_{N,p}e^{-(s_N-s_k)/8}.
+\end{equation}
+Here $\Delta_N$ is the difference from the selected fine polynomial coordinate. The same bounds hold when a local source is first represented at any level $n\le N$, with its polynomial coordinate matched to the selected graph at a lower reference level. If $E''_{n;N,p}$ bounds its starting data after the coefficient contribution is absorbed, then
+\begin{equation}\label{eq:E-backward-match-level}
+ |\Delta_n|_1\le\frac{2(1+C^{\rm col}_{J_n})E''_{n;N,p}}{\ell_{n-1}^{1/8}},\qquad
+ R_k\le2(1+C^{\rm col}_{J_n})E''_{n;N,p}e^{-(s_n-s_k)/8}
+ \quad(\reflevel{d'}\le k<n).
+\end{equation}
+Indeed the cone starts at the same zero matched coordinate, and its induction uses only the steps through~$n$. The boundary absorption uses the starting bound there. The product $\prod_{i=k}^{n-1}\ell_i^{-1/8}$ is exactly $e^{-(s_n-s_k)/8}$. Taking $n=N$ recovers~\eqref{eq:E-backward-match}. The factor $e^{-(s_n-s_k)/8}$ is the inverse-scale gain: each matched step contracts the remainder by $\ell^{-1/8}$.
+
+To estimate the replicated residual, for a source of size $E$ started at $N$, use at level~$k$ the mark weight
+\begin{equation*}
+ \mathsf w=\frac{\zeta_{d',k}/4}{a_k^{-d'}E\exp\{-(s_N-s_k)/8\}},
+\end{equation*}
+where $\zeta_{d',k}=\widehat\beta_k^{-(q^{\rm ht}_{d'}+4)}$ is the source threshold fixed before~$N,p$ in~\eqref{eq:E-attachment-allowance}. Its reciprocal is a fixed power of the reference coupling. At every finer step multiply this weight by the source contraction factor of that step. Its product with the dimensionless singleton size is at most one quarter of that source threshold; the other three quarters bound the graph remainder, the forced complement and their sum. This follows inductively from the two inequalities in~\eqref{eq:E-atom-estimates}. For the first step the forced complement is bounded by $E'$ in~\eqref{eq:E-local-start}; the large-field suppression absorbs its fixed support and derivative factors before division by the new forced normalization. The radius transport~\eqref{eq:E-source-allowance-transport} and the singleton site-sum calculation in Lemma~\ref{lem:E-source-attachments} control the singleton attachments. The complete residual is controlled at level~$k$ in the sense of Lemma~\ref{lem:E-replication} only after the higher-mode propagation identified there has been established. The singleton polynomial coordinate at the reference level is zero, so the representation constructed this way is exactly the difference with the selected primary coefficient.
+
+Here $m$ labels the tiling and $k$ the finer stopping level at which its replicated sources are integrated. Replicate the difference at a stopping pair $m\le k$, and use the weighted source representation~\eqref{eq:E-source-form}. Coefficient extraction contributes $\mathsf w^{-1}$ per mark; the complete singleton bounds and the normalized unmarked ratio~\eqref{eq:E-vacuum-ratio} contribute a constant depending on $m,k$. Consequently, for every fixed such pair,
+\begin{equation}\label{eq:E-local-error}
+ \|O^{(d')}(b)-F\|_{\mathcal C^{\rm tile}_m(0)}
+ \le C_{m,k}\mathfrak e_{N,p}a_N^{1/8},\qquad
+ \|\mathsf Z_{N,p,d'}^{-1}b_{N,p}\|_\infty\le2E'''_{N,p},
+\end{equation}
+where $\mathfrak e,E'''$ have subpower growth. The factor $e^{s_k/8}$ and the fixed weight factor $\zeta_{d',k}^{-1}$ belong to $C_{m,k}$. The same argument applies after each signed permutation and conjugation, with translation covariance and the union of their fixed stencils. Absorbing two factors $a_N^{-1/32}$ bounds the first expression by $a_N^{1/16}$ on every fixed pair. The interior-seminorm comparison after Definition~\ref{def:E2-small} gives the common tolerance $a_N^{1/32}$, chosen before all cell requests. This proves negligibility and tameness on full cutoff tails, and part~(i).
+
+For part~(ii), perform the construction on all its basis polynomials together, with the original Taylor normalization. Let $u_j$ be the primary bare coefficient matching its $j$th basis vector, and set $Px=\sum_jx_ju_j$, after the finite symmetry averaging. For this fixed section the regular derivative bound $H_{j,d}$ at stage~$j$ is fixed before its ratio, independently of the later coupling. The sharper coefficient estimate in~\eqref{eq:E-backward-match} therefore has numerator bounded by $2(1+C^{\rm col}_j)H_{j,d}$ on each basis input. The ratio condition, including the finite basis-recombination factor, gives
+\begin{equation*}
+ \left|x-Px\right|_1\le\tfrac14|x|_1.
+\end{equation*}
+Indeed, before summing over the fixed basis the right side is the last-step factor $\ell_{N-1}^{-1/8}$ times the stage coefficient bound; the stage ratio was chosen after that bound. The matrix is therefore invertible and $|P^{-1}x|_1\le2|x|_1$. The construction is common to all later cell requests. Multiplication by $t_N^{\factorcount}\mathsf R_d$ changes a polynomial label into its auxiliary bare insertion coordinate; multiplication by $\mathsf Z$ changes that coordinate to the reference normalization. These are exactly the maps $B$ in the statement. The inverse bound preserves tameness, and~\eqref{eq:E-local-error} compares the two sections on its transported equation ideal. Finite combinations use the same subpower factors. The argument only replaces eventual bounds on coefficients, so ordered-tame families obey the corresponding ordered version as well.
+\end{proof}

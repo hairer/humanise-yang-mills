@@ -1,0 +1,26 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,font=\small,
+  box/.style={draw,rounded corners=2pt,align=center,inner sep=4pt},
+  ar/.style={->,thick}]
+% A two-dimensional schematic of fine links and one coarse edge.
+\begin{scope}[x=0.55cm,y=0.55cm]
+  \draw[step=1,gray!35,thin] (0,0) grid (5,5);
+  \draw[gray!70,dashed,thick] (0,0) -- (0,5) -- (5,5) -- (5,0);
+  \draw[paperlink,very thick] (0,0) -- (5,0);
+  \draw[red!70!black,thick,densely dashed] (0,0) -- (0,1) -- (5,1) -- (5,0);
+  \draw[green!45!black,thick,dotted] (0,0) -- (0,2) -- (5,2) -- (5,0);
+  \foreach \x/\y in {0/0,5/0,0/5,5/5}
+    \filldraw[fill=white,draw=black,thick] (\x,\y) circle (2.4pt);
+  \node[below left] at (0,0) {$y$};
+  \node[below right] at (5,0) {$y+e_a$};
+  \node[above,align=center] at (2.5,5.3) {fine grid; coarse sites circled};
+\end{scope}
+\node[box] (predict) at (7.1,2.0) {framed connectors\\and tag\\$Q^{\rm pred}_e$};
+\node[box] (draw) at (11.1,2.0) {draw $R_e$ from $q_{\blockpenalty\beta}$\\$V_e=R_eQ^{\rm pred}_e$};
+\draw[ar] (3.7,1.9) -- (predict);
+\draw[ar] (predict) -- (draw);
+\node[align=center,font=\footnotesize] at (9.2,0.55) {integrate the fine density: exact coarse density\\with coupling, scalar and regular and forced activities};
+\end{tikzpicture}
+\caption{One block step, shown in a two-dimensional slice. The three routes schematically represent fine transports aligned at the endpoints of one highlighted coarse edge; the actual offset connectors, frames and fallback frame or connector branches are specified in Section~\ref{sec:renormalization}. Given the fine configuration and tag, the draw uses the normalized density $q_{\blockpenalty\beta}$ around the predictor. Integrating the fine links gives the exact coarse density; the activity bounds require the inputs in the proof-status notice. The spacing changes from $a_{m+1}$ to $a_m=\ell_m a_{m+1}$.}\label{fig:rg-block-step}
+\end{figure}

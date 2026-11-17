@@ -1,0 +1,128 @@
+\makeatletter
+\providecommand{\equationalias}[1]{\protected@write\@auxout{}{\string\newlabel{#1}{{\theequation}{\thepage}{}{equation.\theHequation}{}}}}
+\makeatother
+
+\section{The result}\label{sec:introduction}\label{sec:result}
+
+How can a lattice model give a quantum field theory in continuous space-time? We study this question for four-dimensional Yang--Mills theory with a compact gauge group whose Lie algebra is simple and nonabelian, starting from Wilson's lattice gauge theory~\cite{Wilson1974}. On a finite periodic lattice the variables are group elements attached to the links, and their law is an ordinary probability measure. Let $G\subset U(n_G)$ be a closed matrix group, $s\ge1$ an integer and $\Lambda_s=(\Z/s\Z)^4$. A configuration assigns $U(y,a)\in G$ to the positive link from the site~$y$ in the coordinate direction~$a$, and $U(y,a)^{-1}$ to the reversed link. For $\beta\in\R$,
+\begin{equation}\label{eq:intro-wilson}
+\begin{aligned}
+U_{y;ab}&=U(y,a)U(y+e_a,b)U(y+e_b,a)^{-1}U(y,b)^{-1},\\
+E_s^{\rm W}(U)&=\sum_{y\in\Lambda_s}\sum_{a<b}\bigl(1-n_G^{-1}\operatorname{Re}\tr U_{y;ab}\bigr),\qquad
+d\mu_{s,\beta}(U)=Z_{s,\beta}^{-1}e^{-\beta E_s^{\rm W}(U)}\prod_{y,a}dh(U(y,a))\,,
+\end{aligned}
+\end{equation}
+where $dh$ is probability Haar measure and $Z_{s,\beta}$ normalizes the measure. The plaquette holonomy $U_{y;ab}$ is the transport around an elementary square, and $\beta$ penalizes its distance from the identity. The problem is to choose the inverse coupling and the local observables as functions of the lattice spacing so that their correlations converge as the spacing tends to zero and the volume grows, and to identify the limit. The proposed construction does not give a measure on continuum connections. Its claimed limits are correlations of gauge-invariant local observables at distinct points; the resulting correlation functions are intended to reconstruct Hilbert spaces and relativistic quantum fields.
+
+\paragraph{Main result.}
+The following claims are conditional on the inputs listed in \hyperref[par:proof-status]{the proof-status notice}.
+Let the real Lie algebra $\g$ of~$G$ be simple and nonabelian; $G$ need not be connected. Fix a block penalty $\blockpenalty>0$: the coefficient of the soft constraint that ties each coarse link to a predictor computed from the fine transports in the block-spin kernel (Definition~\ref{def:D04}). The proposed construction gives one family of Wilson measures on tori of physical side $L_p\uparrow\infty$ with spacings $a_N=D_N^{-1}\downarrow0$, together with continuous gauge-invariant local insertions on fixed finite stencils, all chosen before any sequence of volumes is prescribed. Its bare inverse couplings satisfy the one-loop running law
+\begin{equation}\label{eq:intro-running}
+\frac{\beta_{N,p}}{\log(1/a_N)}\longrightarrow\slope=\frac{11\casimir}{24\pi^2}
+\qquad(N\to\infty),\quad\text{uniformly in }p\,,
+\end{equation}\equationalias{eq:I12-bare-slope}%
+where $\casimir$ is the adjoint Casimir in the trace normalization of Definition~\ref{def:D01} (for $SU(n)$, $\slope=11n^2/(12\pi^2)$; Remark~\ref{rem:SUn}). The family has the following properties; Theorem~\ref{thm:B} in Section~\ref{sec:main-theorem} states them precisely.
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item At each fixed volume, correlations of the insertions, smeared against smooth tests supported away from coincident points and inside one period cell, converge along the full sequence of spacings.
+\item Every prescribed strictly increasing sequence $\mathsf p$ of volume indices has a strictly increasing refinement $\mathsf q$ such that, with $P=\mathsf p\circ\mathsf q$ and the lattice correlations $\latsmear_{N,p}$ of Definition~\ref{def:D03},
+\begin{equation}\label{eq:intro-ordered-limit}
+\lim_{k\to\infty}\Bigl(\lim_{N\to\infty}\latsmear_{N,P(k)}(v;f)\Bigr)=\int f(x)S_n(v;x)\,dx
+\end{equation}
+for one table $S$ of Euclidean correlation functions, symmetric under permutations, translations and signed permutations of the axes, reflection positive, smooth away from collisions and polynomially bounded near them (properties E1--E7 of Section~\ref{sec:euclidean-properties}). One refinement serves all insertions and all tests.
+\item $S=\int_{\phases}S^\xi\,d\nu(\xi)$ is an average of phases over a compact metric space with a fully supported probability measure, and each $S^\xi$ is the Euclidean continuation of a faithful Wightman theory with unique vacuum.
+\item The fields carry a conserved symmetric stress tensor, normalized by its action on the other fields. In a selected phase, the two-point function $\tracetwopoint$ of the centered trace of this tensor satisfies
+\begin{equation}\label{eq:intro-trace-law}
+\lim_{r\downarrow0}r^8\log^2(1/r)\,\tracetwopoint(r)=\frac{3\dim_\R\g}{\pi^4}>0\,,
+\end{equation}
+and on no interval $(0,\delta)$ does $\tracetwopoint$ agree with a finite Wick profile, a finite sum of finite products of free mass-shell Laplace kernels (Definition~\ref{def:D17}).
+\item Nearby fields have an operator product expansion whose coefficients depend neither on the other fields nor on the phase, with remainders bounded uniformly in the phase. The correlations of each phase extend across coincident points by an explicit subtraction of Taylor jets.
+\end{enumerate}
+The claimed conclusion of Theorem~\ref{thm:B} applies to every $\blockpenalty>0$, subject to the proof inputs above. Section~\ref{sec:correspondence} states a weaker existence theorem (Theorem~\ref{thm:A}), which asks only for some positive logarithmic slope, and deduces it from Theorem~\ref{thm:B}.
+
+\paragraph{What is not claimed.}
+The Clay problem~\cite[\S4]{JaffeWitten2006} asks for existence and a positive mass gap. The intended construction gives Wightman theories with unique vacuum, one in each phase; no mass gap is claimed or used. Uniqueness of the vacuum means that zero is a simple eigenvalue of the energy operator. It gives no lower bound on the rest of the spectrum: a positive operator with one-dimensional kernel may have spectrum accumulating at zero, as the energy of a free massless field does, and nothing stated in this paper excludes such a spectrum for the theories constructed here. The infinite-volume limit, the phase space and the selected phase are not shown to be unique, and independence from~$\blockpenalty$ is not proved. Section~\ref{sec:main-theorem} lists the limitations next to Theorem~\ref{thm:B}.
+
+\subsection{Proof status}\label{sec:intro-source}
+
+\paragraph{Unresolved proof inputs.}\label{par:proof-status}
+The arguments for the main results require the following inputs, which remain open: support-weighted determinant locality and the physical boundary estimate in Lemma~\ref{lem:B-D2}, including its comparison with the coefficient calculation of Lemma~\ref{lem:C6}, and the common shifted-strip estimate used in Lemmas~\ref{lem:B5} and~\ref{lem:B7}; the fine-health, localization and cutoff-continuity inputs of Lemmas~\ref{lem:D-inherited}, \ref{lem:D-localization} and~\ref{lem:D-cutoff-continuity}; the higher-mode support reserve and stopping-level restart for mixed marked attachments in Lemma~\ref{lem:E-source-attachments}; and the same-sample guarded Gaussian comparison, its scalar and forced estimates, and finite-cutoff continuity of the marked graph operator (Lemma~\ref{lem:E-fixed-level}). The joint forced initialization of Lemma~\ref{lem:E-joint-terminal} gives a late-cutoff, site-root bound but does not supply the higher-mode propagation. The trace deduction additionally requires the normalized raw right-inverse convergence identified in the proof of Lemma~\ref{lem:I-transfer}. The local signed forest bound of Lemma~\ref{lem:J2.2} uses the fixed contact choices of Definitions~\ref{def:D36}--\ref{def:D38}; its application to the selected family depends on the marked and quotient inputs above. The claims depending on these inputs are conditional until the missing estimates and convergence statements are established.
+
+\subsection{Earlier work and the method}\label{sec:intro-earlier}
+
+Table~\ref{tab:earlier-work} lists, for the main mechanisms of the proof, the closest earlier rigorous result and its use here. The comparison concerns how these operations are combined; it assigns none of them a new origin, and we make no priority claim for renormalization-group principles or physical predictions.
+
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{@{}p{0.25\textwidth}p{0.42\textwidth}p{0.28\textwidth}@{}}
+\caption{Mechanisms, earlier results and their use here.}\label{tab:earlier-work}\\
+\toprule
+Mechanism & Earlier result & Use here\\
+\midrule
+\endfirsthead
+\toprule
+Mechanism & Earlier result & Use here\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Nonlinear block averages, gauge fixing, stationary backgrounds, marginal curvature-square extraction & Ba\l{}aban: analytic stationary backgrounds~\cite[Theorem~1, Proposition~6]{Balaban1985Variational}; symmetric block kernels and the marginal analysis~\cite[pp.~252--254, \S\S4--5]{Balaban1987RG}; large fields for small effective couplings~\cite[Theorem~1, p.~355]{Balaban1989Large}, physical observables left open there (p.~356) & Running couplings and local composite fields controlled together on one tuned family\\[2pt]
+Four-dimensional ultraviolet construction & Magnen--Rivasseau--S\'en\'eor~\cite{MagnenRivasseauSeneor1993}: pure $SU(2)$, trivial sector, regularized axial gauge, fixed infrared cutoff; detailed convergence deferred and infrared cutoff retained (p.~327), composite observables set aside (p.~329) & Infinite-volume gauge-invariant local fields, phases, stress tensor and products\\[2pt]
+Disjoint polymers covering the large-field region; selective exponentiation & Gaw\k{e}dzki--Kupiainen, critical $\varphi^4_4$~\cite[p.~212, (4.8), pp.~218--221]{GawedzkiKupiainen1985} & Forced activities covering all large-field sites\\[2pt]
+Polymer extraction, reblocking, analytic norms, Gaussian integration & Brydges--Yau~\cite[\S\S1--2, pp.~378--384]{BrydgesYau1990} & Activities and their weighted norms\\[2pt]
+Clipped kinetic term, local quadratic terms, regular errors, covering sum, exact coupling reset & OpenAI's sigma-model papers: the exact map of~\cite[\S5, pp.~38--55]{OpenAI2026O4} and its adaptation~\cite[\S3.3, pp.~23--28]{OpenAI2026O3} & The coordinates of the effective densities\\[2pt]
+Reflection positivity, transfer matrix, chessboard estimates & Osterwalder--Seiler~\cite{OsterwalderSeiler1978}, \cite[\S2a, Theorem~2.1]{Seiler1982}; Fr\"ohlich--Israel--Lieb--Simon~\cite[\S4, Theorems~4.1--4.2]{FrohlichIsraelLiebSimon1978}, lattice version for local functions~\cite[Theorem~2.2]{Seiler1982} & Volume-uniform bounds; reflection Hilbert spaces\\[2pt]
+Analytic continuation of Euclidean correlations & Osterwalder--Schrader~\cite{OsterwalderSchrader1973}, with the growth and boundary-value issues addressed in~\cite{OsterwalderSchrader1975} & Reconstruction in every phase, from slab and distribution estimates; reflection positivity alone does not give it\\[2pt]
+One-loop running & Gross--Wilczek, Politzer~\cite{GrossWilczek1973,Politzer1973}; background-field coefficient~\cite[\S3.3]{Abbott1982} & The slope~$\slope$, on the exact block map\\[2pt]
+Operator products, trace anomaly, Taylor subtraction & Wilson~\cite[\S II]{Wilson1969}; all-order perturbative OPE in Euclidean Yang--Mills theory with gauge-invariant closure and associativity~\cite{FrobHolland2016}; Collins--Duncan--Joglekar~\cite[(3.19)--(3.21)]{CollinsDuncanJoglekar1977}; Brunetti--Fredenhagen~\cite[\S5.2]{BrunettiFredenhagen2000} & A nonperturbative OPE at each finite truncation, uniform in the phase; the trace law; contact extensions\\
+\end{longtable}
+\endgroup
+
+The renormalization group is organized as in the method of Bauerschmidt, Brydges and Slade~\cite{BauerschmidtBrydgesSlade2019}: an explicitly defined map, a finite-dimensional flow of couplings, norms in which the remaining coordinate contracts, and a global trajectory with a tuned initial parameter. What requires proof here is the compatibility of the one-loop slope with the exact gauge block map, the coupling reset and the tuning to a common endpoint, followed by continuum identifications on one family: control of composite fields, restoration of rotations through stress-tensor fluxes, the trace law through all radii and product bounds uniform over phases.
+
+\subsection{Reading guide}\label{sec:reading-guide}
+
+Section~\ref{sec:definitions} defines the objects needed to state Theorem~\ref{thm:B}, which is Section~\ref{sec:main-theorem}. Section~\ref{sec:strategy} explains the route of the proof and the mechanisms that make it work, with a dependency map (Figure~\ref{fig:dependency}). Sections~\ref{sec:renormalization} and~\ref{sec:continuum-results} state the principal results, each with the idea of its proof, and Section~\ref{sec:deduction} deduces Theorem~\ref{thm:B}. Part~II gives the proofs. Table~\ref{tab:principal-results} lists the principal results; their tags appear in statement titles. Section~\ref{sec:constants} records the order in which constants are chosen. A first reading can skip the coordinates of the effective densities (Section~\ref{sec:density}), the marked decomposition (Section~\ref{sec:marked}) and Section~\ref{sec:constants}. The index of notation ends Part~I.
+
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}p{0.06\textwidth}p{0.55\textwidth}p{0.12\textwidth}p{0.21\textwidth}@{}}
+\caption{Principal results and their proofs.}\label{tab:principal-results}\\
+\toprule
+Tag & Statement & Part~I & Proof in Part~II\\
+\midrule
+\endfirsthead
+\toprule
+Tag & Statement & Part~I & Proof in Part~II\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+RG & Exact integration of one scale and coupling drift & Thm~\ref{prop:RG} & Sections~\ref{sec:partII-B}--\ref{sec:partII-D}\\
+MT & Common endpoint coupling and running slope & Thm~\ref{prop:MT} & Section~\ref{sec:partII-E.1}\\
+UB & Volume-uniform bounds on lattice differences & Prop~\ref{prop:UB} & Section~\ref{sec:partII-E.2}\\
+UV & Full fixed-volume ultraviolet limit & Thm~\ref{prop:UV} & Section~\ref{sec:partII-E.3}\\
+IV & Volume refinement and Euclidean properties & Thm~\ref{prop:IV} & Section~\ref{sec:partII-F}\\
+FC & Inclusions, derivatives and Maxwell dimensions & Prop~\ref{prop:FC} & Lemma~\ref{lem:F2}\\
+MC & Maxwell comparison at short distances & Prop~\ref{prop:MC} & Lemma~\ref{lem:G2.1}\\
+ST & Conserved stress tensor and its shell fluxes & Thm~\ref{prop:ST} & Lemmas~\ref{lem:G3.1}--\ref{lem:G3.2}\\
+SC & Differentiated comparison with stress insertions & Prop~\ref{prop:SC} & Lemma~\ref{lem:G3.3}\\
+PH & Phase decomposition on the same fields & Thm~\ref{prop:PH} & Section~\ref{sec:partII-H.1}\\
+RC & Wightman reconstruction in every phase & Thm~\ref{prop:RC} & Section~\ref{sec:partII-H.2}\\
+TR & All-radii law for the centered stress trace & Thm~\ref{prop:TR} & Section~\ref{sec:partII-I.1}\\
+NF & Exclusion of finite Wick profiles & Prop~\ref{prop:NF} & Lemma~\ref{lem:I2.1}\\
+OP & Operator product expansion with error bounds & Thm~\ref{prop:OP} & Section~\ref{sec:partII-J.1}\\
+CT & Extensions through collision diagonals & Thm~\ref{prop:CT} & Section~\ref{sec:partII-J.2}\\
+\end{longtable}
+\endgroup
+
+\subsection{Notation and conventions}\label{sec:conventions}
+
+Throughout, $\N=\{0,1,\ldots\}$, coordinate indices run from $1$ to $4$, $e_a$ is the $a$th coordinate vector, and time is the fourth coordinate. For the relativistic statements write
+\begin{equation*}
+\minksquare(x)=(x^4)^2-|\vec x|^2,\qquad
+\forwardcone=\{\mathbf p:|\vec{\mathbf p}|\le\mathbf p^4\}\,.
+\end{equation*}
+Inner products are antilinear in the first variable, and spacetime integrals use Lebesgue measure. Correlations of arity zero are included; empty sums are zero and empty products are one. The group $\hypercubic$ consists of the signed permutation matrices, and $\mathsf s_a^{\rm refl}$ denotes reflection in the $a$th coordinate.

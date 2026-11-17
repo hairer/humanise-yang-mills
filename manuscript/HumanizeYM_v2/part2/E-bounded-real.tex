@@ -1,0 +1,97 @@
+The later phase argument needs bounded approximations with a bound independent of the cutoff. Compactness at each cutoff gives no such bound. We obtain it by stopping at one fixed coarse lattice and pulling bounded observables back through the probability block kernels.
+
+In the next two lemmas, a statement holds eventually in the ordered limits when it holds for all sufficiently large indices of the chosen volume sequence and, at each such volume, all sufficiently fine cutoffs of the chosen spacing sequence. No common cutoff threshold in other subsequently fixed parameters is asserted. The chessboard seminorms used below are defined in Definition~\ref{def:D27}.
+\begin{lemma}[Bounded coarse approximations]\label{lem:E-coarse-bounded}
+For every $d$, $k\ge\reflevel{d}$, real $c\in V_d$ and $\delta>0$, there are measurable real observables $\mathcal B_{N,p}(c,y)$ and $M_{\rm bnd}<\infty$, independent of $N,p,y$, with $|\mathcal B_{N,p}(c,y)|\le M_{\rm bnd}$ and
+\begin{equation*}
+ \|\mathcal B_{N,p}(c,y)-O^{(d)}_{N,p}(c,y)\|_{\mathcal C^{\rm tile}_k(y)}\le\delta
+\end{equation*}
+eventually in the ordered limits. Both observables are interior to that cell, and the same holds for their signed and reflected images.
+\end{lemma}
+\begin{proof}
+We stop at a fixed coarse level~$h$, replace the insertion by a bounded coarse polynomial pulled back through the probability block kernels (Definition~\ref{def:D04}), and bound the discrepancy by replicating it in every cell (Lemma~\ref{lem:E-replication}); the marked step of Lemma~\ref{lem:E-marked-step} matches the coefficients. The construction is independent of the phase decomposition. Choose a fixed $m\ge k$ with $B_m^2\le a_k/a_m$, using Lemma~\ref{lem:E1.1}. At a finer level $h\ge m$, the bounded coarse polynomial with coordinate~$v$ is
+\begin{equation*}
+ \mathsf V_h(v;U)=a_h^{-d}\left(v_0+
+ \mathbf1_{\Sigma_d\,\mathrm{healthy}}P_d[t_h^{-\factorcount}v^\circ](U)\right).
+\end{equation*}
+Its supremum for each basis input is bounded by a constant depending on~$d,h$, uniformly in~$N,p$: the healthy polynomial uses a fixed compact coordinate range, and the unit term is constant. Its inspected stencil has a fixed radius, including the links needed for the relaxed threshold test.
+
+Let $\mathcal K_{N,h}(U,dV)$ be the probability kernel obtained by composing the block kernels from $N$ to~$h$, and set
+\begin{equation*}
+ (\mathcal P_{N,h}F)(U)=\int F(V)\,\mathcal K_{N,h}(U,dV).
+\end{equation*}
+It preserves real values and does not increase the supremum norm. The locality of the block kernels confines its dependence to the fine preimage of the inspected stencil. For reflected cells these ancestor cones are disjoint once $h$ has the stated margin. At each intermediate level the block kernels are products in the coarse-link variables given the preceding field; integrating disjoint ancestor cones therefore gives conditional independence, and hence $\prod_C\mathcal P_{N,h}F_C=\mathcal P_{N,h}(\prod_CF_C)$. Choose $h$ sufficiently large that this preimage lies strictly inside the centered level-$k$ cell, including its boundary-link margin.
+
+To compare with the actual insertion, choose auxiliary fine coefficients $u_j$ whose selected level-$h$ polynomial coordinates differ by at most $1/4$ from the basis vectors. They are obtained by carrying the pure coarse polynomial back through the inverse graph construction in Lemma~\ref{lem:E-marked-step}. Apply~\eqref{eq:E-match-cone} to the difference with this primary coarse polynomial. Write $S_h=C^{\rm col}_{J_h}$, and let $\mathcal J_h$ be the matrix of the selected level-$h$ coordinates of these trials. For a basis input, the cone and the finest-level boundary estimate give
+\begin{equation}\label{eq:E-coarse-inversion}
+ 32(1+S_h)^2|e_j-\mathcal J_he_j|_1\le R_h,
+ \qquad R_h\le2(1+S_h),\qquad
+ |e_j-\mathcal J_he_j|_1\le\frac1{16(1+S_h)}\le\frac14.
+\end{equation}
+Taking the maximum over columns gives $\|\mathcal J_h-1\|_1\le1/4$, which implies $\|\mathcal J_h^{-1}\|_1\le2$. If $c$ is the required reference coefficient, linear recombination therefore gives
+\begin{equation*}
+ O(c)=\sum_j t_j O(\mathsf Z_{N,p,d}u_j),\qquad
+ \sum_j|t_j|\le2e^{\sum_{i<h}\log C^{\rm col}_{J_{i+1}}}|c|_1.
+\end{equation*}
+Replace each term on the right by $\mathcal P_{N,h}\mathsf V_h(e_j)$. This defines a bounded complex observable $\mathcal B'_{N,p}$; its bound depends on $h,d,c$, and hence may depend on $\delta$, but is independent of~$N,p$.
+
+To control the discrepancy, take one reflected copy in each cell of the tiling. For a fine field~$U$, let $O_C(U)$ be the copy of $O(\mathsf Z u_j)$ in cell~$C$; for a coarse field~$V$, let $\mathsf V_{h,C}(V)$ be the corresponding copy of the coarse polynomial. Given~$U$, the ancestor cones are disjoint, so the conditional factorization above gives the exact identity
+\begin{equation*}
+ \prod_C\bigl((\mathcal P_{N,h}\mathsf V_{h,C})(U)-O_C(U)\bigr)
+ =\int\prod_C\bigl(\mathsf V_{h,C}(V)-O_C(U)\bigr)
+       \mathcal K_{N,h}(U,dV).
+\end{equation*}
+Formula~\eqref{eq:E-multiple-density} applies to the fine insertions; at level~$h$ multiply the source density by the corresponding coarse factors. The probability kernel supplies no additional supremum factor. Conditional on the higher-mode propagation input identified in Lemma~\ref{lem:E-source-attachments}, weighted coefficient extraction, Lemma~\ref{lem:E-replication} and~\eqref{eq:E-vacuum-ratio} give, after recombination,
+\begin{equation}\label{eq:E-bounded-error}
+ \|\mathcal B'_{N,p}-O(c)\|_{\mathcal C^{\rm tile}_k}
+ \le C_{k,m,d,c}\,
+ e^{\sum_{i<h}\log C^{\rm col}_{J_{i+1}}}(1+C^{\rm col}_{J_h})
+ e^{-(s_h-s_m)/8}.
+\end{equation}
+The prefactor has subpower growth in~$a_h^{-1}$ by~\eqref{eq:E-log-cost}; the last factor tends to zero. Choose $h$ so that this expression is at most~$\delta$, before choosing the cutoff. This also meets the stencil-fit condition.
+
+For real~$c$, the original insertion is real by Lemmas~\ref{lem:A1} and~\ref{lem:E2.1a}. Set $\mathcal B=\operatorname{Re}\mathcal B'$. In the centered cell,
+\begin{equation*}
+ \mathcal B-O(c)=\tfrac12(\mathcal B'-O(c))+\tfrac12\overline{\mathcal B'-O(c)}.
+\end{equation*}
+The chessboard seminorm and its invariance under conjugation show that this does not increase~\eqref{eq:E-bounded-error}; the supremum bound also does not increase. Translation, signed permutation and conjugation use the same finite collection of stencils and bounds. This proves the lemma on the stated ordered tails.
+\end{proof}
+
+Fix a degree bound~$d$, a lower level~$m$ and an ordered extraction. A real grid word is a list $w=((d_i,c_i),x_i)_{i=1}^n$ with $d_i\le d$, $\bar c_i=c_i$ and distinct spacing-$a_k$ positions. We assume its configuration is generic. Let $\vartheta$ denote linear time reflection on positions and labels, without complex conjugation of scalar coefficients. For an ordered word $w$, write $w^*$ for conjugation and reversal of order, and $\theta w=\vartheta w^*$ for the antilinear reflection of Osterwalder and Schrader. Put
+\begin{equation*}
+ F_{N,p}(w)=\prod_iO^{(d_i)}_{N,p}(c_i,x_i/a_N),\qquad
+ z_j(T)=Tj a_k(1,1,1,1),
+\end{equation*}
+\begin{equation*}
+ f_{j,N,p,T}=F_{N,p}(\tau_{z_j(T)}w)
+             -F_{N,p}(\tau_{z_j(T)}\vartheta w).
+\end{equation*}
+These are the real word differences used in the off-diagonal variance estimate in Section~\ref{sec:partII-H}.
+\begin{lemma}[Bounded real word approximations]\label{lem:E2-bounded-real}
+There is $k\ge m$, chosen before~$w$, such that every such word has, for each $\varepsilon>0$, measurable real approximations $g_{j,N,p,T}$ and $R_\varepsilon<\infty$ with $|g_{j,N,p,T}|\le R_\varepsilon$ for all $N,p,T,j$. For each $i<j$ and every sufficiently large integer~$T$, eventually in the ordered limits,
+\begin{equation*}
+ \left|\langle g_{i,N,p,T}g_{j,N,p,T}\rangle_{N,p}
+ -\operatorname{Re}\langle f_{i,N,p,T}f_{j,N,p,T}\rangle_{N,p}\right|\le\varepsilon.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+Each insertion of the word is replaced by its bounded approximation from Lemma~\ref{lem:E-coarse-bounded}; the chessboard inequality~\eqref{eq:E-chess}, with the seminorm bounds of Lemmas~\ref{lem:E2.3} and~\ref{lem:F1a}, controls the replacement error by seminorms alone. Choose
+$k\ge\max(m,\max_{e\le d}\reflevel{e})$. It depends only on~$d,m$, before the length, labels and positions of~$w$. All its finer comparison levels remain available by Lemma~\ref{lem:E1.1}.
+
+Include every label in~$w$ and its signed and conjugated images in a finite list. Lemma~\ref{lem:E2.3} gives a bound $C$ for their centered seminorms at any one fixed sufficiently fine level. Choose that level so that its cells and the margins required by Lemma~\ref{lem:F1a} fit between distinct spacing-$a_k$ points. Apply Lemma~\ref{lem:E-coarse-bounded} with error~$\delta$ at a still finer centered level, preserving these margins. Denote its real bounded approximations by~$\mathcal B_i$. The same family, translated to any anchor, is used for every copy of the word. Its seminorms are at most $C+\delta$, independently of its possibly much larger supremum bound.
+
+For a product of $n_{\rm word}$ such insertions at distinct grid sites, telescope the products, replacing one factor at a time. Put all $n_{\rm word}$ factors into distinct cells with the chosen margins. The interior-seminorm comparison and~\eqref{eq:E-chess} give
+\begin{equation}\label{eq:E-word-error}
+ \left|\left\langle\prod_{a=1}^{n_{\rm word}} \mathcal B_a-\prod_{a=1}^{n_{\rm word}} O_a\right\rangle_{N,p}\right|
+ \le n_{\rm word}\delta(C+\delta)^{n_{\rm word}-1}.
+\end{equation}
+Only the seminorms, not the supremum bounds on~$\mathcal B_a$, occur on the right. For each fixed finite configuration, sufficiently large periods avoid wrapping identifications; its stencils then lie in the prescribed cells on the inner cutoff tail. This explains the order of the two eventualities.
+
+Let $G_{j,N,p,T}$ be the product of the $\mathcal B_i$ for the translated word, and let $G^\theta_{j,N,p,T}$ be the corresponding product for its reflected word. Set $g_j=G_j-G^\theta_j$. Choose $M_i^{\rm bnd}$ to bound both the original and reflected approximations in slot~$i$. Then
+\begin{equation*}
+ |g_j|\le 2\prod_iM_i^{\rm bnd}=:R_\varepsilon,
+\end{equation*}
+independently of~$N,p,T,j$. Every~$g_j$ is real and measurable. Set $g_j=0$ outside the ordered tails on which the coarse approximations are defined, so this supremum bound holds for all $N,p,T,j$. For fixed $i<j$, sufficiently large $T$ separates the two translated finite lists, for each of the four combinations of a word and a reflected word. Indeed their first coordinates differ by $T(j-i)a_k$ plus a fixed finite difference. Each list is itself distinct because the original word is generic and reflection is injective.
+
+Expand $g_ig_j$ and $f_if_j$ into their four product terms and apply~\eqref{eq:E-word-error} with $n_{\rm word}=2n$. Choose $0<\delta\le1$ so that $4(2n)\delta(C+1)^{2n-1}\le\varepsilon$. Taking real parts cannot increase the error. Intersecting the four eventual sets proves the assertion. The empty word has zero difference and may be assigned $g_j=0$. There is no common cutoff threshold in $T,i,j$; a finite list of pairs is handled by intersecting its eventual sets. The choice gives such a grid level above every prescribed lower level~$m$, which is the cofinality required in Section~\ref{sec:partII-H}.
+\end{proof}

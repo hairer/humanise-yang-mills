@@ -1,0 +1,167 @@
+\section{Strategy of the proof}\label{sec:strategy}\label{sec:intro-outline}
+
+The proof fixes one lattice family, takes its two limits and identifies the resulting fields; every estimate applies to this same family. Figure~\ref{fig:dependency} shows the order in which the principal results use one another. This section explains the mechanisms that make the main steps work; Sections~\ref{sec:renormalization}--\ref{sec:continuum-results} state the results with the ideas of their proofs.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,font=\small,
+  box/.style={draw,rounded corners=2pt,align=center,inner sep=3pt,fill=white},
+  ar/.style={->,thick}]
+\node[box] (rg) at (0,0) {exact block integration\\ RG, Thm~\ref{prop:RG}};
+\node[box] (mt) at (5.2,0) {tuned couplings\\ MT, Thm~\ref{prop:MT}};
+\node[box] (ins) at (10.4,0) {normalized insertions\\ Def.~\ref{def:D08}, \S\ref{sec:marked}};
+\node[box] (uv) at (10.4,-1.6) {uniform bounds,\\ full UV limit\\ UB, UV, \S\ref{sec:uv-limit}};
+\node[box] (iv) at (5.2,-1.6) {volume refinement,\\ quotient fields\\ IV, FC, \S\ref{sec:volume-limit}};
+\node[box] (os) at (0,-3.4) {coordinate reflection\\ spaces, slab bounds\\ (no rotations)};
+\node[box] (mc) at (7.8,-3.4) {Maxwell comparison,\\ conserved line\\ MC, \S\ref{sec:stress}};
+\node[box] (st) at (3.9,-5.0) {shell fluxes,\\ continuous rotations\\ ST, SC, \S\ref{sec:stress}};
+\node[box] (ph) at (0,-6.6) {phases\\ PH, \S\ref{sec:phases}};
+\node[box] (rc) at (5.2,-6.6) {reconstruction\\ RC, \S\ref{sec:phases}};
+\node[box] (tr) at (10.4,-6.6) {trace law\\ TR, NF, \S\ref{sec:trace-products}};
+\node[box] (op) at (2.6,-8.1) {products and contacts\\ OP, CT, \S\ref{sec:trace-products}};
+\draw[ar] (rg) -- (mt); \draw[ar] (mt) -- (ins); \draw[ar] (ins) -- (uv); \draw[ar] (uv) -- (iv);
+\draw[ar] (iv) -- (os); \draw[ar] (iv) -- (mc);
+\draw[ar] (os) -- (st); \draw[ar] (mc) -- (st);
+\draw[ar] (st) -- (ph); \draw[ar] (os) -- (ph); \draw[ar] (ph) -- (rc);
+\draw[ar] (st) -- (tr); \draw[ar] (rc) -- (tr);
+\draw[ar] (ph) -- (op);
+\end{tikzpicture}
+\caption{Dependency map. An arrow means that the later result uses the earlier one; the trace law and the products branch off the main route. The coordinate reflection spaces and slab bounds use only the volume limit and the field calculus; they enter the rotation argument before continuous rotations are available, so the order is not circular. The renormalization group runs only from the cutoff to the unit scale, and no mass gap is used.}\label{fig:dependency}
+\end{figure}
+
+\subsection{Why the ultraviolet induction closes}\label{sec:closes}
+
+Blocking integrates the fine links against a probability kernel and returns an exact density for the coarse links (Definition~\ref{def:D04}); it lowers the level from $m+1$ to $m$ and multiplies the spacing by the odd block ratio $\ell_m$ (Figures~\ref{fig:scales} and~\ref{fig:rg-block-step}). The density is written as a curvature action with the running coupling $\beta_m$, a scalar normalization, regular activities on small-field supports and forced activities covering every large-field site (Section~\ref{sec:density}). The equality is exact; the estimates control the coordinates in which it is written. Five points make the induction close.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,font=\small,x=1cm,y=1cm]
+\draw[thick] (0,0) -- (11.2,0);
+\foreach \x/\l in {0.4/N,3.2/m+1,6.0/m,9.2/1,10.8/0}{\draw[thick] (\x,-0.12) -- (\x,0.12); \node[above] at (\x,0.15) {$\l$};}
+\node at (1.8,0.42) {$\cdots$}; \node at (7.6,0.42) {$\cdots$};
+\draw[->,thick,paperlink] (3.35,-0.42) -- node[below,font=\footnotesize]{blocking, ratio $\ell_m$} (5.85,-0.42);
+\node[below,font=\footnotesize,align=center] at (0.4,-0.25) {cutoff\\$a_N$};
+\node[below,font=\footnotesize,align=center] at (10.8,-0.25) {$a_0=1$\\$\beta_0=\bar\beta$};
+\end{tikzpicture}
+\caption{Levels and the direction of integration. Level $m$ has spacing $a_m=D_m^{-1}$; blocking runs from the fine level $m+1$ to the coarse level $m$, so $a_{m+1}<a_m$, and the running coupling decreases by about $\slope\log\ell_m$, so $\beta_{m+1}>\beta_m$ to leading order. The ratios grow: $\log\ell_m\to\infty$ and $\log\ell_m/\log D_m\to0$. The endpoint coupling $\bar\beta$ is prescribed at level zero, the reference unit of length, which is not a measured mass scale.}\label{fig:scales}
+\end{figure}
+
+\input{figures/rg-block-step}
+
+\paragraph{One coupling to tune.}
+In the local radial-gauge expansion of a gauge-invariant local term (Sections~\ref{sec:partII-C}--\ref{sec:partII-D}), the contributions of engineering weight at most four are a constant, terms linear in the curvature and its derivatives, and a quadratic curvature term. The constant goes into the scalar normalization. The linear terms vanish, since an $\operatorname{Ad}(G)$-invariant linear function on the simple algebra~$\g$ is zero; in particular there is no mass term. Simplicity of~$\g$ and the hypercubic and reflection symmetries leave one invariant quadratic curvature term, whose coefficient the construction moves into the coupling. The regular activities that remain vanish at the flat configuration and, on supports that do not wrap around the torus, have zero Hessian along affine directions (Definition~\ref{def:D24}). This subtraction plays the role of the localization operator of Bauerschmidt, Brydges and Slade~\cite[\S5.2]{BauerschmidtBrydgesSlade2019}.
+
+\paragraph{The scales.}
+Write, at one level, $b=\refbeta_m$ for the reference coupling, $M=\exp((\log\log b)^2)=(\log b)^{\log\log b}$, which grows faster than every power of $\log b$ and slower than every power of~$b$, the small-field threshold $t=b^{-1/2}M$ and the regular activity bound $\varepsilon=b^{-11/10}$ (equation~\eqref{eq:I12-scales}). Plaquette fluctuations at coupling~$b$ have size $b^{-1/2}$, so $t$ is that size enlarged by~$M$, and $t\to0$. The comparisons that fix these choices are, for $\beta\asymp b$:
+\begin{center}\small
+\begin{tabular}{@{}p{0.3\textwidth}p{0.63\textwidth}@{}}
+\toprule
+Comparison & Consequence\\
+\midrule
+$\beta t^5\asymp b^{-3/2}M^5=o(\varepsilon)$ & the Wilson energy matched through fourth order leaves a regular error below the bound\\
+$t^3/\varepsilon=b^{-2/5}M^3\to0$ & a cubic term with bounded coefficient at the threshold is below the bound\\
+$\varepsilon/t^2=b^{-1/10}M^{-2}\to0$ & a quadratic term at the threshold does not: residual quadratic coefficients go into the coupling\\
+$\beta t^2\asymp M^2$ & a plaquette above the threshold costs a factor of order $e^{-cM^2}$, which is $o(b^{-k})$ for every fixed~$k$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The forced activity bound $e^{-M^{1/5}}$ is $o(b^{-k})$ for every fixed~$k$ but much larger than $e^{-cM^2}$; this leaves room for the combinatorial losses of the forced terms.
+
+\paragraph{The cancellations.}
+Two cancellations make the regular bound contract. First, an incoming regular activity, written in the coarse field, loses its constant, linear and affine quadratic terms by flat normalization, colour invariance and the affine Hessian condition; the remaining terms of its principal part carry at least $\ell_m^{-5}$ (on large supports after conversion of the support weight), against $\ell_m^4$ fine anchors above a coarse anchor, a net factor $V_j/\ell_m$ with $V_j$ fixed before the ratio, while the comparison remainder has relative size $b'^{-1/2+o(1)}$, where $b'=\refbeta_{m+1}$ is the reference coupling of the fine level (Lemma~\ref{lem:D-inherited}). Second, the new terms produced by the integration are connected local terms whose bound from the connected expansion is only $P_j(b')b'^{-7/16}$ (Lemma~\ref{lem:D-connected}), where $j=J_{m+1}$ and $P_j$ denotes functions of subpower growth fixed with the stage; this is far above the required bound $\refbeta_m^{-11/10}$. Most of these terms are already small enough: the connected expansion still converges when every elementary factor is weighted by $b'^{3/8}$, so terms with three or more factors, or with a large-field overlap, are at most $P_j(b')b'^{-19/16}\le b'^{-23/20}$, and long paths, large supports and products with an incoming activity also stay below $b'^{-23/20}$. 
+
+\paragraph{Localizing the cancellations.}
+For the remaining terms, estimates of sums over reflected tori yield a bound on a local function. In four dimensions a fourth finite difference cancels the boundary classes of those sums and retains the interior contribution. Section~\ref{sec:partII-D} selects a finite family of low-order connected terms (at most two connected products of at most two factors, short paths, no incoming activity), invariant under translations and~$\hypercubic$; the unselected low-order terms have weighted norm at most $\varepsilon_{\rm tr}$; every complete read support of these terms, relative to a site receiving a share, lies within distance~$R$ of that site. Let $F_y$ be the sum of the shares at the site~$y$, a connected term being shared equally among the sites of its support and a path term assigned to its anchor. For a radius $w>4R$ fixed in Section~\ref{sec:partII-D}, with $2(w+5)$ less than the side of~$\Lambda$ by the period requirements of Section~\ref{sec:constants}, let $\Lambda_i$ be the torus of side $2(w+i)$, $i=0,\ldots,4$, let $V_{i,x}$ be the configuration on $\Lambda_i$ obtained by folding each coordinate into $x+[0,w+i]^4$, reversing bond orientations as needed, let $F^{(i)}_y$ be the same local formula on~$\Lambda_i$ with its flat value subtracted, and put
+\begin{equation}\label{eq:five-torus}
+\lambda_i=\frac{(-1)^i\binom4i}{2^4\,4!},\qquad
+G_x=\sum_{i=0}^4\lambda_i\sum_{y\in\Lambda_i}F^{(i)}_y(V_{i,x})\,.
+\end{equation}
+
+\begin{lemma}[Five-torus localization]\label{lem:five-torus}
+For the selected low-order family, the function $G_x$ depends only on the links within distance $w+5$ of~$x$, and, in the local derivative seminorm of Definition~\ref{def:D05a},
+\begin{equation*}
+\|G_x\|_m\le P_j(b')\bigl(b'^{-23/20}+\varepsilon_{\rm tr}\bigr).
+\end{equation*}
+On configurations without large-field sites, $\sum_yF_y=c|\Lambda|+\sum_xG_x$ for a constant~$c$.
+\end{lemma}
+
+This is Lemma~\ref{lem:D-localization}, which also controls the correction near large-field sites. Two facts give it. On each auxiliary torus the total of the selected family is, up to the omitted terms, a normalized local integral, in which the flat value, the classical cubic and quartic terms and the one-loop quadratic term are subtracted exactly and Gaussian parity removes a lone cubic term; what remains has at least three factors of size $b'^{-1/2+o(1)}$ or a further Taylor gain. To recover a local function from totals, classify the sites of $\Lambda_i$ by their distances through the read radius~$R$ from the reflection faces and by their local fold slopes, including wrapped neighbours. These data fix the offsets $\phi_i(y+u)-\phi_i(y)$ on the read support. Evaluate the summand at~$y$ on $V_{i,x-\phi_i(y)}$, where $\phi_i(y)_a=\min\{t_a,2(w+i)-t_a\}$ for the least residue $t_a$ modulo $2(w+i)$. This shift appears only after reindexing the sum over~$x$; in~\eqref{eq:five-torus} the configuration is the unshifted $V_{i,x}$. Site~$y$ of that cube then sees the configuration near~$x$, so each class contributes a fixed local value with multiplicity polynomial in~$i$ of degree at most four. Only interior classes have degree four. Signed-permutation symmetry gives them the same local value, and their combined leading coefficient is~$2^4$. Since $\sum_{i=0}^4(-1)^i\binom4ii^k$ is $0$ for $k<4$ and $4!$ for $k=4$, the weights $\lambda_i$ cancel every boundary class and keep one copy of the interior value $F_x-F_x(1)$; summing over $x$, which turns $x-\phi_i(y)$ back into~$x$, gives the identity of Lemma~\ref{lem:five-torus}. As $23/20>11/10$, the localized terms satisfy the regular activity bound with room to spare.
+
+\paragraph{Large fields.}
+The estimates keep the configurations with large fields; they never replace the measure by its small-field restriction. A forced activity vanishes unless its support contains a large-field site, and the large-field lower bound on the quadratic energy (Lemma~\ref{lem:B-D1}) gives a factor $e^{-c\beta t^2}\le e^{-cM^2/2}$ for each element of a selection (large fine plaquettes, mismatched coarse edges and flagged coarse sites), which absorbs the polynomial and combinatorial losses of the forced terms. The resulting activity bounds~\eqref{eq:I12-activity-caps} are local and uniform in the volume. They do not say that the whole torus is free of large fields with high probability: a large box may contain many flagged regions, each strongly suppressed, and the forced sum of Definition~\ref{def:D06} keeps all of them; nor do they bound the density itself uniformly in the volume. The activities are real correction functions, not probabilities of their supports, and their norms use absolute values. Positivity of the density is inherited from the positive Wilson density through the exact block identity, since the block kernel is positive; it does not require any activity to be nonnegative.
+
+Figure~\ref{fig:rg-marked-tracks} separates the singleton and mixed contributions carried by the same integration history.
+
+\input{figures/rg-marked-tracks}
+
+\paragraph{Growing block ratios.}
+The drift error of one step is bounded by a constant $\omega^{\rm RG}_j$ depending only on the stage $j=J_{m+1}$ (Theorem~\ref{prop:RG}). With a fixed block ratio~$\ell$, the accumulated drift bound $N\omega^{\rm RG}$ would be of the same order as the main term $\slope\log D_N=N\slope\log\ell$. The construction instead lets the ratios grow, $\log\ell_m\to\infty$ and $\log\ell_m/\log D_m\to0$, and chooses them with $\omega^{\rm RG}_j\le j^{-2}\log\ell_m$; the summed errors are then $o(\log D_m)$ and the exact one-loop slope survives (equation~\eqref{eq:I12-drift-sum}). Each level carries a stage $J_m$, with $4\le J_m\le J_{m+1}\le J_m+1$ and $J_m\to\infty$, which fixes the derivative order, the other estimate constants and the ratio $\ell_m=\ell^{\rm st}_{J_{m+1}}$. A stage may persist through many levels: entry into the next stage is delayed until the coupling and the period meet its requirements. Every fixed derivative order is therefore eventually available, while each step uses finitely many constants. All estimate constants of the induction are uniform in the volume; some are fixed before the block ratios and hence uniform in the ratio, the others may depend on a stage whose ratio is already fixed (Section~\ref{sec:constants}).
+
+\subsection{Tuning, uniqueness and convergence}\label{sec:tuning-convergence}
+
+Three different tasks concern the cutoff, and they are not interchangeable.
+\begin{center}\small
+\begin{tabular}{@{}p{0.27\textwidth}p{0.33\textwidth}p{0.33\textwidth}@{}}
+\toprule
+Task & Mechanism & What it does not supply\\
+\midrule
+Reach the endpoint coupling $\bar\beta$ at level zero & Continuous shooting and bracketing (Theorem~\ref{prop:MT}) & Uniqueness of the shooting parameter\\
+Identify the limits at a fixed level & Weighted contraction toward the common endpoint (Proposition~\ref{prop:fixed-level}) & Convergence of the scalar normalizations\\
+Remove the cutoff at fixed volume & Fixed-level convergence and a uniform stopping error (Theorem~\ref{prop:UV}) & An infinite-volume limit without refinement\\
+\bottomrule
+\end{tabular}
+\end{center}
+Uniqueness of the shooting parameter is not needed: trajectories for different cutoffs are compared only through their common endpoint, and two fixed-level limits with that endpoint coincide by the contraction. Remark~\ref{prop:endpoint-tuning} records the uniqueness and analytic dependence that the recursion also gives; the proofs do not use it.
+
+\input{figures/rg-cutoff-comparison}
+
+The ultraviolet limit is a Cauchy argument through a common level (Figure~\ref{fig:rg-cutoff-comparison}). The stopping bound and the fixed-level marked graph comparison used below remain conditional on the higher-mode and graph estimates in \hyperref[par:proof-status]{the proof-status notice}. For insertions at points of $a_m\Z^4$, which lies in every finer lattice, let $M_N$ be the lattice moment and $C_{N,m}$ the normalized level-$m$ integral of the unmarked density and the transferred one-insertion functions, with the components joining two or more insertions omitted. For cutoffs beyond a threshold depending on~$m$,
+\begin{align*}
+|M_N-M_{N'}|&\le
+\underbrace{|M_N-C_{N,m}|}_{\text{stopping error}}
++\underbrace{|C_{N,m}-C_{N',m}|}_{\text{fixed level}}
++\underbrace{|C_{N',m}-M_{N'}|}_{\text{stopping error}}\\
+&\le4F_0e^{-B_m/64}+|C_{N,m}-C_{N',m}|,
+\end{align*}
+where $F_0$ does not depend on $m$ or on the cutoffs (Lemma~\ref{lem:E-stopping}). The reason is separation. At fine levels the sites of distinct insertions are at least $B_m^2$ apart, so every omitted component, which joins two or more insertions, has covering number at least $B_m/64$. Multiplying all these components by a complex~$z$ with $|z|<e^{B_m/64}$ therefore costs only two units of the support exponent, and the resulting normalized integral $F_m(z)$, carried back to a base level fixed before~$m$, is bounded there by~$F_0$. Since $F_m(1)=M_N$ and $F_m(0)=C_{N,m}$, Cauchy's estimate gives $|M_N-C_{N,m}|\le2F_0e^{-B_m/64}$. Choose $m$ to make the stopping errors small, hold it fixed, and let $N,N'\to\infty$. The middle term tends to zero for three reasons. First, the scalar normalization cancels. Write $\density^\circ\rho_{N,p,m}$ for the density of Definition~\ref{def:D06} with $v_{\rm sc}$ replaced by zero, so that $\density\rho_{N,p,m}=e^{v_{\rm sc}|\Lambda|}\density^\circ\rho_{N,p,m}$ with $\Lambda=\Lambda_{L_pD_m}$, and $H^\circ_{N,m}$ for the integrand of the numerator of $C_{N,m}$ with $v_{\rm sc}$ replaced by zero, formed from the same coordinates and the transferred one-insertion functions, regular and forced. Then
+\begin{equation*}
+C_{N,m}=\frac{\int e^{v_{\rm sc}|\Lambda|}H^\circ_{N,m}\,dU}{\int e^{v_{\rm sc}|\Lambda|}\density^\circ\rho_{N,p,m}\,dU}
+=\frac{\int H^\circ_{N,m}\,dU}{\int\density^\circ\rho_{N,p,m}\,dU}\,,
+\end{equation*}
+and the constant $v_{\rm sc}$ of $\rho_{N,p,m}$, whose convergence is not asserted, drops out. Second, the unmarked coordinates converge at each fixed level (Proposition~\ref{prop:fixed-level}), and the denominator stays above a positive constant for all large cutoffs by restricting every link to a fixed small Haar-measure ball around the identity (Lemma~\ref{lem:E-fixed-level}). Third, the singleton functions converge by a common-core argument for the actual one-mark steps (Lemmas~\ref{lem:E-common-core} and~\ref{lem:E-fixed-level}). At each fixed level the steps contract distances by one half on a common complete class. If their outputs on each fixed input from a dense core converge, then, for any fixed $h>m$, the finite trajectories started from a common graph at level~$h$ converge at level~$m$. The selected trajectories differ from those auxiliary trajectories by at most $2^{1-(h-m)}$. First choose $h$ large, then the cutoffs. Convergence of the coefficient readout on the core, together with a uniform same-cutoff Lipschitz bound, transfers this comparison to the singleton functions. This argument still requires the common address dictionary, admissible truncations with their original eligibility tests, and convergence of the actual steps on the core, including their output tails. It does not supply the separate mixed- and higher-marker estimates used in the stopping bound. The bounds of Proposition~\ref{prop:UB} extend the resulting convergence from $\bigcup_ma_m\Z^4$ to all separated positions and to derivatives.
+
+\subsection{Rotations}\label{sec:strategy-rotations}
+
+Continuous rotational covariance is a conclusion of the construction; the hypercubic lattice symmetry does not supply it. The ultraviolet comparison identifies each $F_d$ with the Maxwell space through scaling frames (Propositions~\ref{prop:FC} and~\ref{prop:MC}). In degree four, divergence maps the centered real symmetric tensorial families onto the corresponding vectors of degree five with a one-dimensional kernel (Proposition~\ref{prop:conserved-line}), which supplies a conserved tensor~$J$. Its fluxes through small shells around one insertion define charge maps on the field spaces (Definition~\ref{def:D13}, Lemma~\ref{lem:G2.3}). Conservation turns the sum of the angular charges of all insertions into the integral of~$J$ against the derivative of a vector field that equals the rotation field $y\mapsto Ky$ on a large anisotropic box; the sum does not depend on the size of the box. For configurations on a coordinate axis through the origin this integral tends to zero by the coordinate reflection spaces of Definition~\ref{def:D14}, without a mass gap. The mechanism is a sign conflict (Lemmas~\ref{lem:H-coordinate-signs}, \ref{lem:H-G3} and~\ref{lem:G-collinear-flux}). Reflecting the integration variable in each axis replaces the spectator word by its projection that is odd under the reflections in the two axes of the rotation plane and even under the others. Because the word lies on a coordinate axis through the origin, the transverse reflections fix its positions, so this projection is again a combination of words on the axis. Such a combination has a positive spectral representation in each coordinate time axis, with the sign of its parity in that axis; one correlation represented with opposite signs bounds the low-energy spectral mass, and conservation with reflection positivity bounds that of the diagonal components of~$J$. Every term of the integral is then bounded by a negative power of the box size. Finite Ward tests identify the translation charges with derivatives; analyticity then extends the identity to all separated configurations; finite tests remove the defects in the rotation algebra, and the charges integrate to continuous representations of~$O(4)$ (Lemma~\ref{lem:G3.1}).
+
+\subsection{Phases and reconstruction}\label{sec:strategy-reconstruction}
+
+Reconstruction starts from separated Euclidean correlations and quantitative slab bounds; it does not require a positive extension across collision diagonals. Three objects should be kept apart.
+\begin{center}\small
+\begin{tabular}{@{}p{0.36\textwidth}p{0.57\textwidth}@{}}
+\toprule
+Object & Role\\
+\midrule
+$S_n^\xi$ on separated configurations & Euclidean correlations, reflection positive on positive-time words\\
+Ordered-time continuations and boundary values & The Wightman functions and the relativistic fields\\
+Contact extensions $\mathfrak D^\xi_{\boldsymbol A}$ & A specified extension through collisions, with controlled local order\\
+\bottomrule
+\end{tabular}
+\end{center}
+The infrared control available is a uniform low-energy estimate rather than a spectral gap. For a fixed finite combination $A$ of compactly supported smeared field words, uniformly in the phase~$\xi$,
+\begin{align*}
+\mu_{A\Omega_\xi}(\{0<\mathbf p^4\le u\})&\le M_Au^2&&(0<u\le1),\\
+0\le\langle A\Omega_\xi,(e^{-sH_\xi}-P_{0,\xi})A\Omega_\xi\rangle&\le M'_As^{-2}&&(s\ge1),
+\end{align*}
+with $P_{0,\xi}$ the projection onto $\C\Omega_\xi$ (Lemma~\ref{lem:H2.3}). Vacuum uniqueness first holds for almost every phase; continuity of the vacuum-subtracted heat pairings in~$\xi$ and full support of~$\nu$ then extend it to every phase. The polynomial bound $M_Au^2$ is not a positive lower bound on the spectrum.
+
+\subsection{The trace}\label{sec:strategy-trace}
+
+The free Maxwell stress tensor is traceless, so a qualitative Maxwell limit cannot determine the first nonzero trace: it requires the next coefficient, with a rate. Heuristically, at scale~$r$ the rescaled trace $r^4\Theta$ is close, in the comparison maps, to $(4d_2/\beta(r))\curvaturesquare$, where $\curvaturesquare=\frac14\sum_{a,b,\alpha}{:}F^\alpha_{ab}F^\alpha_{ab}{:}$ is the free curvature square (Section~\ref{sec:trace-products}), with $d_2=-b_0/2$ and $\beta(r)\approx\slope\log(1/r)=2b_0\log(1/r)$, so that
+\begin{equation*}
+r^4\Theta\approx-\frac{\curvaturesquare}{\log(1/r)},\qquad
+\tracetwopoint(r)\approx\frac{\maxwellcorr_2(\curvaturesquare,\curvaturesquare;-\tfrac r2e_4,\tfrac r2e_4)}{\log^2(1/r)}=\frac{3\dimG}{\pi^4}\,r^{-8}\log^{-2}(1/r)\,,
+\end{equation*}
+by homogeneity of degree $-8$. The amplitude does not depend on $b_0$: the trace coefficient and the running coupling both carry $b_0$, and only their ratio enters.
+
+The coefficient $d_2$ is computed, not assumed, in five steps (Section~\ref{sec:partII-I}). (1)~The centered real symmetric $\hypercubic$-tensorial free tensors of degree four are spanned by the Maxwell stress, the trace direction $\delta_{ab}\curvaturesquare$ and one further tensor, and a linear functional reads the trace of such a tensor from its divergence. (2)~A lattice stress current built from plaquette curvatures has divergence equal to a variation of the action up to a small defect, and block transfer keeps its trace a lattice difference. (3)~This lattice Ward identity has the regulated coefficient $-12\slope$, the derivative $-\mu\,d/d\mu$ of a regulated one-loop determinant whose growth $12\slope\log\mu$ comes from the computation that gives the running slope (Lemmas~\ref{lem:C7} and~\ref{lem:I-regulator}). Along suitable radii the trace functional is carried to the continuum frames with error $o(E^{-1})$ for a slowly growing scale~$E$; the rate is needed because the cancelling coefficients of step~(4) may grow like a smaller scale~$R$, with $R/E\to0$ (Lemmas~\ref{lem:I-transfer} and~\ref{lem:I-stability}). (4)~Cancelling the divergence of the transferred current, multiplied by~$\beta$, with multiples of the other two tensors gives a conserved tensor. By Proposition~\ref{prop:conserved-line} it is a multiple of~$T$, the shell normalization forces the multiple to tend to one, and its coefficient along $\delta_{ab}\curvaturesquare$ tends to $d_2=-\slope/4$; the trace $4\curvaturesquare$ of that direction gives $4d_2/\beta$ (Proposition~\ref{prop:I-coefficient}). (5)~The positive spectral representation makes $\tracetwopoint$ nonincreasing, which turns this comparison along subsequences of radii into a limit through all radii (Section~\ref{sec:trace-products}). The product expansion, the last branch of Figure~\ref{fig:dependency}, is explained with its statement in Section~\ref{sec:trace-products}.

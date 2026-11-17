@@ -1,0 +1,751 @@
+\section{Trajectories, marked fields and ultraviolet convergence}\label{sec:partII-E}
+
+This section develops the trajectories, renormalized insertions, volume-uniform bounds and full fixed-volume limits of Theorem~\ref{prop:MT}, Proposition~\ref{prop:UB} and Theorem~\ref{prop:UV}. The proofs of the bounds and limits still require the higher-mode attachment and stopping estimates, the actual marked Gaussian comparison, and the fixed-level cutoff comparison identified at their points of use below. The section also develops the cutoff equation identities, coefficient corrections and finite-rank comparisons from which Section~\ref{sec:partII-F} builds the quotient fields. All these results concern the Wilson measures of Definition~\ref{def:D02} and the insertions of Definition~\ref{def:D08}.
+
+Three different tasks are involved, and each has its own mechanism. A continuous shooting argument chooses the bare coupling so that the trajectory reaches one prescribed coarse coupling (Section~\ref{sec:partII-E.1}). Weighted estimates for the specified recursion give uniqueness and analytic dependence near that endpoint. Finally, at fixed volume, convergence of the effective coordinates at each fixed level is combined with a bound on the error made by stopping the insertion transfer there (Section~\ref{sec:partII-E.3}). The additive scalar normalization cancels from normalized expectations, so its convergence is never needed.
+
+The main difficulty in the bounds of Section~\ref{sec:partII-E.2} is differentiation in position. Each lattice difference introduces an inverse spacing, so a bound for undifferentiated insertions does not suffice. Local comparison replaces a differentiated insertion by one of higher degree, with a negligible chessboard error. Exact equation identities remove its equation component. A finite matrix of free Maxwell correlation tests bounds the remaining coefficient. This argument takes place at finite cutoff, before any continuum field space has been constructed.
+
+Throughout, the group, metric, penalty, scales and admissible classes are those of Section~\ref{sec:renormalization} and Section~\ref{sec:constants}. The trajectories are built from the path actions of Lemmas~\ref{lem:C1}--\ref{lem:C2}, which fix the classical and one-loop terms, the Wilson initialization of Lemma~\ref{lem:D3}, and the inductive step of Theorem~\ref{prop:RG}, which carries an admissible representation one level down. Additional dependence of constants is indicated. Write $M_{N,p}=\latmoment_{N,p}$ and $\langle F\rangle_{N,p}=\int F\,d\mu_{N,p}$.
+
+For an insertion label $v=(d,c)$ put $O_{N,p}(v,y)=O^{(d)}_{N,p}(c,y)$. Physical points $x$ in a moment are read as lattice sites $x/a_N$, modulo $L_pD_N$. We use the torus separation
+\begin{equation*}
+\operatorname{sep}_{\rm tor}(y)=\min_{i\ne j}\min_{z\in L_p\Z^4}
+|a_N(y_i-y_j)+z|_\infty,
+\end{equation*}
+with value $+\infty$ for at most one slot. Multilinear interpolation on the physical grid means the affine interpolation in each coordinate of each grid cube, using its vertex values.
+
+\subsection{Trajectories and tuning}\label{sec:partII-E.1}
+
+The entry levels allow the ratios and stage constants to increase sufficiently slowly. Besides the conditions of Section~\ref{sec:constants}, we use the following quantitative choices. Let $c_{{\rm dir},j}$ be the direct clipping coefficient at stage~$j$, and let $\nu_G^{\rm mat}$ be the real dimension of the ambient matrix space. Put
+\begin{equation}\label{eq:E-vacuum-majorant}
+Q_j(b)=2(2+4A_j^{\rm path})+1+6(c_{{\rm dir},j}+(A_j^{\rm path})^2)
+ +4\nu_G^{\rm mat}(\log16+\tfrac12\log b),\qquad q_m=Q_{J_m}(\widehat\beta_m).
+\end{equation}
+Here $A_j^{\rm path}$ is the path bound of Lemma~\ref{lem:C1}. For an admissible unmarked representation $\rho_m$ on $V$ sites write $\Phi_m=v_{{\rm sc},m}V-\pathaction_{N,m}-\sum_i\mathbf1_{X_i\,\mathrm{healthy}}E_i^{\rm reg}$ and $K_{m,Y}$ for its forced activities. The next estimate bounds, per site, the ratio obtained by replacing the positive density by absolute values in a normalized integral.
+\begin{lemma}[Normalization cost]\label{lem:E-normalization-cost}
+For every sufficiently late level $m$ and every admissible unmarked representation $\rho_m$ on $V$ sites,
+\begin{equation}\label{eq:E-vacuum-ratio}
+ \frac{\int e^{\Phi_m(U)}\sum_{\mathcal A}\prod_{Y\in\mathcal A}|K_{m,Y}(U)|\,dU}
+ {\int\density\rho_m\,dU}\le e^{Vq_m}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $\widehat g_m=\widehat\beta_m^{-1/2}$. The scalar-free unmarked exponent is at most $VE_m$, and its absolute forced sum is at most $e^{V\epsilon_m^{\rm for}}$ with $\epsilon_m^{\rm for}\le1$; at every sufficiently late level the path bounds give $E_m\le2+4A_{J_m}^{\rm path}$. Restrict the denominator to links of chord at most $\widehat g_m/4$. There are no flags there, the forced sum is one, and its scalar-free exponent is at least $-V(E_m+6(c_{{\rm dir},J_m}+(A_{J_m}^{\rm path})^2))$. The elementary Haar-ball bound gives this set measure at least $(\widehat g_m/16)^{4V\nu_G^{\rm mat}}$. The common scalar normalization in numerator and denominator cancels, so the ratio is at most
+\begin{equation*}
+ \exp\!\left\{V\left[2E_m+\epsilon_m^{\rm for}
+ +6(c_{{\rm dir},J_m}+(A_{J_m}^{\rm path})^2)
+ +4\nu_G^{\rm mat}\log(16/\widehat g_m)\right]\right\}\le e^{Vq_m}.
+\qedhere
+\end{equation*}
+\end{proof}
+The per-site exponent $q_m=O(1+\log\widehat\beta_m)$ comes from the Haar-ball loss $\widehat g_m^{-\nu_G^{\rm mat}}$ on every link. Lemma~\ref{lem:E-source-integral} improves it to a constant depending only on the stage: in an axial gauge the denominator contributes Haar-ball factors on $3V+1$ links and the numerator contributes one-link integrals on $3V-3$ links, so only a loss of order $\log\widehat\beta_k$ for the whole torus remains. The source comparison needs that improvement, because its gain per cell is only a power of $\cutoffsize_t$. Enlarge $Q_j$ at the finitely many initial levels, so that $q_m\ge1$ and~\eqref{eq:E-vacuum-ratio} hold at every level. The choices include
+\begin{equation}\label{eq:E-marker-scales}
+ B_{i+1}^2\le2B_i^2,\qquad (\ell_iB_i^2)^4q_{i+1}=o(s_{i+1}),\qquad
+ \varpi_{J_i}=o(s_i).
+\end{equation}
+Define $k(m)$ to be the first $k\ge m$ with $B_k^2\le a_m/a_k$.
+
+The short-distance comparison uses the following comparison windows of levels. For $b>0$ and a level~$t$ in stage~$j$, write $L=\ell_j^{\rm st}$ and
+\begin{equation}\label{eq:E-window}
+ h_t(b)=\left\lceil\frac{(b+2)\log\cutoffsize_t}{\log L}\right\rceil,
+ \quad v_t=\left\lceil\frac{10\log B_t}{\log L}\right\rceil,
+ \quad k_t=t-h_t(b)-v_t.
+\end{equation}
+
+The numerical requirements of the marked proofs serve three purposes: contraction of one-insertion remainders (items~\ref{it:E-columns}--\ref{it:E-match}), control of replicated sources and comparison with the free field (items~\ref{it:E-log}--\ref{it:E-entries}), and the initialization of insertions (item~\ref{it:E-birth}). At each stage the finite-dimensional and support constants are fixed first, then the block ratio, and finally the coupling entry. The constants named here are introduced with their estimates; we list them so that the order of choice is visible in one place.
+
+For each stage~$j$, let $K_j\ge1$ be a nondecreasing bound for the leading coefficient maps and their inverses through that stage's finitely many degrees and symmetry averages. These bounds are fixed before the column bounds~$C^{\rm col}_j$. Let $A_d^{\rm sym}$ bound the finite basis recombination in degree~$d$, and let $C_j^{\rm loc}$ bound the local marked error of the one-step estimate before the ratio is chosen (proof of Lemma~\ref{lem:E-marked-step}). Each step below has $j=J_{m+1}$ and $L=\ell_m$; in items~\ref{it:E-graph}--\ref{it:E-match} and in the proofs of Lemmas~\ref{lem:E-marked-step}, \ref{lem:E-local-comparison} and~\ref{lem:E-coarse-bounded} we write $K=K_j$, $S=C^{\rm col}_j$ and $\varepsilon_L=L^{-3/8}$. For the retained incoming regular term, and for the unsubtracted incoming contribution in Section~\ref{sec:partII-J}, let $R_j^{\rm supp}\in\N$ bound the enlargement of its projected incoming read support in units of $B_m$, over the finitely many adjacent stage pairs with fine stage~$j$. Put
+\begin{equation}\label{eq:E-support-conversion}
+ \mathcal A_m=\exp\!\left\{(\sigma_{J_m}+2)(2R_{J_{m+1}}^{\rm supp}+13)^4\right\}.
+\end{equation}
+This factor converts an incoming support weight into the outgoing weight. Indeed, for fine and coarse covering numbers $s_f,s_c$, the connected-cover bound gives
+\begin{align*}
+ Ls_c&\le(L+10s_f)(2R_j^{\rm supp}+13)^4,\\
+ (\sigma_{J_m}+2)s_c
+ &\le\log\mathcal A_m+\tfrac12\sigma_{J_{m+1}}s_f,
+\end{align*}
+provided $20(\sigma_{J_m}+2)(2R_j^{\rm supp}+13)^4\le L\sigma_{J_{m+1}}$. Thus half the incoming exponent remains for the other support factors. The constant $\mathcal C_j\ge2$ includes these bounds and the finite source comparison constants. In item~\ref{it:E-birth}, $C_d$ is the section bound in~\eqref{eq:A-global-bound}.
+For the source estimates, choose an integer $q^{\rm ht}_d$ bounding the powers of the inverse health threshold in degree~$d$, and put
+\begin{equation*}
+ \zeta_{d,i}=\widehat\beta_i^{-(q^{\rm ht}_d+4)}.
+\end{equation*}
+This bound controls attachments of other marked factors to a distinguished mark. Let $A_{j,d}$ bound the finite section, derivative and support-conversion constants in these attachments at stage~$j$, and let $\eta^{\rm att}_i>0$ be the attachment threshold in Lemma~\ref{lem:D-connected} for the step at level~$i$. Decrease it so that $\eta^{\rm att}_i\le1/4$. All these constants are fixed before the coupling entry. Lemma~\ref{lem:E-source-attachments} uses
+\begin{equation}\label{eq:E-attachment-allowance}
+ 2A_{j,d}(2B_i+1)^4(1+B_i)^4
+ \widehat\beta_i^{q^{\rm ht}_d}\zeta_{d,i}\le\eta^{\rm att}_i/4,
+ \qquad j=J_{i+1},\quad d\le J_i.
+\end{equation}
+The factor $(1+B_i)^4$ bounds the spatial sum from marked anchors to a site; it is derived in the proof of that lemma. For transport to finer levels we also require
+\begin{equation}\label{eq:E-source-allowance-transport}
+ \widehat\beta_{i+1}^{-1}\ell_i^d C^{\rm col}_{J_{i+1}}\zeta_{d,i}
+ \le\zeta_{d,i+1}.
+\end{equation}
+\begin{enumerate}
+\item\label{it:E-columns} \emph{Coefficient and support bounds.} Choose nondecreasing columns with $C^{\rm col}_j\ge64K_{j+1}^2$, above the derivative factorials and finite basis-recombination constants at stage~$j$. The support exponent is $\sigma_j=100$; we also retain the estimates at every exponent in $[98,100]$.
+\item\label{it:E-graph} \emph{One-insertion contraction} (Lemma~\ref{lem:E-marked-step}). Choose $L^{3/5}>2C_j^{\rm loc}$, $\mathcal A_m\le L$ and $20(\sigma_{J_m}+2)(2R_j^{\rm supp}+13)^4\le L\sigma_{J_{m+1}}$. The local marked error $\epsilon^{\rm mk}_m$ satisfies $\epsilon^{\rm mk}_m\le L^{-2/5}$, and
+\begin{equation}\label{eq:E-graph-reserve}
+ \epsilon^{\rm mk}_m(1+S)A_d^{\rm sym}\le\varepsilon_L,\quad
+ 2K\varepsilon_L(1+S)\le1,\quad4S\varepsilon_L\le1,\quad
+ 2K\le S,\quad4K^2\le C^{\rm col}_{J_m}.
+\end{equation}
+\item\label{it:E-match} \emph{Backward matching} (Lemmas~\ref{lem:E-local-comparison} and~\ref{lem:E-coarse-bounded}). Require
+\begin{equation}\label{eq:E-matching-choices}
+ 4K\,32(1+S)^2\varepsilon_L\le1,\qquad
+ (4K^2+1)L^{1/8}\varepsilon_L\le1.
+\end{equation}
+For each auxiliary section through the stage's degrees, require also $2(1+C^{\rm col}_j)H_{j,d}A_d^{\rm sym}L^{-1/8}\le1/4$, where $H_{j,d}$ bounds its normalized healthy derivatives.
+\item\label{it:E-log} \emph{Accumulated transport losses.} Choose ratios to satisfy~\eqref{eq:E-log-cost}, including every constant in~$\mathcal C_j$.
+\item\label{it:E-entries} \emph{Gaussian comparison and source bounds} (Lemmas~\ref{lem:E-source-polynomial}--\ref{lem:E-source-integral}). On a comparison window, for an arity bound $n\ge2$, put $\mathsf w_t=(\cutoffsize_t)^{1/(8n)}$. Let $\mathcal E_t^{\rm G}$ be the sum of the covariance, rounding, Taylor and localization errors in the fixed finite source comparison. Require
+\begin{equation}\label{eq:E-Gaussian-entry}
+ \mathsf w_t^n\mathcal C_j^{h_t(b)+v_t+2}\mathcal E_t^{\rm G}\le1,
+ \qquad Q_j^{\rm cmp}\le\log\cutoffsize_t/(16n),
+ \qquad \widehat\beta_i\in[\widehat\beta_t/2,\widehat\beta_t]\quad(k_t\le i\le t).
+\end{equation}
+Here $Q_j^{\rm cmp}$ is the stage normalization constant in~\eqref{eq:E-comparison-cost}, enlarged to cover the source modes and amplitudes of the finitely many arity bounds $n\ge2$ used at stage~$j$, and the second bound is required for each of these~$n$. These constants are fixed first; the entry is then raised until $\log\cutoffsize_t\ge16n\,Q_j^{\rm cmp}$. The first bound is imposed with the stronger smallness used in~\eqref{eq:E-source-iteration}. The entry also meets the local marked bound in item~\ref{it:E-graph}, the forced-source bounds at every exponent between $98$ and $100$, and~\eqref{eq:E-attachment-allowance}--\eqref{eq:E-source-allowance-transport}. The unmarked attachment sum in Lemma~\ref{lem:D-connected} is at most $\eta^{\rm att}_i/2$, and $64\log\widehat\beta_{i+1}/B_i\le1/4$.
+\item\label{it:E-birth} \emph{Initialization of insertions} (Lemma~\ref{lem:E2.1}). At every level~$m$ and $d\le J_m$, require $B_m$ at least the radius of~$\Sigma_d$ and $C_dt_m^{-d}e^{\sigma_{J_m}}(e^{|\Sigma_d|\epsilon_m^{\rm for}}-1)\le(\epsilon_m^{\rm for})^{1/2}$.
+\item\label{it:E-ratio-log} \emph{Ratio below the logarithmic coupling} (Lemma~\ref{lem:I-radii}). At every level~$m$, $\ell_m\le\log\widehat\beta_m$.
+\end{enumerate}
+The finite comparisons in item~\ref{it:E-entries} exhaust bounded configurations with positive point separation, fixed arities and finite derivative orders as~$j$ increases. Their errors and constants are calculated in Lemma~\ref{lem:E-Gaussian-sources}; none depends on the period.
+
+The following choice gives both the sparse insertion grids and the windows used for free comparison.
+\begin{lemma}[Scale and period choices]\label{lem:E1.1}
+All requirements~\ref{it:E-columns}--\ref{it:E-ratio-log} and~\eqref{eq:E-marker-scales} can be met with
+\begin{gather*}
+\ell_m\ge3\text{ odd},\qquad \log\ell_m\to\infty,
+\qquad \log\ell_m/s_m\to0,\qquad4\mid L_p,\\
+(a_m/a_{k(m)})^4q_{k(m)}=o(s_{k(m)}).
+\end{gather*}
+The sides $L_p$ increase strictly; every positive integer divides infinitely many. For every finite set of exponents $b\ge1$ and finite comparison requests, arbitrarily late terminal levels~$t$ meet the comparison requirements simultaneously on their windows~\eqref{eq:E-window}, with $k_t\to\infty$ and $J_i=J_t$ throughout each window.
+\end{lemma}
+\begin{proof}
+The choices follow the order of Table~\ref{tab:constant-choices}: stage constants, then ratios, then entries. First fix the entire sequence $K_j$ and the finite section bounds. Choose $C^{\rm col}_j\ge64K_{j+1}^2$, and then fix $\mathcal C_j$ to include these columns and all source constants. Since $J_{m+1}\le J_m+1$, this gives $4K_{J_{m+1}}^2\le C^{\rm col}_{J_m}$ even at a stage transition. Next choose nondecreasing odd stage ratios $\ell_j^{\rm st}\ge\max(3,j)$ large enough that
+\begin{equation}\label{eq:E-log-cost}
+\frac{\omega_j^{\rm RG}}{\log\ell_j^{\rm st}}
+\le\min(\slope/4,j^{-2}),\qquad
+\frac{\log\mathcal C_j}{\log\ell_j^{\rm st}}\le j^{-2}.
+\end{equation}
+Each denominator can be increased after its numerator is fixed. The ratio requirements in items~\ref{it:E-graph} and~\ref{it:E-match} are lower bounds on this same later choice: $L^{-2/5}/L^{-3/8}=L^{-1/40}\to0$ and $L^{1/8}L^{-3/8}=L^{-1/4}\to0$. Choose also $L^{3/5}>2C_j^{\rm loc}$, so $C_j^{\rm loc}/L<\tfrac12L^{-2/5}$. For this fixed $L$, raise the coupling entry until the absolute value of the $o_{\widehat\beta_m}(1)$ term in the one-step estimate is at most $\tfrac12L^{-2/5}$. The local error $C_j^{\rm loc}/L+o_{\widehat\beta_m}(1)$ is then at most $L^{-2/5}$. The column and ratio choices also give the fixed auxiliary-section inequality. The support radii and exponents in~\eqref{eq:E-support-conversion} are fixed before~$L$, so its compression condition and $\mathcal A_m\le L$ are further fixed lower bounds on the ratio. Thus no column is chosen in response to a ratio or to a later-stage column.
+
+Choose consecutive constant-stage intervals, postponing each new stage until all its fixed coupling requirements hold. On a fixed stage $s_i$ grows linearly, while $B_i=O((\log(2+s_i))^2)$ and $q_i=O(1+\log(2+s_i))$. Thus
+\begin{equation*}
+ (\ell_iB_i^2)^4q_{i+1}/s_{i+1}\longrightarrow0
+ \quad\text{on that stage as its entry is postponed}.
+\end{equation*}
+For the initial stage, choose $\bar\beta$ after its fixed ratio~$L_0$. For $B(b)=\lceil(\log b)^2\rceil$, the quotient $B(b+\slope\log L_0)^2/B(b)^2$ tends to one as $b\to\infty$. Choose $\bar\beta$ beyond a threshold where it is at most two for every $b\ge\bar\beta$. This covers every step of the first stage, including $i=0$. At a transition to a later ratio, impose the same bound at its entry and thereafter, with that ratio fixed. Impose the second condition of~\eqref{eq:E-marker-scales} with bound $1/j$ after entry to stage~$j$. Impose also $\varpi_j\le s_i/j$ and $\log\ell_j^{\rm st}\le s_i/j$ at its entry. These are lower bounds on that entry. By item~9 of Table~\ref{tab:constant-choices}, $t_m^{-1}\le\widehat\beta_m$ and $(\epsilon_m^{\rm for})^{1/2}\widehat\beta_m^{d+1}\to0$, so item~\ref{it:E-birth}, including the finite stencil-radius requirement, is another entry bound. Since $\log\widehat\beta_m\to\infty$ at a fixed ratio, item~\ref{it:E-ratio-log} is also an entry bound, imposed for both ratios that occur at the levels of a stage. At each fixed ratio, the same threshold formula gives $t_m/t_{m+1}\to1$ as $\widehat\beta_m\to\infty$; impose $\tfrac12\le t_m/t_{m+1}\le2$ at entry and thereafter, with $t_m\le1$ supplied by item~7 of Table~\ref{tab:constant-choices}. The preceding entry restrictions give both little-oh assertions and $\log\ell_i/s_i\to0$; $s_i\ge i\log3$ at every level.
+
+For each stage, the length $h_t(b)+v_t$ in~\eqref{eq:E-window} is $O_j((\log\log(2+s_t))^2+\log\log(2+s_t))=o(t)$. Lengthen that constant-stage interval to contain a terminal point with the whole window~\eqref{eq:E-window} in the same stage and with its left endpoint beyond all earlier requested levels. Do this with the longest window $b=j$, all arities $n\le j$ and the finitely many comparison orders at stage~$j$, on the compact sets of test configurations with point separations at least $1/j$ and coordinates of absolute value at most~$j$. Every $1\le b\le j$ uses a subinterval of this window. The length and error bounds are uniform for $b$ in any fixed compact subinterval of $[1,j]$; take the maximum of the finite comparison constants before postponing the common terminal level. Their finitely many derivative bounds are uniform on each such compact set. The estimates~\eqref{eq:E-source-loss}--\eqref{eq:E-source-iteration} show that the first requirement in~\eqref{eq:E-Gaussian-entry} holds once that entry is late enough. The second is a lower bound on $\log\cutoffsize_t$ after $Q_j^{\rm cmp}$ is fixed. The total window length is $o(t)$, so its coupling variation is $o(\widehat\beta_t)$ and gives the third requirement. These are lower bounds on a later entry or interval length. Each fixed request is then met at arbitrarily large stages. The source requirements are also entry bounds. On a fixed stage, the left side of~\eqref{eq:E-attachment-allowance} is a fixed constant times $(2B_i+1)^4(1+B_i)^4\widehat\beta_i^{-4}$ and tends to zero. In~\eqref{eq:E-source-allowance-transport}, division by $\zeta_{d,i+1}$ leaves
+\begin{equation*}
+ \ell_i^d C^{\rm col}_{J_{i+1}}\widehat\beta_{i+1}^{-1}
+ (\widehat\beta_{i+1}/\widehat\beta_i)^{q^{\rm ht}_d+4},
+\end{equation*}
+which tends to zero at fixed ratio. Include both adjacent stages at a transition. There are finitely many degrees at each entry. The unmarked attachment sum tends to zero by the factor rates in the proof of Lemma~\ref{lem:D-connected}, so its half-threshold requirement is another entry bound. These choices do not alter earlier intervals. Taking $\ell_i=\ell^{\rm st}_{J_{i+1}}$ gives odd ratios, and $\ell_j^{\rm st}\ge j$ gives $\log\ell_i\to\infty$.
+
+The level $k(m)$ exists: $a_iB_i^2$ decreases by at least the factor $2/3$ at each step. If $k(m)=u+1>m$, minimality gives
+\begin{equation}\label{eq:E-first-open}
+ a_m/a_{k(m)}\le\ell_uB_u^2.
+\end{equation}
+Consequently~\eqref{eq:E-marker-scales} gives $(a_m/a_{k(m)})^4q_{k(m)}=o(s_{k(m)})$. The case $k(m)=m$ satisfies the same conclusion directly from $q_m=o(s_m)$.
+
+Choose $L_p=4(M_{\rm per}+p+1)$. For $j=J_{m+1}$, the required period inequalities, including item~7 of Table~\ref{tab:constant-choices}, are
+\begin{gather*}
+ L_p e^{s_m}\ge100(B_m+1),\qquad
+ L_p e^{s_{m+1}}\ge100((j+3)\ell_m+1),\\
+ L_p e^{s_m}\ge v_j^{\rm per}(1+B_m+B_{m+1})^{h_j^{\rm per}}.
+\end{gather*}
+The first follows by choosing $M_{\rm per}$ large, since $(B_m+1)e^{-s_m}$ is bounded. After canceling $\ell_m$ in the second, postpone each stage until $e^{s_m}\ge100(j+4)$. For the third, $v_j^{\rm per}$ and $h_j^{\rm per}$ are fixed before entry to stage~$j$, and $v_j^{\rm per}(1+B_m+B_{m+1})^{h_j^{\rm per}}e^{-s_m}\to0$ on that stage. Postpone each later stage until this expression is at most one thereafter, and enlarge $M_{\rm per}$ for the finite initial interval. This proves all three inequalities. The third supplies the period bound for the five-torus localization in the proof of Lemma~\ref{lem:D-localization}. The periods are strictly increasing, divisible by four, and every integer divides infinitely many of them.
+\end{proof}
+
+The next identities retain the normalization of the original Wilson integral through every integration.
+\begin{lemma}[Exact trajectory identities]\label{lem:E1.2}
+For the trajectories constructed below with endpoint $\bar\beta$ and every $m<N$,
+\begin{gather*}
+\rho_{N,p,N}=\rho^{\rm W}_{\beta_{N,p}},\qquad
+|\beta_{N,p,m+1}-\beta_{N,p,m}-\slope\log\ell_m|
+\le\omega_{J_{m+1}}^{\rm RG},\\
+\int\density\rho_{N,p,m}=Z_{L_pD_N,\beta_{N,p}}.
+\end{gather*}
+All representations are admissible, and the terminal integral has the same value.
+\end{lemma}
+The following proof also proves Theorem~\ref{prop:MT}.
+\begin{proof}[Proof of Lemma~\ref{lem:E1.2} and Theorem~\ref{prop:MT}]
+The trajectory is obtained by bracketing, level by level, along the continuous Wilson curve of Lemma~\ref{lem:D3}, carried down by the continuous step of the specified recursion in Lemma~\ref{lem:D2}; the drift margin comes from~\eqref{eq:E-log-cost}. Set
+\begin{equation*}
+b_m^- =\bar\beta+\tfrac12\slope s_m,\qquad
+b_m^+ =\bar\beta+2\slope s_m.
+\end{equation*}
+These intervals lie in the coupling bands $\mathfrak B_m$. Suppose the fine endpoint couplings are $b_{m+1}^-$ and $b_{m+1}^+$. The drift estimate and~\eqref{eq:E-log-cost} give coarse endpoint bounds
+\begin{equation*}
+\beta_m^-\le b_m^- -\tfrac14\slope\log\ell_m<b_m^- ,
+\qquad
+\beta_m^+\ge b_m^+ +\tfrac34\slope\log\ell_m>b_m^+ .
+\end{equation*}
+For a continuous function whose endpoints bracket $[b_m^-,b_m^+]$, restrict between its last lower hit before its first upper hit. Its values then remain in this interval. Restrict the parameter interval accordingly. Every preceding representation is restricted along with the new one, so all already obtained identities persist.
+
+Start at level~$N$ with the Wilson curve restricted to $[b_N^-,b_N^+]$ and repeat this operation down to zero. Since $b_0^-=b_0^+=\bar\beta$, it produces a trajectory with the required endpoint. The case $N=0$ is the Wilson representation at $\bar\beta$. All retained representations and adjacent pairs belong to the chosen classes and relation because Theorem~\ref{prop:RG} returns admissible representations whose adjacent pairs lie in the chosen relation.
+
+The exact density identity at each step is the one in Theorem~\ref{prop:RG}, now applied only on the retained interval. By Lemma~\ref{lem:B1}, integration of the block kernel of Definition~\ref{def:D04} in its coarse argument is one. Fubini therefore preserves the integral, and the Wilson start gives its displayed value at every level. The path arrays were fixed before~$p$ in Lemma~\ref{lem:C1}; restricting the parameter interval does not change them.
+
+Summing the drift from zero gives
+\begin{equation}\label{eq:E-running}
+|\beta_{N,p,m}-\bar\beta-\slope s_m|
+\le\sum_{i<m}\omega_{J_{i+1}}^{\rm RG}.
+\end{equation}
+For a fixed splitting level~$k$, the tail is at most
+$\sup_{i\ge k}J_{i+1}^{-2}s_m$ by~\eqref{eq:E-log-cost}. The initial sum is fixed. Divide by $s_m$, let $m\to\infty$ and then $k\to\infty$. Since $\bar\beta/s_m\to0$, this proves the uniform running law in Theorem~\ref{prop:MT}; neither bound depends on $N\ge m$ or~$p$.
+\end{proof}
+
+The uniqueness estimate concerns the specified recursion, rather than arbitrary representations of a density. Lemma~\ref{lem:D-E1} supplies its weighted analytic coordinates and their real power-series extension. Section~\ref{sec:partII-E.3} uses the fixed-level convergence of Lemma~\ref{lem:D-fixed-level}.
+\begin{lemma}[Analytic endpoint tuning]\label{lem:E1.3}
+There is $w_{\rm tun}>0$, depending only on the construction, such that, for every $N,p$ and $s\in[-1,1]$, exactly one bare coupling $\beta_{N,p}(s)$ starts a trajectory of the specified recursion ending at $\bar\beta+w_{\rm tun}s$. Moreover,
+\begin{equation*}
+\beta_{N,p}(0)=\beta_{N,p},\qquad
+\beta_{N,p}(s)=b_{N,p}(s)\quad(-1<s<1),
+\end{equation*}
+where $b_{N,p}$ is holomorphic on $|z|<1$.
+\end{lemma}
+\begin{proof}
+Uniqueness and the analytic extension both come from the weighted contraction of Lemma~\ref{lem:D-E1}, applied to histories of the specified recursion (Definitions~\ref{def:D06} and~\ref{def:D25a}). Let $\mathfrak d$ be the history distance of two histories in the domain of that lemma, including the coupling coordinate, and $\delta$ their coarse endpoint difference. With the constants $b_{\min},\lambda_*>0$ fixed before that lemma, independent of $N,p$, it gives
+\begin{equation}\label{eq:E-analytic-input}
+\mathfrak d\le |\delta|/b_{\min}+8g_*\mathfrak d,\qquad g_*=1/128.
+\end{equation}
+For equal endpoints, $\mathfrak d\le \mathfrak d/16$ implies equality of the histories and hence of their bare couplings.
+
+Take $w_{\rm tun}=\lambda_*b_{\min}/4$, where $\lambda_*=1/16$ is fixed before Lemma~\ref{lem:D-E1}. The local action is affine in the varying coupling; the masks and sector domains are fixed in its analytic coordinates. Its power-series map preserves the radius-$\lambda_*$ ball and contracts by $1/2$ for endpoint series $w_{\rm tun}z$. Successive substitution converges in the norm $\sum_j\|u_j\|$ of absolutely summable series. The map preserves real coefficients, so evaluation gives a real trajectory in that domain for every $s\in[-1,1]$, pointwise in $s$. This supplies existence on the whole stated interval, including its endpoints. The selected coefficient at $s=0$ is the trajectory of Lemma~\ref{lem:E1.2}, by uniqueness. The bare-coupling series is holomorphic in $|z|<1$ and has the claimed real values. All clipping and health conditions are covered by the analytic neighbourhood in Lemma~\ref{lem:D-E1}; they are not differentiated across their boundaries.
+\end{proof}
+
+\subsection{Marked fields and volume-uniform estimates}\label{sec:partII-E.2}
+
+Proposition~\ref{prop:UB} needs bounds on differentiated insertions, uniform in the cutoff and the volume. The argument has four parts. (i)~One marked insertion is carried to coarser levels as a polynomial coordinate plus remainders, with a two-sided bound on the coordinate that loses no factor $\ell_m^d$ in the inverse direction (Section~\ref{sec:partII-E.2.1}). (ii)~Placing one insertion in every reflected cell of a tiling of side $a_m$ and integrating down to a level~$k$ with $(a_m/a_k)^4$ sites per cell gives the chessboard bound $Aa_m^{-d-\varepsilon}$ (Section~\ref{sec:partII-E.2.2}). (iii)~A lattice difference of a degree-$d$ insertion is a degree-$(d+1)$ insertion up to a negligible error; its coefficient splits into an equation part, which vanishes in separated correlations, and a part in a space of dimension at most $\dim_\C\maxwellspace{d+1}$ (Sections~\ref{sec:partII-E.2.3}--\ref{sec:partII-E.2.4}). (iv)~That part is bounded through a nondegenerate matrix of free Maxwell tests (Section~\ref{sec:partII-E.2.5}). Lemma~\ref{lem:E2.4} combines (ii)--(iv) and proves Proposition~\ref{prop:UB} (Section~\ref{sec:partII-E.2.6}). The bounded approximations of Section~\ref{sec:partII-E.2.7} serve the phase argument of Section~\ref{sec:partII-H}.
+
+\subsubsection{One marked insertion}\label{sec:partII-E.2.1}
+
+Fix a degree~$d$ and suppress $N,p,d$ while describing one transfer. We use the marked densities of~\eqref{eq:I12-marked-evolution}, the local section $P_d=\localsection{d}$ of Lemma~\ref{lem:A1}, and the factor-count scaling $t^{\factorcount}$ of Definition~\ref{def:D08}. Write $\rho_m$ for the unmarked representation, $v_{{\rm sc},m}$ for its scalar normalization and $\Lambda_{n_{p,m}}$ for its site torus. An anchor is the lattice site at which the insertion is placed. Denote the marked regular supports by $Z_i$, to distinguish them from the unmarked supports~$X_i$. For a bare polynomial coordinate $\mathbf v\in V_d$,
+\begin{equation}\label{eq:E-marked-evolution}
+ H_N(\mathbf v)=\density\rho_N\,P_d[t_N^{-\factorcount}\mathbf v],\qquad
+ H_m(\mathbf v)=\ell_m^d\blockmap{m}_{\beta_{N,p,m+1}}H_{m+1}(\mathbf v),
+\end{equation}
+so that $H_m(\mathbf v)=H^{\rm ins}_{N,p,m;d}(\mathbf v)$. These densities keep track of one insertion under exact integration. The equality is exact; the estimates below control the coordinates in which it is written.
+
+\begin{definition}[Marked density]\label{def:D26}
+A representation of $H_m(\mathbf v)$ at level~$m$ consists of a coordinate $\mathbf x=x_0\mathbf1+\mathbf x^\circ\in V_d$, complex regular remainders $R_i$ on supports~$Z_i$, and forced remainders $Q_i$ on forced addresses of~$\rho_m$, such that the exact decomposition~\eqref{eq:I12-marked-representation} holds with $\mathbf x_m=\mathbf x$, $R^{\rm reg}_{m,i}=R_i$ and $Q^{\rm for}_{m,i}=Q_i$. The section and the stencil~$\Sigma_d$ are translated to the anchor.
+\end{definition}
+The remainders restore the exact density; eligibility is that of Definition~\ref{def:D06}. The marked regular norm below is anchored at the insertion site, taken to be zero; it is not anchored separately at each support. For selected majorants $e_i\ge\|R_i\|_m$, $k_i\ge\sup|Q_i|$, set
+\begin{equation}\label{eq:E-marked-mass}
+\begin{aligned}
+\mathcal E^{\rm mk}_m&=\sum_i e^{\sigma_{J_m}\cover_{B_m}(Z_i)}e_i,
+\qquad \mathcal K^{\rm mk}_m=\sum_i e^{\sigma_{J_m}\cover_{B_m}(Y_i)}k_i,
+\\
+\|g_m\|_{\rm rem}&=\mathcal E^{\rm mk}_m+(\epsilon_m^{\rm for})^{-1/2}\mathcal K^{\rm mk}_m.
+\end{aligned}
+\end{equation}
+The derivative seminorm is Definition~\ref{def:D05a}. A coefficient graph at level~$m$ is a linear choice $\mathbf x\mapsto g_m(\mathbf x)=(R(\mathbf x),Q(\mathbf x))$ of such remainders, with the supports fixed and $\|g_m(\mathbf x)\|_{\rm rem}\le C^{\rm col}_{J_m}|\mathbf x^\circ|_1$. As in the graph transform for invariant manifolds, the marked step maps coefficient graphs at level $m+1$ to graphs at level~$m$ and halves the distance between two of them (Lemma~\ref{lem:E-marked-step}); the current polynomial coordinate thus bounds the whole inserted density.
+
+\input{part2/E-one-mark}
+
+Choose the reference level $\reflevel{d}$ with $J_{\reflevel{d}}\ge d+3$, $\mathfrak q_{J_m}\ge d+1$ and $\varpi_{J_m}\ge d$ for $m\ge\reflevel{d}$. Apply Lemma~\ref{lem:E-marked-step} along the trajectory, starting from the representation at the cutoff constructed in the proof of Lemma~\ref{lem:E2.1}, and let $\mathsf M_m$ be its coefficient maps. Define, before normalizing the lattice fields,
+\begin{equation}\label{eq:E-terminal-map}
+ \mathsf Z_{N,p,d}=\mathsf M_{\reflevel{d}}\cdots\mathsf M_{N-1}\quad(N\ge\reflevel{d}).
+\end{equation}
+An empty product is the identity. For $N<\reflevel{d}$ choose an arbitrary invertible map, as allowed in Definition~\ref{def:D08}.
+
+\paragraph{The curvature square at the terminal map.} We continue the example of Section~\ref{sec:A-example}. The curvature square $c_{F^2}$ is a label of degree $d=4$ with engineering weight four and factor count two, the top weight in~$V_4$. Its column of the leading map is therefore diagonal, $T_mc_{F^2}=(t_m/t_{m+1})^2c_{F^2}$, and $\mathsf S_{\ell_m}$ fixes it. With the leading maps alone, the terminal map would multiply $c_{F^2}$ by the single factor $(t_{\reflevel{4}}/t_N)^2$. The coefficient maps, however, are controlled only up to an error in the full coefficient norm, $|\mathsf M_m\mathbf x-T_m\mathsf S_{\ell_m}\mathbf x|_1\le\varepsilon_{\ell_m}(|\mathbf x^\circ|_1+\|g_{m+1}(\mathbf x)\|_{\rm rem})$ (Step~2 in the proof of Lemma~\ref{lem:E-marked-step}), so at each step the curvature-square input may acquire a component along the unit $\mathbf1$, the only other real $\hypercubic$-invariant label in~$V_4$ (Section~\ref{sec:A-example}), for instance from integrated remainders. The estimates therefore do not force the unit coefficient~$\delta^{F^2}_{N,p}$ of Section~\ref{sec:A-example} to vanish. The reference normalization instead prescribes the whole bare coefficient vector $\mathsf Z_{N,p,4}^{-1}c_{F^2}$; Lemma~\ref{lem:E2.1} bounds it by $|c_{F^2}|_1\prod_{\reflevel{4}\le i<N}C^{\rm col}_{J_{i+1}}=a_N^{-o(1)}|c_{F^2}|_1$, by~\eqref{eq:E-log-cost}. Section~\ref{sec:partII-F} continues the example with the quotient field.
+
+The next lemma carries one insertion from the cutoff to the reference level. Its content is the representation at the cutoff, whose forced part needs the initialization requirement, and the transport bounds obtained by iterating the marked step.
+\begin{lemma}[Marked trajectory]\label{lem:E2.1}\label{lem:E2.2}
+Let $N\ge\reflevel{d}$ and $\reflevel{d}\le m\le N$. The densities~\eqref{eq:E-marked-evolution} have representations at level~$m$ with coordinates $\mathbf x_m(\mathbf v)$ and remainder families linear in~$\mathbf v$, with fixed supports, such that $\mathbf x_N(\mathbf v)=\mathbf v$, $\mathbf x_m=\mathsf M_m\mathbf x_{m+1}$ for $m<N$, $\mathbf x_{\reflevel{d}}(\mathbf v)=\mathsf Z_{N,p,d}\mathbf v$ with $\mathsf Z_{N,p,d}$ invertible, and
+\begin{equation*}
+\mathcal E^{\rm mk}_m(\mathbf v)+(\epsilon_m^{\rm for})^{-1/2}\mathcal K^{\rm mk}_m(\mathbf v)
+\le C^{\rm col}_{J_m}|\mathbf x_m(\mathbf v)^\circ|_1,
+\end{equation*}
+also with $\sigma_{J_m}$ replaced by any exponent in $[98,100]$. For $m<N$,
+\begin{equation*}
+|\mathbf x_{m+1}(\mathbf v)|_1\le C^{\rm col}_{J_{m+1}}|\mathbf x_m(\mathbf v)|_1,
+\qquad |\mathbf x_m(\mathbf v)|_1\le C^{\rm col}_{J_{m+1}}\ell_m^d|\mathbf x_{m+1}(\mathbf v)|_1.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+At level~$N$, split the unmasked section into its healthy part and its complement $f_{\mathbf v}=\mathbf1_{\Sigma_d\,\mathrm{unhealthy}}P_d[t_N^{-\factorcount}\mathbf v^\circ]$. The healthy part is the polynomial term of~\eqref{eq:I12-marked-representation}; the complement must be carried by the forced family, whose eligibility events (Definition~\ref{def:D06}) cover the flagged configurations. For an eligible family~$\mathcal A$ let $\mathcal A_\Sigma$ be its forced terms whose supports meet~$\Sigma_d$. If $\mathcal A_\Sigma=\varnothing$, exact coverage leaves no flag in~$\Sigma_d$ and $f_{\mathbf v}=0$. Otherwise replace $\mathcal A_\Sigma$ by one new marked forced address with support $\Sigma_d\cup\bigcup_{i\in\mathcal A_\Sigma}Y_i$, inventory $\bigcup_{i\in\mathcal A_\Sigma}I_i$, zero unmarked activity, and $Q=f_{\mathbf v}\prod_{i\in\mathcal A_\Sigma}K_i^{\rm for}$ on the event that the flags in that support are exactly this inventory, $Q=0$ otherwise. An index of the new marked family records the cluster~$\mathcal A_\Sigma$, even when two clusters have the same support and inventory; retain all original forced factors in~$Q$. The remaining supports are disjoint from the merged support, since they avoid~$\Sigma_d$ and were disjoint from every merged support. This is a bijection between eligible families meeting~$\Sigma_d$ and eligible marked families containing one new address, so the forced sum restores $f_{\mathbf v}\density\rho_N$ exactly. The regular remainder is zero and $\mathbf x_N=\mathbf v$.
+
+The support weight of the merged address is at most $e^{\sigma_{J_N}\cover_{B_N}(\Sigma_d)}$ times the product of the old support weights: their connected covers all meet the stencil cover. The activity caps bound the sum of the weighted majorants of addresses meeting~$\Sigma_d$ by $|\Sigma_d|\epsilon_N^{\rm for}$. Dropping disjointness and summing their products over nonempty subsets gives at most $e^{|\Sigma_d|\epsilon_N^{\rm for}}-1$. By~\eqref{eq:A-global-bound}, $|f_{\mathbf v}|\le C_dt_N^{-d}|\mathbf v^\circ|_1$; with~\eqref{eq:I12-activity-caps} and $\cover_{B_N}(\Sigma_d)\le1$,
+\begin{equation*}
+\begin{aligned}
+ (\epsilon_N^{\rm for})^{-1/2}\mathcal K^{\rm mk}_N
+ &\le(\epsilon_N^{\rm for})^{-1/2}C_dt_N^{-d}e^{\sigma_{J_N}}
+ (e^{|\Sigma_d|\epsilon_N^{\rm for}}-1)|\mathbf v^\circ|_1\\
+ &\le|\mathbf v^\circ|_1
+\end{aligned}
+\end{equation*}
+by item~\ref{it:E-birth}. This is the bound of the lemma at $m=N$, since $C^{\rm col}_{J_N}\ge1$.
+
+Iterate the marked step on the same unmarked trajectory. Lemma~\ref{lem:E-marked-step} gives $\mathbf x_m=\mathsf M_m\mathbf x_{m+1}$, the exact equality in~\eqref{eq:E-marked-evolution}, the graph bound and the two transport bounds; the factor $\ell_m^d$ agrees with $a_m^d=\ell_m^da_{m+1}^d$. Each $\mathsf M_m$ is invertible, so their product is invertible and $\mathbf x_{\reflevel{d}}=\mathsf Z_{N,p,d}\mathbf v$. No choice of a different unmarked representation is made. For fixed supports, take the union of the addresses selected for the finitely many basis inputs and fill unused addresses by zero; the basis construction in Lemma~\ref{lem:E-marked-step} then makes the coefficients and both remainders linear in~$\mathbf v$. Finally, for $s\ge0$ and $98\le\tau\le100$ we have $e^{\tau s}\le e^{100s}$, so lowering the support exponent in~\eqref{eq:E-marked-mass} only decreases both sums.
+\end{proof}
+
+The normalization retains the symmetries of the local sections. Its unit includes the degree-dependent spacing factor.
+\begin{lemma}[Symmetry and the unit]\label{lem:E2.1a}
+For every $d$, $N\ge\reflevel{d}$ and $p$, the maps $\mathsf Z_{N,p,d}$ commute with conjugation and~$\hypercubic$. For $\reflevel{d}\le m\le N$,
+\begin{equation*}
+\mathbf x_m(a_N^d\mathbf1)=a_m^d\mathbf1.
+\end{equation*}
+Consequently $\mathbf u_d=a_{\reflevel{d}}^d\mathbf1$ has insertion one.
+\end{lemma}
+\begin{proof}
+Complex conjugation and signed permutations commute with integration (Definition~\ref{def:D04}), with Taylor extraction in the symmetric sections of Lemma~\ref{lem:A1}, and with the equivariant coefficient graph of Lemma~\ref{lem:E-marked-step}. Each operation therefore commutes with every $\mathsf M_m$ and their product.
+
+For a unit input, the marked density is $a_N^d\density\rho_N$. Exact integration and multiplication by $\ell_m^d$ give $a_m^d\density\rho_m$ at level~$m$. The selected extraction has zero nonconstant coordinate and zero remainder for this density. Induction proves the displayed identity. In particular
+$\mathsf Z_{N,p,d}^{-1}\mathbf u_d=a_N^d\mathbf1$. Substitute into Definition~\ref{def:D08}; factor scaling fixes the polynomial unit, so its insertion equals $a_N^{-d}a_N^d=1$.
+\end{proof}
+
+The remainders have the cancellations of the marked format~\eqref{eq:I12-marked-representation} of Section~\ref{sec:renormalization}.
+\begin{lemma}[Marked local format]\label{lem:E2.2a}
+For $N\ge\reflevel{d}$ and $\reflevel{d}\le m\le N$, the complex regular remainders are Borel, gauge invariant, local and smooth as in Definition~\ref{def:D24}. Their supports contain the anchor. Their values at the identity, and their radial-jet coefficients through degree~$d$ on nonwrapping supports, vanish. The forced remainders satisfy Definition~\ref{def:D25}, and
+\begin{equation*}
+Q_i\ne0\quad\Longrightarrow\quad\text{the anchor belongs to }Y_i.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+The anchored extraction in Lemma~\ref{lem:E-marked-step} subtracts the value at the identity and the radial Taylor polynomial; this gives exactly the two stated regular cancellations. On wrapping supports no radial Taylor cancellation is imposed. In the connected expansion every marked component contains the original insertion anchor. The support is the union of the supports in that component, so it still contains that anchor after enlargement. A component reaches a forced address only through terms that carry a flagged inventory at that level, and then only on the eligibility event of that address (Definition~\ref{def:D25}); an incoming regular mark is never moved to the forced family as a whole (Step~1 in the proof of Lemma~\ref{lem:E-marked-step}). The anchor argument applies to these terms as well. Locality, gauge invariance and Borel measurability are preserved by local integration and by these tests. The regular derivatives are taken on healthy configurations, as in Definition~\ref{def:D24}; no derivative of a relaxed threshold test is used. The fixed basis construction and its support unions retain these properties under iteration.
+\end{proof}
+
+\subsubsection{Chessboard seminorms and replicated sources}\label{sec:partII-E.2.2}
+
+\begin{samepage}
+A bond tiling has cell boundaries through link midpoints. Its reflected copies place an observable in every cell, with conjugation on odd reflections. The copy $(F)_C$ is the pullback of $F$ under the composition of bond reflections taking the base cell to $C$, conjugated when that composition has odd parity.
+\begin{definition}[Chessboard seminorm]\label{def:D27}
+For a tiling $\mathcal C^{\rm tile}$ into congruent reflected cells and an observable $F$ in its base cell, set
+\begin{equation*}
+\|F\|_{\mathcal C^{\rm tile}}=
+\left|\left\langle\prod_{C\in\mathcal C^{\rm tile}}(F)_C\right\rangle_{N,p}\right|^{1/|\mathcal C^{\rm tile}|}.
+\end{equation*}
+Interior means dependence only on links with both endpoints strictly inside the base cell. The centered tiling $\mathcal C^{\rm tile}_m(y)$ has physical cell side $a_m$ and base cell centered at~$y$.
+\end{definition}
+\end{samepage}
+The seminorm measures the size of a repeated observation throughout the box; it converts reflected-product estimates into bounds on one insertion. For interior complex observables these quantities are seminorms and satisfy
+\begin{equation}\label{eq:E-chess}
+\left|\left\langle\prod_{C\in\mathcal C^{\rm tile}}(F_C)_C\right\rangle_{N,p}\right|
+\le\prod_{C\in\mathcal C^{\rm tile}}\|F_C\|_{\mathcal C^{\rm tile}}.
+\end{equation}
+Apply the abstract chessboard theorem, \cite[Theorem~4.1]{FrohlichIsraelLiebSimon1978}, successively in the four axes. The real vector space is the space of complex cell functions, and the reflection includes conjugation. Translation invariance gives cyclicity; reflection positivity gives the required Schwarz inequality. For the Wilson measure this positivity is \cite[Theorem~2.1, pp.~14--15]{Seiler1982}, with compact matrix group, positive coupling and observables on one side of the bond planes. For $\mathcal C^{\rm tile}_m$, there are $L_pD_m$ cells per axis, an even integer. The cell side $a_m/a_N=D_N/D_m$ is odd, so the centered boundaries pass through link midpoints. Bounded Borel cell functions follow by approximation in the finite-dimensional configuration measure.
+
+The centered seminorm estimate must also control anchors near arbitrary, separated configurations. Write $v=(d,c)$ for the insertion label.
+A signed image means the image under~$\hypercubic$; conjugation is also allowed. Two tilings are aligned when their cells have the same axes and every coarse boundary is a fine boundary.
+\begin{lemma}[Interior seminorm bound]\label{lem:F1a}
+Fix $m\le k\le N$, $N\ge\reflevel{d}$, and~$B_{\rm rt}\ge0$. Suppose, for every anchor~$y'$, every signed image or image under conjugation of~$O_{N,p}(v,y')$ has seminorm at most~$B_{\rm rt}$ in~$\mathcal C^{\rm tile}_k(y')$ and stencil within~$a_k$ of~$y'$. In every translated bond tiling~$\mathcal T$ of side~$a_m$, an anchor at distance at least~$3a_k$ from its cell boundary satisfies
+\begin{equation}\label{eq:F-uncentered}
+O_{N,p}(v,y)\text{ is interior},\qquad
+\|O_{N,p}(v,y)\|_{\mathcal T}\le B_{\rm rt}\,.
+\end{equation}
+\end{lemma}
+\begin{proof}
+At an aligned fine-cell center the bound follows from~\eqref{eq:E-chess}; between centers it follows from log-convexity in each axis, using the symmetry of Lemma~\ref{lem:E2.1a}. Since~$a_k/a_N$ is odd, the fine-cell centers are lattice sites. At an aligned fine-cell center, reflect all coarse copies into distinct fine cells. Their signs and conjugations are among the assumed images. Apply~\eqref{eq:E-chess} with~$1$ in every unoccupied fine cell. Taking the coarse seminorm bounds it by~$B_{\rm rt}$.
+
+For intermediate anchors, let~$H(z)$ be the coarse seminorm after~$z$ lattice translations in one axis, with the other coordinates fixed. Translation invariance and reflection give
+\begin{equation}\label{eq:F-logconvex}
+H(z)^2\le H(z-1)H(z+1)\,.
+\end{equation}
+Indeed, translate the reflected product by one lattice step. Alternate cells then contain shifts~$z-1$ and~$z+1$; apply~\eqref{eq:E-chess}. On a finite interval a nonnegative sequence satisfying this inequality cannot exceed its endpoint maximum: an interior positive maximum extends to both neighbours and hence to an endpoint. This includes zero endpoints.
+
+Bracket each coordinate of~$y$ by its two neighbouring fine-center coordinates. All anchors in the resulting rectangle have margin at least~$2a_k$, so their stencils are interior. Induct on~$i=0,\ldots,4$: the seminorm is at most~$B_{\rm rt}$ when the first~$i$ coordinates are arbitrary lattice coordinates in these intervals and the remaining coordinates are endpoints. The case~$i=0$ is the aligned-center bound. In the next axis, the endpoint bounds hold uniformly in the coordinates already moved;~\eqref{eq:F-logconvex} supplies the intervening bounds. The case~$i=4$ proves~\eqref{eq:F-uncentered}.
+\end{proof}
+
+\input{part2/E-several-mark}
+
+The centered estimate fixes its constant before the physical cell size. A sufficiently fine cutoff then places the fixed insertion stencil strictly inside that cell.
+\begin{lemma}[Centered bound]\label{lem:E2.3}
+For every $d$ and $R,\varepsilon>0$, there is $A(d,R,\varepsilon)\ge0$ such that, for every $m\ge\reflevel{d}$, some $N_0(d,R,\varepsilon,m)\ge m$ gives, for $N\ge N_0$, every $p,y$ and $\|c\|\le R$,
+\begin{equation*}
+O_{N,p}^{(d)}(c,y)\text{ is interior},\qquad
+\|O_{N,p}^{(d)}(c,y)\|_{\mathcal C^{\rm tile}_m(y)}\le Aa_m^{-d-\varepsilon}.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+The replicated source bound of Lemma~\ref{lem:E-replication} gives the seminorm at the stopping level $k=k(m)$ of Lemma~\ref{lem:E1.1}; the choice of $k(m)$ makes the per-cell site cost negligible against $s_k$. For $0<\varepsilon'<1$,
+\begin{align}\label{eq:E-centered-input}
+ \|O(c,0)\|_{\mathcal C^{\rm tile}_m(0)}
+ &\le\exp\{(a_m/a_k)^4q_k+6-\log\mathsf w_k\},\notag\\
+ 6-\log\mathsf w_k&\le(d+\varepsilon')s_k\quad(k\ge k_0(\varepsilon')),\notag\\
+ (a_m/a_{k(m)})^4q_{k(m)}&\le\varepsilon' s_{k(m)}\quad(m\ge m_0(\varepsilon')).
+\end{align}
+The cutoff threshold is uniform in the coefficient ball and in~$p$.
+
+Put $\tau=s_{k(m)}$, $\upsilon=s_m$ and $W=(a_m/a_k)^4$. Since $q_k\ge1$,
+\begin{equation*}
+\tau-\upsilon=\log(a_m/a_k)\le W\le Wq_k\le\varepsilon'\tau.
+\end{equation*}
+The exponent in the first line of~\eqref{eq:E-centered-input} is therefore at most $(d+2\varepsilon')\tau\le(d+2\varepsilon')\upsilon/(1-\varepsilon')$. Choose $\varepsilon'$ so that $(d+2\varepsilon')/(1-\varepsilon')\le d+\varepsilon$. This proves the required estimate with constant one for all sufficiently large~$m$. For the finitely many remaining $m\ge\reflevel{d}$, use the first line of~\eqref{eq:E-centered-input} at the selected fixed $k(m)$ and take the maximum of its ratio to $a_m^{-d-\varepsilon}$ and~one. This fixes~$A$ before~$m$.
+
+Finally the stencil of Definition~\ref{def:D08} has fixed lattice radius. For fixed~$m$ its physical radius tends to zero as $N\to\infty$, uniformly in~$p$. Translation covariance moves the centered calculation to any~$y$.
+\end{proof}
+
+\subsubsection{Negligible errors and local matching}\label{sec:partII-E.2.3}
+
+The following estimates concern the insertions of Definition~\ref{def:D08}, with the terminal maps~$\mathsf Z_{N,p,d}$ of Lemma~\ref{lem:E2.1}. They are used to identify the quotient fields in Section~\ref{sec:partII-F}. A statement holds on full cutoff tails if it holds for all $N\ge N_0$ and every~$p$. A nonnegative family $b_{N,p}$ has subpower growth when, for every $\varepsilon>0$, $b_{N,p}\le a_N^{-\varepsilon}$ on such a tail. A coefficient family is tame if
+\begin{equation}\label{eq:F-subpower}
+ \forall\varepsilon>0\ \exists N_0\ \forall N\ge N_0\ \forall p:
+ \|\mathsf Z_{N,p,d}^{-1}c_{N,p}\|_\infty\le a_N^{-\varepsilon}.
+\end{equation}
+For later volume extraction we also use strictly increasing subsequences $N=\mathsf n(j)$, $p=P(k)$ and the ordered limit
+\begin{equation}\label{eq:E2-tails}
+ \operatorname*{olim}X_{N,p}=x
+ \quad\Longleftrightarrow\quad
+ \forall\varepsilon>0\ \exists k_0\ \forall k\ge k_0\ \exists j_0(k)\ \forall j\ge j_0(k):
+ |X_{\mathsf n(j),P(k)}-x|<\varepsilon.
+\end{equation}
+The ordered versions of tameness and negligibility replace full cutoff tails by these quantifiers. We prove the full-tail versions of the bounds below; the same constructions work for ordered-tame families, with their ordered thresholds, and this is the form used in Section~\ref{sec:partII-F}.
+
+An anchor is the lattice site at which an insertion is placed; translates of a bond tiling are by lattice vectors. In a base cell of side~$a_k$, let~$z^a$ be the anchor's integer coordinate measured from the first site in direction~$a$, and put
+\begin{equation}\label{eq:E2-margin}
+M_{n_*,k,N}=\left\lfloor\frac{a_k}{8(n_*+1)a_N}\right\rfloor,
+\qquad M_{n_*,k,N}\le z^a,\quad z^a+M_{n_*,k,N}+1\le a_k/a_N\,.
+\end{equation}
+These inequalities specify a relative interior margin.
+
+\begin{definition}[Negligible errors]\phantomsection\label{def:E2-small}
+An observable family~$E_{N,p}(y)$ is negligible if there are $\eta_{N,p}\ge0$ with $\sup_p\eta_{N,p}\to0$ as $N\to\infty$ such that, for every arity~$n_*$ and level~$m$, there are $k\ge m$ and $N_0\ge k$ with the following property: for all $N\ge N_0$, all~$p$, every translated bond tiling~$\mathcal C^{\rm tile}$ of side~$a_k$ and every base-cell anchor~$y$ satisfying~\eqref{eq:E2-margin},
+\begin{equation*}
+E_{N,p}(y)\text{ is interior},\qquad
+\|E_{N,p}(y)\|_{\mathcal C^{\rm tile}}\le\eta_{N,p}\,.
+\end{equation*}
+\end{definition}
+The tolerance is chosen before $n_*$ and~$m$; the level and the cutoff tail may depend on these two requests. Here $n_*$ is the number of insertions in a later product test, and the lower level~$m$ requires the chosen cell scale to be arbitrarily fine. All residuals below are translation covariant, and their signed and conjugated images obey the same estimates. To pass from centered to arbitrary interior seminorms, choose $k'\ge k$ with $24(n_*+1)a_{k'}\le a_k$ and apply the finite reflection argument of Lemma~\ref{lem:F1a}. It uses only fixed stencils and the chessboard inequality, so it also applies to these residuals on full cutoff tails.
+
+\input{part2/E-local-comparison}
+
+\subsubsection{Equation identities and coefficient corrections}\label{sec:partII-E.2.4}
+
+The equation projections separate the coefficient directions controlled by exact cutoff identities. The free equation space consists of polynomial labels that vanish on curvature jets satisfying the Maxwell equations. Its transported image is the kernel of the projections chosen below, and the free quotient has dimension~$\dim_\C\maxwellspace{d}$. The projections and the equation observables in Lemmas~\ref{lem:E2.6}--\ref{lem:E2.7} are chosen together, before the spacing and volume subsequences.
+\begin{lemma}[Equation projections]\label{lem:E2.6}
+For every~$d$, there are complex linear idempotents $\Pi_{d,N,p}:V_d\to V_d$ and $C^\Pi_d<\infty$ such that
+\begin{equation*}
+\|\Pi_{d,N,p}\|\le C^\Pi_d,\qquad
+\dim\operatorname{ran}\Pi_{d,N,p}\le\dim_\C\maxwellspace{d},\qquad
+\ker\Pi_{d,N,p}=B_{d,N,p}\mathcal I_d,
+\end{equation*}
+with the maps $B$ of Lemma~\ref{lem:E-local-comparison}(ii).
+\end{lemma}
+\begin{proof}
+The kernel is prescribed by the transported equation ideal, and the bound comes from choosing orthogonal projections in a fixed norm. Let $\mathcal I_d\subset V_d$ be the polynomials of Definition~\ref{def:D07} belonging to the ideal generated by the linear Maxwell equations in radial jet coordinates. Radial coordinates already satisfy the linear Bianchi identities. Taking invariant polynomials commutes with the on-shell quotient: average any representative over the compact adjoint group to obtain an invariant representative. Thus the on-shell map is onto $\maxwellspace{d}$ (Definition~\ref{def:D11}) and
+\begin{equation}\label{eq:E-equation-count}
+\dim V_d-\dim\mathcal I_d=\dim_\C\maxwellspace{d}.
+\end{equation}
+
+Lemma~\ref{lem:E-local-comparison}(ii) constructs invertible coefficient maps $B_{d,N,p}:V_d\to V_d$. They transport $\mathcal I_d$ to the coefficient equations for auxiliary local representatives, including their change to the selected insertion coordinates. Set $U_{d,N,p}=B_{d,N,p}\mathcal I_d$. In the Euclidean norm on the fixed basis take the orthogonal projection $Q_{d,N,p}$ onto $U_{d,N,p}$ and set $\Pi_{d,N,p}=1-Q_{d,N,p}$. Then $\Pi^2=\Pi$ and $\ker\Pi=U_{d,N,p}$. Equivalence with the fixed coefficient norm bounds $\|\Pi\|$ independently of $N,p$, even when $B$ is poorly conditioned. Since $B$ is invertible, $\dim\ker\Pi=\dim\mathcal I_d$, and~\eqref{eq:E-equation-count} gives the dimension bound.
+
+The same local comparison maps will be used in Lemma~\ref{lem:E2.7}. They and these projections are chosen for all cutoffs before any subsequences.
+\end{proof}
+
+The next estimate converts a coefficient equation into an observable with exact separated moment identities.
+\begin{lemma}[Equation observables]\label{lem:E2.7}
+For these same projections, every tame family~$c_{N,p}\in\ker\Pi_{d,N,p}$ admits a measurable observable family~$\mathcal Q_{N,p}(y)$, bounded at each anchor and cutoff on a full cutoff tail, for which $O^{(d)}_{N,p}(c_{N,p},y)-\mathcal Q_{N,p}(y)$ is negligible. For every fixed spectator list and~$\delta>0$, on a full cutoff tail,
+\begin{equation*}
+\int \mathcal Q_{N,p}(y_i)\prod_{h\ne i}O_{N,p}(v_h,y_h)\,d\mu_{N,p}=0
+\qquad(\operatorname{sep}_{\rm tor}(y)\ge\delta)\,.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+The observable is the auxiliary equation section of Lemma~\ref{lem:A-R4}, whose separated moments vanish exactly; Lemma~\ref{lem:E-local-comparison}(ii) compares it with the insertion. Lemma~\ref{lem:A-R4} supplies $\widetilde P_d=V_d^{\rm aux}$ and $\mathsf R_d$. Using the kernel identity of Lemma~\ref{lem:E2.6}, write $c_{N,p}=B_{d,N,p}\pi_{N,p}$ with $\pi_{N,p}\in\mathcal I_d$, and set
+\begin{equation}\label{eq:E-equation-section}
+ \mathcal Q_{N,p}(y)=a_N^{-d}V_d^{\rm aux}[\mathsf R_d\pi_{N,p}](y).
+\end{equation}
+Lemma~\ref{lem:E-local-comparison}, specifically~\eqref{eq:E-equation-comparison}, proves that $O^{(d)}(c)-\mathcal Q$ is negligible. Its inverse change has subpower growth for tame~$c$. The common tolerance and interior-seminorm comparison were proved there and apply to this family.
+
+The exact zero identity is~\eqref{eq:A-aux-zero} in Lemma~\ref{lem:A-R4}: every auxiliary equation term is a Wilson action derivative whose multiplier and transport avoid the varied link, so Haar invariance makes its exterior moment zero. The auxiliary section has one finite equation radius. At prescribed positive physical separation, every fixed spectator stencil is exterior to it for all sufficiently fine cutoffs, uniformly in~$p$. Its product is bounded and measurable, as required by that lemma. Apply the identity with that product as spectator. Finally $\widetilde P_d$ is continuous on a finite product of compact groups. At each fixed cutoff its evaluation with the chosen finite coefficients is bounded.
+\end{proof}
+
+Changing the degree changes the insertion normalization. The next estimate corrects that change before taking limits.
+\begin{lemma}[Corrected inclusion]\label{lem:E2.8}
+For every $d\le d'$ and $c\in V_d$, there is a tame family~$b_{N,p}\in V_{d'}$ such that
+\begin{equation*}
+O^{(d')}_{N,p}(b_{N,p},y)-O^{(d)}_{N,p}(c,y)
+\quad\text{is negligible}\,.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+The target observable satisfies the hypotheses of local matching (Lemma~\ref{lem:E-local-comparison}(i)) in degree~$d'$. After multiplication by $a_N^{d'}$, it is
+\begin{equation*}
+a_N^{d'-d}P_d[t_N^{-\factorcount}\mathsf Z_{N,p,d}^{-1}c](y).
+\end{equation*}
+It is a local continuous function on the fixed degree-$d$ stencil. Its ordered derivatives in the allowed link directions and its supremum have subpower bounds. Indeed, the inverse terminal coordinate has this growth by the first transport inequality of Lemma~\ref{lem:E2.1} and~\eqref{eq:E-log-cost}; threshold powers have subpower growth because $\log\widehat\beta_N=o(s_N)$. The factor $a_N^{d'-d}\le1$ can only decrease these bounds.
+
+Local matching extracts a degree-$d'$ coefficient $b_{N,p}$ whose inverse terminal coordinate still has subpower growth. Its residual seminorm is bounded by $C_{m,k}\mathfrak e_{N,p}a_N^{1/8}$ at every fixed stopping pair of levels, with $\mathfrak e$ of subpower growth. The absorption and interior-seminorm argument in the proof of Lemma~\ref{lem:E-local-comparison} gives one tolerance $a_N^{1/32}$ for all the later cell requests. The residual is therefore negligible. For $d=d'$ one may simply take $b_{N,p}=c$, with zero residual.
+\end{proof}
+
+The physical difference quotient requires a correction in the next degree.
+\begin{lemma}[Corrected difference]\label{lem:E2.9}
+For every degree~$d$, $c\in V_d$ and axis~$a$, there is a tame family~$b_{N,p}\in V_{d+1}$ such that
+\begin{equation*}
+O^{(d+1)}_{N,p}(b_{N,p},y)
+-\frac{O^{(d)}_{N,p}(c,y+e_a)-O^{(d)}_{N,p}(c,y)}{a_N}
+\quad\text{is negligible}\,.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+Multiplying the target difference by $a_N^{d+1}$ removes the inverse spacing and gives exactly
+\begin{equation*}
+P_d[t_N^{-\factorcount}\mathsf Z_{N,p,d}^{-1}c](y+e_a)
+-P_d[t_N^{-\factorcount}\mathsf Z_{N,p,d}^{-1}c](y),
+\end{equation*}
+to which local matching (Lemma~\ref{lem:E-local-comparison}(i)) applies in degree $d+1$. Its stencil is the union of one fixed stencil and its unit translate. It is continuous and local. Moving an ordered derivative anchor by one lattice site multiplies its spatial weight by at most a stage-dependent factor. The factor is at most $2^{\varpi_{J_N}}$ per derivative. The logarithmic condition $\varpi_{J_N}=o(s_N)$ in Lemma~\ref{lem:E1.1} makes each fixed product of these factors subpower. The other bounds are those in the preceding proof. Local matching in degree $d+1$ now supplies a tame coefficient family and the same negligible residual. The inverse spacing has been removed before matching, so it causes no further loss in that residual. The four axes use translates of this one computation and their fixed spatial-weight bounds.
+\end{proof}
+
+\subsubsection{Comparison with free fields}\label{sec:partII-E.2.5}
+
+Fix~$d$ and a real basis $\mathfrak m_1=1,\mathfrak m_2,\ldots,\mathfrak m_{\dim_\C\maxwellspace{d}}$ of~$\maxwellspace{d}$. Choose finitely many one- or two-point tests. In test~$i$, the first label is the variable~$\mathfrak m_j$; the optional second label is a fixed basis element. Let $y^i\in\Gen{n_i}$, $n_i\in\{1,2\}$, be the test's configuration. The free test matrix is
+\begin{equation}\label{eq:E2-free-matrix}
+\mathcal G_{ij}=\maxwellcorr_{n_i}(\mathfrak m_j,\text{ test }i\text{ spectator};y^i)\,.
+\end{equation}
+The next lemma supplies a finite family that distinguishes every free field of degree at most~$d$.
+\begin{lemma}[Free tests]\label{lem:E2-free-tests}
+For every~$d$ and real basis~$\mathfrak m_1=1,\mathfrak m_2,\ldots,\mathfrak m_{\dim_\C\maxwellspace{d}}$, there are finitely many one- or two-point tests at generic configurations, with every second label a basis element, for which the matrix~\eqref{eq:E2-free-matrix} has rank~$\dim_\C\maxwellspace{d}$.
+\end{lemma}
+The proof uses only the Maxwell correlations of Definition~\ref{def:D11} and the free positivity in Lemma~\ref{lem:G1.1}, independently of Section~\ref{sec:partII-F}.
+\begin{proof}
+Let~$c\ne0$ in~$\maxwellspace{d}$. Lemma~\ref{lem:G1.1} gives a strictly positive reflected two-point value for~$c$ and the reflection of~$\bar c$. Expand that second label in the basis~$(\mathfrak m_j)$. At least one of the resulting two-point functionals is nonzero on~$c$. Each free Wick correlation is a finite sum of products of derivatives of $\Gamma(x)=(4\pi^2|x|^2)^{-1}$ between distinct sites, hence is smooth there. This permits a perturbation of the pair to~$\Gen{2}$ preserving this nonzero value. Thus the common kernel of all permitted test functionals is zero. Starting with~$\maxwellspace{d}$, choose a test nonzero on a nonzero vector in the current common kernel. Each choice strictly lowers its dimension. After finitely many choices the common kernel is zero, so~$\mathcal G$ has rank~$\dim_\C\maxwellspace{d}$.
+\end{proof}
+Fix such a family for the rank comparison below.
+
+For an index~$\nu$ of the comparison sequence, a common coefficient list~$b^\nu_{j,N,p}\in V_d$ and lattice-compatible configuration $x^{\nu,i}=r_\nu y^{\nu,i}$ define the test insertions $F_h^{\rm tst}=O^{(d)}_{N,p}(b^\nu_{j_h,N,p},x_h^{\nu,i}/a_N)$, with~$j_1=j$ and the spectator index fixed by test~$i$. Physical points are read modulo the lattice period. Let~$\mathcal G_J^\nu$ be the Maxwell moment of the labels~$(\mathfrak m_{j_h})_{h\in J}$ at~$(y_h^{\nu,i})_{h\in J}$, with $\mathcal G_\varnothing^\nu=1$. Define the relative errors by
+\begin{equation}\label{eq:F-relative}
+R_\varnothing=1,\qquad
+R_I=\prod_{h\in I}F_h^{\rm tst}-
+\sum_{\varnothing\ne J\subseteq I}\mathcal G_J^\nu R_{I\setminus J}\,.
+\end{equation}
+The rank argument uses only the singleton and pair cases. Suppressing the superscript~$\nu$, these are
+\begin{equation*}
+\begin{aligned}
+R_{\{1\}}&=F_1^{\rm tst}-\mathcal G_{\{1\}},\\
+R_{\{1,2\}}&=(F_1^{\rm tst}-\mathcal G_{\{1\}})(F_2^{\rm tst}-\mathcal G_{\{2\}})
+-(\mathcal G_{\{1,2\}}-\mathcal G_{\{1\}}\mathcal G_{\{2\}}).
+\end{aligned}
+\end{equation*}
+Thus the pair error subtracts the connected free two-point value from the product of the centered insertions. The lifts~$b^\nu$ include the scale normalization, so~$F_h^{\rm tst}$ carries no additional power of~$r_\nu$. A lift is the reference coefficient whose Wick-ordered leading polynomial at scale~$r_\nu$ is the specified basis element~$\mathfrak m_j$. The construction uses $r_\nu=a_{t_\nu}(\cutoffsize_{t_\nu})^b$ for one fixed $b>0$ chosen from the degree and the finite tests, before~$\nu$ varies.
+
+The source estimates below also apply to tests with any fixed arity bound~$n\ge2$. For a slot set $I_0$ with $|I_0|\le n$, define the free generating polynomial and its logarithm, the free cumulant generating function,
+\begin{equation*}
+ \mathsf G^{\rm Max}(z)=\sum_{J\subseteq I_0}\mathcal G_Jz_J,
+ \qquad \mathsf C^{\rm Max}(z)=\log\mathsf G^{\rm Max}(z),
+ \qquad z_i^2=0\quad(i\in I_0).
+\end{equation*}
+The logarithm is a finite polynomial because the constant term of $\mathsf G^{\rm Max}$ is one and its nonconstant part is nilpotent. Its coefficient on a nonempty~$I$ is
+\begin{equation*}
+ [z_I]\mathsf C^{\rm Max}
+ =\sum_{\mathcal P\text{ partition of }I}
+ (-1)^{|\mathcal P|-1}(|\mathcal P|-1)!
+ \prod_{J\in\mathcal P}\mathcal G_J.
+\end{equation*}
+For two slots these are the two singleton means and the connected pair moment; the rank comparison uses just this case. In the source estimates, the test positions may range over any fixed compact set $K\subset\Conf{|I_0|}$ with $\sepinf\ge\delta>0$. Constants may depend on $K,\delta,n$ and the finite degree and derivative orders; the lifts are common to these positions. The coefficients to be estimated are
+\begin{equation}\label{eq:E-corrected-coefficients}
+ \mathfrak c_I=[z_I]\left(e^{-\mathsf C^{\rm Max}(z)}\prod_h(1+z_hF_h^{\rm tst})\right).
+\end{equation}
+
+\input{part2/E-Gaussian-sources}
+
+The next estimate uses the corrected source comparison in Lemma~\ref{lem:E-Gaussian-sources}. Each relative error is interior whenever its insertions are interior, since~\eqref{eq:F-relative} is a polynomial in those insertions.
+\begin{lemma}[Relative rank comparison]\label{lem:E2.10}
+For every such finite test family, there are $r_\nu\downarrow0$, $y^{\nu,i}\to y^i$, levels $k_\nu\le t_\nu$ tending to infinity, $\gamma_\nu\ge0$ tending to zero, and real lifts~$b^\nu_{j,N,p}$ of the free basis~$(\mathfrak m_j)$, bounded in~$N,p$ for fixed~$\nu$ and common to all tests. They satisfy $b^\nu_{1,N,p}=\mathbf u_d$. Each~$x^{\nu,i}$ is generic on the spacing-$a_{t_\nu}$ grid. Eventually uniformly in~$p$, all test insertions are interior to~$\mathcal C^{\rm tile}_{k_\nu}(0)$, and, for every nonempty~$I$,
+\begin{equation*}
+\|R_I\|_{\mathcal C^{\rm tile}_{k_\nu}(0)}\le\gamma_\nu\,.
+\end{equation*}
+\end{lemma}
+
+\begin{proof}[Proof of Lemma~\ref{lem:E2.10}]
+The relative errors are the corrected coefficients~\eqref{eq:E-corrected-coefficients}, and Lemmas~\ref{lem:E-Gaussian-sources}--\ref{lem:E-source-integral}, with the free correlations of Definition~\ref{def:D11}, bound their seminorms by a negative power of the cutoff size. Apply those lemmas with arity bound $n=2$, so $\mathsf w_t=(\cutoffsize_t)^{1/16}=e^{2u_t}$ and $u_t=\log\cutoffsize_t/32$. The normalized source lemma gives
+\begin{equation}\label{eq:E-rank-input}
+ \left|\left\langle\prod_{C\in\mathcal C^{\rm tile}}(\mathfrak c_I)_C\right\rangle_{N,p}\right|
+ \le\exp\{|\mathcal C^{\rm tile}|q_t^{\rm cmp}\}
+ \mathsf w_t^{-|I||\mathcal C^{\rm tile}|},\qquad q_t^{\rm cmp}\le u_t.
+\end{equation}
+The cutoff threshold is independent of~$p$.
+
+Taking the $|\mathcal C^{\rm tile}|$-th root in~\eqref{eq:E-rank-input} gives
+\begin{equation*}
+\|\mathfrak c_I\|_{\mathcal C^{\rm tile}}\le e^{u_t-2|I|u_t}\le e^{-u_t}
+=(\cutoffsize_t)^{-1/32}\longrightarrow0.
+\end{equation*}
+Since $e^{\mathsf C^{\rm Max}}$ has coefficient $\mathcal G_J$ at $z_J$, multiplication by $e^{\mathsf C^{\rm Max}}$ shows that $\mathfrak c_I$ is exactly $R_I$ in~\eqref{eq:F-relative}. Choose successive comparison windows with both levels increasing, reading radii strictly decreasing to zero, and $e^{-u_t}$ decreasing to zero. The windows of Lemma~\ref{lem:E1.1} allow these finitely many requests at each step. Call the resulting levels $k_\nu\le t_\nu$, radii $r_\nu$ and errors $\gamma_\nu=e^{-u_{t_\nu}}$. Rounding on the finer grid preserves genericity for each fixed~$\nu$ once that grid is fine enough. Interior insertion supports imply interiority of every $R_I$, by its polynomial formula.
+\end{proof}
+
+\subsubsection{Bounds for lattice differences}\label{sec:partII-E.2.6}
+
+Positional differences are a separate problem. A difference quotient multiplies the insertion by the inverse spacing,
+\begin{equation}\label{eq:E-inverse-spacing}
+\frac{O^{(d)}_{N,p}(c,y+e_a)-O^{(d)}_{N,p}(c,y)}{a_N}
+=a_N^{-(d+1)}\Bigl(P_d[t_N^{-\factorcount}\mathsf Z_{N,p,d}^{-1}c](y+e_a)
+-P_d[t_N^{-\factorcount}\mathsf Z_{N,p,d}^{-1}c](y)\Bigr),
+\end{equation}
+so Lemma~\ref{lem:E2.3}, applied to the two terms on the left, bounds its seminorm only by $2Aa_m^{-d-\varepsilon}/a_N$, which diverges as $N\to\infty$. The remedy has three steps. Local matching represents the difference quotient as a degree-$(d+1)$ insertion up to a negligible error (Lemma~\ref{lem:E2.9}); the factor $a_N^{-(d+1)}$ becomes the normalization of the new insertion, but its coefficient is only tame, not bounded. The equation projection removes the directions of that coefficient whose insertions vanish in separated correlations (Lemmas~\ref{lem:E2.6}--\ref{lem:E2.7}). The remaining coefficient lies in a space of dimension at most $\dim_\C\maxwellspace{d+1}$ and is bounded by testing it against the finite free matrix (Lemmas~\ref{lem:E2-free-tests} and~\ref{lem:E2.10}).
+
+The tests of the difference must be bounded without any bound on differentiated insertions. Averaging the difference quotient over $Q_N\approx h_{\rm av}/a_N$ consecutive translates telescopes to a difference over the fixed physical distance $Q_Na_N$, which is bounded by undifferentiated insertions alone; this is why the argument is not circular. Comparing averaged tests at nearby positions uses the following displacement estimate, which also involves only undifferentiated insertions. For a grid configuration~$x$ define its minimum coordinate separation on the physical torus by
+\begin{equation*}
+ g_p(x)=\min_{i\ne j}\min_{a=1,\ldots,4}\min_{z\in L_p\Z}
+ |x_i^a-x_j^a+z|,
+\end{equation*}
+with value $+\infty$ for one slot. This separation supplies the empty slabs for reflection positivity. A coordinate hybrid of $x,y$ chooses each coordinate from either configuration. Assume the insertions and their single-axis reflections are interior at a centered level~$D\le N$, with all their seminorms at most~$A\ge0$.
+\begin{lemma}[Displacement of correlation tests]\label{lem:E-displacement}
+For every $r>0$ with $a_D<r$, a one-coordinate grid move $x\mapsto y$ of size at most~$r$ from $g_p(x)\ge4r$ satisfies
+\begin{equation*}
+ |M_{N,p}(v;x/a_N)-M_{N,p}(v;y/a_N)|
+ \le A^n|x-y|/r.
+\end{equation*}
+If $|x-y|\le r$ and every coordinate hybrid has coordinate separation at least~$4r$, then
+\begin{equation*}
+ |M_{N,p}(v;x/a_N)-M_{N,p}(v;y/a_N)|
+ \le4nA^n|x-y|/r.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+A move changes the lengths of the two empty slabs next to the moved insertion, and the spectral theorem for the transfer operator bounds the effect of that change; the reflection inequality~\eqref{eq:E-chess} bounds what remains. Lemma~\ref{lem:E2.3} supplies the assumed seminorms for bounded coefficient lists on full cutoff tails. The separation hypothesis gives every directed coordinate distance at least~$4r$, at any period. No fixed test neighbourhood is used.
+
+Fix an axis and all other coordinates. Reflection positivity and translation invariance give a positive transfer operator, rescaled to $0\le T\le1$. On the periodic axis the expectation is a normalized trace. If $X$ denotes the insertion being moved, its two adjacent empty slabs have lengths $n_1^{\rm sl},n_2^{\rm sl}$ in fine sites. A move by $l\ge0$ changes their factor by
+\begin{align}\label{eq:E-trace-displacement}
+ T^{n_1^{\rm sl}+l}XT^{n_2^{\rm sl}-l}-T^{n_1^{\rm sl}}XT^{n_2^{\rm sl}}
+ &=T^{n_1^{\rm sl}}(T^lX-XT^l)T^{n_2^{\rm sl}-l}\notag\\
+ &=-T^{n_1^{\rm sl}}(1-T^l)XT^{n_2^{\rm sl}-l}
+   +T^{n_1^{\rm sl}}X(1-T^l)T^{n_2^{\rm sl}-l}.
+\end{align}
+Both expressions are inserted in the same remaining cyclic product and divided by the same partition trace. The stencil is contained in a centered cell of lattice side $d_{\rm cell}=a_D/a_N$. Since $a_D<r$, the directed separations exceed $2d_{\rm cell}+2r/a_N$, and $la_N\le r$ by assumption. Splitting the two surrounding empty slabs at their reflection planes leaves $n_{\rm sl}+1\ge2r/a_N$ fine sites next to each occurrence of $1-T^l$. The spectral theorem gives
+\begin{equation*}
+ \|(1-T^l)T^{n_{\rm sl}}\|
+ \le\sup_{0\le t\le1}l(1-t)t^{n_{\rm sl}}
+ \le l/(n_{\rm sl}+1)\le la_N/(2r).
+\end{equation*}
+For each normalized trace in~\eqref{eq:E-trace-displacement}, reflection Schwarz at the slab ends and the chessboard inequality bound the remaining factors by the product of their centered seminorms, at most~$A^n$. One applies this inequality to the complete cyclic product, so no supremum norm of~$X$ is required. The two terms together are bounded by $A^nla_N/r$. An arity-one moment is translation invariant and has change zero.
+
+For a negative move reverse the chosen axis. Coordinate separation is unchanged and the assumed reflected seminorms have the same bound, so the same slab estimate applies. Replace the $4n$ coordinates one at a time. Each starting configuration is a coordinate hybrid and hence has the required separation. Each move is at most $|x-y|\le r$. Summing proves the second bound. The constants depend only on the seminorms, arity and slab margin, uniformly in~$N,p$.
+\end{proof}
+
+All the preceding comparison lemmas hold on full cutoff tails, uniformly in~$p$. Local matching also applies to any fixed iterated difference: after multiplying by $a_N^{d+h}$, a difference of order~$h$ is a finite sum of translates of the degree-$d$ section, with subpower derivative bounds. Matching in degree $d+h$ leaves a seminorm error tending to zero at every fixed cell size, uniformly in~$p$. This finite-cutoff argument supplies the difference bounds required in Part~I.
+\begin{lemma}[Difference estimate]\label{lem:E2.4}
+For every arity $n$, insertion-label list $v$, difference list $\boldsymbol l$ and $r>0$, the constants in Proposition~\ref{prop:UB} can be chosen independently of~$p$:
+\begin{equation*}
+\sup_p\sup_{\operatorname{sep}_{\rm tor}(y)\ge r}
+|\Delta_{\boldsymbol l}M_{N,p}(v;y)|\le B(n,v,\boldsymbol l,r)
+\qquad(N\ge N_0(n,v,\boldsymbol l,r)).
+\end{equation*}
+\end{lemma}
+\begin{proof}
+We first bound the chessboard seminorm of one differentiated insertion at a fixed fine cell size, uniformly in $N,p$ (Steps~1--4), and then apply~\eqref{eq:E-chess} (Step~5). Let $F=O^{(d)}(c)$, let $\Delta_{\boldsymbol a}F$ be a fixed iterated normalized difference in its anchor, and put $d'=d+|\boldsymbol a|$.
+
+\emph{Step 1: Matching and the equation part.} Local matching gives tame coefficients $c^{\boldsymbol a}$ in degree $d'$ with $O^{(d')}(c^{\boldsymbol a})-\Delta_{\boldsymbol a}F$ of vanishing seminorm. Write $c^{\rm pr}=\Pi_{d',N,p}c^{\boldsymbol a}$. For a tame coefficient in $\ker\Pi_{d'}$, the auxiliary equation section has seminorm zero. To see this, take all the other reflected copies as the spectator in the exact Haar identity in Lemma~\ref{lem:A-R4}. For a fixed physical cell, its side in lattice units eventually exceeds twice the equation radius plus two; all those copies are then exterior. The section-comparison residual of Lemma~\ref{lem:E2.7} tends to zero in seminorm. In particular it applies to $z=(c^{\boldsymbol a}-c^{\rm pr})/(1+\|c^{\rm pr}\|)$. Indeed, $c^{\boldsymbol a}/(1+\|c^{\rm pr}\|)$ is tame, and $c^{\rm pr}/(1+\|c^{\rm pr}\|)$ has norm at most one. Every bounded coefficient family is tame, because Lemma~\ref{lem:E2.1} gives
+\begin{equation*}
+ \|\mathsf Z_{N,p,d'}^{-1}\|\le C_{d'}\prod_{i=\reflevel{d'}}^{N-1}C^{\rm col}_{J_{i+1}}=a_N^{-o(1)}
+\end{equation*}
+by~\eqref{eq:E-log-cost}. Subtracting these two tame families proves tameness of~$z$ before~$c^{\rm pr}$ is bounded.
+
+\emph{Step 2: The averaged tests are bounded.} It remains to bound~$c^{\rm pr}$. Use a fixed sufficiently short-distance element of the comparison sequence of Lemma~\ref{lem:E2.10} for degree~$d'$. Let $\delta_0>0$ be the minimum coordinate separation of its configuration on the physical torus. Fix a slab margin $0<b<\delta_0/8$ and a centered level~$D$ with $a_D<b$. Average the variable slot of every test over $Q_N=\lceil h_{\rm av}/a_N\rceil$ sites in each direction occurring in~$\boldsymbol a$, where $0<h_{\rm av}<b/[2(|\boldsymbol a|+1)]$. Eventually $Q_Na_N\le2h_{\rm av}$, so the total shift in each coordinate is less than~$b$ and every coordinate hybrid used in the averaging has coordinate separation at least~$4b$. Denote this linear map on coefficients by $\mathcal P_{N,p}$. Telescoping in one direction gives
+\begin{equation*}
+\frac1{Q_N}\sum_{j=0}^{Q_N-1}
+\frac{f(z+(j+1)e_a)-f(z+je_a)}{a_N}
+=\frac{f(z+Q_Ne_a)-f(z)}{Q_Na_N}.
+\end{equation*}
+Since $Q_Na_N\ge h_{\rm av}$, iterating bounds the tests of~$\Delta_{\boldsymbol a}F$ by $(2/h_{\rm av})^{|\boldsymbol a|}$ times the supremum of tests of~$F$. The latter is bounded by Lemma~\ref{lem:E2.3}, the interior-seminorm comparison and~\eqref{eq:E-chess}. Matching errors tend to zero in these tests: put the error and the bounded spectator insertions in distinct cells with fixed margins, use Lemma~\ref{lem:F1a} for their interior seminorms, and apply~\eqref{eq:E-chess}. All these bounds hold on full cutoff tails and use no positional difference estimate. Thus $\|\mathcal P_{N,p}c^{\boldsymbol a}\|\le C_{\rm test}$ eventually, uniformly in~$p$.
+
+\emph{Step 3: Invertibility of the tests.} The finite-dimensional lower bound is obtained before any cutoff limit. The free matrix has a positive lower bound on the unit sphere. The relative-error estimate and the equation-seminorm bound put the tests of the projected lifts within $O(\gamma_\nu)+o_{N\to\infty}(1)$ of the free matrix, uniformly in~$p$. Choose the fixed~$\nu$ with this error smaller than its matrix lower bound. Averaging over sufficiently small~$h_{\rm av}$ preserves the lower bound: the undifferentiated correlation tests have uniform positional continuity by Lemma~\ref{lem:E-displacement}, with margin~$b$, the centered level~$D$ and the coordinate-hybrid separations just chosen. The level and its seminorm bounds are fixed before reducing~$h_{\rm av}$, so the displacement bound tends to zero with~$h_{\rm av}$. The projected lifts are therefore linearly independent. Their number equals $\dim_\C\maxwellspace{d'}$, whereas Lemma~\ref{lem:E2.6} bounds $\dim\operatorname{ran}\Pi_{d'}$ by that number. They consequently span the range. Their uniform coefficient bounds give
+\begin{equation}\label{eq:E-detection}
+\|c^{\rm pr}\|\le C_{\rm det}\|\mathcal P_{N,p}c^{\rm pr}\|
+\end{equation}
+with $C_{\rm det}$ independent of~$N,p$ on the retained tails. Choose an invertible square minor $H_0$ of the free matrix and the corresponding interacting minor~$H$. For $\|H-H_0\|\le(2\|H_0^{-1}\|)^{-1}$, the inverse bound $\|H^{-1}\|\le2\|H_0^{-1}\|$ follows.
+
+\emph{Step 4: The bound on $c^{\rm pr}$.} The equation coefficient $z=(c^{\boldsymbol a}-c^{\rm pr})/(1+\|c^{\rm pr}\|)$ is tame. Its tests tend to zero, so eventually $C_{\rm det}\|\mathcal P_{N,p}z\|\le1/2$. Equation~\eqref{eq:E-detection} yields
+\begin{equation*}
+\|c^{\rm pr}\|\le C_{\rm det}C_{\rm test}+\tfrac12(1+\|c^{\rm pr}\|),\qquad
+\|c^{\rm pr}\|\le2C_{\rm det}C_{\rm test}+1.
+\end{equation*}
+Lemma~\ref{lem:E2.3} now bounds the seminorms of~$O^{(d')}(c^{\rm pr})$ at each fixed sufficiently fine scale. Now $c^{\boldsymbol a}-c^{\rm pr}$ is tame, so its equation residual has vanishing seminorm. Together with the matching residual, the triangle inequality for seminorms gives the same type of bound for~$\Delta_{\boldsymbol a}F$. All thresholds and constants in this argument are independent of~$p$.
+
+\emph{Step 5: Products at separated points.} Distribute the differences in $\boldsymbol l$ among their indicated slots. A difference in slot~$i$ acts only on that insertion, so the resulting moment is exactly the expectation of the product of these differentiated insertions. Choose a fixed tiling side smaller than~$r$ and translate its boundaries away from all anchors. In each axis the excluded boundary strips occupy less than one full cell length if their widths are chosen below $a_m/[4(n+1)]$. For sufficiently large~$N$ a lattice translation with these margins exists. Distinct anchors occupy distinct cells, since their torus separation exceeds the cell side. The interior-seminorm comparison, with a finer centered scale, bounds all the factors uniformly. Apply~\eqref{eq:E-chess} and put one in every unused cell. Their product gives the asserted~$B$. Empty difference lists and arities at most one obey the same argument. This proves the lemma and Proposition~\ref{prop:UB}.
+\end{proof}
+
+\subsubsection{Bounded approximations}\label{sec:partII-E.2.7}
+
+\input{part2/E-bounded-real}
+
+\subsection{Full ultraviolet convergence}\label{sec:partII-E.3}
+
+We prove convergence as the ultraviolet cutoff increases, at fixed volume. The argument is a triangle inequality through a common fixed level~$m$. At a separated configuration~$x$ on a fixed common grid,
+\begin{equation}\label{eq:E-three-term}
+|M_{N,p}-M_{N',p}|\le
+\underbrace{|M_{N,p}-C_{N,p,m}|}_{\text{stopping error}}
++\underbrace{|C_{N,p,m}-C_{N',p,m}|}_{\text{fixed-level difference}}
++\underbrace{|C_{N',p,m}-M_{N',p}|}_{\text{stopping error}},
+\end{equation}
+where $M_{N,p}=M_{N,p}(v;x/a_N)$ is the cutoff moment and $C_{N,p,m}=C_{N,p,m}(v;x)$ is its approximation computed at level~$m$ from the unmarked representation and the one-mark families~\eqref{eq:E-coarse-integral}. The intended bounds are $2F_0e^{-B_m/64}$ for each stopping error, with $F_0$ independent of~$m$, and convergence of the fixed-level difference as $N,N'\to\infty$ at fixed~$m$. The proofs of Lemmas~\ref{lem:E-stopping} and~\ref{lem:E-fixed-level} identify estimates still needed for these bounds. Once those estimates are established, choose $m$ to make both stopping errors small, hold it fixed, and then send both cutoffs to infinity.
+
+The middle term compares two cutoff histories at the same level~$m$. This differs from the contraction of the marked step, which compares two coefficient graphs carried by one unmarked history. Table~\ref{tab:E-fixed-level} lists the discrepancies in the middle term and the estimate that controls each.
+
+\Needspace{18\baselineskip}
+\begin{table}[!h]
+\centering\small
+\begin{tabular}{@{}p{0.4\textwidth}p{0.54\textwidth}@{}}
+\toprule
+\raggedright Discrepancy between cutoffs $N,N'$ & \raggedright Controlled by\tabularnewline
+\midrule
+\raggedright unmarked couplings, activities and paths at a fixed level & \raggedright convergence along the full cutoff sequence (Lemma~\ref{lem:D-fixed-level})\tabularnewline
+\raggedright two marked graphs on one unmarked history & \raggedright one marked step halves their distance (Lemma~\ref{lem:E-marked-step}(iii))\tabularnewline
+\raggedright marked steps on the two finite-cutoff histories & \raggedright a common graph class and fixed-input convergence on a dense core are needed; see Lemmas~\ref{lem:E-common-core}--\ref{lem:E-fixed-level}\tabularnewline
+\raggedright scalar normalization $e^{v_{{\rm sc},m}|\Lambda_{n_{p,m}}|}$ & \raggedright not compared: it cancels in the normalized ratios~\eqref{eq:E-normalized-density} and~\eqref{eq:E-coarse-scalar-free}\tabularnewline
+\raggedright scalar-free partition integral & \raggedright Cauchy by unmarked convergence; bounded below on a cutoff tail by a positive product Haar ball on all links\tabularnewline
+\bottomrule
+\end{tabular}
+\caption{The discrepancies in the fixed-level difference $C_{N,p,m}-C_{N',p,m}$.}\label{tab:E-fixed-level}
+\end{table}
+
+The third row compares the actual finite-cutoff steps. Lemma~\ref{lem:D-fixed-level} gives convergence of their unmarked coordinates in the stated weighted spaces; that convergence alone does not construct the common marked graph class or prove convergence on its core. The required fixed-input bounds include the original eligibility tests and output tails, as described in Lemma~\ref{lem:E-fixed-level}. No marked step on a limiting completed history is assumed. Fix~$p$. In the normalized density at a fixed level, the scalar normalization appears as the same field-independent factor in numerator and denominator:
+\begin{equation}\label{eq:E-normalized-density}
+\frac{\density\rho_{N,p,m}}{\int\density\rho_{N,p,m}}
+=\frac{e^{v_{{\rm sc},m}|\Lambda_{n_{p,m}}|}\,e^{-\mathcal V^\flat_{N,p,m}}\mathcal F_{N,p,m}}
+{e^{v_{{\rm sc},m}|\Lambda_{n_{p,m}}|}\int e^{-\mathcal V^\flat_{N,p,m}}\mathcal F_{N,p,m}}
+=\frac{e^{-\mathcal V^\flat_{N,p,m}}\mathcal F_{N,p,m}}
+{\int e^{-\mathcal V^\flat_{N,p,m}}\mathcal F_{N,p,m}},
+\end{equation}
+where $\mathcal V^\flat_{N,p,m}=\pathaction_{N,m}+\sum_i\mathbf1_{X_i\,\mathrm{healthy}}E_i^{\rm reg}=\mathcal V_{\rho_{N,p,m}}+v_{{\rm sc},m}|\Lambda_{n_{p,m}}|$ is the scalar-free part of the potential, and $\mathcal F_{N,p,m}$ is the forced sum, both as in Definition~\ref{def:D06}. The factor $e^{v_{{\rm sc},m}|\Lambda_{n_{p,m}}|}$ depends on the cutoff, but it has canceled, so no convergence of that factor is proved or used.
+
+\input{part2/E-fixed-level}
+
+The fixed-level, stopping and positional estimates would give the full limit once the remaining inputs to those estimates are established.
+\begin{lemma}[Lattice-point convergence]\label{lem:E3.1}
+For every $p,n,v$, there is $f_{p,v}\in C^\infty(\NoHit{L_p}{n})$ such that, for every $\boldsymbol l$, compact $K\subset\NoHit{L_p}{n}$ and $\varepsilon>0$, some $N_0(p,n,v,\boldsymbol l,K,\varepsilon)$ gives
+\begin{equation*}
+|\Delta_{\boldsymbol l}M_{N,p}(v;x/a_N)-\partial_{\boldsymbol l}f_{p,v}(x)|<\varepsilon
+\end{equation*}
+at every spacing-$a_N$ point of $K$ in the periodic lift, for every $N\ge N_0$.
+\end{lemma}
+\begin{proof}
+Pointwise convergence on the common grids is~\eqref{eq:E-three-term}; the difference bounds of Lemma~\ref{lem:E2.4} extend it to uniform convergence of all derivatives. By Lemmas~\ref{lem:E-fixed-level}--\ref{lem:E-stopping}, the right side of~\eqref{eq:E-three-term} is at most $4F_0e^{-B_m/64}+|C_{N,p,m}-C_{N',p,m}|$; taking first $m$ and then $N,N'$ large proves the Cauchy property at every separated configuration on a fixed common grid. Since every ratio is an integer, each coarser grid is contained in every finer grid. The union of these grids is dense in the periodic noncollision domain.
+
+We next extend this limit and identify its derivatives. Choose a compact neighbourhood $K'$ of~$K$ contained in that domain, and a positive lower bound for its torus separation. Lemma~\ref{lem:E2.4} bounds the lattice functions and all their fixed differences there. One more difference gives, by telescoping along coordinate lattice paths,
+\begin{equation*}
+|G_N(z)-G_N(z')|\le B\,|z-z'|_1
+\end{equation*}
+for nearby physical grid points, where $G_N=\Delta_{\boldsymbol l}M_{N,p}$. For order zero, a finite dense grid in $K'$ and this estimate extend the pointwise Cauchy property to uniform convergence on~$K$. The multilinear interpolants obey the same bound, with an additional $O(a_N)$ displacement to their vertices. The resulting limit~$f_{p,v}$ is continuous and periodic.
+
+Suppose $G_N$ already converges locally uniformly to~$g$. Bounds for two more differences compare its first forward difference with a difference over a fixed physical interval. Put $h_N=Q_Na_N\to h>0$, with $Q_N\in\N$. Summing successive first differences and bounding their variation by the second difference gives
+\begin{equation}\label{eq:E-discrete-taylor}
+\left|\frac{G_N(z+h_Ne)-G_N(z)}{h_N}-\Delta_eG_N(z)\right|
+\le\tfrac12B h_N.
+\end{equation}
+Choose $h$ small and then let $N\to\infty$. The endpoint values converge uniformly, so~\eqref{eq:E-discrete-taylor} proves that $\Delta_eG_N$ is uniformly Cauchy on~$K$. Call its continuous limit~$g_e$. The exact telescoping identity on grid segments, followed by Riemann summation of the uniformly convergent first differences, gives
+\begin{equation*}
+g(z+te)-g(z)=\int_0^t g_e(z+ue)\,du.
+\end{equation*}
+Thus $\partial_eg=g_e$. Induct on the length of the difference list. Every required additional order is available from Lemma~\ref{lem:E2.4}, so all derivative limits exist and $f_{p,v}$ is smooth. Finite covers by such neighbourhoods give the asserted uniform statement on~$K$.
+\end{proof}
+
+The same limit applies when observation points move across periodic representative boundaries. Smearing then follows from a compact-support Riemann sum.
+\begin{lemma}[Interpolation and smearing]\label{lem:E3.2}
+For fixed $p,n,v,\boldsymbol l$ and $x_N\to x\in\NoHit{L_p}{n}$, the multilinear interpolants of $\Delta_{\boldsymbol l}M_{N,p}$ at~$x_N$ converge to $\partial_{\boldsymbol l}f_{p,v}(x)$. For every $p$-admissible separated test~$t$,
+\begin{equation*}
+t\partial_{\boldsymbol l}f_{p,v}\in L^1,\qquad
+ a_N^{4n}\sum_y t(\hat y)\Delta_{\boldsymbol l}M_{N,p}(v;y)
+\longrightarrow\int t\partial_{\boldsymbol l}f_{p,v}.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+Both assertions follow from the locally uniform convergence of Lemma~\ref{lem:E3.1}, with the placement and moment conventions of Definition~\ref{def:D03} and admissibility from Section~\ref{sec:continuum}. Choose a compact neighbourhood of~$x$ inside the periodic noncollision domain. Every vertex used by the interpolant at~$x_N$ lies there eventually and tends to~$x$. The interpolant is a convex combination of the vertex values. Uniform convergence at these vertices and continuity of the limiting derivative give the moving-point assertion. Work on the periodic lift throughout; no continuity of the choice of centered representatives is needed.
+
+The closed support of~$t$ is a compact subset of that domain, strictly inside the chosen period box. The smooth limiting derivative is bounded there, so its product with~$t$ is integrable. On a fixed compact neighbourhood, Lemma~\ref{lem:E3.1} makes the supremum of the difference between the lattice values and the limiting derivative tend to zero. Its contribution to the sum is at most that supremum times $\|t\|_\infty$ times the total volume of the grid cubes meeting the support. This volume is bounded independently of~$N$. The remaining sum is the Riemann sum for the continuous compactly supported function $t\partial_{\boldsymbol l}f_{p,v}$ and converges to its integral.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{prop:UV}]
+Set $M^{\rm UV}_{p,v}=f_{p,v}$. Lemma~\ref{lem:E3.1} gives its smoothness on the full periodic noncollision domain, and Lemma~\ref{lem:E3.2} gives the asserted interpolation and smearing limits for every fixed derivative list. Thus every inner limit in Definition~\ref{def:D09} exists at every admissible fixed volume along the full cutoff sequence.
+\end{proof}

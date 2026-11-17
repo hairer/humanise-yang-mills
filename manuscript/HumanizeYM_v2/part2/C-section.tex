@@ -1,0 +1,438 @@
+\section{Path actions and the one-loop coupling}\label{sec:partII-C}
+
+After each integration the effective action keeps its curvature terms through fourth order in a path action. Its quadratic part is normalized so that $\beta$ is the coefficient of the squared Wilson curvature at zero momentum at every level. The quadratic terms independent of $\beta$, the loop atoms, have vanishing zeroth and first displacement moments, so they carry no curvature-square term. This section constructs these arrays and computes the one-loop coefficient of an auxiliary fine determinant. Subject to the inserted-strip bounds identified in Lemma~\ref{lem:C6}, the comparison transfers that coefficient to the blocked determinant, lowering its curvature-square coefficient by $\slope\log\ell_m$ up to an error bounded independently of the block ratio (Lemma~\ref{lem:C7}).
+
+The path bounds enter Theorem~\ref{prop:MT}, and the coefficient $\alpha_{N,m}$ enters Theorem~\ref{prop:RG}. Section~\ref{sec:partII-B} supplies the inputs. The free forms and their row factor (Lemma~\ref{lem:B2}) fix the quadratic part; the stationary interpolation and the vertex bounds (Lemmas~\ref{lem:B3} and~\ref{lem:B5}) give the classical cubic and quartic terms; the Gaussian coordinates, the inverse insertions and the Ward estimates (Lemmas~\ref{lem:B4}, \ref{lem:B7} and~\ref{lem:B6}) control the determinant. The scalar reset of the coupling uses the activities of Section~\ref{sec:partII-D} and is proved there, in Section~\ref{subsec:C-reset}.
+
+Throughout, the group and metric are those of Definition~\ref{def:D01}, and the scales are those of Section~\ref{sec:renormalization}. At a step $m+1\to m$ put $\ell=\ell_m$ and $j=J_{m+1}$. The path arrays (row coefficients and atoms of Definition~\ref{def:D22}) depend on $N,m$ and the intervening block ratios, and are chosen on $\Z^4$ before periodic evaluation. They are independent of the volume index~$p$ and of the running coupling. Constants declared uniform in~$\ell$ are chosen before~$\ell$.
+
+The arrays are constructed by descending induction on~$m$. Write $(I_m)$ for the path bounds and cancellations of Lemmas~\ref{lem:C1}--\ref{lem:C2} at level~$m$, the path part of the induction scheme of Section~\ref{sec:partII-B}. The top-level Wilson matching in the proof of Lemma~\ref{lem:C4} starts the induction. Under $(I_{m+1})$, Lemmas~\ref{lem:C4}, \ref{lem:C6} and~\ref{lem:C7} treat the step $m+1\to m$; the joint proof after Lemma~\ref{lem:C7} constructs the output arrays and proves~$(I_m)$. Curl division and the gauge determinant identity are independent of this induction.
+
+\subsection{Curvature coordinates and the path action}\label{subsec:C-coordinates}
+
+A path transports curvature to an anchor, where invariant colour contractions can be taken. Write $U_\gamma$ for the ordered link product along~$\gamma$, $\mathfrak p=(a,b)$, $a<b$, for an orientation, and $U_{x;\mathfrak p}$ for a plaquette holonomy. The footprint of a slot is the set of vertices visited by its path and plaquette boundary. The footprint of an atom is the union of its slot footprints and the origin, translated to its anchor. Recall that a set is healthy if it avoids $\flags_m(U)$ (Section~\ref{sec:renormalization}); an atom is masked by the health of its footprint.
+
+\begin{definition}[Curvature slots]\label{def:D22}
+A slot $s=(\gamma,\mathfrak p)$, with $\gamma:0\to z_s$, has length $|\gamma|+4$ and value
+\begin{equation*}
+\mathcal F_s(U,x)=\operatorname{Ad}(U_{x+\gamma})\operatorname{proj}_{\g}
+\frac{U_{x+z_s;\mathfrak p}-U_{x+z_s;\mathfrak p}^{-1}}2\,.
+\end{equation*}
+Transport is from $x+z_s$ to~$x$. Set $\mathcal L_{\mathfrak p}^{\rm path}=\sum_i r_{\mathfrak p i}\mathcal F_{\mathfrak p i}$. For $k=2,3,4$, the atoms $\mathfrak a_i^{(k)}$ are real invariant $k$-linear expressions in slots, masked by health on their footprints. Atom length sums slot lengths; $|\mathfrak a_i^{(k)}|$ sums absolute colour coefficients. These arrays retain local terms through fourth order.
+\end{definition}
+
+Here $r_{\mathfrak p i}\in\R$ and $\mathcal F_{\mathfrak p i}$ denotes the slot assigned to row~$\mathfrak p$ and index~$i\in\N$. In the orthonormal colour basis $(e_b^{\g})_b$ of Definition~\ref{def:D01}, an atom has the form
+\begin{equation*}
+\mathfrak a_i^{(k)}(U,x)=\mathbf1_{X_i+x\,\mathrm{healthy}}
+\sum_{b_1,\ldots,b_k} c_i(b_1,\ldots,b_k)
+\prod_{\nu=1}^k\langle e_{b_\nu}^{\g},\mathcal F_{s_{i,\nu}}(U,x)\rangle_{\g}\,.
+\end{equation*}
+The coefficients are invariant under the simultaneous adjoint action on all slots, and $X_i$ is the footprint just defined.
+
+For each stage~$k$, take $\gamma_k>0$ from Lemma~\ref{lem:B2}, so the free plaquette forms for the top and both incoming stages are at least $2\gamma_k I$. Write $c_{\rm dir}=c_{{\rm dir},J_m}$ and $c_{\rm lin}=c_{{\rm lin},J_m}$. Whenever $c_{\rm dir}\le\gamma_{J_m}$, the form $\mathsf H_{N,m}-c_{\rm dir}I$ below is at least $\gamma_{J_m}I$ and has the positive row factor used below.
+
+\begin{definition}[Path action]\label{def:D23}
+At level $m$ the path action $\pathaction_{N,m}$ is~\eqref{eq:I12-path-action}, with the clip and relaxed threshold test of~\eqref{eq:I12-clipping}, the rows and atoms of Definition~\ref{def:D22}, and clipping constants $0<16c_{\rm lin}<c_{\rm dir}\le\min(\gamma_{J_m},1)$. Write
+\begin{equation*}
+\pathaction_{N,m}(\beta,U)=\beta\mathsf K^{\rm kin}_m(U)+\mathcal L_m(U),
+\end{equation*}
+where $\mathsf K^{\rm kin}_m$ is the hypercubic average of the clipped plaquette terms, the row squares and the cubic and quartic atoms, and $\mathcal L_m$ that of the quadratic atoms.
+\end{definition}
+
+The kinetic part carries the coupling; the loop part collects the quadratic corrections that do not scale with~$\beta$. The clip drops at $u=t$ from $c_{\rm dir}t^2/2$ to $c_{\rm lin}t^2$, and its linear branch gives $\operatorname{clip}_t(u)=c_{\rm lin}tu\ge c_{\rm lin}t^2$ for $u>t$. This positive linear large-field branch is the lower bound used in the local large-field energy estimate, Lemma~\ref{lem:B-D1}, and through it in the forced bounds of Lemma~\ref{lem:D-connected}. Because of the jump the path action is only Borel in the links. The derivatives used later are taken on healthy configurations, where every clip of the support is on its quadratic branch and every mask is fixed, and coupling derivatives hold the physical links and the masks fixed (Section~\ref{subsec:D-analytic}). No derivative of a flag boundary or of the clip is ever taken.
+
+\begin{lemma}[Path bounds]\label{lem:C1}
+For every $N$ and $m\le N$ the chosen arrays are independent of $p$ and~$\beta$. There are widths $0<w^{\rm path}_k<w'_k$ and amplitudes $A^{\rm path}_k>0$, depending only on the stage~$k$, such that, uniformly in~$N$, with $w=w'_{J_m}$,
+\begin{align*}
+\sum_i|r_{\mathfrak p i}|e^{w\operatorname{length}(\mathcal F_{\mathfrak p i})}&\le A_{J_m}^{\rm path},\\
+\sum_i|\mathfrak a_i^{(k)}|e^{w\operatorname{length}(\mathfrak a_i^{(k)})}
+&\le\begin{cases}\Lambda_m^{\rm loop},&k=2,\\A_{J_m}^{\rm path},&k=3,4,\end{cases}
+\end{align*}
+where $\Lambda_m^{\rm loop}=2(\cutoffsize_m)^{\theta_{J_m}}$ depends on the level. A fortiori these bounds hold at width $w^{\rm path}_{J_m}$.
+\end{lemma}
+
+The joint proof of Lemmas~\ref{lem:C1} and~\ref{lem:C2} follows Lemma~\ref{lem:C7}. To state the cancellations, put
+\begin{equation*}
+s_{\mathfrak p\mathfrak q}=\sum_{i:\,\operatorname{orientation}(\mathcal F_{\mathfrak p i})=\mathfrak q}r_{\mathfrak p i}\,.
+\end{equation*}
+For ordered orientations $\mathfrak q,\mathfrak r$ let $I_{\mathfrak q\mathfrak r}$ be the set of quadratic atoms whose two slots have orientations $\mathfrak q,\mathfrak r$, with colour coefficients $c_i(b_1,b_2)$ and slot offsets $z_{i,1},z_{i,2}$.
+
+The cancellations have a Fourier meaning. To quadratic order in the links, an atom in $I_{\mathfrak q\mathfrak r}$ pairs the curvatures at two points displaced by $z_{i,2}-z_{i,1}$, so the loop atoms contribute the plaquette-kernel symbol $\sum_{i\in I_{\mathfrak q\mathfrak r}}c_i(b_1,b_2)e^{i\xi\cdot(z_{i,2}-z_{i,1})}$ between two curvatures. A zero total coefficient removes its constant term and a zero first displacement moment removes its linear term, so the symbol is $O(|\xi|^2)$. Each curvature is a curl, of order $|\xi|$ in the link variables. Hence the loop atoms have a link kernel of order four and contain no curvature-square term: the marginal curvature square is carried by the coupling alone. Under blocking, the cell volume $\ell^4$, the two interpolated fields $\ell^{-2}$ and the rescaled momentum $\xi/\ell$ turn an order-four link kernel into $\ell^4\ell^{-2}O(|\xi/\ell|^4)=\ell^{-2}O(|\xi|^4)$, an inverse-block-square gain (proof of Lemmas~\ref{lem:C1}--\ref{lem:C2}).
+
+\begin{lemma}[Kinetic and quadratic cancellations]\label{lem:C2}
+For all orientations $\mathfrak q,\mathfrak r$ and colours $b_1,b_2$,
+\begin{equation*}
+c_{{\rm dir},J_m}\delta_{\mathfrak q\mathfrak r}+
+\sum_{\mathfrak p}s_{\mathfrak p\mathfrak q}s_{\mathfrak p\mathfrak r}=\delta_{\mathfrak q\mathfrak r},
+\qquad
+\sum_{i\in I_{\mathfrak q\mathfrak r}}c_i(b_1,b_2)=0,
+\qquad \sum_{i\in I_{\mathfrak q\mathfrak r}}c_i(b_1,b_2)(z_{i,2}-z_{i,1})=0\,.
+\end{equation*}
+All these moment series converge absolutely.
+\end{lemma}
+Thus the kinetic part has the Wilson normalization $\widehat{\mathsf H}_{N,m}(0)=I$ below, and the loop atoms do not change the curvature-square coefficient.
+
+\subsection{Fourth-order matching}\label{subsec:C-matching}
+
+Near the flat field all relaxed threshold tests equal one. By $\chord^2=2\wilsonterm$ from~\eqref{eq:I12-price-chord}, the leading analytic action is obtained from Definition~\ref{def:D23} by replacing the clipped term by $c_{\rm dir}\wilsonterm$ and omitting the indicators and loop atoms. Denote this action, without its factor~$\beta$, by $\mathsf S_{N,m}$. Its prescribed quadratic part is
+\begin{equation*}
+\frac12\langle d_1a,\mathsf H_{N,m}d_1a\rangle,
+\qquad \mathsf H_{N,m}=c_{{\rm dir},J_m}I+\rho_{N,m}^*\rho_{N,m},
+\qquad \widehat{\mathsf H}_{N,m}(0)=I\,.
+\end{equation*}
+Here $d_1$ is the lattice curl. Lemma~\ref{lem:B2} gives the exact adjacent free relation and the row factor $\rho_{N,m}$, with $\mathsf H_{N,m}-c_{{\rm dir},J_m}I\ge\gamma_{J_m}I$. The rows are read off from $\rho_{N,m}$. Write $(\rho_{N,m}F)_{\mathfrak p}(x)=\sum_{\mathfrak q}\sum_{z\in\Z^4}\rho_{\mathfrak p\mathfrak q}(z)F_{\mathfrak q}(x+z)$. For each $\mathfrak p,\mathfrak q,z$ with $\rho_{\mathfrak p\mathfrak q}(z)\ne0$ take one slot $(\gamma_z,\mathfrak q)$, with $\gamma_z$ a fixed coordinate path from $0$ to $z$, and row coefficient $\rho_{\mathfrak p\mathfrak q}(z)$. At the flat field $\mathcal L^{\rm path}_{\mathfrak p}(U,x)$ linearizes to $(\rho_{N,m}d_1a)_{\mathfrak p}(x)$, so the direct and row terms have quadratic part $\frac12\langle d_1a,\mathsf H_{N,m}d_1a\rangle$; also $s_{\mathfrak p\mathfrak q}=\widehat\rho_{\mathfrak p\mathfrak q}(0)$, and the exponential decay of $\rho_{N,m}$ gives the row bound of Lemma~\ref{lem:C1}. The cell volume contributes $\ell^4$ and each curvature contributes $\ell^{-2}$; hence $\ell^4(\ell^{-2})^2=1$, preserving the coefficient~$\beta$.
+
+We need a division that expresses a gauge-invariant Taylor difference in curvatures. For a momentum~$\xi$ put $q_a(\xi)=e^{i\xi_a}-1$; its exterior action $d_1(\xi)a=q(\xi)\wedge a$ is the curl symbol. Momentum order~$s$ means vanishing of all Taylor coefficients of total momentum degree less than~$s$.
+
+\begin{lemma}[Curl division]\label{lem:C3}
+Let $k\ge2$, $s\ge0$ an integer, $\sigma>0$, $A\ge0$, and let $f$ be a periodic analytic kernel in independent momenta $\xi_1,\ldots,\xi_{k-1}$ ($\xi_0=-\sum_\nu\xi_\nu$), valued in $\bigotimes_{\nu=0}^{k-1}\Lambda^1\C^4$, bounded coordinatewise by $A$ on $|\operatorname{Im}\xi_\nu^a|<\sigma$, and transverse in every leg: $\delta_\nu f=0$, $\delta_\nu=\iota_{q(\xi_\nu)}$. If $k=2$ assume also momentum order $s+2$. Then there are $0<\eta\le\sigma$ and $K\ge0$, depending only on $k,\sigma$, and a periodic analytic $g$ valued in $\bigotimes_\nu\Lambda^2\C^4$, of order $s$ if $k=2$, with
+\begin{equation*}
+f=\delta_0\cdots\delta_{k-1}g,\qquad \sup_{\eta\text{-strip}}|g|\le KA\,.
+\end{equation*}
+The Fourier coefficients of $g$ decay exponentially.
+\end{lemma}
+In words: a gauge-invariant multilinear kernel factors through the curls of its legs.
+
+\begin{proof}
+Dividing one leg by its curl is straightforward when its momentum is independent of the others. The difficulty is the leg with momentum $\xi_0$: a primitive in that leg may fail to remain transverse in another leg. We first construct the one-leg homotopy, then correct this transversality defect. Each correction reduces the number of independent momenta by one and raises the exterior degree in the dependent leg by two, and the iteration terminates when that degree exceeds four. The two-leg case instead uses the extra vanishing order at zero momentum.
+
+Scalar division requires vanishing when the divided leg has zero momentum; positive exterior degree requires only closedness. For one leg let $\delta=\iota_q$ be contraction on exterior tensors. Split a $\delta$-closed tensor as $f=e_a\wedge u+v$, with $u,v$ containing no $e_a$. Define
+\begin{equation*}
+D_af(\xi)=\frac{f(\xi)-f(\xi)|_{\xi_a=0}}{q_a(\xi)},
+\qquad h_af=e_a\wedge D_av,
+\qquad R_af=v|_{\xi_a=0}\,.
+\end{equation*}
+Here $D_a$ is the one-leg exterior division~\eqref{eq:B-exterior-division}. The identity $\delta f=0$ gives $\delta'v=-q_au$, where $\delta'$ contracts the other axes. Since $q_b$ is independent of $\xi_a$ for $b\ne a$, $D_a$ commutes with~$\delta'$, and $D_a(q_au)=u$. Consequently
+\begin{equation*}
+\delta h_af=q_aD_av-e_a\wedge D_a\delta'v
+=v-v|_{\xi_a=0}+e_a\wedge u=f-R_af\,.
+\end{equation*}
+The remainder $R_af$ is again closed and has no component containing~$e_a$. Applying this in the four axes gives the homotopy
+\begin{equation*}
+f=\delta\left(\sum_{a=1}^4h_aR_{a-1}\cdots R_1f\right)+R_4R_3R_2R_1f\,.
+\end{equation*}
+The final remainder vanishes in positive exterior degree because it contains none of the four axes. In degree zero it is the restriction to zero momentum of this leg, which must vanish for scalar division. In that case the formula reads $f=\sum_aq_aD_a(R_{a-1}\cdots R_1f)$.
+
+The quotients are analytic even at the zeros of~$q_a$. On a Fourier monomial the identity
+\begin{equation*}
+\frac{e^{in\xi_a}-1}{e^{i\xi_a}-1}=
+\begin{cases}\sum_{v=0}^{n-1}e^{iv\xi_a},&n>0,\\
+-\sum_{v=n}^{-1}e^{iv\xi_a},&n<0,\\0,&n=0\end{cases}
+\end{equation*}
+bounds the quotient on a smaller strip by a constant times $|n|$ times its original exponential weight. The strip loss absorbs $|n|$, so the Fourier series converges absolutely. Each division loses at most one momentum order.
+
+For independent legs, their remaining transverse subspaces do not depend on the divided momentum, so each restriction and division preserves them. The dependent-leg induction has the following claim: with $r$ independent momenta and dependent exterior degree $d\ge1$, a tensor closed in the dependent leg and transverse in all independent legs has a dependent-leg primitive preserving those transverse conditions, provided $d+2r>4$. Analytic bounds hold after a strip reduction depending only on $r,d$ and the original strip. For $r=0$ the condition gives $d>4$, so the tensor is zero. The induction step below reduces $(r,d)$ to $(r-1,d+2)$, preserving the condition. Initially $r=k-1,d=1$, so it applies for $k\ge3$.
+
+For the dependent momentum $\xi_0=-\sum_{i=1}^{k-1}\xi_i$, first shear the coordinates to replace $\xi_1$ by~$\xi_0$. The other independent contractions remain unchanged. The one-leg formula gives $\delta_0X=f$, retaining the contractions in legs $2,\ldots,k-1$. Write $c_1$ for contraction in leg~$1$. Its defect obeys $\delta_0(c_1X)=c_1f=0$. Solve $\delta_0Y=c_1X$ by the same formula. After $c_1$, leg~$1$ has exterior degree zero, so restoring that leg will require only scalar division.
+
+On $\xi_1=0$, the restriction $Y_0$ is $\delta_0$-closed, since $c_1X$ vanishes there. The induction hypothesis with one fewer independent momentum and dependent degree two higher gives $\delta_0Z=Y_0$, preserving the other transverse conditions. Extend~$Z$ independently of~$\xi_1$. Then $Y'=Y-\delta_0Z$ vanishes on $\xi_1=0$, and scalar division gives $c_1D=Y'$. Thus
+\begin{equation*}
+V=X-\delta_0D,\qquad \delta_0V=f,\qquad c_1V=c_1X-\delta_0Y'=0\,.
+\end{equation*}
+All corrections preserve the other independent contractions. The two successive solves $f\mapsto X$ and $c_1X\mapsto Y$ each raise the dependent exterior degree by one; contraction $c_1$ changes only leg~$1$. Thus the restricted problem for $Y_0$ has one fewer independent momentum and dependent degree two higher. For three or more legs it terminates above exterior degree four, where the tensor is zero. The independent-leg divisions then finish the factorization.
+
+For two legs, the restriction $Y_0$ is at zero external momentum. Starting from order $s+2$, the first division loses one order, contraction restores one, and the solve for~$Y$ leaves order $s+1\ge1$. Hence $Y_0=0$ directly. The correction and final division leave order~$s$. This verifies the scalar vanishing hypothesis where it is needed. For the Taylor differences of Definition~\ref{def:D23}, gauge invariance supplies transversality because all lower Taylor differences vanish.
+\end{proof}
+
+For $z=(z_1,\ldots,z_{k-1})$, contour displacement gives $|\check g(z)|\le Ce^{-\zeta\sum_\nu|z_\nu|_1}$ for the Fourier coefficients $\check g$ of $g$. Choose the anchor at zero and coordinate paths to~$z_\nu$. Their total slot length is at most $4k+\sum_\nu|z_\nu|_1$. Every path width below~$\zeta$ therefore gives a convergent weighted sum. Reality and simultaneous adjoint invariance pass to the coefficients by conjugation and invariant projection.
+
+Fix the order of axes, the shears, the coordinate paths and the strip losses in this construction once and for all. The restrictions, divisions and corrections in the proof are linear in the input kernel. Fourier inversion and the placement on paths are linear too. In the normalized Taylor tensor, average over leg permutations, including the change of dependent anchor and its Fourier phase, before placing paths. Impose reality by the real-linear Fourier conjugation projection, and impose colour invariance by averaging over the full compact group~$G$. Finally use the signed-permutation action average of Definition~\ref{def:D23}; reflection of an oriented link includes its sign and unit phase. These operations leave an input kernel with the required symmetries unchanged. The colour average costs at most a constant depending on~$G$ in the coordinate norm, and the finite lattice average has a fixed length cost. Thus, for each degree used below, this gives a fixed real-linear lift from the transverse kernels with the stated symmetries to path atoms. Its output has the prescribed Taylor kernel; its weighted coefficient norm at a strictly smaller width is bounded by a constant times the input strip bound. The two-leg lift preserves the stated order-two condition on the resulting plaquette kernel and is the lift used for the loop atoms in the proof of Lemmas~\ref{lem:C1}--\ref{lem:C2}. The dictionary and operators are fixed independently of $N,m,p$; widths are fixed by the stage bounds. All choices are made on $\Z^4$ and then periodized, so they are common to all periods.
+
+\paragraph{A finite-dimensional model.} The classical matching below is the following calculation, with locality estimates attached. Let $S(v,z)$ be smooth near $0\in\R^a\times\R^b$ with $DS(0,0)=0$ and $\mathsf Q=D_z^2S(0,0)>0$, and let $z(v)$ solve $D_zS(v,z(v))=0$, $z(0)=0$. Put $Wv=(v,Dz(0)v)$ and $\mathsf B(v,v)[u]=D^3S(0)[Wv,Wv,(0,u)]$. Along $\gamma(t)=(tv,z(tv))$ one has $\gamma'(0)=Wv$ and $\gamma''(0)=(0,w)$ with $w=D^2z(0)[v,v]$. Differentiating the equation for $z$ once gives $D^2S(0)[Wv,(0,u)]=0$, and twice gives $w=-\mathsf Q^{-1}\mathsf B(v,v)$. In the third derivative of $S_{\rm stat}(v)=S(v,z(v))$ the only term containing $w$ is $3D^2S(0)[Wv,(0,w)]=0$, and the term containing $D^3z$ is multiplied by $DS(0)=0$, so the cubic term is simple: $D^3S_{\rm stat}(0)[v^3]=D^3S(0)[(Wv)^3]$. In the fourth derivative the term $4D^2S(0)[Wv,(0,D^3z(0)[v^3])]$ vanishes by the first identity and the term containing $D^4z$ is multiplied by $DS(0)=0$; the terms containing $w$ are
+\begin{equation*}
+6\mathsf B(v,v)[w]+3\langle w,\mathsf Qw\rangle=-3\mathsf B(v,v)\mathsf Q^{-1}\mathsf B(v,v)\,,
+\end{equation*}
+an exchange correction: the three ways of splitting four legs into two pairs, each pair joined through the fluctuation propagator $\mathsf Q^{-1}$. Degree four is the stopping point. In the continuum the curvature square $|da+\tfrac12[a\wedge a]|^2$ has degree at most four in the connection, so matching through degree four captures the classical marginal term; the Taylor remainder of degree five is of order $\beta t_m^5$ per site and is absorbed by the activity bounds (proof of Lemma~\ref{lem:D-localization}).
+
+On the lattice the model applies with $z=\psi$: $v$ is the coarse chart variable and $\psi$ the fine axial variable; $S(v,\psi)$ is the fine leading action plus $\blockpenalty\sum_e\wilsonterm$ of the predictor discrepancy, without the input coupling $\beta'=\beta'_u$, and it excludes the inherited loop action. Lemma~\ref{lem:B3} supplies the stationary branch $\psi(v)$ with $\mathsf Q\ge\nu_{j,\ell}I$, and we write $W_{\rm ax}v=(v,D\psi(0)v)$ for the axial tangent and $S_{\rm stat}(v)=S(v,\psi(v))$. Lemma~\ref{lem:B5} gives the vertex bounds $C_3\le a_3+\ell^{-1}a_3'$, $C_4\le c_4+\ell^{-1}c_4'$ and $|D^4S_{\rm stat}|\le C_4+3C_3^2E_{\rm ins}$, with $E_{\rm ins}=\max(1,C_j^{\rm ins})$. The stationary identities hold for every block ratio of Table~\ref{tab:constant-choices}; only the uniform bound on the new arrays needs $\ell\ge u_j$.
+
+\begin{lemma}[Classical matching]\label{lem:C4}
+With $\mathsf B(v,v)[u]=D^3S(0)[W_{\rm ax}v,W_{\rm ax}v,(0,u)]$,
+\begin{align*}
+D^3S_{\rm stat}(0)[v^3]&=D^3S(0)[(W_{\rm ax}v)^3],\\
+D^4S_{\rm stat}(0)[v^4]&=D^4S(0)[(W_{\rm ax}v)^4]-3\mathsf B(v,v)\mathsf Q^{-1}\mathsf B(v,v)\,.
+\end{align*}
+For $\ell$ above a threshold depending on the input path data, cubic and quartic arrays satisfying the bounds of Lemma~\ref{lem:C1} make $\mathsf S_{N,m}$ agree with $S_{\rm stat}$ through degree four. Their bound depends only on fixed stage data.
+\end{lemma}
+
+\noindent\emph{Proof dependency.} The stationary derivative identities below are finite-dimensional. The claimed uniform path-array bounds also use the ratio-uniform shifted-strip vertex estimates of Lemma~\ref{lem:B5}; the full differentiated frame and predictor kernel bounds needed there remain unverified in this draft. The corresponding uniform bound in this lemma is conditional on that input.
+
+\begin{proof}
+The identities are the finite-dimensional calculation above applied to the analytic stationary branch of Lemma~\ref{lem:B3}. In the centred joint coordinates of Lemma~\ref{lem:B5}, the smooth representative of its tangent is $(v,W_{\rm s}v,0)$. Its rooted representative uses $W_0=W_{\rm r}$ and has the accompanying centred frame component $-\mathcal F_mW_{\rm r}v$; the joint gauge transformation in Lemma~\ref{lem:B5} relates the two while keeping~$v$ fixed. The same stationary identities therefore hold with the centred smooth legs. The kernel bounds are those of Lemma~\ref{lem:B5}.
+
+Increase $\ell$ until $\ell^{-1}a_3',\ell^{-1}c_4'\le1$. Let $S_2$ be the output action built from $c_{\rm dir}$ and the rows of $\rho_{N,m}$, and let $[\cdot]_r$ denote the homogeneous Taylor kernel of degree~$r$, including its factor $1/r!$. The quadratic kernels of $S_2$ and $S_{\rm stat}$ agree by the free energy identity and row factor in Lemma~\ref{lem:B2}(i),\,(iii). Both actions are gauge invariant, so $[S_{\rm stat}-S_2]_3$ is transverse in each leg. Apply the fixed three-leg lift above and call the resulting full nonlinear atom action $S_3$. Its degree-three kernel is exactly $[S_{\rm stat}-S_2]_3$. The quartic residual is therefore
+\begin{equation*}
+R_4=[S_{\rm stat}]_4-[S_2]_4-[S_3]_4\,.
+\end{equation*}
+It is transverse because the gauge-invariant difference $S_{\rm stat}-S_2-S_3$ has no terms below degree four. Apply the fixed four-leg lift to $R_4$ to obtain $S_4$. Then $S_2+S_3+S_4$ agrees with $S_{\rm stat}$ through degree four.
+
+The bounds include all three terms in $R_4$. On a common smaller strip, the stationary cubic and quartic kernels are bounded by fixed multiples of $C_3$ and $C_4+3C_3^2E_{\rm ins}$, with the Taylor factors above. The direct and row action has bounded cubic and quartic kernels by the fixed stage bound on $c_{\rm dir}$ and the exponentially weighted rows. The fixed three-leg lift consequently bounds the cubic atom coefficients. Differentiating a transported slot through the additional order needed for $[S_3]_4$ costs at most a fixed polynomial in its path length; a further strict decrease of width absorbs that polynomial. Thus $[S_3]_4$, and hence $R_4$, has a strip bound depending only on fixed stage data. The four-leg lift then gives the asserted quartic atom bound at a still smaller path width. In particular the bound is not just the stationary fourth-derivative bound: it also includes the degree-four kernels of $S_2$ and $S_3$. The linear lifts and this sequential subtraction are fixed before the input is varied; with preceding degrees fixed, the cubic and quartic output constructions are affine in the corresponding incoming kernel, as used in Lemma~\ref{lem:D-cutoff-continuity}.
+
+At $m=N$, the free form acts as the identity on curls, so the same construction matches the Wilson energy through degree four and starts with zero loop atoms. Lemma~\ref{lem:D3} places the remaining top-level difference, including clipping and unhealthy configurations, in the initial activities.
+\end{proof}
+
+The common factor~$\beta'$ in the penalty and fine leading action cancels from the stationary equation; hence the arrays are independent of~$\beta'$. In $\log\det(\beta'\mathsf Q)$, the term $(\dim\mathsf Q)\log\beta'$ is independent of the field and contributes only to the scalar normalization.
+
+\subsection{The determinant comparison}\label{subsec:C-determinant}
+
+Lemma~\ref{lem:B4} gives the one-loop action
+\begin{equation*}
+\mathsf T(v)=\mathcal L_{m+1}(U_v)+\tfrac12\log\det\mathsf Q(v)-\log J_{\rm ax}(v)\,,
+\end{equation*}
+with the stationary fine configuration $U_v$, the inherited quadratic loop action $\mathcal L_{m+1}$, the axial Hessian $\mathsf Q(v)$ without~$\beta'$, and the Haar chart ratio $J_{\rm ax}$, normalized to one at zero.
+
+We measure the kinetic coefficient by a transverse plane wave: momentum $te_1$, link polarization $e_2$ and one fixed unit colour vector. For a quadratic Taylor kernel $Y$, including the Taylor factor~$1/2!$, recall from Section~\ref{subsec:B-inverse} the functional $\alpha_b(Y)=2\operatorname{Re}[t^2]Y_{(2,b),(2,b)}(te_1)$, where $[t^2]g(t)=\tfrac12g''(0)$, and define
+\begin{equation*}
+\alpha_{N,m}=\alpha_b(Y^{\rm blk}_{N,m})\,.
+\end{equation*}
+For $a=e^{itx_1}e_2\otimes e_b^{\g}$ one has $|d_1a|^2=t^2+O(t^4)$ per site, so $\alpha_b(Y)$ is the coefficient of $\frac12|d_1a|^2$ in $Y$, the curvature-square coefficient; the factor $2$ compensates for the $1/2!$. The kernel $Y^{\rm blk}_{N,m}$ is the infinite-volume quadratic kernel of $\mathsf T$. The prescribed kinetic kernel has $\alpha_b=1$. Simplicity makes $\alpha_{N,m}$ independent of~$b$, as shown in the proof of Lemma~\ref{lem:C2}; by construction it is independent of~$p$ and~$\beta'$.
+
+We use the joint left Hessian $\mathsf J$, the gauge insertion $\mathcal R$, the slice embedding $\mathcal I$ and the frame derivative $X$ of Lemma~\ref{lem:B4}, and the covariant difference $d_U$, the Laplacian $\Delta_U=d_U^*d_U$, the regulator $\mathfrak m_\mu=\mu^2P_\mu^9$ with $P_\mu=\mu^2(\Delta_U+\mu^2I)^{-1}$, the fine-link projection $P_f$ and the gauge condition $F_\mu=d_U^*P_f+\mathfrak m_\mu X$ defined before Lemma~\ref{lem:B7}. Recall $X\mathcal R=I$ and $\det(\mathcal R,\mathcal I)^2=1$ (Lemma~\ref{lem:B4}). Put
+\begin{equation*}
+\mathsf C_\mu=\mathsf J+F_\mu^*F_\mu,\qquad
+\mathsf G_\mu=F_\mu\mathcal R=\Delta_U+\mathfrak m_\mu\,.
+\end{equation*}
+The next lemma is the Faddeev--Popov identity for the gauge condition $F_\mu$: $\mathsf C_\mu$ is the gauge-fixed Hessian, $\mathsf G_\mu$ the ghost operator, and $-\log\det\mathsf G_\mu$ the ghost contribution.
+
+\begin{lemma}[Gauge completion]\label{lem:C5}
+For $v$ in a neighbourhood of zero,
+\begin{equation}\label{eq:C-FP}
+\mathsf T(v)=\mathcal L_{m+1}(U_v)+\tfrac12\log\det\mathsf C_\mu(v)-\log\det\mathsf G_\mu(v)\,.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Gauge invariance and stationarity give $\mathsf J\mathcal R=0$, and $F_\mu\mathcal R=\mathsf G_\mu$. Hence
+\begin{equation*}
+(\mathcal R,\mathcal I)^*\mathsf C_\mu(\mathcal R,\mathcal I)=
+\begin{pmatrix}\mathsf G_\mu&F_\mu\mathcal I\\0&I\end{pmatrix}^{\!*}
+\begin{pmatrix}I&0\\0&\mathcal I^*\mathsf J\mathcal I\end{pmatrix}
+\begin{pmatrix}\mathsf G_\mu&F_\mu\mathcal I\\0&I\end{pmatrix}\,.
+\end{equation*}
+Since $\det(\mathcal R,\mathcal I)^2=1$, this gives $\det\mathsf C_\mu=(\det\mathsf G_\mu)^2\det(\mathcal I^*\mathsf J\mathcal I)$. The proof of Lemma~\ref{lem:B4} gives $\mathsf Q=(Ds)^*(\mathcal I^*\mathsf J\mathcal I)Ds$ and $J_{\rm ax}=|\det Ds|$, where $s$ changes axial coordinates to left increments at the stationary point. Hence $\frac12\log\det\mathsf Q-\log J_{\rm ax}=\frac12\log\det(\mathcal I^*\mathsf J\mathcal I)$. Positivity of $\mathsf Q$, $J_{\rm ax}$ and $\mathsf G_\mu$ near zero permits the logarithms and proves~\eqref{eq:C-FP}; together these identities are the three lines of~\eqref{eq:B-one-loop-box}.
+\end{proof}
+
+The comparison uses the auxiliary fine operator and determinant
+\begin{equation*}
+\mathsf A^{\rm aux}_\mu=\mathsf A+d_Ud_U^*+\mathsf M_\mu,\qquad
+\Pi_\mu(U)=\tfrac12\log\det\mathsf A^{\rm aux}_\mu(U)
+-\log\det(\Delta_U+\mathfrak m_\mu(U))\,,
+\end{equation*}
+where $\mathsf A$ is the left-coordinate Hessian of the fine leading action and $\mathsf M_\mu$ applies $\mathfrak m_\mu$ to each link component. Let $Y_\mu$ be the infinite-volume quadratic Taylor kernel of $\Pi_\mu$. Write $u_j$ for the ratio threshold of Lemma~\ref{lem:B5}; items~5 and~8 of Table~\ref{tab:constant-choices} choose odd ratios above it.
+
+\begin{lemma}[Block-to-fine coefficient comparison]\label{lem:C6}
+For every odd $\ell\ge u_j$ as in items~5 and~8 of Table~\ref{tab:constant-choices}, put $\mu=\ell^{-1}$. There is a constant $d_{\rm cmp}\ge0$, depending only on the fixed stage bounds, such that
+\begin{equation*}
+|\alpha_{N,m}-\alpha_b(Y_\mu)|\le d_{\rm cmp}\,.
+\end{equation*}
+The constant is independent of $N,p,\ell$.
+\end{lemma}
+
+\noindent\emph{Proof dependency.} The comparison below uses the common complex-strip and two-insertion bounds for the actual contact-removed and auxiliary inverses in Lemma~\ref{lem:B7}, including the based predictor chart of~\eqref{eq:B-contact}. Their full inserted-strip verification is not yet complete in this draft. Until it is supplied, the proof of this lemma and the transfer of Lemma~\ref{lem:C7} to $\alpha_{N,m}$ are conditional on those bounds.
+
+\begin{proof}
+At one coarse momentum both operators act on the same joint space. Their difference either factors through a coarse space of dimension at most $4\dimG$ per cell or contains the regulator $\mathfrak m_\mu=\mu^2(P_\mu^3)^3$. The first kind is bounded by finite rank, the second by the uniform trace bound for $P_\mu^3$, so the logarithmic Hessians differ by a trace-class amount bounded independently of~$\ell$; no trace is estimated by the fine-cell dimension $\ell^4$. We (1)~fold $\Pi_\mu$ to coarse momentum, which leaves $\alpha_b$ unchanged; (2)~remove the contact term, which leaves $\alpha_b$ unchanged by Lemma~\ref{lem:B6}; (3)~bound the difference of logarithmic Hessians; (4)~apply Cauchy's estimate. The input arrays satisfy Lemma~\ref{lem:C2} by~$(I_{m+1})$.
+
+% The following folding argument adapts Humanise YM, quadratic-pole-transport.tex, lines 58--155; see the Area A migration handoff for CC BY 4.0 provenance.
+\emph{Step 1: folding.} Fix $\ell$ for this argument. Let $N_z(\xi)$ be the fine alias amplitudes of the rooted interpolation $W_0=W_{\rm r}$, at momenta $k_z=(\xi+2\pi z)/\ell$. It differs from the centred smooth interpolation $W_{\rm s}$ by a fine gradient; the auxiliary functional below is gauge invariant, so either representative gives the same pulled-back quadratic kernel. With the Fourier kernels normalized per site, that kernel is
+\begin{equation*}
+\ell^4\sum_z N_{-z}(-\xi)^{T}Y_\mu(k_z)N_z(\xi),
+\end{equation*}
+where opposite aliases pair by fine translation invariance. The superscript $T$ is ordinary transpose, with the momentum reflected to $-\xi$ in the first factor; it is not a same-momentum complex adjoint. The factor $\ell^4$ is the ratio of fine to coarse sites. The two normal equations in the proof of Lemma~\ref{lem:B2} give $\mathsf K_fW_0=\mathcal Q_m^*\mathsf K_c$ and $\mathcal Q_mW_0=I-\blockpenalty^{-1}\mathsf K_c$. Since $\mathsf K_c(\xi)=O(|\xi|^2)$ and the fine curl form has a positive floor on the transverse subspace at each nonzero alias, the transverse part of $N_z(\xi)$ is $O(|\xi|^2)$ there. These constants may depend on the fixed~$\ell$.
+
+The auxiliary functional $\Pi_\mu$ is gauge invariant: its left Hessian, covariant differences and regulator transform by orthogonal conjugation, leaving both determinants unchanged. Its first variation at zero vanishes because it is invariant under constant colour rotations and the simple Lie algebra has no nonzero invariant vector. Differentiating gauge invariance then gives both Ward contractions of $Y_\mu$. They remove the longitudinal parts of the two alias amplitudes, so every nonprincipal term above is $O(|\xi|^4)$; the averaging filter alone would not establish this for the complete interpolation.
+
+At the principal alias the second normal equation gives $\mathcal Q_mW_0=I$ at zero momentum. Nonprincipal amplitudes there are pure gradients, which the gauge-compatible block map sends to the zero coarse gradient. The block map sends a constant fine link field to $\ell$ times that field, so $N_0(0)=\ell^{-1}I$. Moreover $Y_\mu(\xi)=O(|\xi|^2)$. Indeed its two Ward contractions give $Y_\mu(0)=0$. If its linear part is $\sum_c T_{ab,c}\xi_c$, the two contractions give $T_{ab,c}=-T_{cb,a}=-T_{ac,b}$ and kill repeated-index terms. For distinct indices the unsigned permutation interchanging $b,c$ gives $T_{ab,c}=T_{ac,b}$, so these terms vanish as well. No reflection symmetry of the auxiliary regulator is needed. Hence the zero alias in the tested entry is
+\begin{equation*}
+\ell^4\ell^{-2}Y_\mu(\xi/\ell)+O(|\xi|^3)\,.
+\end{equation*}
+The factors are the cell volume and $\ell^{-1}$ per interpolated field. Extracting the quadratic coefficient supplies another~$\ell^{-2}$, so $\ell^4\ell^{-2}\ell^{-2}=1$.
+
+\emph{Step 2: the contact term.} Use exactly the based predictor chart of~\eqref{eq:B-contact}: $p_v(w)=\log(Q_v(w)Q_0(v)^{-1})$, with $Q_0(v)=Q_v(0)$. Take the internal $w$ derivatives in the rooted left-increment coordinates of~\eqref{eq:B-contact}, holding $Q_0(v)$ fixed; external $v$ derivatives also differentiate it. When using centred fibres, pull back $H$, $C_\lambda$ and the contact-removed form by the same triangular tangent map at each background. In particular, $C_\lambda$ denotes this pullback of the rooted second derivative, not a new raw second derivative in a nonlinear centred chart. The external joint directions are the centred smooth tangents $(v,W_{\rm s}v,0)$ of Lemma~\ref{lem:B5}. With $H=D_wp_v$, $B=D_p^2\mathrm{Pen}_v(0)$, $d=D_p\mathrm{Pen}_v(0)$ and $C_\lambda=D_w^2(p_v)_\lambda$, the completed Hessian has contact term $\sum_\lambda d^\lambda C_\lambda$. Define $\mathsf C^{\rm rem}_\mu$ by subtracting precisely this sum. Along the free interpolation, write $\mathsf a(\xi)$ for the first background derivative of~$d$ and $\mathsf b(\xi)$ for the mixed fine/frame trace of Lemma~\ref{lem:B6}. That lemma gives $\mathsf a(\xi)=O(|\xi|^2)$ and $\mathsf b(\xi)=O(|\xi|)$ for this same based split. The difference of the full and contact-removed quadratic Taylor kernels consists of $\mathsf a\mathsf b$, its reflected counterpart, and a term quadratic in~$\mathsf a$, with bounded analytic factors and the Taylor factors of Lemma~\ref{lem:B6}. It is $O(|\xi|^3)+O(|\xi|^4)$ and has zero~$\alpha_b$.
+
+\emph{Step 3: the joint-space difference.} At one coarse momentum let $\mathcal V_f$ be the fine-link fibre and $\mathcal V_0$ the coarse-frame fibre, of dimension~$\dimG$. Let $P_f:\mathcal V_f\oplus\mathcal V_0\to\mathcal V_f$ and $Z:\mathcal V_f\oplus\mathcal V_0\to\mathcal V_0$ be the coordinate projections, and put
+\begin{equation*}
+\widetilde{\mathsf A}^{\rm aux}_\mu=P_f^*\mathsf A^{\rm aux}_\mu P_f+Z^*Z=
+\begin{pmatrix}\mathsf A^{\rm aux}_\mu&0\\0&I\end{pmatrix},\qquad
+\det\widetilde{\mathsf A}^{\rm aux}_\mu=\det\mathsf A^{\rm aux}_\mu\,.
+\end{equation*}
+Thus adjoining the frame identity leaves the auxiliary determinant unchanged. Use the same $H$ and $B$ from the based split in Step~2; their product is the remaining penalty Hessian. Put $K=\mathfrak m_\mu X$, and let $J_a$ select direction~$a$ from fine links, so $\mathsf M_\mu=\sum_aJ_a^*\mathfrak m_\mu J_a$. Then
+\begin{align*}
+\mathsf C^{\rm rem}_\mu&=P_f^*\mathsf AP_f+H^*BH+(d_U^*P_f+K)^*(d_U^*P_f+K),\\
+\widetilde{\mathsf A}^{\rm aux}_\mu&=P_f^*\mathsf AP_f+P_f^*d_Ud_U^*P_f+
+ P_f^*\Bigl(\sum_aJ_a^*\mathfrak m_\mu J_a\Bigr)P_f+Z^*Z,
+\end{align*}
+and their difference is
+\begin{equation*}
+\Theta=\mathsf C^{\rm rem}_\mu-\widetilde{\mathsf A}^{\rm aux}_\mu
+=H^*BH-Z^*Z+P_f^*d_UK+K^*d_U^*P_f+K^*K
+-P_f^*\Bigl(\sum_aJ_a^*\mathfrak m_\mu J_a\Bigr)P_f\,.
+\end{equation*}
+The fine Hessians cancel exactly. The first term factors through coarse links, the second through coarse frames. For compatible maps $V,W$ through a coarse space of dimension~$r$,
+\begin{equation*}
+\|VW\|_1\le r\|V\|\|W\|,\qquad
+|\tr_{\rm joint}(VW)|=|\tr_{\rm coarse}(WV)|\le r\|W\|\|V\|\,.
+\end{equation*}
+Here $r=4\dimG$ or $\dimG$, independently of~$\ell$. Differentiating these factorizations through order two preserves the intermediate coarse spaces. Lemma~\ref{lem:B7} bounds their factors in the mutually dual block norms.
+
+The remaining terms keep a regulator factor. Lemma~\ref{lem:B7}(i) bounds the trace norm of~$P_\mu^3$ on a complex strip and bounds $D^rP_\mu$ for $r\le2$, independently of~$\ell$; Step~6 of its proof sums the fine aliases $k_z=(\xi+2\pi z)/\ell$ with weights $(1+|z|^2)^{-3}$. Use the block-coordinate map $T_\ell$ of Lemma~\ref{lem:B3}. On real momenta the regulator factors in~$\Theta$ have the forms
+\begin{align*}
+KT_\ell&=(P_\mu^3)^3(\mu^2XT_\ell),\\
+T_\ell^*P_f^*J_a^*\mathfrak m_\mu J_aP_fT_\ell
+&=(\mu J_aP_fT_\ell)^*(P_\mu^3)^3(\mu J_aP_fT_\ell).
+\end{align*}
+Their analytic continuations use the reflected transpose in the dual coordinate. Lemma~\ref{lem:B7} bounds $\mu^2XT_\ell$ through two insertions, and the block weights bound $\mu J_aP_fT_\ell$ and $d_U^*P_fT_\ell$. Two field derivatives of $(P_\mu^3)^3$ leave one cube undifferentiated. Put that cube in trace norm and the other factors in operator norm; the product rule treats derivatives of the end factors as well. Applied to all regulator terms of~$\Theta$, these estimates give a constant~$B_*$ for its trace norm through two field insertions, in the dual block norms, depending only on the fixed stage bounds. At each coarse momentum these bounds sum the fine aliases without a factor~$\ell^4$.
+
+Let $F_*,A_*$ bound the inverses and the operators through two normalized insertions in the compatible block norms (Lemmas~\ref{lem:B5} and~\ref{lem:B7}). In $D_vD_w\log\det A=\tr(A^{-1}D_{vw}A-A^{-1}D_vA\,A^{-1}D_wA)$, telescoping the difference between $\mathsf C^{\rm rem}_\mu$ and $\widetilde{\mathsf A}^{\rm aux}_\mu$ with $(\mathsf C^{\rm rem}_\mu)^{-1}-(\widetilde{\mathsf A}^{\rm aux}_\mu)^{-1}=-(\mathsf C^{\rm rem}_\mu)^{-1}\Theta(\widetilde{\mathsf A}^{\rm aux}_\mu)^{-1}$ gives terms with exactly one factor $\Theta$, or a derivative of it, in trace norm and only bounded factors otherwise; cyclically moving factors identifies the required dual norms. Hence the difference of the logarithmic Hessians is at most a fixed polynomial in $A_*,B_*,F_*$. The common ghost determinant cancels. Including the Taylor factors gives a bound~$C_*$ for the analytic difference kernel on a strip of width~$\zeta_*>0$, both independent of~$\ell$. The inherited loop kernel has order four by~$(I_{m+1})$; pullback by the analytic interpolation $W_0$ preserves that order, so its $\alpha_b$ is zero.
+
+\emph{Step 4: Cauchy's estimate.} Restrict the tested entry $g$ of the difference to $\xi=te_1$. Cauchy's coefficient inequality on $|t|=\zeta_*/2$ gives $|[t^2]g|\le4C_*/\zeta_*^2$ and hence $|\alpha_b(g)|\le8C_*/\zeta_*^2$. This gives~$d_{\rm cmp}$.
+\end{proof}
+
+\subsection{The one-loop coefficient}\label{subsec:C-coefficient}
+
+The vertices of the fine action differ from Wilson's in momentum orders $3,2,1$ for the quadratic, cubic and quartic terms (Lemma~\ref{lem:B5}); the input arrays satisfy its hypotheses by~$(I_{m+1})$. The resulting logarithmic term is the part of the one-step drift which remains after the block ratio has been chosen.
+
+\begin{lemma}[One-loop coefficient]\label{lem:C7}
+Assume the inserted-strip bounds used in Lemma~\ref{lem:C6}. There is a constant $d_j\ge0$, depending only on the fixed stage data, such that, for every step $m+1\to m$ at stage~$j$ with odd $\ell_m\ge u_j$ as in Table~\ref{tab:constant-choices},
+\begin{equation*}
+|\alpha_{N,m}+\slope\log\ell_m|\le d_j\,.
+\end{equation*}
+It is independent of $N,p,\ell_m$ and the running coupling.
+\end{lemma}
+The auxiliary calculation gives the coefficient $-\slope\log\ell_m+O(1)$, with $\slope=2b_0$. Subject to the inserted-strip bounds in Lemma~\ref{lem:C6}, this transfers to the curvature-square coefficient of one blocking step. The proof is the background-field computation~\cite{Abbott1982} on the lattice: gauge-field (vector) and ghost loops with two background insertions, where the vector vertex has an orbital part, equal to the ghost vertex, and a spin part.
+
+\begin{proof}
+The calculation pairs the one-loop vertices of the auxiliary fine determinant $\Pi_\mu$, computes the leading bubble exactly, and compares the lattice integrand with it; Lemma~\ref{lem:C6} then transfers the result to $\alpha_{N,m}$. Choose a colour basis index $b$, external polarization~$e_2$ and external momentum $te_1$. Unsigned coordinate permutations reduce other transverse axis pairs to this one. For the leading vertices, expand the continuum Wilson curvature square in the trace metric: its Hessian is $\sum_{a<c}(\|D_au_c-D_cu_a\|^2+2\langle F_{ac},[u_a,u_c]\rangle)$. Adding covariant background gauge fixing, integrating by parts and using $[D_a,D_c]=\operatorname{ad}F_{ac}$ gives the vector operator $-D^2\delta_{ac}-2\operatorname{ad}F_{ac}$ and the ghost operator $-D^2$: gauge fixing supplies one curvature commutator and the background-curvature term supplies the other. For nonzero loop momentum $k$ the leading ghost vertex is $-2ik_2\operatorname{ad}(e_b^{\g})$. The vector vertex has the same orbital term on its four components and the spin term
+\begin{equation*}
+2it(\delta_{c2}\delta_{c'1}-\delta_{c1}\delta_{c'2})\operatorname{ad}(e_b^{\g})\,,
+\end{equation*}
+with vector indices $c,c'$. In passing from exponential to left marks, the extra term in the first marked vertex comes from the ordinary quadratic kernel composed with the local quadratic term of $\log(\mathrm e^y\mathrm e^z)$; it has at least two momentum powers and does not change these leading vertices. Simplicity and the trace metric give $\tr_{\g}(\operatorname{ad}(e_b^{\g})^2)=-\casimir$. The bubble pairs vertices at $te_1$ and $-te_1$. The orbital factor $-2ik_2$ is unchanged when $k\mapsto k+te_1$ and $te_1\mapsto-te_1$. Put $S_{\rm sp}=E_{21}-E_{12}$. Since $\tr S_{\rm sp}=0$, the orbital--spin cross terms vanish; the spin product is $(2itS_{\rm sp})(-2itS_{\rm sp})=4t^2S_{\rm sp}^2$, with trace $-8t^2$. The bubble factors are
+\begin{equation*}
+\begin{array}{l|c|c}
+\text{contribution}&\text{directional trace}&\text{weight in }\tfrac12\log\det\mathsf A^{\rm aux}_\mu-\log\det\mathsf G_\mu\\\hline
+\text{vector}&4(-2ik_2)^2-8t^2&-1/4\\
+\text{ghost}&(-2ik_2)^2&+1/2
+\end{array}
+\end{equation*}
+Multiply by the colour trace, divide by $|k|^2|k+te_1|^2$, and take the coefficient of $t^2$; the extraction of $\alpha_b$ supplies the factor~$2$. Before taking the coefficient, ghost minus half vector is
+\begin{equation*}
+-\frac{4\casimir(k_2^2+t^2)}{|k|^2|k+te_1|^2}\,.
+\end{equation*}
+Its quadratic coefficient is
+\begin{equation}\label{eq:C-pole}
+h(k)=4\casimir\left(\frac{k_2^2}{|k|^6}-\frac{4k_2^2k_1^2}{|k|^8}-\frac1{|k|^4}\right)\,.
+\end{equation}
+Expanding the denominator gives $|k|^{-4}-2tk_1|k|^{-6}+t^2(4k_1^2|k|^{-8}-|k|^{-6})+O(t^3)$; substitution yields~\eqref{eq:C-pole} with its sign.
+
+Let $I_{\mu,b}(k)$ be the integrand of $\alpha_b(Y_\mu)$, obtained with these weights and Taylor factors. Then
+\begin{equation*}
+\alpha_b(Y_\mu)=(2\pi)^{-4}\int_{[-\pi,\pi]^4}\operatorname{Re}I_{\mu,b}(k)\,dk\,.
+\end{equation*}
+For constants $A_{\rm int},D_{\rm int}\ge0$ depending only on the fixed fine-stage bounds, uniformly in $\mu$,
+\begin{equation}\label{eq:C-integrand}
+|I_{\mu,b}(k)|\le\frac{A_{\rm int}}{(|k|+\mu)^4},\qquad
+|I_{\mu,b}(k)-h(k)|\le D_{\rm int}\left(|k|^{-3}+\mu^2|k|^{-6}\right)\quad(|k|\ge\mu)\,.
+\end{equation}
+% This response estimate adapts Humanise YM, annulus-same-data-binding.tex and annulus-fleet-face-estimates.tex; see the Area A migration handoff for CC BY 4.0 provenance.
+The estimates concern the marked \emph{left-coordinate} Hessian of the actual fine action, not only its ordinary symmetric Taylor tensors. For $r=0,1,2$, differentiate $S(\log(\mathrm e^y\mathrm e^z))$ in two left-increment slots and $r$ background slots. In the chain rule, a partition into $b$ nonempty blocks contributes the normalized degree-$b$ Taylor kernel multiplied by $b!$; the one-block term vanishes because the first derivative at zero is zero. The derivatives of $\log(\mathrm e^y\mathrm e^z)$ are local and have fixed bounds through order four. A block carries the sum of its slot momenta, so substituting block momenta into the ordinary kernels of orders $3,2,1$ preserves the corresponding orders of the difference from Wilson, for the value, one-mark and two-mark slots. The same finite chain rule holds at every allowed fine torus, with one fine site-count factor at conserving waves. A common smaller strip bounds these slots, while the radial constants below are chosen independently of~$\mu$.
+
+Put $T=|k|+\mu$ near the origin and use the routed momentum $k+te_1$ on the second leg, differentiating at $t=0$ through order two. For the massive operator used to define the regulator, its inverse and the regulator itself, the value, one-background and two-background slots have the following bounds, with a common constant $C$:
+\begin{equation*}
+\begin{array}{l|ccc}
+ &\text{value}&\text{one mark}&\text{two marks}\\\hline
+\Delta_U+\mu^2I&CT^2&CT&C\\
+(\Delta_U+\mu^2I)^{-1}&CT^{-2}&CT^{-3}&CT^{-4}\\
+\mu^2P_\mu^9&C\mu^2&C\mu^2/T&C\mu^2/T^2
+\end{array}
+\end{equation*}
+Here $P_\mu=\mu^2(\Delta_U+\mu^2I)^{-1}$. The inverse bounds follow by differentiating the inverse identity, keeping both orders of the two one-mark insertions. The regulator bounds follow from the product rule for its nine factors and $\mu^2/T^2\le1$. Each bound also holds after $j\le2$ routed momentum derivatives with an additional factor $T^{-j}$. The constant direction selectors in the vector regulator preserve these bounds. Adding the regulator slots to those of $\Delta_U$ gives the corresponding bounds for the actual ghost operator $\Delta_U+\mu^2P_\mu^9$; the floor below controls its inverse. These estimates use the actual ninth-power regulator, not a constant mass substitution.
+
+At zero background, the vector and ghost floors of~\eqref{eq:B-mass-floor} bound their inverses by $CT^{-2}$; $q_a(k)=ik_a+O(|k|^2)$ and the zero-momentum normalization of the fine form give the free quadratic symbol plus an $O(|k|^3)$ remainder. Differentiating the inverse identity gives, for either channel,
+\begin{equation*}
+\|R_\mu\|\le C(|k|+\mu)^{-2},\quad
+\|\partial R_\mu\|\le C(|k|+\mu)^{-3},\quad
+\|\partial^2R_\mu\|\le C(|k|+\mu)^{-4}\,.
+\end{equation*}
+Each first-order vertex has bound $CT$, with its routed derivatives bounded by the corresponding powers of $T^{-1}$. In a bubble, two momentum derivatives on one inverse give $T^2T^{-2}T^{-4}=T^{-4}$; moving derivatives to vertices gives the same bound. For the two-mark term, one inverse and one two-mark slot give $CT^{-2}(1+\mu^2T^{-2})$, also bounded by $CT^{-4}$ on the bounded momentum cube.
+
+On the shell $|k|\ge\mu$, set $T=|k|$ and compare with the unregulated continuum symbols, which are used only away from zero. The difference of denominators has bound $C(T^3+\mu^2)$. Put $\delta=T+\mu^2/T^2$; the inverse identity and the leading-vertex calculation give the additive bounds
+\begin{equation*}
+|\partial^s(R_\mu-R_0)|\le C\delta T^{-2-s},\qquad
+|\partial^s(V_\mu-V_0)|\le C\delta T^{1-s},\qquad 0\le s\le2.
+\end{equation*}
+These do not divide by a vertex that may vanish. The product rule and ordered telescoping replace each inverse and vertex in turn, including derivatives through order two. The resulting bubble error is $C\delta T^{-4}=C(T^{-3}+\mu^2T^{-6})$. Away from a fixed neighbourhood of zero all operators and their required derivatives have uniform bounds, so the same estimates hold on the rest of the cube after enlarging the constants.
+
+For the terms with one two-insertion (seagull) vertex, which are absent from~$h$, restore $T=|k|+\mu$. Route the single inverse at the unshifted momentum~$k$ and differentiate the regular two-mark symbol twice in the external momentum; its ordinary part is bounded, while the regulator part is bounded by $C\mu^2T^{-4}$. Their quadratic coefficients therefore have bounds
+\begin{equation*}
+C\left((|k|+\mu)^{-2}+\mu^2(|k|+\mu)^{-6}\right).
+\end{equation*}
+The first term comes from one undifferentiated inverse and a bounded seagull-vertex derivative; the second retains the regulator factor~$\mu^2$ and the differentiated inverses inside that regulator. On the cube, $|k|\le2\pi$ and $\mu\le1$, so this is at most $C'(|k|+\mu)^{-4}$. On $|k|\ge\mu$, it is at most $C(2\pi|k|^{-3}+\mu^2|k|^{-6})$. Thus these terms satisfy both inequalities of~\eqref{eq:C-integrand}. The product rule gives the same bounds for the ninth-power regulator. Summing proves~\eqref{eq:C-integrand}.
+
+On the spherical shell $\mu<|k|\le1$, rotational symmetry gives angular means $k_2^2/|k|^2=1/4$ and $k_2^2k_1^2/|k|^4=1/24$. For the latter, write the fourth moments as $m_4=\mathbb E\theta_1^4$ and $m_{22}=\mathbb E\theta_1^2\theta_2^2$ on the unit sphere: rotation by $\pi/4$ gives $m_4=3m_{22}$, and $(\sum_i\theta_i^2)^2=1$ gives $4m_4+12m_{22}=1$. Since the sphere has area $2\pi^2$,
+\begin{align}\label{eq:C-slope}
+(2\pi)^{-4}\int_{\mu<|k|\le1}h(k)\,dk
+&=\frac{8\pi^2\casimir}{(2\pi)^4}\left(\frac14-\frac16-1\right)\log\mu^{-1}\\
+&=-\frac{11\casimir}{24\pi^2}\log\mu^{-1}=-\slope\log\mu^{-1}\,.\notag
+\end{align}
+The errors in~\eqref{eq:C-integrand} have shell integrals at most $2\pi^2D_{\rm int}$ and $\pi^2D_{\rm int}$. On $|k|\le\mu$ the bound is $A_{\rm int}\mu^{-4}$ and the volume is $\pi^2\mu^4/2$; outside $|k|\le1$ the bound is $A_{\rm int}$. Hence
+\begin{equation*}
+|\alpha_b(Y_\mu)+\slope\log\mu^{-1}|
+\le(2\pi)^{-4}\{A_{\rm int}\pi^2/2+A_{\rm int}(2\pi)^4+3\pi^2D_{\rm int}\}\,.
+\end{equation*}
+Combine this bound with Lemma~\ref{lem:C6} and put $\mu=\ell^{-1}$. Their sum gives~$d_j$. The computed slope is $\slope=2b_0$ of Definition~\ref{def:D01}, with its stated trace metric.
+\end{proof}
+
+\paragraph{Finite-period recording.}\label{par:C-finite-period} The subtraction in Lemma~\ref{lem:D-localization} uses finite auxiliary tori, so we record the comparison with the infinite-volume kernels. The comparison below depends on a common analytic strip for the actual marked blocked determinant, uniform in the cutoff at fixed stage and ratio, and on polynomial ordered-derivative bounds for the reflected healthy-field charts. These two inputs have not yet been verified in this draft; the use of the resulting finite-period error in Lemma~\ref{lem:D-localization} is conditional on them. Fix a stage and an allowed ratio~$\ell$ first, and put $\mu=\ell^{-1}$. On a coarse torus of side~$n$, with fine side $\ell n$, let $Y^{\rm blk}_{n}$ be the quadratic Taylor kernel of the same stationary action~$\mathsf T$, formed from its actual finite stationary branch, Hessian, Haar factor and inherited loop action. At conserving coarse waves $v_p,v_{-p}$ its raw mixed second derivative is
+\begin{equation*}
+D^2\mathsf T_n(0)[v_p,v_{-p}]=2n^4\,Y^{\rm blk}_{n}(p)[v_p,v_{-p}].
+\end{equation*}
+The factor two converts the quadratic Taylor coefficient to the raw derivative, and $n^4$ is the coarse site count. The blocked determinant kernel uses a normalized mean over the coarse Bloch grid, with the fine aliases inside each joint-fibre trace. The standalone auxiliary fine determinant instead uses the fine momentum grid; neither finite mean is the corresponding infinite momentum integral.
+
+For the unmasked axial stationary equation, a uniform neighbourhood at this fixed ratio follows from a common strict exponential path-coefficient budget and the flat gap of Lemma~\ref{lem:B3}. For each fixed history the flat axial Hessian is the periodization of a single translated-tree, path and patch kernel: absolute summation commutes with restriction to a torus. It has finite coarse-cell fibres and exponentially summable rows. The geometry of Lemma~\ref{lem:B3} applies once the patch fits, including for all sufficiently large even coarse sides. Their grids are dense in the real Bloch torus, and a small complex displacement and a Neumann expansion give a uniformly summable inverse row, also after periodization. A path of length~$L$ in a complex field ball of radius~$\delta$ costs at most $\mathrm e^{C\delta L}$, and its fixed-order derivatives cost an additional polynomial in~$L$; a strict part of the path-width reserve absorbs both. Anchor each marked path term at an output gradient link and sum its absolute coefficients over all input positions; the placements cost another fixed polynomial in~$L$. The frame and predictor stencils are finite at fixed~$\ell$. Thus the axial gradient is analytic with uniformly bounded derivatives in supremum operator norms on a small supremum-norm ball. If $\mathsf Q_0=D_\psi^2S(0,0)$, the map $\psi\mapsto\psi-\mathsf Q_0^{-1}D_\psi S(v,\psi)$ has zero $\psi$ derivative at $(0,0)$. Choose the $\psi$ ball for contraction factor at most $1/2$, then shrink the $v$ ball so that the image of $\psi=0$ is within half its radius. This constructs the actual unmasked stationary germ on a ball common to the cutoff and period; it does not by itself supply the marked determinant strip or identify the germ with a masked sector integral.
+
+For fixed~$\ell$, use Lemma~\ref{lem:C5} to include the Haar factor in the completed-minus-ghost determinant. The first derivative at the flat field of each scalar functional in all coarse, fine and frame variables is zero: constant colour invariance makes it an adjoint-invariant linear functional, and $\g=[\g,\g]$. The chain rule therefore reduces the second derivative along the actual finite stationary branch to its joint tangent (Lemmas~\ref{lem:B3} and~\ref{lem:B5}). In centred coordinates we use its smooth representative $(v,W_{\rm s}v,0)$; the rooted representative is $(v,W_{\rm r}v,-\mathcal F_mW_{\rm r}v)$ in these same coordinates. They are related by a joint gauge transformation with~$v$ fixed. The finite-period comparison uses the periodization of that joint tangent and of the local marked operators; the path terms periodize by absolute summation, including paths that wrap around the torus. Products retain their shifted momenta, and a second inverse derivative contains both orders of the one-mark terms. Both external derivatives of the based contact factors $d,C_\lambda$ are retained in the full operator. At zero background $\mathsf C_\mu=\mathsf C^{\rm rem}_\mu$, so Lemma~\ref{lem:B7} supplies the inverse there; local, frame and interpolation bounds control the full insertions at the fixed ratio. The ghost inverse has the positive floor of~\eqref{eq:B-mass-floor}.
+
+In fixed-residue Bloch coordinates these identities express the finite kernel by the same periodic integrand used for the infinite-volume kernel, with its loop integral replaced by the coarse grid mean. A shifted symbol at $\theta\pm p$ stays in a smaller common strip. The positive regulated floor and the uniform stage bounds give a joint complex strip of width $\eta_{j,\ell}>0$ and an integrand bound $C_{j,\ell}(1+\Lambda_{m+1}^{\rm loop})$ after shrinking the strip. These constants may depend on the fixed ratio but not on the cutoff or period. The inherited loop term is a direct periodization and has no internal momentum sum. Expanding the periodic integrand in a Fourier series shows that the coarse grid mean retains exactly the coefficients whose indices lie in $n\Z^4$. Exponential Fourier decay therefore gives
+\begin{equation*}
+\sup_{p\text{ on a smaller strip}}\left|Y^{\rm blk}_{n}(p)-Y^{\rm blk}_{N,m}(p)\right|
+\le C_{j,\ell}(1+\Lambda_{m+1}^{\rm loop})\mathrm e^{-c_{j,\ell}n}.
+\end{equation*}
+The left side uses the analytic interpolation of the finite-grid formula; its values on the coarse grid are the actual finite-torus coefficients. The infinite-volume kernel is exactly the sum of $\alpha_{N,m}$ times the kinetic kernel and the loop kernel lifted in the proof of Lemmas~\ref{lem:C1}--\ref{lem:C2}; periodizing that identity gives the entire quadratic path subtraction at every coarse grid momentum. Thus the displayed estimate compares the whole finite quadratic kernel with the actual periodized path subtraction, not merely their zero-momentum coefficients. Cauchy's estimate also gives the same exponential bound, with a smaller exponent if needed, for the quadratic external-momentum coefficient. No derivative is taken on a discrete set of momenta. Parseval bounds the difference of finite Hessians on fields $V,W$ by $C_{j,\ell}(1+\Lambda_{m+1}^{\rm loop})n^4\mathrm e^{-c_{j,\ell}n}\|V\|_\infty\|W\|_\infty$. The quadratic form in logarithmic coordinates has derivatives only through order two; for the ordered link derivatives used in Lemma~\ref{lem:D-localization}, differentiate the local logarithm/increment maps through the fixed order $\mathfrak q_{J_m}$. Include their fixed-order chain-rule and finite-chart losses in a polynomial $P_{j,\ell}(n,B_m)$. The degree-three and degree-four classical tree terms instead have their transfer momenta fixed by the external waves and require no internal grid sum. Periodizing the exact kernels and fixed lifts of Lemma~\ref{lem:C4} gives their finite-torus matching, including wrapped paths. For the five tori in Lemma~\ref{lem:D-localization}, $n\ge100(B_m+1)$; after the ratio has been fixed, $B_m=\lceil(\log\refbeta_m)^2\rceil$ makes the exponential error, including this polynomial and the displayed cell and loop factors, smaller than any prescribed inverse power of~$\refbeta_m$. This is an approximation, not an equality of a finite grid mean with the integral.
+
+\begin{proof}[Proof of Lemmas~\ref{lem:C1} and~\ref{lem:C2}]
+The row normalization comes from the free forms of Lemma~\ref{lem:B2}; the loop cancellations from the symmetry of the one-loop kernel and the two-leg curl division of Lemma~\ref{lem:C3}; the bounds from the classical matching of Lemma~\ref{lem:C4} and the one-loop bound of Lemma~\ref{lem:C7}. Start at $m=N$ and descend. The condition $c_{{\rm dir},k}\le\gamma_k$ supplies the positive row factor at every level. Its zero-momentum entries give
+\begin{equation*}
+\widehat{\mathsf H}(0)_{\mathfrak q\mathfrak r}
+=c_{{\rm dir},J_m}\delta_{\mathfrak q\mathfrak r}
++\sum_{\mathfrak p}s_{\mathfrak p\mathfrak q}s_{\mathfrak p\mathfrak r}
+=\delta_{\mathfrak q\mathfrak r}\,.
+\end{equation*}
+This proves the first cancellation and also forces $c_{{\rm dir},J_m}\le1$ by taking a diagonal entry.
+
+The quadratic link kernel of the actual stationary $\mathsf T$ is transverse and invariant under signed coordinate permutations. For the latter, the fine action and predictor/frame weights have the covariance of Lemma~\ref{lem:B1}. After a signed motion, regauge to the fixed tree with root gauge one; uniqueness of the stationary branch in Lemma~\ref{lem:B3} identifies the resulting branch. Signed edge inversion preserves product Haar measure and hence the quotient Haar measure in either tree gauge. At the stationary point the Hessian changes by congruence, with no second chain-rule term, and its determinant and the Haar Jacobian transform together as in Lemma~\ref{lem:B4}. Thus $\mathsf T$ is invariant. The Ward identity makes its constant term zero; reversal of all axes then removes its degree-one term. The reflected-link phases affect only higher orders because the constant term is zero. At degree two, separate reflections allow diagonal entries only of the form $\sum_j A_{aj}\xi_j^2$ and off-diagonal entries only of the form $B_{ab}\xi_a\xi_b$. The Ward identity gives $A_{aa}=0$ and $B_{ab}=-A_{ab}$; coordinate permutations identify the remaining transverse coefficients. Their real symmetric colour bilinear form is scalar: its self-adjoint representing operator commutes with the adjoint action, and its eigenspaces are ideals, so simplicity leaves one eigenvalue. With the quadratic Taylor normalization of~$Y$, the degree-two kernel is $(\alpha_{N,m}/2)(|\xi|^2I-\xi\xi^T)\otimes I_{\g}$. Subtract $\alpha_{N,m}$ times the kinetic kernel. Reversal of all axes removes degree three of the residual, whose lower terms now vanish, so it has order four. This signed symmetry is used for $\mathsf T$; the auxiliary determinant in Lemma~\ref{lem:C6} was treated using only unsigned permutations. The inherited loop contribution already has order four.
+
+Apply the two-leg part of Lemma~\ref{lem:C3}. Removing its two curl symbols leaves a plaquette kernel of order two. If its Fourier coefficients for a fixed orientation-colour pair are $a_{\rm loop}(z)$, then
+\begin{equation*}
+\sum_z a_{\rm loop}(z)=0,\qquad\sum_z z_a a_{\rm loop}(z)=0\quad(a=1,\ldots,4)\,.
+\end{equation*}
+Exponential decay permits termwise differentiation. Put the coefficients on coordinate paths to obtain the quadratic atoms and their absolutely convergent moments. Inherited loop atoms already have these moments, hence a link kernel of order four. Pullback by the free interpolation preserves this order. Only the quadratic Taylor kernel of~$\mathsf T$ is assigned to these atoms; its higher terms enter the preparatory expansion of Lemma~\ref{lem:D4}.
+
+For the bounds, contour displacement and the path-length estimate after Lemma~\ref{lem:C3} give a positive common decay rate for the top construction and the two possible incoming stages $k,k+1$. Choose $0<w_k^{\rm path}<w_k^\prime$ below that rate, and bound the series at $w_k^\prime$ when choosing $A_k^{\rm path}$. This choice does not consume a new width at every step, even when the incoming and outgoing stages coincide. Every read site of a fine path, including intermediate sites in its derivatives, lies within its total length~$L$ of its anchor and therefore within $C(1+L/\ell)$ coarse cells. At coarse imaginary height~$\eta$ the combined alias phases cost at most $e^{C\eta L/\ell}$. Start with the fixed coarse strip supplied by the free and geometric bounds for the stage pair and choose $w_k^\prime$ below the fixed losses in Lemma~\ref{lem:C3}. Only after the widths are fixed, increase $\ell$ until the alias phase uses a strict fraction of the incoming fine width $w_j^\prime$. The remaining reserve absorbs each fixed polynomial path-length loss, including the two differences used for the inherited loop below. Lemma~\ref{lem:C4} then makes the input-dependent amplitudes at most one. Lowering the width gives the bounds at $w_k^{\rm path}$. Make the following loop estimates at $w_k^\prime$ as well, so that the quadratic bound retains the same strict inequality between widths.
+
+The new loop contribution has a weighted bound $a_j^{\rm lp}\ell^4+b_j^{\rm lp}\log\ell+c_j^{\rm lp}$. Here $\ell^4$ bounds the trace dimension per coarse cell, and the logarithm comes from the subtracted coefficient. For an inherited order-four link kernel, rescaling gives
+\begin{equation*}
+\ell^4\ell^{-2}O(|\xi/\ell|^4)=O(\ell^{-2}|\xi|^4)\,.
+\end{equation*}
+For the weighted estimate, use both moment cancellations before rescaling: subtract $1+\sum_a z_aq_a$ from each Fourier monomial with displacement~$z$ and expand the remainder into two finite differences. Summation by parts moves one difference to each curvature leg, retaining the reflected-edge phases. Lemma~\ref{lem:B3} bounds each differentiated interpolated curvature by $C\ell^{-3}$ on a common smaller strip. The cell volume gives $\ell^4$; the resulting $\ell^{-2}$ gain holds in the weighted norm, not only at zero momentum. The polynomial displacement loss from the two differences is absorbed by the input width reserve, and the fixed two-leg lift uses a further smaller width. Hence the weighted pullback is bounded by $C_j^{\rm pb}\ell^{-2}\Lambda_{m+1}^{\rm loop}$. Choose $\ell$ so that $C_j^{\rm pb}\ell^{-2}\le1/4$, then raise the coupling entry threshold until
+\begin{equation*}
+2(a_j^{\rm lp}\ell^4+b_j^{\rm lp}\log\ell+c_j^{\rm lp})\le\Lambda_m^{\rm loop},\qquad
+\Lambda_{m+1}^{\rm loop}\le2\Lambda_m^{\rm loop}\,.
+\end{equation*}
+The sum is at most $\tfrac12\Lambda_m^{\rm loop}+\tfrac14\cdot2\Lambda_m^{\rm loop}=\Lambda_m^{\rm loop}$. These choices are in the order of Table~\ref{tab:constant-choices}: widths and amplitudes, ratios, then entry thresholds. The first inequality is possible because $2(\cutoffsize_m)^{\theta_{J_m}}\to\infty$ as $\refbeta_m\to\infty$ with $\ell_m,J_m$ fixed. For the second, antitonicity of~$\theta_k$, $J_m\le J_{m+1}\le J_m+1$, and $\theta_k\le1$ give, once $\cutoffsize_m>1$,
+\begin{equation*}
+\frac{\Lambda_{m+1}^{\rm loop}}{\Lambda_m^{\rm loop}}
+\le\left(\frac{\cutoffsize_{m+1}}{\cutoffsize_m}\right)^{\theta_{J_m}}
+\le\frac{\cutoffsize_{m+1}}{\cutoffsize_m}\longrightarrow1
+\end{equation*}
+as $\refbeta_m\to\infty$ with $\ell_m$ fixed. The descent starts with zero loops and the fourth-order Wilson matching of Lemma~\ref{lem:C4}. The kernels and paths are chosen once for all periods. Finally $|\mathcal F_s|\le2$ and $|\mathfrak a_i^{(k)}(U,x)|\le2^k|\mathfrak a_i^{(k)}|$ give absolute convergence of the action.
+\end{proof}

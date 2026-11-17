@@ -1,0 +1,263 @@
+For the source comparison, use the intervals~\eqref{eq:E-window}. Fix $b>0$ large enough for the degree and the finite tests, put $l=t-h_t(b)$, $k=l-v_t$ and $r=a_t(\cutoffsize_t)^b$. The interval from $t$ to~$l$ separates the reading points from the last fluctuation scale; the interval from $l$ to~$k$ lets the mark weights of the corrected sources increase while their remainders decrease. With $L=\ell_{J_t}^{\rm st}$, these intervals satisfy
+\begin{equation}\label{eq:E-window-geometry}
+ L^{h_t(b)}\ge(\cutoffsize_t)^{b+2},\qquad
+ L^{v_t}\ge B_t^{10},\qquad
+ \widehat\beta_i\in[\widehat\beta_t/2,\widehat\beta_t]\quad(k\le i\le t)
+\end{equation}
+on sufficiently late intervals. The last assertion follows from $h_t(b)+v_t=o(t)$ at fixed stage and the entry choices. All rounded test points lie strictly inside the level-$k$ cell: their distance from the origin is $O(r)$, while $a_l/r\ge(\cutoffsize_t)^2$. Rounding changes their rescaled coordinates by $O((\cutoffsize_t)^{-b})$.
+
+The comparison may use a different sequence of positive couplings below
+the reading level~$t$. The next lemma records what is preserved when
+the \emph{entire} marked density is pushed along that sequence.
+\begin{lemma}[Changing the comparison course]\label{lem:E-course-mass}
+Fix a cutoff, a period and a finite set of squarefree marks. At level~$i$
+let $\lambda_i$ be product Haar measure, and let
+$K_i^b(U,dV)=k_i^b(U,V)\lambda_i(dV)$ be the block probability kernel
+from a fine field~$U$ at level~$i+1$ to a coarse field~$V$ at level~$i$,
+using the positive coupling $b_{i+1}$. Suppose every coefficient of
+the terminal marked density $H_N(z;U)$ is integrable with respect to
+$\lambda_N$. Its empty coefficient is $\rho_N\ge0$, with
+$Z=\int\rho_N\,d\lambda_N>0$. Define $H_m^b$ by pushing the whole
+polynomial coefficientwise from~$N$ to~$m$ through these kernels.
+
+For every mode~$I$, the integral $\int[z_I]H_m^b\,d\lambda_m$ equals
+$\int[z_I]H_N\,d\lambda_N$, independently of the positive course~$b$.
+If two courses use the same kernels from~$N$ down to~$t$, their marked
+densities at~$t$ agree $\lambda_t$-almost everywhere. Multiplication by
+a field-independent squarefree polynomial $Q(z)$ commutes with every
+push; if $Q(0)=1$, it also leaves the empty coefficient and its integral
+$Z$ unchanged.
+
+If $[z_I]H_N=\rho_NF_I$, define the joint path law by drawing $U_N$ from
+$Z^{-1}\rho_N\lambda_N$ and then drawing $U_i$ from
+$K_i^b(U_{i+1},\cdot)$ in descending order. For
+$F_I\in L^1(\rho_N\lambda_N/Z)$, the conditional expectation of
+$F_I(U_N)$ given $U_m=V$ is
+\[
+ \frac{[z_I]H_m^b(V)}{[z_\varnothing]H_m^b(V)}
+ \qquad\text{for }\lambda_m\text{-almost every }V\text{ with }[z_\varnothing]H_m^b(V)>0.
+\]
+\end{lemma}
+\begin{proof}
+For an integrable coefficient $h$, the push from $i+1$ to~$i$ is
+$V\mapsto\int h(U)k_i^b(U,V)\,d\lambda_{i+1}(U)$. Fubini's theorem and
+$\int k_i^b(U,V)\,d\lambda_i(V)=1$ show that this push is integrable
+and preserves its integral. Iteration proves the first assertion;
+iteration with identical kernels proves the equality at~$t$. Multiplication
+by a fixed polynomial $Q$ is a fixed linear map on the finite coefficient
+space, so it commutes with the push. Its unit empty coefficient preserves
+the unmarked density.
+
+For the conditional statement, the law of~$U_m$ has density
+$[z_\varnothing]H_m^b/Z$. For every bounded measurable test~$\varphi$,
+Fubini gives
+\[
+ \mathbb E\bigl[\varphi(U_m)F_I(U_N)\bigr]
+ =Z^{-1}\int\varphi(V)[z_I]H_m^b(V)\,d\lambda_m(V).
+\]
+The pushed signed or complex measure in this identity is absolutely
+continuous with respect to the pushed unmarked measure. Thus the ratio
+above is its Radon--Nikodym derivative; its value on the null set where
+the denominator vanishes is immaterial.
+\end{proof}
+The lemma preserves the original normalized Wilson integrals, including
+when $Q=e^{-\mathsf C^{\rm Max}}$ is the finite squarefree correction.
+It does not identify the lower-level densities or conditional laws of
+two different courses. A lawful representation tied to the chosen
+course, and the guarded source estimates for that representation, are
+separate inputs below.
+
+Fix the arity bound $n\ge2$ and the compact separated position set specified above. Put $\mathcal M=\cutoffsize_t$. Let $q_{\rm der}$ bound the required derivative orders, and let $c,\delta_{\rm G}>0$ be the localization and healthy-chart exponents in the estimates below. Define
+\begin{equation}\label{eq:E-source-initial}
+ \mathcal E_t^{\rm G}=\mathcal M^{-b}
+ +C^{\rm G}_j\mathcal M^{q_{\rm der}}
+   (\widehat\beta_t^{-\delta_{\rm G}}+e^{-cB_t}).
+\end{equation}
+
+\paragraph{Comparison windows.} A comparison window is a triple of levels $k<l<t$; put $\mathcal M=\cutoffsize_t$. The proofs of Lemmas~\ref{lem:E-source-polynomial}--\ref{lem:E-source-integral} use the window only through the following conditions:
+\begin{enumerate}
+\item[(Win1)] $\log(a_l/a_t)\ge(b+2)\log\mathcal M$, $\log(a_k/a_l)\ge10\log B_t$, and $\widehat\beta_i\in[\widehat\beta_t/2,\widehat\beta_t]$ for $k\le i\le t$;
+\item[(Win2)] $\mathcal C_{J_t}\prod_{k\le i\le t}\mathcal C_{J_i}\le\mathcal M^{1/64}$;
+\item[(Win3)] every level of $[k,t]$ is past the entries of item~\ref{it:E-entries} for the finitely many requests, and $Q^{\rm cmp}_{J_k}\le\log\mathcal M/(16n)$.
+\end{enumerate}
+Late windows~\eqref{eq:E-window} satisfy (Win1)--(Win3) by~\eqref{eq:E-window-geometry}, \eqref{eq:E-source-loss} and Lemma~\ref{lem:E1.1}. A window need not lie in one stage: under (Win1)--(Win3) the three lemmas hold with $\mathcal C_j^{h_t(b)+2}$ replaced by $\mathcal C_{J_t}\prod_{l\le i\le t}\mathcal C_{J_i}$.
+
+The polynomial comparison supplies the initial error for the subsequent source iteration.
+\begin{lemma}[Middle-level source comparison]\label{lem:E-source-polynomial}
+For each fixed finite label family, sufficiently late intervals admit common real lifts, fixing the unit and bounded in $N,p$ for that interval. For every comparison window satisfying (Win1)--(Win3) and uniformly over the prescribed compact position set, the coefficients of $z_I$, $I\ne\varnothing$, of $e^{-\mathsf C^{\rm Max}}\prod_h(1+z_hF^{\rm tst}_h)$, represented at level~$l$, have total regular and normalized forced bound
+\begin{equation*}
+ \mathcal C_j^{h_t(b)+2}\mathcal E_t^{\rm G}.
+\end{equation*}
+The assertion holds on a full cutoff tail, uniformly in~$p$.
+\end{lemma}
+The proof gives the Wick correction and the inverse-separation gain. Its
+application to the actual pushed source still needs a joint-law estimate:
+the sampled physical reads, forecast, guard, determinant and residual
+loading must be matched to the same sector law for every mode, including
+the empty mode. The resulting value and derivative estimates must give
+the stated regular and normalized forced bounds with the original tests.
+In addition, a comparison based on a restarted coupling course below~$t$
+requires an exact density and coupling tie to that course; an estimate
+on the selected running history would instead need its own proof. Until
+one of these suppliers is established, this lemma and its applications
+below are conditional on those inputs.
+\begin{proof}
+The free covariance is compared with the lattice covariance of Lemmas~\ref{lem:B2} and~\ref{lem:B-windows} at the reading scale, the internal contractions are removed by Wick ordering, and the connected expansion of Lemma~\ref{lem:D-connected} carries the corrected sources from $t$ to~$l$, with the marked step of Lemma~\ref{lem:E-marked-step} supplying the singleton coefficients. The sources have at most $n$ marks in each cell; the number of cells is unrestricted. Use the coefficientwise rooted clause of Lemma~\ref{lem:D-connected} in their weighted nilpotent algebra. Only point separation is needed for the covariance comparison; coincident coordinates of distinct points are allowed.
+
+
+On a fixed healthy chart, subtract the radial Taylor polynomial of each local insertion. The coefficient norm of the remainder is bounded by its next ordered derivative times the corresponding power of the coordinate radius. All derivatives needed here are among the finitely many stage orders. Express each polynomial in curvature and differentiated-curvature variables, carrying along their powers of~$r$. In the finite jet coordinates $\xi_1,\ldots,\xi_{n_\xi}$ write the covariance as $C=(C_{ab})$ and put $\Delta_C=\sum_{a,b}C_{ab}\,\partial^2/\partial\xi_a\partial\xi_b$. Gaussian contraction and Wick ordering are the mutually inverse operators
+\begin{equation*}
+ e^{\Delta_C/2}\pi=\sum_{j\ge0}\frac1{2^jj!}\Delta_C^j\pi,
+ \qquad {:}\pi{:}_C=e^{-\Delta_C/2}\pi.
+\end{equation*}
+The series terminate on the chosen polynomial space, since each contraction removes two factors. We Wick-order each insertion with respect to its internal contractions; contractions between distinct insertions remain. The leading coefficient change $T_m$ of Lemma~\ref{lem:E-marked-step} and Wick ordering, in the jet normalization of Definition~\ref{def:D07}, are invertible and preserve the unit and real form. The error in replacing the selected coefficient map by this leading map has norm less than $1/4$ after its inverse, by the marked estimate~\eqref{eq:E-atom-estimates} and the entry condition. Solving this finite linear system gives one lift for each free basis polynomial, common to every row. Transport only between the fixed levels $\reflevel{d}$ and~$t$ bounds these reference coefficients independently of~$N,p$ for that interval. All matrices are real on the real form, and the unit equation has the exact solution~$\mathbf u_d$.
+
+The covariance calculation involves finitely many derivatives of $\Gamma(x)=(4\pi^2|x|^2)^{-1}$. For each pair of coloured plaquette stencils the rescaled Fourier chart $K(\xi)$ is supported in $|\xi|\le2$. Its leading symbol is the Maxwell curvature symbol $H(\xi)$. For every fixed required order~$q_{\rm der}$, the quadratic-form calculation of Lemma~\ref{lem:B2}, differentiated in frequency, gives
+\begin{equation*}
+ |\partial^jK(\xi)|\le C|\xi|^{-j},\qquad
+ |\partial^j(K-H)(\xi)|\le C|\xi|^{1-j}
+ \quad(0<|\xi|\le1,\ j\le q_{\rm der}).
+\end{equation*}
+These bounds follow by differentiating the inverse quadratic symbol: its curl factors remove the inverse-square singularity; replacing each lattice difference by its linear term leaves one extra power of~$|\xi|$. The regulator and its derivatives obey the same fixed bounds; different colours have zero cross covariance. To convert the second estimate to position space, decompose a cutoff of $K-H$ into annuli $|\xi|\asymp2^{-v}$. A derivative of order~$s$ in position inserts $s$ powers of~$\xi$. After $q_{\rm der}>5+s$ integrations by parts on each annulus its transform at~$Rx$, with $x$ in a compact separated set, is bounded by
+\begin{equation*}
+ C2^{-v(5+s)}\min\{1,(R2^{-v})^{-q_{\rm der}}\}.
+\end{equation*}
+Splitting the sum at $2^v\asymp R$ gives $CR^{-5-s}$. The smooth part away from zero decreases faster than this. The leading homogeneous symbol is the corresponding curvature derivative of~$\Gamma$ away from the origin, with the Fourier normalization of Part~I. Including the curvature scaling powers therefore gives absolute error $O(R^{-1})$ in the rescaled coordinates, including where a leading tensor component vanishes.
+
+For the finite jet samples, terms of the matching homogeneity give this leading derivative exactly. Every other term has at least one extra inverse power of~$R$; summing their finitely many absolute coefficients preserves the $O(R^{-1})$ bound. Here $R=(\cutoffsize_t)^b$, and rounding in the rescaled variables gives an additional $O(R^{-1})$. Localizing the sector covariance introduces $C(\cutoffsize_t)^{q_{\rm der}} e^{-cB_t}$ by the inverse-covariance bound in Lemma~\ref{lem:B-windows}, with smaller $c$, since $\widehat\beta_i\ge\widehat\beta_t/2$ throughout the interval. Conditional on the joint-law estimate above, its nonlinear healthy-chart error is $C(\cutoffsize_t)^{q_{\rm der}}\widehat\beta_t^{-\delta_{\rm G}}$ for some fixed $\delta_{\rm G}>0$. The derivative orders and powers~$q_{\rm der}$ are fixed by the degree and the finite row family; their stage constants are fixed before entry. Since $\log\cutoffsize_t=o(\log\widehat\beta_t)$ and $B_t\asymp(\log\widehat\beta_t)^2$, both errors are smaller than any prescribed fixed negative power of~$\cutoffsize_t$ after entry. Choose $b$ so that the inverse-separation error is smaller than the finite power required by the mark weight below. The chart and inspected supports lie inside the nonwrapping comparison interval in~\eqref{eq:E-window-geometry}, so these local estimates hold on every period, with the same constants.
+
+
+The finite-polynomial estimate combining these errors is as follows. Let $U$ bound the Gaussian comparison polynomials, $T$ the one-factor error, and $Z$ the two-factor error in their coefficient norm. For the connected two-point term, subtract the product of the one-point terms. Expanding that product gives the bound
+\begin{equation}\label{eq:E-Gaussian-polynomial}
+ T+Z+(U+T)T+TU.
+\end{equation}
+For example, if $a_i$ and $a_i^0$ are the two one-point terms, then
+$a_1a_2-a_1^0a_2^0=(a_1-a_1^0)a_2+a_1^0(a_2-a_2^0)$, whose norm is at most $(U+T)T+UT$. The terms $T,Z$ are the errors in the remaining one- and two-mark polynomial terms. Gaussian contraction expands into pairings, so the bound for any fixed polynomial is a finite polynomial in the bounds for its contractions. After $b$ has been fixed sufficiently large, the preceding covariance and Taylor estimates make~\eqref{eq:E-Gaussian-polynomial} smaller than every source bound required at~$l$.
+
+For more slots, let $\mathcal G'_J$ be the Gaussian polynomial moment before replacing its covariance by the Maxwell covariance. On the compact separated position set, all these moments are bounded by a fixed~$U\ge1$, and their discrepancies are at most $\varepsilon$, a constant times the covariance and Taylor error above. For a partition with $q$ blocks, telescoping its product bounds the discrepancy by $q\varepsilon(U+\varepsilon)^{q-1}$. The partition formula for $\mathsf C^{\rm Max}$ therefore bounds the sum of all nonempty corrected coefficients by
+\begin{equation*}
+ C_n\varepsilon(1+U+\varepsilon)^{n-1}.
+\end{equation*}
+There are finitely many subsets and partitions for fixed~$n$. Their constants are included in~$\mathcal C_j$. Subtracting $\mathsf C^{\rm Max}$ cancels every leading free coefficient in the logarithm; for a pair this is precisely the mean-product subtraction in~\eqref{eq:E-Gaussian-polynomial}. A support carries a mode only when it contains all its anchors. The support-independent scalar correction is retained separately per cell. Thus no local term is assigned to a support lacking one of its marks.
+
+For terms meeting a flagged region, keep that region's complete source support and its original eligibility test. At a step $i+1\to i$ in stage~$j$, let $v_\star$ be the integrated majorant of the distinguished marked factor and $n_\star$ its covering number, as in Lemma~\ref{lem:D-connected}. Its rooted forced bound is $v_\star e^{\eta^{\rm att}_in_\star}e^{-r_j\beta'_u t_{i+1}^2}$ before division by the forced source normalization. Conditional on the flagged-source estimate stated above, half this suppression absorbs the derivative and support factors of the finite marks; the other half bounds their normalized forced remainder by the error above after entry. The finite polynomial contractions, Taylor subtractions and connected attachments contribute at most $\mathcal C_j$ at each of the $h_t(b)$ steps. Their product is the factor in the statement. At each step the mode-weighted coefficient norm is submultiplicative; the derivative and support weights remain in the separate integrated majorants. The rooted sums are anchored at marks, so their bounds have no factor counting the replicated cells.
+\end{proof}
+
+The next estimate increases the mark weight while retaining the full regular and forced representation.
+\begin{lemma}[Corrected Gaussian sources]\label{lem:E-Gaussian-sources}
+Uniformly on that set, arbitrarily late intervals admit common real lifts of the free basis, bounded in $N,p$ for each fixed interval and fixing the unit, such that the corrected source $e^{-\mathsf C^{\rm Max}(z)}\prod_h(1+z_hF_h^{\rm tst})$, carried to level~$k$, has a representation~\eqref{eq:E-source-form} there with mark weight
+\begin{equation*}
+ \mathsf w_t=\exp(\log\cutoffsize_t/(8n)).
+\end{equation*}
+At this weight its regular and forced source sums are each at most one, with scalar source bound at most one per cell.
+For each such interval there is $N_0$ such that the assertion holds for all $N\ge N_0$ and all~$p$.
+\end{lemma}
+Its proof iterates the middle-level error over the second part of the interval.
+\begin{proof}
+Starting from the error of Lemma~\ref{lem:E-source-polynomial} at~$l$, a quadratic recurrence from the connected expansion of Lemma~\ref{lem:D-connected} carries the bound to~$k$; the extra length $v_t$ of the window absorbs the per-step losses. Work in the submultiplicative mode-weighted coefficient norm defined in the proof of Lemma~\ref{lem:E-source-attachments}. Keep derivative and support weights in separate integrated majorants and retain the forced eligibility tests.
+
+We now bound the loss over all steps; their number grows with~$t$. Use~\eqref{eq:E-source-initial}. Increasing the fixed power $q_{\rm der}$ includes the finite Taylor and rounding bounds above. The mark weight contributes at most $\mathsf w_t^n=\mathcal M^{1/8}$ to any mode in one cell. Enlarge $\mathcal C_j$ to include all per-step finite polynomial and support constants. From~\eqref{eq:E-log-cost} and the two ceilings in~\eqref{eq:E-window}, on sufficiently late intervals with fixed~$b$,
+\begin{equation}\label{eq:E-source-loss}
+ \mathcal C_j^{h_t(b)+v_t+2}
+ \le\mathcal M^{(b+6)/j^2}B_t^{10/j^2}
+ \le\mathcal M^{1/64}.
+\end{equation}
+Indeed $\log B_t=2\log\log\widehat\beta_t+o(1)$ and $\log\mathcal M=(\log\log\widehat\beta_t)^2$, so $B_t=\mathcal M^{o(1)}$. The two ceilings and the $+2$ contribute at most $L^{4/j^2}\le\mathcal M^{4/j^2}$, since $\ell^{\rm st}_{J_t}\le\cutoffsize_t$ by item~6 of Table~\ref{tab:constant-choices}; the final inequality holds at all sufficiently large stages for each fixed~$b$.
+
+We use the following one-step source estimate. For the fixed lifts of Lemma~\ref{lem:E-source-polynomial}, let $S_i$ majorize the corrected singleton terms, and $P_i$ the corrected terms with at least two marks, in the weighted regular norm at mark weight~$\mathsf w_t$, including their scalar terms per cell. Use the same quantities for the forced norm after division by its positive source normalization, and take the larger values. For $k\le i<l$, the connected product expansion gives
+\begin{align}\label{eq:E-source-step}
+ S_i&\le K_j^{\rm src} S_{i+1}+\mathcal M^{1/2}S_{i+1}^2,\notag\\
+ P_i&\le K_j^{\rm src} P_{i+1}
+          +\mathcal M^{1/2}(S_{i+1}+P_{i+1})^2.
+\end{align}
+Here $K_j^{\rm src}\ge1$ is fixed at the stage, and $\mathcal C_j\ge K_j^{\rm src}+2$. To obtain these bounds, separate connected terms linear in the incoming corrected sources from those with at least two source factors. The former use the one-mark integration bound. In the latter, the product rule leaves a product of two source norms; summing the additional attachments uses the rooted clause of Lemma~\ref{lem:D-connected}. Its finite derivative and localization losses are bounded by $\mathcal M^{1/2}$ after entry. Every higher product is absorbed in the same quadratic bound while the source norm is at most $\mathcal M^{-1/2}$. For the forced terms the retained eligibility event supplies the forced suppression before its normalization is divided out. The entry requirement in item~\ref{it:E-entries} includes this normalized forced bound. Disjoint cell modes use the multiplicative weights of Lemma~\ref{lem:E-replication}; their connecting supports keep the same estimate. No factor counts the number of cells.
+
+Set $\mathfrak a_i=S_i+P_i$. Equations~\eqref{eq:E-source-step} imply $\mathfrak a_i\le K_j^{\rm src}\mathfrak a_{i+1}+2\mathcal M^{1/2}\mathfrak a_{i+1}^2$. The first part of the interval gives $\mathfrak a_l\le\mathsf w_t^n\mathcal C_j^{h_t(b)+2}\mathcal E_t^{\rm G}$. By~\eqref{eq:E-source-loss}, for $b\ge1$ and sufficiently late entry,
+\begin{equation}\label{eq:E-source-iteration}
+ \mathsf w_t^n\mathcal C_j^{h_t(b)+v_t+2}\mathcal E_t^{\rm G}
+ \le\mathcal M^{-3/4},\qquad
+ \mathfrak a_i\le\mathcal C_j^{l-i}\mathfrak a_l\le\mathcal M^{-3/4}<\mathcal M^{-1/2}.
+\end{equation}
+The second inequality follows by backward induction: below $\mathcal M^{-1/2}$ the quadratic term in the recurrence is at most $2\mathfrak a_{i+1}$. For the first, the covariance contribution is at most $\mathcal M^{1/8+1/64-b}$, whose exponent is at most $-55/64$. The other contributions tend to zero faster than every fixed negative power of~$\mathcal M$, since $\log\mathcal M=o(\log\widehat\beta_t)$ and $B_t\asymp(\log\widehat\beta_t)^2$. Thus the initial-error condition is compatible with the whole interval, although its length grows with~$t$.
+
+The extra length $v_t$ also provides the support margin: a level-$l$ neighborhood of radius $B_t^2$ has level-$k$ radius at most $B_t^2/L^{v_t}\le B_t^{-8}$. It therefore fits inside the protected cell around its rounded reading points. The successive kernel neighborhoods add a bounded geometric sum in those units; their fixed margin was included in the choice of the comparison cell. Thus the inspection and attachment tests used in the iteration stay inside the stated interval. The unit has no remainder by Lemma~\ref{lem:E-marked-step}.
+
+The support margin in~\eqref{eq:E-window-geometry} makes every replicated inspected stencil fit its own cell. Terms meeting flagged regions keep their original forced eligibility and the suppression used in Lemma~\ref{lem:D-connected}; their source amplitude replaces only the amplitude of the distinguished factor. Thus the local source sums at the enlarged mark weight are at most one in both regular and forced norms. The constant source contribution is at most one per cell. These estimates prove the lemma on arbitrarily late intervals, with all thresholds independent of~$p$.
+\end{proof}
+
+The remaining normalization uses the complete positive unmarked density. In particular it cannot discard the forced sum or replace it by its healthy part.
+\begin{samepage}
+\begin{lemma}[Normalized source integral]\label{lem:E-source-integral}
+For the corrected sources of Lemma~\ref{lem:E-Gaussian-sources}, put $u_t=\log\cutoffsize_t/(16n)$. For each such interval there is $N_0$ such that, for all $N\ge N_0$ and all~$p$, for every nonempty mode~$I$,
+\begin{equation*}
+ \left|\left\langle\prod_{C\in\mathcal C^{\rm tile}_k}(\mathfrak c_I)_C\right\rangle_{N,p}\right|
+ \le e^{|\mathcal C^{\rm tile}_k|q_t^{\rm cmp}}
+       \mathsf w_t^{-|I||\mathcal C^{\rm tile}_k|},
+ \qquad q_t^{\rm cmp}\le u_t.
+\end{equation*}
+\end{lemma}
+\end{samepage}
+\begin{proof}
+The bound compares the source integral with the complete positive unmarked density of Definition~\ref{def:D06}, whose positivity follows from the density identity of Theorem~\ref{prop:RG}, the positive Wilson start and the probability kernels of Lemma~\ref{lem:B1}; the source sizes come from Lemma~\ref{lem:E-Gaussian-sources}. Let $\rho$ be the unmarked representation at the width level~$k$, $L=n_{p,k}$ its torus side, $V=|\Lambda_L|=|\mathcal C^{\rm tile}_k|$, $g=\beta(\rho)^{-1/2}$, $H_{\rm path}=A_{J_k}^{\rm path}$, and let $\delta,\Lambda^{\rm loop}$ bound its regular and loop terms. The admissibility inequalities give $0<g\le t_k$, $\delta\le1$, $\Lambda^{\rm loop}\le\Lambda_k^{\rm loop}$ and $\beta(\rho)\le4\widehat\beta_k$.
+
+Choose constants $s_H\in(0,1]$, $b_H\ge1$ such that the chord ball of radius $r/4$ has Haar measure at least $s_Hr^{\dimG}$ for small $r$, and the clipped one-link integrals are at most $b_H(g/\sigma_*)^{\dimG}$, where $\sigma_*$ is the smaller of one and the linear clip coefficient. These follow from the nonsingular exponential chart and compactness of the group, with constants chosen before all levels. Write
+\begin{equation*}
+ \mathfrak h=\log b_H-\dimG\log\sigma_*,\qquad
+ \mathcal P(\rho,X,g)=2E_{\rm ex}+6+
+ \beta(\rho)E_{\rm base}+X+3\mathfrak h-4\log s_H.
+\end{equation*}
+Here $E_{\rm ex}$ bounds the loop and regular exponent per site, including the exponent discrepancy $\delta$ in the clipped comparison, and on links of size at most $g/4$,
+$\beta(\rho)E_{\rm base}=3(c_{{\rm dir},J_k}+H_{\rm path}^2)$. For any integrable complex~$F$ with
+$z|F(U)|\le e^{\Phi_\rho(U)+VX}$, $z\ge0$, the ratio estimate is
+\begin{equation}\label{eq:E-positive-ratio}
+ \frac{z|\int F\,dU|}{\int\density\rho\,dU}
+ \le e^{V\mathcal P(\rho,X,g)-4\dimG\log g}.
+\end{equation}
+The gauge fixing cancels the small-coupling powers in this ratio. The denominator has $3V+1$ free links and the numerator will integrate $3V-3$ selected plaquette factors, so their Haar-ball powers differ only by $g^{\dimG(3V-3)}/g^{\dimG(3V+1)}=g^{-4\dimG}$, a cost that is not extensive in~$V$; all remaining constants are exponential in~$V$. For the denominator, fix an axial spanning tree with $V-1$ links. Gauge invariance removes those links, leaving $3V+1$ free links. Restrict each free link to the ball of chord $g/4$. All plaquettes are then healthy, so the forced covering sum equals one. The lower action bound and the Haar-ball bound give
+\begin{equation*}
+ \int\density\rho\,dU\ge
+ e^{v_{{\rm sc}}V-V(E_{\rm ex}+\beta(\rho)E_{\rm base})}
+ (s_Hg^{\dimG})^{3V+1}.
+\end{equation*}
+For the numerator, the clipped plaquette inequality is
+\begin{equation*}
+ \beta(\rho)E_{\rm plaq}(U)\ge
+ \frac{\chord(U_\square)}{g/\sigma_*}-1.
+\end{equation*}
+It follows in the quadratic branch from $(a/g-1)^2\ge0$ and $\sigma_*\le\min(1,c^{\rm dir})$, and in the linear branch from $\sigma_*\le c^{\rm lin}$ and $g$ below the threshold. Summing over the six plaquettes per site retains the product of $e^{-\chord(U_\square)/(g/\sigma_*)}$ in the upper integrand.
+
+% The explicit axial elimination argument adapts Humanise YM, rank-root-normalization.tex; see the Area D migration handoff for CC BY 4.0 provenance.
+Keep the $3V-3$ plaquette factors selected below and discard the others, whose values lie in $[0,1]$. Represent coordinates by $0,\ldots,L-1$, and let $p(x)$ be the largest index of a nonzero coordinate, with $p(0)=0$. The axial tree joins each $x\ne0$ to $x-e_{p(x)}$. Leave the four free wrap links $(-e_i,i)$ untreated. For every other free link $e=(x,i)$ put $t=\max\{i,p(x)\}$ and order links by decreasing lexicographic priority
+\[
+ \bigl(t,\mathbf 1_{\{i=t\}},\textstyle\sum_a x_a\bigr).
+\]
+If $i<t$, choose the $(i,t)$ plaquette based at $x-e_t$. Its two $t$-links are in the tree, and its other $i$-link has lower priority if free. If $i=t$, freeness implies $x_i=L-1$ and all higher coordinates vanish. Since $e$ is not one of the four retained links, $w=x+e_i\ne0$. With $j=p(w)<i$, choose the $(j,i)$ plaquette based at $x-e_j$. One $j$-link is in the tree; the other free links, if any, have lower priority. In both cases the chosen plaquette contains $e$ once. Two links cannot choose the same plaquette, since each would have lower priority than the other. Consequently the highest-priority remaining link occurs in no other remaining selected factor, and Haar invariance integrates its own factor to the one-link integral. Repeat in descending order. The four untreated links account for $(3V+1)-4=3V-3$; the argument includes the periodic boundary. Thus
+\begin{equation*}
+ z|\int F\,dU|\le
+ e^{v_{{\rm sc}}V+V(E_{\rm ex}+6+X)}
+ \bigl(b_H(g/\sigma_*)^{\dimG}\bigr)^{3V-3}.
+\end{equation*}
+Divide these inequalities. The powers of $g$ differ by $-4\dimG$. Using $3V-3\le3V$, $3V+1\le4V$, $b_H\ge1$ and $s_H\le1$ gives~\eqref{eq:E-positive-ratio}.
+
+One may use the clipped comparison exponent in this calculation even if it is not the exponent used for the source bound. Their difference has absolute value at most $V\delta$. Multiplying the upper source bound by $e^{V\delta}$ and bounding the two positive partition integrals in the opposite direction by the same factor accounts for this change. These two factors are included in $2E_{\rm ex}$ because each occurrence of $E_{\rm ex}$ includes $\delta$. Thus~\eqref{eq:E-positive-ratio} applies to the actual source integral on the original exact history.
+
+The enlarged-weight bounds of Lemma~\ref{lem:E-Gaussian-sources} give a pointwise bound with $X\le2+2n$. Use the weighted $\ell^1$ norm of the squarefree coefficients. The regular exponential is bounded by the exponential of the sum of its scalar and regular source norms. Write $K_Y^{\rm src}$ for the sum of the nonempty marked coefficients at forced address~$Y$, keeping its index, support and inventory even when supports coincide. For the complete forced sum, dropping eligibility and disjointness only in the upper bound gives
+\[
+ \sum_{\mathcal A}\prod_{Y\in\mathcal A}
+ \bigl(|K_Y|+\|K_Y^{\rm src}\|_{\mathsf w_t}\bigr)
+ \le\prod_Y\bigl(1+|K_Y|+\|K_Y^{\rm src}\|_{\mathsf w_t}\bigr)
+ \le e^{\sum_Y|K_Y|+\sum_Y\|K_Y^{\rm src}\|_{\mathsf w_t}}.
+\]
+The unmarked forced sum is at most $V\epsilon_k^{\rm for}\le V$ by Definition~\ref{def:D05b}; the scalar source is at most one per cell, and the regular and forced source sums are each at most one per mark. Thus the total exponent is at most $V(2+2n)$. No individual forced activity need be positive. Before integration the coefficient of the disjoint union of the chosen modes across all cells includes the factor $z=\mathsf w_t^{|I|V}$. The entry inequalities imply
+\begin{equation*}
+ E_{\rm ex}\le8H_{\rm path}+2,\qquad
+ -4\dimG\log g/V\le1.
+\end{equation*}
+For the second, $-4\dimG\log g=2\dimG\log\beta(\rho)$ is $O(\log\widehat\beta_k)$, whereas $V\ge D_k=e^{s_k}$. The first follows from
+$\widehat\beta_kt_k^3\le1$, $\widehat\beta_kt_k^4\le1$ and $\Lambda_k^{\rm loop}t_k^2\le1$ on sufficiently late levels. Hence choose a stage constant
+\begin{equation}\label{eq:E-comparison-cost}
+ Q_j^{\rm cmp}\ge2(8A_j^{\rm path}+2)+6+3(c_{{\rm dir},j}+(A_j^{\rm path})^2)+(2+2n)
+ +3\mathfrak h_j-4\log s_H+1
+\end{equation}
+for each arity used at stage~$j$. It bounds the exponent per cell in~\eqref{eq:E-positive-ratio}. All its quantities are fixed before the entry to stage~$j$. Item~\ref{it:E-entries} in Lemma~\ref{lem:E1.1} requires $Q_j^{\rm cmp}\le\log\cutoffsize_t/(16n)$ on the chosen intervals. This proves $q_t^{\rm cmp}\le u_t$ and the asserted coefficient estimate. In particular the volume appears only through the number of cells, so the cutoff threshold is independent of~$p$.
+\end{proof}

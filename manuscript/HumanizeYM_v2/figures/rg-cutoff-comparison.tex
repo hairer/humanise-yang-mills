@@ -1,0 +1,15 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,font=\small,
+  box/.style={draw,rounded corners=2pt,align=center,inner sep=4pt},
+  ar/.style={->,thick}]
+\node[box] (n) at (0,0) {$M_N$\\cutoff $N$};
+\node[box] (cn) at (4.2,0) {$C_{N,m}$\\fixed level $m$};
+\node[box] (cp) at (8.8,0) {$C_{N',m}$\\fixed level $m$};
+\node[box] (np) at (13,0) {$M_{N'}$\\cutoff $N'$};
+\draw[ar,<->] (n) -- node[above,font=\footnotesize] {stopping} (cn);
+\draw[ar,<->] (cn) -- node[above,font=\footnotesize] {compare} (cp);
+\draw[ar,<->] (cp) -- node[above,font=\footnotesize] {stopping} (np);
+\end{tikzpicture}
+\caption{At fixed volume index $p$, the ultraviolet comparison holds the intermediate level $m$ fixed while the cutoffs grow. Here $M_N$ is a lattice moment and $C_{N,m}$ its stopped level-$m$ comparison integral, defined below. The stopping and fixed-level bounds depend on the marked and graph estimates identified in the proof-status notice. Tuning gives the same endpoint coupling at level zero; it does not identify the full densities or their scalar normalizations.}\label{fig:rg-cutoff-comparison}
+\end{figure}

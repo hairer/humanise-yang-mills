@@ -1,0 +1,103 @@
+The following step retains the complete inserted density while reexpressing its remainders in the new polynomial coordinate. The inverse estimate is essential: a bound in the original bare coordinate would accumulate at every step.
+
+To leading order a step multiplies a homogeneous coordinate of engineering weight $w$ by $\ell_m^{d-w}$: the factor $\ell_m^d$ comes from the normalization in~\eqref{eq:E-marked-evolution} and $\ell_m^{-w}$ from blocking. These factors form the diagonal map
+\begin{equation*}
+ (\mathsf S_L\mathbf x)_i=L^{d-w_i}x_i,
+ \qquad 0\le w_i\le d,
+\end{equation*}
+where $(w_i,k_i)$ are the engineering weight and factor count of the basis polynomial~$b_{d,i}$; the unit has $w_0=0$. What remains is a change of basis $T_m$, bounded with its inverse uniformly in $N$, $p$ and $m$ within a stage, obtained by reexpressing the fine section, evaluated on the free interpolation of a coarse jet, in the coarse basis. Precisely, for a coarse radial jet~$\mathsf j$, let $U^{W_0}(\mathsf j)$ be the fine stencil configuration obtained by exponentiating the free interpolation~$W_0$ of Lemma~\ref{lem:B3} of the coarse potential of~$\mathsf j$, the degree-$d$ Taylor polynomial, in the jet coordinates, of the coarse-link logarithms. Define $\mathsf R^{\rm lead}_m$ by
+\begin{equation*}
+ \left.\frac{d^q}{dh_{\rm lat}^q}(\mathsf R^{\rm lead}_mb)(\operatorname{sc}_{h_{\rm lat}}\mathsf j)\right|_{h_{\rm lat}=0}
+ =\left.\frac{d^q}{dh_{\rm lat}^q}P_d[b]\bigl(0;U^{W_0}(\operatorname{sc}_{h_{\rm lat}}\mathsf j)\bigr)\right|_{h_{\rm lat}=0}
+ \qquad(0\le q\le d),
+\end{equation*}
+put $(\mathsf D^{\rm eng}_L\mathbf x)_i=L^{w_i}x_i$, and set
+\begin{equation*}
+ T_m=t_m^{\factorcount}\mathsf R^{\rm lead}_m\mathsf D^{\rm eng}_{\ell_m}t_{m+1}^{-\factorcount}.
+\end{equation*}
+Taylor matching gives $(\mathsf R^{\rm lead}_m)_{bi}=\delta_{bi}\ell_m^{-w_i}$ for $w_b\le w_i$ and $=0$ for $k_b<k_i$. To bound the other entries, use the kernel form of Lemma~\ref{lem:B3}: at averaging order $j\ge d+3$,
+\begin{equation*}
+ |\nabla_f^rW_0(\ell_my+a,y')|
+ \le C_{j,r}\ell_m^{-1-r}e^{-c_j|y-y'|},\qquad 0\le r\le d.
+\end{equation*}
+The choice of the reference level ensures this order. A jet potential grows polynomially, so the weighted bound~\eqref{eq:B-weighted-interp} with $c'=0$ and $h=d$ applies to it.
+Thus its kernel sum and the required differences converge absolutely. Applying the displayed bound to each factor of a homogeneous jet monomial gives $|(\mathsf R^{\rm lead}_m)_{bi}|\le C\ell_m^{-w_i}$, with $C$ depending only on $d$ and the stage. Periodization gives the same bound on a torus by summing over its translates. The threshold formula in item~9 of Table~\ref{tab:constant-choices} and the entry choices of Lemma~\ref{lem:E1.1} give $0<t_m\le1$ and $\tfrac12\le t_m/t_{m+1}\le2$. Hence $T_m$ sends each basis vector to its own and higher weights, with nonzero diagonal $(T_m)_{ii}=(t_m/t_{m+1})^{k_i}$, and back substitution in increasing weight bounds $T_m^{\pm1}$ uniformly in $N$, $p$ and $m$ within a stage.
+
+The marked step constructs, from a coefficient graph at level $m+1$, the coarse coordinate and a coefficient graph at level~$m$ for which the marked identity holds again. Its statement is in the coordinate $\mathbf u=\mathsf M_m\mathbf x$ extracted by the step.
+\begin{lemma}[One marked step]\label{lem:E-marked-step}
+For $m\ge\reflevel{d}$ and each coefficient graph $g_{m+1}$ at level~$m+1$, there are an invertible linear $\mathsf M_m$ on $V_d$ and a coefficient graph $g_m$ at level~$m$ such that every representation of $H_{m+1}(\mathbf v)$ with coordinate~$\mathbf x$ and remainders $g_{m+1}(\mathbf x)$ yields one of $H_m(\mathbf v)$ with coordinate $\mathbf u=\mathsf M_m\mathbf x$ and remainders $g_m(\mathbf u)$. Moreover:
+\begin{enumerate}
+\item[(i)] $|\mathbf u|_1\le C^{\rm col}_{J_{m+1}}\ell_m^d|\mathbf x|_1$ and $|\mathbf x|_1\le C^{\rm col}_{J_{m+1}}|\mathbf u|_1$;
+\item[(ii)] $\mathsf M_m$ and $g_m$ respect conjugation and signed permutations, and $\mathsf M_m\mathbf1=\ell_m^d\mathbf1$ with zero remainders;
+\item[(iii)] fine graphs differing by at most $\tau C^{\rm col}_{J_{m+1}}|\mathbf x|_1$ give coarse graphs differing by at most $\tfrac\tau2C^{\rm col}_{J_m}|\mathbf u|_1$.
+\end{enumerate}
+\end{lemma}
+The proof gives the construction and the bounds, including the contraction between two choices of incoming remainders.
+\begin{proof}
+The new coordinate is read off by Taylor extraction after one exact block integration (Definition~\ref{def:D04}) in the local sections of Definition~\ref{def:D07}. The connected expansion of Lemma~\ref{lem:D-connected}, in a nilpotent algebra, controls the marked terms; the pre-reset estimates of Lemma~\ref{lem:D4}, the subtraction of Lemma~\ref{lem:D-local-subtraction} and the density identity of Lemma~\ref{lem:D5} provide the unmarked part of the step on which the marked terms ride. Put $L=\ell_m$, $S=C^{\rm col}_{J_{m+1}}$, $K=K_{J_{m+1}}$ and $\kappa_m=(\epsilon_m^{\rm for})^{1/2}$. All norms in this proof are coefficient sums or the anchored norm~\eqref{eq:E-marked-mass}.
+
+\emph{Step 1: Marked terms in the local integration.}
+Introduce $z^2=0$. Replace the regular exponential factor by its product with
+$1+z(x_0+\mathbf1_{\Sigma_d\,\mathrm{healthy}}P_d[t_{m+1}^{-\factorcount}\mathbf x^\circ]+\sum_i\mathbf1_{Z_i\,\mathrm{healthy}}R_i)$ and replace a forced factor $K_i$ by $K_i+zQ_i$. The coefficient of $z$ in the eligible covering sum is exactly the representation of Definition~\ref{def:D26}. Apply the coefficientwise rooted clause of Lemma~\ref{lem:D-connected} in this nilpotent algebra. Each connected term now contains one distinguished factor. For a term with ordinary factors $a_1,\ldots,a_h$, its marked coefficient is
+\begin{equation*}
+ [z]\prod_{i=1}^h(a_i+zb_i)
+ =\sum_{i=1}^h b_i\prod_{j\ne i}a_j.
+\end{equation*}
+Root its connected support at this distinguished factor. The sums over all other factors are bounded by the rooted clause of Lemma~\ref{lem:D-connected}; there is no sum over possible translates of the marked anchor. Absolute convergence justifies the displayed extraction and integration term by term. A regular mark has its derivative majorant $e_i$; a forced mark has its amplitude majorant $k_i$. The latter retains its original eligibility event, so the large-field estimate used in the forced expansion still applies.
+
+The three contributions to a basis input are bounded as follows. The map $T_m$ fixes the unit and preserves the nonconstant subspace. It is triangular in the homogeneous weights: $(T_m)_{ij}\ne0$ and $i\ne j$ imply $w_j<w_i$. Its diagonal entries are nonzero, so inversion proceeds in increasing weight, with the finite stage bounds included in~$K$. Let $C_{\rm loc}\ge1$ bound its two operator norms and the following local remainder estimates before symmetry averaging; the leading stage bound was chosen with $K\ge2A_d^{\rm sym}C_{\rm loc}$. Write $\epsilon=\epsilon^{\rm mk}_m$ for the local marked error of item~\ref{it:E-graph}. Taylor subtraction of a primary mark leaves coefficient error at most $\epsilon|\mathbf x^\circ|_1$ and remainder at most $C_{\rm loc}|\mathsf S_L\mathbf x^\circ|_1$. A regular remainder of mass $e^{\sigma\cover(Z)}e_i$ contributes at most $\epsilon e^{\sigma\cover(Z)}e_i$ to each of these two bounds. A forced remainder contributes at most $\epsilon e^{\sigma\cover(Y)}k_i/\kappa_{m+1}$.
+
+For the primary mark, the local polynomial is subtracted through degree~$d$ before rescaling. Each remaining term has at least one additional scaled jet weight, and the block rescaling gives the inverse block factor in its norm. The finite connected sums and the ordered derivative product rule introduce only stage constants.
+
+An incoming regular mark is never moved to the forced family. A forced remainder must vanish off an eligibility event with a nonempty inventory of flagged sites (Definition~\ref{def:D25}), whereas the support of a regular mark may wrap around the torus while every plaquette in it is healthy. The integrated contribution of a regular mark consists of regular coarse remainders and, from those terms of its connected expansion that carry a flagged inventory at level~$m$, of forced coarse remainders on their own eligibility events. Wrapping plays no role in this assignment; it only decides whether the radial cancellation can be used. Fix such a mark $R_i$ on $Z_i$, with derivative majorant $e_i$, let $\widehat Z_i$ be the coarse support of its contribution, and put
+\begin{equation*}
+ d_i=\cover_{B_{m+1}}(Z_i),\qquad
+ \widehat Z_i\subset N_{R_j^{\rm supp}B_m}(\operatorname{parent}(Z_i)).
+\end{equation*}
+Call $Z_i$ short if $d_i^3<\ell_m$. Three classes of supports are estimated separately.
+
+(i) If $\cover_{B_m}(\widehat Z_i)>B_m$, the contribution is bounded at a coarse support exponent at least $\sigma_{J_m}+3$, one more than the exponent $\sigma_{J_m}+2$ in~\eqref{eq:E-support-conversion}. Half of this unit excess absorbs the derivative losses, which are polynomial in $\cover_{B_m}(\widehat Z_i)$. The other half gives a factor $e^{-B_m/2}$, since $\cover_{B_m}(\widehat Z_i)>B_m$. As for the large supports in the proof of Lemma~\ref{lem:D-inherited}, the resulting factor tends to zero as the coupling entry is raised at fixed stage and ratio; it is part of the term $o_{\widehat\beta_m}(1)$ below.
+
+(ii) If $\cover_{B_m}(\widehat Z_i)\le B_m$ and $Z_i$ is short, then $Z_i$ is nonwrapping about the anchor. Indeed, as in the proof of Lemma~\ref{lem:D-inherited}, $3d_i\le\ell_m$ and $B_{m+1}\le2B_m$ bound the fine radius of $Z_i$ by $6(1+B_m)\ell_m$, while the coarse side is at least $100(1+B_m)$. The radial-jet coefficients of $R_i$ through degree~$d$ therefore vanish: this is the format of the incoming remainders, recorded in Lemma~\ref{lem:E2.2a} at level~$m+1$. Taylor's formula along the healthy radial segment gives the factor $\ell_m^{-(d+1)}$, with derivative losses polynomial in $1+d_i$.
+
+(iii) If $\cover_{B_m}(\widehat Z_i)\le B_m$ and $d_i^3\ge\ell_m$, no radial cancellation is used. By~(ii), this class contains every wrapping support with $\cover_{B_m}(\widehat Z_i)\le B_m$; it also contains nonwrapping supports that are not short. The derivative bound without subtraction has losses polynomial in $1+d_i$, and
+\begin{equation*}
+ 1\le\ell_m^{-(d+1)}(1+d_i)^{3(d+1)}
+\end{equation*}
+gives the same factor $\ell_m^{-(d+1)}$ with a further polynomial factor in $1+d_i$.
+
+In classes (ii) and (iii), the support conversion~\eqref{eq:E-support-conversion} gives $(\sigma_{J_m}+2)\cover_{B_m}(\widehat Z_i)\le\log\mathcal A_m+\tfrac12\sigma_{J_{m+1}}d_i$. The remaining half of the incoming exponent bounds the polynomial in $1+d_i$, since $\sup_{s\ge0}(1+s)^qe^{-\sigma_{J_{m+1}}s/2}<\infty$ for each fixed~$q$. After multiplication by $\ell_m^d$, the contribution of the mark is at most $C\ell_m^{-1}e^{\sigma_{J_{m+1}}d_i}e_i$, with $C$ fixed before the ratio. Thus the smallness of a healthy wrapping mark comes from its unused support weight, not from a Taylor cancellation.
+
+An incoming forced mark retains its own eligibility event, whether or not its support wraps. Its support sum keeps half the original forced suppression: its normalization is $\kappa_{m+1}$, not $\epsilon_{m+1}^{\rm for}$. The remaining suppression absorbs the same derivative and support factors. Thus the bounds before choosing parameters have the form $C_j^{\rm loc}/L+o_{\widehat\beta_m}(1)$, with $C_j^{\rm loc}$ fixed before $L$ and the second term tending to zero at fixed stage and block factor; the ratio and entry choices of item~\ref{it:E-graph}, made in the proof of Lemma~\ref{lem:E1.1}, make it at most $\epsilon^{\rm mk}_m\le L^{-2/5}$. The degree-$d$ Taylor extraction is on healthy charts; the indicators themselves are never differentiated.
+
+Let $\mathbf u$ be the extracted coarse polynomial coordinate, $r$ the incoming anchored remainder norm and $r'$ the resulting coarse remainder norm, including its forced normalization. Summing the contributions gives
+\begin{equation}\label{eq:E-atom-estimates}
+ |\mathbf u-T_m\mathsf S_L\mathbf x|_1\le\epsilon(|\mathbf x^\circ|_1+r),\qquad
+ r'\le C_{\rm loc}|\mathsf S_L\mathbf x^\circ|_1+\epsilon r,
+ \qquad r=\|g_{m+1}(\mathbf x)\|_{\rm rem}.
+\end{equation}
+The regular-remainder terms in~\eqref{eq:E-atom-estimates} use the vanishing Taylor coefficients through degree~$d$ on short supports, and the unused support weight on the other supports. Retained incoming regular terms use the support conversion factor~\eqref{eq:E-support-conversion}. The same sums with the primary mark canceled give the Lipschitz bound $\epsilon\|g-\widetilde g\|_{\rm rem}$ for the coefficient and remainder differences; this uses the entire forced marked family at once.
+
+\emph{Step 2: Linear choice and inverse bound.}
+Perform the construction on each homogeneous basis vector and on all its signed and conjugated images. Take their union of supports, with zero entries where necessary, and recombine using the basis coefficients. Average over the finite signed-permutation group and over conjugation. This gives a complex-linear family with the required symmetries and exact density identity. Let $A_d^{\rm sym}\ge1$ bound the sum of absolute recombination coefficients in this finite averaging. After averaging, the error in~\eqref{eq:E-atom-estimates} is at most $\epsilon(1+S)A_d^{\rm sym}|\mathbf x^\circ|_1$, and the remainder is at most $(C_{\rm loc}+\epsilon S)A_d^{\rm sym}|\mathsf S_L\mathbf x^\circ|_1$.
+
+Use~\eqref{eq:E-graph-reserve}. The cross-stage inequality follows from item~\ref{it:E-columns}, fixed before the ratios. Since $\epsilon S\le1\le C_{\rm loc}$, the averaged remainder constant is at most $K$. In the notation $\mathbf y=\mathsf S_L\mathbf x$, the resulting inequalities are
+\begin{equation*}
+ |\mathbf u-T_m\mathbf y|_1\le \varepsilon_L(|\mathbf x^\circ|_1+r),\qquad
+ r'\le K|\mathbf y^\circ|_1+\varepsilon_L r,\qquad r\le S|\mathbf x^\circ|_1.
+\end{equation*}
+Since $|\mathbf x|_1\le|\mathsf S_L\mathbf x|_1\le L^d|\mathbf x|_1$, the first two conditions in~\eqref{eq:E-graph-reserve} imply
+\begin{equation*}
+ |\mathbf y|_1\le2K|\mathbf u|_1,\qquad |\mathbf u|_1\le2K|\mathbf y|_1,
+ \qquad |\mathbf y^\circ|_1\le2K|\mathbf u^\circ|_1.
+\end{equation*}
+For example, apply $T_m^{-1}$ and use
+$2K|\mathbf u-T_m\mathbf y|_1\le|\mathbf y^\circ|_1$ to absorb the error; the same argument on the nonconstant subspace gives the last bound. Moreover $\varepsilon_L r\le K|\mathbf y^\circ|_1$, so
+\begin{equation*}
+ r'\le2K|\mathbf y^\circ|_1\le4K^2|\mathbf u^\circ|_1
+ \le C^{\rm col}_{J_m}|\mathbf u^\circ|_1.
+\end{equation*}
+The linear map $\mathbf x\mapsto\mathbf u=\mathsf M_m\mathbf x$ is injective by $|\mathbf x|_1\le S|\mathbf u|_1$, hence invertible in finite dimension. Let $\widetilde g_m(\mathbf x)$ denote the remainders just constructed for the fine coordinate $\mathbf x$. Define the new graph by $g_m(\mathbf u)=\widetilde g_m(\mathsf M_m^{-1}\mathbf u)$. The last display is its required graph bound at level~$m$. The two coefficient estimates of~(i) now follow; property~(ii) is inherited from the symmetric construction. In particular the inverse estimate has no factor $L^d$: $\mathsf S_L^{-1}$ has norm at most one.
+
+For the unit, the primary extraction is exact, $T_m$ fixes it and its nonconstant coordinate is zero. All the preceding remainder bounds are then zero, and the unit is sent to $L^d\mathbf1$ with zero remainders. Finally, when two fine graphs differ by at most $\tau S|\mathbf x|_1$ in the remainder norm, the Lipschitz estimate above and rebasing by the inverse bound of~(i) give a coarse difference at most $\tfrac12\tau C^{\rm col}_{J_m}|\mathbf u|_1$: the two contributions are the changed remainder at fixed input and the changed input coordinate, each bounded by $\tau/4$ using~\eqref{eq:E-graph-reserve}. This is the graph contraction used in Lemma~\ref{lem:E-fixed-level}.
+\end{proof}

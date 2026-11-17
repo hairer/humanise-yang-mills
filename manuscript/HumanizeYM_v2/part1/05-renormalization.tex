@@ -1,0 +1,340 @@
+
+\section{The renormalization group}\label{sec:renormalization}
+
+This section defines the block map, the coordinates of the effective densities and their norms, and states the inductive step, the multiscale theorem and the two ultraviolet results built on them. Fix $\blockpenalty>0$. Throughout we use the common choices of Sections~\ref{sec:partII-A}--\ref{sec:partII-E}, made once for the group realization and the penalty in the order of Section~\ref{sec:constants}; constants may depend on these choices, and further dependence is stated where it occurs.
+
+\subsection{Scales and the block map}\label{sec:block-map}
+
+With odd ratios $\ell_m\ge3$, set
+\begin{equation}\label{eq:I12-levels}
+D_0=1,\qquad D_{m+1}=\ell_mD_m,\qquad a_m=D_m^{-1},\qquad s_m=\log D_m\,.
+\end{equation}
+Level~$m$ has spacing~$a_m$, and blocking passes from level~$m+1$ to level~$m$; the level-$m$ torus has side $L_pD_m$ in lattice units and $L_p$ in physical units. The cutoff sequence of the family is $D_N$. Each level carries the stage $J_m$ of Section~\ref{sec:closes}. The endpoint coupling $\bar\beta>1$ is chosen large (item~7 of Table~\ref{tab:constant-choices}), and
+\begin{align}\label{eq:I12-scales}
+\refbeta_m&=\bar\beta+\slope s_m,&
+\cutoffsize_m&=\exp\bigl((\log\log\refbeta_m)^2\bigr),&
+t_m&=\refbeta_m^{-1/2}\cutoffsize_m,\\
+B_m&=\lceil(\log\refbeta_m)^2\rceil,&
+\epsilon_m^{\rm reg}&=\refbeta_m^{-11/10},&
+\epsilon_m^{\rm for}&=e^{-(\cutoffsize_m)^{1/5}}\,.\label{eq:I12-scales-b}
+\end{align}
+The reference coupling $\refbeta_m$ follows the leading running slope; $t_m$ separates small from large plaquette fields; $B_m$ is the radius of the support weights; and $\epsilon_m^{\rm reg}$, $\epsilon_m^{\rm for}$ are the bounds kept by the induction for the regular and forced activity sums (Section~\ref{sec:closes} explains these sizes). They depend on the reference coupling, so they stay fixed as the actual coupling varies in the band $\mathfrak B_m=[\refbeta_m/2,2\refbeta_m]$. The physical periods $L_p$ are strictly increasing multiples of four, every positive integer divides $L_p$ for infinitely many~$p$, and $L_pD_m\ge100(B_m+1)$. At stage~$j$, $\mathfrak q_j$ is the derivative order, $\varpi_j$ the spatial power, $\sigma_j$ the support exponent and $\omega_j^{\rm RG}\ge0$ the coupling drift bound (Section~\ref{sec:constants}).
+
+At a step $m+1\to m$, the fine links $U$ and coarse links $V$ live on $\Lambda_{L_pD_{m+1}}$ and $\Lambda_{L_pD_m}$; put $j=J_{m+1}$, $\ell=\ell_m$ and $\mathbb B_R=\{-R,\ldots,R\}^4$. Fine transports between two coarse endpoints are compared after expressing them in the same frames. A frame is a gauge transformation $h_{y,z}\in G$ at each fine site $\ell y+z$ of the patch of radius $(j+3)\ell$ around $\ell y$, built from parallel transports in the patch (Definitions~\ref{def:D20a}--\ref{def:D21}). For a coarse edge $e=(y,a)$ the framed straight connector is
+\begin{equation}\label{eq:I12-framed-connector}
+Y_{e,z}=h_{y,z}\left(\prod_{r=0}^{\ell-1}U(\ell y+z+re_a,a)\right)h_{y+e_a,z}^{-1}\,,
+\end{equation}
+the fine transport from $\ell y+z$ to $\ell(y+e_a)+z$ in the frames at its ends. With $\operatorname{Unif}$ the uniform probability on a box and $*j$ the $j$-fold convolution, the averaging weights and the predictor are
+\begin{equation}\label{eq:I12-predictor}
+\begin{gathered}
+w_z^{\rm av}=\bigl(\operatorname{Unif}(\mathbb B_{(\ell-1)/2})\bigr)^{*j}(z),\qquad \overline Y_e=\sum_zw_z^{\rm av}Y_{e,z}\,,\\
+Q_e^{\rm pred}=\operatorname*{argmin}_{u\in G}\sum_z w_z^{\rm av}\wilsonterm(Y_{e,z}u^{-1})=\operatorname*{argmin}_{u\in G}\|\overline Y_e-u\|_{\rm F}\,.
+\end{gathered}
+\end{equation}
+The second form holds because $\wilsonterm(Yu^{-1})=(2n_G)^{-1}\|Y-u\|_{\rm F}^2$ for unitary $Y,u$: the predictor is the point of~$G$ nearest to the weighted average of the connectors, an average of group variables taken through the ambient matrices. On a good patch the connectors lie near one another, and this branch, on which the minimizer is unique, is used when the minimum lies below a fixed cutoff. Where the frame test or the predictor test fails, the kernel chooses at random, an axial frame from a finite list or a single connector $Y_{e,z}$ with probability $w^{\rm av}_z$; these branches complete the kernel on the remaining configurations (Section~\ref{sec:partII-B} gives the decision rules, summarized in Table~\ref{tab:B-branches} and Figure~\ref{fig:B-predictor}). A tag $\alpha_{\rm tag}$ records these discrete choices and nothing else: for each coarse site a frame label $(z,o)$, an offset $z\in\mathbb B_{(j+3)\ell}$ and an order~$o$ of the four axes, and for each coarse edge an offset $z\in\mathbb B_{(j+3)\ell}$ selecting a connector; on the minimizing branches the label is drawn uniformly and does not affect the kernel. Tags are drawn with probabilities
+\begin{equation}\label{eq:I12-tag-mass}
+\lambda^{\rm tag}(U,\alpha_{\rm tag})\ge0,\qquad
+\sum_{\alpha_{\rm tag}}\lambda^{\rm tag}(U,\alpha_{\rm tag})=1\,.
+\end{equation}
+Given $U$ and the tag, the coarse links are independent, each concentrated within about $(\blockpenalty\beta)^{-1/2}$ of its predictor, with the normalized density $q_\gamma(u)=e^{-\gamma\wilsonterm(u)}/\int_Ge^{-\gamma\wilsonterm}\,dh$; the block penalty plays the role of the smearing parameter of soft block-spin transformations.
+
+\begin{definition}[Exact block map]\label{def:D04}
+For fine links $U$ and coarse links $V$, define
+\begin{align*}
+\blockkernel{m}_\beta(U,V)
+&=\sum_{\alpha_{\rm tag}}\lambda^{\rm tag}(U,\alpha_{\rm tag})
+\prod_{e\ {\rm coarse}}q_{\blockpenalty\beta}\bigl(V_eQ_e^{\rm pred}(U,\alpha_{\rm tag})^{-1}\bigr),\\
+(\blockmap{m}_\beta f)(V)&=\int\blockkernel{m}_\beta(U,V)f(U)\,dU\,,
+\end{align*}
+with probability Haar measures on both link sets.
+\end{definition}
+
+For fixed $U$ and tag, right invariance of Haar measure makes each coarse factor integrate to one; summing the tag masses gives $\int\blockkernel{m}_\beta(U,V)\,dV=1$. Hence, for integrable~$f$,
+\begin{equation}\label{eq:I12-partition-preservation}
+\int(\blockmap{m}_\beta f)(V)\,dV=\int f(U)\,dU\,:
+\end{equation}
+the map integrates one scale exactly and keeps the partition integral. Branches, measurability and symmetries of the kernel are proved in Section~\ref{sec:partII-B}.
+
+Probabilistically, a block step is the following experiment. Let $U$ have law $f(U)\,dU/\int f$ for an integrable $f\ge0$ with $\int f>0$; draw a tag with probabilities $\lambda^{\rm tag}(U,\cdot)$; and put $V_e=R_eQ_e^{\rm pred}(U,\alpha_{\rm tag})$, where the $R_e$ have density $q_{\blockpenalty\beta}$ and are independent of each other and of $(U,\alpha_{\rm tag})$. The pair $(U,V)$ then has law $f(U)\blockkernel{m}_\beta(U,V)\,dU\,dV/\int f$, and by Fubini the law of~$V$ has density $\blockmap{m}_\beta f/\int f$ with respect to Haar measure. Exactness refers to this identity, which includes every branch of the kernel. It does not mean that the coarse density is again a Wilson density; Section~\ref{sec:density} gives the coordinates in which it is written.
+
+\subsection{The density and its norms}\label{sec:density}
+
+The density produced by the integrations records four things: the leading curvature action with its running coupling, the field-independent scalar accumulated so far, small local corrections on small-field supports, and the contributions of large-field regions. At level~$m$ write $\Lambda=\Lambda_{L_pD_m}$. The flagged sites $\flags_m(U)$, or large-field sites, are the sites incident to a plaquette whose chord exceeds~$t_m$; a support is healthy, or small-field in the sense of Ba\l{}aban, if it contains none. Flags are gauge invariant, because plaquette chords are: the transform of the identity configuration in Section~\ref{sec:wilson} has no flagged site, however far its links are from the identity. A regular activity $E_i^{\rm reg}$ is a Borel real gauge-invariant function, local on its support $X_i$, anchored at $o_i\in X_i$ and vanishing at the flat configuration; it is used only on healthy supports. A forced activity $K_i^{\rm for}$, one of the large-field polymer activities, is local on its support $Y_i$ and carries a nonempty inventory $I_i\subset Y_i$ of flagged sites; it vanishes off its eligibility event
+\begin{equation}\label{eq:I12-forced-eligibility}
+\mathcal E_i^{\rm elig}=\{U:Y_i\cap\flags_m(U)=I_i\}\cap\mathcal E_i^{\rm extra},\qquad
+K_i^{\rm for}(U)=0\quad(U\notin\mathcal E_i^{\rm elig})\,.
+\end{equation}
+The first condition fixes exactly which sites of $Y_i$ are flagged. The extra event is a fixed Borel gauge-invariant test supplied with the activity, which reads only links with both endpoints in $Y_i$ and the flags in~$Y_i$; it distinguishes local alternatives with the same support and inventory. The activity families are countable.
+
+The path action carries the kinetic coefficient and the quadratic corrections generated by integration. At level~$m$ abbreviate the clipping constants and relaxation length of item~4 of Table~\ref{tab:constant-choices},
+\begin{equation*}
+c_{\rm dir}=c_{{\rm dir},J_m},\qquad c_{\rm lin}=c_{{\rm lin},J_m},\qquad 0<16c_{\rm lin}<c_{\rm dir}\le\min(\gamma_{J_m},1),\qquad R^{\rm rel}=R_{J_m}^{\rm rel}\,,
+\end{equation*}
+where $\gamma_j>0$ is half a uniform lower bound for the free effective plaquette forms of Lemma~\ref{lem:B2}. Distances are periodic maximum-coordinate distances in lattice units: on a torus of side~$n$, $\operatorname{dist}(x,y)=\min_{z\in n\Z^4}|\tilde x-\tilde y+z|_\infty$ for lifts $\tilde x,\tilde y\in\Z^4$. Set
+\begin{align}\label{eq:I12-clipping}
+\operatorname{clip}_{t}(r)&=
+\begin{cases}c_{\rm dir}r^2/2,&r\le t,\\c_{\rm lin}tr,&r>t,\end{cases}\notag\\
+\chi^{\rm rel}_{m,x}(U)&=\mathbf1\!\left\{
+\chord(U_{y;ab})\le t_m e^{\operatorname{dist}(x,y)/R^{\rm rel}}
+\text{ for every }y,a<b\right\}\,.
+\end{align}
+For each plaquette orientation $\mathfrak p=(a,b)$, let $\mathcal F_{\mathfrak p i}(U,x)$ be a curvature $\operatorname{proj}_{\g}(U_\square-U_\square^{-1})/2$, with the orthogonal projection for the metric of Definition~\ref{def:D01}, transported along a specified finite path to~$x$, and put $\mathcal L_{\mathfrak p}^{\rm path}(U,x)=\sum_i r_{\mathfrak p i}\mathcal F_{\mathfrak p i}(U,x)$, a smeared lattice curvature at~$x$. The action splits the effective kinetic form into a clipped part, quadratic below $t_m$ and linear beyond, and the remaining positive form, written as a sum of squares with one row per $(x,\mathfrak p)$; a row is switched off once some plaquette exceeds its distance-relaxed threshold, that is, when the \emph{relaxed threshold test} $\chi^{\rm rel}_{m,x}$ of~\eqref{eq:I12-clipping} vanishes. With $\mathfrak a_i^{(q)}(U,x)$, $q=2,3,4$, the fixed real invariant $q$-linear expressions in transported curvatures, each multiplied by the health indicator of its footprint (the union of its slot footprints and the anchor; Definition~\ref{def:D22}),
+\begin{align}\label{eq:I12-path-action}
+(\pathaction)^{\rm raw}_{N,m}(\beta,U)
+&=\beta\sum_{x,\mathfrak p}\left[
+\operatorname{clip}_{t_m}(\chord(U_{x;\mathfrak p}))
++\tfrac12\chi^{\rm rel}_{m,x}(U)|\mathcal L_{\mathfrak p}^{\rm path}(U,x)|^2\right]\notag\\
+&\quad+\beta\sum_{x,i}(\mathfrak a_i^{(3)}+\mathfrak a_i^{(4)})(U,x)
++\sum_{x,i}\mathfrak a_i^{(2)}(U,x),\\
+\pathaction_{N,m}(\beta,U)
+&=|\hypercubic|^{-1}\sum_{h\in\hypercubic}(\pathaction)^{\rm raw}_{N,m}(\beta,h^*U)\,,\notag
+\end{align}
+where $h^*U$ transports links by the lattice isometry~$h$. The path coefficients and multilinear expressions are independent of~$p$ (Definitions~\ref{def:D22}--\ref{def:D23}, Lemmas~\ref{lem:C1}--\ref{lem:C2}); the action is affine in~$\beta$,
+\begin{equation*}
+\pathaction_{N,m}(\beta,U)=\beta\,\partial_\beta\pathaction_{N,m}(U)+\pathaction_{N,m}(0,U)\,,
+\end{equation*}
+where, after the average over~$\hypercubic$, $\partial_\beta\pathaction_{N,m}$ collects the clipped plaquette terms, the row squares with their switches $\chi^{\rm rel}_{m,x}$ and the cubic and quartic terms, and $\pathaction_{N,m}(0,\cdot)$ the quadratic terms~$\mathfrak a_i^{(2)}$. The clip drops at $r=t$ from $c_{\rm dir}t^2/2$ to $c_{\rm lin}t^2$. Accordingly the density coordinates are Borel functions; derivatives are taken only on healthy configurations with the masks held fixed, so coupling derivatives never differentiate the flag boundary. The positive linear branch beyond the threshold is what the local large-field energy bound (Lemma~\ref{lem:B-D1}) uses.
+
+For these fixed path actions and thresholds, a \emph{representation} at level~$m$ is the datum
+\begin{equation}\label{eq:I12-representation}
+\rho=\bigl(\beta,v_{\rm sc},(X_i,o_i,E_i^{\rm reg})_i,
+(Y_i,I_i,\mathcal E_i^{\rm extra},K_i^{\rm for})_i\bigr)\,,
+\end{equation}
+with scalar normalization per site $v_{\rm sc}$ (a constant in the effective density, not the vacuum vector of Section~\ref{sec:phases}) and running coupling $\beta(\rho)=\beta$. The running coupling is thus a coordinate fixed by the choice of path action: the coefficient of the fixed function $\partial_\beta\pathaction_{N,m}$, whose quadratic part is normalized so that $\beta$ is the coefficient of the squared curvature at zero momentum at every level, while the quadratic terms~$\mathfrak a_i^{(2)}$ carry no curvature-square term (Lemma~\ref{lem:C2}). It is not read off from the whole density, which also contains $v_{\rm sc}$ and the activities. Let $\mathfrak F_m(U)$ be the set of finite $\mathfrak a\subset\N$ such that the supports $Y_i$, $i\in\mathfrak a$, are pairwise disjoint and $\bigcup_{i\in\mathfrak a}I_i=\flags_m(U)$: the exact covers of the flagged sites.
+
+\begin{definition}[Effective density]\label{def:D06}
+For a representation~$\rho$, put
+\begin{align*}
+\mathcal V_\rho(U)&=\pathaction_{N,m}(\beta,U)+\sum_i\mathbf1_{X_i\,\mathrm{healthy}}E_i^{\rm reg}(U)-v_{\rm sc}|\Lambda|,\\
+\density\rho(U)&=e^{-\mathcal V_\rho(U)}\sum_{\mathfrak a\in\mathfrak F_m(U)}\prod_{i\in\mathfrak a}K_i^{\rm for}(U)\,.
+\end{align*}
+\end{definition}
+
+If there are no flagged sites, $\mathfrak F_m(U)=\{\varnothing\}$ and the forced sum is one. Otherwise every flagged site lies in exactly one selected support, but the sum runs over all exact covers: one support may carry two flags in one term while two disjoint supports carry one flag each in another (Figure~\ref{fig:covers}). The local regularity of the activities and the restrictions on forced terms are Definitions~\ref{def:D24}--\ref{def:D25}.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[x=0.5cm,y=0.5cm,font=\small]
+\foreach \dx/\lab in {0/(a),9/(b),18/(c)}{
+ \begin{scope}[shift={(\dx,0)}]
+ \draw[gray!40] (0,0) grid (7,4);
+ \node at (3.5,-0.8) {\lab};
+ \end{scope}}
+\draw[thick,paperlink,rounded corners=2pt] (0.6,0.6) rectangle (6.4,3.4);
+\draw[dashed,gray,rounded corners=2pt] (0.2,0.2) rectangle (6.8,3.8);
+\draw[thick,paperlink,rounded corners=2pt] (9.6,0.6) rectangle (12.4,3.4);
+\draw[thick,paperlink,rounded corners=2pt] (13.6,0.6) rectangle (15.4,3.4);
+\draw[thick,red!70!black,rounded corners=2pt] (18.6,0.6) rectangle (22.4,3.4);
+\draw[thick,red!70!black,rounded corners=2pt] (21.6,1.1) rectangle (24.4,2.9);
+\foreach \dx in {0,9,18}{\fill (\dx+2,2) circle (4pt); \fill (\dx+5,2) circle (4pt);}
+\end{tikzpicture}
+\caption{Exact covers of two flagged sites (dots). (a) One support carries both flags; the dashed line marks the larger region its eligibility test inspects. (b) Two disjoint supports carry one flag each. Both selections occur in the sum of Definition~\ref{def:D06}, which does not choose a canonical cover. (c) Overlapping supports are not a cover.}\label{fig:covers}
+\end{figure}
+
+For a link $e$ let $e^-$ be its initial site. The left derivative $D^L_{\dot{\mathcal A}}$ differentiates the increments $U_e\mapsto e^{t\dot{\mathcal A}_e}U_e$, with $\dot{\mathcal A}_e\in\g$ normed by Definition~\ref{def:D01}.
+
+\begin{definition}[Local derivative seminorm]\label{def:D05a}
+For a regular activity anchored at $o_i$, set
+\begin{equation*}
+\|E_i^{\rm reg}\|_m=
+\sup_{0\le q\le\mathfrak q_{J_m}}\ \sup_{U,\dot{\mathcal A}_1,\ldots,\dot{\mathcal A}_q}
+\bigl|D^L_{\dot{\mathcal A}_1}\cdots D^L_{\dot{\mathcal A}_q}E_i^{\rm reg}(U)\bigr|\,,
+\end{equation*}
+over configurations healthy on $X_i$ and directions with $|(\dot{\mathcal A}_k)_e|\le t_m\bigl(1+\operatorname{dist}(e^-,o_i)\bigr)^{\varpi_{J_m}}$, $1\le k\le q$.
+\end{definition}
+
+The seminorm measures ordered local derivatives in units of the permitted field size. For a support~$X$, let $\cover_{B_m}(X)$ be the least number of radius-$B_m$ lattice balls with connected union covering~$X$; the exponential weight below penalizes supports that need many such balls.
+
+\begin{definition}[Weighted activity sums]\label{def:D05b}
+For nonnegative majorants $e_i^{\rm maj}\ge\|E_i^{\rm reg}\|_m$ and $k_i^{\rm maj}\ge\sup_U|K_i^{\rm for}(U)|$, define
+\begin{equation*}
+\mathcal E_m=\sup_x\sum_{o_i=x}e^{\sigma_{J_m}\cover_{B_m}(X_i)}e_i^{\rm maj},\qquad
+\mathcal K_m=\sup_x\sum_{x\in Y_i}e^{\sigma_{J_m}\cover_{B_m}(Y_i)}k_i^{\rm maj}\,.
+\end{equation*}
+\end{definition}
+
+The two sums are formed differently (Figure~\ref{fig:weighted-sums}). The regular sum at~$x$ counts the activities anchored at~$x$, whatever their supports, so each regular activity is counted once, at the site from which its derivative directions are weighted (Definition~\ref{def:D05a}). The forced sum at~$x$ counts every forced activity whose support contains~$x$, so the weight $e^{\sigma_{J_m}\cover_{B_m}(Y_i)}$ charges a large support at each of its sites; if $x$ is flagged, every activity that covers~$x$ in a term of Definition~\ref{def:D06} is counted there. Section~\ref{sec:partII-D} converts anchored bounds into containing-site bounds where needed, at the cost of the number of possible anchors of a support.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[x=0.5cm,y=0.5cm,font=\small]
+\foreach \dx/\lab in {0/{(a) regular sum at $x$},11/{(b) forced sum at $x$}}{
+ \begin{scope}[shift={(\dx,0)}]
+ \draw[gray!35,step=1] (0,0) grid (8,5);
+ \node at (4,-1) {\lab};
+ \end{scope}}
+\draw[thick,paperlink,rounded corners=2pt] (3.7,2.7) rectangle (7.3,4.3);
+\draw[thick,paperlink,rounded corners=2pt] (0.7,0.7) rectangle (4.3,3.3);
+\draw[thick,dashed,gray,rounded corners=2pt] (1.6,2.6) rectangle (4.4,5.4);
+\draw[thick,gray,fill=white] (2,5) circle (3.5pt);
+\node[gray,left=2pt] at (1.6,5) {$o_i$};
+\draw[thick,paperlink,rounded corners=2pt] (14.7,1.7) rectangle (18.3,4.3);
+\draw[thick,paperlink,rounded corners=2pt] (11.7,2.6) rectangle (15.4,5.4);
+\draw[thick,dashed,gray,rounded corners=2pt] (16.6,-0.4) rectangle (19.4,1.4);
+\foreach \p in {(17,2),(18,4),(12,5),(18,1)}{\node[red!70!black] at \p {$\times$};}
+\foreach \dx in {0,11}{\fill (\dx+4,3) circle (4pt); \node[below right=0pt] at (\dx+4,3) {$x$};}
+\end{tikzpicture}
+\caption{The weighted sums of Definition~\ref{def:D05b} at a site~$x$. (a) The regular sum counts the activities anchored at~$x$ (solid supports), whatever their extent; the dashed support contains~$x$ but is anchored at $o_i\ne x$ and is counted at~$o_i$. (b) The forced sum counts every activity whose support contains~$x$ (solid), whatever its inventory (crosses); overlapping supports both count, since the sum runs over activities, not covers. The dashed support does not contain~$x$.}\label{fig:weighted-sums}
+\end{figure}
+
+The induction keeps the bounds
+\begin{equation}\label{eq:I12-activity-caps}
+\mathcal E_m\le\epsilon_m^{\rm reg},\qquad \mathcal K_m\le\epsilon_m^{\rm for}\,.
+\end{equation}
+These numerical bounds do not by themselves define the classes on which the step acts. The Wilson start is the continuous curve
+\begin{equation}\label{eq:I12-Wilson-initialization}
+\beta\longmapsto\rho^{\rm W}_\beta,\qquad
+\beta(\rho^{\rm W}_\beta)=\beta,\qquad
+\density\rho^{\rm W}_\beta=e^{-\beta E^{\rm W}_{L_pD_N}}
+\quad(\beta\in\mathfrak B_N)\,,
+\end{equation}
+with scalar normalization zero (Lemma~\ref{lem:D3}). The \emph{admissible classes} consist of everything reachable from it. Let $\mathcal I_{N,p}=\{\rho^{\rm W}_\beta:\beta\in\mathfrak B_N\}$ and $\mathcal A_{N,N,p}=\mathcal I_{N,p}$. For $m<N$, a representation at level~$m$ belongs to $\mathcal A_{N,m,p}$ if it is obtained from some $\rho'\in\mathcal A_{N,m+1,p}$ with coupling in~$\mathfrak B_{m+1}$ by one block step of Section~\ref{sec:partII-D}: its path is $\pathaction_{N,m}$, its activities are produced by local subtraction, path replacement and fusion, its coupling is that of~$\rho'$ plus the one-loop coefficient $\alpha_{N,m}$ of Lemma~\ref{lem:C7} and a correction bounded by the first inequality of~\eqref{eq:D-retained}, and its density is the block integral of the density of~$\rho'$ (the precise conditions precede Lemma~\ref{lem:D2}). Membership is a property of a single representation; in particular the classes contain the outputs of the step construction on continuous curves and their restrictions to closed subintervals. Let $\mathcal R_{N,m,p}\subset\mathcal A_{N,m,p}\times\mathcal A_{N,m+1,p}$ be the set of the corresponding output--input pairs. Every member satisfies Definitions~\ref{def:D24}--\ref{def:D25}, the path bounds of Lemmas~\ref{lem:C1}--\ref{lem:C2} and~\eqref{eq:I12-activity-caps} (Lemma~\ref{lem:D3} at the Wilson start, Lemmas~\ref{lem:D1} and~\ref{lem:D2} at later levels). A curve $u\mapsto\rho_u$ in $\mathcal A_{N,m,p}$ is continuous (Definition~\ref{def:D25a}) if its supports, anchors, inventories and extra tests do not depend on~$u$, its coupling and scalar normalization are continuous, and, as $u\to u_0$, the differences of regular derivatives on healthy configurations and of forced values in supremum norm admit majorants whose weighted sums tend to zero.
+
+\subsection{The inductive step}\label{sec:inductive-step}
+
+Exact integration removes one scale. Extracting its marginal curvature-square term into the coupling leaves a bounded drift error and returns a density in the next admissible class.
+
+\begin{theorem}[RG. One step]\label{prop:RG}
+For every $N,p$, $m<N$, reals $u_0\le u_1$ and continuous $\rho'_u\in\mathcal A_{N,m+1,p}$ with $\beta'_u=\beta(\rho'_u)\in\mathfrak B_{m+1}$ for all $u\in[u_0,u_1]$, there is a continuous $\rho_u\in\mathcal A_{N,m,p}$ with $(\rho_u,\rho'_u)\in\mathcal R_{N,m,p}$ and, for every $u\in[u_0,u_1]$ and coarse configuration $V$,
+\begin{align*}
+\density\rho_u(V)&=(\blockmap{m}_{\beta'_u}\density\rho'_u)(V),\\
+\beta(\rho_u)&=\beta'_u-\slope\log\ell_m+e_u,
+\qquad |e_u|\le\omega_{J_{m+1}}^{\rm RG}\,.
+\end{align*}
+\end{theorem}
+
+\emph{Idea of the proof} (Sections~\ref{sec:partII-B}--\ref{sec:partII-D}; the proof follows Lemma~\ref{lem:D2}).
+\begin{enumerate}[label=\textup{Step \arabic*.},leftmargin=4.2em,nosep]
+\item The density identity is exact because the output coordinates rewrite the block-integrated density on every configuration (Lemma~\ref{lem:D5}); by~\eqref{eq:I12-partition-preservation} the partition integral is kept. Approximation enters only the coupling drift and the activity estimates.
+\item On small fields, gauge fixing in a rooted block-tree gauge and the stationary background turn the local integral into a Gaussian integral with its determinant and Haar-coordinate factors; the large-field lower bound (Lemma~\ref{lem:B-D1}) supplies suppression of the forced terms.
+\item Classical fourth-order matching fixes the local terms, and the background curvature-square coefficient of the one-loop action, assembled from the inherited quadratic loop term, the fluctuation determinant and the Haar Jacobian, gives the change $-\slope\log\ell_m$ up to a stage-bounded error (Lemma~\ref{lem:C7}).
+\item The local expansion, the contraction of inherited terms and the five-torus localization (Lemma~\ref{lem:five-torus}) give the regular bound; forced fusion gives the forced bound; the scalar coupling reset absorbs the residual kinetic coefficient (Lemma~\ref{lem:C8}).
+\end{enumerate}
+The bound $\omega_j^{\rm RG}$ depends only on the stage, not on $N,p$, the interval or the curve. Since $\refbeta_m=\refbeta_{m+1}-\slope\log\ell_m$, a step changes $\beta-\refbeta$ by $e_u$ only.
+
+\subsection{Multiscale trajectories}\label{sec:trajectories}
+
+A trajectory is a tuple $\rho_{N,p,m}\in\mathcal A_{N,m,p}$, $0\le m\le N$, with $\rho_{N,p,N}\in\mathcal I_{N,p}$ and $(\rho_{N,p,m},\rho_{N,p,m+1})\in\mathcal R_{N,m,p}$ for $m<N$; write $\beta_{N,p,m}=\beta(\rho_{N,p,m})$. The bare coupling is selected by shooting. Put $\mathfrak T_m=[\bar\beta+\tfrac{\slope}2s_m,\ \bar\beta+2\slope s_m]\subset\mathfrak B_m$, so that $\mathfrak T_0=\{\bar\beta\}$. Start with the Wilson curve on $\mathfrak T_N$. Suppose a closed parameter interval has level-$(m+1)$ couplings in $\mathfrak T_{m+1}$, taking its end values at its endpoints. Since $s_{m+1}=s_m+\log\ell_m$ and $|e_u|\le\omega^{\rm RG}_{J_{m+1}}\le\tfrac{\slope}4\log\ell_m$ (item~5 of Table~\ref{tab:constant-choices}), the output couplings at the two endpoints satisfy
+\begin{equation*}
+\beta\le\bar\beta+\tfrac{\slope}2s_m-\tfrac{\slope}4\log\ell_m<\min\mathfrak T_m,\qquad
+\beta\ge\bar\beta+2\slope s_m+\tfrac{3\slope}4\log\ell_m>\max\mathfrak T_m\,.
+\end{equation*}
+The intermediate value theorem gives a closed subinterval whose couplings lie in $\mathfrak T_m$ and take its end values at its endpoints. After $N$ steps the level-zero coupling is $\bar\beta$. The couplings are chosen this way for all $N,p$ before any sequence of volume indices is prescribed. Trajectories for different cutoffs thus share the coupling~$\bar\beta$ at level zero; their scalar normalizations and activities need not agree (Figure~\ref{fig:two-cutoffs}), and Proposition~\ref{prop:fixed-level} below compares them at a fixed level as the cutoff grows.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[x=0.95cm,y=1cm,>=Stealth,font=\small]
+\draw[dashed,gray] (6,-0.45) -- (6,1.6) node[above,font=\footnotesize] {level $m$};
+\foreach \i in {0,...,9}{\draw[->,gray!80] (\i+0.12,0) -- (\i+0.88,0);}
+\foreach \i in {3,...,9}{\draw[->,gray!80] (\i+0.12,1.1) -- (\i+0.88,1.1);}
+\foreach \i in {0,...,10}{\fill (\i,0) circle (1.6pt);}
+\foreach \i in {3,...,10}{\fill (\i,1.1) circle (1.6pt);}
+\node[left] at (2.9,1.1) {cutoff $N$: $\rho^{\rm W}_{\beta_{N,p}}$};
+\node[left] at (-0.1,0) {cutoff $N'$: $\rho^{\rm W}_{\beta_{N',p}}$};
+\node[right] at (10.1,1.1) {$\beta_{N,p,0}=\bar\beta$};
+\node[right] at (10.1,0) {$\beta_{N',p,0}=\bar\beta$};
+\end{tikzpicture}
+\caption{Trajectories for two cutoffs $N<N'$ at one volume, from the Wilson start at the cutoff (left) to level zero (right); each arrow is a block step, and levels are aligned vertically. Both reach the coupling~$\bar\beta$ at level zero; their scalar normalizations and activities need not agree. At a fixed level~$m$ (dashed), Proposition~\ref{prop:fixed-level} states convergence of the couplings and activities as the cutoff tends to infinity, subject to cutoff continuity in the activity norms and convergence of the path drift.}\label{fig:two-cutoffs}
+\end{figure}
+
+\begin{theorem}[MT. Multiscale trajectory]\label{prop:MT}
+There are bare couplings $\beta_{N,p}$ and trajectories $(\rho_{N,p,m})_{m=0}^N$, for all $N,p\in\N$, with $\rho_{N,p,N}=\rho^{\rm W}_{\beta_{N,p}}$ and $\beta_{N,p,N}=\beta_{N,p}$, satisfying
+\begin{gather*}
+\beta_{N,p,0}=\bar\beta,\qquad \beta_{N,p,m}\in\mathfrak B_m\quad(0\le m\le N),\\
+\density\rho_{N,p,m}=\blockmap{m}_{\beta_{N,p,m+1}}\density\rho_{N,p,m+1}\quad(m<N)\,.
+\end{gather*}
+For every $\varepsilon>0$, some $m_0(\varepsilon)$ satisfies
+\begin{equation*}
+|\beta_{N,p,m}-\slope s_m|\le\varepsilon s_m
+\qquad(N\ge m\ge m_0,\ p\in\N)\,.
+\end{equation*}
+\end{theorem}
+
+The proof is the shooting argument above (Section~\ref{sec:partII-E.1}, Lemmas~\ref{lem:E1.1}--\ref{lem:E1.2}). Fix these trajectories for all later constructions. The drift bound of Theorem~\ref{prop:RG} holds on every adjacent pair, and all their integrals equal $Z_{L_pD_N,\beta_{N,p}}$ by~\eqref{eq:I12-partition-preservation} and the Wilson start. Summing the drift from the fixed endpoint gives
+\begin{equation}\label{eq:I12-drift-sum}
+|\beta_{N,p,m}-\refbeta_m|\le\sum_{i=0}^{m-1}\omega_{J_{i+1}}^{\rm RG}\,.
+\end{equation}
+Item~5 of Table~\ref{tab:constant-choices} bounds the sum by $(\slope/4)s_m$, which also keeps the couplings in $\mathfrak B_m$. Its stronger bound $\omega_{J_{i+1}}^{\rm RG}\le J_{i+1}^{-2}\log\ell_i$ makes the sum $o(s_m)$: split it at a fixed level and bound the tail by $\sup_{i\ge i_0}J_{i+1}^{-2}$ times~$s_m$. Since $J_i\to\infty$ and $s_m\to\infty$, the finite initial sum and $\bar\beta$ disappear after division by~$s_m$, uniformly in $N\ge m$ and~$p$. As $\omega_j^{\rm RG}\ge1$, the same bound forces $\log\ell_m\ge J_{m+1}^2\to\infty$: the block ratios must grow, and the level choices also give $\log\ell_m/s_m\to0$. The step construction of Theorem~\ref{prop:RG} is fixed once on whole continuous curves (Lemma~\ref{lem:D2}); the trajectories it produces from $\rho^{\rm W}_\beta$, and their restrictions, form the \emph{specified recursion}, to which the trajectories of Theorem~\ref{prop:MT} belong. Different cutoffs are compared through the following limit.
+
+\begin{proposition}[Fixed-level convergence]\label{prop:fixed-level}
+For fixed $p$ and $m$, as $N\to\infty$ along the full sequence, the couplings $\beta_{N,p,m}$ of
+Theorem~\ref{prop:MT} converge, and the activity coordinates of $\rho_{N,p,m}$ converge in the
+weighted spaces $\mathcal X_{m,p}$ of~\eqref{eq:D-common-norm}. No convergence of the scalar normalizations is asserted.
+\end{proposition}
+
+\emph{Idea of the proof} (Lemmas~\ref{lem:D-cutoff-continuity} and~\ref{lem:D-fixed-level}). The truncated-coordinate comparison and uniqueness argument require cutoff continuity in the full activity norms and convergence of the path drift; those inputs remain open. The argument uses geometric truncation, not compactness of a ball in an infinite-dimensional space. The running-coupling coordinates lie in fixed compact intervals, so a diagonal argument gives subsequential limits. At a fixed higher level $k$, replace the activity coordinate by zero and run the same maps down to level~$m$: the error is at most $(8g_*)^{k-m}$ with $g_*=1/128$, uniformly in the cutoff, while the truncated coordinates converge by the cutoff compatibility of finitely many step maps (Lemma~\ref{lem:D-cutoff-continuity}). Letting $k\to\infty$ gives the activity limits. Two limits have the same endpoint $\bar\beta$, and their distance $\mathfrak d_\infty$ satisfies $\mathfrak d_\infty\le8g_*\mathfrak d_\infty$, so they coincide.
+
+\subsection{Local fields under blocking}\label{sec:marked}
+
+Blocking a density that carries one insertion returns a density of the same form: the unmarked density times a local insertion with new coefficients, plus regular remainders with vanishing Taylor coefficients through order~$d$ and forced remainders attached to large fields. The coefficients evolve linearly, and the insertions of Definition~\ref{def:D08} are normalized by prescribing them at the reference level. Choose the reference level $\reflevel{d}$ with $J_{\reflevel{d}}\ge d+3$ and $\mathfrak q_{J_m}\ge d+1$, $\varpi_{J_m}\ge d$ for $m\ge\reflevel{d}$ (Lemma~\ref{lem:E2.1}). Fix $N\ge\reflevel{d}$; starting from a fine-cutoff coefficient vector $\mathbf v\in V_d$, the marked density at the origin is initialized and blocked by
+\begin{align}\label{eq:I12-marked-evolution}
+H^{\rm ins}_{N,p,N;d}(\mathbf v;U)
+&=\density\rho_{N,p,N}(U)\,
+\localsection{d}[t_N^{-\factorcount}\mathbf v](0;U),\\
+H^{\rm ins}_{N,p,m;d}(\mathbf v)
+&=\ell_m^d\blockmap{m}_{\beta_{N,p,m+1}}
+H^{\rm ins}_{N,p,m+1;d}(\mathbf v)
+\quad(\reflevel{d}\le m<N)\,.
+\end{align}
+For fixed $N,p,d$, the transfer construction chooses coefficient vectors $\mathbf x_m(\mathbf v)$ and regular and forced remainders $R_{m,i}^{\rm reg}(\mathbf v)$, $Q_{m,i}^{\rm for}(\mathbf v)$, all linear in~$\mathbf v$. Write $\mathbf x_m=x_{m,0}\mathbf1+\mathbf x_m^\circ$ and $\rho_m=\rho_{N,p,m}$. The regular remainders have supports $Z_{m,i}$ containing the origin. Their sum and the forced remainder are
+\begin{align}\label{eq:I12-marked-remainders}
+\mathcal R_m^{\rm reg}(\mathbf v;U)
+&=\sum_i\mathbf1_{Z_{m,i}\,\mathrm{healthy}}R_{m,i}^{\rm reg}(\mathbf v;U),\notag\\
+\mathcal R_m^{\rm for}(\mathbf v;U)
+&=e^{-\mathcal V_{\rho_m}(U)}\sum_{\mathfrak a\in\mathfrak F_m(U)}\sum_{i\in\mathfrak a}
+Q_{m,i}^{\rm for}(\mathbf v;U)\prod_{j\in\mathfrak a\setminus\{i\}}K_j^{\rm for}(U)\,,
+\end{align}
+with all unmarked quantities taken from~$\rho_m$. The marked density has the exact decomposition
+\begin{multline}\label{eq:I12-marked-representation}
+H^{\rm ins}_{N,p,m;d}(\mathbf v;U)=\density\rho_m(U)\left[
+x_{m,0}(\mathbf v)+\mathbf1_{\Sigma_d\,\mathrm{healthy}}
+\localsection{d}[t_m^{-\factorcount}\mathbf x_m^\circ(\mathbf v)](0;U)\right]\\
++\density\rho_m(U)\mathcal R_m^{\rm reg}(\mathbf v;U)
++\mathcal R_m^{\rm for}(\mathbf v;U)\,,
+\end{multline}
+with the stencil $\Sigma_d$ placed at the origin of the level-$m$ torus. If $10\operatorname{dist}(x,0)<L_pD_m$ for every $x\in Z_{m,i}$, the regular remainder $R_{m,i}^{\rm reg}$ has zero radial-jet Taylor coefficients through order~$d$; the forced remainders vanish outside their unmarked eligibility events (Lemmas~\ref{lem:E2.2}--\ref{lem:E2.2a}). The fixed decomposition selected there gives the terminal map of Definition~\ref{def:D08}, invertible by Lemma~\ref{lem:E2.1}:
+\begin{equation*}
+\mathbf x_N(\mathbf v)=\mathbf v,\qquad
+\mathbf x_{\reflevel{d}}(\mathbf v)=\mathsf Z_{N,p,d}\mathbf v\,.
+\end{equation*}
+The factor $\ell_m^d=(a_m/a_{m+1})^d$ uses the degree of the whole space $V_d$, and the terminal map accounts for the mixing between its weights. The unit identity $\mathbf x_m(a_N^d\mathbf1)=a_m^d\mathbf1$, proved with the transfer symmetries (Lemma~\ref{lem:E2.1a}), explains why the coefficient of the constant insertion is $a_{\reflevel{d}}^d\mathbf1$, although $V_d$ also contains polynomials of lower weight. With Theorem~\ref{prop:MT}, these insertions specify one Wilson family; each insertion is continuous, gauge invariant and local on its fixed stencil, and Theorem~\ref{prop:MT} at $m=N$ gives the volume-uniform slope $\slope>0$.
+
+\subsection{Uniform bounds and the fixed-volume limit}\label{sec:uv-limit}
+
+For a finite list $\boldsymbol l$ of pairs $(i,a)$, with $i$ a slot and $a$ an axis, the normalized differences and derivatives are
+\begin{equation*}
+\Delta_{\boldsymbol l}=\prod_{(i,a)\in\boldsymbol l}a_N^{-1}(\tau_{i,a}-1),\qquad
+\partial_{\boldsymbol l}=\prod_{(i,a)\in\boldsymbol l}\partial_{x_i^a}\,,
+\end{equation*}
+where $\tau_{i,a}$ shifts slot~$i$ forward by one lattice link. The torus separation of a lattice tuple is $\min_{i\ne j}\min_{z\in L_p\Z^4}|\hat y_i-\hat y_j+z|_\infty$, with value $+\infty$ for $n\le1$, and
+\begin{equation*}
+\Gen{n}=\{x:x_i^a\ne x_j^a\text{ for }i\ne j,\ a=1,\ldots,4\},\qquad
+\NoHit{L}{n}=\{x:x_i-x_j\notin L\Z^4\text{ for }i\ne j\}\,;
+\end{equation*}
+the last set excludes collisions on a torus of physical side~$L$. The first result bounds lattice correlations and their differences independently of the volume.
+
+\begin{proposition}[UB. Uniform difference bounds]\label{prop:UB}
+For every $v\in\mathcal T^n$, finite difference list~$\boldsymbol l$ and $r>0$, there are $B(v,\boldsymbol l,r)\ge0$ and $N_0(v,\boldsymbol l,r)$ such that, for every $N\ge N_0$, every~$p$ and every lattice tuple of torus separation at least~$r$,
+\begin{equation*}
+|\Delta_{\boldsymbol l}\latmoment_{N,p}(v;y)|\le B\,.
+\end{equation*}
+\end{proposition}
+
+\emph{Idea of the proof} (Section~\ref{sec:partII-E.2}). Choose an intermediate level whose physical blocks fit below the separation, so the insertions lie in distinct blocks. By the decomposition~\eqref{eq:I12-marked-representation}, at that level each insertion is a bounded local function plus small remainders, with bounds independent of $N$ and~$p$; differences of insertions are matched in a higher degree, their equation directions are removed, and the remaining coefficients are tested against a finite free comparison matrix, whose injectivity (Lemma~\ref{lem:E2-free-tests}) rests on the free positivity of Lemma~\ref{lem:G1.1}. The chessboard estimate then bounds the correlation by a product of reflected moments, schematically
+\begin{equation*}
+\Bigl|\Bigl\langle\prod_iO_i\Bigr\rangle\Bigr|\le\prod_i\Bigl\langle\prod_{g\in\mathcal G}gO_i\Bigr\rangle^{1/|\mathcal G|}
+\end{equation*}
+for $O_i$ localized in distinct blocks and $\mathcal G$ generated by the reflections in the block boundaries; each factor is independent of the volume. The reflected-moment constant is chosen before the intermediate level, and only the cutoff threshold depends on it.
+
+The second result removes the spacing at each fixed volume along the full sequence; Section~\ref{sec:tuning-convergence} displays the Cauchy argument.
+
+\begin{theorem}[UV. Fixed-volume limit]\label{prop:UV}\label{thm:UV}
+For every $p,n$ and $v\in\mathcal T^n$, there is $M^{\rm UV}_{p,v}\in C^\infty(\NoHit{L_p}{n})$ such that, for every finite~$\boldsymbol l$ and every $p$-admissible separated test~$f$,
+\begin{equation*}
+\lim_{N\to\infty}a_N^{4n}\sum_{y\in\Lambda_{L_pD_N}^n}f(\hat y)\Delta_{\boldsymbol l}\latmoment_{N,p}(v;y)
+=\int f(x)\partial_{\boldsymbol l}M^{\rm UV}_{p,v}(x)\,dx\,.
+\end{equation*}
+\end{theorem}
+
+\emph{Idea of the proof} (Lemmas~\ref{lem:E3.1}--\ref{lem:E3.2}). The Cauchy argument of Section~\ref{sec:tuning-convergence} gives convergence on $\bigcup_ma_m\Z^4$: the transferred correlations at a fixed level converge, and the stopping error $2F_0e^{-B_m/64}$, with $F_0$ independent of~$m$, compares them with the original ones. Proposition~\ref{prop:UB} extends convergence to all separated positions and identifies every derivative, also at moving points crossing the boundary of the chosen period cell.
+For $\boldsymbol l=\varnothing$ the left side is $\lim_N\latsmear_{N,p}(v;f)$, so the inner limits of Definition~\ref{def:D09} exist at every admissible volume; admissibility places the support of~$f$ inside $\NoHit{L_p}{n}$. The limiting kernel is periodic in each position and smooth away from periodic collisions, including where positions share coordinates. The thresholds may depend on~$p$.

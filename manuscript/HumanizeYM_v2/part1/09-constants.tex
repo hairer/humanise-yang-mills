@@ -1,0 +1,55 @@
+
+\section{Constants and order of choice}\label{sec:constants}
+
+The choices come in four groups. First fix the gauge group, the block penalty, the local sections and, for each stage, the constants that do not involve the block ratio. Next choose the block ratios, and then delay the entry into each stage until the coupling and the period satisfy its remaining inequalities. These choices determine the lattice family, with its couplings and insertions, before the volume subsequence~$\mathsf p$ is prescribed; only afterwards are the volume refinement and the continuum objects chosen. Table~\ref{tab:constant-choices} records the individual requirements in this order. At each stage there are finitely many inequalities; a later coupling threshold or entry level may be increased without changing the earlier data.
+
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+\setlength{\LTcapwidth}{\textwidth}
+\setlength{\abovecaptionskip}{3pt}
+\setlength{\belowcaptionskip}{3pt}
+\begin{longtable}{@{}p{0.035\textwidth}p{0.22\textwidth}p{0.71\textwidth}@{}}
+\caption{Choices in the order of dependence. Stage choices precede entry levels at each fixed~$j\ge4$.}\label{tab:constant-choices}\\
+\hline
+ & Choice & Dependence, requirements and purpose \\
+\hline
+\endfirsthead
+\multicolumn{3}{l}{Table~\ref{tab:constant-choices} (continued)}\\
+\hline
+ & Choice & Dependence, requirements and purpose \\
+\hline
+\endhead
+\hline
+\endfoot
+1 & \raggedright Gauge normalization; $\blockpenalty>0$ & Fix~$G$, its realization, probability Haar measure and the metric, then~$\dimG,\casimir,b_0,\slope$ as in Definition~\ref{def:D01}; $\slope>0$. All later choices use these data.\\[3pt]
+2 & \raggedright Frame and predictor cutoffs; axial factor & Depend on~$G$. On every patch the unique-minimizer branches of the block kernel are valid whenever their cutoff tests pass (Lemma~\ref{lem:B1}). On a radius-$R$ patch, the total link chord in an eligible axial frame is at most $a_{\rm ax}(2R+1)$ times the total plaquette chord, with $a_{\rm ax}\ge16$.\\[3pt]
+3 & \raggedright Bases, norms, local sections, stencils & Depend on~$G,d$; Taylor normalization, reality and~$\hypercubic$ covariance (Lemma~\ref{lem:A1}, Definitions~\ref{def:D07}--\ref{def:D08}).\\[3pt]
+4 & \raggedright Stage constants & Depend on items 1--3 and~$j$. Derivative orders~$\mathfrak q_j\ge6$, spatial powers~$\varpi_j\ge2$, support exponents~$\sigma_j=100$; the path weight $w_j^{\rm path}>0$ and the bound $A_j^{\rm path}>0$ on the weighted row, cubic and quartic sums of Lemma~\ref{lem:C1}. Fix the whole nondecreasing sequence~$K_j\ge1$ bounding the leading coefficient maps and their inverses, including the finite symmetry averages (before Lemma~\ref{lem:E1.1}); then nondecreasing column bounds $\colbound{j}\ge64K_{j+1}^2$, including derivative factorials and basis-recombination constants (item~\ref{it:E-columns} there), which bound the marked coefficient transfer (Lemma~\ref{lem:E2.2}).\\[3pt]
+ & & With $\gamma_j>0$ half a uniform lower bound for the free effective plaquette forms of Lemma~\ref{lem:B2}, for the top form and both incoming stages, choose clipping coefficients $0<16c_{{\rm lin},j}<c_{{\rm dir},j}\le\min(\gamma_j,1)$, so that the remaining free form has the positive row factor of Definition~\ref{def:D23}; the threshold of the relaxed threshold test grows through $e^{\operatorname{dist}/R_j^{\rm rel}}$ with $R_j^{\rm rel}w_j^{\rm path}\ge12$. With $d_j\ge0$ the ratio-independent one-loop bound of Lemma~\ref{lem:C7}, fix the drift bound $\omega_j^{\rm RG}\ge d_j+1$ (Lemma~\ref{lem:C8}). Orders, powers and support exponents are nondecreasing along levels, and orders and powers tend to infinity. All costs that may not depend on the ratio are now fixed.\\[3pt]
+5 & \raggedright Odd stage ratios $\ell_j^{\rm st}$ & Depend on items 1--4; nondecreasing, $\ell_j^{\rm st}\ge3$ and above every ratio threshold, including~$u_j$ of Lemma~\ref{lem:B5}. At $j=J_{m+1}$ and $\ell_m=\ell_j^{\rm st}$,
+\begin{gather*}
+\frac{\omega_j^{\rm RG}}{\log\ell_m}\le\min(\slope/4,j^{-2}),\\
+\frac{\log(1+A_j^{\rm path}+(w_j^{\rm path})^{-1}+\colbound{j}+R_j^{\rm rel}+\sigma_j)}{\log\ell_m}\le j^{-2},
+\end{gather*}
+which control the drift and the logarithmic stage costs relative to~$\log\ell_m$ (Theorems~\ref{prop:RG} and~\ref{prop:MT}). Also the graph and matching requirements~\eqref{eq:E-graph-reserve}--\eqref{eq:E-matching-choices}, the local marked error requirement of item~\ref{it:E-graph} before Lemma~\ref{lem:E1.1}, the ratio inequalities~\eqref{eq:J-stage-room} and the source comparison constants through~\eqref{eq:E-log-cost}; among them $\ell^2\ge C^{\rm tr}_{j,k}\zeta_j$ (Lemma~\ref{lem:B2}) and $C_j^{\rm pb}\ell^{-2}\le1/256$ (proof of Lemma~\ref{lem:D-cutoff-continuity}).\\[3pt]
+6 & \raggedright Exponents and coupling entry bounds & Depend on items 1--5. The positive antitone exponents~$\theta_j$ control the quadratic loop bound of item~9. The bounds~$\beta_j^{\rm ent}$ are lower bounds on the reference coupling whenever stage~$j$ is used. They meet the finite maximum of the remaining stage requirements, including those of Sections~\ref{sec:partII-G.2}, \ref{sec:partII-I.1} and~\ref{sec:partII-J}, the comparison entry bounds~\eqref{eq:E-Gaussian-entry} for each arity admitted at that stage, and the insertion-initialization bounds of item~\ref{it:E-birth}. They are chosen so that, at every level from stage entry on, $\ell_m\le\log\refbeta_m$ (item~\ref{it:E-ratio-log} before Lemma~\ref{lem:E1.1}) and $\max(\ell^{\rm st}_{J_m},\ell^{\rm st}_{J_m-1})\le\cutoffsize_m$, with both adjacent stage ratios at stage transitions and the finite coefficient-error thresholds of Lemma~\ref{lem:I-transfer} (used in Section~\ref{sec:partII-I.1} and~\eqref{eq:E-source-loss}).\\[3pt]
+7 & \raggedright $\bar\beta$, entry levels $m_j^{\rm ent}$, minimum periods $n_j^{\min}$ & Depend on items 1--6. The levels~$m_j^{\rm ent}$ delay the first use of stage~$j$; $n_j^{\min}$ are its minimum lattice periods. Choose $\bar\beta>1$ large enough for the initial coupling requirements, including $\bar\beta\ge2^{224}$, so that $\chi_m\le1/128$ in~\eqref{eq:D-coupling-coordinate}, and $t_m\le1$ at every level. Entry levels and periods satisfy the remaining level and geometric requirements, including the scale restrictions~\eqref{eq:E-marker-scales} and the comparison intervals~\eqref{eq:E-window}. For each incoming stage $j=J_{m+1}$, fix integers $v_j^{\rm per},h_j^{\rm per}\ge1$, depending only on the stage data, and require at every step and every~$p$
+\begin{equation*}
+L_pD_m\ge v_j^{\rm per}(1+B_m+B_{m+1})^{h_j^{\rm per}}\,,
+\end{equation*}
+which postponing stage entry achieves. The marked construction uses Lemma~\ref{lem:J-marked-costs}, with weight requirements~\eqref{eq:J-marked-weights} and entry requirements~\eqref{eq:J-entrance}; also the support-enlargement and occupancy requirements in the proof of Lemma~\ref{lem:J-lattice} and the regular marked weight inequalities before Lemma~\ref{lem:J-marked-costs}.\\[3pt]
+8 & \raggedright $J_m,\ell_m,D_m$, $a_m,L_p$, $\reflevel{d}$ & Depend on items 1--7. $D_0=1$, $D_{m+1}=\ell_mD_m$, $a_m=D_m^{-1}$, $s_m=\log D_m$, $\ell_m=\ell^{\rm st}_{J_{m+1}}$, $4\le J_m\le J_{m+1}\le J_m+1$, $J_m\to\infty$, $0<\theta_{J_m}\le J_m^{-1}$, $\log\ell_m\to\infty$, $\log\ell_m/s_m\to0$. Strictly increasing $L_p$ with $4\mid L_p$ and every positive integer dividing infinitely many~$L_p$; $L_pD_m\ge100(B_m+1)$ and $L_pD_{m+1}\ge100((J_{m+1}+3)\ell_m+1)$. $J_{\reflevel{d}}\ge d+3$, with $\mathfrak q_{J_m}\ge d+1$ and $\varpi_{J_m}\ge d$ for $m\ge\reflevel{d}$.\\[3pt]
+9 & \raggedright Derived level scales & Determined by earlier choices: equation~\eqref{eq:I12-scales}, $\mathfrak B_m=[\refbeta_m/2,2\refbeta_m]$ and $\Lambda_m^{\rm loop}=2(\cutoffsize_m)^{\theta_{J_m}}$, which bounds the weighted quadratic loop sum of Lemma~\ref{lem:C1}.\\[3pt]
+10 & \raggedright Actions, classes, recursion, trajectories, couplings; width~$w_{\rm tun}$ & Depend on items 1--9: the path actions, the admissible classes, the specified recursion and its trajectories for every finite~$N,p$, with the common endpoint (Theorem~\ref{prop:MT}). Proposition~\ref{prop:fixed-level} states the fixed-level convergence, conditional on the cutoff-continuity and path-drift inputs discussed there; Remark~\ref{prop:endpoint-tuning} records the analytic dependence on the endpoint, not used later.\\[3pt]
+11 & \raggedright Marked transfers, terminal maps, insertions & Depend on items 1--10; reference normalization (Definition~\ref{def:D08}). Fixed before any volume sequence.\\[3pt]
+12 & \raggedright $\mathsf p$, then $\mathsf q,P,S,F_d,\partial_a,\mathcal L$ & An arbitrary strictly increasing~$\mathsf p$ is prescribed first. Theorem~\ref{prop:IV} and Proposition~\ref{prop:FC} give $P=\mathsf p\circ\mathsf q$ and the continuum fields; Theorem~\ref{prop:UV} keeps the full inner limit.\\[3pt]
+13 & \raggedright Comparison radii, frames, $J$, charges, $c_\star,R_d,T$ & Depend on item 12 and the lattice family: Proposition~\ref{prop:MC}, then Theorem~\ref{prop:ST} and Proposition~\ref{prop:SC}. Only comparison radii are refined.\\[3pt]
+14 & \raggedright Slab operators, $\phases,\nu,S^\xi$, then~$\xi_*$ & Theorem~\ref{prop:PH}; $\xi_*$ is chosen in the full-measure set with one-dimensional time-axis reflection ground space (Lemma~\ref{lem:H1.3}), before reconstruction.\\[3pt]
+15 & \raggedright Theories and continuations in every phase; $\Theta,\tracespectrum$ & Theorem~\ref{prop:RC}; Definition~\ref{def:D16} centers the trace in the already selected phase; Theorem~\ref{prop:TR} and Lemma~\ref{lem:I1.2}.\\[3pt]
+16 & \raggedright Product prescription; contact projections, distributions, bases, scales & Depend on items 12--14 and the lattice family. Theorems~\ref{prop:OP} and~\ref{prop:CT} use the same original fields and correlation table; the contact projections, separating functionals and clearance are chosen separately from those of the product coefficients.\\[3pt]
+17 & \raggedright Estimate constants and thresholds & Depend only on the data preceding them in each statement, uniformly in positions, volumes and states wherever asserted.\\
+\end{longtable}
+\endgroup
