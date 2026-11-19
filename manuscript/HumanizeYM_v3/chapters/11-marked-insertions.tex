@@ -159,8 +159,9 @@ including at zeros of the original activities.
 For a bound uniform in the number of inserted points, assume at most one
 insertion anchor per site and a fixed finite menu of stencil radii and
 degrees. Then a site belongs to only a bounded number of insertion
-stencils. The component tree estimate of Chapter~\ref{ch08:chapter}
-applies after paying a larger support exponent for their unions.
+stencils. To apply the component tree estimate of Chapter~\ref{ch08:chapter}
+to the union of the stencils, use a larger support exponent in the
+bounds on the individual factors.
 At a Wilson terminal scale every new component contains an original
 large-field support, whose suppression is
 $\exp(-c\beta_Nt_N^2 n)$. Reserve half this exponent before summing
@@ -950,9 +951,9 @@ coordinates bounded by $2E_{N,p}$ and
 \end{equation}
 Indeed the residual source weight is inversely proportional to its
 bound in \eqref{ch11:descent-error}. All constants are independent
-of period when the terminal norm bounds are. This is a vanishing
-chessboard-seminorm discrepancy for local trials, including translated
-differences after paying their shifted derivative costs.
+of period when the terminal norm bounds are. Thus the discrepancy for local trials tends to zero in the chessboard
+seminorm. The same estimate applies to finite differences formed from
+translates, using the derivative bounds on the translated stencils.
 It bounds inverse terminal coordinates, not the raw reference labels.
 
 \section{Finite-dimensional detection before taking limits}
@@ -1652,10 +1653,10 @@ $0\le a_{\rm low}(y)\le1$. The outgoing incidence is at most
 The site conditions hold for $H^{-q}\le z\le H^{-1/2}$
 by the same estimates, and the large-field output is at most $G(y)$.
 This proves \eqref{ch11:lower-weighted-step}.
-Its incoming condition is preserved by retaining $z\ge H^{-q}$
-and paying $G(y)/a_{\rm low}(y)\le H^{-q}$.
-For the actual polynomial attenuation this follows from the
-reserved exponential large-field decay.
+For the polynomial attenuation used here, the reserved exponential
+large-field decay gives $G(y)\le H^{-q}a_{\rm low}(y)$. Since
+$z\ge H^{-q}$, the outgoing large-field bound is at most
+$z\,a_{\rm low}(y)$, as required for the next step.
 
 This calculation requires the reserved decay and corrected body
 product estimate on the actual restarted representation.
