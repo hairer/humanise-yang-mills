@@ -1,0 +1,102 @@
+\chapter*{Main theorem}
+\addcontentsline{toc}{chapter}{Main theorem}
+
+The construction starts from Wilson lattice gauge theory on periodic
+four-dimensional lattices. Its continuum observables are local
+gauge-invariant fields. Their Euclidean correlations determine the
+relativistic theory described below.
+
+\noindent\textbf{Main theorem (continuum Yang--Mills fields).}
+Let $G$ be a compact matrix group with simple nonabelian real Lie algebra
+$\gLie$. Fix a faithful unitary representation and its normalized trace
+inner product, a positive penalty parameter for the block transformation,
+and a sufficiently large inverse coupling at the coarsest scale.
+There is a choice of lattice spacings tending to zero, admissible physical
+periods tending to infinity, bare Wilson couplings, and normalizations of
+local observables with the following properties.
+
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item \textit{Continuum limit.} At each fixed admissible period the
+correlations converge along the full sequence of lattice spacings. From
+any increasing sequence of these periods one can extract a single
+subsequence along which the correlations of all orders converge to smooth
+functions at pairwise distinct points in $\RR^4$. The same subsequence
+works for all derivatives. The resulting local fields form nested
+finite-dimensional spaces, obtained by imposing successive bounds on the
+scaling dimension of the polynomial labels (curvature counts as two, each
+derivative as one, and dimensions add in products). They contain the identity and
+admit commuting spacetime derivatives. At each bound the field space and
+its gauge-invariant free Maxwell counterpart have the same dimension and
+carry isomorphic representations of $O(4)$.
+
+\item \textit{Relativistic theory.} The limiting correlations are averages,
+with respect to a probability measure of full support on a compact metrizable
+space of phases, of Euclidean covariant, reflection-positive correlations.
+Every phase has the same field spaces and reconstructs a local,
+Poincar\'e-covariant theory on four-dimensional Minkowski space. Its
+Wightman distributions are tempered, its energy--momentum spectrum lies
+in the closed forward light cone, and its invariant vacuum is unique up
+to scalar multiples. The weak commutant of the fields consists of scalars.
+
+\item \textit{Stress tensor and local products.} The phases share a real,
+symmetric, conserved stress tensor whose local charges generate translations
+and rotations through the Ward identities. Products of nearby fields admit
+an operator product expansion to each fixed finite order, with coefficient
+and remainder bounds uniform in the phase. A fixed Taylor subtraction
+also extends the separated Euclidean correlations across coincident points
+as distributions of locally finite order.
+\end{enumerate}
+
+Vacuum uniqueness here is a statement within each phase. Uniqueness of
+the infinite-volume limit and a positive mass gap remain open in this construction.
+
+\clearpage
+\section*{Where the theorem is proved}
+\addcontentsline{toc}{section}{Where the theorem is proved}
+
+Theorem~\ref{ch19:conditional} (p.~\pageref{ch19:conditional}) assembles
+the conclusions for one and the same family of Wilson measures. The main
+steps of its proof can be read separately as follows.
+
+\paragraph{The two limits in (i).}
+Theorems~\ref{ch10:finite-history} and~\ref{ch10:convergence} tune the
+bare coupling and prove convergence of the renormalization group trajectory
+at each fixed scale. With the bounds on observable insertions from
+Chapter~\ref{ch11:insertions}, Theorem~\ref{ch12:uv-theorem} proves the
+full cutoff limit at fixed volume. Section~\ref{ch13:extraction} then
+extracts one subsequence of volumes for all separated correlations and
+their derivatives. Proposition~\ref{ch13:rank} identifies the dimensions
+of the field spaces. Section~\ref{ch13:calculus} constructs their inclusions
+and derivatives, and Theorem~\ref{ch14:rotations} identifies their $O(4)$
+representations.
+
+\paragraph{Phases and relativistic fields in (ii).}
+Section~\ref{ch15:characters} gives the integral decomposition into phases.
+Sections~\ref{ch15:phase-symmetry} and~\ref{ch15:fields} establish symmetry,
+reflection positivity and equality of the field spaces in every phase.
+Section~\ref{ch16:boundary-section} constructs the tempered boundary
+values. Theorem~\ref{ch16:fields} reconstructs the local fields and proves
+the spectrum condition. Theorem~\ref{ch16:vacuum} proves vacuum uniqueness
+in every phase, and Proposition~\ref{ch16:irreducible} determines the
+weak commutant.
+
+\paragraph{The stress tensor and local products in (iii).}
+Proposition~\ref{ch14:normalized-stress} fixes the normalization of the
+conserved tensor by its Euclidean Ward identities. Section~\ref{ch16:charges-section}
+continues them to the relativistic charge law~\eqref{ch16:charge-law}.
+Theorem~\ref{ch18:ope-theorem} gives the finite-order expansion and its
+remainder estimate. The distinct assertion about extension across the
+collision diagonals is Theorem~\ref{ch18:extension-theorem}.
+
+\paragraph{A further conclusion in one selected phase.}
+Let $\Theta$ be the trace of the Euclidean stress tensor minus its
+expectation in the phase selected in Section~\ref{ch15:selection}, and
+let $G_\Theta(r)$ be its two-point function at separation $r>0$ in that
+phase. The additional estimates of Chapter~\ref{ch17:trace} give
+\[
+ \lim_{r\downarrow0} r^8\log^2(1/r)\,G_\Theta(r)
+     =\frac{3\dim_{\RR}\gLie}{\pi^4}.
+\]
+Theorem~\ref{ch17:all-radii} proves the limit for arbitrary radii tending
+to zero. Section~\ref{ch17:exclusion} specifies the finite class of
+mass-shell correlation functions excluded by this asymptotic.

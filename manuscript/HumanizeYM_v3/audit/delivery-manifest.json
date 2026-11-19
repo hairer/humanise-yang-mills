@@ -1,9 +1,9 @@
 {
-  "pages": 268,
+  "pages": 270,
   "cited_references": 40,
-  "pdf_sha256": "7230c8b54b5be1ef6bfa5b115bf64292781e867f6ce9f3ab8152bf20067de2e2",
+  "pdf_sha256": "9bdecc930772e7e971ca75906e96e26f9a649ee01acb0eef078909489ed05044",
   "sources": {
-    "monograph.tex": "96d7463f0c513bcfe51e071b8f0b7eba8647743524a6b382336e7b9ab9ead2e5",
+    "monograph.tex": "e091079eb65f594cb9c7edf19f6907b0350de54204cb42659e07fbf796744d6d",
     "preamble.tex": "6e399943fcc7aa5c2baaa6c0c8bf80d456d5ed5c794ffe62f15ac6b03226d6d0",
     "reading-guide.tex": "bc6b533a6e49ee79eb34cb82aa40e6899312e5a6a8f6e7f97e1e2ee977c452d5",
     "notation-index.tex": "8ece7a00a8ac3a0ee4a1603eba95077fb7d2cf2fa2ebc4440038c979784dec70",
@@ -41,7 +41,8 @@
     "chapters/18-lattice-products.tex": "7f991c0522f54e18cc0039e9bf31b9e9deba1a964975f66cb47f8417f24d9db2",
     "chapters/18-operator-products.tex": "8071216ffb0d8662923998a7057e20119a768aa245aef5637f971f8e571e2f91",
     "chapters/18-raw-replacement.tex": "ff74b7f49a8c7d4105ca740f3709223764083d58231988142acb00e55e20dae1",
-    "chapters/19-assembly.tex": "dcdf60412b5a186a5499b3f9d4fb8d8e0019d59fa010e721d4a6f7d73931493a"
+    "chapters/19-assembly.tex": "dcdf60412b5a186a5499b3f9d4fb8d8e0019d59fa010e721d4a6f7d73931493a",
+    "main-theorem.tex": "e8e86684e500e4c24cd8a98afdac9e9d863072f3c698e8a79f3a8c502a00306c"
   },
-  "review": "Terminology revision: clean LaTeX build, cross-reference check and visual inspection of selected pages. Earlier checkpoints are recorded in PROGRESS.md."
+  "review": "Introductory main theorem and proof guide: rendered pages i and ii, verified PDF proof links and LaTeX cross-references. Earlier checkpoints are recorded in PROGRESS.md."
 }
