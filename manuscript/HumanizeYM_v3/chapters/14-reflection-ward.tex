@@ -13,7 +13,7 @@ Chapter~\ref{ch13:continuum}. Its finite-dimensional field spaces are
 $F_d$, with the compatible inclusions and derivative maps
 constructed there. Statements using this calculus retain the actual
 marked estimates required in that chapter. All correlations in the
-present chapter are evaluated at distinct points or against tests
+present chapter are evaluated at distinct points or against test functions
 supported away from collisions.
 
 \section{Reflection spaces for the coordinate axes}
@@ -193,7 +193,7 @@ estimates must all concern these same lifts. The following construction verifies
 \input{chapters/14-lattice-comparison}
 
 The coordinate-equality strips have volume $O(\delta_k)$ on a fixed
-window. Their contribution to any test of supremum norm at most one
+window. Their contribution to any test function of supremum norm at most one
 is $O((A_k^n+1)\delta_k)$. Outside them, rounding to the grid and
 \eqref{ch14:grid-input} cost
 $O(V_k^ns_k/\delta_k)$ plus the free modulus of continuity.
@@ -274,7 +274,7 @@ with colour summation understood. The apparent further contractions
 $\sum_{c,d}F_{bd}\partial_cF_{cd}$ and
 $\sum_{c,d}F_{cd}\partial_cF_{bd}$ reduce to these: use the
 Maxwell equation in the first and the Bianchi identity in the second.
-The two independent test rows in \eqref{ch03:divergence-matrix}
+The two independent rows of correlation pairings in \eqref{ch03:divergence-matrix}
 show that these vectors are independent and in the divergence image.
 Thus free divergence is onto, with kernel spanned by $T^0$.
 
@@ -329,7 +329,7 @@ region, and $(\partial_\mu v_\nu)J_{\mu\nu}=0$.
 The actual two-mark estimate needed here has the following form.
 If $A\in F_d$, let $\varkappa=0$ for constant $v$ and
 $\varkappa=1$ for linear $v$. Put $D=d+1-\varkappa$.
-For a finite family of separated spectator tests $\ell_i$ on
+For a finite family of separated spectator correlation functionals $\ell_i$ on
 $F_D$ and coefficients $g_i$ annihilating that space,
 there must be $\rho_m\downarrow0$ such that
 \begin{equation}\label{ch14:annular-input}
@@ -384,9 +384,9 @@ finite separating subfamily of spectator functionals. Its injective
 map from $F_D$ has finite-dimensional range; the preceding
 annihilator property says that the corresponding flux vector lies
 in that range. It therefore specifies a unique field, and adjoining
-any other spectator test proves the identity for it as well.
-Continuity extends initially generic grid tests to every separated
-configuration. Linearity follows from uniqueness.
+any other spectator correlation functional proves the identity for it as well.
+Continuity extends the identity from generic grid configurations to
+every separated configuration. Linearity follows from uniqueness.
 \end{proof}
 
 Differentiating the shell identity with the distinguished insertion,
@@ -399,7 +399,7 @@ Killing derivative, gives
 \end{equation}
 Equivalently one can differentiate after moving the whole local
 shell with $x_0$; the derivative of $K(y-x_0)$ supplies the displayed
-constant flux term. Faithfulness of separated spectator tests turns
+constant flux term. Faithfulness of separated spectator correlation functionals turns
 these response identities into field identities. The same argument
 shows compatibility with inclusions, reality and signed coordinate
 symmetries; both charges annihilate the unit.
@@ -501,10 +501,10 @@ $g=(g_k)_{k\in I}$ define
    =\int\mathcal Lg_i(E)\prod_{k\in I\setminus\{i\}}g_k(p_k)
                                                      \,d\nu_i^A(E,p).
 \]
-The same even product test of the unreflected pair kernel has spectral
+The same even product test function of the unreflected pair kernel has spectral
 values $\varepsilon_i\operatorname{Resp}_i(g)$ in every axis $i$.
 First require sufficiently many vanishing moments in two axes, so the
-test vanishes to the required order at the collision. This makes the
+test function vanishes to the required order at the collision. This makes the
 comparison an equality of convergent integrals of the original kernel.
 If $I$ omits axes, insert in each omitted frequency coordinate a profile
 $h(p/T)$ with $h=1$ near zero, and let $T\to\infty$; the damped moment
@@ -606,9 +606,9 @@ it is not a positive extension of the correlation hierarchy.
 
 Let $K_{ab,cd}(x)=S(J_{ab}(x),J_{cd}(0))$ for $x\ne0$, and choose
 an integer $D$ above the collision orders of these kernels and their
-first derivatives. For one-dimensional Schwartz tests let $\Pi_D$
+first derivatives. For one-dimensional Schwartz test functions let $\Pi_D$
 retain Taylor orders less than $D$, multiplied by a fixed even
-cutoff. On product tests define
+cutoff. On product test functions define
 \[
  R_{ab,cd}(h)=\int K_{ab,cd}(x)
        \left(\prod_i h_i(x_i)-\prod_i\Pi_Dh_i(x_i)\right)dx.
@@ -661,7 +661,7 @@ Removing one transverse moment restriction at a time terminates
 after three axes. The annular coefficients remain bounded because
 all shrinking width exponents are nonpositive.
 
-For a fixed even annular $\sigma$, test $Q_r$ with
+For a fixed even annular $\sigma$, evaluate $Q_r$ against
 $g_{v,r}(p)=v^{-1}(p/v)^{-2r}\sigma(p/v)$, so
 $p^2g_{v,r+1}=v^2g_{v,r}$. Compare the widths $W$ and $2W$ and
 subtract their fixed annular corrections. Write $c_r(t)=W^{-2r}\operatorname{Re}Q_r(g_{tW,r})$, with the
@@ -745,7 +745,7 @@ $\Phi\ge1/2$ on $[-3\gamma,3\gamma]$.
 Apply the sign-transfer inequality using this residual and an
 opposite-sign transverse axis. Its correction term is bounded by
 the three-axis mixed-sign estimate and the uniform supremum above;
-its other term is paid by a sufficiently high transverse moment,
+its other term is bounded using a sufficiently high transverse moment,
 now with fixed damping $e^{-2uE}$. The parity pattern has both signs
 among the transverse axes and a sign opposite to the line axis,
 so this proves any positive exponent, in particular $\gamma_l=1$.
@@ -760,7 +760,7 @@ positive temporal-gap response used here. The diagonal estimate is
 The crude bound $I_\mu(J_{\mu\mu};0)=O(\lambda^{900})$ follows
 from finite mass on $E\le1$ and the profile suprema. Outside
 $E\le1$ and $|p_j|\le w_j$, positive damping and Schwartz decay
-make the relevant tests $O(\lambda^{-M})$ for every fixed $M$.
+make the relevant test functions $O(\lambda^{-M})$ for every fixed $M$.
 
 Take even $\eta\in C_c^\infty(\RR)$ equal to one near zero,
 put $\ell(t)=t\eta(t)$, and define
@@ -808,12 +808,12 @@ Translate a collinear configuration in its line direction in
 plane generator mixing that line and a transverse direction one
 obtains the translation Ward sum for $p_b$. The commutation law
 \eqref{ch14:charge-commute} gives its positional derivatives as well.
-The usual positional derivatives $\partial_b$ obey the same tests.
+The usual positional derivatives $\partial_b$ obey the same identities.
 
-The finite vector tests of Theorem~\ref{ch03:vector-tests} have a
+The finite vector correlation functionals of Theorem~\ref{ch03:vector-tests} have a
 one-dimensional common kernel in the free vector-map space, spanned
 by $\partial^0$. Adjoin a linear functional nonzero on that vector;
-the test matrix becomes injective. Smooth comparison transports
+the matrix of correlation pairings becomes injective. Smooth comparison transports
 this injectivity to the mixed finite-dimensional vector-map space.
 Thus its Ward kernel has dimension at most one. It contains both
 $p$ and $\partial$, so $p=c_d\partial$ at every sufficiently large
@@ -826,7 +826,7 @@ integrals and using \eqref{ch14:balanced-stress} gives
  \qquad
  \frac1{c_k}U_{k,d}^{-1}Y_d(K)U_{k,d}\to L_d^0(K).
 \end{equation}
-Finite separating tests justify these operator limits, even if the
+A finite separating family of correlation pairings justify these operator limits, even if the
 operator norms were not known in advance. Since
 $r_kU_{k,d+1}^{-1}\partial_bU_{k,d}\to\partial_b^0\ne0$
 in some degree, the first limit gives $c_*\ne0$ and $c_k\to c_*$.
@@ -886,14 +886,14 @@ zero agree with an analytic function, then
  \le C(2/R)^{2n}(n!)^2.
 \]
 Hilbert-space Taylor remainders tend to zero for $|h|<R/2$,
-uniformly in $t$. Apply this to the singleton curve above: its Gram
+uniformly in $t$. Apply this to the single-insertion curve above: its Gram
 kernel is $F_{A,A^{\dagger_a}}(2x^ae_a+(t-s)e_b)$, whose jets
-are those of $Q$. Thus singleton vectors are analytic along every
+are those of $Q$. Thus single-insertion vectors are analytic along every
 transverse coordinate as well.
 
 If one insertion is a strict maximum in some coordinate, separate
 it from the spectator word by a coordinate hyperplane. Its moment
-is a matrix element of this analytic singleton curve against a
+is a matrix element of this analytic single-insertion curve against a
 fixed word vector. Strict minima are handled by the existing signed
 reflection. Hence the Ward sum is analytic along any coordinate
 segment on which the moving point stays a strict extremum in some
@@ -930,10 +930,10 @@ internal defect
 $[L(K),L(M)]-L([K,M])$ has zero correlation sums. It is real,
 alternating, filtration preserving, kills the unit, and has the
 signed covariance of a pair of rotation generators. The finite
-internal-defect tests of Theorem~\ref{ch03:internal-tests} are
+internal-defect correlation functionals of Theorem~\ref{ch03:internal-tests} are
 injective on this defect space. Their injectivity transfers under
 the smooth finite-dimensional comparison, exactly as for the vector
-tests above. The defect is therefore zero. Injective inclusions
+correlation functionals above. The defect is therefore zero. Injective inclusions
 extend this conclusion from any sufficiently large degree to the
 lower ones.
 
@@ -984,8 +984,8 @@ The preceding construction supplies the representations. The function
 \]
 has zero derivative by \eqref{ch14:global-ward}. Plane rotations and
 signed reflections
-generate $O(4)$. Covariance, unit deletion and the exact derivative
-and inclusion identities show that the corresponding label identities
+generate $O(4)$. Covariance, the fact that inserting the identity leaves correlations unchanged,
+and the exact derivative and inclusion identities show that the corresponding label identities
 have zero responses against every spectator. Faithfulness of the
 field quotient proves their equality. Thus the independently chosen
 finite-degree intertwiners need not themselves commute with inclusions;

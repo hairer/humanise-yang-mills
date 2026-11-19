@@ -42,7 +42,7 @@ put
 The normalized frame satisfies $h_0^{z,o}=1$. The unnormalized frame gives
 link coordinates
 $U_{(x,\mu)}^{z,o}=g_x^{z,o}U(x,\mu)(g_{x+e_\mu}^{z,o})^{-1}$.
-Their chord sizes are unchanged if the normalized frame is used instead,
+Their distances from the identity are unchanged if the normalized frame is used instead,
 since that change conjugates every transformed link by the same matrix.
 
 A symmetric choice is possible if all relevant loop transports are small.
@@ -52,8 +52,8 @@ patch center by
  \mathcal T_{xy;o}^{o_0}
    =g_x^{0,o_0}T_U(x\to y;o)(g_y^{0,o_0})^{-1}.
 \]
-Its chord is gauge invariant. Fix a small constant $\delta_{\rm fr}>0$.
-When all these chords are strictly below $\delta_{\rm fr}$, use the
+Its normalized Hilbert--Schmidt distance from the identity is gauge invariant. Fix a small constant $\delta_{\rm fr}>0$.
+When all these distances from the identity are strictly below $\delta_{\rm fr}$, use the
 normalized minimizer, with $h_0=1$, of
 \begin{equation}
  \mathcal E_U(h)=\frac1{24|\mathbb B_R|^2}
@@ -147,8 +147,8 @@ layer perpendicular to the last coordinate whose internal plaquette sum
 is no greater than the average over layers. Use the axial construction on
 that layer, then extend it along the last coordinate, setting those links
 to one. Every remaining link differs from its transported link on the
-chosen layer by a product of intervening plaquettes. The chord triangle
-inequality and conjugation invariance yield, writing $n=2R+1$,
+chosen layer by a product of intervening plaquettes. The triangle inequality for the normalized Hilbert--Schmidt
+distance and conjugation invariance yield, writing $n=2R+1$,
 \[
  \Sigma_{\rm link}(X,U^{\rm ax})
  \le n\{\Sigma_{\rm link}(X_0,U^{\rm ax})+
@@ -165,7 +165,7 @@ Only smoothness of the nearest-point projection was used here. Analytic
 stationary-field estimates will need more; they are not consequences of
 this lemma alone.
 
-\section{Coarse-link prediction and the exact kernel}
+\section{Gauge-covariant block averaging and the exact kernel}
 \label{ch04:kernel-section}
 
 Translate the preceding frame construction to every patch
@@ -184,7 +184,8 @@ $g(Ly)Y_{e,z}g(Ly+Le_\mu)^{-1}$.
 Let $w^{\rm av}$ be the $j$-fold convolution of the uniform probability
 on $\mathbb B_{(L-1)/2}$. It is nonnegative, has sum one, is invariant under
 $H_4$, and is supported in $\mathbb B_{j(L-1)/2}\subset\mathbb B_R$.
-Put $\bar Y_e=\sum_z w_z^{\rm av}Y_{e,z}$. The natural predictor minimizes
+Put $\bar Y_e=\sum_z w_z^{\rm av}Y_{e,z}$. The gauge-covariant block average, obtained by projecting the weighted
+connector average to the group, minimizes
 \begin{equation}
  \mathcal P_e(u)=\sum_z w_z^{\rm av}w(Y_{e,z}u^{-1}),\qquad u\in G.
  \label{ch04:predictor-cost}
@@ -199,19 +200,19 @@ Thus the minimizers are precisely the nearest group points to $\bar Y_e$.
 If the minimum is less than $\varepsilon_{\rm pred}$, its distance to $G$
 is less than $\sqrt{2n_G\varepsilon_{\rm pred}}$. Choose the cutoff so that
 this lies within the tubular neighborhood used in
-Lemma~\ref{ch04:frame-lemma}. The predictor is then unique, independently
+Lemma~\ref{ch04:frame-lemma}. The block average is then unique, independently
 of the number of connectors or the weights.
 
 On this branch set $Q_e^{\rm pred}$ to that minimizer and assign uniform
-mass to redundant predictor labels $z\in\mathbb B_R$. If the test fails,
+mass to redundant block average labels $z\in\mathbb B_R$. If the test fails,
 let label $z$ select $Q_e^{\rm pred}=Y_{e,z}$ with probability
 $w_z^{\rm av}$. Equality with either cutoff belongs to the alternative
 branch; the strict inequalities defining the minimizing branches are part
 of the convention.
 
-Collect all frame and predictor choices in a finite label $\alpha$ and
+Collect all frame and block average choices in a finite label $\alpha$ and
 denote their joint probability by $\lambda(U,\alpha)$. Frame choices are
-made first, followed by conditionally independent predictor choices. Thus
+made first, followed by conditionally independent block average choices. Thus
 \begin{equation}
  \lambda(U,\alpha)\ge0,\qquad \sum_\alpha\lambda(U,\alpha)=1.
  \label{ch04:tag-law}
@@ -283,12 +284,12 @@ Exactness means preservation of this integral and law; it does not mean
 that the coarse density remains of Wilson form.
 
 
-\section{A first-power bound for the actual predictor}
+\section{A first-power bound for the actual block average}
 \label{ch04:predictor-geometry}
 
-The later tree comparison needs the predictor on both of its branches,
+The later tree comparison needs the block average on both of its branches,
 including configurations far from the identity. Let $\mathcal P_y(U)$ be
-the sum of fine plaquette chords in the lifted macro-box of radius
+the sum of fine plaquette distances from the identity in the lifted macro-box of radius
 $(j+7)L$ centered at $Ly$. Write
 $\mathcal P_y(U)=\sum_qm_y(q)\chi(U_q)$, counting periodic lifts with their
 multiplicities. For a coarse plaquette $p$ based near $y$, we shall prove
@@ -302,11 +303,11 @@ The constants are independent of the block ratio and period. The
 first-power estimate is essential: a square-root consequence of a
 squared-energy comparison would not give the factor needed here.
 
-\begin{lemma}[First-power predictor comparison]
+\begin{lemma}[First-power block average comparison]
 \label{ch04:predictor-comparison}
 Fix the smoothing order $j$ and frame eligibility constants. For the
-predictor of \eqref{ch04:predictor-cost}, every choice of positive-mass
-frame and predictor tags satisfies \eqref{ch04:macro-comparison}, with
+block average of \eqref{ch04:predictor-cost}, every choice of positive-mass
+frame and block average tags satisfies \eqref{ch04:macro-comparison}, with
 $C_j,K_j$ independent of $L$ and the period, whenever the coarse period is at least $100(j+8)$.
 \end{lemma}
 \begin{proof}
@@ -314,8 +315,8 @@ We first record the estimate for a minimizing frame on a finite set of
 $N$ points. Write $W_{ij\alpha}$ for its path transports, with reverse
 paths paired among the labels $\alpha$, and put
 $b_i=\operatorname{av}_{j,\alpha}\chi(W_{ij\alpha})$ and
-$b=\operatorname{av}_i b_i$. If $h$ minimizes the averaged squared
-chord energy, then some $c\in G$ satisfies
+$b=\operatorname{av}_i b_i$. If $h$ minimizes the averaged
+squared-distance energy, then some $c\in G$ satisfies
 \begin{equation}
  \operatorname{av}_i\chi(h_ic^{-1})\le C_G b.
  \label{ch04:frame-first-power}
@@ -327,7 +328,7 @@ Let $m=\operatorname{av}_jh_j$ and
 $m_i=\operatorname{av}_{j,\alpha}h_jW_{ij\alpha}^{-1}$. Varying one frame
 coordinate shows that $h_i$ is a nearest group point to $m_i$, and
 $\|m_i-m\|_{\rm F}\le\sqrt{n_G}b_i$. The diagonal self-term causes no
-problem: freezing its second endpoint adds a nonnegative squared chord
+problem: freezing its second endpoint adds a nonnegative squared distance from the identity
 which is zero at the minimizer.
 
 When $b$ is sufficiently small, choose a nearest group point $c$ to $m$.
@@ -351,10 +352,10 @@ segments gives the formula. Apply \eqref{ch04:frame-first-power} after
 any comparison gauge $H$. For a minimizing frame $f$, this gives a
 constant rotation $c$ such that
 $\sum_i\chi(c^{-1}f_iH_i^{-1})\le C_Gq E(H\cdot U)$,
-where $E$ is the bond-chord sum. For an eligible axial fallback frame,
+where $E$ is the sum of bond distances from the identity. For an eligible axial fallback frame,
 apply the same path count to the pure gauge $fH^{-1}$, whose bond sum is
 at most $E(f\cdot U)+E(H\cdot U)$. The eligibility rule bounds the first
-term by $K_{\rm ax}q$ times the plaquette-chord sum. Thus both frame
+term by $K_{\rm ax}q$ times the sum of plaquette distances from the identity. Thus both frame
 branches obey the same bound with this additional term.
 
 Choose an axial gauge $H$ on the macro-box of radius $(j+7)L$. The
@@ -373,7 +374,7 @@ For the middle straight path, each of its $L$ translations is injective,
 so its unweighted sum is at most $L E(H\cdot U)$. Its weighted sum has
 the same bound $C_jL^{-2}\mathcal P_y(U)$.
 
-For any $u_*\in G$ the selected predictor satisfies
+For any $u_*\in G$ the selected group-valued block average satisfies
 \[
  \chi(Qu_*^{-1})\le
  2\max\{1,\varepsilon_{\rm pred}^{-1}\}
@@ -385,9 +386,9 @@ minimum cost is at least $\varepsilon_{\rm pred}$, whereas the cost at
 $u_*$ is at most the displayed weighted first moment, and $\chi\le2$.
 This holds for every selected fallback connector, however small its
 probability. Use $u_*=c_zc_{z+e_\mu}^{-1}$. The four rotations cancel
-around a coarse plaquette, proving its predictor curvature bound.
-Replacing its four predictor links by $V$ adds precisely their four
-mismatch chords. Finally, a fixed fine plaquette belongs to only
+around a coarse plaquette, proving its block average curvature bound.
+Replacing its four block average links by $V$ adds precisely their four
+mismatch distances from the identity. Finally, a fixed fine plaquette belongs to only
 $O_j(1)$ macro-boxes centered at points of $L\ZZ^4$; count its periodic
 lifts with multiplicity. This proves the second bound in
 \eqref{ch04:macro-comparison} as well.
@@ -418,7 +419,7 @@ At the present scale write $\Lambda=\Lambda_{R_pD_m}$, and let
 $\operatorname{Bad}_m(U)$ be the sites incident to at least one plaquette
 with $\chi(U_\square)>t_m$. A set $X$ is small-field if
 $X\cap\operatorname{Bad}_m(U)=\varnothing$; write its indicator as $h_X(U)$.
-Thus every plaquette meeting $X$ must have small chord. This definition is
+Thus every plaquette meeting $X$ must have small distance from the identity. This definition is
 gauge invariant and involves a closed condition on small-field sites.
 
 We keep two kinds of local corrections.
@@ -497,7 +498,7 @@ $x$, as in \eqref{ch02:transported-curvature}. Also specify local real
 invariant multilinear expressions $A_i^{(q)}(U,x)$, $q=2,3,4$, in such
 curvatures, each multiplied by the small-field indicator of its declared
 footprint. The footprint contains the paths, plaquettes and anchor; its
-mask may read additional adjacent plaquettes. Assume the coefficient sums
+event indicator may read additional adjacent plaquettes. Assume the coefficient sums
 converge absolutely at the fixed finite volume. Set
 \begin{align}
  P^{\rm raw}_{N,m}(\beta,U)
@@ -522,7 +523,7 @@ The function called clip in \eqref{ch04:clip} is not a smooth cutoff.
 At $r=t$ it drops from $c_{\rm dir}t^2/2$ to $c_{\rm lin}t^2$ immediately
 to the right. Effective density coordinates are therefore Borel functions,
 not globally differentiable functions of the links. Derivative estimates
-refer to the regular expressions on small-field domains with the masks
+refer to the regular expressions on small-field domains with the event indicators
 held fixed. In particular, a derivative with respect to the actual coupling
 does not differentiate the threshold or its indicator.
 
@@ -648,7 +649,7 @@ proves that the block map preserves the class.
 
 Parameter continuity is also stated at fixed coordinates. A curve
 $u\mapsto\rho_u$ has fixed supports, anchors, prescribed large-field sets,
-extra tests and masks. Its coupling and scalar are continuous. At each
+extra tests and event indicators. Its coupling and scalar are continuous. At each
 $u_0$, differences of regular derivatives and large-field values have
 majorants $e_i(u),k_i(u)$ satisfying
 \[

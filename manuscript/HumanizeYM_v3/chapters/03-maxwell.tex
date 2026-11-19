@@ -142,8 +142,7 @@ homogeneous pieces. Equations \eqref{ch03:jet-covariance} and
 \eqref{ch03:homogeneity} give bounds on all derivatives on separated
 configuration spaces. In particular, smearing against a smooth compactly
 supported function whose support avoids collisions is well defined.
-This statement is weaker than specifying the correlations on all test
-functions, including tests meeting collision diagonals.
+This statement is weaker than specifying the correlations on test functions whose supports meet collision diagonals.
 
 \section{The on-shell polynomial space}\label{ch03:shell}
 
@@ -229,7 +228,7 @@ the free field has reflection positivity:
  \sum_{i,j}\overline{c_i}c_j
  S^{\mathrm{Max}}(\theta w_i\,w_j)\ge0.
 \end{equation}
-The same inequality holds for smooth joint tests supported on separated
+The same inequality holds for smooth joint test functions supported on separated
 positive-time configurations. This is the standard Gaussian
 reflection-positive construction underlying
 Osterwalder--Schrader reconstruction~\cite{OsterwalderSchrader1973,OsterwalderSchrader1975},
@@ -246,7 +245,7 @@ positive transverse-polarization Gram form. Derivative jets act on the
 same factors. The Gaussian Fock construction then gives
 \eqref{ch03:rp}; contractions within each positive-time word are included
 in its Fock vector. On compact separated supports the kernels are smooth,
-so the corresponding joint-test form follows by integration. We use this
+so the corresponding form on joint test functions follows by integration. We use this
 standard argument by citation rather than repeating the Fock-space
 construction.
 
@@ -384,7 +383,7 @@ is a finite geometric sum. This proves positivity on the whole tower,
 including mixtures of derivative orders.
 \end{proof}
 
-\begin{corollary}[Polynomial positivity and finite detectors]
+\begin{corollary}[Polynomial positivity and finite separating families]
 \label{ch03:detectors}
 Every nonzero element of $\mathcal M_d^{\mathrm{Max}}$ has strictly
 positive reflected two-point pairing at a fixed separated pair.
@@ -413,7 +412,7 @@ coefficient has weight one. Restricting to the gauge-invariant image
 preserves positivity. If all basis-column pairings vanish, the pairing
 with the reflected conjugate of the polynomial vanishes too, forcing
 that polynomial to be zero. This also identifies the correlation-null
-labels. On any fixed finite-dimensional degree space, the detector map
+labels. On any fixed finite-dimensional degree space, the map of correlation pairings
 has a positive minimum norm on the unit sphere. Small perturbations of
 its matrix remain injective; applying this fact to interacting
 correlations still requires a quantitative comparison estimate.
@@ -536,7 +535,7 @@ The Maxwell stress is conserved and
  -T^{\mathrm{Max}}
  =\tfrac12 Z^{(1)}-\tfrac14 Z^{(2)}+Z^{(3)}.
 \]
-It is nonzero by the preceding off-diagonal test. Hence it spans that
+It is nonzero by the preceding off-diagonal correlation. Hence it spans that
 kernel.
 \end{proof}
 
@@ -659,7 +658,7 @@ The polarization counts each ordered pair twice, canceling its factor
 $1/2$. Combining the three types proves \eqref{ch03:ward-identity}.
 \end{proof}
 
-\section{Detection with bounded-degree spectators}\label{ch03:bounded-detector}
+\section{Separating fields by insertions of bounded scaling dimension}\label{ch03:bounded-detector}
 
 The polynomial labels and their scaling dimensions are those of Section~\ref{ch02:jets-section}; throughout this section they are evaluated in the free curvature field defined in Section~\ref{ch03:covariance}.
 
@@ -690,7 +689,7 @@ where the equality is required for every separated word with
 $P_i\in\mathcal M_D^{\mathrm{Max}}$. There is no restriction on
 the degree of $P$ or the length $n$.
 
-\begin{proposition}[Uniform degree of detecting spectators]
+\begin{proposition}[A separating family of insertions of bounded scaling dimension]
 \label{ch03:uniform-detector}
 There is a finite $D_*$ such that
 $\mathcal N_{D_*}\cap\mathfrak P^G=\{0\}$.
@@ -789,7 +788,7 @@ vanish. Descending removes every jet order above $g$, and the fixed-order
 argument with $b_g$ concludes the induction.
 \end{proof}
 
-\section{Finite tests for infinitesimal symmetries}\label{ch03:finite-ward}
+\section{Finite correlation criteria for infinitesimal symmetries}\label{ch03:finite-ward}
 
 We now give the two finite-dimensional consequences used later to
 normalize translations and remove an internal rotation defect.
@@ -804,7 +803,7 @@ sets. For maps $A$ on this space, a \emph{Ward sum} means
 \]
 All points in this definition are distinct. The word length is arbitrary.
 
-\begin{theorem}[Vector tests]\label{ch03:vector-tests}
+\begin{theorem}[Characterization of infinitesimal translations]\label{ch03:vector-tests}
 Let $d\ge\max(4,D_*)$. Consider real-preserving complex-linear maps
 $A_b:\mathcal M_d^{\mathrm{Max}}\to\mathcal M_{d+1}^{\mathrm{Max}}$
 which kill the unit, send $\mathcal M_e^{\mathrm{Max}}$ into
@@ -910,7 +909,7 @@ dual). Real and imaginary parts of the evaluations give the required
 finite family.
 \end{proof}
 
-\begin{theorem}[Tests for an internal rotation defect]\label{ch03:internal-tests}
+\begin{theorem}[A vanishing criterion for an internal rotation defect]\label{ch03:internal-tests}
 For $d\ge4$, let
 $\Delta:\mathfrak{so}(4)\times\mathfrak{so}(4)
 \to\operatorname{End}_{\CC}(\mathcal M_d^{\mathrm{Max}})$
@@ -921,7 +920,7 @@ the weight filtration and kill the unit, and that
 \]
 for orientation-preserving signed coordinate permutations $s$.
 If every value of $\Delta$ has zero Ward sums, then $\Delta=0$.
-Finitely many Ward-sum evaluations already test this conclusion.
+It suffices to check that finitely many of these Ward sums vanish.
 \end{theorem}
 
 \begin{proof}
@@ -958,16 +957,16 @@ Use the rotational collar in \eqref{ch03:flux} in the same commutator
 argument as in the preceding proof. For each $H\in\mathfrak{so}(4)$,
 it gives $[\mathcal L_H,U]P\in\mathcal N_d$.
 This time the commutator itself lies in $\mathcal M_d^{\mathrm{Max}}$,
-so one reflected two-point test suffices to make it zero; the uniform
+so a single reflected two-point pairing shows that it vanishes. The uniform
 bound $D_*$ is unnecessary. Exponentiation in the finite-dimensional
 space shows that $U$ commutes with every quarter-turn on the whole
 space. Covariance and the same alternating-map argument give
-$\Delta(K,L)P=0$ for every $P$. The finite-test assertion again follows
+$\Delta(K,L)P=0$ for every $P$. The finiteness assertion again follows
 by taking a basis of the span of the Ward functionals in the dual of
 the finite-dimensional space of allowed $\Delta$.
 \end{proof}
 
-These are finite tests on a specified space of possible responses. Their
+Each criterion involves finitely many evaluations on a specified space of possible responses. Their
 application to the interacting construction requires proving that its
 responses obey the stated filtration, covariance, and comparison
 hypotheses. No such interacting input is part of the free-field results

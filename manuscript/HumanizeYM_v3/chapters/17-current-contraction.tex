@@ -59,7 +59,7 @@ for the alias $k_l(p)=(p+2\pi l)/L$,
  \label{ch17:current-alias}
 \end{equation}
 where $N_l$ is the alias amplitude of $W$, $A_l$ is the corresponding
-predictor-adjoint amplitude, and $K_c(p)=O(|p|^2)$. At a nonprincipal
+amplitude of the adjoint of the gauge-covariant block average, and $K_c(p)=O(|p|^2)$. At a nonprincipal
 alias $l\ne0$, project $N_l$ off the fine gradient direction. The
 completed fine kinetic matrix is invertible near $k_l(0)\ne0$;
 hence that projected amplitude is analytic and $O(|p|^2)$.
@@ -138,7 +138,7 @@ quadratic channel a strict contraction.
 \subsection{The nonlinear terms need fixed-ratio bounds}
 
 The nonlinear stationary jets enter only below the diagonal in field
-order. Their constants may depend on $L$, because coupling entry is
+order. Their constants may depend on $L$, because the coupling threshold is
 chosen after the ratio. What must remain uniform before $L$ is the
 coarse coefficient width on which these constants are measured.
 We obtain that width from the completed inverse of
@@ -158,7 +158,7 @@ On the forest slice implicit differentiation gives
  \label{ch17:stationary-higher-jets}
 \end{align}
 There are three terms in the sum. The right sides are internal
-covectors, with all mixed predictor and frame terms included.
+covectors, with all mixed gauge-covariant block average and frame terms included.
 
 These formulas have period-independent bounds $C_{j,L}$ on one
 fixed smaller coarse Fourier strip. To check the width statement,
@@ -175,7 +175,7 @@ Thus the slice inverse is
 \]
 The completed inverse has a common positive coarse width chosen before
 $L$; multiplication by the finite-range projections does not destroy it.
-The path vertices and predictor derivatives also have a common coarse
+The path vertices and derivatives of the gauge-covariant block average also have a common coarse
 width, with finite $C_{j,L}$ norms. Restrict the external strips by a
 fixed factor so all intermediate momentum sums lie in this inverse
 strip. Formula~\eqref{ch17:stationary-higher-jets} then proves the
@@ -231,9 +231,9 @@ step from $m+1$ to $m$, the coefficient below the diagonal becomes
        \frac{(\log\widehat\beta_{m+1})^s}
             {(\log\widehat\beta_m)^r},\qquad s<r.
 \]
-At fixed $j,L$ this tends to zero as the coupling entry increases.
+At fixed $j,L$ this tends to zero as the coupling threshold increases.
 The diagonal logarithmic ratio tends to one. Choose $L$ first so the
-three diagonal coefficients are at most $1/8$, then choose its entry
+three diagonal coefficients are at most $1/8$, then choose the coupling threshold
 so each row sum, including the below-diagonal terms, is at most $1/2$.
 The finitely many adjacent-stage cases are included before each choice.
 This proves a homogeneous contraction of the normalized defect vector.
@@ -246,7 +246,7 @@ defect derivatives tend to zero as well.
 
 We specify the displacement map, including its sign. At the stationary
 fine field and coarse frame, let $\widetilde Q(U,h)$ be the actual
-framed predictor. Its left-trivialized differential is
+gauge-covariant block average with its chosen frame. Its left-trivialized differential is
 \[
  (R_f\eta)_e=\left.\frac d{ds}\right|_0
  \log\bigl(\widetilde Q(e^{s\eta}U,h)_e
@@ -286,7 +286,7 @@ coarse distance; differentiation adds only finite path-length factors.
 For the exact stationary action the current identity is preserved before
 any estimates. The envelope theorem differentiates the stationary value
 only through the explicit coarse field. In the block penalty, simultaneous
-left multiplication of the predictor and the coarse link leaves the
+left multiplication of the gauge-covariant block average and the coarse link leaves the
 penalty unchanged. Thus a fine displacement $Y$ induces the coarse
 displacement $R_fY$; its root correction $d_VR_0Y$ has zero action
 variation by coarse gauge invariance. Together with
@@ -317,7 +317,7 @@ small-field threshold $t$ used in marked norms.
 
 For completeness we describe the accompanying bounds needed in the
 regulator criterion. Subtract fixed local reference stress and curvature
-displacements, whose leading scaling-dimension jets are those used initially.
+displacements, whose leading Taylor coefficients by scaling dimension are those used initially.
 The reference functions have finite stencils and fixed coefficient bounds.
 The lowest jets of the transported functions agree with them exactly.
 For the stress this follows from the principal tangent amplitude
@@ -329,7 +329,7 @@ order at least three. Two nonprincipal aliases have order at least four.
 Consequently only the principal pair contributes to the quadratic
 weight-four coefficient, which is unchanged.
 
-For the displacement one additionally uses the predictor's column sum.
+For the displacement one additionally uses the column sum of the gauge-covariant block average.
 By \eqref{ch17:flat-current-map}, the corrected differential is exactly
 $M$ at zero. The block-average alias formula
 for $M$ kills every nonprincipal alias at zero coarse momentum, so its
@@ -356,7 +356,7 @@ For each fixed coarse output edge $e$ its absolute sum is bounded by
         \sum_x|y(f-x;\,\cdot\,)|
                    \le C_jL^{-3}\|y\|.
 \]
-Only a bounded number of coarse output edges are within the predictor
+Only a bounded number of coarse output edges are within the gauge-covariant block average
 and averaging patches; exponential coefficient tails control the rest.
 This proves the same gain for the full local output-link norm.
 The linear displacement remainder has a curvature difference and one
@@ -367,11 +367,11 @@ $\sum_f|\nabla_fM_{ef}|\le C_j$, again gaining $L^{-1}$ relative to
 its row mass $C_jL$. Thus its diagonal factor is
 $C_jL^5L^{-3}L^{-3}=C_j/L$.
 For field order $r\ge2$ its diagonal factor is $C_jL^{2-2r}$.
-Derivatives of the predictor or its frame correction multiply lower
+Derivatives of the gauge-covariant block average or its frame correction multiply lower
 field orders of $Y$, so their fixed-$L$ constants are absorbed by the
 same logarithmic normalization as above. Evaluating in a local radial
 gauge is legitimate for this covariant displacement: transform its
-output frame and the predictor differential together. The additional
+output frame and the differential of the gauge-covariant block average together. The additional
 frame derivatives again occur only below the field-order diagonal.
 
 The trace and antisymmetry primitives start at field order two. Their
@@ -381,9 +381,9 @@ Lemma~\ref{ch17:block-identities}; the equal-order forcing from $J$
 is bounded independently of $L$. Choose a fixed smaller weight for
 these primitive norms so this one-way forcing has norm at most $1/8$.
 The other diagonal terms are then made small by $L$, and all lower-order
-terms by coupling entry. Reference functions contribute finite
+terms by coupling threshold. Reference functions contribute finite
 $C_{j,L}$ forcing, divided by positive powers of $\log\widehat\beta$;
-entry can make that forcing at most $1/4$.
+a sufficiently large coupling threshold can make that forcing at most $1/4$.
 
 Thus a weighted sum of the normalized current and primitive norms obeys
 $X_m\le\frac12X_{m+1}+\frac14$. The initial Wilson current and zero
@@ -392,5 +392,5 @@ the history, and in particular at each fixed output level. At that level
 these are the unnormalized finite constants required by the regulator
 criterion, since $\widehat\beta_m$ is fixed. The needed free scaling-dimension
 jets are unchanged, and the defect tends to zero by the homogeneous
-contraction above. All estimates use the same predictor, stationary
+contraction above. All estimates use the same gauge-covariant block average, stationary
 branch, action matching and periodized kernels as the marked trajectory.

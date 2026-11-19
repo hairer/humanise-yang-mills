@@ -28,7 +28,7 @@ normalization obeys
 $H_l=L_l^t\mathcal B_l H_{l+1}$; the physical source density has
 no additional factor. These conventions are those of
 Section~\ref{ch11:one-graph}. Keep the full prescribed large-field set and
-its square-root-allowance normalization in this remainder norm.
+its normalization by the square root of the large-field bound in this remainder norm.
 
 The local-trial argument of Section~\ref{ch11:trial-descent} applies
 on any sufficiently late interval $[k_*,m]$, not only from the original
@@ -80,7 +80,7 @@ by at most $h$ cover balls per mark, then
 \[
  c_B(X\cup\{y_i:i\in I\})\le c_B(X)+h|I|.
 \]
-Shrinking each affected weight by $\eta e^{-\sigma h}$ pays this
+Shrinking each affected weight by $\eta e^{-\sigma h}$ absorbs this
 support enlargement. The incidence norm has a second cost: a new
 incidence can be assigned to an old mark on its joining path.
 If at most $\mathfrak N$ representatives occupy a cover ball, there
@@ -97,11 +97,11 @@ A deliberately generous joining bound is
 \[
  h_l=16[1+L_l(B_l+B_{l+1}+1)^2]^4.
 \]
-Impose $(\sigma_{l+1}+1)h_l=o(\tau_l)$ by the stage entries.
+Impose $(\sigma_{l+1}+1)h_l=o(\tau_l)$ by choosing the stage coupling thresholds.
 At fixed stage $h_l$ is a polynomial in $\log\widehat\beta_l$
 with fixed ratio, so this is a finite admissible request.
 The occupancy factors have the same property. The minimum
-$\alpha_j\le1$ of all enlargement allowances on $m\le l<j$
+$\alpha_j\le1$ of all weight-reduction factors for support enlargement on $m\le l<j$
 therefore has $-\log\alpha_j=o(\tau_j)$: split the maximum
 cost into a fixed initial segment and a tail bounded by
 $\varepsilon\tau_j$, and then let $\varepsilon\downarrow0$.
@@ -112,7 +112,7 @@ its weight. Here the incoming regular contribution is carried
 cost is $T_l\le L_l$, as in \eqref{ch11:cover-transfer}; it
 must not be assigned the contraction factor for a vanishing extracted coefficient.
 If its incoming mass is $\mathfrak m$, the other local terms with vanishing extracted coefficient have total mass $p_l$ with $2p_l\le\mathfrak m$
-after entry, and the large-field terms have normalized mass
+after increasing the coupling threshold, and the large-field terms have normalized mass
 $f_l\le\mathfrak m$. These are the termwise local bounds used
 above, retaining the original events. Resolving real and imaginary
 parts costs at most two, so
@@ -131,7 +131,7 @@ at least
  \label{ch18:group-weight}
 \end{equation}
 Each step loses at most $L_l^{-4n}$, and a merger uses at most
-$n$ of the enlargement allowances. This proves the formula by
+$n$ of the weight-reduction factors for support enlargement. This proves the formula by
 induction, including all support and prescribed set of large-field sites data.
 
 \subsection{Extraction with a freely chosen residual weight}
@@ -143,8 +143,8 @@ Put
  \Xi_l=e^{\sqrt{\widehat\beta_{l+1}}},\quad
  y_{t,l}=\widehat\beta_l^{-\nu_t}.
 \]
-Choose the fixed integer $\nu_t$ to pay the finite polynomial and
-source-attachment losses at degree $t$. The stage entries impose
+Choose the fixed integer $\nu_t$ to absorb the finite polynomial and
+source-attachment losses at degree $t$. The stage coupling thresholds ensure
 $y_{t,l}C_l\le1$ and
 $\phi_l L_l^{t+1}y_{t,l}\le y_{t,l+1}$.
 These are finite threshold requests after the ratio is fixed.
@@ -193,8 +193,8 @@ $\varpi_{l+1}=\phi_l\varpi_l$. The two sufficient inequalities are
         &\le y_{t,k_*}/2.
  \label{ch18:residual-weights}
 \end{align}
-The first pays extraction and the second its signed transport.
-Indeed the allowance recursion gives
+The first absorbs the local polynomial coefficient bound and the second the bound for its signed transport.
+Indeed the recursion for these bounds gives
 $\varpi_l\le\varpi(a_l/a_{k_*})^{t+1}y_{t,l}/y_{t,k_*}$.
 Combining this with \eqref{ch18:signed-transport} and the physical
 factor $a_l^{-t}$, the ratio of required to allowed weight at
@@ -206,13 +206,13 @@ The extracted matched field has coefficient norm at level $m$
 at most $2E_m$. The interior residual has chessboard seminorm
 at most $2N_k/\varpi$. To see the latter on arbitrarily many
 copies, put one residual in every reflected cell before integrating.
-Coefficient extraction in the marked sum costs $\varpi^{-1}$ per
+Taking the coefficient of the required source monomial in the marked sum costs $\varpi^{-1}$ per
 cell; the normalized integral bound \eqref{ch11:root-bound}
 costs $N_k$ per cell. Apply this separately to the original local
 difference and its compensating column, and use the chessboard
-triangle inequality. The rooted component estimates and allowances
+triangle inequality. The rooted component estimates and bounds
 used in this calculation depend on marks per cell, not on the
-number of cells. All the higher modes generated during transport
+number of cells. All the terms involving at least two insertions generated during transport
 are included in these sums. The estimate is therefore stronger
 than a bound on one tested mean.
 
@@ -239,7 +239,7 @@ cutoff and period on the ordered tails and in the number of copies
 of this fixed local cluster.
 \end{proposition}
 \begin{proof}
-The normalized primary weights in
+The weights of normalized local insertions in
 \eqref{ch13:weight-size} give $\prod_iw_i=e^{-W\theta_+T+o(T)}$.
 Keep all incoming modes above $j$; separation permits their marked
 bounds but does not assert statistical independence. The grouping
@@ -314,8 +314,8 @@ Its coordinate functional vanishes on $F_{i-1}$; this is where
 an ungraded coefficient estimate would lose the desired power.
 Choose $t$ so large that
 $(t+1/16)(\theta-\theta_-)\ge(D+1)\theta$.
-This also pays every raw coordinate being read, whose degree is
-at most $D$. We do not require the residual to pay all coordinates
+This also bounds every raw coordinate being evaluated, whose degree is
+at most $D$. We do not require the residual to bound all coordinates
 through the auxiliary degree $t$. Testing the residual
 against the fixed probes bounds the coordinate errors. Reconstruct
 $A_t$ and omit degrees $i>D$. Each omitted coordinate has exponent

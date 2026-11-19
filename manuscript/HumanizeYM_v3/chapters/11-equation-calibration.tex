@@ -26,10 +26,9 @@ $\delta_d=(2\mathcal O_d^2)^{-1}$. Include the finite maximum
  \label{ch11:calibration-floor}
 \end{equation}
 in the stage-$j$ block floor. Include
-$\widehat\beta_N\ge a_{d,J(N)}$ in the adjacent stage entry
-conditions. These requests are compatible with the selection order:
+$\widehat\beta_N\ge a_{d,J(N)}$ in the adjacent stage conditions on the starting scale. These requests are compatible with the selection order:
 the section and its derivative constants are fixed first, then the
-length, then the coupling threshold. Raising a later threshold does
+length, then the inverse coupling threshold. Raising a later threshold does
 not change the section. Thus they can be imposed for all stages
 before selecting the common history, with no dependence on $p$.
 
@@ -80,8 +79,8 @@ Section~\ref{ch11:trial-descent} applies to the fixed section
 $\mathcal V_d$. Its part with zero polynomial coefficient is localized on the union
 stencil; the complementary part is attached to the original
 large-field selection, with no change of density.
-It gives coefficient $e_j$, ordinary charge
-$Q_N=Q_{d,J(N)}$, and complete root charge bounded by
+It gives coefficient $e_j$, ordinary norm bound
+$Q_N=Q_{d,J(N)}$, and complete source norm bound
 \[
  E_N=4(1+C_N)Q_N+
  e^{81\sigma_N+162}Z_N^{\rm val}\zeta_{d,N}u_N^{-1}.
@@ -90,9 +89,9 @@ Here
 $Z_N^{\rm val}=(A_{\mathcal V}+2A_{\rm loc})
  \sum_jt_N^{-s_j}$, with $A_{\mathcal V},A_{\rm loc}$
 the global value norms of the two fixed sections.
-The ordinary terminal charge uses a sharper attachment estimate
+The ordinary terminal norm bound uses a sharper attachment estimate
 than the general trial bound. If $w_N^{\rm for}$ is the terminal
-large-field allowance and $D$ the union stencil, its contribution
+large-field bound and $D$ the union stencil, its contribution
 to the remainder norm normalized by $\sqrt{w_N^{\rm for}}$ is
 \[
  2|D|\sqrt{w_N^{\rm for}}\,
@@ -100,10 +99,10 @@ to the remainder norm normalized by $\sqrt{w_N^{\rm for}}$ is
 \]
 Indeed attach the complementary local function to the original
 nonempty prescribed large-field set and sum its possible distinguished
-sites in $D$; the remaining half of the allowance bounds this
+sites in $D$; the remaining large-field suppression bounds this
 normalized mass. The same exact attachment retains reserved mass
 $e^{(\sigma_N+2)c_{B_N}(D)}Z_N^{\rm val}$.
-Impose the additional entry conditions
+Impose the additional conditions on the starting scale
 \[
  |D|w_N^{\rm for}\le1,\qquad c_{B_N}(D)\le81,\qquad
  \sqrt{w_N^{\rm for}}Z_N^{\rm val}\le1.
@@ -112,14 +111,14 @@ Then $|D|\le q_d$ bounds the ordinary contribution by
 $2q_de^{81\sigma_N}$, explaining exactly the definition of $Q_N$.
 These are post-length threshold conditions. At fixed adjacent
 stages the value norm is a fixed polynomial in the inverse
-small-field threshold, whereas the large-field allowance decays
+small-field threshold, whereas the large-field bound decays
 faster than every such power. Their finite simultaneous threshold
 therefore exists. The unweighted reserved mass is not discarded.
-This last term is required: the ordinary derivative charge alone
+This last term is required: the ordinary derivative bound alone
 does not bound the complementary large-field contribution.
 
 Backward comparison gives a reference coefficient $v_j$ and the
-root error in \eqref{ch11:trial-error}. Put
+chessboard-seminorm error in \eqref{ch11:trial-error}. Put
 $u_j=\mathsf Z_{N,p,d}^{-1}v_j$.
 There is a slightly stronger endpoint estimate than the displayed
 bulk descent bound. At the last step its cone inequality gives
@@ -139,14 +138,13 @@ For the conjugation term use $\overline{U\overline v}$, so the result
 is still complex linear. The norm of $P-I$ is at most
 $\mathcal O_d^2\delta_d=1/2$, and the Neumann series gives the stated
 inverse bound. Apply the same averaging to the field errors.
-Linearity and the triangle inequality for the replicated root
-seminorm give \eqref{ch11:equation-root-error}, enlarging its fixed
+Linearity and the triangle inequality for the chessboard seminorm give \eqref{ch11:equation-root-error}, enlarging its fixed
 constant to cover the finite orbit. This preserves one common
-history, all marker modes, and one common map.
+history, all source monomials, and one common map.
 
 Finally $C_N$, $e^{81\sigma_N}$, $t_N^{-1}$,
 $\zeta_{d,N}$, and $u_N^{-1}$ have the subpower bounds already
-required for trial descent. The extra entry condition bounds
+required for trial descent. The extra condition on the starting scale bounds
 $a_{d,J(N)}$ by $\widehat\beta_N$, which is subpower.
 Finite sums and products preserve this property, proving the claim
 for $E_N$.
@@ -167,9 +165,8 @@ separation, this exclusion holds at every sufficiently fine mesh,
 uniformly in period. Holder's chessboard bound then shows that the
 physical insertion with coefficient
 $\mathsf Z_{N,p,d}P_{N,p,d}v_N$ has vanishing separated correlations
-against any finite family of spectators with bounded replicated
-root norms. This proves the equation inclusion needed for the
-finite detector argument; equality with the full null space still
+against any finite family of spectators with bounded chessboard seminorms. This proves the equation inclusion needed for the
+argument using a finite separating family; equality with the full null space still
 uses the free nondegeneracy and detection estimates.
 
 The scaling in \eqref{ch11:actual-equation-subspace} also has a
@@ -182,6 +179,6 @@ construction and the near-identity comparison $P$ do not, by
 themselves, prove that this equation subspace approaches the
 unmodified Maxwell ideal. No such identification is required here: use bounded projections
 with kernel exactly \eqref{ch11:actual-equation-subspace} and establish
-the detector bound \eqref{ch11:detector-bound} on their complements.
+the bound from the separating family \eqref{ch11:detector-bound} on their complements.
 The terminal map $\mathsf Z$ already includes the scaling-dimension
 evolution; its physical convention has not been changed.

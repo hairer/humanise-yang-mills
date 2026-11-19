@@ -4,15 +4,15 @@
 
 For a fixed number of insertions the loss in
 \eqref{ch13:power} can be reduced to an arbitrarily small excess over
-the sum of their degrees. This uses the normalized replicated integral,
+the sum of their degrees. This uses the normalized integral over the reflected tiling,
 not the stronger Gaussian comparison used for rank detection. We keep
 all incoming joint marked components; replacing them by a product of
-singletons would invalidate the estimate.
+terms linear in the sources would invalidate the estimate.
 
 Write $\tau_m=\log(1/a_m)$, so
 $\widehat\beta_m=\bar\beta+\kappa_G\tau_m$. Let $C_j\ge1$ include
 the inverse-column, finite-section and source constants at stage $j$.
-The stage ratio and entry may be chosen to satisfy
+The stage ratio and coupling threshold may be chosen to satisfy
 \begin{equation}
  \frac{\log C_j}{\log \mathscr L_j}\longrightarrow0,\qquad
  B_{i+1}^2\le2B_i^2,\qquad
@@ -26,9 +26,9 @@ it is not a marked density or the scalar coupling correction.
 For the admissible path-action representation one can use
 $q_i^{\rm site}\le C_{J(i)}(1+\log\widehat\beta_i)$.
 Indeed the scalar-free exponent has upper bound $C_{J(i)}V$, while
-on the event that every link has chord at most
+on the event that every link $U$ has normalized Hilbert--Schmidt distance $\chi(U)$ at most
 $\widehat\beta_i^{-1/2}/4$ it has lower bound $-C_{J(i)}V$ and
-all forced flags are absent. The leading positive path quadratic is
+all large-field indicators vanish. The leading positive path quadratic is
 bounded there by $C_{J(i)}\widehat\beta_i\rho^2V$ with
 $\rho=\widehat\beta_i^{-1/2}$; exponential path summability bounds
 the path lengths in this estimate. Signed regular costs and the absolute
@@ -37,19 +37,19 @@ of Section~\ref{ch11:replicated} therefore costs only
 $C_{J(i)}V+2D_GV\log\widehat\beta_i$, where $D_G$ is an ambient
 real matrix dimension for the gauge group.
 
-These requirements are compatible with delayed entry. At each fixed
+These requirements are compatible with sufficiently large coupling thresholds. At each fixed
 stage $B_i=O_j((\log(2+\tau_i))^2)$ and
 $q_i^{\rm site}=O_j(1+\log(2+\tau_i))$, so the last quotient in
 \eqref{ch13:sharp-schedule} tends to zero at its fixed ratio. Choose
-the ratio after $C_j$, then postpone entry until that quotient is at
-most $1/j$ for both adjacent-stage choices. The same postponement gives
+the ratio after $C_j$, then increase the coupling threshold until that quotient is at
+most $1/j$ for both adjacent-stage choices. The same threshold choice gives
 the displayed bound on consecutive $B_i$,
 $\log L_i=o(\tau_i)$, and $\log C_{J(i+1)}=o(\tau_i)$
 at transitions. Choose each ratio against both adjacent-stage column
 constants, which are fixed beforehand. These are conditions on the single selected
 schedule; no new schedule is chosen after fixing a correlation.
 
-\subsection{A normalized primary source}
+\subsection{A normalized local insertion}
 
 For degree $d$ and coefficients in a fixed bounded ball, set
 \[
@@ -59,16 +59,16 @@ For degree $d$ and coefficients in a fixed bounded ball, set
 The fixed section constant $C_{d,R}^{\rm sec}$ includes the coefficient radius and all its signed and
 conjugated images. Choose the fixed integer $w_d$ large enough to absorb
 the finite powers of the inverse small-field threshold in the degree-$d$
-section and its forced counterpart, as well as the source attachment
-allowance. Multiplication of the one-mark inverse bounds gives the
+section and its counterpart constrained to cover the prescribed large-field sites, as well as the source attachment bound. Multiplication of the single-insertion inverse bounds gives the
 factor $E_k$; the scaling normalization is exactly $a_k^{-d}$.
 Thus multiplication of the \emph{complete} source by $\omega_k$
-puts its singleton exponential bound below three and its forced singleton
-bound below one. Its remaining normalized size can be placed below the
-attachment allowance by increasing $w_d$.
+makes the exponential bound for its regular term linear in the sources
+less than three and the bound for its large-field term linear in the sources
+less than one. Its remaining normalized size can be placed below the
+attachment bound by increasing $w_d$.
 
-The higher-mode bounds of Chapter~\ref{ch11:insertions} retain every
-incoming mode and every original eligibility event. Decreasing all mark
+The bounds in Chapter~\ref{ch11:insertions} for terms involving at least two insertions retain every
+incoming source term and every original eligibility event. Decreasing all mark
 weights only decreases their absolute mode sums. The source attachment
 inequalities at the intervening levels propagate this chosen small
 weight; they require the same inverse-column and threshold powers already
@@ -95,7 +95,7 @@ $\log\widehat\beta_k=o(\tau_k)$. Therefore
                         6-\log\omega_k=d\tau_k+o(\tau_k).
  \label{ch13:weight-size}
 \end{equation}
-This is the reason the replicated prefactor does not introduce a fixed
+This is the reason the prefactor from the reflected tiling does not introduce a fixed
 extra scaling degree.
 
 \subsection{The stopping scale and centered estimate}

@@ -88,9 +88,9 @@ mixed correlation distribution as their $\nu$-average. The same assertions
 hold at fixed weakly ordered imaginary heights, including tied heights.
 \end{proposition}
 \begin{proof}
-For a joint Schwartz test $f$ put
+For a joint Schwartz test function $f$ put
 $\psi_y^\xi(f)=\int\mathsf F_n^\xi(t+iy,x)f(t,x)\,dt\,dx$.
-Let $r=(0,1,\ldots,n-1)$ and $D=-i\sum_jr_j\partial_{t_j}$ acting on tests.
+Let $r=(0,1,\ldots,n-1)$ and $D=-i\sum_jr_j\partial_{t_j}$ acting on test functions.
 Cauchy's formula, \eqref{ch16:gap-bound}, and integration by parts give
 $\frac d{ds}\psi_{y+sr}^\xi(f)=\psi_{y+sr}^\xi(Df)$.
 Taylor's formula, evaluated backwards from $s=1$, is the exact identity
@@ -150,7 +150,7 @@ Testing and taking its joint boundary proves the distributional identity:
 terms containing a height tend to zero because the tested boundary
 families have the common seminorm bound of Proposition~\ref{ch16:boundary}.
 Integrating the finite-dimensional label action and the corresponding
-flow on Schwartz tests proves Lorentz covariance of $W_n^\xi$.
+flow on Schwartz test functions proves Lorentz covariance of $W_n^\xi$.
 Translations and spatial rotations continue directly.
 
 Use the Fourier convention
@@ -158,7 +158,7 @@ Use the Fourier convention
  \widehat f(X)=\int e^{-iX\cdot p}f(p)\,dp,
  \qquad \widehat W(f)=W(\widehat f).
 \]
-For a compactly supported frequency test $b$, differentiating simultaneously
+For a compactly supported test function $b$ in momentum space, differentiating simultaneously
 the imaginary height and the factor multiplying $b$ gives
 \begin{equation}
  \widehat W_n^\xi(b)
@@ -167,13 +167,13 @@ the imaginary height and the factor multiplying $b$ gives
 \end{equation}
 Indeed the two differentiated terms cancel, and their common value at
 height zero is the left side. Compact frequency support makes every
-intermediate test a Schwartz function.
+intermediate test function a Schwartz function.
 
 Translation invariance restricts support to $\sum_jp_j=0$. Put
-$q_j=\sum_{k=j}^np_k$. If a compact frequency test lies where $q_j^4<0$,
+$q_j=\sum_{k=j}^np_k$. If the support of $b$ lies in $q_j^4<0$,
 let the corresponding imaginary gap tend to infinity in
 \eqref{ch16:laplace}, keeping the other gaps positive. Exponential decay
-of the test and the uniform bound at gaps at least one show that its
+of the weighted test function and the uniform bound at gaps at least one show that its
 pairing vanishes. A partition of unity and Lorentz covariance now give
 \begin{equation}
  \operatorname{supp}\widehat W_n^\xi\subset K_n,
@@ -278,7 +278,7 @@ other imaginary gaps remain strict. A finite chain of overlapping germ
 neighborhoods propagates the equality from $s=0$ to $s=1$ by uniqueness.
 Take the continuous partial boundaries \eqref{ch16:partial-boundary},
 and then remove the other imaginary gaps. This proves the identity
-against tests compactly supported in the spacelike open set. Smooth
+against test functions compactly supported in the spacelike open set. Smooth
 compact cutoffs converging in Schwartz space give the stated distributional
 version. No permutation of coincident Lorentzian boundary values has
 been assumed.
@@ -291,7 +291,7 @@ A letter is a pair $(A,f)$ with $A\in F$ and $f\in\mathscr S(\RR^4)$.
 The star of a word reverses its order and replaces every letter by
 $(A^*,\overline f)$. Let $\mathcal P$ be their algebraic span, including
 the empty word $1$. The distributions $W_n^\xi$ define a functional
-$w_\xi$ on $\mathcal P$ by evaluation on product tests.
+$w_\xi$ on $\mathcal P$ by evaluation on product test functions.
 
 The essential positivity statement follows inside the phase reflection
 space. Give a word strictly increasing positive imaginary heights,
@@ -307,7 +307,7 @@ zero independently, so
 Expanding $\|h_y^\xi(b)-h_z^\xi(b)\|^2$ proves that these vectors are
 Cauchy. Their limits $v_\xi(b)$ have Gram form $w_\xi(b^*c)$, which is
 therefore positive. The same common seminorm bounds extend positivity
-to finite joint Schwartz tests by tensor-product density.
+to finite sequences of joint Schwartz test functions by tensor-product density.
 
 The standard word reconstruction \cite{Wightman1956} now gives
 \[
@@ -330,7 +330,7 @@ $f\mapsto\Phi_\xi(A,f)v$ in Hilbert norm for every $v\in\mathcal D_\xi$.
 We do not assert that these generally unbounded fields are bounded or
 that their self-adjoint closures exist without further input.
 
-\begin{theorem}[Fields and the onto reflection comparison]
+\begin{theorem}[Fields and unitary equivalence with the reflection-positive space]
 \label{ch16:fields}
 In every phase the fields above are local, covariant under a strongly
 continuous unitary representation of the proper orthochronous Poincar\'e
@@ -354,11 +354,11 @@ places their spectrum in $\overline V_+$.
 
 The Gram identity makes $J_\xi^{\rm OS}$ an isometry. Its range is closed,
 but density must still be checked. For a smooth compactly supported
-joint frequency test $b$, multiplication by
+joint frequency test function $b$, multiplication by
 $e^{-\sum_j y_jp_j^4}$ is harmless. Equation~\eqref{ch16:laplace} identifies
 the norms and mixed pairing of the image of the resulting boundary word
 with the smeared positive-height vector at heights $y$. They are the
-same vector. Compact-frequency tests are dense in Schwartz space;
+same vector. Test functions with compact Fourier support are dense in Schwartz space;
 therefore the closed range contains every smeared positive-height vector.
 Approximate identities, followed by a perturbation of tied times and
 permutation of separated Euclidean points, give all Euclidean word
@@ -368,11 +368,11 @@ identities prove heat and spatial intertwining.
 Finally a label acting as zero has every boundary correlation zero.
 The Laplace identity, Euclidean symmetry and continuity imply that all
 its separated Euclidean correlations vanish. The common null-space
-identity of Chapter~\ref{ch15:phases}, and the detector injectivity used
+identity of Chapter~\ref{ch15:phases}, and the injectivity of the matrix of correlation pairings used
 there, force this label to be zero in $F$.
 \end{proof}
 
-\section{The low-energy estimate and every-phase vacuum}
+\section[Vacuum uniqueness in each phase]{The low-energy estimate and uniqueness of the vacuum in each phase}
 \label{ch16:vacuum-section}
 
 The phase measure has full support, and the zero-energy space is a line
@@ -381,7 +381,7 @@ set requires a bound uniform in $\xi$. We prove it from locality and the
 spectral cone. This argument controls energies near zero, not a positive
 mass gap.
 
-For a finite sum $A$ of field words with compactly supported smooth tests,
+For a finite sum $A$ of field words with compactly supported smooth test functions,
 let $\mu_\xi$ be the joint spectral measure of $A\Omega_\xi$, and let
 $\mu_\xi^*$ be that of $A^*\Omega_\xi$. Their total masses have a common
 bound $M$ by Proposition~\ref{ch16:boundary}. Enclose all supports in a
@@ -455,7 +455,7 @@ Let $s\to\infty$. Strong heat convergence gives
 $\|Q_\xi A\Omega_\xi\|^2=|\langle\Omega_\xi,A\Omega_\xi\rangle|^2$.
 Since $Q_\xi$ fixes the unit vacuum, its value on each such word vector
 lies in the vacuum line. Compactly smeared words are dense: multiply
-Schwartz tests by expanding smooth cutoffs and use joint Gram continuity.
+Schwartz test functions by expanding smooth cutoffs and use joint Gram continuity.
 It follows that $Q_\xi=P_{\Omega,\xi}$ on the full space. The onto heat
 intertwiner gives the last assertion.
 \end{proof}

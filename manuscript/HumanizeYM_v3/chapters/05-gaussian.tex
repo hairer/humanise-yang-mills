@@ -528,7 +528,7 @@ $W$ and $T$. Restoring counting adjoints gives
  \label{ch05:physical-transports}
 \end{equation}
 Here $Q$ is the straight averaging operator in this construction.
-The same statements for a predictor containing a gradient
+The same statements for a block average containing a gradient
 correction require its corresponding choice of the gradient
 part of $W$.
 
@@ -846,10 +846,10 @@ chosen roots themselves, not merely for their squares.
 \end{proof}
 
 In particular all canonical path-row coefficients obtained from these
-rows converge, with a strict reserve between the available width and
+rows converge, with a strictly positive gap between the available width and
 the width used to sum paths. Finite products, fixed exterior operations
 and the fixed positive factorizations preserve this conclusion. The
-actual predictor correction introduced below is a fixed finite-range
+actual block average correction introduced below is a fixed finite-range
 row at the selected scale, so its application to the convergent
 straight transport also preserves convergence. These are statements
 about the quadratic data. They do not imply cutoff continuity of the
@@ -904,7 +904,7 @@ alone does not justify differentiating the weighted matrix.
 This distinction is essential when the weight degenerates with a
 scale parameter.
 
-\section{The actual predictor and the forest coordinates}
+\section{The actual block average and the forest coordinates}
 \label{ch05:actual-coordinates}
 
 We now identify the nonlinear coordinates behind the Gaussian calculation.
@@ -942,11 +942,11 @@ below; no volume-dependent coordinate conversion occurs.
 
 \subsection{A common analytic branch for all local labels}
 
-The minimizing frame and predictor of Chapter~\ref{ch04:blocking} are
+The minimizing frame and block average of Chapter~\ref{ch04:blocking} are
 real analytic near the identity. For the frame this follows directly from
 its chart equation: its quadratic objective at zero is
 $\tfrac12\operatorname{av}_{r,r'}|h_r-h_{r'}|^2$, positive definite after
-$h_0=0$ is imposed. For the predictor, its Hessian in the group variable
+$h_0=0$ is imposed. For the block average, its Hessian in the group variable
 is the identity. Complexify these finite-dimensional real analytic chart
 equations and apply the analytic implicit-function theorem
 \cite[Theorem 1.3.8]{LeblSCV}. The resulting critical points are the unique
@@ -961,7 +961,7 @@ take their common radius and bounds. Periodic pullback to a patch has
 supremum norm at most one, so these bounds are independent of $s$.
 Decrease this radius until every loop test and minimum-cost test is
 strictly on its minimizing branch. Every local label then selects the
-same frame and predictor as a function of the full fine field on the
+same frame and block average as a function of the full fine field on the
 whole common ball. Redundant uniform branch masses are constant there.
 This is equality of the local action functions before stationarity is
 imposed, not merely equality along a stationary graph. It concerns the
@@ -978,7 +978,7 @@ linearized minimizing-frame equation gives
 \end{align}
 Indeed its equation is $H_r-\operatorname{av}_{r'}H_{r'}
 =-\operatorname{av}_{r',o}I_a(r\to r';o)$, and $H_0=0$ fixes the additive
-constant. Differentiating the actual connector and then its predictor
+constant. Differentiating the actual connector and then its block average
 therefore yields
 \begin{equation}
  \mathcal Q a=M a+d_{0,c}R a,
@@ -998,9 +998,9 @@ For a fine edge $e$, join its endpoints to their block roots along the
 chosen trees. In the tree slice the resulting walk has transport $U_e$.
 It lies in one or two adjacent blocks and has length at most $2L^4-1$.
 In the macro axial gauge of Section~\ref{ch04:predictor-geometry}, its
-chord is bounded by this length times the macro bond-chord sum. The
+distance from the identity is bounded by this length times the sum of bond distances from the identity in the macro-box. The
 first-power frame estimate controls the two root-to-frame discrepancies;
-the predictor estimate controls the coarse root-to-root transport. Thus
+the block average estimate controls the coarse root-to-root transport. Thus
 \begin{equation}
  \chi\bigl(U_e(\operatorname{rep}V)_e^{-1}\bigr)
  \le C_{j,L}\mathcal P_y(U)
@@ -1009,8 +1009,8 @@ the predictor estimate controls the coarse root-to-root transport. Thus
  \label{ch05:nonlinear-tree}
 \end{equation}
 For an internal edge the walk closes at its root and only the first term
-is needed. For a crossing edge, insert the predictor between the two
-root frames and use the chord triangle inequality. The endpoint errors
+is needed. For a crossing edge, insert the block average between the two
+root frames and use the triangle inequality for the normalized Hilbert--Schmidt distance. The endpoint errors
 are bounded by the sum in \eqref{ch04:frame-first-power}, so this step
 requires no pointwise frame estimate not already proved. The constant is
 allowed to depend on $L$; the stronger pre-$L$ factor in
@@ -1018,7 +1018,7 @@ allowed to depend on $L$; the stronger pre-$L$ factor in
 
 Apply \eqref{ch05:nonlinear-tree} to $U=\exp(\epsilon a)$ with $a$ zero
 on tree edges, and $V=1$. Divide by $|\epsilon|$ and let $\epsilon\to0$.
-The chord derivative at the identity is the color norm, so
+The first-order variation of the distance from the identity is the color norm, so
 \[
  |a_e|\le C_{j,L}\sum_{p\text{ in the macro-patch at }y}|(d_{1,f}a)_p|
        +\mathbf1_{\{e\text{ crosses blocks}\}}|(\mathcal Qa)_{y,\mu}|.
@@ -1063,7 +1063,7 @@ $a'=\operatorname{rep}h'+\iota_Fz'$, it is precisely
            +b\langle h-\mathcal Qa,h'-\mathcal Qa'\rangle.
  \label{ch05:actual-hessian}
 \end{equation}
-No derivative of the nonlinear predictor beyond its actual first
+No derivative of the nonlinear block average beyond its actual first
 derivative is missing here: its residual vanishes at zero. In particular,
 \begin{equation}
  D_\psi^2f(0,0)\ge
@@ -1261,9 +1261,9 @@ connectedness implies
 \]
 Here $C_R$ allows for the finite support radius of the coordinate
 maps, fixed at this block ratio. A fraction of the exponential
-weight in \eqref{ch05:path-budget} pays this distance, and a
-further fraction pays the polynomial $(1+\ell)^q$.
-The remaining exponential weight pays the sum over possible
+weight in \eqref{ch05:path-budget} controls this distance, and a
+further fraction absorbs the polynomial $(1+\ell)^q$.
+The remaining exponential weight bounds the sum over possible
 roots of a term visiting a fixed anchor: the number of roots
 within distance $C_R(1+\ell)$ grows only polynomially in $\ell$.
 It follows, for every fixed $N$, that
@@ -1282,7 +1282,7 @@ zero defines the background.
 For the actual forest chart \eqref{ch05:forest-chart}, the deterministic
 tree comparison and the Hessian identification have already been proved
 in \eqref{ch05:tree-comparison}--\eqref{ch05:actual-gap}. The chosen
-predictor is analytic on a common fixed-patch ball, and all its redundant
+block average is analytic on a common fixed-patch ball, and all its redundant
 local labels agree there as functions of the full field.
 The derivative bounds above give exponential locality of that
 Hessian. Section~\ref{ch05:inverse} now supplies a supremum-norm
@@ -1294,7 +1294,7 @@ uniform neighborhood.
 This argument proves the uniform stationary construction for
 uncut path actions satisfying \eqref{ch05:path-budget}, the
 actual incoming quadratic coefficient condition in
-\eqref{ch05:actual-hessian}. The actual predictor and forest coordinates
+\eqref{ch05:actual-hessian}. The actual block average and forest coordinates
 supply the local analytic-coordinate hypotheses and the deterministic
 comparison \eqref{ch05:tree-comparison}. It does not require
 a later matching theorem. If two local descriptions agree
@@ -1307,13 +1307,13 @@ give the coarse quadratic form as the Hessian of the reduced action. Equality of
 previously selected graph would not suffice for this argument.
 
 The constants are uniform in the period after the block ratio,
-smoothing order and path budget have been fixed. Uniformity in
+smoothing order and path bound have been fixed. Uniformity in
 an arbitrary block ratio is a separate weighted-norm estimate;
 the Euclidean tree gap above is allowed to depend on $L$.
 
 \begin{proposition}[Uniform actual stationary chart]
 \label{ch05:actual-stationary}
-Fix the group, $j,L,b$, an exponential path budget
+Fix the group, $j,L,b$, an exponential path bound
 \eqref{ch05:path-budget}, and the actual incoming quadratic metric with
 $H_f\ge\varepsilon I>0$. For the uncut action
 \eqref{ch05:actual-action} there are radii $r_V,r_\psi>0$ and constants
@@ -1362,14 +1362,14 @@ the specified one- and two-form transports, and a positive
 three-form factor for the amended curvature defect. Its
 parameter choices precede the choice of the scale sequence.
 The nonlinear stationary graph is supplied for each incoming
-path action with the explicit local budget and actual quadratic
-coefficient condition just stated; its tree comparison and predictor
+path action with the explicit local bound and actual quadratic
+coefficient condition just stated; its tree comparison and block average
 branch compatibility are now proved for the chosen block kernel.
 
 For the nested selected schedule, Proposition~\ref{ch05:horizon-limit}
 now also proves fixed-scale convergence of the actual quadratic rows
 at every smaller exponential width. For the actual nonlinear
-step, the chosen path representation and predictor must be
+step, the chosen path representation and block average must be
 checked against \eqref{ch05:path-budget} and the actual quadratic
 coefficient condition \eqref{ch05:actual-hessian}. The common minimizing
 branch and equality of its local descriptions have been checked above. These are precise
