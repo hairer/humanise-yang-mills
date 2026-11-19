@@ -1,0 +1,428 @@
+\chapter[Operator products and contact extensions]{Operator products and extensions across diagonals}
+\label{ch18:products}
+
+There are two distinct questions about colliding insertions. An operator
+product expansion replaces a small cluster by finitely many local fields
+when tested against separated spectators. A distributional extension
+assigns values to tests that meet collision diagonals. The first requires
+quantitative information about the marked renormalization group. The
+second already follows, with a conservative finite order, from the
+polynomial separated bounds. Neither construction defines a product of
+point fields by simply setting their positions equal.
+
+We use the common filtration $F_d$, its inclusions $\iota_{d,e}$,
+and the mixed correlations $S$ from Chapter~\ref{ch13:continuum}.
+The orthogonal actions on these spaces and the phase correlations
+$S^\xi$ are those of Chapters~\ref{ch14:ward} and
+\ref{ch15:phases}. Write $\mathfrak A$ for the
+commutative compression algebra of Chapter~\ref{ch15:phases} and
+$M(w)$ for the compression of a whole separated word $w$.
+We first convert the lattice replacement estimate into the norm
+bound needed for the operator product expansion. The contact extension constructed later does not use it.
+
+The OPE originates with Wilson~\cite{Wilson1969}.
+Fr\"ob and Holland establish the Yang--Mills OPE to every fixed order
+of perturbation theory~\cite{FrobHolland2016}. That result explains the
+relevant structure, but does not supply the nonperturbative estimate
+required below. The standard distribution-extension argument is the
+normal Taylor subtraction of Brunetti and Fredenhagen
+\cite[Section~5.2, Theorems~5.2--5.3]{BrunettiFredenhagen2000}.
+We use that procedure with an explicit choice adapted to the union of
+all pair diagonals; no reconstruction theorem requires this particular
+extension.
+
+\section{A fixed prescription for all finite degrees}
+\label{ch18:prescription}
+
+A probe is a fixed word $v$ at distinct nonzero positions. It defines
+$\lambda(A)=S(A(0)v)$ on each field space on which $A$ is defined.
+These functionals separate $F_d$, by the definition of correlation-null
+fields. Since $F_d$ is finite dimensional, finitely many probes span
+its dual. A probe chosen at one degree continues to act at every higher
+degree by the same correlation, using the physical inclusions.
+
+One can choose fields $u_\alpha$ and finite linear combinations
+$b_\alpha$ of probes, with a degree $|\alpha|$ attached to each, such that
+\begin{equation}
+ b_\alpha(u_\beta)=\delta_{\alpha\beta},\qquad
+ A=\sum_{|\alpha|\le d}b_\alpha(A)u_\alpha\quad(A\in F_d),
+ \label{ch18:dual}
+\end{equation}
+where fields in lower degrees are included in $F_d$ when necessary.
+All these identities hold simultaneously at every finite degree.
+Here is the useful linear-algebra construction. Suppose the choices
+through $d$ have been made and let $R:F_d\to F_{d+1}$ be inclusion.
+The old probes give a map $B:F_{d+1}\to F_d$ with $BR=1$.
+For any section $S_0$ of the quotient map
+$q:F_{d+1}\to F_{d+1}/RF_d$, replace it by
+$S_0-RBS_0$. The corrected section is killed by every old probe.
+Lift a quotient basis through it, and represent its dual quotient
+coordinates by finite probe combinations. This extends
+\eqref{ch18:dual} without changing an earlier field or probe.
+In particular $b_\alpha$ vanishes on all degrees below $|\alpha|$.
+This is only finite-dimensional linear algebra; no infinite expansion
+of a field is being asserted.
+
+For a cluster word $w$, define the unsymmetrized field reconstruction
+\[
+ H_d(w)=\sum_{|\alpha|\le d}b_\alpha(w)u_\alpha,
+\]
+where $b_\alpha(w)$ means replacing the distinguished field in its
+probe correlations by the entire cluster. The mixed table is always
+used for this measurement. Thus the coefficients have no dependence
+on a phase or on spectators later placed outside the cluster.
+At a center $o$, apply this definition to $\tau_{-o}w$.
+For each finite collection of probes there is a positive clearance:
+a cluster sufficiently close to $o$ cannot meet a probe point, even
+after rotating the cluster. All subsequent formulas are used on this
+clear region.
+
+Write $R_d(K)$ for the orthogonal action on $F_d$, with normalized
+Haar measure on $O(4)$. Symmetrize the reconstruction by
+\[
+ A_dw=\int_{O(4)}R_d(K)H_d(K^{-1}w)\,dK,
+ \qquad B_dw=\tfrac12\{A_dw+\overline{A_d\bar w}\}.
+\]
+Both maps fix every single field of degree at most $d$ inserted at zero.
+They are smooth on the clear configuration region, since finitely many
+smooth correlation functions are integrated over a compact group.
+They preserve reality and intertwine rotations. Translation covariance
+is implemented by translating the center as above.
+
+Averaging must be followed by a compatible removal of lower degrees.
+Let $I_qA=A(0)$, put $L_{i,q}=B_iI_q$, and define
+\begin{equation}
+ Q_0=1,\qquad
+ Q_j=1-\sum_{i<j}\iota_{i,j}Q_iL_{i,j},\qquad
+ E_j=\bigcap_{i<j}\ker(Q_iL_{i,j}).
+ \label{ch18:graded}
+\end{equation}
+The inclusion identities give, by induction,
+\[
+ Q_jL_{j,q}=0\quad(q<j),\qquad
+ \sum_{i\le j}\iota_{i,j}Q_iL_{i,q}=\iota_{q,j}\quad(q\le j).
+\]
+Consequently $Q_j$ is the projection onto $E_j$ along
+$\iota_{j-1,j}F_{j-1}$. These spaces are invariant under rotations
+and conjugation. Fix real bases $(O_{j,a})_a$ of $E_j$, taking the
+unit itself in degree zero, and denote their coordinate functionals
+by $\omega_{j,a}$. The coefficients used in this chapter are
+\begin{equation}
+ c_{j,a}(w;o)=\omega_{j,a}Q_jB_j(\tau_{-o}w).
+ \label{ch18:coefficients}
+\end{equation}
+The fields, probes and projections are fixed once, before any
+truncation, phase, spectator list or small-distance limit.
+
+
+\section{The marked replacement estimate}
+\label{ch18:input}
+
+The expansion of Chapter~\ref{ch11:insertions} keeps every joint
+nilpotent marker coefficient. To replace a cluster by a single field,
+one needs more than the one-insertion graph contraction. Markers may
+merge as their separation becomes smaller than a block. Their source
+weights multiply; an incoming higher marked mode is kept as one factor,
+with its support, prescribed set of large-field sites and eligibility test. Its stronger support
+norm pays the loss when several marks are assigned to the same coarse
+region. After local Taylor subtraction, the signed residual must be
+transported on the same history and compared in the physical quotient.
+Taking absolute values before that subtraction loses the cancellation.
+
+Here is the quantitative replacement estimate. It is formulated
+so that its two uses, coefficient extraction and phase-uniform error
+control, are visible. Put $w_0=\sum_i d_i$ for a fixed cluster degree
+list, and let
+\[
+ x_i=o+r z_i,\qquad |z_i|\le M,\qquad |z_i-z_j|\ge\eta>0.
+\]
+Cluster labels range over fixed bounded subsets of their finite-dimensional
+spaces. Spectator labels have bounded degrees and coefficients; their
+positions stay at distance at least $c>0$ from $o$ and from one another.
+The constants below may depend on these finite lists, $M,\eta,c$ and
+a requested error exponent, but not on positions, phases or $r$.
+
+\begin{proposition}[Same-history marked replacement]
+\label{ch18:replacement-input}
+For every finite degree $D$ and every $\epsilon>0$, on the geometry
+just specified and for all sufficiently small $r$, the unsymmetrized reconstruction
+coefficients obey
+\[
+ |b_\alpha(w;o)|\le C r^{|\alpha|-w_0-\epsilon}.
+\]
+For each spectator word $v$, set
+\[
+ Z_D=M(wv)-M((H_D(\tau_{-o}w))(o)\,v).
+\]
+The actual lattice marked replacement, with its signed residual and
+all original higher modes retained, gives the all-copy bound
+\begin{equation}
+ \langle\Omega,(Z_D^*Z_D)^k\Omega\rangle
+       \le (C r^{D+1-w_0-\epsilon})^{2k},\qquad k\ge1.
+ \label{ch18:replacement-moments}
+\end{equation}
+The constant and the small-$r$ threshold precede $k$; cutoff thresholds
+may depend on each fixed $k$. The same estimates hold for every fixed
+finite list of differentiated insertions, with the corresponding
+engineering degrees, and for the finitely many probe families above,
+uniformly under their rotations and conjugations.
+\end{proposition}
+
+This is an analytic estimate on the selected family, not an assertion
+that any bounded marked expansion has an OPE. Its construction requires
+the signed local transport, the stronger anchored marked support bound,
+and the graded quotient comparison. In particular, if a moving field
+has coefficient size $\varepsilon_m$ at scale $m$, the needed quotient
+estimate is of the form
+\[
+ \operatorname{dist}_{F_t}(A,\iota_{i-1,t}F_{i-1})
+       \le a_m^{-(t-i)}e^{o(\log(1/a_m))}\varepsilon_m .
+\]
+The lower field must be identified by all spectator responses, using the
+normalized-null lemma of Chapter~\ref{ch13:continuum}. A bound on a chosen
+coordinate representative alone does not supply this statement.
+The all-copy estimate also cannot be replaced by a bound on the mixed
+mean of $Z_D$. These are supplied by the lattice estimate of Section~\ref{ch18:lattice-products} and its passage to the compression algebra below.
+
+\input{chapters/18-raw-replacement}
+
+\section{Finite-order operator product expansion}
+\label{ch18:ope}
+
+\begin{theorem}[Phase-uniform finite-order expansion]
+\label{ch18:ope-theorem}
+The fixed coefficients
+\eqref{ch18:coefficients} satisfy, for every finite $D$ and
+$\epsilon>0$,
+\begin{align}
+ |c_{j,a}(w;o)|&\le C r^{j-w_0-\epsilon},\qquad j\le D,\notag\\
+ \left\|M(wv)-\sum_{j\le D,a}c_{j,a}(w;o)
+                        M(O_{j,a}(o)v)\right\|
+      &\le C r^{D+1-w_0-\epsilon}.
+ \label{ch18:ope-bound}
+\end{align}
+The constants and threshold are uniform on the bounded label sets and
+separated geometries of Section~\ref{ch18:input}. Evaluating a character,
+or the mixed vacuum functional, gives the same bound for its correlations.
+\end{theorem}
+\begin{proof}
+Full support of the phase measure converts
+\eqref{ch18:replacement-moments} into the operator-norm estimate by
+\eqref{ch15:moment-norm}. To compare the unsymmetrized and symmetric reconstructions,
+write $h=H_H(\tau_{-o}w)$ at an auxiliary finite degree $H$.
+Every component of $B_jw-L_{j,H}h$ is an average of finitely many
+replacement errors tested against rotated probe words. Their clearance
+is uniform by compactness of $O(4)$. Hence
+\[
+ |B_j(\tau_{-o}w)-L_{j,H}h|
+                         \le C r^{H+1-w_0-\epsilon}.
+\]
+This identity uses covariance of the mixed correlations to rotate the
+probes, as well as the cluster; rotating labels alone would not suffice.
+
+Apply $Q_j$. In the expansion of $h$, every field of degree below $j$
+is killed. The remaining finitely many terms have powers at least
+$r^{j-w_0-\epsilon}$, by the raw coefficient estimate. Taking $H\ge j$
+proves the first bound. For the second, take $H=D$ and sum the reconstruction
+comparison through $j=D$. The reconstruction identity following
+\eqref{ch18:graded} returns $h$ exactly. Multiplying the coefficient
+errors by $M(O_{j,a}(o)v)$ costs a uniform constant on the separated
+spectator geometry. Add the raw operator error. Finitely many sums and
+averages are paid by first using a smaller error exponent.
+\end{proof}
+
+For two fields of degrees $d_A,d_B$, the degree-$j$ coefficient thus
+has size at most $C r^{j-d_A-d_B-\epsilon}$. The remainder may still
+grow when $D+1<d_A+d_B$; its order nevertheless improves with $D$.
+No assertion concerns the convergence of the infinite sum in $D$.
+
+The derivative version uses the differentiated marked replacement estimate. One first fixes the finite derivative order and the degree
+margin, then carries out the same finite probe functionals. The derivative
+identities of the field filtration identify the resulting derivatives.
+Uniform differentiated bounds permit passage from a dense grid to all
+separated positions by the mean-value theorem. Mere pointwise grid
+estimates without those bounds would not justify that passage.
+
+For two nested clusters at radii $\rho<R$, replacements can be composed
+by telescoping the signed difference. The first error is tested against
+the unchanged second cluster; the next is multiplied by the already
+produced coefficients. Accordingly a uniform nested estimate requires
+the replacement bound when exterior separation also tends to zero,
+with its dependence on $R$ retained. Fixed-positive-clearance
+Proposition~\ref{ch18:replacement-input} by itself does not give that
+stronger result. For any prescribed finite tree, the required additional
+statement is a signed bound at every vertex, with degree-$q$ coefficient
+cost $\rho^{q-d}$ and residual gain $(\rho/R)^{D+1}$, up to arbitrary
+small power losses, including the coefficients and test operators from
+its descendants. With those bounds, finite telescoping proves the
+corresponding finite-tree expansion. This stronger multi-scale assertion
+is not needed for the distributional extension below.
+
+\section{An explicit finite-order extension across every diagonal}
+\label{ch18:extension}
+
+We now use only a uniform polynomial separated bound. Fix an arity
+$n\ge2$ and a field list $\boldsymbol A$. Write
+\[
+ \Delta=\bigcup_{i<j}\{x_i=x_j\},\qquad
+ \delta(x)=\min_{i<j}|x_i-x_j|.
+\]
+Suppose, as supplied by the separated bounds and the uniform phase slab
+bounds, that for some finite $P\ge0$,
+\begin{equation}
+ |S_n^\xi(\boldsymbol A;x)|\le C_K\min(1,\delta(x))^{-P}
+ \quad(x\in K\setminus\Delta),
+ \label{ch18:polynomial}
+\end{equation}
+uniformly in $\xi$ on every compact $K$. The mixed family has the same
+bound. No optimal value of $P$ is required. Choose once an integer
+$k\ge0$ with $k+1>P$, and a length $s>0$.
+
+We specify which normal jet is subtracted near simultaneous collisions.
+Let $m=n(n-1)/2$ be the number of pairs and put, on $\Conf_n$,
+\[
+ \rho(x)=\left(\sum_{i<j}|x_i-x_j|^{-2}\right)^{-1/2}.
+\]
+Then $\delta/\sqrt m\le\rho\le\delta$.
+Choose a fixed nonnegative smooth function $\varphi$ on $[0,\infty)$,
+equal to one on $[0,2\sqrt m]$ and zero on $[4\sqrt m,\infty)$.
+For a pair $h=\{i,j\}$ define
+\begin{equation}
+ a_h(x)=\frac{\varphi(|x_i-x_j|/\rho(x))}
+                   {\sum_{u<v}\varphi(|x_u-x_v|/\rho(x))}.
+ \label{ch18:pair-weights}
+\end{equation}
+The denominator is at least one, because a closest pair has ratio at
+most $\sqrt m$. Thus $a_h\ge0$ and $\sum_h a_h=1$.
+Only pairs whose separation is at most $4\sqrt m\rho$ are selected.
+These weights are smooth off $\Delta$, invariant under simultaneous
+translations and rotations, and permuted with the slots.
+
+Let $\pi_hx$ replace $x_i,x_j$ by their centroid, leaving the other
+positions unchanged, and put $z_h=x-\pi_hx$. This is the orthogonal
+normal displacement from the pair diagonal; its norm is
+$|x_i-x_j|/\sqrt2$. Define the normal Taylor polynomial of a test by
+\begin{equation}
+ T_{h,k}f(x)=\sum_{\ell=0}^k\frac1{\ell!}
+             D^\ell f(\pi_hx)[z_h,\ldots,z_h].
+ \label{ch18:normal-Taylor}
+\end{equation}
+Only normal directions occur; the centroid and all external positions
+remain parameters. Finally fix $\chi\in C^\infty([0,\infty))$ with
+$0\le\chi\le1$, $\chi=1$ on $[0,1]$ and $\chi=0$ on $[2,\infty)$,
+and set
+\begin{equation}
+ (\mathcal W f)(x)=f(x)-\chi(\rho(x)/s)
+                                  \sum_h a_h(x)T_{h,k}f(x).
+ \label{ch18:subtraction}
+\end{equation}
+This formula, including $k,s,\varphi,\chi$, is the subtraction convention.
+It is the same in every phase and is fixed before the test function.
+It deliberately subtracts more jets than an optimal scaling-degree
+prescription may require.
+
+\begin{theorem}[A common contact extension]
+\label{ch18:extension-theorem}
+Under \eqref{ch18:polynomial}, the formula
+\begin{equation}
+ \mathfrak D_{\boldsymbol A}^\xi(f)
+   =\int_{\Conf_n} S_n^\xi(\boldsymbol A;x)
+                                      (\mathcal Wf)(x)\,dx
+ \label{ch18:extension-formula}
+\end{equation}
+defines a distribution of local order at most $k+1$.
+It extends the separated correlation, is uniform in the phase on
+compact test supports, and is continuous in $\xi$ on each test.
+The identical formula for the mixed table is its phase average.
+Translations, orthogonal covariance and simultaneous permutation
+symmetry are preserved by this prescription.
+\end{theorem}
+\begin{proof}
+This is the normal Taylor extension argument of
+\cite[Theorem~5.3]{BrunettiFredenhagen2000}; the following verification
+explains why one subtraction treats every partial diagonal here.
+When $\rho\le s$, the weights sum to one, so
+\[
+ \mathcal Wf=\sum_h a_h(f-T_{h,k}f).
+\]
+For each selected pair, $|z_h|\le 2\sqrt{2m}\rho$.
+Taylor's integral remainder therefore bounds this expression by
+$C\rho^{k+1}\|f\|_{C^{k+1}}$. Since $\delta\ge\rho$,
+\eqref{ch18:polynomial} bounds its product with the kernel by
+$C\rho^{k+1-P}\|f\|_{C^{k+1}}$, which is bounded and hence locally
+integrable. This remains true when arbitrarily many other separations
+vanish at independent rates: the selected pair always has displacement
+comparable to the smallest separation. No fixed collision pattern or
+single radial approach is assumed.
+
+On the transition region $s\le\rho\le2s$, all separations are bounded
+below by $s$, and the finite Taylor polynomials are bounded by the same
+test seminorm. Outside it the ordinary test is used. If $f$ is supported
+in a compact $K$, a nonzero subtracted jet requires $\pi_hx\in K$ and
+$|z_h|\le C_ns$. Thus the integrand is supported in one fixed compact
+enlargement $K'$ of $K$. We obtain
+\[
+ |\mathfrak D_{\boldsymbol A}^\xi(f)|
+        \le C_{K'}\max_{|\alpha|\le k+1}
+                              \|\partial^\alpha f\|_\infty.
+\]
+This proves continuity and the local order assertion. If $f$ is supported
+away from $\Delta$, all its jets at every $\pi_hx\in\Delta$ vanish,
+so \eqref{ch18:extension-formula} is the original separated integral.
+Continuity in the phase and the mixture formula follow by dominated
+convergence with the same bound. The normal projections, pair weights
+and radial cutoff commute with the stated geometric symmetries.
+\end{proof}
+
+For $n=1$ use the original smooth one-point function, and for $n=0$
+use the normalized unit. A consistent multilinear family on the whole
+filtration is obtained using the fixed invariant summands $E_j$ in
+\eqref{ch18:graded}. For each finite tuple $(j_1,\ldots,j_n)$ choose
+$P$ uniformly on the finite basis lists of $E_{j_1}\times\cdots\times
+E_{j_n}$, and choose the same $P,k$ for every permutation of that tuple.
+Use this one subtraction on the tuple and extend multilinearly there.
+Every field has a unique finite sum of components in the $E_j$, so
+extension by finite multilinearity gives a prescription on all of $F$.
+It is compatible with the inclusions and preserves rotations because
+each $E_j$ is invariant. Choosing an order independently for each vector,
+or redefining it on each larger degree space, would not have these
+properties.
+
+\section{Sharper subtraction and dependence on the prescription}
+\label{ch18:scope}
+
+The explicit extension above is conservative. A degree-sensitive
+alternative assigns to every collision subset $h$ the normal dimension
+$q_h=4(|h|-1)$, the total input degree $d_h=\sum_{i\in h}d_i$, and
+\[
+ L_h=\max(0,d_h+1-q_h).
+\]
+If a contact projection extracts a degree-$q$ field from that cluster,
+one subtracts the normal test jet through order $L_h-1-q$ when
+$q<L_h$. A single shell then has the combined power
+\[
+ \rho^{q-d_h}\,\rho^{L_h-q}\,\rho^{q_h}
+                  =\rho^{q_h+L_h-d_h},
+\]
+with exponent at least one. This explains the source prescription and
+its proposed sharper local-order bound. For several collisions the
+shell estimate must be established for the complete signed expression,
+including nested subtractions and all child test operators. The parent
+Taylor operator acts first on the test; the child operators act after
+it. They cannot be commuted for nested subsets. A partition of unity
+cannot be moved through these normal Taylor operators without its
+resulting diagonal jets. A one-shell estimate alone does not verify
+that stronger forest prescription. We have therefore used the fully
+specified pair-weighted subtraction \eqref{ch18:subtraction}, for which
+absolute convergence at all collision patterns was proved directly.
+
+Two extensions agreeing on $\Conf_n$ differ by a distribution supported
+on $\Delta$. Along a smooth stratum, a finite-order difference is a sum
+of normal derivatives of delta distributions with distributional
+coefficients. This is the usual local renormalization freedom
+\cite[Section~5.2]{BrunettiFredenhagen2000}. Changing the cutoff or
+subtraction order can change contact terms while preserving separated
+correlations and the OPE estimates. Contact reflection positivity,
+contact Ward identities, uniqueness, unit removal and identification
+with unsubtracted coincident-point lattice limits require additional
+normalization arguments.

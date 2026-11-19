@@ -1,0 +1,109 @@
+\subsection{Obtaining the three comparison bounds from one lattice family}
+\label{ch14:lattice-comparison}
+
+Here are the scale choices behind \eqref{ch14:grid-input}. Fix the
+arity bound $n$, maximum degree $D$ and a compact configuration window
+$K$ with positive point separation. Enlarge the finite label list to
+include its signed coordinate images and conjugates. All constants and
+all three exponents below are chosen for this one finite request.
+Choose positive numbers $\alpha_0,\alpha_1,\alpha_2$ and $c<0$ with
+\begin{align}
+ \alpha_1+6&<\alpha_0,&\alpha_2+5&<\alpha_0+c,\notag\\
+ nD(\alpha_0-\alpha_1)+c&<0,&
+ nD(\alpha_0-\alpha_2)-\alpha_0-c&<0.
+ \label{ch14:comparison-exponents}
+\end{align}
+For example first choose $\alpha_0-\alpha_1=7$, next $-c>7nD$,
+then $\alpha_0-\alpha_2>5-c$, and finally increase all three
+$\alpha_i$ together until the last inequality holds and all are
+positive. Increasing their common part does not alter the preceding
+inequalities.
+
+At an admissible comparison depth $k$ put
+$H_k=\exp((\log\log\widehat\beta_k)^2)$ and set
+\[
+ r_k=a_kH_k^{\alpha_0},\qquad s_k=H_k^{-\alpha_0},\qquad
+ \delta_k=H_k^c.
+\]
+Thus $r_ks_k=a_k$: grid rounding occurs on the actual construction
+lattice. Use one common polynomial extraction $T$ from
+Section~\ref{ch11:common-extraction}. If $v$ is a fixed real polynomial
+representative of a free quotient field, its lift $u_{k,N,p}$ solves
+\[
+                 S_{g/\theta}T u_{k,N,p}=W_{H_k^{\alpha_0}}v.
+\]
+Here $S_t$ multiplies a monomial with $f$ curvature factors by $t^f$,
+whereas $W_\rho$ multiplies one of engineering weight $j$ by $\rho^j$;
+$g=\beta_{N,p,k}^{-1/2}$ and $\theta$ is the local normalization
+used for $T$. These two dilations have different purposes.
+The inverse bound in \eqref{ch11:simultaneous-detector-lifts} gives
+bounded lifts at each fixed $k$, uniformly in the cutoffs and periods.
+Their real, unit and signed symmetry identities are exact. No separate
+choice is made for different spectator words.
+
+For clarity, the finite-arity use of the corrected-source estimate is
+as follows. For a subset $J$ of the slots write $G_J$ for its free
+moment at the rescaled positions, and define
+\[
+ R_\varnothing=1,\qquad
+ R_I=\prod_{i\in I}I_i-
+          \sum_{\varnothing\ne J\subseteq I}G_JR_{I\setminus J}.
+\]
+These are precisely the coefficients of the actual squarefree source
+polynomial divided by the free moment polynomial. The latter has
+constant coefficient one and hence an exact inverse in the finite
+squarefree algebra. For the limiting Gaussian variables every
+nonempty coefficient has expectation zero. The coefficient extraction,
+covariance comparison and marker-weight restoration of
+Proposition~\ref{ch11:n-mark-comparison} apply to this \emph{entire}
+finite algebra, including its joint incoming terms.
+With $q=\log H_k/(16n)$ and marker amplitude $e^{2q}$, the output
+normalization is at most $e^q$ per reflected cell, and extraction gives
+\begin{equation}
+ \|R_I\|_{\mathrm{cell}}
+       \le e^{q-2q|I|}\le H_k^{-1/(16n)}
+       \quad(\varnothing\ne I\subseteq\{1,\ldots,n\}).
+ \label{ch14:subset-root}
+\end{equation}
+The stage entry is chosen after this fixed arity and its source
+constants. The estimate is on the original positive partition
+function and includes every reflected copy. Uniformity on $K$ uses
+positive point separation in the covariance estimate; it does not
+require a positive lower bound on each coordinate difference.
+Unwinding the finite recursion and applying the chessboard inequality
+therefore gives the grid error $C_KH_k^{-1/(16n)}$ at generic grid
+points. Distinct coordinates there differ by at least $a_k$ in physical
+units, so the assignments to lattice sites require no rounding.
+
+Apply the same coefficient map and the same finite comparison request
+also at exponents $\alpha_1$ and $\alpha_2$. At its own normalization
+a singleton has root bound at most $1+|G_{\{i\}}|$. Changing its
+engineering dilation to $\alpha_0$ costs at most
+$CH_k^{(\alpha_0-\alpha_j)D}$. Set
+\[
+ A_k=CH_k^{(\alpha_0-\alpha_1)D},\qquad
+ V_k=CH_k^{(\alpha_0-\alpha_2)D}.
+\]
+The comparison cells have sides at most $a_kH_k^{\alpha_j+5}$.
+Consequently the first cells are $o(r_k)$, and the second are
+$o(r_k\delta_k)$, by \eqref{ch14:comparison-exponents}.
+The chessboard inequality gives $|S_k|\le A_k^n$ on $K$.
+The positional modulus of Section~\ref{ch11:positional}, applied
+with physical margin $r_k\delta_k$, gives
+$|\nabla S_k|\le4nV_k^n/\delta_k$ outside the coordinate strips.
+Include the finitely many coordinate hybrids used in rounding in the
+excluded strips; their total volume is still $O(\delta_k)$.
+The physical windows lie inside the smallest period for large $k$,
+so the periodic and ordinary separations agree.
+
+Take an ordered limit point of the lifts at each fixed $k$. The
+uniform bounds pass to the already chosen continuum hierarchy.
+Their exponents give exactly \eqref{ch14:grid-cost}, since
+\[
+ A_k^n\delta_k=CH_k^{nD(\alpha_0-\alpha_1)+c},\qquad
+ V_k^ns_k/\delta_k=CH_k^{nD(\alpha_0-\alpha_2)-\alpha_0-c}.
+\]
+Both tend to zero, and $s_k/\delta_k\to0$ follows from the second
+inequality. A diagonal sequence over the finite requests gives a
+single comparison sequence. The bounded coefficient limits do not
+alter the chosen correlation hierarchy or its order of limits.

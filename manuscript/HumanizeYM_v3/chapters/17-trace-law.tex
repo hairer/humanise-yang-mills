@@ -1,0 +1,420 @@
+\chapter{The trace law and its consequences}
+\label{ch17:trace}
+
+The leading short-distance limit of the stress tensor is the traceless
+Maxwell tensor. It therefore says nothing by itself about the leading
+nonzero term in the trace. That term is smaller by one inverse running
+coupling, and its two-point function by two. The perturbative origin of
+this phenomenon is the trace anomaly of Collins, Duncan and Joglekar
+\cite{CollinsDuncanJoglekar1977}. The all-radius assertion below requires
+additional estimates for the selected lattice construction; it does not
+follow by substituting a perturbative beta function into a formal identity.
+
+Retain the Ward-normalized tensor $T$ of
+Proposition~\ref{ch14:normalized-stress}, the phase $\xi_*$ chosen in
+Section~\ref{ch15:selection}, and its relativistic reconstruction.
+The latter supplies a positive-cone translation spectrum and tempered
+boundary correlations. We prove the stronger quantitative current
+transfer needed for the trace asymptotic, including its low-moment
+cancellations. The construction and reconstruction in the preceding
+chapters do not depend on this refinement.
+
+\section{Centering and the positive spectral measure}
+\label{ch17:spectrum}
+
+Put $\tau=\sum_{a=1}^4T_{aa}$, $e_{\rm tr}=S^{\xi_*}(\tau)$ and
+\[
+             \Theta=\tau-e_{\rm tr}1,\qquad
+             G_\Theta(r)=S_2^{\xi_*}(\Theta,\Theta;re_4,0).
+\]
+The real number $e_{\rm tr}$ is the expectation in the selected phase,
+which need not equal the mixed expectation. The unit field is retained
+through the common filtration. Unit deletion continues to the boundary
+correlations, so, on the common invariant word domain,
+\[
+ \Phi_\Theta(f)=\Phi_\tau(f)
+                  -e_{\rm tr}\left(\int f\right)I,
+             \qquad \langle\Omega,\Phi_\Theta(f)\Omega\rangle=0.
+\]
+For completeness, the Euclidean correlation with a unit insertion is
+constant in that insertion position. Holomorphic uniqueness on ordered
+time regions identifies its continuation with the correlation after
+deletion. Boundary values and smearing give the displayed operator
+identity on dense word matrix elements. This establishes centering on
+the domain, as well as for separated expectations.
+
+Write $p=(\boldsymbol p,E)$, $p^2=E^2-|\boldsymbol p|^2$, and
+$\overline V_+=\{E\ge|\boldsymbol p|\}$. Use
+$\widehat f_+(p)=\int e^{ip\cdot x}f(x)\,dx$ in the translation
+spectral convention, and
+$\mathcal W\psi(p)=\int e^{ip\cdot(y-x)}\psi(x,y)\,dx\,dy$.
+Then $\mathcal W(\overline f\otimes h)=
+\overline{\widehat f_+}\widehat h_+$.
+Positivity, translation covariance and temperedness give a unique
+positive measure $\rho_\Theta$ of polynomial growth, supported in
+$\overline V_+$, with
+\begin{align}
+ W_2(\Theta,\Theta;\psi)&=\int\mathcal W\psi\,d\rho_\Theta,
+ \label{ch17:spectral-pairing}\\
+ G_\Theta(r)&=\int e^{-rE}\,d\rho_\Theta(p).
+ \label{ch17:laplace}
+\end{align}
+Here is the direct spectral identification needed for these formulas.
+For $v_f=\Phi_\Theta(f)\Omega$, covariance gives
+$\widehat h_+(P)v_f=\widehat f_+(P)v_h$ by convolution.
+On a compact momentum set choose $\widehat f_+$ nonzero and define
+$d\rho_\Theta=|\widehat f_+|^{-2}d\mu_{v_f}$ there. The convolution
+identity makes the definitions agree on overlaps. Polarization gives
+\eqref{ch17:spectral-pairing} first on product tests and then on joint
+Schwartz tests. Tempered continuity bounds compact masses polynomially.
+The positive cone permits exponential damping, and uniqueness of the
+holomorphic boundary value identifies its Laplace transform with the
+Euclidean function. The scalar transformation law of $\Theta$ makes
+$\rho_\Theta$ Lorentz invariant. In particular $G_\Theta$ is real,
+nonnegative and nonincreasing. The expression
+$r^8\log^2(1/r)G_\Theta(r)$ need not be monotone.
+
+\section{Comparison at prescribed radii}
+\label{ch17:radii}
+
+Let $U_{i,d}:\mathcal M_d^{\rm Max}\to F_d$ be real comparison
+isomorphisms, preserving the unit, inclusions and signed coordinate
+symmetries. They are evaluated at a radius $r_i\downarrow0$:
+$U_{i,d}A$ is inserted at $r_ix$. The actual inverse coupling at a
+finer insertion level $k_i$ is denoted by $\beta_i$, and
+$b_i=\widehat\beta_{k_i}$ is its reference value. The radius level
+$n_i$ precedes $k_i$.
+
+The strengthened comparison, proved below, is as follows. Every prescribed
+positive null sequence has a subsequence with these data such that
+\begin{equation}
+ \beta_i/b_i\to1,\qquad
+ \frac{\beta_i}{\log(1/r_i)}\to\kappa_G,
+ \label{ch17:running-radius}
+\end{equation}
+and all fixed separated correlations and their fixed derivatives,
+with convergent moving free labels, converge to their Maxwell values.
+For pairs without derivatives this comparison is uniform over the
+phases, including at nearest lattice-rounded points. Shell tests are
+included. It must use the same field quotient and lattice family as
+before. A comparison along one freely chosen scale sequence is weaker.
+
+We explain the radius coverage and the relevant quantitative demands.
+Write $M_n=M_n^{\rm cut}=\exp((\log\log\widehat\beta_n)^2)$ and
+allow
+\[
+ r(n,u)=a_nM_n^u,\quad \alpha_0\le u\le\alpha_0+1,\qquad
+ k(n)=\min\{m>n:\log(a_n/a_m)\ge(\log\widehat\beta_n)^{48}\}.
+\]
+At fixed degree bound $D$ and arity bound $N_*$, choose comparison
+exponents with
+\begin{gather*}
+ c<0,\quad\alpha_0-\alpha_1>6,\quad
+ \alpha_0-\alpha_2>5-c,\\
+ (\alpha_0-\alpha_1)DN_*+c<0,\qquad
+ (\alpha_0-\alpha_2)DN_*-\alpha_0-c<0.
+\end{gather*}
+The common size of the $\alpha_j$ can be increased after their
+differences and $c$ have been fixed. The marked comparison required
+at every sufficiently late level has, uniformly in $u$, singleton
+seminorm bounds $CM_n^{(\alpha_0-\alpha_j)D}$ and grid errors tending
+to zero. With strip width $M_n^c$ and scaled mesh at most
+$M_n^{-\alpha_0}$, the two integration errors are bounded by
+\[
+ C M_n^{(\alpha_0-\alpha_1)DN_*+c},\qquad
+ C M_n^{(\alpha_0-\alpha_2)DN_*-\alpha_0-c}.
+\]
+They tend to zero. Thus the strip removal and derivative-transport
+argument of Section~\ref{ch14:comparison} applies to these windows.
+All-copy bounds give phase uniformity by
+\eqref{ch15:moment-norm}. The next subsection verifies these window estimates, including their
+uniformity across changes of stage, from marked propagation.
+
+The delayed schedule can require $L_n\le\log\widehat\beta_n$.
+Since $M_n$ increases and $L_n\le M_{n+1}$ eventually,
+$r(n,\alpha_0)\le r(n+1,\alpha_0+1)$. The intervals therefore
+cover every sufficiently small radius. The first crossing places a
+prescribed radius in one of them. Diagonalize finite degree, arity,
+window and derivative requests, requiring
+$(\alpha_0+1)\log M_{n_i}\le(\log\widehat\beta_{n_i})^{48}$.
+The overshoot in $k(n)$ is negligible compared with
+$\widehat\beta_n$, as is the logarithm of the radius multiplier.
+The running law in Chapter~\ref{ch10:trajectory} then gives
+\eqref{ch17:running-radius}. This proves radius coverage. It remains to verify the uniform
+comparison estimates used in these windows.
+
+\input{chapters/17-variable-windows}
+
+\section{Tensor coordinates and the regulated current}
+\label{ch17:current}
+
+Use the free scalar and tensor
+\[
+ \mathcal O=\tfrac14\sum_{a,b,\alpha}{:}(F_{ab}^\alpha)^2{:},
+ \quad L=T^{\rm Max},\quad D_{ab}=\delta_{ab}\mathcal O,
+ \quad X_{ab}=(1-\delta_{ab})\sum_{c,\alpha}{:}F_{ac}^\alpha F_{bc}^\alpha{:}.
+\]
+The coordinate sum in $\mathcal O$ is over ordered pairs. The symbol
+$X$ here denotes the off-diagonal tensor, not a polymer support.
+These three tensors span the centered degree-four symmetric
+hypercubic tensors. Before imposing the Maxwell equation, their
+vector divergences have coordinates in $E=\RR^3$, represented by
+\[
+ \sum_c F_{bc}\partial_bF_{bc},\qquad
+ \sum_{a,c}F_{ac}\partial_bF_{ac},\qquad
+ \sum_{a,c}F_{bc}\partial_aF_{ac},
+\]
+with colour contraction and Wick ordering understood. The free
+quotient $s:E\to V$ has kernel spanned by $v=(0,0,1)$, and $V$
+is the two-dimensional vector space of Section~\ref{ch14:stress-line}.
+For a tensor with diagonal entries
+$z_0\sum_cF_{ac}^2+z_1\sum_{b,c}F_{bc}^2$ and off-diagonal entries
+$z_2\sum_cF_{ac}F_{bc}$, Bianchi gives divergence coordinates
+$(2(z_0-z_2),2z_1+z_2/2,z_2)$. Hence
+\begin{equation}
+ \rho(x,y,z)=-2x-8y,\qquad
+ \rho(\operatorname{div}_{\rm raw}B)\mathcal O=-\operatorname{tr}B.
+ \label{ch17:rho}
+\end{equation}
+In particular $\rho(v)=0$ and the values for $L,X,D$ are $0,0,-4$.
+
+At a lattice site set
+$f_{ab}=\operatorname{proj}_{\gLie}(U_{\square(a,b)}-
+U_{\square(a,b)}^{-1})/2$ and start with
+\[
+ J_{ab}=\tfrac14\delta_{ab}\sum_{c,d}\langle f_{cd},f_{cd}\rangle
+                  -\sum_c\langle f_{ac},f_{bc}\rangle,
+ \qquad (Y_b^x)_e=\mathbf1_{e^-=x}f_{b,e^{\rm dir}}(x).
+\]
+Here $Y$ is a left link displacement. If $\mathsf S$ is the leading
+path action without its coupling, define its current defect by
+$\mathcal E_b=\sum_a\nabla_aJ_{ab}-D\mathsf S[Y_b]$, using
+\[
+ \nabla_a=\sum_{j=1}^4c_j(\mathsf s_a^j-\mathsf s_a^{-j}),
+ \qquad(c_1,c_2,c_3,c_4)=(4/5,-1/5,4/105,-1/280).
+\]
+The operator $\mathsf s_a$ shifts by one site in direction $a$.
+Initially the trace and antisymmetric part of $J$ vanish. During
+transfer they must remain exact forward differences; smallness of their
+values alone would not suffice for the trace rate below.
+
+We fix the coefficient tests in that calculation. For a local scalar
+$F$, its Hessian Fourier kernel is
+\[
+ \widehat F_{c\alpha,c\alpha}(p,q)=
+ \sum_{x,y}e^{i(p\cdot x+q\cdot y)}
+ D^2F(0)[e_{x,c,\alpha},e_{y,c,\alpha}],
+\]
+where $e_{x,c,\alpha}$ is the link-coordinate basis vector. Fix one
+colour $\alpha$. For a vector $F_b$ and a scalar action $F$ put
+\begin{align*}
+ \mathsf l(F)&=\operatorname{Re}\sum_{a\ne c,b}
+      i[z^2t]\widehat{F_b}_{c\alpha,c\alpha}(ze_a,-ze_a+te_b),\\
+ \mathsf q(F)&=|\Lambda|^{-1}\operatorname{Re}\sum_{a\ne c}
+            [z^2]\widehat F_{c\alpha,c\alpha}(ze_a,-ze_a),\\
+ \mathsf h(F)&=\mathsf l(F)-\tfrac12\operatorname{Re}\sum_{a\ne c}
+            [z^2]\widehat{F_c}_{c\alpha,c\alpha}(ze_a,-ze_a).
+\end{align*}
+Brackets denote Taylor coefficients including reciprocal factorials.
+The volume normalization in $\mathsf q$ is for the translation-invariant
+action; $\mathsf l$ tests the anchored vector response. Define
+$\mathfrak h(Y)=\mathsf h(\operatorname{div}_{\rm Haar}Y)$.
+The second term in $\mathsf h$ corrects the lattice derivative.
+The regulated current calculation uses
+\[
+ \Gamma_\mu=\tfrac12\log\det(H+dd^*+\mu^2I)
+                 -\log\det(d^*d+\mu^2I),\quad
+ R(\mu)=\mathsf q(\Gamma_\mu),\quad
+ \mathcal D(\mu)=-\mu R'(\mu).
+\]
+Here $H$ is the left Hessian of $\mathsf S$, $d$ its infinitesimal
+gauge insertion, and $\mathsf q$ is the coefficient test just defined. Its normalization
+counts twelve ordered transverse planes. The actual Ward calculation requires its Haar
+coefficient $\mathfrak h(Y)$ to obey
+\begin{equation}
+ \mathfrak h(Y)=\mathcal D(\mu)+O(\mu)+o(1),\qquad
+ R(\mu)=12\kappa_G\log\mu+O(1).
+ \label{ch17:regulator-input}
+\end{equation}
+The $o(1)$ is uniform on each fixed interval $[\delta,1]$ as the
+current defect tends to zero and the period tends to infinity;
+the constant in $O(\mu)$ is independent of $\mu\le1$.
+This identity concerns the actual gauge-fixed Hessian and transferred
+current. The perturbative anomaly citation does not supply it.
+
+The next section derives this regulated identity from explicit weighted
+current bounds and convergence of the matched current jets. It keeps
+the gauge-coordinate corrections and the lattice coefficient correction.
+The following current-contraction section then verifies these hypotheses
+for repeated stationary transfer.
+
+\input{chapters/17-trace-transfer}
+\input{chapters/17-current-contraction}
+
+\section{Quantitative stability of the trace functional}
+\label{ch17:stability}
+
+The finite-dimensional argument is elementary, but its rate is essential.
+Suppose $s:E\to V$ has right inverse $t$ and one-dimensional kernel
+$\RR v$. Let $s_i:E\to V$, $t_i:V\to E$ satisfy
+$s_it_i=I$, $t_i\to t$, and let $v_i\to v$. If $e_i\ge1$ and
+\[
+ e_i\|s_iv_i\|\to0,\qquad e_i|\rho(v_i)|\to0,
+\]
+then, for $\lambda_i=\rho t_i$,
+\begin{equation}
+ s_i\to s,\quad \sup_i\|\lambda_i\|<\infty,
+              \quad e_i\|\lambda_is_i-\rho\|\to0.
+ \label{ch17:stable-functional}
+\end{equation}
+Indeed $k_i=v_i-t_is_iv_i\to v$ lies in $\ker s_i$. The maps
+$(h,c)\mapsto t_ih+ck_i$ converge to the invertible map
+$(h,c)\mapsto th+cv$, so their inverses are uniformly bounded.
+Writing $y=t_is_iy+c_i(y)k_i$ gives $|c_i(y)|\le C\|y\|$ and
+$(\lambda_is_i-\rho)y=-c_i(y)\rho(k_i)$, which proves the claim.
+
+Here are the complete rate estimates needed for the trace conclusion;
+the next section proves them for the common family.
+Write
+\[
+ e_i=\exp((\log\log b_i)^2/5),\qquad
+ q_i=\exp((\log\log b_i)^2/6),
+\]
+so $q_i/e_i\to0$ and both are smaller than every positive power of
+$b_i$. The letter $q_i$ in this section is a scalar bound, unrelated
+to the inserted densities of Chapter~\ref{ch11:insertions}.
+Let $B_i^L,B_i^X,B_i^D$ be the centered transferred tensors and set
+\[
+ A_i=\beta_i r_i^4 U_{i,4}^{-1},\qquad
+ K_i=\beta_i r_i^5 U_{i,5}^{-1}\operatorname{div}.
+\]
+The required same-family current transfer estimates are
+\begin{align}
+ &\|\beta_iK_iB_i^L\|\le Cq_i,\quad
+             \lambda_i(\beta_iK_iB_i^L)\to-\kappa_G,
+ \label{ch17:transfer}\\
+ &K_iB_i^Z\to\operatorname{div}^{\rm Max}Z,\quad
+ e_i[\lambda_i(K_iB_i^Z)-\rho(\operatorname{div}_{\rm raw}Z)]\to0
+                       \quad(Z=X,D),\notag\\
+ &A_iB_i^Z\to Z\quad(Z=L,X,D),\quad
+ b_i^p\operatorname{tr}(A_iB_i^Z)\to0
+                       \quad(Z=L,X,\ p\in\NN).\notag
+\end{align}
+These bounds are stronger than smooth free comparison. The next section
+proves them using the kernel identities and a separate low-moment
+estimate for spatial remainders.
+
+\input{chapters/17-marked-trace-rates}
+
+\section{The coefficient and the all-radius limit}
+\label{ch17:limit}
+
+\begin{proposition}[The trace coefficient]
+\label{ch17:coefficient}
+For the prescribed-radius comparison maps constructed above,
+\[
+          \beta_i r_i^4 U_{i,4}^{-1}\Theta
+                       \longrightarrow-\kappa_G\mathcal O.
+\]
+\end{proposition}
+\begin{proof}
+The free divergences of $X,D$ form a basis of $V$. Thus the maps
+$f_i(c)=c_0K_iB_i^X+c_1K_iB_i^D$ have bounded inverses eventually.
+Put $c_i=-f_i^{-1}(\beta_iK_iB_i^L)$, so $|c_i|\le Cq_i$ and
+$Z_i=\beta_iB_i^L+c_{i,0}B_i^X+c_{i,1}B_i^D$ is conserved.
+Applying $\lambda_i$ to its zero divergence gives
+\[
+ 4c_{i,1}=\lambda_i(\beta_iK_iB_i^L)
+ +c_{i,0}\lambda_i(K_iB_i^X)
+ +c_{i,1}[\lambda_i(K_iB_i^D)+4].
+\]
+The last two terms are $O(q_i)o(e_i^{-1})=o(1)$, whence
+$c_{i,1}\to-\kappa_G/4$. Since $q_i/\beta_i\to0$,
+$r_i^4U_{i,4}^{-1}Z_i\to L$. The faster trace bounds give
+$\beta_i\operatorname{tr}(r_i^4U_{i,4}^{-1}Z_i)
+\to-\kappa_G\mathcal O$.
+
+The conserved line gives $Z_i=\nu_iT$. Choose one free translation
+flux test with nonzero value. Its flux on the rescaled $Z_i$ tends
+to that value. The Ward identity for $T$ and derivative comparison
+make its corresponding flux tend to the same nonzero value.
+Their ratio is $\nu_i$, so $\nu_i\to1$. Finally centering subtracts
+$e_{\rm tr}\beta_i r_i^4 1\to0$ by \eqref{ch17:running-radius}.
+\end{proof}
+
+\begin{theorem}[The all-radius trace law]
+\label{ch17:all-radii}
+The centered trace in the selected phase satisfies
+\begin{equation}
+ \lim_{r\downarrow0}r^8\log^2(1/r)G_\Theta(r)
+              =\mathcal A_G:=\frac{3\dim_\RR\gLie}{\pi^4}>0.
+ \label{ch17:trace-law}
+\end{equation}
+\end{theorem}
+\begin{proof}
+The free normalization is
+$S_2^{\rm Max}(\mathcal O,\mathcal O;x,0)=\mathcal A_G|x|^{-8}$.
+One can check its factor without a tensor convention ambiguity:
+the curvature covariance is
+$(H_{ai}H_{bj}-H_{aj}H_{bi})/(\pi^2|x|^4)$ with
+$H=I-2xx^{\mathsf T}/|x|^2$ orthogonal. The sum of its squared
+numerators over ordered pairs is $24$. The two Wick pairings and
+the two factors $1/4$ give $2\cdot24/16=3$ per colour.
+
+Start with any prescribed null sequence of radii, and take its
+comparison subsequence. Proposition~\ref{ch17:coefficient} gives
+convergent moving labels, while \eqref{ch17:running-radius} cancels
+the factor $\kappa_G^2$ in their pair correlation. For a generic
+pair at distance $t$, lattice rounding therefore yields
+\[
+ r_i^8\log^2(1/r_i)G_\Theta(r_it_i)\to\mathcal A_Gt^{-8},
+                         \qquad t_i\to t.
+\]
+Choose the pair $0,(t/2,t/2,t/2,t/2)$ for $1/2<t<2$.
+For $t<1$ the monotonicity of \eqref{ch17:laplace} bounds the upper
+limit at $r_i$ by $\mathcal A_Gt^{-8}$; $t>1$ bounds the lower
+limit. Send $t$ to one from each side. Every prescribed null
+sequence has a subsequence with limit $\mathcal A_G$, which proves
+\eqref{ch17:trace-law} by the subsequence criterion.
+\end{proof}
+
+\section{What the trace law excludes}
+\label{ch17:exclusion}
+
+Specify the comparison class before using this asymptotic. A finite
+mass-shell Wick profile is a finite linear combination of finite
+products of kernels
+\[
+ K_{m,k,h}(r)=\int_{\RR^3}
+ \frac{\omega_m(\boldsymbol p)^k h(\boldsymbol p)}{2\omega_m(\boldsymbol p)}
+ e^{-r\omega_m(\boldsymbol p)}\,d^3\boldsymbol p,
+ \qquad\omega_m=(m^2+|\boldsymbol p|^2)^{1/2},
+\]
+where $m\ge0$, $k$ is a nonnegative integer and $h$ is a polynomial;
+empty products are constants. The measure has no implicit Fourier
+normalization. All these integrals are locally integrable at zero
+and converge for $r>0$.
+
+Each such profile has, near zero, a finite sum of terms
+$r^a(\log r)^b$, with integer $a$ and nonnegative integer $b$,
+plus a bounded remainder. This is the standard Laplace asymptotic expansion
+\cite{Wong2001}, applied as follows: decompose $h$ into homogeneous terms,
+use polar coordinates, and expand
+$(\omega^2-m^2)^{(j+1)/2}$ for $\omega\ge2m$.
+Choose enough terms that the remainder has as many energy moments
+as needed for the other factors in a product. The retained integer
+powers integrate to powers and logarithms; the bounded energy
+interval contributes an analytic function. Thus only nonnegative
+powers of the logarithm occur.
+
+After multiplication by $r^8\log^2(1/r)$, a nonzero leading term
+with $a\le-8$ diverges in magnitude, while every term with $a>-8$
+and the bounded remainder tend to zero. Therefore a finite limit,
+if it exists, is zero. The positive limit in
+\eqref{ch17:trace-law} proves that $G_\Theta$ cannot agree with any
+such profile on any interval $(0,\delta)$.
+
+This excludes that specified finite mass-shell polynomial comparison.
+It does not exclude a generalized free field chosen to have the
+same positive measure $\rho_\Theta$, nor an infinite Wick expansion.
+No mass gap follows from a short-distance trace law.

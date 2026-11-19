@@ -1,0 +1,1203 @@
+\chapter[Local matching and the one-loop coefficient]{Local matching and the one-loop coefficient}\label{ch07:matching}
+
+A renormalization step has two distinct normalization tasks. Its
+classical stationary action must retain the prescribed quadratic form
+and agree with a gauge-invariant local action through degree four.
+Its Gaussian determinant changes the coefficient of that quadratic
+form. The first task is a local Taylor construction; the second requires
+a comparison of determinants uniform in the block ratio. This chapter
+separates the two, so that a perturbative coefficient does not stand in
+for an estimate on the actual block integral.
+
+Fix one step $m+1\to m$, an odd block ratio $L=L_m$, and the Lie
+algebra metric of Chapter~1. Momentum is measured in lattice units at
+the indicated level. The adjoint Casimir $C_G$ is defined by
+$\tr_{\gLie}(\operatorname{ad}X\operatorname{ad}Y)
+=-C_G\langle X,Y\rangle$; set
+\[
+ \kappa_G=\frac{11C_G}{24\pi^2}.
+\]
+The group is compact with simple nonabelian Lie algebra. Constants may
+depend on fixed stage bounds, but constants described as uniform in $L$
+are chosen before $L$. All local Taylor expansions below concern the
+analytic action near the flat field, where small-field indicators are
+constant. They do not differentiate a cutoff boundary.
+
+\section{Common Taylor kernels and Ward identities}\label{ch07:kernels}
+
+Write $C_n(E)=D^nE(0)/n!$ for the normalized symmetric Taylor
+coefficient of an action $E$. A translation-invariant coefficient is
+specified by its values on plane waves. After division by the number
+of lattice sites, its symbol is a tensor
+$f(p_1,\ldots,p_{n-1})$, with $p_0=-\sum_{i>0}p_i$.
+The tensor has one direction and one colour index for each field.
+The symbol is periodic with period $2\pi$ in each independent momentum.
+A common symbol means one function chosen on the infinite lattice whose
+restriction to each finite momentum grid describes the corresponding
+torus coefficient. This requirement is stronger than a separate smooth
+extension of each finite grid.
+
+For $\sigma>0$, write $|f|_\sigma\le A$ when every component is
+holomorphic and bounded by $A$ on the strip
+$|\operatorname{Im}p_i^a|<\sigma$. There are only finitely many direction
+and colour components at fixed $n$. Reducing the strip gives an
+exponentially weighted sum of Fourier coefficients, with a constant
+depending on $n,\sigma,G$. Thus common strip bounds imply locality
+uniformly in the period. An order-$r$ zero means that all momentum Taylor
+coefficients of total degree below $r$ vanish.
+
+Let $q_a(p)=e^{ip_a}-1$ and $d_1(p)v=q(p)\wedge v$ be the lattice
+curl. Suppose an analytic gauge-invariant difference $E$ has vanishing
+Taylor coefficients below degree $n$. Its infinitesimal gauge identity
+at that degree contains only the linear gauge variation $d_0\omega$:
+the nonlinear part multiplies lower coefficients, which are zero.
+Consequently its first nonzero symbol satisfies
+\begin{equation}\label{ch07:ward}
+ \delta_i f=0\quad(0\le i<n),\qquad
+ \delta_i=\iota_{q(p_i)}.
+\end{equation}
+Contraction is algebraic, without complex conjugation; it acts only on
+the direction index of the indicated leg. Reality means
+$\overline{f(-p)}=f(p)$ on real momenta. Constant gauge transformations
+make its colour tensor adjoint invariant. A Ward identity verified on
+all finite momentum grids passes to the common continuous symbol by
+density. This last step requires a common kernel.
+
+\section{Division by the lattice curl}\label{ch07:division}
+
+The algebraic Poincar\'e lemma explains why gauge-invariant leading
+coefficients are built from curvature; see
+\cite[Section~4]{BarnichBrandtHenneaux2000}. Its local continuum form does
+not give the periodic strip bounds needed here. We give the quantitative
+adaptation, including the constraint on the sum of momenta.
+
+\begin{lemma}[Quantitative curvature representation]\label{ch07:curl}
+Let $f$ have $n$ one-form legs, satisfy \eqref{ch07:ward}, and obey
+$|f|_\sigma\le A$. For $n\ge3$ there are $\eta>0,K<\infty$,
+depending only on $n,\sigma$, and a periodic holomorphic tensor $g$
+with two-form legs such that
+\[
+ f=\delta_0\cdots\delta_{n-1}g,\qquad |g|_\eta\le KA.
+\]
+For $n=2$ the same assertion holds if $f$ has order $r+2$, $r\ge0$;
+then $g$ can be chosen with order $r$. Reality and invariant colour
+coefficients can be imposed with a fixed additional norm factor.
+\end{lemma}
+
+\begin{proof}
+The elementary division is
+\[
+ D_af(p)=\frac{f(p)-f(p|_{p_a=0})}{e^{ip_a}-1}.
+\]
+It is holomorphic at the apparent zeros. On a Fourier monomial the
+quotient is a geometric sum with $|z_a|$ terms and no frequency larger
+than $|z_a|$. A smaller strip absorbs this polynomial factor into the
+exponential Fourier decay. Hence $D_a$ is bounded from a fixed strip to
+a smaller one and loses at most one Taylor order.
+
+For a cycle $\delta f=0$ in one exterior factor, write
+$f=e_a\wedge u+v$, with $u,v$ containing no $e_a$. Then
+$\delta'v=-q_au$, and direct substitution gives
+\[
+ f=\delta(e_a\wedge D_av)+v|_{p_a=0}.
+\]
+Repeat over the four axes. At positive exterior degree the last
+remainder has no possible component and is zero. At degree zero the
+last remainder is $f(0)$, so that case is solvable precisely when
+$f(0)=0$. The construction preserves auxiliary constraints independent
+of the momentum being divided. It raises the exterior degree by one,
+loses at most one Taylor order, and has a bounded smaller-strip norm.
+
+Only the dependent momentum $p_0$ needs extra care. The following
+induction supplies it. With $t$ independent momenta and exterior degrees
+$(d,1,\ldots,1)$, a cycle in every factor has a zeroth-factor primitive
+preserving the other cycles whenever $d+2t>4$.
+For $t=0$ its degree exceeds four and it is zero. For $t>0$, replace
+$p_1$ by $p_0$ as independent variable and apply the preceding division.
+This invertible integral shear only reduces the strip by a fixed factor.
+It gives $\delta_0X=f$, preserving the cycles in factors $2,\ldots,t$.
+Apply another zeroth-factor division to $\delta_1X$, obtaining
+$\delta_0Y=\delta_1X$. At $p_1=0$ the tensor $Y_0$ is a cycle with
+zeroth degree $d+2$ and $t-1$ independent momenta. Induction gives
+$\delta_0Z=Y_0$. Extend $Z$ independently of $p_1$ and set
+$Y'=Y-\delta_0Z$. It vanishes at $p_1=0$, so scalar division in factor
+one gives $\delta_1D=Y'$. The corrected primitive
+$X-\delta_0D$ has contraction $f$ in factor zero and zero in factor one.
+All other cycles were retained. The invariant quantity $d+2t$ makes
+this a terminating induction.
+
+Initially $d=1,t=n-1$, so the induction applies for $n\ge3$.
+After the zeroth-factor lift, divide the independent legs successively.
+For $n=2$, start instead with an order-$r+2$ tensor. The first lift has
+order $r+1$; contraction in factor one restores one order, and the next
+lift $Y$ has order $r+1$. Thus $Y(0)=0$ without induction. Its scalar
+lift has order $r$, the corrected primitive has order $r+1$, and the
+last division leaves order $r$. All operations are bounded on a common
+smaller strip and their number is fixed.
+
+Finally replace $g$ by $(g(p)+\overline{g(-p)})/2$ and project each
+colour coefficient onto the invariant real tensors. Contraction acts
+on direction indices and commutes with this finite-dimensional
+projection. These operations preserve the reconstruction and all
+retained orders, with a fixed norm factor.
+\end{proof}
+
+Choose coordinate paths from the origin to the Fourier displacements
+$z_1,\ldots,z_{n-1}$. A curvature insertion transported along such a
+path is
+\begin{equation}\label{ch07:slot}
+ F_{\gamma,ab}(U,x)=\Ad(U_{x+\gamma})
+ \operatorname{proj}_{\gLie}\frac{U_{x+z;ab}-U_{x+z;ab}^{-1}}2,
+ \qquad \gamma:0\longrightarrow z.
+\end{equation}
+All factors transform at the common anchor $x$, so an invariant
+multilinear colour contraction is gauge invariant. Its length is the
+sum of the path lengths plus four per plaquette. The linearization of
+each factor is the corresponding curl. The Fourier coefficients of
+$g$ therefore produce an exact leading Taylor coefficient $f$.
+Symmetrizing the legs implements the convention $C_n=D^n/n!$;
+it introduces no extra factorial.
+
+If $a$ denotes such a multilinear term and $|a|$ the sum of absolute
+colour coefficients, the result is
+\begin{equation}\label{ch07:path-norm}
+ \sum_a |a|e^{w\operatorname{length}(a)}\le K_w A
+ \qquad(0<w<\eta).
+\end{equation}
+Averaging over signed coordinate symmetries preserves matching and this
+bound. Absolute convergence permits periodization on every torus.
+For the two-leg case with $r=2$, the curvature coefficients $c(z)$ obey
+\begin{equation}\label{ch07:moments}
+ \sum_zc(z)=0,\qquad \sum_z z_ac(z)=0\quad(1\le a\le4).
+\end{equation}
+These are the value and first derivatives of its symbol at zero.
+They hold separately for each orientation and colour pair.
+
+\section{The marginal quadratic coefficient}\label{ch07:quadratic}
+
+A quadratic Taylor symbol includes the factor $1/2!$. For its transverse
+entry, define
+\begin{equation}\label{ch07:alpha}
+ \alpha(f)=2\operatorname{Re}[t^2]f_{22}^{uu}(te_1),
+\end{equation}
+where $u$ is any unit colour basis vector. The kinetic symbol $b_H$ of
+$J$ has quadratic homogeneous term
+\[
+ (b_H)_{ab}^{uv,[2]}(p)=\tfrac12
+ (|p|^2\delta_{ab}-p_ap_b)\delta_{uv},
+\]
+so $\alpha(b_H)=1$. The factor two in \eqref{ch07:alpha} is therefore
+fixed by the Taylor convention, not by a choice of coupling scheme.
+
+\begin{lemma}[Removal of the kinetic coefficient]\label{ch07:unique}
+An analytic quadratic symbol from an invariant real action, with
+exchange symmetry and signed-coordinate symmetry, has
+$f-\alpha(f)b_H=O(|p|^4)$. Its coefficient $\alpha$ is independent
+of the transverse axis pair and the chosen unit colour.
+\end{lemma}
+
+\begin{proof}
+The Ward identity first kills the constant term. Its linear term is
+also zero: inversion of all coordinates acts positively on the two
+one-form indices and negatively on a linear momentum polynomial.
+Edge translation phases have constant term one; their higher terms
+multiply the already vanishing constant coefficient.
+
+At quadratic order the colour-symmetric diagonal forms are scalar
+multiples of the invariant metric. A self-adjoint operator commuting
+with the adjoint action has invariant eigenspaces, which are ideals;
+simplicity leaves only one eigenvalue. Coordinate reflections allow
+only $p_c^2$ in a diagonal direction entry and $p_ap_b$ in an
+$a,b$ off-diagonal entry. Permutation symmetry identifies their
+coefficients. The transverse Ward equations then force the tensor to
+be a scalar multiple of $|p|^2I-pp^{\mathsf T}$.
+One transverse test determines that scalar. Subtracting the actual
+kinetic symbol preserves all symmetries, not merely their leading
+parts. Its residual cubic coefficient vanishes by inversion, since all
+lower coefficients now vanish. Thus the residual has order four.
+\end{proof}
+
+Apply the two-leg curvature representation to this residual. The
+resulting quadratic curvature terms have the zero moments
+\eqref{ch07:moments}. They cannot change the coupling: their curvature
+symbol is $O(|p|^2)$ and their link symbol is $O(|p|^4)$.
+The coefficient of curvature square is carried entirely by $\beta$.
+This statement refers to Taylor coefficients at the flat field; it does
+not identify a nonlinear effective action with its quadratic truncation.
+
+\section{Haar measure and gauge completion}\label{ch07:completion}
+
+The Gaussian contribution at a stationary fine configuration $U_v$ is
+\begin{equation}\label{ch07:thermal}
+ T(v)=\mathcal L_{m+1}(U_v)+\tfrac12\log\det Q(v)-\log J_{\rm Haar}(v).
+\end{equation}
+Here $Q$ is the fluctuation Hessian without its factor $\beta$,
+$J_{\rm Haar}$ is the density of Haar measure in the chosen chart, and
+$\mathcal L_{m+1}$ is the inherited quadratic loop action.
+Field-independent constants may be subtracted throughout. This does
+not alter any Taylor coefficient of positive degree.
+
+The following finite-dimensional identity accounts for the ghost
+factor. Let $\mathsf J$ be the joint Hessian in left tangent coordinates,
+$\mathcal R$ the infinitesimal gauge insertion, and $\mathcal I$ a
+slice embedding. Assume
+\[
+ \mathsf J\mathcal R=0,\quad |\det(\mathcal R,\mathcal I)|=1,
+ \quad Q=(Ds)^*\mathcal I^*\mathsf J\mathcal I\,Ds,
+ \quad J_{\rm Haar}=|\det Ds|.
+\]
+These are identities at the stationary configuration. Given a gauge
+condition $F$ with invertible $G=F\mathcal R$, put
+$C=\mathsf J+F^*F$. Block triangular factorization in the basis
+$(\mathcal R,\mathcal I)$ gives
+\[
+ \det C=(\det G)^2\det(\mathcal I^*\mathsf J\mathcal I),
+ \qquad
+ \tfrac12\log\det Q-\log J_{\rm Haar}
+ =\tfrac12\log\det C-\log|\det G|.
+\]
+The fluctuation form is positive on the slice. With a positive regulated
+ghost operator the absolute value can be dropped. This is the
+finite-dimensional Faddeev--Popov determinant identity; the moving
+Haar Jacobian is part of it. Omitting that Jacobian would change the
+quantity being compared. Background-field perturbation theory uses
+exactly this vector-minus-ghost combination~\cite{Abbott1982}.
+
+For the lattice comparison choose $\mu=L^{-1}$ and
+\[
+ P_\mu=\mu^2(\Delta_U+\mu^2I)^{-1},\qquad
+ m_\mu=\mu^2P_\mu^9,\qquad \Delta_U=d_U^*d_U.
+\]
+If $X\mathcal R=I$ is the derivative of the gauge frame, take
+$F=d_U^*P_f+m_\mu X$; then $G=\Delta_U+m_\mu$.
+The auxiliary fine operator is
+$A_\mu=A+d_Ud_U^*+M_\mu$, where $A$ is the fine kinetic Hessian
+and $M_\mu$ applies $m_\mu$ to each one-form component.
+Its determinant response is
+$\Pi_\mu=\frac12\log\det A_\mu-\log\det G$.
+The same ghost appears in both expressions and cancels in their
+difference.
+
+\section{The auxiliary lattice determinant}\label{ch07:one-loop}
+
+Perturbative matching for the Wilson lattice action is treated in
+L\"uscher--Weisz~\cite{LuscherWeisz1995}; our comparison additionally
+controls the selected non-Wilson path action and its block predictor.
+The continuum coefficient is the classical calculation of
+Gross--Wilczek and Politzer~\cite{GrossWilczek1973,Politzer1973}.
+We use the background-field formulation~\cite{Abbott1982}; the following
+normalization check and integrable error criterion are the parts needed
+for the lattice application. Recall that $\alpha$ includes the factor
+two converting a normalized quadratic Taylor coefficient into the
+coefficient of $\frac12\langle d_1v,d_1v\rangle$.
+
+For external momentum $te_1$, polarization $e_2$, and unit colour $u$,
+the leading ghost vertex is $-2ik_2\operatorname{ad}u$. The vector
+vertex has four copies of this orbital term and the spin term
+$2it(E_{21}-E_{12})\operatorname{ad}u$. The orbital--spin trace is zero.
+With vector and ghost bubble weights $-1/4$ and $+1/2$, respectively,
+and $\tr(\operatorname{ad}u)^2=-C_G$, the coefficient extracted by
+\eqref{ch07:alpha} has homogeneous integrand
+\begin{equation}\label{ch07:pole}
+ h(k)=4C_G\left(\frac{k_2^2}{|k|^6}
+       -\frac{4k_1^2k_2^2}{|k|^8}-\frac1{|k|^4}\right).
+\end{equation}
+This is the standard background-field bubble calculation, with its
+colour normalization expressed in our metric. It is not a claim that
+the full lattice integrand equals $h$.
+
+\begin{proposition}[The lattice integrand remainder]\label{ch07:integrand-input}
+Let the incoming analytic path action have a fixed positive exponential
+coefficient bound, a uniformly positive curvature metric, and kinetic
+normalization $H(0)=I$. Form its actual left-coordinate Hessian, complete
+it by $d_Ud_U^*$, and use the covariant regulator $m_\mu$ defined above.
+The auxiliary quadratic coefficient has an integrand $I_\mu$ satisfying
+\begin{align*}
+ \alpha(\Pi_\mu)&=(2\pi)^{-4}\int_{[-\pi,\pi]^4}
+                                    \operatorname{Re}I_\mu(k)\,dk,\\
+ |I_\mu(k)|&\le A(|k|+\mu)^{-4},\\
+ |I_\mu(k)-h(k)|&\le D(|k|^{-3}+\mu^2|k|^{-6})
+                  \quad(\mu\le|k|\le1).
+\end{align*}
+The constants depend on the fixed path bounds, metric floor and group,
+but not on $\mu\in(0,1]$ or the torus period. The finite-torus Hessian
+is the corresponding momentum mesh average, with an exponentially small
+per-site error relative to the integral at each fixed $\mu$.
+\end{proposition}
+
+\begin{proof}
+We specify the derivatives used in the comparison. In one vector or
+ghost channel let $a(k)$ be the zero-background denominator,
+$b(p;k)$ its first background insertion, and $c(p,p';k)$ its second
+insertion. These are actual derivatives of the same operator; the
+internal momentum of $b(p;k)$ changes from $k$ to $k+p$.
+Their contribution to the logarithmic Hessian is
+\begin{equation}\label{ch07:response-integrand}
+ \tr\{a(k)^{-1}c(-p,p;k)
+       -a(k)^{-1}b(-p;k+p)a(k+p)^{-1}b(p;k)\}.
+\end{equation}
+Take half the vector expression minus the ghost expression and apply
+the normalized external coefficient functional. This defines $I_\mu$.
+Finite Fourier inversion gives the identical formula with the internal
+integral replaced by the mesh mean. Thus the integrand is associated
+with the actual fine action, rather than with a separately chosen
+continuum model.
+
+We first check its local Taylor data. A transported plaquette curvature
+has, under the formal scaling $A(x)=\epsilon a(\epsilon x)$,
+leading term $\epsilon^2(da+[a,a])$ in the corresponding orientation.
+Its remaining terms have weight at least three; a Taylor derivative or
+a factor of $A$ counts as one weight. This follows by expanding the four
+edge exponentials and their transports. At weight four the row squares
+and direct term therefore have colour-direction coefficient
+$c_{\rm dir}I+\widehat\rho(0)^*\widehat\rho(0)=I$.
+Cubic and quartic curvature terms have weights at least six and eight.
+The leading local density is consequently the Wilson curvature-square
+density. All differences from it have weight at least five.
+Exponential path summability justifies these expansions term by term
+and bounds their Taylor remainders: each derivative costs a polynomial
+in path length, absorbed by a smaller width.
+
+The Hessian in left increments is obtained from
+$S(\log(e^{x_+}e^{x_-}))$ by two $x_+$ derivatives. The
+Baker--Campbell--Hausdorff correction starts with two fields and hence
+raises the weight relative to its linear term. Accordingly, after two
+internal and $n$ background derivatives, the difference from the Wilson
+response has momentum order at least $3-n$, for $0\le n\le2$.
+This is a statement about the combined momenta of all legs. It gives
+uniform compact derivative bounds as well as the indicated orders.
+
+In particular the completed vector denominator is
+\[
+ a_{\rm loc}(k)=d_1(k)^*H(k)d_1(k)+d_0(k)d_0(k)^*
+              =|k|^2I+O(|k|^3).
+\]
+The ghost denominator is $\omega(k)I$, with
+$\omega(k)=\sum_a|q_a(k)|^2=|k|^2+O(|k|^4)$.
+For a mark of direction $a$ and colour $u$, expanding the Wilson cubic
+vertex and adding the gauge-fixing vertex gives the linear vector
+insertion
+\[
+ b_{\rm lin}(p;k)_{ij}
+ =\bigl[-i(2k_a+p_a)\delta_{ij}
+              +2ip_j\delta_{ia}-2ip_i\delta_{ja}\bigr]
+                         \operatorname{ad}u.
+\]
+The ghost linear insertion is $-i(2k_a+p_a)\operatorname{ad}u$.
+These expressions can also be read from the continuum quadratic
+operator in background gauge. The actual lattice remainder in each is
+$O((|k|+|p|)^2)$, by the weight comparison just proved. The second
+insertion and its first two external momentum derivatives are uniformly
+bounded on the real momentum cube. No cancellation of a seagull term
+has been assumed.
+
+For completeness we give the bounds that propagate this information
+through the regulator and the inverses. At a fixed internal momentum
+$k$ put $T=|k|+\mu$, and for a matrix path $M(t)$ write
+\[
+ \|M\|_{T,2}=\max_{0\le j\le2}T^j\|M^{(j)}(0)\|.
+\]
+The paths have displaced momenta $k+te_1$, with velocities of bounded
+size. The product rule bounds products by a fixed multiple of the
+product of these norms. The two inverse derivative identities give
+$\|M^{-1}\|_{T,2}\le C/T^2$ whenever
+$\|M\|_{T,2}\le CT^2$ and $\|M(0)^{-1}\|\le C/T^2$.
+
+The real denominator floor holds globally on the centered cube.
+Indeed $\omega(k)\ge c|k|^2$, the exterior identity controls the sum of
+transverse and longitudinal parts, and
+\[
+ x+\mu^2\left(\frac{\mu^2}{x+\mu^2}\right)^9
+                    \ge2^{-10}(x+\mu^2)\quad(x\ge0).
+\]
+Thus both channel denominators are bounded below by $cT^2I$.
+The massive ghost operator $\Delta_U+\mu^2I$ has denominator,
+first-insertion and second-insertion bounds of respective sizes
+$T^2,T,1$ in the scaled derivative norms. Inverting gives sizes
+$T^{-2},T^{-3},T^{-4}$: a first insertion is $-R bR$, and a second
+is the sum of $-RcR$ and the two ordered $RbRbR$ terms.
+Multiplication by $\mu^2$, taking nine products, and multiplying once
+more by $\mu^2$ gives regulator sizes
+\begin{equation}\label{ch07:regulator-budgets}
+ \mu^2,\qquad \mu^2/T,\qquad \mu^2/T^2.
+\end{equation}
+This uses $\mu^2/T^2\le1$. Product differentiation through order two
+preserves the same sizes in $\|\cdot\|_{T,2}$; the number nine is fixed.
+The four constant direction selectors in the vector regulator do not
+change these powers.
+
+The first term of \eqref{ch07:response-integrand}, differentiated twice
+in $t$, is bounded by $CT^{-2}+C\mu^2T^{-6}$. Its unshifted inverse
+is independent of $t$; the local second insertion has a unit-scale
+bound, while its regulator part uses \eqref{ch07:regulator-budgets}.
+The second term has two inverses of size $T^{-2}$ and two insertions
+of size $T$, with two derivatives costing $T^{-2}$. Its bound is
+$CT^{-4}$. Since $T$ stays bounded above on the cube, these estimates
+give the first asserted radial bound.
+
+For the comparison use $T=|k|$ and restrict to $\mu\le T\le1$.
+Let $\delta=T+\mu^2/T^2$. The actual denominator minus the free
+quadratic denominator has scaled norm at most $C\delta T^2$.
+The resolvent identity therefore bounds the inverse difference by
+$C\delta T^{-2}$. Likewise the first insertion minus its displayed
+linear part is bounded by $C\delta T$: the local remainder is
+$O(T^2)$ and the regulator contribution is $O(\mu^2/T)$.
+Subtract the free bubble by telescoping its four factors. Each term
+contains one difference, so its second external derivative is bounded
+by $C\delta T^{-4}=C(T^{-3}+\mu^2T^{-6})$.
+The seagull estimate above is bounded by the same expression on this
+annulus. The free vector-minus-ghost bubble is exactly
+\eqref{ch07:pole}, proving the second radial inequality.
+
+At fixed $\mu>0$ the denominators are invertible on a smaller complex
+strip by their positive real floor and analyticity. All three response
+layers come from the same infinite-lattice path series. The integrand
+thus has a common holomorphic extension for that fixed $\mu$.
+For a periodic analytic function, the difference between its mesh mean
+and its integral is the sum of nonzero Fourier coefficients whose
+indices are multiples of the mesh side. Exponential coefficient decay
+bounds this error by $C_\mu e^{-c_\mu n}$.
+The constants in this last recording estimate may depend on $\mu$;
+the radial constants proved above do not. This proves the final assertion
+and justifies the coefficient integral.
+\end{proof}
+
+\section{Uniform comparison of determinants}\label{ch07:comparison}
+
+Two estimates must be distinguished. An absolute determinant Taylor
+bound may grow like the number $L^4$ of fine sites per block. The
+\emph{difference} between the blocked and auxiliary determinant must
+have a bound independent of $L$ in order to identify the logarithmic
+coefficient. The relevant mechanism is finite rank together with a
+trace-class regulator.
+
+Here is the structure behind the trace-norm requirement. Writing $H$
+for the predictor derivative, $B$ for its penalty Hessian, $Z$ for the
+coarse-frame projection, and $K=m_\mu X$, cancellation of the fine
+kinetic Hessians leaves
+\begin{align}\label{ch07:theta}
+ \Theta={}&H^*BH-Z^*Z+P_f^*d_UK+K^*d_U^*P_f+K^*K\\
+ &\hspace{12mm}-P_f^*M_\mu P_f.\notag
+\end{align}
+The first two terms factor through spaces of dimensions at most
+$4\dim\gLie$ and $\dim\gLie$ per coarse momentum. Thus
+$\|VW\|_1\le r\|V\|\|W\|$ with $r$ independent of $L$.
+Derivatives preserve the intermediate spaces.
+
+For the regulator, at zero background the alias eigenvalues of $P_\mu$
+are bounded by $C(1+|z|)^{-2}$ in a smaller complex strip. Consequently
+\[
+ \|P_\mu^3\|_1\le C\sum_{z\in\ZZ^4}(1+|z|)^{-6}<\infty.
+\]
+Given bounded first two insertions of $P_\mu$, distribute at most two
+derivatives among the three factors in $(P_\mu^3)^3$. Every term retains
+one undifferentiated trace-class cube; the other factors have operator
+bounds. Hence the first two insertions of $m_\mu$ have trace norm
+$O(\mu^2)$. This explains the ninth power and avoids an erroneous
+factor $L^4$. To apply this trace estimate, we establish the actual weight
+conversions, stationary insertions and scaled inverse bounds below.
+
+\subsection{The stationary branch and the predictor contact term}
+\label{ch07:contact}
+
+We verify the contact assertion for the predictor actually used in the
+block integral. Let $\zeta(x)$ be its stationary representative in centered
+coordinates, with $\zeta(0)=0$ and tangent $(Wx,r_x)$, where $r_x$ is its
+coarse scalar component after recentering.
+For each scalar determinant function $f(x,z)$, constant colour rotations
+act orthogonally on its matrices and leave $f$ invariant. Every invariant
+linear functional on the simple Lie algebra vanishes, since it annihilates
+brackets and $[\gLie,\gLie]=\gLie$. Applying this to each coordinate gives
+$Df(0)=0$. Thus
+\begin{equation}\label{ch07:tangent-chain}
+ D^2[f(x,\zeta(x))](0)[u,v]
+   =D^2f(0)[(u,Wu,r_u),(v,Wv,r_v)].
+\end{equation}
+Second derivatives of the stationary branch have disappeared for this
+specific reason. Matrix Hessians themselves need not have vanishing first
+derivative; the statement is about their invariant scalar determinants.
+
+Use rooted coordinates for the following exact calculation. Let $w_x(v)$
+be the logarithmic change in the predictor under an internal left increment
+$v$, with $w_x(0)=0$. Let $r(x)$ be the derivative of the block penalty
+with respect to that predictor increment, and set
+\[
+ S_x(a)_{ij}=\langle a,D_v^2w_x(0)[e_i,e_j]\rangle,
+ \qquad Z(x)=S_x(r(x)),\qquad A(x)=M_{\rm core}(x).
+\]
+The Hessian chain rule gives $M_{\rm act}=A+Z$, with $r(0)=Z(0)=0$.
+The rooted-to-centered internal change is triangular with determinant one,
+so it does not change the determinant. Define $Y(x)$ by
+$\langle a,Y(x)\rangle=\tr(A(x)^{-1}S_x(a))$.
+The predictor is covariant, and the internal matrices transform by the
+same congruence. Cyclicity of trace therefore makes $Y$ a covariant
+coarse vector. Constant colour rotations imply $Y(0)=0$.
+
+The linear block identity $QW=I-b^{-1}K_c$ fixes the derivative of the
+penalty gradient:
+$Dr(0)=-K_c=:J$. Expanding $\log\det(A+Z)-\log\det A$ through degree two
+now gives
+\begin{align}\label{ch07:contact-exact}
+ D^2(\log\det M_{\rm act}-\log\det M_{\rm core})(0)[u,v]
+ ={}&\langle Ju,DY(0)v\rangle+\langle Jv,DY(0)u\rangle\\
+ &-\tr(A(0)^{-1}S_0(Ju)A(0)^{-1}S_0(Jv)).\notag
+\end{align}
+In particular the derivative of $A^{-1}$ is included in $DY$;
+$Y(0)=0$ removes the term with $D^2r$.
+
+There is an exact identity $DY(0)d_{0,c}=0$. Gauge the trivial
+configuration by a coarse gauge transformation, then restore the chosen
+tree gauge. Gauge invariance preserves stationarity; uniqueness of the
+local stationary solution identifies the restored configuration with the
+selected branch on this curve. Covariance and $Y(0)=0$ show that $Y$
+vanishes there. Differentiation proves the identity. This uses the actual
+predictor, rather than an independently chosen linear average.
+
+At fixed $L$, the finite-stencil predictor and the analytic inverse of
+$A(0)$ give common holomorphic kernels for every term in
+\eqref{ch07:contact-exact}. Normalized finite-torus traces are momentum
+mesh averages. Their limit is the integral of these same kernels;
+exponential Fourier decay gives uniform convergence also along varying
+external mesh momenta. Write $M(p)$ for the mixed kernel of $DY$.
+Its Ward identity along $p=te_\nu$ reads
+$q_\nu(te_\nu)M_{j\nu}(te_\nu)=0$ in each colour.
+Hence every column of $M(0)$ is zero and $M(p)=O(|p|)$.
+Since $J(p)=-K_c(p)=O(|p|^2)$, the first two terms of
+\eqref{ch07:contact-exact} have order at least three, and the last has
+order at least four. Therefore the contact correction has zero $\alpha$.
+Only qualitative analyticity at fixed $L$ was used here. Its constants
+need not be uniform in $L$, because this is an exact vanishing statement.
+
+\subsection{Bounds for the actual centered matrices}\label{ch07:weighted}
+
+The actual stationary tangent is $W_a$ from \eqref{ch05:corrected-transport}; its forest representative is $W_F$ from \eqref{ch05:stationary-tangent}. As above, $\beta$ is the actual inverse coupling, and $b$ is the soft constraint coefficient in the blocking kernel.
+
+We establish the operator estimates for the selected path and
+predictor. The inputs are their positive normalized metric, fixed
+exponential path bounds, and the stationary identification and smooth
+representative of Section~\ref{ch05:transports}; all refer to the same
+adjacent pair. The coarse scalar part of the smooth representative
+may be nonzero after recentering. Its derivatives below are merely
+required to be bounded, not to vanish.
+
+Recall that $\mu=L^{-1}$ is the inverse block ratio. Use the unitary
+block Fourier transform $P(p)$ on fine residues, and set
+\[
+ h_l(p)=(|q(\operatorname{Re}(p+2\pi l)/L)|^2+\mu^2)^{1/2},
+ \qquad
+ \|u\|_{p}^2=\sum_l h_l(p)^2|(P(p)^{-1}u)_l|^2.
+\]
+The joint space also has a coarse scalar component with its ordinary
+Euclidean norm. Opposite momenta are paired in the dual norm.
+On a fixed small coarse strip, $P$ and $P^{-1}$ have bounded operator
+norms, $h_l\ge\mu$, and $|q(k_l)|\le5h_l$.
+Thus a unit internal direction has normalized residue $L^2$ norm
+$O(\mu)$ and its first fine difference has normalized $L^2$ norm
+$O(\mu^2)$. External smooth bridge legs have the same powers in
+supremum norm, by \eqref{ch05:actual-bridge}. Extending to the fixed
+padded predictor patch only changes constants: its number of residue
+blocks is fixed at the given smoothing order, and its Bloch phases
+are uniformly bounded.
+
+\paragraph{Fine kinetic insertions.}
+The zero-background kinetic form is a curl on each internal leg.
+Its first background insertion is a sum of products with one finite
+difference among three legs; its second insertion needs none among
+four legs. These representations have exponentially summable
+coefficients with uniform bounds. For the first insertion, subtract
+its constant momentum coefficient, which is zero by the weight-four
+Taylor calculation in Proposition~\ref{ch07:integrand-input}, and use
+coordinate division. The zero-background representation is exactly
+$d_1^*Hd_1$; the second insertion already has the required form.
+The factor count is
+\[
+ (n+2)+\text{number of differences}=4\qquad(0\le n\le2).
+\]
+H\"older with two internal $L^2$ factors and the remaining supremum
+factors costs $O(\mu^4)$ in normalized counting measure. Summing the
+fine anchor costs $L^4$, canceling it. Exponential coefficients pay
+translations by $z$, whose complex Bloch factor is bounded by
+$C e^{\sigma|z|/L}$. Thus the fine kinetic Hessian and its first two
+background insertions have bounded operators between the stated
+weighted spaces, uniformly in $L$. This is an estimate for the actual
+left-coordinate response, whose split-field definition was used above.
+
+\paragraph{The centered frame and penalty.}
+A small supremum bound alone is not enough for two internal directions.
+Use normalized probability measure on the padded block and the three
+norms $L^\infty,L^2,L^1$. External directions use the first, one internal
+direction the second, and two internal directions the third.
+Products are controlled by $L^2L^2\subset L^1$, and averages contract
+these norms. A path of $O(L)$ links, each of whose positive derivatives
+is $O(\mu)$ in its assigned norm, has bounded derivatives of every fixed
+order. Indeed adjoining one more link changes the next derivative by
+$O(\mu)$ times a polynomial in already bounded lower derivatives;
+summing $O(L)$ such changes costs $O(1)$. For coordinate connector
+paths, a fixed-position read is a coordinatewise splice of its endpoints.
+On the endpoint pair space this is a measure-preserving coordinate
+permutation, followed by a bounded-measure restriction and translation.
+The argument therefore applies to the actual averaged connectors.
+
+Here is why centering gives uniform frame derivatives. Let $F_x$ be the
+minimizing frame after recentering, $E_{xy}$ its averaged transport,
+$\nu$ normalized counting measure on its block, and $\omega$ the
+smoothing probability. If $\mathcal P$ is the nearest-group map and
+$\Pi=D\mathcal P(1)$, define
+\[
+ J_0=\sum_y\nu(y)F_y,\qquad
+ B_x=\sum_y\nu(y)F_y(E_{xy}-1),
+\]
+\[
+ R(T)=\mathcal P(T)-\Pi T,\qquad
+ S_x=\Pi B_x+R(J_0+B_x).
+\]
+The minimizing equation $F_x=\mathcal P(J_0+B_x)$ and centering
+$\sum_x\omega(x)\Pi F_x=\Pi1$ imply exactly
+\[
+ F_x=\Pi1-\sum_y\omega(y)\Pi S_y+S_x.
+\]
+Now $E_{xy}(0)-1=0$ and $DR(1)=0$. At derivative order $n+1$ the
+right side depends on frame derivatives only through order $n$.
+Induction using the preceding product bounds gives uniform derivatives
+through order four, also with two internal directions. The smoothing
+probability satisfies $\omega\le C_j\nu$: its reduction modulo $L$
+is uniform, so every atom has mass at most $L^{-4}$, and its support
+has $O_j(L^4)$ sites. This controls the change of averaging measure.
+The argument estimates the selected minimizer; its existence and local
+uniqueness come from Chapter~\ref{ch04:blocking}.
+
+Connector averaging and the fixed smooth penalty are compositions of
+these operations. Their mixed derivatives with up to two external and
+two internal directions are uniformly bounded. The centered frame
+logarithmic derivative $X$ has normalized $L^2$ output bounded by a
+constant, so its unnormalized output costs at most $CL^2$. Rooted and
+centered descriptions differ by a triangular coordinate change of
+determinant one; the same averaged-path bound controls its external
+coarse coordinates. Consequently $F=d_U^*P_f+m_\mu X$ has a uniform
+weighted operator bound, since $m_\mu=O(\mu^2)$ cancels $L^2$.
+Frame covariance gives $X\mathcal R=I$ in the same coordinates, and
+hence $F\mathcal R=\Delta_U+m_\mu$. Gauge signs are fixed here by
+taking the fine component of $\mathcal R$ to be $d_U$.
+
+\paragraph{Uniform inverse bounds.}
+At zero background the auxiliary fine form has the weighted floor
+$2^{-10}\min(1,\varepsilon)$, where $H_f\ge\varepsilon I$.
+This follows from the exterior identity and the scalar regulator floor
+proved in Proposition~\ref{ch07:integrand-input}. The block-completed
+form needs a quotient estimate. In centered coordinates it is
+\[
+ \mathcal G(u,r)=\langle u,K_fu\rangle
+                         +b|M u-d_{0,c}r|^2.
+\]
+Here $M$ is the straight averaged connector. Indeed the rooted
+linear predictor is $Q=M+d_{0,c}R$ by \eqref{ch05:actual-Q}; setting
+$r=r_{\rm root}-Ru$ converts $Qu-d_{0,c}r_{\rm root}$ to the
+displayed expression. Under a fine gauge variation, the new scalar
+coordinate changes by the smoothed scalar mean, since
+$R d_{0,f}$ is root evaluation minus that mean. This is the same
+centering used in the frame calculation, and the triangular coordinate
+change has determinant one.
+Subtract a gauge vector to make every nonprincipal alias of $u$
+transverse and eliminate $r$ using the principal scalar alias. The
+latter scalar mean is $\mu^2$ times a product of centered box sums,
+bounded away from zero after division by $\mu^2$ on the principal
+real cube. Write the resulting fine aliases as $u_l$ and set
+$A_h=\sum_{l\ne0}h_l^2|u_l|^2$. The fine metric floor gives control
+of $A_h$, since $|q(k_l)|\ge c\mu$ for $l\ne0$.
+The principal coefficient of $M$ has least singular value $c_j\mu$:
+its connector sum is of order $L$ and the unitary block Fourier
+coefficient is $L^{-2}$. For its upper bound, each fixed-position averaged read has coefficients
+$O_j(L^{-4})$ on $O_j(L^4)$ sites, hence Euclidean row norm
+$O_j(L^{-2})$. Summing its $L$ connector positions and converting
+a weighted unit vector with $h_l\ge L^{-1}$ gives a fixed bound.
+Thus the full $M$ has bounded weighted norm.
+Consequently
+\[
+ \mu^2|u_0|^2\le C_j(|Mu|^2+A_h),
+ \qquad
+ \inf_a\|(u,r)-\mathcal R a\|_p^2\le C_j\mathcal G(u,r).
+\]
+These estimates include zero coarse momentum; the scalar principal
+alias removes the coarse scalar coordinate there as well.
+
+Moreover $\|\mathcal R a\|_p\le C|\Gamma_\mu a|$, where
+$\Gamma_\mu=\Delta+m_\mu$. For the fine component this is
+$h_l|q_l|\le h_l^2\le C\Gamma_\mu(k_l)$; the coarse averaging
+component has norm $O(\mu^2)$ and obeys the same bound. Since
+$F\mathcal R=\Gamma_\mu$ and $F$ is bounded, the quotient estimate
+implies a positive weighted floor for $\mathcal G+F^*F$.
+All constants are fixed before $L$.
+
+The weights are not holomorphic. To continue this floor, at each real
+anchor freeze $h_l$ while retaining the holomorphic block Fourier
+matrix. On a fixed-radius coarse ball these frozen weights are uniformly
+comparable to the moving weights, because $h_l\ge\mu$ and
+$|q(k_l(p))-q(k_l(x))|\le C\mu|p-x|$.
+Cauchy's inequality in the frozen coordinates bounds the change in
+operator norm, and a fixed smaller strip preserves half the real floor.
+This proves uniform holomorphic inverse bounds for both matrices.
+Differentiating $M^{-1}M=I$ then bounds the first two inverse insertions.
+
+\paragraph{Trace norms and recording.}
+The kinetic response cancels identically, including its two derivatives,
+in \eqref{ch07:theta}. The finite-rank terms retain their fixed-dimensional
+coarse intermediate spaces. For the regulator, the trace-class cube
+argument preceding this subsection applies. In the terms containing
+$m_\mu X$, its factor $\mu^2$ pays the $L^2$ frame derivative.
+In the separate term $P_f^*M_\mu P_f$, it pays two weighted-to-Euclidean
+conversions, each of size $O(\mu^{-1})$. These costs occur in
+different terms; they are not charged simultaneously to one factor. Positive external derivatives of $d_U$ have a fine-link factor
+$O(\mu)$; the single weighted conversion costs at most $O(\mu^{-1})$.
+Their first two insertion norms are therefore bounded in both
+placements needed for $d_U^*d_U$ and $d_Ud_U^*$. The remaining
+products use exactly these compatible input/output norms. Thus
+$\Theta$ and its two insertions have uniform trace norm. This proves all operator and trace bounds used in
+Proposition~\ref{ch07:comparison-prop} for this same action and frame.
+
+Finally the common Fourier representations follow from the infinite
+path coefficients and finite predictor stencils. All derivatives are
+taken before restricting to a torus grid. Products and inverse derivatives
+preserve this identification, with intermediate momenta shifted by the
+inserted external momentum. The Fourier mesh estimate at the end of
+Proposition~\ref{ch07:integrand-input} gives the finite-volume exponential
+error. The preceding contact proof identifies the actual stationary
+thermal coefficient. Hence the comparison concerns the same density,
+predictor and stationary branch throughout.
+
+
+\begin{proposition}[Common comparison estimates]\label{ch07:comparison-input}
+On a fixed positive strip of coarse momenta, the stationary background
+insertions and all intermediate shifted momenta obey the following
+bounds, uniformly in $L$ and in the period. After removing the predictor
+contact term, the blocked completed matrix $C_0$ and
+$\widetilde A_\mu=\operatorname{diag}(A_\mu,I)$ have bounded inverses
+and bounded first and second normalized background insertions in
+compatible weighted Hilbert norms. Their difference $\Theta$ and its
+first two insertions have bounded trace norm in these same norms.
+The common quadratic symbols represent the finite-torus coefficients
+with an error tending exponentially to zero with the coarse period.
+The stationary tangent represents the actual predictor and obeys the
+exact coarse--fine matching identities.
+\end{proposition}
+
+The preceding weighted inverse, insertion and trace estimates prove this
+proposition for the actual normalized path and predictor.
+
+\begin{proposition}[Block comparison]\label{ch07:comparison-prop}
+For the same normalized path and predictor, the curvature-square
+coefficients of the blocked response and the auxiliary fine determinant
+satisfy $|\alpha_{N,m}-\alpha(\Pi_\mu)|\le C$, uniformly in $L,N,p$.
+\end{proposition}
+
+\begin{proof}
+For a positive matrix continued holomorphically near zero background,
+\[
+ D_vD_w\log\det A
+ =\tr(A^{-1}A_{vw}-A^{-1}A_vA^{-1}A_w).
+\]
+Subtract this formula for $C_0$ and $\widetilde A_\mu$, and use
+$C_0^{-1}-\widetilde A_\mu^{-1}
+=-C_0^{-1}\Theta\widetilde A_\mu^{-1}$.
+Telescoping produces terms containing a trace-class difference or one
+of its derivatives, with all other factors bounded. The trace ideal
+inequality gives a uniform bound for the difference symbol on a common
+strip. The ghosts cancel. The contact correction has zero $\alpha$ by
+the preceding order argument.
+
+Folding the fine symbol into coarse momentum also preserves $\alpha$.
+The auxiliary determinant is gauge invariant, so its quadratic symbol
+annihilates longitudinal legs. For a nonprincipal alias the equation
+$K_f(k_l)N_l=A_lK_c(p)$ and the positive transverse fine inverse give
+$N_l^\perp=O(|p|^2)$, since $K_c(p)=O(|p|^2)$. Thus nonprincipal
+aliases contribute order four even when their longitudinal amplitudes
+do not vanish. The zero alias has factors $L^4$ from
+cell volume, $L^{-2}$ from the two interpolated link fields, and
+$L^{-2}$ from extraction at momentum $p/L$. Their product is one.
+The inherited loop has order four and contributes no $\alpha$.
+Finally Cauchy's inequality on a circle inside the common strip bounds
+the second Taylor coefficient of the difference by a fixed multiple of
+its supremum. This proves the assertion.
+\end{proof}
+
+\subsection{The one-loop drift}
+
+\begin{proposition}[One-loop drift]\label{ch07:slope}
+For an adjacent pair with the normalized path, metric floor and
+actual stationary identification used in Section~\ref{ch07:weighted},
+\[
+ |\alpha_{N,m}+\kappa_G\log L|\le C
+\]
+with a constant depending only on the fixed stage inputs.
+\end{proposition}
+
+\begin{proof}
+On the unit three-sphere the angular means are
+$\mathbb E\theta_2^2=1/4$ and
+$\mathbb E\theta_1^2\theta_2^2=1/24$. Therefore
+\[
+ (2\pi)^{-4}\int_{\mu<|k|<1}h(k)\,dk
+ =\frac{8\pi^2C_G}{(2\pi)^4}
+   \left(\frac14-\frac16-1\right)\log\mu^{-1}
+ =-\kappa_G\log\mu^{-1}.
+\]
+The two error integrals on this annulus are uniformly bounded:
+$\int_\mu^1 r^3r^{-3}dr\le1$ and
+$\mu^2\int_\mu^1r^3r^{-6}dr\le1/2$.
+The ball $|k|\le\mu$ has volume $O(\mu^4)$ and integrand
+$O(\mu^{-4})$; the region outside the unit ball is also uniformly
+integrable. Thus $\alpha(\Pi_\mu)=-\kappa_G\log\mu^{-1}+O(1)$.
+Proposition~\ref{ch07:comparison-prop} and $\mu=L^{-1}$ finish the proof.
+\end{proof}
+
+The sign is for downward blocking: the coefficient $\beta$ of the
+kinetic action decreases by $\kappa_G\log L$ at one loop.
+This proposition does not assert the exact nonlinear recursion for
+$\beta$. Connected interactions contribute to that recursion and are
+handled by the one-step integral identity.
+
+\section{Classical matching through fourth order}\label{ch07:classical}
+
+\subsection{Uniform classical stationary coefficients}
+\label{ch07:classical-uniform}
+
+To construct the cubic and quartic matching terms, we first need
+classical coefficient bounds fixed before $L$. The fixed-$L$ stationary chart of
+Chapter~\ref{ch05:gaussian} provides existence and differentiation, but
+its tree-coordinate inverse alone does not provide these stronger bounds.
+We obtain them from the weighted quotient just constructed.
+
+Let $\mathscr S(v,z)$ be the joint classical action, with coarse field
+$v$ and internal fine-plus-frame coordinates $z$. It contains the fine
+kinetic action and the actual block penalty, without $\beta$ or the
+inherited loop. At zero its first derivative vanishes. Write
+$\mathscr H=D_z^2\mathscr S(0)$ and let $\mathcal R$ denote its
+infinitesimal internal gauge action. Its completed inverse is
+\[
+ \mathscr C^{-1}=(\mathscr H+F^*F)^{-1},
+\]
+with the uniform weighted bound just proved. For a coarse direction $u$
+let $T u=(u,W_a u,r_u)$ be the full stationary tangent in the smooth
+centered representative. In particular
+\begin{equation}\label{ch07:tangent-orthogonal}
+ D^2\mathscr S(0)[Tu,(0,z)]=0
+ \quad\text{for every internal }z.
+\end{equation}
+This is the differentiated stationarity equation, with the actual
+predictor identification of Chapter~\ref{ch05:gaussian}. Stationarity
+in all joint internal directions follows from stationarity on the forest
+slice and gauge invariance: the forest slice together with the joint
+gauge directions spans the internal tangent space. Thus coarse-frame
+directions are included in \eqref{ch07:tangent-orthogonal}.
+Define the internal covector
+\[
+ B(u,v)[z]=D^3\mathscr S(0)[Tu,Tv,(0,z)].
+\]
+
+Both the external cubic and quartic vertices and $B$ have uniformly
+bounded common Fourier kernels. Here is the power count in their
+actual weighted norms. A fine-action cubic vertex has at least one
+finite difference among its three legs; a quartic vertex needs none.
+Their exponentially summable coefficient bounds follow from the same
+normalized-path expansion and coordinate division used for the kinetic
+insertions above. An undifferentiated external leg costs $O(\mu)$ in
+supremum norm, and its differentiated leg costs $O(\mu^2)$. An internal
+unit weighted leg costs these same powers in normalized $L^2$ norm.
+Thus three external legs with one difference, four external legs,
+and two external legs with one internal leg and one difference each
+cost $O(\mu^4)$ in normalized residue summation. In the last case
+$L^2\subset L^1$ on probability measure is sufficient. The sum over
+$L^4$ fine anchors cancels this factor. Finitely many coordinate-change
+terms have the same or higher weight. Penalty vertices are bounded by
+the centered-frame mixed-derivative induction above, which allows up to
+four derivatives and includes the bounded coarse scalar legs $r_u$.
+The bounds for $B$ are dual weighted norms, not Euclidean coordinate
+bounds with a dimension-dependent conversion.
+
+The covector $B$ annihilates gauge directions. To check this, write the
+internal gauge identity as
+$D_z\mathscr S(v,z)[\mathcal R(v,z)a]=0$ and differentiate twice along
+$Tu,Tv$. The term containing $D\mathscr S(0)$ is zero. The two terms
+with a derivative of $\mathcal R$ vanish by
+\eqref{ch07:tangent-orthogonal}, since those derivatives are internal
+vectors. The remaining term is
+\[
+                       B(u,v)[\mathcal R(0)a]=0.
+\]
+Therefore $w=\mathscr C^{-1}B(u,v)$ is a representative of the quotient
+solution $\mathscr H w=B(u,v)$. Indeed, pairing
+$\mathscr Cw=B(u,v)$ with $\mathcal R a$ gives
+$\langle F\mathcal R a,Fw\rangle=0$. The regulated gauge matrix
+$F\mathcal R$ is invertible, so $Fw=0$ and $\mathscr H w=B(u,v)$.
+Any other solution differs by a gauge vector, against which $B$ vanishes.
+This justifies using the bounded completed inverse in the exchange term;
+it does not replace a degenerate Hessian by an arbitrary inverse.
+
+If $E(v)$ is the stationary value, implicit differentiation now gives
+\begin{align}\label{ch07:uniform-stationary-jets}
+ D^3E(0)[u_1,u_2,u_3]
+   &=D^3\mathscr S(0)[Tu_1,Tu_2,Tu_3],\\
+ D^4E(0)[u_1,u_2,u_3,u_4]
+   &=D^4\mathscr S(0)[Tu_1,Tu_2,Tu_3,Tu_4]\notag\\
+   &\quad-\sum_{\{ij\}\{kl\}}
+          B(u_i,u_j)\mathscr C^{-1}B(u_k,u_l),\notag
+\end{align}
+where the sum is over the three partitions into two unordered pairs.
+These formulas follow by differentiating stationarity; the higher
+branch derivatives multiply its first derivative or
+\eqref{ch07:tangent-orthogonal}. On the diagonal the last sum is
+$3B(u,u)\mathscr C^{-1}B(u,u)$, agreeing with the earlier formula.
+The gauge-annihilation argument makes the formulas independent of the
+representative chosen to differentiate the stationary branch.
+
+For Fourier waves, each exchange inverse has intermediate coarse
+momentum equal to a sum of two external momenta. Restrict each external
+strip by a fixed factor so that all these sums remain in the inverse
+strip. The vertex and inverse bounds then give a common strip and a
+uniform bound for both symbols in
+\eqref{ch07:uniform-stationary-jets}, before choosing $L$.
+Their finite-volume identities are exact: every vertex and inverse is
+the restriction of the same common Fourier matrix, and momentum
+conservation leaves the coarse volume factor exactly once. Dividing by
+$3!$ and $4!$ gives normalized common Taylor symbols with the required
+bounds. No stationary neighborhood of
+size uniform in $L$ has been inferred from this argument; only its
+fixed-order coefficients need that uniformity here.
+
+\subsection{Construction of the matching curvature terms}
+
+Let $E(v)$ be the classical stationary action of Chapter~5, with the
+factor $\beta$ removed. Its Hessian is prescribed by the exact free
+block relation. Write the corresponding plaquette metric as
+$H=c_{\rm dir}I+\rho^*\rho$, with $H(0)=I$ and $c_{\rm dir}>0$.
+The direct Wilson term together with the squares of the transported
+rows of $\rho$ gives an analytic gauge-invariant action $J(v)$ with
+this Hessian. Indeed the transported rows linearize to $\rho d_1v$,
+so
+\[
+ D^2J(0)[v,v]=\langle d_1v,Hd_1v\rangle=D^2E(0)[v,v].
+\]
+The construction uses the coarse metric matched to the incoming
+Gaussian form, not an arbitrary positive coarse metric.
+
+The preceding stationary coefficient estimates and the fixed row bounds
+supply the hypotheses of the following construction.
+
+\begin{proposition}[Classical matching]
+\label{ch07:classical-match}
+Suppose $E$ and $J$ are invariant analytic germs on every torus, have
+zero value and first derivative and identical Hessians. Suppose their
+normalized coefficients of orders three and four have common strip
+bounds, and the row coefficients of $J$ have an exponential bound.
+There are invariant cubic and quartic curvature terms $S_3,S_4$, chosen
+once for all periods, such that
+\[
+ E-J-S_3-S_4=O(v^5).
+\]
+Their weighted sums are bounded by a fixed multiple of the input Taylor
+bounds on a smaller positive width.
+\end{proposition}
+
+\begin{proof}
+The leading coefficient of $E-J$ is cubic and satisfies the homogeneous
+Ward identities. Lemma~\ref{ch07:curl} and the transported construction
+produce $S_3$ with that coefficient. The fourth coefficient of
+$E-J-S_3$ is again transverse, since its lower coefficients vanish.
+Apply the lemma again to obtain $S_4$. It is essential to subtract the
+fourth coefficient of $S_3$: a nonlinear transported cubic curvature
+term has nonzero higher Taylor coefficients. The exponential path
+bound controls each fixed Taylor derivative on a smaller complex link
+ball; factors of path length are absorbed by a width loss. Thus the
+fourth coefficient of $S_3$ has the required common bound. This proves
+both the matching and the bounds. Polarization converts the equality on
+rays to equality of all derivatives through order four.
+\end{proof}
+
+\subsection{Closing the classical coefficient budget}
+
+These estimates can also be arranged to close a fixed classical
+coefficient budget, rather than producing an unspecified function of the
+incoming budget. Keep the Gaussian metric bounds fixed, and denote the
+bound on the remaining incoming path coefficients by $A$. Compare the
+fine action with the Wilson action, evaluated on the \emph{same}
+tangents $T$ and with the \emph{same} completed inverse $\mathscr C^{-1}$.
+The weight-four normalization proved above implies that their cubic
+vertex difference has at least two finite differences, and their
+quartic vertex difference has at least one. Coordinate division of their
+common symbols gives these factors with exponentially summable
+coefficients bounded by a polynomial $P(A)$. A slightly stronger incoming
+exponential width pays the polynomial path-length factors.
+
+When all legs are external, the extra difference gives $L^4\mu^5=\mu$.
+For the difference of the covectors $B$, move differences on the single
+internal leg to the two external legs by momentum conservation. In a
+coordinate this uses
+\[
+ q(-p_1-p_2)=-e^{-i(p_1+p_2)}
+                \{q(p_1)+e^{ip_1}q(p_2)\}.
+\]
+It is a discrete integration by parts, with bounded translation factors;
+it leaves at most two differences on any external leg. The actual
+smooth tangent bounds through order two therefore give the same gain.
+The internal leg is estimated only in normalized $L^2$, without asking
+for a second weighted derivative. Thus the vertex and dual-vertex
+remainders are bounded by $P(A)/L$.
+
+The Wilson vertices, block penalty, and their exchange pairing have
+bounds depending only on the fixed Gaussian metric and predictor data.
+The inverse in the exchange term depends only on the quadratic action,
+so higher incoming coefficients do not change it. Expanding the two
+factors $B=B_{\rm W}+\delta B$ in
+\eqref{ch07:uniform-stationary-jets} shows that the normalized classical
+symbols, and then their curvature families, satisfy a bound of the form
+\begin{equation}\label{ch07:classical-budget}
+             A_{\rm out}\le a_{\rm stage}+\frac{P_{\rm stage}(A)}{L}.
+\end{equation}
+The squared remainder costs $P(A)^2/L^2$ and is absorbed into the displayed
+polynomial. Subtracting the prescribed coarse quadratic row and the
+quartic contribution of the constructed cubic family preserves this
+form: those operations have fixed coarse-scale bounds, and the latter
+operation is linear in that cubic family.
+The output strip is chosen from the Gaussian coarse strip. It need not
+shrink with each step: an incoming coefficient displaced by $z$ costs
+at most $e^{c\sigma|z|/L}$ on that output strip, which is absorbed by the
+fixed incoming width after choosing $L$ large enough. Finally choose an
+outgoing classical allowance larger than $a_{\rm stage}$ and then $L$
+so that the second term in \eqref{ch07:classical-budget} fits its reserve.
+For a finite collection of stage data these choices are simultaneous.
+
+Consequently the cubic and quartic curvature families are constructed
+for this same stationary action with bounds fixed at the stage before
+$L$. Their input Hessian is the matched coarse metric.
+This completes the classical matching construction without invoking a later scale
+schedule or a nonlinear local-integral estimate.
+
+\section{Inherited loops: four differences and alias suppression}
+
+Taylor degree here counts field factors. It is distinct from engineering weight, which also counts derivatives, as in Section~\ref{ch02:jets-section}; a momentum difference therefore improves engineering weight without adding a field factor.
+\label{ch07:inherited-proof}
+
+Let $\Lambda_{m+1}^{\rm loop}$ denote the incoming weighted loop sum.
+We prove the estimate
+\begin{equation}\label{ch07:inherited}
+ \|\mathcal L_{m+1}\hbox{ pulled back}\|_{w'}
+ \le C L^{-2}\Lambda_{m+1}^{\rm loop}.
+\end{equation}
+from the transports of Chapter~\ref{ch05:gaussian}.
+Group incoming quadratic curvature terms by their relative displacement
+$z$. Their coefficient matrix $r(z)$ has exponential sum bounded by
+$\Lambda_{m+1}^{\rm loop}$ and zero zeroth and first moments. Thus the
+fine link symbol
+\[
+ S(p)=d_1(-p)^{\mathsf T}\widehat r(p)d_1(p)
+\]
+has order four, satisfies $S d_0=d_0^*S=0$, and has strip bound
+$C\Lambda_{m+1}^{\rm loop}$. Symmetrization and colour indices are
+understood; they cost fixed constants.
+
+An analytic periodic function with an order-four zero is a sum of
+products of four coordinate differences $q_a(p)$ times analytic periodic
+functions on a smaller strip, with linearly bounded coefficient norms.
+To see this quantitatively, write
+$f(p)-f(0)=\sum_a q_a(p)D_a f(p_1,\ldots,p_a,0,\ldots,0)$
+using the divisions of Lemma~\ref{ch07:curl}, and repeat on the quotients,
+which retain one fewer vanishing order. There are finitely many terms.
+For a quadratic symbol, move two differences to the opposite leg by
+$q_a(p)=-e^{ip_a}q_a(-p)$. The phases merely translate a coefficient
+by finitely many lattice sites. Each term now has two differences on
+each of its two field arguments.
+
+The straight stationary transport $W_s$ has common exponentially local
+kernels with $\nabla_f^rW_s=O(L^{-1-r})$ for $r\le2$, by
+Section~\ref{ch05:transports}. By \eqref{ch05:corrected-transport}, the tangent of the actual predictor differs
+from this representative by a fine gradient; the gauge-invariant
+quadratic symbol $S$ annihilates that difference on both sides.
+Consequently it is legitimate to use $W_s$ in this calculation, even
+if the tree-gauge representative itself has poor difference bounds.
+Each differentiated leg costs $CL^{-3}$. Summing the fine anchor in
+one coarse block costs $L^4$, so the pulled-back quadratic symbol has
+bound
+\[
+ C L^4 L^{-3}L^{-3}\Lambda_{m+1}^{\rm loop}
+       =CL^{-2}\Lambda_{m+1}^{\rm loop}.
+\]
+Displacing an argument by a fine displacement $z$ costs at most
+$Ce^{\sigma|z|/L}$ on a coarse strip of width $\sigma$.
+Choose $L$ after the fine coefficient width $w$ so that $\sigma/L<w$;
+absolute summability pays these displacements. Holomorphy and the
+common finite-torus representation follow from normal convergence.
+A final fixed strip reduction converts this to the weighted coefficient
+bound required in \eqref{ch07:inherited}.
+
+The order-four zero on the coarse lattice requires another argument.
+For aliases $k_l(p)=(p+2\pi l)/L$, let $N_l(p)$ be the fine-wave
+amplitude of the transport. The coarse symbol is
+\[
+ H(p)=L^4\sum_l N_{-l}(-p)^{\mathsf T}S(k_l(p))N_l(p).
+\]
+For $l\ne0$, use $K_f(k_l)N_l=A_lK_c(p)$, the exact stationary
+transport equation. Project $N_l$ orthogonally off the gradient
+$q(k_l)$. The positive fine curvature metric implies that
+$K_f(k_l)+d_0(k_l)d_0(k_l)^*$ is invertible near $p=0$ for this fixed
+$l,L$. As $K_c(p)=O(|p|^2)$, the transverse amplitude is $O(|p|^2)$.
+The Ward identities of $S$ remove the longitudinal amplitudes, so each
+nonprincipal alias has order four. The principal alias has order four
+because $S(p/L)$ does. This argument requires no lower inverse bound
+uniform in $L$ for an individual nonprincipal alias.
+
+Finally the nonlinear stationary pullback has the same Hessian as this
+linear pullback: the inherited action has zero first derivative, so its
+chain rule has no term involving the second derivative of the branch.
+This proves the weighted gain and retained moment cancellations for the
+actual inherited action, once the actual and straight stationary tangents
+have been identified up to gauge as above.
+
+\section{Output coefficients and the width reserve}\label{ch07:output}
+
+Suppose the stationary determinant symbol has bound $\Phi$ at a common
+width, the inherited loop symbol has bound $R$ and order four, and the
+kinetic symbol has bound $B_H$. Subtract the extracted coefficient
+$\alpha b_H$. Lemma~\ref{ch07:unique} and the two-leg division produce
+a quadratic curvature family with bound
+\[
+ K(\Phi+|\alpha|B_H+R)
+\]
+and the zero moments \eqref{ch07:moments}. Together with the prescribed
+rows and the cubic/quartic families of
+Proposition~\ref{ch07:classical-match}, this defines one common output
+path action. If the determinant common symbol approximates its finite
+period values with error $|\Lambda|\epsilon$, the same coefficient
+error is retained by linear subtraction. For real plane waves with
+component amplitudes at most one, the Hessian error is at most
+$2(4\dim\gLie)^2|\Lambda|\epsilon$: expansion in component waves
+costs the square of their number, and $D^2=2C_2$.
+
+All sums should be bounded first at a width $w'>w>0$.
+Each fixed differentiation of a transported term costs a polynomial in
+its path length; the factor $e^{-(w'-w)\operatorname{length}}$ absorbs
+it. This gives the fixed derivative orders needed for local expansion.
+Parameter derivatives require the corresponding derivative bounds on
+the common input kernels. Linear curvature division preserves such
+bounds because its operations and widths are chosen independently of
+the particular kernel. No parameter regularity follows merely from
+matching the kernels pointwise.
+
+For a quantitative descent, use the inherited estimate
+\eqref{ch07:inherited}. If the new loop
+bound is $A L^4+B\log L+C_0$, choose $L$ so that $CL^{-2}\le1/4$,
+then the coupling entry threshold so that
+\[
+ A L^4+B\log L+C_0\le\tfrac12\Lambda_m^{\rm loop},\qquad
+ \Lambda_{m+1}^{\rm loop}\le2\Lambda_m^{\rm loop}.
+\]
+Their sum fits the outgoing bound. This is the order of choices:
+widths and fixed amplitudes, block ratio, then coupling threshold.
+
+The comparison bounds and lattice integrand estimates have now been
+derived from the same normalized analytic path, positive metric and
+actual stationary predictor. The inherited estimate follows from its
+identified tangent and the common transport bounds. These results are
+one-step statements: their application to an entire selected history
+requires that its incoming paths obey the fixed stage budgets and its
+stationary charts satisfy the identifications of Chapter~\ref{ch05:gaussian}.
+They do not replace the nonlinear local-integral bounds or prove the
+existence of an infinite scale schedule.

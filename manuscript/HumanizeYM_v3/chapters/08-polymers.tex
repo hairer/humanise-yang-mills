@@ -1,0 +1,367 @@
+\chapter{Polymer expansions and connected correlations}
+\label{ch08:chapter}
+
+An effective density is useful only if it remains local after integration.
+Its logarithm should therefore be expressed as a sum of terms supported on
+connected sets, with a bound that does not grow with the surrounding volume.
+The cluster expansion provides this passage from local activities to connected
+terms. Its convergence is a standard result of statistical mechanics. The
+work specific to the gauge theory is to put the activities produced by the
+block integration within its hypotheses.
+
+This chapter states the abstract results in the form needed for that
+application. It does not prove another cluster-expansion theorem. We use
+Koteck\'y--Preiss convergence\cite{KoteckyPreiss1986}, in the explicit rooted
+form of Ueltschi\cite[Theorem~1]{Ueltschi2004}, and explain how support weights,
+activity derivatives and large-field constraints enter. The distinction
+between a general cluster estimate and a bound on the actual gauge-theory
+activities will remain explicit throughout.
+
+\section{Activities, supports and incompatibility}
+\label{ch08:activities}
+
+Let $\Lambda$ be a finite set of lattice sites. A \emph{polymer label}
+$\gamma$ belongs to a finite or countable set $\mathcal P$, has a nonempty
+support $X_\gamma\subset\Lambda$, and carries a complex number
+$z_\gamma$, called its \emph{activity}. Different labels may have the same
+support. The labels can retain information about an integration sector,
+derivative or local Taylor coefficient; they are not identified solely by
+their supports.
+
+A symmetric, reflexive relation $\gamma\not\sim\eta$ specifies
+\emph{incompatibility}. Reflexivity means that a compatible collection
+contains a label at most once. We assume
+\begin{equation}\label{ch08:overlap}
+ \gamma\not\sim\eta\quad\Longrightarrow\quad
+ X_\gamma\cap X_\eta\ne\varnothing.
+\end{equation}
+For the hard-core gas the implication is an equivalence. Some estimates
+below need only the displayed implication; the formula for deleting all
+polymers meeting a set will be stated for the hard-core case.
+
+The polymer partition function is
+\begin{equation}\label{ch08:gas}
+ Z_{\rm pol}(z)=\sum_{\substack{A\subset\mathcal P\text{ finite}\\
+                         A\text{ pairwise compatible}}}
+                       \prod_{\gamma\in A}z_\gamma.
+\end{equation}
+The empty collection contributes one. This sum is a polynomial for finitely
+many labels. For countably many labels it is well defined whenever
+$\sum_\gamma|z_\gamma|<\infty$, since its absolute sum is at most
+$\exp(\sum_\gamma|z_\gamma|)$. The cluster criterion below implies this
+summability in finite volume. Complex or signed activities are allowed;
+they need not be probability weights.
+
+We keep track of spatial size with a nonnegative function $c(X)$ on
+nonempty subsets of $\Lambda$. The needed properties are
+\begin{equation}\label{ch08:cover-properties}
+ |X|\le h\,c(X),\qquad
+ c(X\cup Y)\le c(X)+c(Y)\quad\text{if }X\cap Y\ne\varnothing,
+\end{equation}
+where $h>0$ is fixed. One choice is the number of sites, with $h=1$.
+A useful multiscale choice is the minimum number of radius-$B$ lattice
+balls whose union is connected and contains $X$. In that case
+$h=(2B+1)^4$ is an upper bound on the size of a ball, including on a torus.
+The symbol $c$ will always denote this support-size function in this chapter,
+not a field coefficient.
+
+For $\alpha\ge0$ define the site norm
+\begin{equation}\label{ch08:site-norm}
+ \|z\|_\alpha=
+ \sup_{x\in\Lambda}\sum_{\gamma:x\in X_\gamma}
+                  |z_\gamma|e^{\alpha c(X_\gamma)}.
+\end{equation}
+It counts every polymer at each site in its support. A norm which counts
+only the chosen anchor of a polymer is different. Passing from an anchored
+bound to \eqref{ch08:site-norm} requires a support-size estimate or a loss
+in the exponential weight. This distinction matters when checking a
+cluster criterion for an effective density.
+
+\section{The logarithm and its convergence criterion}
+\label{ch08:criterion}
+
+For a tuple $\boldsymbol\gamma=(\gamma_1,\ldots,\gamma_n)$,
+form the graph on the \emph{occurrences} $1,\ldots,n$, joining distinct
+vertices whenever their labels are incompatible. Define
+\begin{equation}\label{ch08:ursell}
+ \varphi^T(\boldsymbol\gamma)=
+ \sum_{\substack{H\text{ connected spanning graph}\\
+                   H\text{ uses incompatibility edges}}}
+                 (-1)^{|E(H)|}.
+\end{equation}
+For $n=1$ its value is one; for a disconnected incompatibility graph it
+is zero. Repeated labels are allowed in this tuple, even though the gas
+\eqref{ch08:gas} contains each label at most once. They are necessary in
+its logarithm: for a gas with one label, $Z_{\rm pol}=1+z$ and
+$\log Z_{\rm pol}=z-z^2/2+\cdots$. The $n!$ below compensates for
+ordering the occurrences; it is not part of the definition
+\eqref{ch08:ursell}.
+
+\begin{theorem}[Standard polymer convergence criterion]
+\label{ch08:kp}
+Suppose $A_\gamma\ge0$ and
+\begin{equation}\label{ch08:kp-condition}
+ \sum_{\eta:\eta\not\sim\gamma}
+       |z_\eta|e^{A_\eta}\le A_\gamma,
+ \qquad \sum_\gamma |z_\gamma|e^{A_\gamma}<\infty.
+\end{equation}
+Then the cluster series
+\begin{equation}\label{ch08:log}
+ \mathcal L(z)=\sum_{n\ge1}\frac1{n!}
+       \sum_{\gamma_1,\ldots,\gamma_n}
+        \varphi^T(\boldsymbol\gamma)\prod_{i=1}^n z_{\gamma_i}
+\end{equation}
+converges absolutely and $Z_{\rm pol}(z)=e^{\mathcal L(z)}$.
+For a fixed label $\gamma_1$, its absolute rooted series satisfies
+\begin{equation}\label{ch08:root}
+ \sum_{n\ge1}\frac1{(n-1)!}
+ \sum_{\gamma_2,\ldots,\gamma_n}
+ |\varphi^T(\boldsymbol\gamma)|\prod_{i=2}^n|z_{\gamma_i}|
+ \le e^{A_{\gamma_1}}.
+\end{equation}
+\end{theorem}
+
+This is the hard-core specialization of the cited convergence theorem:
+the pair interaction is $-1$ on incompatible pairs and zero otherwise.
+There is no need to assume $Z_{\rm pol}>0$ before taking the logarithm.
+The series defines the branch continued from zero activity. For real
+activities it is real, and the exponential identity then gives
+$Z_{\rm pol}>0$. For complex activities the conclusion is nonvanishing.
+
+The connected graph sum must be taken before its absolute value. Bounding
+the sum of the absolute values of all connected graphs would discard the
+cancellation on which convergence depends. The standard tree-graph
+inequality is one way to establish \eqref{ch08:root}; we use the result
+rather than repeat its combinatorial proof.
+
+\section{A spatially local bound with a geometric tail}
+\label{ch08:tail}
+
+The site norm from \eqref{ch08:site-norm} gives a particularly transparent
+criterion. Suppose that, for some $\alpha\ge0$, $\delta>0$ and
+$\gamma_0>0$,
+\begin{equation}\label{ch08:reserve}
+ \|z\|_{\alpha+\delta}\le\gamma_0,
+ \qquad 0<q<1,\qquad h\gamma_0\le q\delta.
+\end{equation}
+The parameter $\delta$ is the spare exponential support weight; it will
+be spent to sum polymers that meet one another. The parameter $q$ measures
+smallness and controls the number of occurrences in a cluster.
+
+Write $X(\boldsymbol\gamma)=\bigcup_i X_{\gamma_i}$. A direct
+weighted application of Theorem~\ref{ch08:kp} yields, for every site $x$
+and integer $k\ge1$,
+\begin{equation}\label{ch08:weighted-tail}
+ \sum_{n\ge k}\frac1{n!}
+ \sum_{\boldsymbol\gamma:x\in X(\boldsymbol\gamma)}
+ |\varphi^T(\boldsymbol\gamma)|
+ \prod_{i=1}^n|z_{\gamma_i}|
+ e^{\alpha c(X(\boldsymbol\gamma))}
+ \le\gamma_0 q^{k-1}.
+\end{equation}
+This form is slightly stronger than the bound with an additional
+$(1-q)^{-1}$ obtained by separately summing estimates at each occurrence
+number. Either form is sufficient for the applications.
+
+Here is the hypothesis matching for this standard adaptation. Apply the
+rooted theorem to the inflated activities
+$\widetilde z_\gamma=q^{-1}|z_\gamma|e^{\alpha c(X_\gamma)}$
+and take $A_\gamma=\delta c(X_\gamma)$. By
+\eqref{ch08:overlap} and \eqref{ch08:cover-properties}, the left side of
+\eqref{ch08:kp-condition} is bounded by
+$q^{-1}|X_\gamma|\gamma_0\le\delta c(X_\gamma)$.
+For a nonzero connected coefficient the union weight is at most the
+product of the support weights. Designating one occurrence whose support
+contains $x$ changes $1/n!$ to $1/(n-1)!$ and gives an upper bound;
+the rooted sum is at most $\gamma_0/q$. Restoring the factor $q^n$
+on terms with $n\ge k$ gives \eqref{ch08:weighted-tail}. Nonempty supports
+and finite $\Lambda$ verify the total summability required by the theorem.
+
+More generally, let $\mathcal Q\subset\mathcal P$ be a distinguished
+set of labels with
+\[
+ \sum_{\gamma\in\mathcal Q}|z_\gamma|
+                  e^{(\alpha+\delta)c(X_\gamma)}\le b_{\mathcal Q}.
+\]
+Replacing the condition $x\in X(\boldsymbol\gamma)$ by
+``at least one occurrence belongs to $\mathcal Q$'' in
+\eqref{ch08:weighted-tail} gives $b_{\mathcal Q}q^{k-1}$ on the right.
+This is useful when a cluster has to meet a prescribed insertion.
+An insertion selected in this way is a distinguished occurrence in the
+combinatorial expansion, not yet a renormalized quantum field.
+
+The support norm is independent of $|\Lambda|$. Summing the $k=1$
+estimate over $x$ bounds $|\mathcal L(z)|$ by
+$|\Lambda|\gamma_0$. Thus extensive free-energy bounds coexist with
+volume-independent estimates on connected terms meeting a fixed site.
+It is the latter estimates that preserve locality in a renormalization
+step.
+
+\section{Deleting polymers and controlling local changes}
+\label{ch08:deletion}
+
+Recall that $Z_{\rm pol}$ is the gas partition function
+\eqref{ch08:gas}, and $X_\gamma$ is the full support of label $\gamma$.
+For a set $Y\subset\Lambda$, delete all labels whose supports meet $Y$:
+put $z^Y_\gamma=z_\gamma$ if $X_\gamma\cap Y=\varnothing$ and zero
+otherwise. Under \eqref{ch08:reserve}, both cluster series converge and
+\begin{equation}\label{ch08:deletion-identity}
+ \frac{Z_{\rm pol}(z^Y)}{Z_{\rm pol}(z)}
+  =e^{-\mathcal L_Y(z)},\qquad
+ \mathcal L_Y(z)=\sum_{n\ge1}\frac1{n!}
+ \sum_{X(\boldsymbol\gamma)\cap Y\ne\varnothing}
+ \varphi^T(\boldsymbol\gamma)\prod_i z_{\gamma_i}.
+\end{equation}
+This is simply subtraction of two absolutely convergent logarithms.
+Its local bound is
+\begin{equation}\label{ch08:deletion-bound}
+ |\mathcal L_Y(z)|\le |Y|\gamma_0,
+\end{equation}
+and clusters with at least $k$ occurrences contribute at most
+$|Y|\gamma_0q^{k-1}$. Counting a cluster more than once when it meets
+several sites of $Y$ only increases the upper bound.
+
+The same mechanism controls changes of activities in a bounded region.
+If two families of activities agree away from $Y$, their logarithmic
+cluster terms cancel unless a cluster contains a changed activity.
+A quantitative Lipschitz estimate additionally needs a bound on the
+difference of those activities, or a uniformly admissible interpolation
+between them. Agreement of supports alone gives locality of the
+difference, not its smallness.
+
+\section{Parameters, derivatives and connected insertions}
+\label{ch08:parameters}
+
+Suppose $z_\gamma(u)$ is holomorphic in a complex parameter $u$ on a
+disc and that \eqref{ch08:reserve} holds uniformly on each of its compact
+subdiscs. The cluster series then converges normally there. Consequently
+its sum is holomorphic and can be differentiated term by term. If the
+bound for a local cluster sum is $M$ on $|u-u_0|<\rho$, Cauchy's estimate
+gives
+\begin{equation}\label{ch08:cauchy}
+ |\partial_u^r\mathcal L_Y(u_0)|\le r!\rho^{-r}M.
+\end{equation}
+There is no separate combinatorial proof for each derivative order.
+Several parameters are treated on a polydisc, with the product of the
+corresponding Cauchy factors. Only derivatives of fixed finite order are
+asserted unless additional uniform estimates are supplied.
+
+One can introduce formal sources for bounded quantities $F_j$ by the
+finite-volume generating function
+\[
+ Z(\boldsymbol t)=Z(0)\,
+       \mathbb E\exp\!\left(\sum_{j=1}^r t_jF_j\right).
+\]
+The mixed derivative of $\log Z$ at zero is the connected correlation
+(or cumulant) of the $F_j$. For example,
+\[
+ \left.\partial_{t_1}\partial_{t_2}\log Z(\boldsymbol t)
+ \right|_{\boldsymbol t=0}
+ =\mathbb E(F_1F_2)-\mathbb E(F_1)\mathbb E(F_2).
+\]
+The cluster representation expresses such derivatives through clusters
+carrying the distinguished source occurrences; see
+\cite[\S3]{Ueltschi2004}. To use this representation in the gauge theory,
+the source-deformed activities must satisfy a uniform criterion on an
+actual complex neighbourhood of zero. Boundedness of the undeformed gas
+does not imply that estimate.
+
+There is a second way to insert observables: differentiate the unnormalized
+density and expand the result directly. This is preferable if some activity
+can vanish, because division by that activity is then meaningless.
+Bounds are assigned to the inserted activity itself. The usual mnemonic
+``differentiate the logarithm of each activity'' is not a valid definition
+in that situation.
+
+\section{Large-field constraints and exact reassembly}
+\label{ch08:forced}
+
+An effective gauge density includes regions where a small-field expansion
+is not available. Fix a configuration of the coarse variables for the
+moment, and let $D\subset\Lambda$ be the set of sites declared to be in
+the large-field region. In addition to the regular activities
+$z_\gamma$, introduce large-field activities $K_\eta$ with supports
+$Y_\eta$ and nonempty sets $I_\eta\subset D\cap Y_\eta$.
+The set $I_\eta$ records the large-field sites assigned to that activity.
+Let $\mathfrak C(D)$ consist of the allowed finite families $B$ of such
+labels with disjoint supports and
+\[
+ \bigcup_{\eta\in B} I_\eta=D.
+\]
+The exact rules for eligibility are part of the definition of an effective
+density; they may exclude some otherwise possible covers. When $D$ is
+empty, the empty family is permitted.
+
+For the simple overlap incompatibility rule, the constrained partition
+sum has the form
+\begin{equation}\label{ch08:constrained}
+ Z_D=\sum_{B\in\mathfrak C(D)}
+       \left(\prod_{\eta\in B}K_\eta\right)
+       Z_{\rm pol}(z^{Y(B)}),\qquad
+ Y(B)=\bigcup_{\eta\in B}Y_\eta.
+\end{equation}
+Applying \eqref{ch08:deletion-identity} gives the exact factorization
+\begin{equation}\label{ch08:reassembly}
+ Z_D=e^{\mathcal L(z)}
+       \sum_{B\in\mathfrak C(D)}
+         \left(\prod_{\eta\in B}K_\eta\right)
+         e^{-\mathcal L_{Y(B)}(z)}.
+\end{equation}
+For finite sums this is algebra; the same identity holds for absolutely
+convergent sums. It is the basic reason that removing regular polymers
+near a large-field region can be absorbed into modified activities.
+
+The expression $\mathcal L_{Y(B)}$ need not split as a sum over individual
+members of $B$. A connected regular cluster can meet two large-field
+supports. Such a cluster couples them, and the modified activity belongs
+on their union together with the cluster support. Grouping by connected
+components is the appropriate reorganization. An arbitrary product of
+independently corrected large-field activities would omit these terms.
+
+Formula \eqref{ch08:reassembly} does not by itself bound the sum over
+$B$. That estimate requires suppression of large-field activities by the
+action, bounds on the number and geometry of eligible supports, and enough
+spare support weight to absorb the regular clusters attached to them.
+These are analytic inputs to the nonlinear renormalization step. The
+abstract theorem bounds the regular cluster sum once those inputs have
+been established; it does not establish them.
+
+Two support notions must be distinguished in this application. The set
+used in an exclusion or covering rule need not contain every link read
+by an activity. For example, a large-field test at a boundary site can
+inspect a plaquette extending outside its assigned covering set. Disjoint
+covering sets therefore need not imply disjoint dependence on links.
+The abstract gas above needs the overlap implication
+\eqref{ch08:overlap} for its chosen exclusion supports; it does not assume
+statistical independence. When a local integration or factorization
+argument also requires full dependence supports, those enlarged sets
+and their geometric estimates must be specified separately. One must not
+silently replace the covering sets by enlarged sets in an exact covering
+identity.
+
+\section{What an application must supply}
+\label{ch08:application}
+
+The reusable conclusions of this chapter are the connected expansion
+\eqref{ch08:log}, the local tail \eqref{ch08:weighted-tail}, parameter
+differentiation under a uniform complex-domain bound, and exact removal
+and reassembly formulas. They are statements about a specified family
+of activities. To apply them after a block integration one must give:
+\begin{enumerate}
+ \item an exact expansion of the integrated density, including the
+ scalar factor and every large-field sector;
+ \item supports containing every link and cutoff test on which an
+ activity depends, and a definite incompatibility relation;
+ \item a site-norm bound with a strictly positive support-weight reserve,
+ satisfying \eqref{ch08:reserve} uniformly in the period;
+ \item corresponding estimates for the source-deformed or inserted
+ activities whenever a connected observable is required;
+ \item an absolutely summable bound for the constrained large-field
+ families and the clusters attached to them.
+\end{enumerate}
+These requirements explain why the cluster expansion is not the main
+obstruction in the construction. The general summation mechanism is
+already available in the literature. What must be proved for the Wilson
+model is that exact blocking, stationary integration, the large-field
+decomposition and the chosen observable normalization produce activities
+obeying those requirements on the same trajectory.

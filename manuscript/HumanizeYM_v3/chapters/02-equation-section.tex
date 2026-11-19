@@ -1,0 +1,243 @@
+\section{Local representatives of the equations of motion}
+\label{ch02:equation-section}
+
+The ordinary section $P_d^{\rm loc}$ reproduces Taylor coefficients,
+but need not reproduce equations of motion. We construct a second
+section for this purpose. Everything in this section concerns the
+finite-volume Wilson measure; no renormalization estimate is used.
+
+A radial polynomial potential $A_j$, homogeneous of degree $j+1$,
+is a \emph{Maxwell solution potential} if
+\[
+ \sum_\mu\partial_\mu(dA_j)_{\mu\nu}=0\quad\hbox{for every }\nu.
+\]
+Its curvature is automatically closed. Let $\mathcal I_d\subset V_d$
+be the polynomials vanishing on all such solution jets through degree
+$d$. This is the degree-$d$ part of the equation ideal; multiplication
+is understood only when the resulting weight remains at most $d$.
+The condition preserves both engineering weight and factor count.
+It is the kernel of restriction to solution jets, rather than a
+statement about the interacting measure.
+
+\begin{theorem}[An equation-adapted local section]
+\label{ch02:equation-adapted}
+There are a real, symmetry-equivariant linear section
+$\mathcal V_d$ from $V_d$ to local continuous gauge-invariant functions of links, a real equivariant automorphism
+$R_d$ of $V_d$, and finite constants $r_d,M_d$, with the following
+properties:
+\begin{enumerate}
+\item $\mathcal V_d1=1$, $R_d1=1$, and
+$\operatorname{Tay}_d\mathcal V_d p=p$.
+The section has a fixed finite stencil, independent of the torus.
+\item If $p$ has factor count $s$ and engineering weight $w$,
+then $R_dp-p$ is a sum of terms whose pair
+$(\text{factor count},\text{weight})$ is strictly larger than $(s,w)$
+in lexicographic order. Every term of $\mathcal V_dp$ is a product
+of at least $s$ transported curvature coordinates.
+\item For every $p\in\mathcal I_d$, every torus of side at least $M_d$,
+every anchor $o$, every real $\beta\ne0$, and every bounded measurable
+$S$ depending only on links with both endpoints farther than $r_d$
+from $o$,
+\begin{equation}
+ \int \mathcal V_d(R_dp)(o,U)S(U)\,d\mu_\beta(U)=0.
+ \label{ch02:microscopic-null}
+\end{equation}
+No gauge invariance or regularity of $S$ is assumed.
+\end{enumerate}
+The small-field derivative bounds for a fixed section proved above
+also apply to $\mathcal V_d$, with its own finite constants.
+\end{theorem}
+
+The regrading $R_d$ is essential: the exact interacting relation is
+$\mathcal V_d(R_d\mathcal I_d)$, not an assertion that
+$P_d^{\rm loc}(\mathcal I_d)$ has zero Wilson correlations.
+The proof below supplies the finite-stencil construction, whereas the
+compact-group integration by parts underlying it is the usual lattice
+equation-of-motion identity for Wilson's measure
+\cite{Wilson1974,OsterwalderSeiler1978}.
+
+\subsection{Curvature tests avoiding a prescribed link}
+
+A curvature coordinate means a real colour component of
+$\sigma_{\gamma,\square}$ in \eqref{ch02:transported-curvature}.
+Call it admissible for an oriented link $e$ if neither its plaquette
+nor its transporting path uses the underlying unoriented link $e$.
+Such a coordinate is independent of $U_e$.
+
+\begin{lemma}\label{ch02:avoiding-tests}
+For each $e$, the linearizations at the zero jet of admissible
+curvature coordinates span the dual of the finite radial jet space
+$\mathcal J_{\le d}$.
+\end{lemma}
+\begin{proof}
+It suffices to show that their common annihilator is zero.
+Removing one link does not disconnect $\ZZ^4$, so every plaquette
+not containing $e$ admits a transporting path avoiding $e$.
+At the zero jet transport has no effect on linearized curvature.
+Consequently a jet in the annihilator has zero sampled linear curl
+on all plaquettes except the finitely many containing $e$.
+
+For each orientation, this sampled curl is a polynomial in the
+plaquette's integer base point. A polynomial vanishing at all but
+finitely many integer points vanishes identically: fix all but one
+coordinate, use the one-variable assertion, and repeat.
+If $A_j$ is the highest nonzero homogeneous layer, the highest-degree
+part of its sampled curl is $dA_j$; lower layers cannot contribute
+to that part. Thus $dA_j=0$. Radial gauge and Euler's identity give
+\[
+ 0=\partial_i(x^\mu A_{j,\mu})
+   =A_{j,i}+x^\mu\partial_i A_{j,\mu}
+   =(j+2)A_{j,i},
+\]
+where closedness was used in the last equality.
+This contradicts the choice of $j$. Descending through the layers
+proves the assertion. Finite-dimensional duality now selects a
+finite spanning collection of admissible coordinates.
+\end{proof}
+
+The equality of the leading sampled curl with $dA_j$ follows directly
+by integrating the polynomial connection around a unit square:
+Stokes' formula averages $dA_j$ over that square, which changes only
+lower polynomial degrees. This also explains why no assumption
+about an infinite-dimensional configuration space enters the lemma.
+
+\subsection{Wilson forces and the linear equation ideal}
+
+Write $S_W$ for the Wilson action without its factor $\beta$.
+For a positive link $e$ and an orthonormal colour basis $(E_a)$,
+define its force $F_e$ by
+\[
+ \partial_{e,a}S_W=\langle E_a,F_e\rangle,\qquad
+ \partial_{e,a}f(U)=
+ \left.\frac{d}{dt}f(U_e\leftarrow e^{tE_a}U_e)\right|_{t=0}.
+\]
+Differentiating the plaquettes incident on $e$ expresses $F_e$
+as a signed sum of plaquette-curvature coordinates based at the
+initial vertex of $e$. The precise signs follow the chosen
+plaquette orientations. Transport the force to the anchor by a
+path avoiding $e$, and take a colour component there.
+Its linearization is the corresponding discrete divergence of
+sampled linear curls.
+
+Fix a layer $j$. These linear force functionals, restricted to jets
+through layer $j$, span every functional which acts only on $A_j$
+and annihilates the Maxwell solution potentials in that layer.
+Indeed, if all force functionals vanish, their values at integer
+base points form identically zero polynomials. Their top-degree
+terms are
+\[
+ -\sum_\mu\partial_\mu(dA_j)_{\mu\nu}.
+\]
+This follows by taking the first difference of the sampled curl
+in its transverse coordinate. Thus the top layer is a Maxwell
+solution potential. Every functional of the indicated type
+annihilates the common force kernel and is therefore a finite
+linear combination of these forces. Notice that this argument
+identifies the top layer only; it does not identify the entire
+kernel of the discrete force system with the continuum solution
+jet space.
+
+Here is the corresponding description of the polynomial ideal.
+Choose a linear projection of each jet layer onto its solution
+subspace and let $\mathcal E$ be their direct sum. In the full,
+not necessarily invariant, polynomial algebra the kernel of
+$p\mapsto p(\mathcal EJ)$ is generated by linear functionals
+vanishing on those solution subspaces. To check this without
+an ideal-generation theorem, use
+\[
+ \prod_{\nu=1}^s u_\nu-\prod_{\nu=1}^s(\mathcal E^*u_\nu)
+ =\sum_{i=1}^s
+ (u_i-\mathcal E^*u_i)
+ \prod_{\nu<i}\mathcal E^*u_\nu
+ \prod_{\nu>i}u_\nu .
+\]
+Choose homogeneous linear coordinates, so both gradings are
+preserved. Every homogeneous element of $\mathcal I_d$ is
+therefore a sum of products $\lambda z_1\cdots z_{s-1}$,
+where $\lambda$ is a one-layer equation functional.
+Individual summands need not be gauge invariant.
+
+Represent $\lambda$ by the finite force combination just constructed
+on its truncated jet space. For each force summand involving $e$,
+represent each $z_i$ by a linear combination of curvature coordinates
+avoiding $e$, using Lemma~\ref{ch02:avoiding-tests} on the \emph{full}
+jet space through degree $d$. Multiply these representatives by
+that force summand. The resulting function $f$ has at least $s$
+curvature factors. Its Taylor polynomial is
+\begin{equation}
+ \operatorname{Tay}_d f
+   =\lambda z_1\cdots z_{s-1}
+       +\{\hbox{terms strictly higher in }(s,w)\}.
+ \label{ch02:equation-triangle}
+\end{equation}
+There are two distinct errors. The nonlinear part of a curvature
+or force coordinate increases factor count. The linear force
+representation was fixed only through the layer of $\lambda$;
+its remaining linear terms increase weight at unchanged factor
+count. This is why the order in
+\eqref{ch02:equation-triangle} puts factor count first.
+
+\subsection{Exact integration by parts and assembly}
+
+Every force term above has the form
+$\langle E_a,F_e\rangle H_a$, where $H_a$ includes the transporting
+matrix, the other curvature factors, and an exterior spectator.
+All these factors avoid $e$. Freeze the other links. Haar invariance
+on the compact group gives
+\[
+ 0=\int_G\partial_{e,a}\{e^{-\beta S_W}\}\,dU_e
+   =-\beta\int_G\langle E_a,F_e\rangle
+                          e^{-\beta S_W}\,dU_e.
+\]
+Multiplication by $H_a$ is legitimate because it is constant in
+$U_e$. Fubini then proves the desired zero expectation, even for a
+merely bounded measurable exterior spectator. This proof never
+differentiates that spectator.
+
+All lists used in constructing a basis are finite. Enlarge one
+radius to contain their plaquettes, paths, and differentiated links.
+Enlarge one period threshold so that distinct relevant cover links
+cannot become identified with a differentiated link after
+periodization. These two choices work for every anchor by translation.
+They are independent of $\beta$ and of the exterior spectator.
+
+Average the constructed functions over the gauge element at the
+anchor. Every transported curvature transforms there by the adjoint
+action, so this is a finite-dimensional average of colour tensors.
+It preserves the number of curvature factors and
+\eqref{ch02:equation-triangle}. It also preserves the exact zero
+identity: gauge invariance of the Wilson law transfers the gauge
+transformation to the bounded exterior spectator without changing
+its support. The result is fully gauge invariant.
+
+Choose a basis of each homogeneous part of $\mathcal I_d$, perform
+this construction there, and extend to a basis of $V_d$ by using
+$P_d^{\rm loc}$ on a complement. The resulting linear map
+$\mathcal F_d$ preserves the unit. Its Taylor map is
+\[
+ R_d=\operatorname{Tay}_d\mathcal F_d=I+T_d,
+\]
+where $T_d$ strictly increases the finite lexicographic grading.
+Thus $T_d$ is nilpotent and
+$R_d^{-1}=I-T_d+T_d^2-\cdots$ is a finite sum.
+Average $\mathcal F_d$ simultaneously on domain and range over
+signed coordinate permutations and over conjugation. These
+operations preserve the ideal, both gradings, and the unit;
+hence the same triangular conclusion remains valid.
+Finally put
+\[
+ \mathcal V_d=\mathcal F_dR_d^{-1}.
+\]
+This gives the Taylor identity, all symmetries, and
+$\mathcal V_dR_d p=\mathcal F_dp$ for $p\in\mathcal I_d$.
+Both $R_d$ and its inverse preserve the lower bound on factor
+count. The fixed finite products therefore obey exactly the
+small-field derivative argument used for $P_d^{\rm loc}$,
+with new constants for the new stencil. This completes the proof
+of Theorem~\ref{ch02:equation-adapted}.
+
+The identity \eqref{ch02:microscopic-null} is exact at each cutoff.
+It gives no bound on a renormalized coefficient change.
+To use it for continuum null fields one must compare this section
+with the section used along the actual renormalization history,
+with one invertible comparison map for all labels and all spectators.

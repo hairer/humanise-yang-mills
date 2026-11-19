@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below. Scott Armstrong is supported by the European Research Council (ERC) under the European Union's Horizon Europe research and innovation programme, grant agreement No. 101200828."
+title: "Yang–Mills informalization: a map and natural-language outline of OpenAI's Lean construction of four-dimensional Yang–Mills theory"
+type: dataset
+repository-code: "https://github.com/scottnarmstrong/yang-mills-informalization"
+abstract: >-
+  A dependency map and natural-language outline of OpenAI's Lean 4 formalization of the construction of
+  four-dimensional quantum Yang–Mills theory as a scaling limit of Wilson lattice gauge theory (source released by
+  the Yang–Mills group, commit 3456e5e). The proof is mapped from its main theorem down, coarse-grained into eight
+  parts and thirty-two units, with plain-language key statements linked to the Lean source, a glossary
+  of the code's nicknames, and the interfaces between the parts. Produced with AI agents, in collaboration with the
+  humanise-yang-mills project.
+authors:
+  - family-names: Armstrong
+    given-names: Scott
+    affiliation: "CNRS and Laboratoire Jacques-Louis Lions, Sorbonne Université; Courant Institute School of Mathematics, Computing, and Data Science, New York University"
+keywords:
+  - Yang–Mills theory
+  - constructive quantum field theory
+  - renormalization group
+  - Lean
+  - formalization
+  - informalization
+license: Apache-2.0
+references:
+  - type: software
+    title: "OpenAI-YM-20261028: Lean source of OpenAI's Yang–Mills construction"
+    authors:
+      - name: OpenAI
+    repository-code: "https://github.com/yang-mills-group/OpenAI-YM-20261028"
+  - type: software
+    title: "Humanise Yang-Mills"
+    authors:
+      - family-names: Hairer
+        given-names: Martin
+    repository-code: "https://github.com/hairer/humanise-yang-mills"

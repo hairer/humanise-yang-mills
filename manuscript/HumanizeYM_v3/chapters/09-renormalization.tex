@@ -1,0 +1,978 @@
+\chapter{The nonlinear renormalization step}
+\label{ch09:renormalization}
+
+A block transformation acts on the density, not on its chosen list
+of local terms. Our task is to express its exact output in the
+coordinates of Chapter~\ref{ch04:blocking}, while improving the
+bounds enough to repeat the operation. The organization by local
+interactions and large-field regions follows the constructive
+renormalization method of Ba{\l}aban
+\cite{Balaban1988Expansions}. We use the cluster theorem of
+Chapter~\ref{ch08:chapter}; the work here is the identification,
+normalization and estimation of its concrete activities.
+
+Fix one adjacent pair of scales, with fine scale $m+1$ and coarse
+scale $m$. Write $L=L_m$, $B=B_m$, $t=t_m$, and
+$\mathfrak b=\widehat\beta_{m+1}$. The actual incoming coupling is
+$\beta'\in[\mathfrak b/2,2\mathfrak b]$.
+All masks use the fixed reference thresholds of
+\eqref{ch04:thresholds}. They do not move when $\beta'$ varies.
+Write the prescribed coarse path action as
+\[
+ P^{\rm path}_{N,m}(\beta,U)=\beta\mathcal K(U)+\mathcal L(U),
+\]
+where $\mathcal K$ includes its cubic and quartic terms and
+$\mathcal L$ is the quadratic loop correction.
+This identity defines $\mathcal K,\mathcal L$ from
+\eqref{ch04:path-action}. Neither is the unknown effective action.
+
+For this induction the derivative orders and spatial exponents
+are stronger than the minimum allowed in the density definition:
+take $q_{m+1}\ge q_m\ge6$ and
+$\varpi_{m+1}\ge\varpi_m\ge2$, with the prescribed derivative
+reserves for the local integral estimates. In particular the
+normalized affine directions used below belong to the activity
+seminorm. At the finest scale choose $0<c_{\rm dir}\le1$.
+
+The estimates below distinguish proved algebraic implications
+from the analytic inputs of Chapters~\ref{ch06:large-fields}
+and~\ref{ch07:matching}. In particular a product estimate under
+one Gaussian law, a local low-order matching estimate, and a
+one-loop drift estimate are different inputs.
+
+\section{The exact local integral and its first expansion}
+\label{ch09:integral}
+
+Let
+$\mathscr Z_{\rm blk}=\mathcal B_m^{\beta'}\operatorname{dens}(\rho')$,
+with the exact kernel \eqref{ch04:block-operator}.
+In each sector one first performs the local coordinate change
+on its active links and leaves the other links in probability
+Haar measure. Chapter~\ref{ch06:large-fields} gives the exact
+Gaussian identity, including the difference between the chosen
+finite-range covariance and the inverse precision.
+
+Here is the scalar bookkeeping in a form useful for checking
+reassembly. Suppose there are $N_{\rm free}$ free tree-gauge
+bonds, of which $n_{\rm act}$ use Lie algebra coordinates, and
+let $D$ be the dimension after dummy Gaussian coordinates have
+been added. Set $g=(\beta')^{-1/2}$, $q=\dim\gLie$, and
+$c_{\rm H}$ equal to the density of probability Haar measure
+in the chosen exponential coordinates at zero.
+With $a=\mu+gz$, the measure multiplier before the Haar
+logarithm is
+\[
+ (2\pi)^{-(D-n_{\rm act}q)/2}g^{n_{\rm act}q}c_{\rm H}^{n_{\rm act}}
+ =(2\pi)^{-D/2}\mathfrak m^{N_{\rm free}}
+                  e^{-(N_{\rm free}-n_{\rm act})\log\mathfrak m},
+ \quad
+ \mathfrak m=c_{\rm H}(2\pi g^2)^{q/2}.
+\]
+The dummy Gaussian integral equals one after the inactive Haar
+variables have been frozen; Fubini then permits their integration.
+The flat reference determinant uses the same forest as the
+sector. It is extracted once, not separately for every eventual
+connected component. The local precision correction, Haar
+logarithm, missing-coordinate factor and stationary residual
+remain among the local exponential factors.
+Keeping them is what recovers the original Haar integral.
+
+Expand exponentials as $e^V=1+(e^V-1)$ and retain all sector
+allocation indicators. A complete dependence region contains
+every Haar coordinate, tag variable and Gaussian covariance
+halo read by its factor. If two such supports are disjoint,
+the Haar and tag coordinates are independent; the Gaussian
+cross covariance is zero because the chosen covariance has
+finite range. Their integrals therefore factor.
+Connected components of intersecting dependence regions define
+the first polymer activities.
+
+This factorization concerns dependence regions. It does not
+assert that large-field activities with disjoint exclusion
+supports $Y_i$ have disjoint full dependence regions.
+The flags in their eligibility tests can read outside $Y_i$.
+Those tests remain in every exact-cover expression.
+
+The required simultaneous estimate for a connected product is
+\begin{equation}
+ \int G_M\,d\nu\le
+ P_j(\mathfrak b)(1+s_M)^{d_j}
+       e^{-r_j\beta't_{m+1}^2|A_M|}
+       \prod_{a\in M}u_a .
+ \label{ch09:joint-input}
+\end{equation}
+Here $\nu$ is the one sector Gaussian/Haar law,
+$G_M$ majorizes the product and its prescribed ordered
+derivatives, $s_M$ counts the full dependence region in
+radius-$B$ blocks, and $A_M$ is its selected large-field test set.
+The function $P_j$ has subpower growth:
+$\log P_j(\mathfrak b)/\log\mathfrak b\to0$ at fixed stage and
+ratio. Distinct cutoff-failure labels each contribute their
+own factor to the product. The bounded-jet estimate
+\eqref{ch06:actual-jet-integral}, applied to the primitive factors
+constructed in Chapter~\ref{ch06:large-fields}, proves this joint
+bound on their common law. The alternative quadratic-tilt criterion
+in Proposition~\ref{ch06:common-majorant} is not required here.
+Separate bounds on $\int|F_a|\,d\nu$ cannot
+replace this estimate.
+
+The elementary power counting is as follows. The entries include
+the prescribed finite number of derivatives.
+\[
+\begin{array}{l|l}
+\text{factor after deterministic subtraction}&\text{majorant}\\ \hline
+\text{stationary cubic remainder}&P_j\beta'g^3\\
+\text{centered determinant variation}&P_j(t_{m+1}+g)\\
+\text{Haar remainder}&P_j(t_{m+1}+g)^2\\
+\text{inherited quadratic-loop variation}
+   &P_j\Lambda_{m+1}^{\rm loop}(t_{m+1}+g)g\\
+\text{covariance and stationary residual}
+   &P_j\mathfrak b^{c_j}e^{-c'_jB}\\
+\text{incoming regular activity}&P_j\epsilon_{m+1}^{\rm reg}\\
+\text{cutoff failure at a distinct label}&P_j\mathfrak b^{-1/2}
+\end{array}
+\]
+For example $\beta'g^3=g$, and the stationary mean
+is $O(gM_{m+1}^{\rm cut})$, so a cubic Taylor term is bounded
+by $g$ times a polynomial in $M_{m+1}^{\rm cut}$ and Gaussian
+coordinates. The latter is estimated inside the common integral.
+The other rows follow from the determinant inverse identity,
+the second-order vanishing of the Haar correction, and
+the window errors of Chapter~\ref{ch06:large-fields}.
+The loop allowance must grow subpolynomially at fixed ratio.
+
+After increasing the coupling threshold these rows are bounded
+by $\mathfrak b^{-7/16}$, since a subpower factor can be bounded
+by $\mathfrak b^{1/16}$. Read-count polynomials are absorbed by
+spare exponential support weights. The first component expansion
+and then Theorem~\ref{ch08:kp} give an absolutely convergent
+logarithm of the ordinary, flag-free gas. Components attached to
+a prescribed large-field site set remain in the exact-cover sum.
+The deletion identity \eqref{ch08:deletion-identity} accounts
+for ordinary polymers excluded by a selected large-field region.
+Repeated polymer labels in the logarithm are counted at every
+occurrence, with the factor $1/n!$ of \eqref{ch08:log}.
+
+All rearrangements can first be made for finite selections.
+Under \eqref{ch09:joint-input} and the strict cluster criterion,
+the absolute envelopes allow passage to the countable sums.
+Thus this procedure gives an identity for $\mathscr Z_{\rm blk}$,
+rather than an asymptotic expansion for its logarithm.
+
+\section{Improving the regular remainder}
+\label{ch09:improvement}
+
+The first bound $\mathfrak b^{-7/16}$ is too large for the
+target $\epsilon_m^{\rm reg}=\widehat\beta_m^{-11/10}$.
+There are three different sources of improvement.
+
+\subsection{Terms containing several elementary factors}
+
+Give every elementary ordinary factor a degree one, and give
+a first-expansion polymer the sum of its factors' degrees.
+A cluster degree is the sum over its polymer occurrences.
+Multiply each elementary majorant by
+$h=\mathfrak b^{3/8}$ before performing either expansion.
+The resulting local smallness parameter is
+$h\mathfrak b^{-7/16}=\mathfrak b^{-1/16}$.
+The weighted rooted bound of
+Section~\ref{ch08:tail}, applied with these inflated activities,
+bounds the whole sum by $P_jh\mathfrak b^{-7/16}$.
+Restoring the original weights for terms of total degree at
+least three gives
+\begin{equation}
+ P_jh^{-3}(h\mathfrak b^{-7/16})
+       =P_j\mathfrak b^{-19/16}
+       \le\mathfrak b^{-23/20}.
+ \label{ch09:degree-gain}
+\end{equation}
+The gap $19/16-23/20=3/80$ pays the remaining subpower factor.
+This counts elementary factors, not just vertices in the
+second cluster expansion; a single polymer may already have
+degree three. The same calculation applies after placing a
+fixed number of derivatives.
+
+An incoming regular activity accompanied by a further factor
+is bounded by the rooted estimate with that incoming activity
+distinguished:
+$P_j\epsilon_{m+1}^{\rm reg}\mathfrak b^{-1/2}$.
+Long path terms have an extra factor $e^{-c_jB}$.
+Both fit the right side of \eqref{ch09:degree-gain} after
+increasing the threshold.
+
+\subsection{The linear inherited regular term}
+
+The component linear in an incoming regular activity must use
+its affine-Hessian cancellation. In local radial gauge, the
+lifted potential splits into parts with inverse-ratio sizes
+$L^{-1},L^{-2},L^{-3}$: a constant part, its affine variation,
+and its remainder. The constant part is removed by a local
+gauge transformation. Curvature therefore begins at weight
+two. Gauge and color invariance remove linear curvature terms,
+and the incoming affine-Hessian condition removes the
+quadratic curvature term of weight four. Every surviving
+selection in the ordered Taylor expansion has weight at least
+five.
+
+Here is the support estimate needed to sum that local
+calculation. Let $d$ be the incoming covering number.
+For $d^3<L$ the inspected support admits a nonwrapping
+radial gauge and the per-label gain is $L^{-5}$.
+For the other supports use the original bound. Both cases
+are bounded by
+\[
+ \delta_L(d)\le L^{-5}(1+d)^{15},\qquad
+ \delta_L(d)=
+ \begin{cases}L^{-5},&d^3<L,\\1,&d^3\ge L.\end{cases}
+\]
+The full chain rule adds a fixed polynomial in $d$.
+Choose the ratio and incoming support exponent so that support
+compression leaves half of the incoming exponent after paying
+the outgoing weight. That half absorbs the polynomial.
+There are $L^4$ fine anchors above each coarse anchor.
+Consequently the inherited principal norm is at most
+$V_jL^{-1}\epsilon_{m+1}^{\rm reg}$, with $V_j$ fixed before
+$L$.
+
+For the comparison with the actual integral use the same forest
+and physical local coordinates on both sides. The estimates of
+Section~\ref{ch06:linear-comparison} give a covariance difference
+$O(P(B)t_f)$ and a mean difference, in Gaussian units, of order
+$P(B)g(M_f^{\rm cut})^2+P(B)M_f^{\rm cut}e^{-cB}$,
+where $t_f=t_{m+1}$ and $g=(\beta')^{-1/2}$. Each is
+$\mathfrak b^{-1/2+o(1)}$. To see where the gain occurs, for
+a covariance interpolation $C_s$ with fixed positive lower bound,
+the logarithmic density derivative is
+\[
+ \frac12\left\{z^*C_s^{-1}\dot C_s C_s^{-1}z
+                      -\tr(C_s^{-1}\dot C_s)\right\}.
+\]
+A varying mean adds its linear Gaussian score. Every coefficient
+contains a covariance or normalized-mean difference. Its fixed
+moments therefore contain the small factor just stated, times a
+polynomial in the local dimension.
+
+Hold the physical links in the incoming activity fixed by the
+protected coordinate change of Chapter~\ref{ch06:large-fields}.
+The nonlinear coordinate correction is then differentiated through
+its Jacobian and density, where the same gain is available.
+This avoids requiring one extra derivative of the incoming activity
+when adjacent levels have equal derivative orders. Telescope all
+remaining factor products, marking one changed factor. The
+nonquadratic local weights contribute a gain of order $g$ with
+subpower losses; a second incoming activity contributes
+$O((\epsilon_{m+1}^{\rm reg})^2)$ instead. Common Gaussian moments
+and the unused support exponent sum the resulting polynomial costs.
+Together with the principal estimate this proves
+\[
+ \mathcal E_{\sigma+3}(\text{inherited term})
+ \le \left(V_jL^{-1}+
+       \omega_{j,L}(\widehat\beta_m)\right)
+                    \epsilon_{m+1}^{\rm reg},
+ \qquad
+ \omega_{j,L}(\widehat\beta_m)
+       =\widehat\beta_m^{-1/2+o(1)}.
+\]
+For this comparison the local windows and their dependence halos
+must be clean. A window meeting a selected large-field component is
+assigned to that component; a failed remote cutoff has the joint
+Gaussian-tail bound of Chapter~\ref{ch06:large-fields}. Large
+remaining supports gain $e^{-cB}$ from the unused incoming support
+weight. Thus no comparison between unrelated masks or a seeded and
+an unseeded law has been made. The actual interpolation estimates
+are essential; the engineering-weight count alone would not prove
+the comparison remainder.
+
+\subsection{Low-order terms and localization}
+
+One- and two-factor terms must be combined before estimating them.
+The degree-four classical matching and quadratic determinant matching
+must apply to the same integral and stationary branch. Rather than
+use a formal cumulant remainder, we retain a finite stationary
+region and estimate its complement. The resulting centered
+auxiliary bound, with $h=\mathfrak b^{-7/16}$, is
+\begin{equation}
+ P_j(\mathfrak b)\left\{
+ \mathfrak b^{-1}h+\mathfrak b h^5+h^3\right\}
+                         +\mathfrak b^{-K},
+ \label{ch09:aux-input}
+\end{equation}
+where $K$ can be any fixed positive number. Its largest power is
+$\mathfrak b^{-19/16+o(1)}$, which is smaller than
+$\mathfrak b^{-23/20}$. The argument below specifies the actual
+sector and stationary estimates needed to obtain this bound.
+
+\input{chapters/09-stationary-remainder}
+
+\subsection{Recovering a local density}
+
+The passage from auxiliary sums to local activities has an
+exact finite-dimensional explanation. Truncate the selected
+low-order formula, retaining a weighted tail
+$\varepsilon_{\rm tr}$. Give an ordinary selected term $f_a^0$
+the shares $p_{xa}=\mathbf1_{X_a}(x)/|X_a|$, and a path term
+the share $\mathbf1_{\{o_a\}}(x)$. These shares sum to one.
+Set
+\[
+ F_x=\sum_{a\ {\rm selected}}p_{xa}f_a^0,\qquad
+ M_x=\sum_{a\ {\rm selected}}p_{xa}h_{X_a}f_a^0.
+\]
+Choose a common dependence radius $R$ about every site receiving
+a nonzero share. Set $w=4R+100(1+B)$, $\bar w=w+5$, and use
+auxiliary tori $\Lambda_i$ of sides $2(w+i)$, $0\le i\le4$.
+The relevant reflection cubes must embed in the original torus.
+For a cyclic coordinate $q$ of period $2v$, define
+$\pi_v(q)=\min(\bar q,2v-\bar q)$, where $0\le\bar q<2v$.
+Apply this map coordinatewise. Write $U_{i,z}$ for the pullback of
+the original field under $q\mapsto z+\pi_{w+i}(q)$ on $\Lambda_i$.
+Reversed links are inverted, so small plaquette chords stay small.
+Let $F_y^{(i)}$ denote the same local formula on $\Lambda_i$
+with its flat value subtracted, and set
+\begin{align}
+ \lambda_i&=\frac{(-1)^i\binom4i}{2^4\,4!},&
+ G_x&=\sum_{i=0}^4\lambda_i\sum_{y\in\Lambda_i}
+                              F_y^{(i)}(U_{i,x}),\notag\\
+ L_x&=M_x-F_x(1)-
+   \sum_{i=0}^4\lambda_i\sum_{y\in\Lambda_i}
+       h_{N_{\bar w}(x-\pi_{w+i}(y))}
+                      F_y^{(i)}(U_{i,x-\pi_{w+i}(y)}).
+ \label{ch09:localization}
+\end{align}
+In the second line the original cube is based at
+$x-\pi_{w+i}(y)$, so its site
+$y$ corresponds to the original site $x$.
+This dependence on $y$ is essential.
+
+When $N_{2\bar w}(x)$ is small-field, all these masks are one.
+Classify sites of $\Lambda_i$ by their distances, through $R$,
+from the reflection faces. With the recentering just specified,
+the local expression in each class is independent of $i$.
+The multiplicity of each class is polynomial in $i$ of
+degree at most four; only the all-interior class has degree
+four, with leading coefficient $2^4$.
+The fourth-difference weights therefore give
+$\sum_i\lambda_i\sum_y F_y^{(i)}(U_{i,x-\pi_{w+i}(y)})
+=F_x(U)-F_x(1)$, and $L_x=0$.
+This is not a pointwise assertion that $G_x=F_x-F_x(1)$.
+
+Sum \eqref{ch09:localization} over $x$ and change variables
+$x-\pi_{w+i}(y)\mapsto x$ in each finite auxiliary sum.
+Translation covariance makes $F_x(1)=F_0(1)$, giving exactly
+\[
+ \sum_x M_x=|\Lambda|F_0(1)+
+              \sum_x h_{N_{\bar w}(x)}G_x+\sum_xL_x .
+\]
+Thus $G_x$ is the small-field local activity and $L_x$ is a
+logarithmic correction supported where its enlarged
+neighborhood contains a large-field site.
+
+Auxiliary volumes and reflected derivative norms grow only
+polynomially in $B$. Thus \eqref{ch09:aux-input} implies
+\[
+ \|G_x\|_m\le P_j(\mathfrak b)
+           (\mathfrak b^{-23/20}+\varepsilon_{\rm tr}),
+ \qquad \sup|L_x|\le P_j(\mathfrak b)\mathfrak b^{-7/16}.
+\]
+The first fits an arbitrarily small fraction of
+$\epsilon_m^{\rm reg}$, since $23/20>11/10$.
+The second tends to zero and is incorporated into
+large-field activities by the exact operation below.
+
+The selected low-order terms contain no incoming regular or
+large-field activity. Their coefficients depend only on the
+prescribed path, actual coupling and fixed labels. Their
+weighted continuity on the compact coupling band therefore
+permits one truncation for all inputs with those data.
+Terms involving incoming activities have already been
+estimated separately. More generally compactness along a
+single activity curve would give a truncation only along
+that curve. All choices here are retained under restriction
+of the parameter interval.
+
+\section{A precise preparatory output}
+\label{ch09:preparatory}
+
+The preceding estimates, when their concrete local inputs
+hold, give local functions $f_i$, preliminary large-field
+activities $k_i$, and a scalar $\tau$ satisfying
+\begin{equation}
+ \mathscr Z_{\rm blk}(U)=
+ e^{|\Lambda|\tau-\beta'\mathcal K(U)-\mathcal L(U)
+                       -\alpha\mathcal Q(U)-\sum_i h_{X_i}f_i(U)}
+                         \mathcal F^0(U).
+ \label{ch09:early}
+\end{equation}
+Here $\mathcal F^0$ is the exact-cover sum of the $k_i$,
+and $\mathcal Q$ is the masked quadratic part of the
+prescribed path action. The coefficient $\alpha$ is
+the matched determinant coefficient, not an adjustable
+trial coupling. The bounds needed below are
+\begin{equation}
+ \sup_x\sum_{o_i=x}e^{(\sigma+3)c(X_i)}a_i\le H_{\rm pre},
+ \quad a_i\ge\|f_i\|_m,\qquad
+ \sup_x\sum_{i:x\in Y_i}e^{(\sigma+1)c(Y_i)}k_i^{\rm maj}
+       \le e^{-c_j(M_{m+1}^{\rm cut})^2},
+ \label{ch09:early-bounds}
+\end{equation}
+where $c(X)=\operatorname{cov}_{B_m}(X)$ and
+$H_{\rm pre}=\theta c_j^{\rm pre}\epsilon_m^{\rm reg}$,
+$0<\theta\le1$. The positive stage constant $c_j^{\rm pre}$
+is fixed from the subsequent subtraction and path-replacement
+operator norms before choosing the ratio.
+
+To obtain these bounds choose $L$ first so that
+$V_jL^{-1}\epsilon_{m+1}^{\rm reg}$ fits the desired fraction of
+$H_{\rm pre}$. This is a condition on the fixed stage constants:
+the ratio $\epsilon_{m+1}^{\rm reg}/\epsilon_m^{\rm reg}$ is bounded
+on the permitted neighboring reference-coupling bands.
+Then choose the coupling threshold for the inherited
+comparison, \eqref{ch09:degree-gain},
+\eqref{ch09:aux-input}, and the small logarithmic corrections.
+Choose the truncation accuracy after its polynomial
+localization costs have been specified.
+Allocate distinct positive fractions of the exponent in
+\eqref{ch09:joint-input} to sector multiplicities, local
+normalization losses, and the final large-field bound.
+Polynomial support costs use support-weight reserves.
+An unexplained extensive normalization cannot be charged to
+a single selected large-field test.
+
+Equation \eqref{ch09:early} and its bounds are the concrete
+interface for the rest of the chapter. The remaining
+operations and estimates will now be proved directly from it.
+
+\section{Local quadratic subtraction}
+\label{ch09:subtraction}
+
+For $a<b$ define the clover curvature at $o$ by
+\[
+ F^{\rm cl}_{ab}(U,o)=\tfrac14\sum_{\varepsilon,\eta=\pm1}
+ \varepsilon\eta\,\operatorname{proj}_{\gLie}
+       \frac{U_{o;\varepsilon a,\eta b}
+                         -U_{o;\varepsilon a,\eta b}^{-1}}2 .
+\]
+The loop follows the four signed edges and starts at $o$.
+This field transforms by $\Ad$ at $o$ and reads a radius-two
+neighborhood. For an affine potential
+$A_\mu(y)=u_\mu+\sum_\nu y^\nu v_{\mu\nu}$ its derivative
+at the identity is $v_{ba}-v_{ab}$.
+
+For a preliminary $f$ on $X$ anchored at $o$, put
+$Z=X\cup N_2(o)$. On a nonwrapping $Z$, let
+$A^{q,T}_c(y)=\mathbf1_{\{c=b\}}\xi_o(y)^aT$ for $q=(a,b)$,
+and fix a unit $T_*\in\gLie$. Define
+\[
+ q_f(q,r)=D^2[f(\exp\cdot)](0)[A^{q,T_*},A^{r,T_*}],
+ \quad
+ Q_f(U)=\tfrac12\sum_{q,r}q_f(q,r)
+       \langle F^{\rm cl}_q(U,o),F^{\rm cl}_r(U,o)\rangle.
+\]
+Set $q_f=0$ if $Z$ wraps. Gauge invariance makes the first
+derivative at the identity vanish and the Hessian annihilate
+local gradients. The zero-curl part of an affine potential
+is a discrete gradient of a quadratic site function.
+It can be extended periodically using a cutoff outside
+the dependence region. Therefore the Hessian on affine fields
+depends only on their constant curls. Constant color
+invariance and simplicity of $\gLie$ make its color
+bilinear form a multiple of the invariant metric.
+Thus $Q_f$ has the same affine Hessian as $f$.
+This is the local Ward-identity argument of
+Section~\ref{ch07:kernels} in finite coordinates.
+
+Set
+\[
+ R_f=f-f(1)-Q_f,\qquad
+ \zeta_f=(1-h_Z)\{f(1)+h_{\{o\}}Q_f-h_Xf\}.
+\]
+An exact two-case identity is
+\begin{equation}
+ h_Xf=f(1)+h_{\{o\}}Q_f-\zeta_f+h_ZR_f .
+ \label{ch09:subtract-identity}
+\end{equation}
+On a small-field $Z$ all masks are one; otherwise $h_Z=0$
+and the definition of $\zeta_f$ proves the equality.
+The remainder vanishes at the flat field and has zero
+affine Hessian on nonwrapping supports.
+The function $\zeta_f$ vanishes on small-field $Z$.
+Its flag dependence must still be recorded in its full
+dependence region; no derivative of a mask is taken.
+
+The normalized affine tests and polarization give
+$t^2|q_f(q,r)|\le3a_f$. Every allowed derivative of
+$F^{\rm cl}$ is $O_j(t)$ on its small-field domain, so
+\begin{equation}
+ \|R_f\|_m+\sup|\zeta_f|\le C_j a_f .
+ \label{ch09:subtraction-bound}
+\end{equation}
+In the supremum term, $f$ and $Q_f$ occur only under their
+own health tests. Enlarging $X$ to $Z$ costs a bounded
+number of covering balls.
+
+The conversion of anchored bounds to containing-site bounds
+is explicit. If $x\in Z$ and $c(Z)=n$, its anchor lies
+within distance $CBn$ of $x$. There are at most
+$C(1+B)^4(1+n)^4$ choices. A spare support exponent
+absorbs this polynomial. Consequently the discrepancy
+series has containing-site norm at exponent $\sigma+1$
+bounded by $C_j(1+B)^{d_j}H_{\rm pre}$.
+
+By translation and hypercubic covariance,
+\[
+ \sum_{o_i=o}q_{f_i}(q,r)=\Delta\delta_{qr}.
+\]
+An axis reflection kills off-diagonal orientation pairs;
+permutations identify the diagonal pairs.
+Absolute convergence follows from the derivative bound,
+and
+\begin{equation}
+ t^2|\Delta|\le C_jH_{\rm pre}.
+ \label{ch09:delta-bound}
+\end{equation}
+Thus, with
+$\mathcal C(U)=\frac12\sum_o h_{\{o\}}\sum_q|F_q^{\rm cl}(U,o)|^2$,
+the sum of the extracted quadratic functions is
+$\Delta\mathcal C(U)$.
+
+\section{Replacing the local quadratic term by the path action}
+\label{ch09:path-reset}
+
+The path action is the tested and clipped density of \eqref{ch04:path-action}. Its path and test data remain fixed during this replacement, as do the frame choices defining the actual probability kernel \eqref{ch04:block-operator}.
+
+Expand the quadratic part into plaquette channels and ordered
+pairs of entries in each row square. For a channel $d$ let
+$a_dP_d$ be its unmasked quadratic expression, $a_dQ_d$
+its constant-curvature clover substitute, and $L_d$ its
+actual clipped or tested expression. Its support $Y_d$
+contains both paths and every nonautomatic relaxed test.
+On the small-field set of $Y_d$, $L_d=a_dP_d$.
+Define
+\[
+ F_d=\Delta a_d(Q_d-P_d),\qquad
+ J_d=(1-h_{Y_d})\{(\alpha+\Delta)L_d
+                              -\Delta a_dh_{\{o_d\}}Q_d\}.
+\]
+Then
+\begin{equation}
+ (\alpha+\Delta)L_d+h_{Y_d}F_d
+ =\alpha h_{Y_d}a_dP_d+
+       \Delta a_dh_{\{o_d\}}Q_d+J_d .
+ \label{ch09:channel}
+\end{equation}
+The equality follows on each of the two health domains.
+Every $F_d$ has zero affine Hessian and every $J_d$
+vanishes on its small-field support.
+
+The selected free metric satisfies
+$c_{\rm dir}I+S(0)^*S(0)=I$, where $S(0)$ is the row
+coefficient matrix at zero momentum.
+Therefore summing the clover substitutes gives exactly
+$\mathcal C$, while the masked raw channels sum to
+$\mathcal Q$. Add the regular terms
+$-(\alpha+\Delta)A_d$ for the cubic and quartic atoms.
+After the common signed-symmetry average, let $F$ be the
+resulting masked regular sum and $J$ the sum of the $J_d$.
+Equation \eqref{ch09:channel} becomes
+\begin{equation}
+       (\alpha+\Delta)\mathcal K+F
+                   =\alpha\mathcal Q+\Delta\mathcal C+J.
+ \label{ch09:path-identity}
+\end{equation}
+Combining \eqref{ch09:early},
+\eqref{ch09:subtract-identity} and
+\eqref{ch09:path-identity} gives, at every field,
+\begin{equation}
+ \mathscr Z_{\rm blk}=
+ e^{|\Lambda|\tau-\sum_i f_i(1)
+       -(\beta'+\alpha+\Delta)\mathcal K-\mathcal L-E}
+       \mathcal F^0\,e^{\sum_i\zeta_{f_i}+J},
+ \qquad E=\sum_i h_{Z_i}R_{f_i}+F .
+ \label{ch09:before-fusion}
+\end{equation}
+No division by the exact-cover gas was used, so this equality
+also holds where that gas vanishes or is signed.
+
+Weighted path sums and spare path-length width give constants
+$C_{\rm reset},L_0,L_1,L_h$ such that
+\begin{align}
+ \mathcal E_m(E)&\le C_{\rm reset}H_{\rm pre}
+     +C_j\{H_{\rm pre}L_0+
+                  (|\alpha|t^3+H_{\rm pre})L_1\},\\
+ \|\zeta+J\|_{\sigma+1,{\rm site}}
+ &\le C_j(1+B)^{d_j}H_{\rm pre}
+   +C_j\{t|\alpha|+H_{\rm pre}/t+H_{\rm pre}\}L_h .
+ \label{ch09:reset-cost}
+\end{align}
+Here the site norm sums supremum majorants of logarithmic
+terms over supports containing a site.
+The low regular channels contain two curvatures, the high
+channels at least three; each derivative costs a polynomial
+in path length, controlled by the exponential path norm.
+The actual clipped channel can have size $O(t)$ on a
+large-field configuration, which explains the term
+$t|\alpha|$ in the second line.
+
+Choose $c_j^{\rm pre}$ in \eqref{ch09:early-bounds}
+small enough to pay the terms linear in $H_{\rm pre}$
+in the first line. At fixed ratio $|\alpha|$ is bounded,
+and
+\[
+ t^3/\epsilon_m^{\rm reg}
+       =\widehat\beta_m^{-2/5}(M_m^{\rm cut})^3\longrightarrow0.
+\]
+Thus the first line is at most $\epsilon_m^{\rm reg}$.
+The second line tends to zero even after multiplication
+by $(2B+1)^4$: in particular
+$H_{\rm pre}/t=O(\widehat\beta_m^{-3/5}/M_m^{\rm cut})$.
+This is the smallness needed for the exact regrouping.
+
+\section{Absorbing logarithmic corrections into large-field activities}
+\label{ch09:fusion}
+
+Write the logarithmic corrections in
+\eqref{ch09:before-fusion} as $\ell_a$ on nonempty exclusion
+supports $Z_a$, with $\ell_a=0$ when $Z_a$ is small-field.
+Their extra flag dependence regions are retained.
+For each finite connected selection $P$ of preliminary
+large-field labels and logarithmic labels, require a
+nonempty large-field part and pairwise disjoint preliminary
+exclusion supports. Connectivity refers to intersections
+of these exclusion supports and the $Z_a$.
+Set $Y_P$ equal to their union and $I_P$ equal to the union
+of the preliminary prescribed large-field site sets. Define
+\[
+ K_P(U)=\mathbf1_{\{Y_P\cap\operatorname{Bad}_m(U)=I_P\}}
+     \prod_{i\in P_{\rm lf}}k_i(U)
+     \prod_{a\in P_{\log}}(e^{\ell_a(U)}-1),
+\]
+with the conjunction of all inherited extra tests.
+
+\begin{proposition}[Exact regrouping]
+\label{ch09:fusion-prop}
+Suppose $\sum_a\sup|\ell_a|<\infty$. The exact-cover sum of
+the $K_P$ equals $\mathcal F^0 e^{\sum_a\ell_a}$.
+If nonnegative majorants satisfy
+\[
+ |k_i|\le e^{-\kappa}v_i,\qquad
+ |e^{\ell_a}-1|\le v_a,\qquad
+ \sup_x\sum_{a:x\in Z_a}e^{(\sigma+1)c(Z_a)}v_a\le\gamma,
+ \quad (2B+1)^4\gamma\le1,
+\]
+where the unified index also includes the preliminary
+large-field supports, then
+\[
+               \mathcal K_m(K)\le e^{-\kappa}(e^\gamma-1).
+\]
+\end{proposition}
+
+\begin{proof}
+Expand $e^{\sum_a\ell_a}=\prod_a[1+(e^{\ell_a}-1)]$.
+In a nonzero term each selected logarithmic label contains
+a large-field site. Exact coverage assigns that site to a preliminary
+prescribed large-field site set, so its connected component contains
+a large-field label. Taking components gives disjoint union
+supports and the displayed new prescribed-site equality.
+Conversely flattening a compatible family of new labels
+recovers the old exact cover and the logarithmic selection.
+No constituent label is repeated because its support is
+nonempty. All extra tests are retained. This is a bijection
+of finite terms and does not require independence of their
+flag reads.
+
+For the bound retain $e^{-\kappa}$ from one large-field
+label per component, and bound the others by $v_i$.
+Subadditivity of $c$ on connected unions and the rooted
+tree bound underlying Theorem~\ref{ch08:kp} sum the
+connected selections through a fixed site. One spare support
+exponent pays their attachments, since a support has at most
+$(2B+1)^4c(Z)$ sites. Their sum is bounded by
+$\gamma$, hence by $e^\gamma-1$.
+The resulting absolute envelope justifies the countable
+regrouping.
+\end{proof}
+
+Take $\kappa$ to be half of the exponent retained in the
+second bound of \eqref{ch09:early-bounds}.
+The remaining half makes the preliminary large-field
+majorants small in the attachment norm.
+For the logarithmic terms use
+$|e^\ell-1|\le e^{\sup|\ell|}\sup|\ell|$ and
+\eqref{ch09:reset-cost}.
+Then $\gamma\to0$ and a strict margin
+$(2B+1)^4\gamma\le1/2$ is available.
+Finally
+\[
+ e^{-\kappa}(e^\gamma-1)
+       \le \exp(-(M_m^{\rm cut})^{1/5})
+             =\epsilon_m^{\rm lf}
+\]
+for a sufficiently large coupling threshold, provided the
+neighboring reference scales have the prescribed comparison.
+The square $(M_{m+1}^{\rm cut})^2$ in $\kappa$ dominates
+the exponent $1/5$ and all polynomial logarithmic costs.
+
+\section{The scalar reset and continuity}
+\label{ch09:continuity}
+
+The output coupling and scalar are now fixed:
+\begin{equation}
+ \beta=\beta'+\alpha+\Delta,\qquad
+ v_{\rm sc}=\tau-|\Lambda|^{-1}\sum_i f_i(1).
+ \label{ch09:reset}
+\end{equation}
+Equation \eqref{ch09:before-fusion} and
+Proposition~\ref{ch09:fusion-prop} prove
+$\operatorname{dens}(\rho)=\mathscr Z_{\rm blk}$ pointwise.
+Flat normalization also gives
+$v_{\rm sc}=|\Lambda|^{-1}\log\mathscr Z_{\rm blk}(1)$.
+The exact block integral of a positive input is positive;
+signed individual activities cause no contradiction.
+
+Projection already provides the useful estimate
+\[
+ |\Delta|\le C_jH_{\rm pre}/t_m^2
+       \le C_j\theta c_j^{\rm pre}
+                   \widehat\beta_m^{-1/10}(M_m^{\rm cut})^{-2}
+       \le1 .
+\]
+If the matched coefficient has
+$\alpha=-\kappa_G\log L+O_j(1)$ as in
+Proposition~\ref{ch07:slope}, then
+\begin{equation}
+       \beta=\beta'-\kappa_G\log L+e,\qquad |e|\le d_j+1.
+ \label{ch09:drift}
+\end{equation}
+No estimate of $\Delta$ was used to define its local
+projection or prove the exact algebra.
+
+There is a second, intrinsic way to identify the reset.
+On an even-sided torus choose direction-one links alternately
+equal to $u$ and $1$ on even and odd second-coordinate
+slices, with $\chi(u)=rt$ for sufficiently small fixed $r>0$.
+Every nontrivial plaquette has this chord. The direct
+positive plaquette term dominates the cubic and quartic
+terms when $r$ is small, so this small-field configuration
+$U_*$ satisfies $\mathcal K(U_*)\ge c_*|\Lambda|t^2$.
+Hold the constructed activities fixed and vary only a trial
+coupling correction $d$. The scalar discrepancy is
+\[
+ f(d)=(\beta'+\alpha+d)\mathcal K(U_*)+\mathcal L(U_*)+
+ E(U_*)-\log\frac{\mathscr Z_{\rm blk}(1)}{\mathscr Z_{\rm blk}(U_*)}
+       =(d-\Delta)\mathcal K(U_*).
+\]
+It has the unique zero $d=\Delta$.
+Two evaluations identify the two scalars only because the
+full-field identity has already been established.
+Matching two fields alone would not prove that identity.
+
+For a compact continuous input curve choose fixed local
+supports, tests, truncations and reflected tori.
+Projection, subtraction and channel replacement are bounded
+linear operations at these fixed labels. Products are
+continuous by telescoping with one difference factor.
+For changes of coupling hold physical field coordinates
+fixed; for a centered Gaussian of precision $\beta A$,
+\[
+ \frac{d\nu_{\beta_2}}{d\nu_{\beta_1}}(a)
+  =(\beta_2/\beta_1)^{D/2}
+             e^{-(\beta_2-\beta_1)\langle a,Aa\rangle/2}.
+\]
+Its derivative is the same density ratio times
+$D/(2\beta_2)-\langle a,Aa\rangle/2$.
+On a small relative interval it is dominated by a
+polynomial times a Gaussian with a smaller positive
+precision. Mean and matrix changes give analogous
+Gaussian scores. Apply the common-law estimate to these
+scores; do not differentiate a merely measurable incoming
+large-field activity.
+
+Infinite regrouping requires more than coefficientwise
+continuity. Given a sequence of parameters approaching
+$u_0$, pass to a subsequence whose weighted input
+discrepancies have sum at most $\varepsilon$.
+Their sum added to the majorant at $u_0$ is a common
+summable envelope. The strict attachment margin allows
+this addition for small $\varepsilon$.
+The rooted estimate then gives one summable output envelope;
+dominated convergence proves weighted continuity on this
+subsequence. Every potentially nonconvergent sequence
+would have such a convergent further subsequence, a
+contradiction.
+
+At fixed volume, the exact-cover sums obey the elementary
+telescoping estimate
+\[
+ |\mathcal F_u(U)-\mathcal F_{u_0}(U)|
+ \le e^{\sum_i M_i}\sum_i\sup|K_{i,u}-K_{i,u_0}|,
+ \quad M_i=\max(\sup|K_{i,u}|,\sup|K_{i,u_0}|).
+\]
+Thus the densities are continuous uniformly in $U$.
+The positive block-kernel normalizers are continuous and
+bounded away from zero on compact coupling intervals;
+dominated convergence in probability Haar measure proves
+continuity of $\mathscr Z_{{\rm blk},u}$.
+The scalar formula and projection show continuity of
+$v_{\rm sc}$ and $\beta$. Restriction to a closed
+subinterval retains the construction and all its labels.
+
+\section{Wilson initialization}
+\label{ch09:wilson}
+
+The finest-scale representation can be constructed directly
+from the Wilson action \cite{Wilson1974}, without a limiting
+argument. Write $W(u)=1-\operatorname{Re}\tr(u)/n_G$ for the Wilson
+plaquette energy and $F(u)=\operatorname{proj}_{\gLie}(u-u^{-1})/2$.
+The map $X\mapsto F(e^X)$ has derivative $I$ at zero and a
+local inverse $\psi$. The map and its inverse are odd, and
+$W(u^{-1})=W(u)$, so $W(e^{\psi(Y)})$ is even.
+Let $T_4$ be the degree-four Taylor
+term of the Wilson plaquette energy evaluated at
+$e^{\psi(Y)}$. Then
+\[
+ R(u)=W(u)-\tfrac12|F(u)|^2-T_4(F(u))
+\]
+vanishes through degree four at the identity.
+Choose the finest row
+$\sqrt{1-c_{\rm dir}}F$, no cubic or loop term, and quartic
+atom $(1-c_{\rm dir})T_4$ with its prescribed mask.
+
+For a plaquette $p$ write $h_p$ for the health mask on its
+vertices, $\chi_p^{\rm rel}$ for its row test, and
+$k_p=(1-c_{\rm dir})|F(U_p)|^2/2$.
+Define the residual energy
+\[
+ \mathcal W_p=
+ \begin{cases}
+ W(U_p)-c_{\rm lin}t\chi(U_p),&\chi(U_p)>t,\\
+ h_pk_p+(1-h_p)(1-c_{\rm dir})W(U_p)
+                   -\chi_p^{\rm rel}k_p,&\chi(U_p)\le t.
+ \end{cases}
+\]
+Since $|F(u)|\le\chi(u)$ and $W(u)=\chi(u)^2/2$,
+this is nonnegative; when $\chi(U_p)>t$ it is at least
+$t^2/4$. The relaxed test implies that the plaquette
+itself is small, and the test can also fail because of a nearby bad
+plaquette. Direct substitution
+gives
+\[
+ W(U_p)=L_p+(1-c_{\rm dir})h_pT_4(F(U_p))
+           +(1-c_{\rm dir})h_pR(U_p)+\mathcal W_p ,
+\]
+where $L_p$ is the actual clipped quadratic channel.
+If the relaxed test inspects a larger neighborhood, its
+failure is included in $\mathcal W_p$ by the same formula;
+the identity remains valid because on a small-field plaquette
+the residual is $k_p-\chi_p^{\rm rel}k_p$.
+
+Use $\beta(1-c_{\rm dir})R(U_p)$ as a regular activity.
+Its normalized derivatives are bounded by $C_j\beta t^5$.
+For orders at most five, the missing powers after
+differentiation are supplied by Taylor's formula; for
+higher fixed orders, the direction factors supply at
+least $t^5$. Hence
+\[
+ \beta t^5/\epsilon_N^{\rm reg}
+              =O(\widehat\beta_N^{-2/5}(M_N^{\rm cut})^5)\to0 .
+\]
+Assign the nonnegative residual energies to connected
+components of large-field sites whose radius-$2B$ neighborhoods
+overlap. A component site set $I$ has exclusion support
+$Y_I=N_{2B}(I)$ and activity
+\[
+ K_I=\mathbf1_{\{Y_I\cap\operatorname{Bad}_N=I\}}
+                         e^{-\beta d_I},
+\]
+where $d_I$ is the sum of assigned residual energies with
+the signed average. Each large-field site meets a large-field plaquette,
+and a plaquette has at most four vertices, so
+$d_I\ge c\,t^2|I|$ for a fixed $c>0$.
+Every residual term is assigned exactly once; its relaxed
+test has a witnessing large-field site within distance $B$.
+The only nonzero exact-cover selection is the actual set
+of these components, so the density identity is exact.
+
+A connected prescribed set of $r$ large-field sites is bounded in number
+by a rooted spanning-walk count. The containing-site
+weighted sum is at most
+\[
+ C_j(1+B)^4\sum_{r\ge1}
+       \left[C_j(1+B)^8e^{5^4\sigma-c\beta t^2}\right]^r .
+\]
+Since $\beta t^2\ge(M_N^{\rm cut})^2/2$, this fits
+$\epsilon_N^{\rm lf}$ for a sufficiently large threshold.
+The activity labels and tests are independent of $\beta$.
+The resulting full Wilson curve is continuous, and its
+scalar normalization is zero.
+
+\section{The one-step conclusion and its input data}
+\label{ch09:step}
+
+\begin{theorem}[One renormalization step]
+\label{ch09:step-theorem}
+Assume the derivative orders and spatial exponents stated at
+the start of the chapter. Fix an adjacent quadratic pair with the
+positive metrics, exact transport identities and actual predictor
+of Chapter~\ref{ch05:gaussian}. Let the incoming path have the
+normalized quadratic coefficient and exponential coefficient and
+derivative budgets of Chapters~\ref{ch04:blocking} and
+\ref{ch07:matching}. The incoming activities obey the small-field
+cancellations, large-field eligibility rules and weighted bounds of
+Chapter~\ref{ch04:blocking}, with the support reserve used above.
+Assume also that the represented input density is strictly positive;
+this holds at the Wilson start and is preserved by the exact block
+kernel. Smallness of signed activities alone is not a substitute
+for this condition.
+Use the same forest, path realization, clipped frozen source and
+cutoff choices throughout the local integral construction of
+Chapter~\ref{ch06:large-fields}. Construct the outgoing path by the
+classical and quantum matching in Chapter~\ref{ch07:matching}.
+Choose the stage constants, ratio floors, minimum
+auxiliary periods and coupling thresholds in the order
+specified above.
+Require also that the actual coarse period exceeds the largest
+local read diameter and twice the largest auxiliary reflection
+half-period used in the construction. This includes the minimum
+period $100(B_m+1)$ in Chapter~\ref{ch06:large-fields}; enlarging
+the stage-dependent period floor ensures that every localization
+cube and its dependence neighborhood embeds in the actual torus.
+
+Then every admissible continuous input curve has a
+continuous output representation with fixed labels,
+satisfying the regular and large-field bounds
+\eqref{ch04:activity-bounds} and the pointwise identity
+\[
+ \operatorname{dens}(\rho_u)
+       =\mathcal B_m^{\beta'_u}\operatorname{dens}(\rho'_u).
+\]
+Its coupling is \eqref{ch09:reset} and obeys \eqref{ch09:drift}, uniformly in
+volume, cutoff and curve parameter. The construction
+retains restriction compatibility and all exact-cover
+tests. Output coupling-band membership additionally
+requires the numerical band margin in the choice of
+scales.
+\end{theorem}
+
+The proof consists of the convergent local expansion,
+the three remainder estimates, the exact identities
+\eqref{ch09:subtract-identity} and
+\eqref{ch09:path-identity}, and
+Proposition~\ref{ch09:fusion-prop}. Positivity and
+normalization refer to the actual block integral.
+
+This is a theorem for one compatible adjacent pair. Its premises
+include the actual quadratic coefficient and fixed path budgets;
+they cannot be replaced by unrelated bounds of the same numerical
+size. The common Gaussian estimate is supplied by the complete
+factor construction in Chapter~\ref{ch06:large-fields}, and
+Sections~\ref{ch09:stationary-remainder}--\ref{ch09:centered-log}
+give the auxiliary estimate for the same pure integral. The
+classical budget contraction and inherited-loop contraction of
+Chapter~\ref{ch07:matching} allow the path bounds to be retained
+with the stated order of choices.
+
+What remains for a whole trajectory is to make those choices
+simultaneously, tune the Wilson coupling to the prescribed coarse
+endpoint, and prove stability as the ultraviolet cutoff changes.
+These are additional assertions, not consequences of applying an
+arbitrary finite step repeatedly. In particular, no higher parameter
+analyticity is inferred from the continuity proved here.

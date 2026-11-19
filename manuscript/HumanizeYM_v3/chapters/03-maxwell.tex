@@ -1,0 +1,974 @@
+\chapter{The free Maxwell comparison theory}\label{ch03:maxwell}
+
+The reference theory for short distances consists of independent Maxwell
+fields, one for each direction in the Lie algebra. Its role is more precise
+than a formal approximation to the action. It supplies finite-dimensional
+spaces of local fields, correlation functionals that distinguish those
+fields, and a normalization for the stress tensor. The interacting
+construction must eventually reproduce these data in an appropriate
+short-distance comparison. No interacting limit is assumed in this chapter.
+
+We fix the positive inner product on the real Lie algebra $\gLie$ and write
+$d_{\gLie}=\dim_{\RR}\gLie$. Choose an orthonormal basis
+$(e_\alpha)_{\alpha=1}^{d_{\gLie}}$. Greek letters $\mu,\nu,\rho,\sigma$
+from the middle of the alphabet denote coordinate indices in
+$\{1,2,3,4\}$; $\alpha,\beta$ denote colour indices. Time is the fourth
+coordinate. The superscript $\mathrm{Max}$ always denotes the free
+reference theory. We first define its correlations at distinct points;
+this requires no multiplication of distributions at the same point.
+
+\section{Curvature covariance}\label{ch03:covariance}
+
+Let
+\begin{equation}\label{ch03:green}
+ \Gamma(x)=\frac{1}{4\pi^2|x|^2},\qquad x\ne0.
+\end{equation}
+Its locally integrable extension is the fundamental solution of
+$-\Delta$ in four dimensions. A convenient way to specify the curvature
+covariance is to start from independent Gaussian vector-potential
+components with covariance
+$\delta_{\alpha\beta}\delta_{\mu\nu}\Gamma(x-y)$, and take a curl in
+each argument. The vector potential in this description is a device for
+computing the covariance; it is not one of the gauge-invariant local
+observables used in the construction.
+
+Write $F^\alpha_{\mu\nu}=-F^\alpha_{\nu\mu}$ for the curvature
+components. Their two-point function is
+\begin{equation}\label{ch03:curvature}
+ S^{\mathrm{Max}}_2(F^\alpha_{\mu\nu},F^\beta_{\rho\sigma};x,y)
+ =\delta_{\alpha\beta}C_{\mu\nu,\rho\sigma}(x-y),
+\end{equation}
+where, with $h_{\mu\nu}=\partial_\mu\partial_\nu\Gamma$,
+\begin{align}
+ C_{\mu\nu,\rho\sigma}
+ &=-\delta_{\nu\sigma}h_{\mu\rho}
+   +\delta_{\nu\rho}h_{\mu\sigma}
+   +\delta_{\mu\sigma}h_{\nu\rho}
+   -\delta_{\mu\rho}h_{\nu\sigma},\label{ch03:kernel}\\
+ h_{\mu\nu}(z)
+ &=\frac{8z_\mu z_\nu-2\delta_{\mu\nu}|z|^2}
+          {4\pi^2|z|^6}.\label{ch03:hessian}
+\end{align}
+The minus signs in the first and last terms arise because a derivative
+in $y$ is minus a derivative in $z=x-y$. This convention matters both
+for reflection positivity and for the stress normalization.
+
+The covariance is translation invariant and transforms as a two-form in
+each pair of indices under $O(4)$. At nonzero separation it satisfies
+\begin{equation}\label{ch03:maxwell-equations}
+ \partial_\lambda C_{\mu\nu,\rho\sigma}
+ +\partial_\mu C_{\nu\lambda,\rho\sigma}
+ +\partial_\nu C_{\lambda\mu,\rho\sigma}=0,
+ \qquad
+ \sum_\mu\partial_\mu C_{\mu\nu,\rho\sigma}=0.
+\end{equation}
+The first identity is the Bianchi identity; the second is the source-free
+Maxwell equation. They hold off the origin. A distributional derivative
+can have a contact term at the origin, so these identities must not be
+used to infer a choice of contact extension.
+
+For a multi-index $a=(a_1,\ldots,a_4)$, put
+$|a|=a_1+\cdots+a_4$ and
+$\partial^a=\partial_1^{a_1}\cdots\partial_4^{a_4}$.
+Derivatives of the fields have covariance
+\begin{equation}\label{ch03:jet-covariance}
+ S^{\mathrm{Max}}_2(\partial^aF^\alpha_{\mu\nu},
+                   \partial^cF^\beta_{\rho\sigma};x,y)
+ =\delta_{\alpha\beta}(-1)^{|c|}
+       \partial^{a+c}C_{\mu\nu,\rho\sigma}(x-y).
+\end{equation}
+In particular, for each fixed derivative order, this kernel is smooth
+away from zero and homogeneous of degree $-4-|a|-|c|$. Thus its size on
+$|x-y|\ge r$, $0<r\le1$, has a polynomial bound in $r^{-1}$.
+This elementary estimate is the free counterpart of the much harder
+uniform bounds required from the lattice construction.
+
+\section{Local polynomials and Wick correlations}\label{ch03:wick}
+
+A local polynomial is a polynomial in finitely many curvature derivatives
+at one point. Its engineering degree is computed by assigning degree $2$
+to $F$ and degree $1$ to each derivative. For example,
+$F^\alpha_{\mu\nu}F^\beta_{\rho\sigma}$ has degree $4$, whereas
+$\partial_\lambda F^\alpha_{\mu\nu}$ has degree $3$.
+Engineering degree is an algebraic grading of the reference model; it is
+not an assertion about anomalous dimensions of the interacting fields.
+
+The polynomial attached to one insertion is Wick ordered. We use the
+usual Gaussian pairing rule, whose operator formulation is due to
+Wick~\cite{Wick1950}. Here it can be taken as the definition of the
+separated correlation functions. Expand each polynomial into monomials,
+regard each factor as a distinguishable occurrence, and sum over pairings
+of all occurrences subject to the condition that paired occurrences
+belong to different insertions. For each pair use
+\eqref{ch03:jet-covariance}. The empty pairing has value one. The
+resulting finite sum is denoted by
+\[
+ S_n^{\mathrm{Max}}(P_1,\ldots,P_n;x_1,\ldots,x_n),
+ \qquad x_i\ne x_j\quad(i\ne j).
+\]
+There is no covariance at zero separation in this definition.
+
+For instance, if $X_1,X_2,Y_1,Y_2$ are linear curvature derivatives,
+\begin{align*}
+ S_2^{\mathrm{Max}}({:}X_1X_2{:},{:}Y_1Y_2{:};x,y)
+ &=C(X_1,Y_1;x-y)C(X_2,Y_2;x-y)\\
+ &\quad+C(X_1,Y_2;x-y)C(X_2,Y_1;x-y).
+\end{align*}
+Here $C(X,Y;z)$ denotes the bilinear covariance obtained from
+\eqref{ch03:jet-covariance}. By contrast, in a word containing several
+insertions in the same time half-space, contractions between those
+\emph{different} insertions are included. Wick ordering removes
+self-contractions at each insertion, not all contractions inside a word.
+
+The pairing rule gives complex multilinearity, symmetry under simultaneous
+permutation of labels and positions, reality, and the unit identity
+\[
+ S_{n+1}^{\mathrm{Max}}(1,P_1,\ldots,P_n;x_0,x_1,\ldots,x_n)
+ =S_n^{\mathrm{Max}}(P_1,\ldots,P_n;x_1,\ldots,x_n).
+\]
+Differentiating an insertion differentiates its incident covariances.
+The product rule therefore agrees with ordinary differentiation of the
+correlation function in that insertion position.
+
+If the labels are homogeneous of degrees $d_1,\ldots,d_n$, then
+\begin{equation}\label{ch03:homogeneity}
+ S_n^{\mathrm{Max}}(P_1,\ldots,P_n;\lambda x_1,\ldots,\lambda x_n)
+ =\lambda^{-\sum_i d_i}
+ S_n^{\mathrm{Max}}(P_1,\ldots,P_n;x_1,\ldots,x_n)
+ \quad(\lambda>0).
+\end{equation}
+For general labels of bounded degree, decompose into finitely many
+homogeneous pieces. Equations \eqref{ch03:jet-covariance} and
+\eqref{ch03:homogeneity} give bounds on all derivatives on separated
+configuration spaces. In particular, smearing against a smooth compactly
+supported function whose support avoids collisions is well defined.
+This statement is weaker than specifying the correlations on all test
+functions, including tests meeting collision diagonals.
+
+\section{The on-shell polynomial space}\label{ch03:shell}
+
+The Maxwell identities impose linear relations on the jet variables.
+They should be imposed before discussing strict positivity or the
+number of independent fields. At each integer $j\ge0$, let
+$\mathcal S_j$ be the real vector space of homogeneous degree-$j$
+polynomial two-forms on $\RR^4$, with values in $\gLie$, satisfying
+\[
+ dF=0,\qquad \delta F=0.
+\]
+Here $\delta F=0$ means
+$\sum_\mu\partial_\mu F_{\mu\nu}=0$ for every $\nu$; the harmless
+choice of sign for the codifferential does not affect its kernel.
+These are finite-dimensional spaces. They encode the possible homogeneous
+Taylor coefficients of a source-free Maxwell curvature. A Taylor
+coefficient of order $j$ is normalized as $D^jF(0)/j!$.
+
+The phrase \emph{on shell} will mean restriction to these solution jets.
+It does not refer to restricting a point of Euclidean spacetime.
+A linear coordinate on $\mathcal S_j$ is given weight $j+2$.
+Consequently polynomials of weight at most $d$ use only the spaces
+$\mathcal S_j$ with $j\le d-2$. Constants are retained at every degree.
+The colour action is the adjoint action of $G$; invariant polynomials
+are the gauge-invariant local observables of the free reference theory.
+
+To compare this definition with the radial-potential labels $V_d$,
+associate to a closed homogeneous curvature $F^{(j)}$ the radial
+potential
+\begin{equation}\label{ch03:radial}
+ A^{(j+1)}_\mu(x)=\int_0^1 t x^\nu F^{(j)}_{\nu\mu}(tx)\,dt
+ =\frac{1}{j+2}\sum_\nu x^\nu F^{(j)}_{\nu\mu}(x).
+\end{equation}
+There is a sum over $\nu$ in the integral as well. This is the usual
+radial homotopy formula: $x^\mu A_\mu=0$ and $dA=F$ when $dF=0$.
+The connection here is the \emph{linear} Maxwell potential; no
+nonabelian commutator is inserted into this formula. Restricting a label
+in $V_d$ to these radial potentials gives a map
+\[
+ \omega_d:V_d\longrightarrow
+ \{
+ \text{complex polynomials on Maxwell solution jets of weight at most }d
+ \}.
+\]
+It preserves the unit, conjugation and the geometric actions. Define
+\begin{equation}\label{ch03:free-space}
+ \mathcal M_d^{\mathrm{Max}}=\operatorname{im}\omega_d.
+\end{equation}
+Equivalently, this is $V_d/\ker\omega_d$ as a vector space. The image
+formulation is useful: it does not assume a separate surjectivity theorem
+onto a larger invariant-polynomial space.
+
+The covariance identities \eqref{ch03:maxwell-equations} make the Wick
+correlations well defined on these on-shell polynomial images. Products
+of a Maxwell equation with another jet polynomial vanish in every
+separated Wick correlation. Conversely, proving that \emph{all}
+correlation-null polynomials vanish on shell requires a nondegeneracy
+argument; it does not follow from writing down the equations.
+
+The free spaces form a filtration. The inclusion
+$\mathcal M_d^{\mathrm{Max}}\to\mathcal M_e^{\mathrm{Max}}$ for
+$d\le e$ retains the same polynomial, while differentiation raises
+weight by one. For a simple nonabelian Lie algebra there is no nonzero
+invariant linear form on $\gLie$. Therefore every gauge-invariant field
+of degree less than four in this polynomial image is a constant.
+This low-degree statement follows from the weights: a nonconstant
+monomial below degree four would have just one curvature factor or one
+of its first derivatives.
+
+\section{Reflection and the meaning of nondegeneracy}\label{ch03:reflection}
+
+Let $\vartheta(\boldsymbol x,t)=(\boldsymbol x,-t)$.
+Reflection acts on a two-form by pullback, so a component with one time
+index changes sign and a purely spatial component does not. On a local
+polynomial, $\theta$ combines this action with complex conjugation.
+On a word it also reverses the order and reflects every insertion point.
+This is the antilinear reflection used in the Osterwalder--Schrader
+form, not merely conjugation of scalar coefficients.
+
+For words $w_i$ supported at distinct points in the positive half-space,
+the free field has reflection positivity:
+\begin{equation}\label{ch03:rp}
+ \sum_{i,j}\overline{c_i}c_j
+ S^{\mathrm{Max}}(\theta w_i\,w_j)\ge0.
+\end{equation}
+The same inequality holds for smooth joint tests supported on separated
+positive-time configurations. This is the standard Gaussian
+reflection-positive construction underlying
+Osterwalder--Schrader reconstruction~\cite{OsterwalderSchrader1973,OsterwalderSchrader1975},
+applied to the curvature covariance rather than to an unconstrained
+vector-potential observable. Its hypotheses can be checked at the
+one-particle level: spatial Fourier transformation of
+\eqref{ch03:green} gives
+\[
+ \frac{e^{-|\boldsymbol p|(t+s)}}{2|\boldsymbol p|}
+ \qquad(t,s>0),
+\]
+and taking the two curls with the reflected two-form indices gives the
+positive transverse-polarization Gram form. Derivative jets act on the
+same factors. The Gaussian Fock construction then gives
+\eqref{ch03:rp}; contractions within each positive-time word are included
+in its Fock vector. On compact separated supports the kernels are smooth,
+so the corresponding joint-test form follows by integration. We use this
+standard argument by citation rather than repeating the Fock-space
+construction.
+
+A simple sign check is informative. At separation $z=re_4$, the six
+unordered curvature components have diagonal covariance. Three purely
+spatial components have value $1/(\pi^2r^4)$; the three components
+$F_{i4}$ have value $-1/(\pi^2r^4)$. Reflection changes the sign of
+$F_{i4}$ in the first slot. The reflected one-jet form is therefore
+positive in all six directions. Without the tensorial reflection, the
+same displayed covariance would give the wrong positivity statement.
+
+Positive semidefiniteness of \eqref{ch03:rp} alone does not identify its
+null space. For later rank arguments one needs the stronger statement
+that a nonzero on-shell polynomial has a strictly positive reflected
+two-point pairing at two suitable points. Derivatives of different
+orders may mix in that pairing. Checking one homogeneous order at a
+time does not establish the statement for their sum.
+
+\section{Strict positivity of finite jet families}\label{ch03:strict}
+
+We now identify the null relations in the free polynomial theory.
+Recall from Section~\ref{ch03:shell} that $\mathcal S_j$ is the space
+of homogeneous degree-$j$ Maxwell curvature solutions. Write a member as
+\[
+ P_{ab}(v)=\sum_{i_1,\ldots,i_j}
+ P_{ab;i_1\cdots i_j}v_{i_1}\cdots v_{i_j}.
+\]
+The derivative-index coefficients are symmetric. On this coefficient
+space use the Frobenius inner product, summing both orders of the
+antisymmetric field indices, all ordered derivative indices and colours.
+In particular, no factor $1/2$ is inserted for the field indices.
+The linear jet probe represented by $P$ is
+\begin{equation}\label{ch03:probe}
+ \ell_P(F)=\frac1{j!}\sum_{a,b,i_1,\ldots,i_j,\alpha}
+ P^\alpha_{ab;i_1\cdots i_j}
+ \partial_{i_1}\cdots\partial_{i_j}F^\alpha_{ab}.
+\end{equation}
+The factor $1/j!$ matches our Taylor convention. Every linear functional
+on the order-$j$ solution jets has this form.
+
+Put $I(z)=z/|z|^2$ and
+$R_z=1-2zz^{\mathsf T}/|z|^2$. For a two-form, $R_z^{(2)}$ means
+applying $R_z$ to both form indices. The full reflection on a
+polynomial solution is
+$(R_z\cdot P)(v)=R_z^{(2)}P(R_zv)$: the derivative indices are
+reflected as well. For real probes define
+\[
+ B_z(P,Q)=S_2^{\mathrm{Max}}(\ell_P,\ell_{R_z\cdot Q};z,0).
+\]
+Extend this bilinearly across different derivative orders. Covariance and
+exchange of the two insertions show that $B_z$ is symmetric.
+
+\begin{proposition}[Finite-jet nondegeneracy]\label{ch03:jet-positive}
+For every $z\ne0$ and integer $m\ge1$, the form $B_z$ is positive
+definite on $\bigoplus_{j<m}\mathcal S_j$.
+\end{proposition}
+
+The scalar differentiation identity needed in the proof is the harmonic
+case of Hobson's differentiation formula~\cite{Hobson1892}. In our
+normalization, if $P\in\mathcal S_j$, it says, componentwise,
+\begin{equation}\label{ch03:hobson}
+ \frac1{j!}P(\partial)\Gamma(y)
+   =\frac{(-2)^j}{4\pi^2}|y|^{-2j-2}P(y),\qquad y\ne0.
+\end{equation}
+Here $P(\partial)$ means the ordered coefficient contraction without
+the factor $1/j!$. Maxwell solutions are harmonic, as follows by
+applying a divergence to the Bianchi identity. Thus the harmonic
+hypothesis of the scalar formula holds in each component. We use that
+classical differentiation result; the following finite-dimensional
+argument explains its application to the mixed jet orders needed here.
+
+\begin{proof}
+Let $\mathcal R(P)(y)$ be the curvature response obtained by contracting
+$\partial_y^j C(y)/j!$ with the coefficients of $P$. Taking the two
+curls in \eqref{ch03:hobson} gives
+\begin{equation}\label{ch03:kelvin}
+ \mathcal R(P)(y)=c_j|y|^{-4}R_y^{(2)}P(I(y)),
+ \qquad c_j=\frac{(j+1)(j+2)(-2)^j}{\pi^2}.
+\end{equation}
+For clarity, the identities determining the coefficient are as follows.
+Set $V_i(y)=\sum_a y_aP_{ai}(y)$ and
+$b_j=(-2)^j/(4\pi^2)$. The divergence of the differentiated Green
+potential is
+$D_i=-2(j+1)b_j|y|^{-2j-4}V_i$.
+The Maxwell equations and homogeneity give
+$\partial_iV_m-\partial_mV_i=(j+2)P_{im}$.
+The response is $2(\partial_mD_i-\partial_iD_m)$, so its coefficient
+is $4(j+1)(j+2)b_j=c_j$ and its two-form factor is
+\[
+ P_{im}(y)-2|y|^{-2}(y_iV_m(y)-y_mV_i(y))
+   =(R_y^{(2)}P(y))_{im}.
+\]
+This verifies \eqref{ch03:kelvin}, including its sign, off the origin.
+
+Fix the separation $z$. For $P\in\mathcal S_j$ define a finite tower
+$\Sigma_zP$ by
+\begin{equation}\label{ch03:triangular}
+ (\Sigma_zP)_k
+   =\frac{c_j}{c_k}\operatorname{Taylor}_k[P(\,\cdot-I(z))],
+ \qquad 0\le k\le j.
+\end{equation}
+The operator $\operatorname{Taylor}_k$ extracts the homogeneous term of
+degree $k$ at zero. Translation preserves the Maxwell equations, and
+each homogeneous term separately satisfies them. Thus all components in
+\eqref{ch03:triangular} lie in their declared solution spaces.
+The degree-$j$ component is $P$ itself.
+
+By the finite Taylor formula, the response of this tower is
+\[
+ \mathcal R(\Sigma_zP)(y)
+   =c_j|y|^{-4}R_y^{(2)}P(I(y)-I(z)).
+\]
+Since $DI(z)=|z|^{-2}R_z$, its Taylor coefficients at $y=z$ vanish
+through order $j-1$, while its order-$j$ coefficient is
+$c_j|z|^{-2j-4}(R_z\cdot P)$.
+For $Q\in\mathcal S_k$, differentiation in the second insertion gives
+\[
+ B_z(\Sigma_zP,Q)
+ =(-1)^k\big\langle R_z\cdot Q,
+       \operatorname{Taylor}_k[\mathcal R(\Sigma_zP)](z)
+                 \big\rangle_F.
+\]
+It follows that this expression vanishes if $k<j$, and at $k=j$ equals
+$(-1)^jc_j|z|^{-2j-4}\langle P,Q\rangle_F$.
+Transforming the second argument introduces only lower orders in addition
+to its unchanged top order. Symmetry therefore gives, on the full tower,
+\begin{equation}\label{ch03:diagonal-gram}
+ B_z(\Sigma_zP,\Sigma_zQ)
+ =\sum_{j<m}\frac{(j+1)(j+2)2^j}{\pi^2|z|^{2j+4}}
+                  \langle P_j,Q_j\rangle_F.
+\end{equation}
+Every coefficient is positive. Finally $\Sigma_z$ is invertible:
+it is the identity plus a strictly degree-lowering map, hence its inverse
+is a finite geometric sum. This proves positivity on the whole tower,
+including mixtures of derivative orders.
+\end{proof}
+
+\begin{corollary}[Polynomial positivity and finite detectors]
+\label{ch03:detectors}
+Every nonzero element of $\mathcal M_d^{\mathrm{Max}}$ has strictly
+positive reflected two-point pairing at a fixed separated pair.
+For any basis $(P_1,\ldots,P_s)$ of this space and fixed distinct points
+$x,y$, the linear map
+\[
+ P\longmapsto
+ \big(S_2^{\mathrm{Max}}(P,P_j;x,y)\big)_{j=1}^s
+\]
+is injective. Consequently a label in $V_d$ vanishes in every separated
+correlation if and only if its on-shell polynomial $\omega_d$ vanishes.
+\end{corollary}
+
+This is the standard symmetric-Fock-space consequence of the one-particle
+Gram form and Wick's rule~\cite{Wick1950}. Explicitly, choose coordinates
+$X_1,\ldots,X_M$ diagonalizing the positive form on a tower containing
+all variables of the polynomial, with positive squared lengths $b_i$.
+The reflected pairing of Wick monomials is
+\[
+ \langle X^a,X^c\rangle_{\rm ref}
+   =\mathbf1_{a=c}\,a!\prod_i b_i^{a_i}.
+\]
+Thus the squared norm of a polynomial is the sum of the squared absolute
+values of its coefficients with these positive weights; the constant
+coefficient has weight one. Restricting to the gauge-invariant image
+preserves positivity. If all basis-column pairings vanish, the pairing
+with the reflected conjugate of the polynomial vanishes too, forcing
+that polynomial to be zero. This also identifies the correlation-null
+labels. On any fixed finite-dimensional degree space, the detector map
+has a positive minimum norm on the unit sphere. Small perturbations of
+its matrix remain injective; applying this fact to interacting
+correlations still requires a quantitative comparison estimate.
+
+
+\section{Quadratic fields and normalization checks}\label{ch03:quadratic}
+
+We return to the free curvature covariance
+\eqref{ch03:curvature}; each of the $d_{\gLie}$ colours has that same
+covariance and different colours have zero cross-covariance. Define
+\begin{align}
+ Q_{\mu\nu}
+ &=\sum_{\alpha=1}^{d_{\gLie}}\sum_{\rho=1}^4
+       {:}F^\alpha_{\mu\rho}F^\alpha_{\nu\rho}{:},
+ & Q_{\mathrm{tot}}&=\sum_\mu Q_{\mu\mu},\label{ch03:quadratics}\\
+ \mathcal E^{\mathrm{Max}}&=\tfrac14 Q_{\mathrm{tot}},
+ &T^{\mathrm{Max}}_{\mu\nu}
+   &=-Q_{\mu\nu}+\tfrac14\delta_{\mu\nu}Q_{\mathrm{tot}}.
+ \label{ch03:stress}
+\end{align}
+The sign of $T^{\mathrm{Max}}$ is chosen to match the shell-flux
+convention in the supplied construction. A complete stress-normalization
+argument must check that convention against the translation Ward identity;
+conservation alone does not determine the sign.
+
+The tensor in \eqref{ch03:stress} is symmetric and traceless. Its
+divergence vanishes as an on-shell Wick polynomial. These are the
+ordinary algebraic Maxwell stress identities, obtained from the Bianchi
+and source-free equations; the same identities hold in separated
+correlations. The scalar $\mathcal E^{\mathrm{Max}}$ is nevertheless
+nonzero. It is the curvature-square operator, not the trace of the free
+stress tensor.
+
+With the present normalization, Wick's rule gives
+\begin{equation}\label{ch03:scalar-pair}
+ S_2^{\mathrm{Max}}(\mathcal E^{\mathrm{Max}},
+                    \mathcal E^{\mathrm{Max}};x,y)
+ =\frac{3d_{\gLie}}{\pi^4|x-y|^8},\qquad x\ne y.
+\end{equation}
+For checking constants, at separation $re_4$ one has
+$\mathcal E^{\mathrm{Max}}=\tfrac12\sum_{\alpha,\mu<\nu}
+{:}(F^\alpha_{\mu\nu})^2{:}$. The two cross-pairings of each square,
+the six unordered components, and the prefactor $1/4$ give
+$\tfrac14\cdot2\cdot6d_{\gLie}=3d_{\gLie}$.
+Orthogonal covariance makes the answer independent of the direction of
+$x-y$. The calculation uses only separated Wick contractions.
+
+This normalization will be needed when comparing a renormalized scalar
+field with the free curvature square. It does not itself identify the
+interacting trace, its coefficient, or its logarithmic asymptotic.
+Those conclusions require the interacting stress Ward identity and
+quantitative estimates on moving comparison fields.
+
+\section{The degree-four conserved tensor}\label{ch03:classification}
+
+The finite-dimensional classification needed for the stress tensor is
+small enough to state explicitly. In this section \emph{centered} means
+that the constant Wick coefficient is zero. By the Wick prescription it
+is also the one-point expectation. We consider real symmetric tensor
+fields $J_{ab}$ of degree at most four, invariant under the colour action
+and transforming as a rank-two tensor under the signed coordinate
+permutations $H_4$. Conservation is an identity in the on-shell polynomial
+space, or equivalently in every separated free correlation by
+Corollary~\ref{ch03:detectors}.
+
+\begin{proposition}[Conserved tensor line]\label{ch03:stress-line}
+The space of such centered tensors has dimension three. Its conserved
+subspace is the line $\RR T^{\mathrm{Max}}$, with
+$T^{\mathrm{Max}}$ as in \eqref{ch03:stress}.
+\end{proposition}
+
+\begin{proof}
+Simplicity of $\gLie$ excludes invariant linear colour forms and makes
+an invariant symmetric bilinear colour form a multiple of the fixed
+metric. Through degree four a centered invariant polynomial therefore
+contains two undifferentiated curvature factors. Indeed, a derivative on
+one of two factors would raise the degree to at least five, while a
+single differentiated factor still has no invariant colour contraction.
+
+Recall the quadratic fields $Q_{ab}$ and $Q_{\mathrm{tot}}$ from
+\eqref{ch03:quadratics}. A basis of the tensor candidates is
+\begin{align*}
+ Z^{(1)}_{ab}&=\delta_{ab}Q_{aa},\\
+ Z^{(2)}_{ab}&=\delta_{ab}(Q_{\mathrm{tot}}-2Q_{aa}),\\
+ Z^{(3)}_{ab}&=(1-\delta_{ab})Q_{ab}.
+\end{align*}
+There is no sum over $a$ on the right sides of the first two formulas.
+To see that these span, consider sign reversal of each coordinate.
+A diagonal component can contain only squares of curvature components.
+Permutations fixing its distinguished axis divide them into two classes:
+those containing that axis, and those containing neither instance of it.
+An off-diagonal component with indices $a,b$ must be odd in axes $a,b$
+and even in the others. Its possible contractions are
+$\sum_\alpha{:}F^\alpha_{ac}F^\alpha_{bc}{:}$ with $c\notin\{a,b\}$;
+permutations identify their coefficients. This gives exactly the three
+candidates displayed above.
+
+For an explicit rank check, let
+$Q_{ij,ij}=\sum_\alpha{:}(F^\alpha_{ij})^2{:}$.
+Evaluate the first component of the divergence of each $Z^{(l)}$ at
+$e_1$, against $Q_{12,12}(0)$ and $Q_{23,23}(0)$. The two rows of
+these evaluations, after division by $d_{\gLie}/(4\pi^2)^2$, are
+\begin{equation}\label{ch03:divergence-matrix}
+ \begin{pmatrix}-256&0&128\\0&-512&-128\end{pmatrix}.
+\end{equation}
+These numbers come directly from the curvature covariance
+\eqref{ch03:kernel} and the two cross-pairings in a quadratic Wick
+correlation. For example,
+$S_2^{\mathrm{Max}}(Q_{11},Q_{12,12};te_1,0)
+=2d_{\gLie}/(\pi^4t^8)$; its derivative at $t=1$ gives the first
+entry after the stated division. The first two columns are independent.
+Also $Z^{(1)}_{12}=Z^{(2)}_{12}=0$, whereas the correlation of
+$Z^{(3)}_{12}(e_1)$ with
+$\sum_\alpha{:}F^\alpha_{13}F^\alpha_{23}{:}(0)$ equals
+$-16d_{\gLie}/(4\pi^2)^2$. Thus the candidate tensors are themselves
+independent, and the kernel of divergence has dimension at most one.
+
+The Maxwell stress is conserved and
+\[
+ -T^{\mathrm{Max}}
+ =\tfrac12 Z^{(1)}-\tfrac14 Z^{(2)}+Z^{(3)}.
+\]
+It is nonzero by the preceding off-diagonal test. Hence it spans that
+kernel.
+\end{proof}
+
+This result fixes only a line of conserved tensors. Multiplying the
+stress by a scalar preserves all the properties used in the proposition.
+We next fix its normalization by a local Ward flux and then classify
+linear responses on fields of arbitrary bounded degree.
+
+
+\section{Local stress fluxes}\label{ch03:ward}
+
+The sign in \eqref{ch03:stress} is fixed by a local identity, not by
+conservation. Let $x_0,\ldots,x_n$ be distinct points and choose a real
+$\chi\in C_c^\infty(\RR^4)$ equal to one near $x_0$, with support
+avoiding $x_1,\ldots,x_n$. For a vector field $v$ define the flux
+\begin{equation}\label{ch03:flux}
+ \mathcal F_{\chi,v}(P_0;P_1,\ldots,P_n)
+ =-\sum_{a,b}\int \partial_a\chi(y)v_b(y)
+ S_{n+2}^{\mathrm{Max}}(T^{\mathrm{Max}}_{ab},P_0,\ldots,P_n;
+                       y,x_0,\ldots,x_n)\,dy.
+\end{equation}
+The integral sees only a compact set separated from the insertions.
+It is therefore an ordinary integral of a smooth function; no extension
+of a product through $x_0$ is involved.
+
+For a constant translation $v=e_b$, let $\delta_v=\partial_b$ act on
+local polynomial labels. For $v(y)=K(y-x_0)$, $K^{\mathsf T}=-K$,
+let $\delta_v=\mathcal L_K$ be the infinitesimal action induced on jets
+by the pullback of two-forms under $y\mapsto x_0+e^{tK}(y-x_0)$.
+Equivalently, on a smooth closed two-form $f$ its variation is
+\begin{equation}\label{ch03:lie}
+ (\mathcal L_v f)_{ij}
+ =v_b\partial_bf_{ij}+ (\partial_i v_b)f_{bj}
+                            +(\partial_jv_b)f_{ib}
+ =(d\iota_v f)_{ij},
+\end{equation}
+with sums over $b$. On polynomial labels the action is the induced
+Leibniz derivation, including the derivative indices of each jet.
+For the dilation $v(y)=y-x_0$, this action at the center is the weight
+operator
+\begin{equation}\label{ch03:weight}
+ \mathscr E=\sum_{j,\lambda}(j+2)X_{j,\lambda}
+                                  \frac{\partial}{\partial X_{j,\lambda}},
+\end{equation}
+where $X_{j,\lambda}$ are any linear coordinates on order-$j$ solution
+jets, including colour. The sum is finite on each polynomial.
+
+\begin{proposition}[Normalized free Ward identities]\label{ch03:free-ward}
+For translations, centered rotations and centered dilation,
+\begin{equation}\label{ch03:ward-identity}
+ \mathcal F_{\chi,v}(P_0;P_1,\ldots,P_n)
+ =S_{n+1}^{\mathrm{Max}}(\delta_vP_0,P_1,\ldots,P_n;x_0,\ldots,x_n).
+\end{equation}
+This holds for arbitrary finite Wick polynomials and arbitrary finite
+spectator lists. The common coefficient is $+1$ for the stress
+\eqref{ch03:stress} and the outward-flux convention \eqref{ch03:flux}.
+\end{proposition}
+
+The Ward mechanism is the standard free-field action of the stress
+current. We include the normalization and the treatment of two
+contractions at the enclosed insertion, since neither is supplied by a
+formal integration by parts through a singularity. Wick's theorem is
+used throughout in its usual form~\cite{Wick1950}.
+
+\begin{proof}
+Polarize our stress between closed two-forms $f,g$:
+\[
+ t_{ab}(f,g)=-\sum_c(f_{ac}g_{bc}+g_{ac}f_{bc})
+             +\tfrac12\delta_{ab}\sum_{c,d}f_{cd}g_{cd},
+\]
+with colour pairings understood. The Bianchi identity gives
+\[
+ \sum_a\partial_at_{ab}
+ =-\sum_c\big((\operatorname{div}f)_cg_{bc}
+                         +f_{bc}(\operatorname{div}g)_c\big).
+\]
+The tensor is symmetric and traceless. Thus contracting with a constant,
+skew-linear or scalar-linear $v$ produces no additional divergence term
+from $Dv$.
+
+Suppose $f$ is a smooth Maxwell wave near $\operatorname{supp}\chi$,
+and $g$ is the covariance pulse from $F_{ij}(x_0)$. Regularize its Green
+function by convolution with a smooth compactly supported unit-mass
+approximate identity $\rho_\epsilon$, so
+$-\Delta\Gamma_\epsilon=\rho_\epsilon$.
+The resulting closed pulse has divergence
+\[
+ (\operatorname{div}g_\epsilon)_c
+   =\delta_{cj}\partial_i\rho_\epsilon(\,\cdot-x_0)
+       -\delta_{ci}\partial_j\rho_\epsilon(\,\cdot-x_0).
+\]
+Integrate the displayed divergence identity against $\chi v$.
+An integration by parts against $\rho_\epsilon$ shows that the flux
+converges to
+$\partial_i(v_bf_{bj})(x_0)-\partial_j(v_bf_{bi})(x_0)
+=(\mathcal L_vf)_{ij}(x_0)$.
+Here $\chi=1$ near the center, and the collar convergence is uniform
+with all fixed derivatives. Differentiating in the pulse center, while
+holding $v,\chi$ fixed, gives the same identity for every jet probe.
+For dilation, \eqref{ch03:lie} becomes
+$(y-x_0)\cdot\nabla f+2f$; its order-$j$ jet at $x_0$ is
+$(j+2)$ times the original jet. This gives \eqref{ch03:weight}.
+
+In a Wick correlation, extract the two factors at the stress insertion.
+The remaining sum has three types. If both partners are outside $x_0$,
+the two waves are smooth throughout the cutoff support and conservation
+gives zero flux. If exactly one partner is at $x_0$, the preceding
+calculation differentiates that occurrence. Summing its possible
+partners reconstructs Wick's rule, and summing occurrences gives the
+Leibniz derivation $\delta_v$.
+
+If both partners are at $x_0$, their jet orders $j,l$ give pulse
+homogeneities $-4-j$ and $-4-l$. Conservation away from $x_0$ makes
+the collar flux independent of the cutoff. Rescaling a cutoff by $t$
+about $x_0$ multiplies this same flux by $t^{e-5-j-l}$, where
+$e=0$ for translation and $e=1$ for rotation or dilation.
+Taking $t=2$ forces the flux to vanish. This argument uses only collars,
+not a distributional product of the pulses at their common singularity.
+The polarization counts each ordered pair twice, canceling its factor
+$1/2$. Combining the three types proves \eqref{ch03:ward-identity}.
+\end{proof}
+
+\section{Detection with bounded-degree spectators}\label{ch03:bounded-detector}
+
+The polynomial labels and their engineering weights are those of Section~\ref{ch02:jets-section}; throughout this section they are evaluated in the free curvature field defined in Section~\ref{ch03:covariance}.
+
+Corollary~\ref{ch03:detectors} detects a field of degree $d$ by another
+field of degree $d$. A different statement is needed when a charge can
+raise degree: its response must be tested by spectators whose degree
+remains fixed. Their \emph{number} may be arbitrary.
+
+We first make explicit the polynomial space used here. The free image
+$\mathcal M_d^{\mathrm{Max}}$ in \eqref{ch03:free-space} is the full
+space of invariant polynomials of weight at most $d$ on the solution
+jets. Indeed, the radial map identifies each order of solution jets with
+a linear subspace of the corresponding radial-potential space.
+Choose an invariant inner product and its orthogonal projection onto
+this subspace, separately in each weight. Composing a polynomial with
+these projections extends it to the radial jets without changing its
+weight or invariance. This is the usual compact-group averaging
+argument; no equality with a larger space of unrestricted formal jets
+is being assumed.
+
+Let $\mathfrak P$ be the polynomial algebra on all solution jets and
+$\mathfrak P^G$ its invariant subalgebra. For $D\ge0$, define
+\begin{equation}\label{ch03:ND}
+ \mathcal N_D=\{P\in\mathfrak P:
+ S^{\mathrm{Max}}(P(x_0),P_1(x_1),\ldots,P_n(x_n))=0\},
+\end{equation}
+where the equality is required for every separated word with
+$P_i\in\mathcal M_D^{\mathrm{Max}}$. There is no restriction on
+the degree of $P$ or the length $n$.
+
+\begin{proposition}[Uniform degree of detecting spectators]
+\label{ch03:uniform-detector}
+There is a finite $D_*$ such that
+$\mathcal N_{D_*}\cap\mathfrak P^G=\{0\}$.
+\end{proposition}
+
+\begin{proof}
+First restrict all jet orders to at most $j$. Hilbert's finite-generation
+argument~\cite{Hilbert1890}, using compact-group averaging, gives
+finitely many invariant generators homogeneous in ordinary polynomial
+degree. Let $b_j$ bound their weights. To apply that standard theorem,
+the jet space is finite-dimensional, the polynomial ring is Noetherian,
+and averaging preserves its invariant ideal and homogeneous pieces.
+Thus an invariant polynomial of ordinary degree $k$ is a sum of products
+of generators of total ordinary degree $k$, each of weight at most $b_j$.
+
+If a polynomial in $\mathcal N_{b_j}$ is nonzero, take its lowest
+nonzero ordinary-degree part $P_k$. Express its reflected conjugate as
+such a sum of products, and put the factors at distinct spectator points
+approaching a common point different from $x_0$. There are precisely $k$
+spectator legs. Higher-degree parts of $P$ cannot pair with them, and
+for $P_k$ every spectator leg pairs with a leg at $x_0$. No singular
+spectator--spectator contraction survives. The limit is the strictly
+positive two-point pairing of $P_k$ with its reflected conjugate,
+contradicting \eqref{ch03:ND}. This proves detection at bounded jet order.
+
+To obtain a uniform bound, we use a collision that lowers the highest
+jet order. Write $X_{j,\alpha}(p)$ for the colour-$\alpha$ order-$j$
+coordinate associated with an uncoloured probe $p$. Fix a polynomial
+$P$ with highest jet order $j$ and a quadratic spectator
+$\sum_\alpha{:}X_{k,\alpha}(p)X_{l,\alpha}(q){:}$, where $l<k$.
+Contracting just its order-$k$ leg with the top-order variables of $P$
+leaves the polynomial
+\begin{equation}\label{ch03:replacement}
+ \mathcal R_{p,q,j}(z)P
+ =\sum_{\alpha,\lambda}X_{l,\alpha}(q)
+ C_{k,j}(p,e_\lambda;z)
+           \frac{\partial P}{\partial X_{j,\alpha}(e_\lambda)}.
+\end{equation}
+The covariance $C_{k,j}$ is in one colour. We claim that
+\begin{equation}\label{ch03:replacement-null}
+ P\in\mathcal N_D,\quad k+l+4\le D
+ \quad\Longrightarrow\quad
+ \mathcal R_{p,q,j}(z)P\in\mathcal N_D\quad(z\ne0).
+\end{equation}
+
+Here is the necessary separation of singularities. A differentiated
+curvature covariance of orders $k,j$ is harmonic, homogeneous of degree
+$-r$, $r=4+k+j$, and becomes smooth after multiplication by
+$|z|^{2(r-1)}$. A nonzero such harmonic function cannot become smooth
+after multiplication by $|z|^{2(r-2)}$. Indeed, for a harmonic
+homogeneous $H$ of degree $-r$,
+\[
+ \Delta(|z|^{2s}H)=4s(s+1-r)|z|^{2s-2}H.
+\]
+Starting with a smooth extension at $s=r-2$ and iterating would extend
+$H$ smoothly to zero, contradicting its negative homogeneity unless it
+vanishes. A product of two harmonic poles of orders $r_1,r_2$,
+on the other hand, is cleared by $|z|^{2(r_1+r_2-2)}$.
+
+Insert the quadratic spectator at $x_0+tz$ and keep all other spectators
+fixed. Its two contractions with $P$ give finitely many homogeneous
+product poles. Subtract them before multiplying by $t^r$.
+The limit of the remaining expression is the correlation with
+\eqref{ch03:replacement}: the lower single-contraction orders vanish,
+and contractions with remote spectators are smooth. The original full
+correlation is zero by \eqref{ch03:ND}. Successively removing the
+highest powers of $t^{-1}$ shows that the surviving harmonic pole is
+minus a product-pole coefficient of the same degree, or is zero.
+The extra radial cancellation just proved forces it to be zero in
+either case. This proves \eqref{ch03:replacement-null}; in particular
+we have not assumed existence of the unmodified rescaled collision limit.
+
+Put $g=d_{\gLie}$ and choose
+$D_*\ge\max(b_g,2g+5)$. Use $k=g+1$ and $l=0,\ldots,g-1$.
+For each $l$ choose a nonzero probe $q_l$ and a solution jet on which it
+has value one. Such jets exist in every order: for example, the curl of
+$e_3\operatorname{Re}(x_1+ix_2)^{l+1}$ is a nonzero homogeneous
+Maxwell solution of degree $l$. If the highest order $j$ of $P$ exceeds
+$g$, each polynomial \eqref{ch03:replacement} has smaller weight than
+$P$. Strong induction on weight and \eqref{ch03:replacement-null}
+therefore make it zero.
+
+The matrix of polynomial entries $(X_{l,\alpha}(q_l))_{l,\alpha}$
+has nonzero determinant: assigning the chosen order-$l$ jet to colour
+$l+1$ and zero to the other colours makes it the identity. Multiplication
+by its adjugate, in the polynomial integral domain, shows that every
+colour-resolved top-order contraction derivative in
+\eqref{ch03:replacement} vanishes. As $p,z$ vary, the functionals
+$C_{k,j}(p,\cdot;z)$ span the dual of the order-$j$ solution space.
+To verify this last assertion, a vector annihilated by all of them has
+a response wave whose order-$k$ jets vanish everywhere off zero.
+It is then a polynomial of degree below $k$ there; its negative
+homogeneity makes it zero. Formula~\eqref{ch03:kelvin} makes the
+original vector zero. Hence all top-order partial derivatives of $P$
+vanish. Descending removes every jet order above $g$, and the fixed-order
+argument with $b_g$ concludes the induction.
+\end{proof}
+
+\section{Finite tests for infinitesimal symmetries}\label{ch03:finite-ward}
+
+We now give the two finite-dimensional consequences used later to
+normalize translations and remove an internal rotation defect.
+Throughout this section the Lie algebra is simple and nonabelian.
+Recall that $\mathcal M_d^{\mathrm{Max}}$ consists of invariant
+polynomials of weight at most $d$ on the solution jets $\mathcal S_j$;
+its elements are local Wick fields, not distributions defined on collision
+sets. For maps $A$ on this space, a \emph{Ward sum} means
+\[
+ W_A(P_1,\ldots,P_n;x)=\sum_{i=1}^n
+ S_n^{\mathrm{Max}}(P_1,\ldots,AP_i,\ldots,P_n;x).
+\]
+All points in this definition are distinct. The word length is arbitrary.
+
+\begin{theorem}[Vector tests]\label{ch03:vector-tests}
+Let $d\ge\max(4,D_*)$. Consider real-preserving complex-linear maps
+$A_b:\mathcal M_d^{\mathrm{Max}}\to\mathcal M_{d+1}^{\mathrm{Max}}$
+which kill the unit, send $\mathcal M_e^{\mathrm{Max}}$ into
+$\mathcal M_{e+1}^{\mathrm{Max}}$ for $e\le d$, and transform as a vector
+under signed coordinate permutations. Their Ward sums vanish identically
+if and only if $A_b=c\partial_b$ for a common real scalar $c$.
+There are finitely many evaluations of configuration derivatives of these
+Ward sums, at collinear configurations with line axis different from
+$b$, whose common kernel is precisely this translation line.
+\end{theorem}
+
+\begin{proof}
+Translation invariance proves one direction. We prove the converse,
+starting at weight four. Let $\mathcal S_j^{\mathrm{sc}}$ be the
+scalar-valued solution jets, so $\mathcal S_j=\gLie\otimes
+\mathcal S_j^{\mathrm{sc}}$, and write
+$U_j=(\mathcal S_j^{\mathrm{sc}})^*$ for the uncoloured
+order-$j$ probes and
+$Q(p,q)=\sum_\alpha X_{j,\alpha}(p)X_{k,\alpha}(q)$ for their
+colour-contracted quadratic. The invariant metric on a simple Lie
+algebra is unique up to scalar. Hence $\mathcal M_4^{\mathrm{Max}}$
+is spanned by the unit and $Q(p,q)$ with $p,q\in U_0$;
+weight five adds exactly the mixed quadratics with $p\in U_0,q\in U_1$.
+Inversion of all coordinates acts by $(-1)^e$ at weight $e$.
+The filtration and vector parity therefore imply that
+$A_bQ(p,p)$ is a mixed quadratic. It has a unique representation by a
+linear map $D_p:\mathcal S_0^{\mathrm{sc}}\to U_1$:
+\[
+ A_bQ(p,p)=\sum_\lambda Q(e^\lambda,D_p(e_\lambda)).
+\]
+Uniqueness follows by assigning independent zero- and first-order
+solution jets in one colour. Here and until the coefficient comparison,
+$b$ is fixed.
+
+Denote the one-colour covariance of probes by $C(p,q;z)$.
+The three-quadratic Wick rule is
+\begin{align*}
+&S_3^{\mathrm{Max}}(Q(a,v),Q(p,p),Q(q,q);x,y,z)\\
+&\quad=4d_{\gLie}\bigl[C(a,p;x-y)C(v,q;x-z)
+             +C(v,p;x-y)C(a,q;x-z)\bigr]C(p,q;y-z).
+\end{align*}
+In the Ward sum for three quadratics at $tu,0,z$, multiply by $t^5$
+and let $t\downarrow0$. The third response has no fifth-order pole.
+The one-jet covariance is odd, so the other two terms have opposite
+signs. The zero-order covariance is invertible, allowing the probe at
+$z$ to be chosen so its contraction against any $q$ is $q(X)$,
+for any prescribed $X\in\mathcal S_0^{\mathrm{sc}}$. Consequently
+\begin{equation}\label{ch03:panel}
+ C(D_p(X),q;u)q(X)=C(D_q(X),p;u)p(X).
+\end{equation}
+If $p(X)=0$, varying $q$ with $q(X)\ne0$ shows that $D_p(X)=0$.
+The separation used here follows from \eqref{ch03:kelvin}: a probe
+pairing to zero with all zero-order probes at every displacement has
+zero response wave, hence is zero. Thus
+$D_p(X)=p(X)f_b(p)$ for some $f_b(p)\in U_1$.
+Cancellation in \eqref{ch03:panel} gives
+\[
+ C(f_b(p),q;u)=C(f_b(q),p;u).
+\]
+This identity and separation prove additivity and real homogeneity of
+$f_b$; the original signed-coordinate covariance passes to $f_b$.
+
+For completeness the remaining coefficient determination is very small.
+Write $c_{ij}$ for the probe $F_{ij}$ and $\partial_a c_{ij}$ for its
+first derivative. Parity allows only
+$\partial_1c_{12},\partial_3c_{23},\partial_4c_{24}$ in $f_1(c_{12})$.
+The swap of axes $3,4$ and the divergence equation reduce their span to
+$\partial_1c_{12}$. Similarly the candidates for $f_1(c_{23})$ are
+$\partial_1c_{23},\partial_2c_{13},\partial_3c_{12}$;
+the swap of axes $2,3$ and the Bianchi equation reduce them to
+$\partial_1c_{23}$. The two coefficients agree by reciprocity:
+differentiation of the covariance gives
+$C(\partial_1c_{12},c_{23};e_1+e_3)=-1/(2\pi^2)\ne0$.
+Signed permutations then give $f_b=c_0\partial_b$ on every probe.
+Since $\partial_bQ(p,p)=2Q(p,\partial_bp)$, we have
+$A_b=c\partial_b$ on weight four, with $c=c_0/2$.
+
+Set $B_b=A_b-c\partial_b$. It kills the stress and still has zero
+Ward sums. Apply its Ward sum to a word with an additional stress
+insertion, multiply by the dilation collar in \eqref{ch03:flux}, and
+integrate. The term acting on the stress is zero. The free Ward identity
+then gives the Ward sum with $\mathscr E B_bP$ in the distinguished slot
+and $\mathscr EP$ in the other terms. Subtract the ordinary Ward sum
+for the word starting with $\mathscr EP$. It follows that
+$[\mathscr E,B_b]P\in\mathcal N_d$. Proposition
+\ref{ch03:uniform-detector} makes this commutator zero, even though its
+weight can be $d+1$. Thus $B_b$ preserves each weight eigenspace.
+But vector covariance makes it anticommute with coordinate inversion,
+which is the scalar $(-1)^e$ on that eigenspace. Therefore $B_b=0$.
+
+Finally, if every configuration derivative of a Ward sum vanishes at
+all strict collinear configurations along one axis other than $b$,
+real analyticity implies that it vanishes everywhere. One can connect
+any separated configuration to such a collinear configuration without
+collisions: order its projections on that axis, break ties by tiny
+ordered perturbations, and interpolate to the resulting line points.
+The projected differences keep a strict sign until the separated endpoint.
+Analytic continuation along the segment proves the assertion.
+The space of permitted maps is finite-dimensional over $\RR$.
+An intersection of kernels of linear functionals on it is already the
+intersection of a finite subfamily (take a basis of their span in the
+dual). Real and imaginary parts of the evaluations give the required
+finite family.
+\end{proof}
+
+\begin{theorem}[Tests for an internal rotation defect]\label{ch03:internal-tests}
+For $d\ge4$, let
+$\Delta:\mathfrak{so}(4)\times\mathfrak{so}(4)
+\to\operatorname{End}_{\CC}(\mathcal M_d^{\mathrm{Max}})$
+be real-bilinear and alternating. Assume its values preserve reality and
+the weight filtration and kill the unit, and that
+\[
+ \Delta(sKs^{-1},sLs^{-1})=\rho(s)\Delta(K,L)\rho(s)^{-1}
+\]
+for orientation-preserving signed coordinate permutations $s$.
+If every value of $\Delta$ has zero Ward sums, then $\Delta=0$.
+Finitely many Ward-sum evaluations already test this conclusion.
+\end{theorem}
+
+\begin{proof}
+Fix $K,L$ and put $U=\Delta(K,L)$. At weight four write
+$B_x(P,Q)=S_2^{\mathrm{Max}}(P,Q;x,0)$.
+Recall $R_x=I-2xx^{\mathsf T}/|x|^2$, the reflection normal to $x$.
+The zero-order covariance is
+$\pi^{-2}|x|^{-4}\bigwedge^2R_x$ in each colour.
+Wick's rule consequently gives, for $|x|=|y|$,
+\[
+ B_x(P,Q)=B_y(\rho(R_yR_x)P,Q)
+ \qquad(P,Q\in\mathcal M_4^{\mathrm{Max}}).
+\]
+The two-point Ward sum says that $U$ is skew for every $B_x$.
+These forms are nondegenerate by strict reflected positivity.
+Comparing skewness for $x$ and $y$ therefore shows that $U$ commutes
+with $\rho(R_xR_y)$ on this space. In particular it commutes with each
+coordinate quarter-turn $q_{ab}$, by choosing $x$ parallel to $e_a$
+and $y$ parallel to $e_a+e_b$.
+
+An alternating bilinear map on $\mathfrak{so}(4)$ invariant under
+simultaneous conjugation by these quarter-turns is zero, even when its
+values lie in an arbitrary real vector space. To see this on the basis
+$E_{ab}=e_ae_b^{\mathsf T}-e_be_a^{\mathsf T}$, a half-turn in the
+plane spanned by the third and fourth axes fixes one member of a pair
+sharing an axis and negates the other. For a disjoint pair, the even
+permutation exchanging their two ordered axis pairs exchanges the
+arguments, so alternation gives zero. Equal pairs vanish by alternation.
+Bilinearity proves the claim. Covariance and the commutation just proved
+apply this observation to $\Delta(K,L)P$ for every weight-four $P$.
+In particular $U$ kills the stress.
+
+Use the rotational collar in \eqref{ch03:flux} in the same commutator
+argument as in the preceding proof. For each $H\in\mathfrak{so}(4)$,
+it gives $[\mathcal L_H,U]P\in\mathcal N_d$.
+This time the commutator itself lies in $\mathcal M_d^{\mathrm{Max}}$,
+so one reflected two-point test suffices to make it zero; the uniform
+bound $D_*$ is unnecessary. Exponentiation in the finite-dimensional
+space shows that $U$ commutes with every quarter-turn on the whole
+space. Covariance and the same alternating-map argument give
+$\Delta(K,L)P=0$ for every $P$. The finite-test assertion again follows
+by taking a basis of the span of the Ward functionals in the dual of
+the finite-dimensional space of allowed $\Delta$.
+\end{proof}
+
+These are finite tests on a specified space of possible responses. Their
+application to the interacting construction requires proving that its
+responses obey the stated filtration, covariance, and comparison
+hypotheses. No such interacting input is part of the free-field results
+proved here.

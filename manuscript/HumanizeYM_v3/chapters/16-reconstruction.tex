@@ -1,0 +1,557 @@
+\chapter{Relativistic reconstruction in every phase}
+\label{ch16:reconstruction}
+
+We now pass from separated Euclidean correlations to relativistic fields.
+The order of the argument matters. Bounded slab insertions give analytic
+functions of complex time and their joint tempered boundary values.
+Lorentz covariance and spectral support then supply a full spacetime
+tube, in which Euclidean permutation symmetry becomes locality. Only
+after these steps do we form the Hilbert space of field words.
+
+Throughout this chapter we use the conclusions of
+Chapters~\ref{ch14:reflection} and~\ref{ch15:phases}: the coordinate
+reflection spaces, exact Euclidean symmetries and common phase field
+calculus. Write $\Xi$ for the compact phase space, $\nu$ for its
+full-support probability measure, and $S^\xi$ for its correlations.
+The finite-dimensional spaces $F_d$ have compatible inclusions; their
+algebraic direct limit is denoted by $F$. All estimates below concern a
+fixed finite list of labels. Uniformity means uniformity in $\xi$, not in
+the number or degree of those labels.
+
+The underlying reconstruction principles are those of Wightman and
+Osterwalder--Schrader \cite{Wightman1956,OsterwalderSchrader1973,OsterwalderSchrader1975}.
+Here the available Euclidean data are smooth functions off the diagonals,
+with bounded slab operators. We therefore verify the boundary construction
+directly; an unproved extension of these functions across Euclidean
+collisions is not an input.
+
+\section{Complex time and a uniform boundary distribution}
+\label{ch16:boundary-section}
+
+Use coordinate four as time. In the phase reflection space let
+$E_\xi(s)=e^{-sH_\xi^{\rm OS}}$ and $U_\xi(y)$ be the heat and spatial
+translation operators. The spectral theorem extends $E_\xi$ to
+$\operatorname{Re}s>0$ as a holomorphic contraction. Let $B_\varepsilon^\xi(A)$
+be the slab operator of width $2\varepsilon$ with the single label $A$
+placed at its center. The phase version of the slab bound gives
+\begin{equation}
+ \|B_\varepsilon^\xi(A)\|\le C_A\varepsilon^{-q_A},\qquad
+ B_{\varepsilon+u}^\xi(A)
+       =E_\xi(u)B_\varepsilon^\xi(A)E_\xi(u),
+ \quad 0<\varepsilon\le1,
+ \label{ch16:slabs}
+\end{equation}
+where $u\ge0$ in the padding identity. Linearity and compatibility under
+$F_d\hookrightarrow F_{d+1}$ follow by testing against all exterior words.
+
+For $z_j=t_j+iy_j$ with $y_1<\cdots<y_n$, set
+\[
+ G_\varepsilon^\xi(z,x)
+       =E_\xi(-iz-2\varepsilon)U_\xi(x).
+\]
+For $4\varepsilon<\min_j(y_{j+1}-y_j)$ define
+\begin{equation}
+ \mathsf F_n^\xi(\boldsymbol A;z,\boldsymbol x)
+  =\left\langle\Omega_\xi^{\rm OS},
+    B_\varepsilon^\xi(A_1)
+    \prod_{j=2}^n\left[
+       G_\varepsilon^\xi(z_j-z_{j-1},x_j-x_{j-1})
+       B_\varepsilon^\xi(A_j)\right]\Omega_\xi^{\rm OS}\right\rangle.
+ \label{ch16:heat-function}
+\end{equation}
+The product is ordered from left to right with increasing $j$.
+Padding and the semigroup law show that this expression is independent
+of $\varepsilon$: replacing it by $\varepsilon+u$ moves two factors
+$E_\xi(u)$ onto each intervening gap, while the exterior factors fix the
+vacuum. At purely imaginary times it is $S^\xi$ at the corresponding
+Euclidean points. It is holomorphic in the time variables and continuous
+in the real spatial variables. No norm continuity of the spatial
+unitaries is required.
+
+Contraction and \eqref{ch16:slabs}, with $\varepsilon=\delta/8$, give
+\begin{equation}
+ |\mathsf F_n^\xi(t+iy,x)|\le C\delta^{-m},\qquad
+ 0<\delta\le1,\quad y_{j+1}-y_j\ge\delta,
+ \label{ch16:gap-bound}
+\end{equation}
+uniformly in all real positions and in $\xi$.
+This is the quantitative regularity needed for reconstruction.
+
+\begin{proposition}[Joint tempered boundary]
+\label{ch16:boundary}
+For every label tuple there is a tempered distribution
+$W_n^\xi(\boldsymbol A)$ in all $4n$ real coordinates, obtained as the
+boundary of \eqref{ch16:heat-function} along arbitrary strictly ordered
+heights tending to zero. The distributions obey one common Schwartz
+seminorm bound, depend continuously on $\xi$ when tested, and have the
+mixed correlation distribution as their $\nu$-average. The same assertions
+hold at fixed weakly ordered imaginary heights, including tied heights.
+\end{proposition}
+\begin{proof}
+For a joint Schwartz test $f$ put
+$\psi_y^\xi(f)=\int\mathsf F_n^\xi(t+iy,x)f(t,x)\,dt\,dx$.
+Let $r=(0,1,\ldots,n-1)$ and $D=-i\sum_jr_j\partial_{t_j}$ acting on tests.
+Cauchy's formula, \eqref{ch16:gap-bound}, and integration by parts give
+$\frac d{ds}\psi_{y+sr}^\xi(f)=\psi_{y+sr}^\xi(Df)$.
+Taylor's formula, evaluated backwards from $s=1$, is the exact identity
+\begin{equation}
+ \psi_y^\xi(f)=
+ \sum_{k=0}^m\frac{(-1)^k}{k!}\psi_{y+r}^\xi(D^kf)
+ -\int_0^1\frac{(-s)^m}{m!}
+                   \psi_{y+sr}^\xi(D^{m+1}f)\,ds.
+ \label{ch16:taylor-boundary}
+\end{equation}
+The integrand is bounded by $C\|D^{m+1}f\|_1$ for every weakly ordered
+$y$: the factor $s^m$ cancels the worst gap singularity. The right-hand
+side therefore defines the extension to all such $y$, continuously by
+dominated convergence. Its bound is a fixed finite sum of $L^1$ norms
+of derivatives of $f$, hence a Schwartz seminorm. In particular there
+is no restriction on ratios of the heights approaching zero.
+
+For strictly ordered heights, phase continuity follows from the normal
+family theorem in the time variables: every convergent phase sequence
+has locally convergent analytic subsequences, and agreement at imaginary
+times identifies each limit with the limiting phase by the identity
+theorem. Local boundedness is uniform by \eqref{ch16:gap-bound}.
+Dominated convergence after testing gives continuity of $\psi_y^\xi$.
+The same uniqueness argument continues the barycenter identity from
+imaginary times. Formula~\eqref{ch16:taylor-boundary} transfers both
+claims to weakly ordered heights and to the boundary. Arity zero and
+one require no gap argument and are covered by their constant bounds.
+\end{proof}
+
+\section{Lorentz covariance and the spectral cone}
+\label{ch16:covariance-section}
+
+Let $s_4$ be reflection of Euclidean coordinate four. The field adjoint
+on $F$ is the antilinear involution
+\[
+                       A^*=R(s_4)\overline A.
+\]
+If $L_{ab}$ is the infinitesimal Euclidean rotation action on labels,
+the spatial rotation generators are $L_{ij}$ and the boost generators
+are $-iL_{4i}$. Their commutation relations give the proper orthochronous
+Lorentz action $\rho$. It descends from the covering group because a full
+spatial turn already acts trivially under $R$. The above involution
+commutes with $\rho$: the sign from conjugating $i$ cancels the reflection
+sign on $L_{4i}$. We use spacetime coordinates $(x^1,x^2,x^3,t)$,
+metric $\eta=\operatorname{diag}(-1,-1,-1,1)$, and
+\[
+ \overline V_+=\{(p,E):E\ge|p|\}.
+\]
+Fourier duality uses the ordinary coordinate pairing $p\cdot x+Et$.
+The dual Lorentz action is the inverse transpose, which also preserves
+$\overline V_+$.
+
+Differentiate Euclidean rotational covariance at imaginary times and
+continue the identity using the Cauchy--Riemann equations. The result
+is the infinitesimal Lorentz covariance identity for $\mathsf F_n^\xi$.
+Testing and taking its joint boundary proves the distributional identity:
+terms containing a height tend to zero because the tested boundary
+families have the common seminorm bound of Proposition~\ref{ch16:boundary}.
+Integrating the finite-dimensional label action and the corresponding
+flow on Schwartz tests proves Lorentz covariance of $W_n^\xi$.
+Translations and spatial rotations continue directly.
+
+Use the Fourier convention
+\[
+ \widehat f(X)=\int e^{-iX\cdot p}f(p)\,dp,
+ \qquad \widehat W(f)=W(\widehat f).
+\]
+For a compactly supported frequency test $b$, differentiating simultaneously
+the imaginary height and the factor multiplying $b$ gives
+\begin{equation}
+ \widehat W_n^\xi(b)
+   =\psi_y^\xi\!\left(\widehat{e^{\sum_jy_jp_j^4}b}\right).
+ \label{ch16:laplace}
+\end{equation}
+Indeed the two differentiated terms cancel, and their common value at
+height zero is the left side. Compact frequency support makes every
+intermediate test a Schwartz function.
+
+Translation invariance restricts support to $\sum_jp_j=0$. Put
+$q_j=\sum_{k=j}^np_k$. If a compact frequency test lies where $q_j^4<0$,
+let the corresponding imaginary gap tend to infinity in
+\eqref{ch16:laplace}, keeping the other gaps positive. Exponential decay
+of the test and the uniform bound at gaps at least one show that its
+pairing vanishes. A partition of unity and Lorentz covariance now give
+\begin{equation}
+ \operatorname{supp}\widehat W_n^\xi\subset K_n,
+ \qquad K_n=\left\{p:\sum_jp_j=0,\quad q_j\in\overline V_+ (2\le j\le n)\right\}.
+ \label{ch16:cone-support}
+\end{equation}
+To justify the last step, a vector outside $\overline V_+$ can be made
+to have negative time component by a proper orthochronous Lorentz
+transformation. Compact subsets of the complement admit finitely many
+such neighborhoods.
+
+\section{The spacetime tube and locality}
+\label{ch16:locality-section}
+
+The boundary distribution just constructed is denoted by $W_n^\xi$;
+$K_n$ in \eqref{ch16:cone-support} is its momentum support cone. Define
+\[
+ C_n=\{Y:Y_{j+1}-Y_j\in\overline V_+\},\qquad
+ \mathcal T_n=\{X+iY:Y_{j+1}-Y_j\in V_+\}.
+\]
+For $p\in K_n$, telescoping gives
+$p\cdot Y=\sum_{j=2}^nq_j\cdot(Y_j-Y_{j-1})\ge0$.
+For strictly interior $Y$ this is bounded below by $c_Y|p|$, locally
+uniformly in $Y$. One way to see the strict margin is to choose a ball
+of radius $2c_Y$ around $Y$ inside the strict-gap cone and apply positivity
+to $Y-c_Yp/|p|$.
+
+Choose a smooth cutoff $\chi$ equal to one on the distance-one neighborhood
+of $K_n$, supported in its distance-three neighborhood, with all derivatives
+bounded. Convolution of the distance-two neighborhood's indicator with
+a bump of radius $1/2$ is one such choice. Then
+\begin{equation}
+ \mathcal W_n^\xi(\boldsymbol A;Z)
+   =(2\pi)^{-4n}\widehat W_n^\xi
+                    \left(\chi(p)e^{ip\cdot Z}\right),\qquad Z\in\mathcal T_n,
+ \label{ch16:full-tube}
+\end{equation}
+is well defined: the tested function and all its derivatives decay
+exponentially on the support of $\chi$. It is holomorphic into Schwartz
+space before the distribution is applied. It agrees with
+\eqref{ch16:heat-function} at strictly ordered scalar heights, by
+\eqref{ch16:laplace} and compact-frequency approximation.
+
+For $Y\in C_n$, the multiplier $\chi e^{-p\cdot Y}$ and its derivatives
+are uniformly bounded on compact sets of $Y$. In fact distance at most
+three from $K_n$ gives $-p\cdot Y\le3|Y|$. Multiplication by this function
+is therefore continuous on Schwartz space, including as $Y$ approaches
+a tied gap. This proves the partial boundary formula
+\begin{equation}
+ W_{n,Y}^\xi(f)=\widehat W_n^\xi
+ \left(\chi e^{-p\cdot Y}(2\pi)^{-4n}
+                         \int e^{ip\cdot X}f(X)\,dX\right).
+ \label{ch16:partial-boundary}
+\end{equation}
+It has boundary $W_n^\xi$ at $Y=0$. The cutoff is essential here: the
+exponential alone need not be a Schwartz multiplier off the spectral
+cone. Tube Lorentz covariance follows from boundary covariance; changed
+cutoffs agree near $K_n$ and hence give the same pairing.
+
+\begin{proposition}[Adjacent spacelike exchange]
+\label{ch16:locality}
+Let $\sigma$ exchange slots $j$ and $j+1$. On the open set where
+$X_{j+1}-X_j$ is spacelike,
+\[
+ W_n^\xi(\boldsymbol A;X)
+       =W_n^\xi(\sigma\boldsymbol A;\sigma X)
+\]
+as distributions. This statement permits arbitrary exterior insertions.
+\end{proposition}
+\begin{proof}
+Keep positive scalar imaginary gaps except for one tied pair
+$y_j=y_{j+1}$. Write its spacelike real difference as $(v,t)$, and set
+$e=v/|v|$. The imaginary part of its image under a boost of parameter
+$i\alpha$ in direction $e$ is
+$\sin\alpha\,(te,|v|)$, a strictly forward vector for small positive
+$\alpha$. All other gaps stay strictly forward by continuity. Thus a
+small positive imaginary boost enters the original tube, and a negative
+one followed by exchange enters the exchanged tube.
+
+Fix one sufficiently small nonzero boost parameter first. The transformed
+tied-gap point is strictly inside the relevant tube, so a whole complex
+neighborhood of the original point is mapped into that tube. Pulling
+back the holomorphic function, with its entire finite-dimensional label
+action, therefore defines a genuine germ on that neighborhood. Use the
+opposite sign and the exchanged tube for the second germ. Real Lorentz covariance and the identity
+theorem show that each germ extends its original tube function; the
+whole short imaginary-boost path stays in that tube at neighboring
+interior points.
+
+At vanishing real times these germs coincide. Their restrictions to the
+Euclidean slice $(it_k,x_k)$ equal the same smooth, permutation-symmetric
+function on its two ordered sides. At the tied pair the spatial points
+are distinct, so this Euclidean function is smooth there. Consequently
+all derivatives of the two restrictions agree at the tie. The slice
+is totally real and its tangent space spans the ambient complex vector
+space. The holomorphic Taylor coefficients therefore agree, proving
+identity of the germs.
+
+For general real times multiply every real time by $s\in[0,1]$.
+The distinguished difference remains spacelike along this path and the
+other imaginary gaps remain strict. A finite chain of overlapping germ
+neighborhoods propagates the equality from $s=0$ to $s=1$ by uniqueness.
+Take the continuous partial boundaries \eqref{ch16:partial-boundary},
+and then remove the other imaginary gaps. This proves the identity
+against tests compactly supported in the spacelike open set. Smooth
+compact cutoffs converging in Schwartz space give the stated distributional
+version. No permutation of coincident Lorentzian boundary values has
+been assumed.
+\end{proof}
+
+\section{Field words and the reflection space}
+\label{ch16:fields-section}
+
+A letter is a pair $(A,f)$ with $A\in F$ and $f\in\mathscr S(\RR^4)$.
+The star of a word reverses its order and replaces every letter by
+$(A^*,\overline f)$. Let $\mathcal P$ be their algebraic span, including
+the empty word $1$. The distributions $W_n^\xi$ define a functional
+$w_\xi$ on $\mathcal P$ by evaluation on product tests.
+
+The essential positivity statement follows inside the phase reflection
+space. Give a word strictly increasing positive imaginary heights,
+smear its real variables, and use the slab product to obtain a vector
+$h_y^\xi(b)$. Its Gram pairing with another such vector is a tested
+continued correlation, with the reflected first word on the left.
+Proposition~\ref{ch16:boundary} permits the two height lists to tend to
+zero independently, so
+\[
+ \langle h_y^\xi(b),h_z^\xi(c)\rangle
+                      \longrightarrow w_\xi(b^*c).
+\]
+Expanding $\|h_y^\xi(b)-h_z^\xi(b)\|^2$ proves that these vectors are
+Cauchy. Their limits $v_\xi(b)$ have Gram form $w_\xi(b^*c)$, which is
+therefore positive. The same common seminorm bounds extend positivity
+to finite joint Schwartz tests by tensor-product density.
+
+The standard word reconstruction \cite{Wightman1956} now gives
+\[
+ \mathcal N_\xi=\{b:w_\xi(b^*b)=0\},\quad
+ \mathcal D_\xi=\mathcal P/\mathcal N_\xi,\quad
+ \mathcal H_\xi=\overline{\mathcal D_\xi},\quad\Omega_\xi=[1],
+ \qquad \Phi_\xi(A,f)[b]=[(A,f)b].
+\]
+For clarity, its null-space check is worth recording. If $b$ is null,
+Cauchy--Schwarz says it pairs to zero with every word. The concatenation
+identity moves a letter to the other side of the pairing, so its product
+with $b$ also pairs to zero with every word, including itself. Thus all
+fields are well defined on the same invariant dense domain. The same
+identity gives
+\[
+ \Phi_\xi(A^*,\overline f)\subset\Phi_\xi(A,f)^*.
+\]
+They are closable, and the joint distribution bound gives continuity of
+$f\mapsto\Phi_\xi(A,f)v$ in Hilbert norm for every $v\in\mathcal D_\xi$.
+We do not assert that these generally unbounded fields are bounded or
+that their self-adjoint closures exist without further input.
+
+\begin{theorem}[Fields and the onto reflection comparison]
+\label{ch16:fields}
+In every phase the fields above are local, covariant under a strongly
+continuous unitary representation of the proper orthochronous Poincar\'e
+group, and have joint translation spectrum in $\overline V_+$.
+The map
+\[
+ J_\xi^{\rm OS}[b]=v_\xi(b)
+\]
+extends to a unitary map from $\mathcal H_\xi$ onto the phase reflection
+space. It sends vacuum to vacuum, intertwines spatial translations and
+heat semigroups, and the field labeling is faithful.
+\end{theorem}
+\begin{proof}
+Covariance preserves the word Gram form, hence defines unitaries on its
+quotient. Schwartz continuity proves strong continuity first on words
+and then on their completion. Locality follows by applying
+Proposition~\ref{ch16:locality} inside arbitrary word matrix elements.
+The joint spectral theorem for the commuting translation unitaries,
+together with \eqref{ch16:cone-support} applied to such matrix elements,
+places their spectrum in $\overline V_+$.
+
+The Gram identity makes $J_\xi^{\rm OS}$ an isometry. Its range is closed,
+but density must still be checked. For a smooth compactly supported
+joint frequency test $b$, multiplication by
+$e^{-\sum_j y_jp_j^4}$ is harmless. Equation~\eqref{ch16:laplace} identifies
+the norms and mixed pairing of the image of the resulting boundary word
+with the smeared positive-height vector at heights $y$. They are the
+same vector. Compact-frequency tests are dense in Schwartz space;
+therefore the closed range contains every smeared positive-height vector.
+Approximate identities, followed by a perturbation of tied times and
+permutation of separated Euclidean points, give all Euclidean word
+vectors. These span the reflection space. The same positive-height
+identities prove heat and spatial intertwining.
+
+Finally a label acting as zero has every boundary correlation zero.
+The Laplace identity, Euclidean symmetry and continuity imply that all
+its separated Euclidean correlations vanish. The common null-space
+identity of Chapter~\ref{ch15:phases}, and the detector injectivity used
+there, force this label to be zero in $F$.
+\end{proof}
+
+\section{The low-energy estimate and every-phase vacuum}
+\label{ch16:vacuum-section}
+
+The phase measure has full support, and the zero-energy space is a line
+for almost every phase by \ref{ch15:ae-ground}. To remove the exceptional
+set requires a bound uniform in $\xi$. We prove it from locality and the
+spectral cone. This argument controls energies near zero, not a positive
+mass gap.
+
+For a finite sum $A$ of field words with compactly supported smooth tests,
+let $\mu_\xi$ be the joint spectral measure of $A\Omega_\xi$, and let
+$\mu_\xi^*$ be that of $A^*\Omega_\xi$. Their total masses have a common
+bound $M$ by Proposition~\ref{ch16:boundary}. Enclose all supports in a
+fixed spacetime box. Locality gives some $R<\infty$, independent of phase,
+such that
+\begin{equation}
+ a_\xi(y,t)=\langle\Omega_\xi,[A^*,\alpha_{(y,t)}(A)]\Omega_\xi\rangle=0
+                  \quad (|y|>R,\ |t|\le1),
+ \label{ch16:local-commutator}
+\end{equation}
+where $\alpha_z(A)=U_\xi(z)AU_\xi(z)^*$ on the word domain.
+The spectral expression is the difference of the Fourier transforms of
+$\mu_\xi$ and the reflected measure $\mu_\xi^*$.
+
+Take the odd time average
+\[
+ \bar a_\xi(y)=\int_0^1
+       \frac{a_\xi(y,t)-a_\xi(y,-t)}{2i}\,dt.
+\]
+It is bounded by $M$ and supported in $\overline B_R$. Its spatial
+Fourier measure is the \emph{sum} of the pushforwards of
+$\varpi(E)\,d\mu_\xi(p,E)$ and $\varpi(E)\,d\mu_\xi^*(p,E)$ under
+$p$ and $-p$, respectively, where
+\[
+ \varpi(E)=\frac{1-\cos E}{E},\qquad\varpi(0)=0.
+\]
+Both measures are positive; on $0\le E\le1$,
+$\varpi(E)\ge E/\pi$. Choose a smooth momentum bump $b_u$, equal to one
+on $B_u$, supported in $B_{2u}$, and between zero and one. Its inverse
+Fourier transform is bounded by $Cu^3$. On the shell $u/2<E\le u$,
+cone support implies $|p|\le u$, so positivity and Fourier inversion yield
+\[
+ c u\,\mu_\xi\{u/2<E\le u\}
+      \le \left|\int\bar a_\xi(y)\widehat b_u(y)\,dy\right|
+      \le CMR^3u^3.
+\]
+Dyadic summation proves the first assertion below.
+
+\begin{theorem}[Uniform low-energy bound]
+\label{ch16:vacuum}
+For every such $A$ there is $C_A$, independent of phase, such that
+\begin{align}
+ \mu_\xi\{0<E\le u\}&\le C_Au^2 &&(0<u\le1),\label{ch16:low-energy}\\
+ 0\le\langle A\Omega_\xi,(e^{-sH_\xi}-P_{\Omega,\xi})A\Omega_\xi\rangle
+       &\le 2C_A' s^{-2} &&(s\ge1),\label{ch16:heat-decay}
+\end{align}
+where $P_{\Omega,\xi}$ is the projection onto $\CC\Omega_\xi$.
+In every phase, $\ker H_\xi=\CC\Omega_\xi$; the same holds in its
+reflection space.
+\end{theorem}
+\begin{proof}
+Initially use the full zero-energy projection $Q_\xi$, without assuming
+that its range is a line. Increase the constant in
+\eqref{ch16:low-energy} so the estimate holds for all $u>0$ by the total
+mass bound. Tonelli's theorem gives
+\[
+ \langle A\Omega_\xi,(e^{-sH_\xi}-Q_\xi)A\Omega_\xi\rangle
+ =\int_{E>0}e^{-sE}\,d\mu_\xi
+ \le C_A's\int_0^\infty e^{-su}u^2\,du=2C_A's^{-2}.
+\]
+Theorem~\ref{ch16:fields} transfers almost-everywhere vacuum uniqueness
+from the reflection spaces, so $Q_\xi=P_{\Omega,\xi}$ almost everywhere.
+For fixed $s>0$ the vacuum-subtracted heat pairing is continuous in $\xi$:
+it is the joint distribution at a fixed weakly ordered height with gap
+$s$ between its two word halves. This follows either by the independent
+height limits or by \eqref{ch16:partial-boundary}. Thus its bound by
+$2C_A's^{-2}$ holds everywhere, since any nonempty open violation set
+would have positive $\nu$-measure.
+
+Let $s\to\infty$. Strong heat convergence gives
+$\|Q_\xi A\Omega_\xi\|^2=|\langle\Omega_\xi,A\Omega_\xi\rangle|^2$.
+Since $Q_\xi$ fixes the unit vacuum, its value on each such word vector
+lies in the vacuum line. Compactly smeared words are dense: multiply
+Schwartz tests by expanding smooth cutoffs and use joint Gram continuity.
+It follows that $Q_\xi=P_{\Omega,\xi}$ on the full space. The onto heat
+intertwiner gives the last assertion.
+\end{proof}
+
+\section{The weak commutant and local stress charges}
+\label{ch16:charges-section}
+
+Irreducibility should be stated in a form appropriate to unbounded fields.
+Their common domain is $\mathcal D_\xi$, the span of field words applied
+to the vacuum. A bounded operator $B$ belongs to their weak commutant if
+\begin{equation}
+ \langle\Phi^*u,Bv\rangle=\langle u,B\Phi v\rangle,
+ \qquad u,v\in\mathcal D_\xi,
+ \label{ch16:weak-commutant}
+\end{equation}
+for every smeared field $\Phi$. The adjoint inclusion proved above
+ensures that these $u$ are in its adjoint domain; no preservation of
+$\mathcal D_\xi$ by $B$ is assumed.
+
+\begin{proposition}
+\label{ch16:irreducible}
+The weak commutant in every phase consists of scalar operators.
+\end{proposition}
+\begin{proof}
+Iterate \eqref{ch16:weak-commutant} to move words through matrix elements.
+For a word $A$ put $u=A\Omega_\xi$, $v=A^*\Omega_\xi$. The functions
+\[
+ p(z)=\langle u,e^{izH_\xi}B\Omega_\xi\rangle,\qquad
+ q(z)=\langle B^*\Omega_\xi,e^{izH_\xi}v\rangle
+\]
+are bounded and holomorphic in the upper half-plane, continuous to its
+boundary, and satisfy $p(t)=q(-t)$. Pasting across the real line and
+using Morera's theorem gives a bounded entire function, hence a constant.
+The heat limit and Theorem~\ref{ch16:vacuum} imply
+$B\Omega_\xi=b\Omega_\xi$. Moving words again gives
+$\langle A'\Omega_\xi,BA\Omega_\xi\rangle
+=b\langle A'\Omega_\xi,A\Omega_\xi\rangle$.
+Density proves $B=bI$. Scalars plainly satisfy the condition.
+\end{proof}
+
+Let $T_{ab}$ be the normalized Euclidean stress tensor of
+Proposition~\ref{ch14:normalized-stress}. Define
+\[
+ \zeta_i=1\ (i\le3),\qquad\zeta_4=-i,
+ \qquad T^{\rm M}_{ab}=-\zeta_a\zeta_bT_{ab}.
+\]
+We use the same notation for its smeared relativistic field. Thus
+$T^{\rm M}_{44}=T_{44}$, $T^{\rm M}_{4i}=iT_{4i}$, and
+$T^{\rm M}_{ij}=-T_{ij}$. The adjoint involution, covariance and the
+continued derivative identity give a symmetric Hermitian Lorentz tensor
+with
+\[
+ \sum_a\eta_{aa}T^{\rm M}_{ab}(\partial_a f)=0
+                      \quad\hbox{on }\mathcal D_\xi.
+\]
+Indeed continuation of a Euclidean derivative label is
+$\Phi_\xi(\partial_a A,f)=-\zeta_a^{-1}\Phi_\xi(A,\partial_a f)$.
+
+For an affine Killing vector $K(x)=k+Vx$, where
+$V^{\mathsf T}\eta+\eta V=0$, let $\Sigma_K$ be its infinitesimal
+Lorentz label action. Choose real $f\in C_c^\infty(\RR)$ of integral
+one and $c\in C_c^\infty(\RR^3)$, and define the local charge
+\[
+ Q_K(f,c)=\sum_b T^{\rm M}_{4b}\big(K^b(c\otimes f)\big).
+\]
+Suppose $g\in C_c^\infty(\RR^4)$ and $c=1$ on a ball such that every
+point $(y,t)$ outside that ball with $t\in\operatorname{supp}f$ is
+spacelike to $\operatorname{supp}g$. Then
+\begin{equation}
+ i[Q_K(f,c),\Phi_\xi(A,g)]
+   =\Phi_\xi(\Sigma_K A,g)
+          -\sum_a\Phi_\xi(A,\partial_a(K^ag))
+                       \quad\hbox{on }\mathcal D_\xi.
+ \label{ch16:charge-law}
+\end{equation}
+This is a local charge identity, not a claim that the unsmeared spatial
+integral of stress exists as an operator.
+
+To justify its continuation, first integrate the Euclidean shell identity
+with a spatial cutoff $c$ on the two sides of the distinguished insertion.
+Conservation moves the derivative to $c$; that term stays separated from
+the insertion. The two current integrals have one-sided limits whose
+jump is $\Sigma_K A+K\cdot\partial A$. Retain strictly ordered positive
+heights for every spectator and put their complex times on a path
+$z_j(\lambda)=iy_j+\lambda t_j$. Place the current immediately above
+or below the distinguished time, at distance $\varepsilon$.
+
+On $\operatorname{supp}\nabla c$ the spacelike holomorphic germs from
+Proposition~\ref{ch16:locality} bound the current integrals uniformly
+as $\varepsilon\downarrow0$, locally along this path. Conservation bounds
+the difference between two such integrals by $C|\varepsilon-\varepsilon'|$.
+Their limits are therefore holomorphic. At small imaginary $\lambda$
+the jump is the Euclidean one; analytic continuation gives the same
+jump at $\lambda=1$. Smearing with $f$ and $g$ and taking the joint
+partial boundaries proves \eqref{ch16:charge-law}; integration by parts
+produces $\partial_a(K^ag)$. General word spectators follow from the
+common Schwartz bounds. Locality removes any change in $c$ outside the
+stated ball. This retains precisely the normalization established by the
+Euclidean shell flux.
