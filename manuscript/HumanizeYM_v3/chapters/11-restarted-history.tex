@@ -6,7 +6,7 @@ insertions retain their original calibration; only the integration
 below the comparison level is restarted. All support norms in this
 subsection use connected covers and include full dependence regions.
 Their exponents are chosen with the reserves required by the marked
-expansion before choosing a coupling threshold.
+expansion before choosing an inverse coupling threshold.
 
 Write $x_i=\widehat\beta_i$ and, for $x$ large, put
 \[
@@ -43,9 +43,9 @@ The local chart, clipped source, Gaussian precision and tail events
 are those of Chapter~\ref{ch06:large-fields} with this recording
 scale and these actual thresholds. Its elementary scale inequalities
 continue to hold: the radii are logarithmic powers and the thresholds
-are $x^{-1/2+o(1)}$. The actual coupling band remains expressed in
+are $x^{-1/2+o(1)}$. The actual inverse coupling band remains expressed in
 $x_i$, not in $r(x_i)$. In particular one must not invoke a lower
-bound $\beta\ge r(x_i)/2$. For every fixed $\eta>0$, retiming and
+bound $\beta\ge r(x_i)/2$. For every fixed $\eta>0$, changing the reference parameter and
 the actual band instead give, eventually,
 \[
  y^{1-\eta}\le\beta\le2y,\qquad y=r(x_i).
@@ -53,7 +53,7 @@ the actual band instead give, eventually,
 For a prescribed finite local estimate, fix the number of powers
 of $\beta^{-1}$ and $g=\beta^{-1/2}$ that occur before choosing
 $\eta$. Replacing a comparison power of $y$ by the corresponding
-actual coupling power then loses at most $y^{C\eta}$, where $C$
+actual inverse coupling power then loses at most $y^{C\eta}$, where $C$
 is fixed by that estimate. Choose $\eta$ small enough to retain
 its negative exponent. The dimensionless quadratic gap and path
 bounds are unchanged; physical covariance factors retain their
@@ -61,7 +61,7 @@ actual $\beta^{-1}$ normalization. Likewise, the cutoff-to-noise
 ratio is computed exactly as
 $\vartheta(x_i)/g\asymp h(x_i)$, and the selected-component energy
 is $\beta\vartheta(x_{i+1})^2\ge c h(x_{i+1})^2$.
-These comparisons, not a fictitious coupling band in $y$, are
+These comparisons, not a fictitious inverse coupling band in $y$, are
 used below.
 
 \begin{proposition}[Re-expression of the endpoint]
@@ -69,48 +69,48 @@ used below.
 At a sufficiently late comparison level $k$, the original density has an
 exact presentation with radius $b(x_k)^2$, threshold
 $\vartheta(x_k)$, the original path coefficients, clip coefficients,
-coupling and scalar, regular allowance no larger than its original
-allowance, and large-field site bound
+inverse coupling and scalar, regular bound no larger than its original
+bound, and large-field site bound
 \[
  G(x_k)=\exp\{-a_*h(x_k)^2\}.
 \]
 Here $a_*>0$ is chosen sufficiently small at each fixed stage before
-its entry threshold. The construction retains the old large-field
-labels and their eligibility tests inside the new activities.
+its threshold for the starting scale. The construction retains the old large-field
+labels and their eligibility criteria inside the new activities.
 \end{proposition}
 \begin{proof}
 Abbreviate $s=x_k$, $t=s^{-1/2}H(s)$, $\vartheta=\vartheta(s)$,
 $M=b(s)$ and $B=M^2$. Write $A_t,A_\vartheta$ for the path actions
-with their respective masks and clips, and $E_t,E_\vartheta$ for
-the original regular coefficients with the corresponding masks.
-The old regular allowance is at most $s^{-11/10}$; the old
-large-field allowance is at most $w_s=e^{-H(s)^{1/5}}$.
-These are the selected trajectory's endpoint allowances.
+with their respective event indicators and clips, and $E_t,E_\vartheta$ for
+the original regular coefficients with the corresponding event indicators.
+The old regular bound is at most $s^{-11/10}$; the old
+large-field bound is at most $w_s=e^{-H(s)^{1/5}}$.
+These are the selected trajectory's endpoint bounds.
 
 Eventually $2\vartheta\le t$. The clip comparison proved above gives
 $d_t(r)-d_\vartheta(r)\ge c_{\rm lin}\vartheta^2$ whenever
 $r>\vartheta$, and a nonnegative difference otherwise.
 Distribute each plaquette's difference among its incident sites.
 Allowing five sites is a harmless upper bound. For the set
-$F_\vartheta$ of new large-field sites this gives charges $d_z$ with
+$F_\vartheta$ of new large-field sites this gives local energy contributions $d_z$ with
 \[
  \sum_zd_z=\sum_p(d_t(r_p)-d_\vartheta(r_p)),\qquad
  d_z\ge c_{\rm lin}\vartheta^2/5\quad(z\in F_\vartheta).
 \]
-The lost kept quadratic path rows give another nonnegative charge.
+The omitted quadratic path rows give another nonnegative energy contribution.
 Truncate each row at true path length $B$ before squaring, and keep
-its half-square only where the old kept test holds and the new one
-fails. The relaxed test reads a radius-$B$ neighborhood: outside it
-$2\le\vartheta e^{B/c}$ makes the test automatic. The truncated
+its half-square only where the old retention condition holds and the new one
+fails. The relaxed small-field condition reads a radius-$B$ neighborhood: outside it
+$2\le\vartheta e^{B/c}$ makes the condition automatic. The truncated
 half-square therefore reads radius at most $2B$ and vanishes if its
 tested neighborhood is new-small-field. Distribute its value equally
-among the new flagged sites in that neighborhood, making no division
-when the set is empty. The resulting charges $b'_z\ge0$ read radius
+among the new large-field sites in that neighborhood, making no division
+when the set is empty. The resulting local energy contributions $b'_z\ge0$ depend only on a neighborhood of radius
 at most $4B$, and their sum is exactly the sum of truncated
 half-squares. Perform this operation separately for each signed
 orientation, retaining its averaging weight.
 
-Choose $a_*\le c_{\rm lin}/20$, put $u=a_*h(s)^2$, and for flagged
+Choose $a_*\le c_{\rm lin}/20$, put $u=a_*h(s)^2$, and for large-field sites
 $z$ put $X_z=\exp[-\beta(d_z+b'_z)]$. The actual band gives
 $\beta\vartheta^2\ge h(s)^2/2$, hence $|X_z|\le e^{-2u}$.
 The remaining exponent difference is
@@ -119,7 +119,7 @@ The remaining exponent difference is
                                +(E_\vartheta-E_t).
 \]
 It consists of the omitted quadratic row pairs, the cubic, quartic
-and loop mask differences, and the regular mask differences.
+and loop event indicator differences, and the regular event indicator differences.
 Each term vanishes on a new-small-field full dependence region.
 At a fixed larger support exponent $a+2$ its site bound is
 \begin{equation}
@@ -133,11 +133,11 @@ Here $\sigma>0$ is a retained true-length path rate and
 $\Gamma_s\le2H(s)$ is the loop coefficient bound.
 For the first term expand the difference of squares into ordered
 path pairs, one of length exceeding $B$, and retain part of their
-exponential length weight. For the masked atoms use their old
+exponential length weight. For the atoms restricted by event indicators use their old
 bounds $t^j$ and the cover bound $1+2j+\operatorname{length}/B$.
 For an old support $Y$, its fixed halo obeys
 $c_B(Y^{[8]})\le C+C(M/B)c_M(Y)$. Eventually its old exponent
-pays this new exponent and the extra unit used to turn an anchored
+absorbs this new exponent and the extra unit used to turn an anchored
 bound into a site bound. These are the support conversions of
 Section~\ref{ch06:primitive-bounds}; their losses are polynomial in
 $B$. The same argument bounds enlarged old large-field labels by
@@ -152,19 +152,19 @@ $W_Y$ vanishes when its support is new-small-field. The identity
  \label{ch11:restart-endpoint-identity}
 \end{equation}
 is exact. Multiply by the old large-field gas and expand the optional
-$W_Y$ factors. Keep the old compatibility and eligibility tests.
+$W_Y$ factors. Keep the old compatibility and eligibility criteria.
 Group using intersections of full dependence supports, including the fixed
-halo for old flag tests and the radius-$4B$ supports of $X_z$.
+halo for old large-field conditions and the radius-$4B$ supports of $X_z$.
 Every nonzero component contains a selected $X_z$: an old activity
-contains an old flag, hence a new flag, and every nonzero $W_Y$
-reads a new flag. The factor at that flag is mandatory and intersects
-that component. Assign the component its exact new flag set and also
-retain the union of its old flag sets and all their tests.
+contains an old large-field site, hence a new large-field site, and every nonzero $W_Y$
+reads a new large-field indicator. The factor at that site is mandatory and intersects
+that component. Assign the component its exact new set of large-field sites and also
+retain the union of its old sets of large-field sites and all their conditions.
 Conversely, those constituents recover the original compatible
 collection and optional subset. Thus the regrouping is a bijection
-of terms, not a replacement of old eligibility by a new test.
+of terms, not a replacement of old eligibility by a new condition.
 Disjoint new exclusion supports are the unions of these full read
-supports. Their tests require exact new-flag coverage there.
+supports. Their eligibility criteria require exact coverage of the new large-field sites there.
 
 Reserve $e^{-u}$ per selected site factor. The remaining site sum
 at exponent $a+1$ is at most
@@ -179,7 +179,7 @@ support exponent, applies since $(2B+1)^4\rho_s\le1$.
 Every component retains at least one reserved factor, so its total
 site bound is at most $e^{-u}(e^{\rho_s}-1)\le G(s)$.
 There is no extra sum over prescribed sets of large-field sites: selected site factors already
-specify them, and exact-coverage tests only remove terms.
+specify them, and exact-coverage conditions only remove terms.
 Absolute convergence justifies countable labels and coalescing.
 
 The regular coefficients themselves are unchanged. Their domains
@@ -195,7 +195,7 @@ orientation average.
 At an intermediate level write the genuine presentation as
 $R=e^{-E}R^0$, where $R^0$ is obtained by deleting only the regular
 additive family $E=\sum_\alpha E_\alpha$. Its path, clip, large-field
-activities and all their tests remain unchanged. If the anchored
+activities and all their conditions remain unchanged. If the anchored
 weighted value bound of that family is $q$, then
 $\sum_\alpha|E_\alpha|\le q|\Lambda|$; this proves integrability
 at finite volume, but is not used as a volume-uniform estimate.
@@ -214,13 +214,13 @@ neutral estimates never deletes it from the density identity.
 \begin{proposition}[One restarted history on the comparison window]
 \label{ch11:restart-family}
 Fix the finite degree and derivative requests and the comparison
-window with top level $k$, clock $s=x_k$, and at most
-$(\log\log s)^4$ steps. Take its stage-entry thresholds large enough
+window with top level $k$, reference inverse coupling $s=x_k$, and at most
+$(\log\log s)^4$ steps. Take its thresholds for the starting scales large enough
 that $3s/4\le x_i\le s$ and
 $|\beta_{N,p,k}-s|\le s/8$. On the original adjacent path data there
-are presentations $P_i$, $i\le k$ in that window, with the budgets
-$(B_i,\vartheta(x_i))$, common actual coupling
-$\beta=\beta_{N,p,k}$, large-field allowance $G(x_i)$ and additive
+are presentations $P_i$, $i\le k$ in that window, with the bounds
+$(B_i,\vartheta(x_i))$, common actual inverse coupling
+$\beta=\beta_{N,p,k}$, large-field bound $G(x_i)$ and additive
 value cost at most
 \[
  q_{k-i}=s^{-1/200}A_s^{4(k-i)},\qquad
@@ -234,16 +234,16 @@ Their exact densities satisfy
  \label{ch11:restart-density}
 \end{equation}
 Here the block operator has the original geometric branches, evaluated
-at the common coupling. The same local factors, normalization and
+at the common inverse coupling. The same local factors, normalization and
 all deletion-of-support identities supply both weighted marked-step
 uses. The constants are uniform in cutoff, period and the compatible
 local fields, for the fixed requests.
 \end{proposition}
 \begin{proof}
 Start with Proposition~\ref{ch11:restart-endpoint}.
-The clock band gives $x_i/2\le\beta\le2x_i$ on every step.
-Only the actual coupling is frozen; the clocks, original path pairs,
-metric floors, predictor derivatives and forest charts keep their
+The reference-inverse-coupling band gives $x_i/2\le\beta\le2x_i$ on every step.
+Only the actual inverse coupling is frozen; the reference inverse couplings, original path pairs,
+metric floors, gauge-covariant block average derivatives and forest charts keep their
 original adjacent values. The recording-scale inequalities above
 verify the radii and threshold comparisons in the local integral.
 The fine path and clip in that integral are exactly the ones in the
@@ -264,27 +264,27 @@ $y=r(x_i)$, gives an unselected local exponent of site size
 $t_y$ with $2t_y\le y^{-1/48}$ after enlargement of its threshold.
 Indeed the corresponding exterior row, determinant and Haar
 bounds are $y^{-1/4+o(1)}$, including radius polynomials and the
-actual coupling factors just discussed; the linear residual is
+actual inverse coupling factors just discussed; the linear residual is
 bounded by $y^{-4}y^2$ before these subpower losses. The two
 determinant-word series and inverse correction are exponentially
 small in $b(y)$, including the $y^4$ factor for two Gaussian
-coordinates and any fixed inverse powers of the actual coupling. The inherited path
+coordinates and any fixed inverse powers of the actual inverse coupling. The inherited path
 terms have costs $O(\Gamma\vartheta^2)$ and
 $O(\beta(\vartheta^3+\vartheta^4))$, with true-length reserves.
-The inherited bounds before retiming can be weakened to
-$y^{-1/12}$, with fixed finite powers of the actual coupling;
+The inherited bounds before changing the reference parameter can be weakened to
+$y^{-1/12}$, with fixed finite powers of the actual inverse coupling;
 choose the preceding $\eta$ so their loss is less than $1/48$.
 Thus all these are negative powers with a strict margin beyond
 $1/24$. One may weaken their sum successively to $y^{-1/24}$
 and then $y^{-1/48}$
 to include exponentiation, support conversion and fixed constants.
 The neutral additive part is zero. The local exponents are bounded
-extensions on the same chart masks; outside them the failed masks
+extensions on the same chart event indicators; outside them the failed cutoff conditions
 are retained as tail-event factors, not evaluated as small exponents.
 
 Selected components have, after the extracted Gaussian and local
-normalizations have been paid, bound
-$\exp[-K h(x_{i+1})^2 r]$ for $r$ selected tests, by the actual
+normalization factors have been bounded, bound
+$\exp[-K h(x_{i+1})^2 r]$ for $r$ selected cutoff conditions, by the actual
 component energy in Chapter~\ref{ch06:large-fields}. Choose
 $a_*>0$ also so small that $4a_*\le K/2$.
 For both marked-step uses at once take
@@ -296,24 +296,24 @@ where $q$ is the fixed requested finite power.
 The ratio $h(x_i)^2/h(x_{i+1})^2$ tends to one uniformly in the
 window: its logarithm is $O(\sqrt{\log\log s}/\log s)$.
 Thus $\log m\le4a_*h(x_{i+1})^2$ eventually, retaining at least
-half the component energy. Charge $m$ only to components with an
+half the component energy. Apply the factor $m$ only to components with an
 actual selected prescribed set of large-field sites, and to a selected component within each
 such component. The original prescribed set of large-field sites coverage ensures that an
 incoming large-field factor cannot occur without such a component.
 Factors $l$, finite decorations and local counting costs have
-logarithms $O((\log\log s)^2+\log B_i)$ per selected test and fit
+logarithms $O((\log\log s)^2+\log B_i)$ per selected cutoff condition and fit
 inside the remaining margin.
 
 The simultaneous tail estimate of Chapter~\ref{ch06:large-fields}
-uses these very chart coordinates and masks under the same Gaussian
-law, including any bounded genuine multipliers. It therefore pays
-all compatible failed-mask factors jointly. Its cutoff exponent
+uses these very chart coordinates and event indicators under the same Gaussian
+law, including any bounded genuine multipliers. It therefore bounds
+all compatible factors from failed cutoff conditions jointly. Its cutoff exponent
 and the retained selected-component exponent dominate every multiple
 of $\log s$. The unselected components after inflation cost at most
 $s^{-1/48+o(1)}$. The projected old large-field site sum is bounded
 by ${\cal W}(B_i)L_i^4T_eG(x_{i+1})$, also smaller than every inverse
-power of $s$. It need not pay $m$ a second time: the selected
-component already paid that factor.
+power of $s$. It need not include $m$ a second time: the selected
+component estimate already includes that factor.
 
 The genuine additive multipliers have uninflated site bound
 $C(42B_i+1)^4q_n$. Every fixed product of radius factors, support
@@ -331,22 +331,22 @@ $\omega_n=q_nA_s$. The other components fit
 $\delta_n-\omega_n$, where $\delta_n=q_nA_s^3$, since
 $s^{-1/48+o(1)}=o(q_n)$. This proves the inflated product bound and
 its site summability on the genuine, not a substituted, density.
-All finite stage factors in this paragraph are paid simultaneously
-by its entry delay; no uniform supremum over infinitely many stages
+All finite stage factors in this paragraph are absorbed simultaneously
+by its choice of a sufficiently large starting scale; no uniform supremum over infinitely many stages
 is used.
 
 It remains to reconstruct the coarse presentation. The regular
 connected logarithm has anchored cost at most $16\delta_n$.
 Keep the original coarse path action $A_i$. Its difference from
 the base action extracted in the Gaussian integral consists of the
-masked cubic, quartic and quadratic-loop terms, with cost at most
+cubic, quartic and quadratic-loop terms restricted by their event indicators, with cost at most
 \[
  \beta e^{7e}C_i\vartheta(x_i)^3+
  \beta e^{9e}C_i\vartheta(x_i)^4+
  e^{5e}\Gamma_i\vartheta(x_i)^2\le s^{-1/200}.
 \]
 The cover bound for a degree-$j$ path atom is
-$1+2j+\operatorname{length}/B_i$; the path rate pays the last term.
+$1+2j+\operatorname{length}/B_i$; the path decay absorbs the last term.
 Add this correction to the regular logarithm. Its total value cost
 is at most $s^{-1/200}+16\delta_n\le q_{n+1}$.
 The sign is fixed by
@@ -354,7 +354,7 @@ $e^{-\beta B_i^{\rm ref}}e^{-\ell_i}
 =e^{-A_i}e^{-(\ell_i+\beta B_i^{\rm ref}-A_i)}$;
 $B_i^{\rm ref}$ here is the base action, not the radius.
 
-At the sliced-integrand level the masks retain the finite tag-count
+At the sliced-integrand level the event indicators retain the finite tag-count
 factor; it cancels the denominator of the normalized tag average
 when the slices are summed. Signed orientations retain their original
 probability weights. Neither averaging introduces a second determinant
@@ -374,7 +374,7 @@ the regular family. Averaging the regular pieces over the finite
 signed motion group retains their anchored bound and invariant sum.
 The exact factorization and reassembly thus give
 $D_i=\mathcal B_{i,\beta}D_{i+1}$ on every coarse configuration,
-including configurations with failed tests. There is no division
+including configurations with failed cutoff conditions. There is no division
 by a large-field activity, which can vanish.
 
 At each step choose this expansion before specifying the marked

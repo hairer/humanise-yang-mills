@@ -29,8 +29,8 @@ Put $\tau=\sum_{a=1}^4T_{aa}$, $e_{\rm tr}=S^{\xi_*}(\tau)$ and
 \]
 The real number $e_{\rm tr}$ is the expectation in the selected phase,
 which need not equal the mixed expectation. The unit field is retained
-through the common filtration. Unit deletion continues to the boundary
-correlations, so, on the common invariant word domain,
+through the common filtration. The fact that inserting the identity leaves correlations unchanged extends to
+the boundary correlations, so, on the common invariant word domain,
 \[
  \Phi_\Theta(f)=\Phi_\tau(f)
                   -e_{\rm tr}\left(\int f\right)I,
@@ -65,8 +65,8 @@ $\widehat h_+(P)v_f=\widehat f_+(P)v_h$ by convolution.
 On a compact momentum set choose $\widehat f_+$ nonzero and define
 $d\rho_\Theta=|\widehat f_+|^{-2}d\mu_{v_f}$ there. The convolution
 identity makes the definitions agree on overlaps. Polarization gives
-\eqref{ch17:spectral-pairing} first on product tests and then on joint
-Schwartz tests. Tempered continuity bounds compact masses polynomially.
+\eqref{ch17:spectral-pairing} first on product test functions and then on joint
+Schwartz test functions. Tempered continuity bounds compact masses polynomially.
 The positive cone permits exponential damping, and uniqueness of the
 holomorphic boundary value identifies its Laplace transform with the
 Euclidean function. The scalar transformation law of $\Theta$ makes
@@ -95,7 +95,7 @@ positive null sequence has a subsequence with these data such that
 and all fixed separated correlations and their fixed derivatives,
 with convergent moving free labels, converge to their Maxwell values.
 For pairs without derivatives this comparison is uniform over the
-phases, including at nearest lattice-rounded points. Shell tests are
+phases, including at nearest lattice-rounded points. Shell integrals are
 included. It must use the same field quotient and lattice family as
 before. A comparison along one freely chosen scale sequence is weaker.
 
@@ -116,7 +116,7 @@ exponents with
 \end{gather*}
 The common size of the $\alpha_j$ can be increased after their
 differences and $c$ have been fixed. The marked comparison required
-at every sufficiently late level has, uniformly in $u$, singleton
+at every sufficiently late level has, uniformly in $u$, single-insertion
 seminorm bounds $CM_n^{(\alpha_0-\alpha_j)D}$ and grid errors tending
 to zero. With strip width $M_n^c$ and scaled mesh at most
 $M_n^{-\alpha_0}$, the two integration errors are bounded by
@@ -126,11 +126,11 @@ $M_n^{-\alpha_0}$, the two integration errors are bounded by
 \]
 They tend to zero. Thus the strip removal and derivative-transport
 argument of Section~\ref{ch14:comparison} applies to these windows.
-All-copy bounds give phase uniformity by
+Bounds uniform in the number of copies give phase uniformity by
 \eqref{ch15:moment-norm}. The next subsection verifies these window estimates, including their
 uniformity across changes of stage, from marked propagation.
 
-The delayed schedule can require $L_n\le\log\widehat\beta_n$.
+The coupling thresholds can be chosen to ensure $L_n\le\log\widehat\beta_n$.
 Since $M_n$ increases and $L_n\le M_{n+1}$ eventually,
 $r(n,\alpha_0)\le r(n+1,\alpha_0+1)$. The intervals therefore
 cover every sufficiently small radius. The first crossing places a
@@ -198,7 +198,7 @@ Initially the trace and antisymmetric part of $J$ vanish. During
 transfer they must remain exact forward differences; smallness of their
 values alone would not suffice for the trace rate below.
 
-We fix the coefficient tests in that calculation. For a local scalar
+We fix the coefficient functionals in that calculation. For a local scalar
 $F$, its Hessian Fourier kernel is
 \[
  \widehat F_{c\alpha,c\alpha}(p,q)=
@@ -217,7 +217,7 @@ colour $\alpha$. For a vector $F_b$ and a scalar action $F$ put
 \end{align*}
 Brackets denote Taylor coefficients including reciprocal factorials.
 The volume normalization in $\mathsf q$ is for the translation-invariant
-action; $\mathsf l$ tests the anchored vector response. Define
+action; $\mathsf l$ evaluates the anchored vector response. Define
 $\mathfrak h(Y)=\mathsf h(\operatorname{div}_{\rm Haar}Y)$.
 The second term in $\mathsf h$ corrects the lattice derivative.
 The regulated current calculation uses
@@ -228,7 +228,7 @@ The regulated current calculation uses
  \mathcal D(\mu)=-\mu R'(\mu).
 \]
 Here $H$ is the left Hessian of $\mathsf S$, $d$ its infinitesimal
-gauge insertion, and $\mathsf q$ is the coefficient test just defined. Its normalization
+gauge insertion, and $\mathsf q$ is the coefficient functional just defined. Its normalization
 counts twelve ordered transverse planes. The actual Ward calculation requires its Haar
 coefficient $\mathfrak h(Y)$ to obey
 \begin{equation}
@@ -335,7 +335,7 @@ $\beta_i\operatorname{tr}(r_i^4U_{i,4}^{-1}Z_i)
 \to-\kappa_G\mathcal O$.
 
 The conserved line gives $Z_i=\nu_iT$. Choose one free translation
-flux test with nonzero value. Its flux on the rescaled $Z_i$ tends
+flux pairing with nonzero value. Its flux on the rescaled $Z_i$ tends
 to that value. The Ward identity for $T$ and derivative comparison
 make its corresponding flux tend to the same nonzero value.
 Their ratio is $\nu_i$, so $\nu_i\to1$. Finally centering subtracts
@@ -381,9 +381,8 @@ sequence has a subsequence with limit $\mathcal A_G$, which proves
 \section{What the trace law excludes}
 \label{ch17:exclusion}
 
-Specify the comparison class before using this asymptotic. A finite
-mass-shell Wick profile is a finite linear combination of finite
-products of kernels
+Specify the comparison class before using this asymptotic. Consider finite
+linear combinations of finite products of the mass-shell Laplace kernels
 \[
  K_{m,k,h}(r)=\int_{\RR^3}
  \frac{\omega_m(\boldsymbol p)^k h(\boldsymbol p)}{2\omega_m(\boldsymbol p)}

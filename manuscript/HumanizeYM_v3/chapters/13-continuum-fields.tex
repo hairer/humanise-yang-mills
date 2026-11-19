@@ -10,8 +10,7 @@ the same responses represent the same field.
 
 We use the full fixed-volume limit of
 Theorem~\ref{ch12:uv-theorem}, the volume-uniform finite-difference
-bounds of Theorem~\ref{ch11:all-period-differences}, and the actual
-equation and detector comparisons of Chapter~\ref{ch11:insertions}.
+bounds of Theorem~\ref{ch11:all-period-differences}, and the equation comparisons and the comparisons using separating families in Chapter~\ref{ch11:insertions}.
 Compactness gives the volume extraction; the separate equation
 inclusion and rank bounds identify its local fields.
 
@@ -40,8 +39,8 @@ The diagonal family is countable: arities, degree lists, basis-label
 lists, derivative lists, and compact exhaustions of the configuration
 spaces. Multilinearity extends its conclusions to all labels.
 Integration by parts identifies the extracted derivative limits with
-the derivatives of $S_n$. No diagonalization over all smooth tests is
-needed. For each fixed separated test $f$ the order of limits is
+the derivatives of $S_n$. No diagonalization over all smooth test functions is
+needed. For each fixed separated test function $f$ the order of limits is
 \begin{equation}
  \lim_{k\to\infty}\lim_{N\to\infty}
  a_N^{4n}\sum_y f(a_Ny)M_{N,P(k)}(v;y)
@@ -103,7 +102,7 @@ still finer scale for the spectators' margins. Equation
  \label{ch13:vanishing-error}
 \end{equation}
 for configurations separated by $\delta>0$. The weighted number of
-lattice points in a fixed compact test support is bounded. The same
+lattice points in the fixed compact support of a test function is bounded. The same
 error therefore vanishes after separated smearing. This conclusion
 uses the stated order of choices for the error norm; pointwise
 smallness at one configuration would not suffice.
@@ -113,7 +112,7 @@ smallness at one configuration would not suffice.
 
 A label includes its degree space: the same formal polynomial in
 $V_d$ and $V_e$ can have different cutoff normalizations. For
-$c\in V_d$, a fixed spectator list $v$, and a separated smooth test
+$c\in V_d$, a fixed spectator list $v$, and a separated smooth test function
 $f$, define the one-slot response
 \[
  L_{v,f}(c)=\int f(x_0,x)S_{n+1}(c(x_0),v(x))\,dx_0\,dx.
@@ -148,11 +147,11 @@ quotient in Chapter~\ref{ch03:maxwell}. The construction gives:
 separated responses in the ordered limits;
 \item there are finite matrices of limiting separated responses,
 evaluated on comparison labels, that approach an invertible
-$r_d\times r_d$ free detector matrix.
+$r_d\times r_d$ free matrix of correlation pairings.
 \end{enumerate}
 The first statement is exact rank equality, since every map defining
 the finite equation space is invertible. For the second,
-Lemma~\ref{ch11:uniform-sweep} makes its replicated root norms tend
+Lemma~\ref{ch11:uniform-sweep} makes its chessboard seminorms tend
 to zero; bounded rows have uniformly subpower inverse terminal
 coordinates, and \eqref{ch13:vanishing-error} supplies every spectator
 response. For the third, Proposition~\ref{ch11:finite-detector-input}
@@ -161,7 +160,7 @@ as their comparison depth increases. Include their finitely many
 bounded label columns at each of the countably many comparison depths
 in the same coefficient refinement. At each fixed depth, their
 ordered limits preserve the matrix estimate by multilinearity and
-the uniform correlation bounds. An injective rectangular detector
+the uniform correlation bounds. An injective rectangular matrix of correlation pairings
 has an invertible square minor; retain those rows.
 
 \begin{proposition}[Identification by two rank bounds]
@@ -178,7 +177,7 @@ one, each is injective on the other's range. Thus
 $\dim F_d\le\operatorname{rank}\Pi_d\le r_d$.
 Each comparison matrix factors through $F_d$, since its rows are
 separated responses. Matrices sufficiently close to the invertible
-free detector matrix have rank $r_d$. Hence $\dim F_d\ge r_d$.
+free matrix of correlation pairings have rank $r_d$. Hence $\dim F_d\ge r_d$.
 Equality of dimensions and the kernel inclusion prove the result.
 \end{proof}
 
@@ -187,7 +186,7 @@ Equality of dimensions and the kernel inclusion prove the result.
 Approximate inclusion and derivative labels need not stay bounded.
 The following finite-dimensional observation explains the normalized
 null estimate required to replace them by fixed vectors. It also
-avoids choosing a separate representative for every test.
+avoids choosing a separate representative for every test function.
 
 Let $V$ be finite dimensional, $\Pi_u\to\Pi$ idempotents, and
 $L_{i,u}\to L_i$ linear functionals, along a proper filter of indices.
@@ -231,13 +230,12 @@ cutoff observable by $a_N^e$; its local representative is
 $a_N^{e-d}$ times the degree-$d$ section, so its derivative and
 value bounds remain subpower. For a difference, the extra factor
 $a_N$ cancels the inverse step, and the fixed translated-stencil
-cost is bounded by the entry requirements used in
+cost is bounded by the coupling-threshold requirements used in
 Theorem~\ref{ch11:all-period-differences}.
-Trial descent yields admissible coefficients and vanishing replicated
-root errors, uniformly in period. The preceding paragraph gives
+Trial descent yields admissible coefficients and vanishing chessboard seminorm errors, uniformly in period. The preceding paragraph gives
 their normalized null estimates.
 All representatives and comparison errors are chosen before
-the spectators and tests.
+the spectators and test functions.
 Applying the preceding
 finite-dimensional observation gives fixed linear maps on labels,
 $\widehat\iota_{d,e}$ and $\widehat\partial_{d,\mu}$, such that
@@ -286,11 +284,11 @@ positive times, lattice bond reflection positivity passes to
 \[
  \sum_{i,j}\overline{c_i}c_j S(\theta w_i\,w_j)\ge0.
 \]
-It also passes for joint smooth tests supported on positive-time
+It also passes for joint smooth test functions supported on positive-time
 separated configurations. Indeed their lattice supports stay away
 from both reflection planes on the ordered tail. The lattice plane
 $x^4=a_N/2$ tends to zero, and the uniform separated bound controls
-the moving tests. Taking the two limits preserves positivity of each
+the moving test functions. Taking the two limits preserves positivity of each
 finite matrix. Pointwise positivity follows by concentrating smooth
 bumps. This uses the finite lattice result of
 Section~\ref{ch01:reflection}; it asserts no positivity for unspecified
@@ -301,7 +299,7 @@ $\|O\|_k\le C a_k^{-(d+1)}$, uniform on a bounded set of labels
 of degrees at most $d$ and every sufficiently fine fixed level $k$.
 It follows by choosing $\epsilon=1$ in
 Proposition~\ref{ch13:sharp-centered}, whose proof below uses only
-the replicated bound of Chapter~\ref{ch11:insertions} and the
+the bound for reflected tilings of Chapter~\ref{ch11:insertions} and the
 selected schedule. Slow growth of the block
 ratios gives a constant $c>0$ with
 \begin{equation}
@@ -390,7 +388,7 @@ This estimate is the input for bounded slab insertions in the
 reflection Hilbert space. Its derivation precedes that operator
 construction and does not use orthogonal covariance or a phase
 decomposition. The equation comparison, admissible trial encoding,
-finite detector and centered estimates all refer to the same selected
+estimates for finite separating families and centered estimates all refer to the same selected
 family. Full orthogonal covariance and products at coincident points
 remain separate constructions.
 

@@ -16,16 +16,16 @@ algebra, its trace inner product as in Section~\ref{ch01:gauge}, and a
 positive soft-block penalty $b$. Fix a sufficiently large coarse inverse
 coupling $\bar\beta$. The common schedule of
 Chapter~\ref{ch10:trajectory} selects all block lengths, derivative
-orders, support weights, entry thresholds and admissible physical
+orders, support weights, coupling thresholds and admissible physical
 periods $R_p$. At cutoff $N$ and period index $p$, shooting from the
 Wilson measure gives its bare coupling $\beta_{N,p,N}$ with prescribed
 coarse endpoint $\bar\beta$.
 
 The same finite histories must define the coefficient normalizations
 of every local insertion. One cannot separately choose convenient
-histories for convergence, for free detectors and for the trace law.
+histories for convergence, for free separating families and for the trace law.
 The microscopic sections are fixed before $N,p$, and their comparison
-maps act simultaneously on all labels and spectator tests. Any additional
+maps act simultaneously on all labels and spectator correlation pairings. Any additional
 finite stage requirements, such as the equation calibration floor,
 belong to the selection of this one schedule.
 
@@ -48,7 +48,7 @@ convergence. Chapter~\ref{ch11:insertions} supplies the marked comparisons,
 including restarted histories and arbitrary fixed numbers of insertions.
 Chapter~\ref{ch13:continuum} constructs the bounded approximations and
 local product estimates. The free comparison and annular estimates in
-Chapter~\ref{ch14:ward}, and the repeated detector estimate in
+Chapter~\ref{ch14:ward}, and the repeated estimate for a separating family in
 Chapter~\ref{ch15:phases}, use these same objects. Thus they are not
 additional assumptions in the following assembly statement.
 
@@ -95,14 +95,14 @@ Coordinate reflection positivity, the free comparison and the annular
 estimates give the conserved tensor, its local charges, Euclidean
 rotations and Ward normalization in Chapter~\ref{ch14:ward}.
 Chapter~\ref{ch15:phases} then compresses whole words to the mixed
-ground space. The real approximation and detector moments prove
+ground space. The real approximation and moments for separating families prove
 symmetries and the equality of field spaces in every character, beyond
 what abstract commutative algebra alone gives.
 
 The slab bounds supply joint boundary distributions in
 Chapter~\ref{ch16:reconstruction}. Covariance gives the spectral cone,
 analytic continuation gives locality, and word reconstruction gives
-the relativistic fields. The onto reflection comparison and the
+the relativistic fields. The unitary equivalence of the reconstructed and reflection-positive Hilbert spaces and the
 phase-uniform low-energy estimate remove exceptional vacua. The same
 chapter proves weak irreducibility and continues the stress charge law.
 
@@ -118,8 +118,8 @@ In the retained phase $\xi_*$,
  \lim_{r\downarrow0}r^8\log^2(1/r)G_\Theta(r)
                     =\frac{3\dim_\RR\gLie}{\pi^4}.
 \]
-Consequently the centered trace cannot agree near zero with any finite
-mass-shell Wick profile in Section~\ref{ch17:exclusion}.
+Consequently the centered trace cannot agree near zero with any finite linear combination of products of the
+mass-shell Laplace kernels specified in Section~\ref{ch17:exclusion}.
 \end{corollary}
 \begin{proof}
 Apply the rate-sensitive tensor cancellation and prescribed-radius
@@ -149,7 +149,7 @@ function. The OPE is an expansion to each fixed finite degree; no
 infinite series convergence has been asserted. The contact extension
 has a specified subtraction convention and may have larger local order
 than an optimized prescription. Positivity at contacts, contact Ward
-identities, compatibility with unit deletion and uniqueness of contact
+identities, the fact that inserting the identity leaves correlations unchanged, and uniqueness of contact
 terms require additional normalization conditions.
 
 The trace argument uses more than convergence to the free tensor. Its

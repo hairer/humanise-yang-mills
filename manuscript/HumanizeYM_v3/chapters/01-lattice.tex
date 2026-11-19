@@ -86,7 +86,7 @@ with $\mu<\nu$, has holonomy
                  U(y+e_\nu,\mu)^{-1}U(y,\nu)^{-1}.
  \label{ch01:plaquette}
 \end{equation}
-Define the plaquette energy and the normalized chord by
+Define the plaquette energy and the normalized Hilbert--Schmidt distance from the identity by
 \begin{equation}
  w(u)=1-\frac1{n_G}\operatorname{Re}\tr u,
  \qquad
@@ -344,18 +344,18 @@ $\mu_{N,p}=\mu_{R_pD_N,\beta_{N,p}}$, the Wilson probability from
 The factor $a_N^{4n}$ is the physical volume element for $n$ insertions.
 No limit is built into these definitions.
 
-\begin{definition}[Separated tests]
+\begin{definition}[Separated test functions]
 \label{ch01:separated-test}
 Set
 \[
  \Conf_n=\{(x_1,\ldots,x_n)\in(\RR^4)^n:x_i\ne x_j\text{ for }i\ne j\}.
 \]
-A separated test is an element of $C_c^\infty(\Conf_n)$, extended by zero
+A separated test function is an element of $C_c^\infty(\Conf_n)$, extended by zero
 to $(\RR^4)^n$. It is admissible at volume $p$ if its support is contained
 in $((-R_p/2,R_p/2)^4)^n$.
 \end{definition}
-Such tests can depend jointly on all positions; they need not factor into
-one-point tests. Compactness of their support gives a positive distance
+Such test functions can depend jointly on all positions; they need not factor into
+one-point test functions. Compactness of their support gives a positive distance
 from the collision diagonals. We write
 $\operatorname{sep}_\infty(x)=\min_{i\ne j}|x_i-x_j|_\infty$, with value
 $+\infty$ for $n\le1$.
@@ -364,7 +364,7 @@ $+\infty$ for $n\le1$.
 \label{ch01:ordered-limit}
 A lattice family converges to kernels $S_n(v;x)$ along an increasing
 volume-index map $P$ if, for every $n$, every list $v$ and every separated
-test $f$, the following hold. At each admissible fixed volume $p$ there is
+test function $f$, the following hold. At each admissible fixed volume $p$ there is
 a limit
 \begin{equation}
  \lim_{N\to\infty}C^{\mathrm{lat}}_{N,p}(v;f)=C_p^{\mathrm{UV}}(v;f),
@@ -376,7 +376,7 @@ and the retained volumes satisfy
        =\int_{\Conf_n} f(x)S_n(v;x)\,dx.
  \label{ch01:volume-limit}
 \end{equation}
-The test is eventually admissible along $P$.
+The test function is eventually admissible along $P$.
 \end{definition}
 The first limit uses every cutoff $N$ in the chosen spacing sequence. The
 second may require a subsequence of volumes. The desired construction has
@@ -384,7 +384,7 @@ the stronger quantifier order
 \begin{enumerate}[label=\textup{(\roman*)}]
 \item choose one lattice family;
 \item prescribe any increasing sequence of volume indices;
-\item extract one refinement that serves every label list and separated test.
+\item extract one refinement that serves every label list and separated test function.
 \end{enumerate}
 In symbols, for every strictly increasing map $p_{\rm seq}:\NN\to\NN$
 there should be a strictly increasing $q_{\rm seq}$ such that
@@ -462,9 +462,8 @@ local observables. Choosing a different trajectory each time an observable
 is introduced would not construct a single quantum field theory.
 
 Local observables bring an additional finite-dimensional problem.
-The \emph{scaling dimension} of a curvature monomial assigns dimension
-$2$ to each curvature factor and $1$ to each derivative, adding these
-contributions in products. Gauge-invariant polynomials in curvature and
+A monomial with $r$ curvature factors and $k$ derivatives has
+\emph{scaling dimension} $2r+k$. Gauge-invariant polynomials in curvature and
 its derivatives can mix under blocking. A transfer matrix records this mixing at each fixed scaling
 dimension. Bounds for this matrix and for the remainder of each inserted
 density are needed in addition to bounds for the density without

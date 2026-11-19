@@ -14,7 +14,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 - `μ_{N,p}` means the Wilson probability only. Use `δ^{F²}_{N,p}` for the additive unit counterterm of F² (Trish's repair of Scott's μ collision). Phase measure is ν and trace spectral measure is μ_Θ.
 - `S` and `S_n` denote continuum correlations, never a lattice action. Use `E_s^W` for the Wilson energy and `V_ρ` for the effective action.
 - `a_m` is always a spacing. Rename Martin's local quadratic/cubic/quartic coefficient arrays as `A_m^{(2)},A_m^{(3)},A_m^{(4)}`. `A_μ` is a connection component; in Gaussian sections use `K` for the kinetic operator, `Q` for linear block averaging and `C` or `Γ` for covariance, after giving their spaces. A localized approximate covariance is not necessarily the inverse of the original precision.
-- `N_fac` is factor-count operator (Scott mathsf N); N without subscript is a cutoff index. `d` is scaling-dimension cutoff; `d_g` is dimension of the Lie algebra. A tag d is not automatically a scaling dimension.
+- `N_fac` is factor-count operator (Scott mathsf N); N without subscript is a cutoff index. `d` is scaling-dimension cutoff; `d_g` is dimension of the Lie algebra. A filtration index d bounds the scaling dimension and fixes the insertion normalization.
 - Reserve `mathcal H` for Hilbert spaces, `H₄` for signed coordinate permutations and `mathcal D` for the common operator domain. `Ξ` is phase space, ξ a character and ξ_* selected phase. Do not use X for phase space because X is polymer support.
 - Reserve `mathsf Z_{N,p,d}` for terminal coefficient maps and `Z_{s,β}` for partition functions. Reserve `mathscr U_{k,d}` for scaling maps and `U(g)` for relativistic unitaries; `U_e` remains a lattice link variable.
 
@@ -32,7 +32,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 | r_s(y), hat y | Centered representative; physical point a_N r_s(y) | Ch. 1; eq:I12-physical-placement |
 | dist_s(x,y) | Periodic sup distance in lattice units | Ch. 1; Outline I.1.1 |
 | U_e, U_{y;μν}, U_γ | Link variable, plaquette product, ordered path transport | Ch. 1; def:D02 |
-| w(u), χ(u) | `1−Re tr(u)/n_G`, normalized Frobenius distance to 1 | Ch. 1; eq:I12-price-chord; Scott pr/ch renamed |
+| w(u), χ(u) | `1−Re tr(u)/n_G`, normalized Hilbert–Schmidt distance from the identity | Ch. 1; eq:I12-price-chord; Scott pr/ch renamed |
 | E_s^W, Z_{s,β}, μ_{s,β} | Wilson energy, partition function, law | Ch. 1; def:D02 |
 | D_m, a_m, τ_m | Cumulative denominator, D_m⁻¹, log D_m | Ch. 1; eq:I12-levels |
 | L_m, R_p, s_{m,p} | Odd ratio; physical period; R_pD_m sites per side | Ch. 1; eq:I12-levels; Outline I.1.3 |
@@ -58,7 +58,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 | Tay_d | Taylor expansion in jet variables, weight truncated at d | Ch. 2; sec:A-labels |
 | P_d^loc[c] | Polynomial finite-stencil right inverse of Tay_d | Ch. 2; lem:A1; M local-sections.tex |
 | c_{F²}, P^cl | `¼Σ_{μν}<F_{μν},F_{μν}>`; clover representative | Ch. 2; sec:A-example |
-| T=⊔_d V_d, v=(d,c) | Degree-tagged insertion labels | Ch. 2, then transfer chapter; sec:local-fields |
+| T=⊔_d V_d, v=(d,c) | Insertion labels with filtration index d | Ch. 2, then transfer chapter; sec:local-fields |
 | r(d) | Chosen reference RG level of degree-d fields | Transfer chapter; Scott m_ref(d) |
 | mathsf Z_{N,p,d} | Invertible map: fine coefficient → reference-level coefficient | Transfer chapter; def:D08, lem:E2.1a |
 | I_{N,p}(v,y;U) | `a_N^{-d} P_d^loc[t_N^{-N_fac} mathsf Z_{N,p,d}^{-1} c](y;U)` | Transfer chapter; def:D08 |
@@ -80,7 +80,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 | ε_m^reg, ε_m^lf | `hat β_m^{-11/10}`, `exp[-(M_m^cut)^{1/5}]` | eq:I12-scales-b; lf replaces for |
 | mathfrak B_m | `[hat β_m/2,2hat β_m]` coupling band | sec:block-map |
 | β_{N,p,m}, β_{N,p} | Trajectory coupling at m; bare value at N | prop:MT |
-| Y_{e,z}, Q_e^pred, w_z^av | Framed connector; coarse-link predictor; normalized averaging weights | eq:I12-framed-connector, eq:I12-predictor |
+| Y_{e,z}, Q_e^pred, w_z^av | Framed connector; gauge-covariant block average; normalized averaging weights | eq:I12-framed-connector, eq:I12-predictor |
 | α_tag, λ^tag(U,α_tag) | Auxiliary discrete branch choice and probability | eq:I12-tag-mass |
 | q_γ(u) | Haar-normalized density proportional to exp[−γw(u)] | def:D04 |
 | k^{(m)}_β, B^{(m)}_β | Normalized block kernel, exact density integration map m+1→m | def:D04 |
@@ -136,8 +136,8 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 | O_{F²}, d₂ | Curvature-square field; trace comparison coefficient | after prop:TR |
 | W_Wick | Finite sum of finite products of free mass-shell Laplace kernels | def:D17; narrow comparison class |
 | ζ | State index in Ξ disjoint-union {mix} | def:D18 |
-| A,B (bold) | Cluster and spectator lists of degree-tagged fields | def:D18 |
-| `|A|_deg` | Sum of degree tags of clustered fields | def:D18 |
+| A,B (bold) | Cluster and spectator lists of fields with specified filtration indices | def:D18 |
+| `|A|_deg` | Sum of normalization indices of clustered fields | def:D18 |
 | Ch_j, O_{j,λ}, c_{j,λ} | Finite channel index, basis field, OPE coefficient | defs:D31–D33; Part II J |
 | R_D^ζ | Correlation remainder at finite truncation D | def:D18, prop:OP |
 | δ_sp, η, M_geo | Spectator clearance, internal scaled separation, cluster size parameter | def:D18; restate quantifiers |
@@ -147,11 +147,15 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 
 | Source wording | Monograph wording or precise definition |
 |---|---|
-| token, label | degree-tagged polynomial label; distinguish from quotient field |
+| token, label | polynomial label with specified filtration index; distinguish from quotient field |
 | table | family of Schwinger functions / correlation kernels |
 | healthy/unhealthy | small-field / large-field configuration on the stated support |
 | flag / inventory | large-field site / prescribed set of large-field sites |
 | forced activity | large-field polymer activity constrained to cover specified sites |
+| test | Test function for smearing a distribution. For a cutoff inequality, finite parameter evaluation, or correlation pairing, specify the condition or pairing. |
+| higher modes (in the source variables) | Terms involving two or more insertions, indexed by the source monomial. |
+| replicated root norm | Chessboard seminorm for a reflected tiling. State the product moment directly for other arrangements of copies. |
+| primary source | Normalized local insertion, with its local polynomial coefficient when expressed in the chosen basis. |
 | receipt, payment, price, budget | explicit estimate, bound, allowed norm bound, or constant; print the inequality |
 | readout | coefficient-extraction map (or terminal coefficient map, if that is the actual map) |
 | mark / marked density | observable insertion / density with specified insertions |
@@ -169,7 +173,7 @@ Do not translate a source metaphor by guessing: its domain, codomain, quantifier
 1. Same G representation and trace normalization throughout; every β or Casimir formula matches them.
 2. At level m the integer period is R_pD_m and physical spacing a_m; blocking decreases m.
 3. Unit label in V_d is 1, but normalized degree-d unit coefficient is a_{r(d)}^d1.
-4. Distinguish scaling dimension, factor count and degree tag whenever transferring a label.
+4. Distinguish scaling dimension, factor count and filtration index whenever transferring a label.
 5. Record all constant dependencies: group, b, fixed degree/arity, derivative order, separation, but never silently N or p in a uniform estimate.
 6. Do not turn pointwise-in-degree estimates into uniform-in-degree OPE convergence.
 7. A common family and common volume refinement must be maintained through later constructions.

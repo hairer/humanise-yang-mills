@@ -282,7 +282,7 @@ difference.
 
 Perturbative matching for the Wilson lattice action is treated in
 L\"uscher--Weisz~\cite{LuscherWeisz1995}; our comparison additionally
-controls the selected non-Wilson path action and its block predictor.
+controls the selected non-Wilson path action and its block average.
 The continuum coefficient is the classical calculation of
 Gross--Wilczek and Politzer~\cite{GrossWilczek1973,Politzer1973}.
 We use the background-field formulation~\cite{Abbott1982}; the following
@@ -472,7 +472,7 @@ coefficient. The relevant mechanism is finite rank together with a
 trace-class regulator.
 
 Here is the structure behind the trace-norm requirement. Writing $H$
-for the predictor derivative, $B$ for its penalty Hessian, $Z$ for the
+for the block average derivative, $B$ for its penalty Hessian, $Z$ for the
 coarse-frame projection, and $K=m_\mu X$, cancellation of the fine
 kinetic Hessians leaves
 \begin{align}\label{ch07:theta}
@@ -497,10 +497,10 @@ $O(\mu^2)$. This explains the ninth power and avoids an erroneous
 factor $L^4$. To apply this trace estimate, we establish the actual weight
 conversions, stationary insertions and scaled inverse bounds below.
 
-\subsection{The stationary branch and the predictor contact term}
+\subsection{The stationary branch and the block average contact term}
 \label{ch07:contact}
 
-We verify the contact assertion for the predictor actually used in the
+We verify the contact assertion for the block average actually used in the
 block integral. Let $\zeta(x)$ be its stationary representative in centered
 coordinates, with $\zeta(0)=0$ and tangent $(Wx,r_x)$, where $r_x$ is its
 coarse scalar component after recentering.
@@ -518,9 +518,9 @@ specific reason. Matrix Hessians themselves need not have vanishing first
 derivative; the statement is about their invariant scalar determinants.
 
 Use rooted coordinates for the following exact calculation. Let $w_x(v)$
-be the logarithmic change in the predictor under an internal left increment
+be the logarithmic change in the block average under an internal left increment
 $v$, with $w_x(0)=0$. Let $r(x)$ be the derivative of the block penalty
-with respect to that predictor increment, and set
+with respect to that block average increment, and set
 \[
  S_x(a)_{ij}=\langle a,D_v^2w_x(0)[e_i,e_j]\rangle,
  \qquad Z(x)=S_x(r(x)),\qquad A(x)=M_{\rm core}(x).
@@ -529,7 +529,7 @@ The Hessian chain rule gives $M_{\rm act}=A+Z$, with $r(0)=Z(0)=0$.
 The rooted-to-centered internal change is triangular with determinant one,
 so it does not change the determinant. Define $Y(x)$ by
 $\langle a,Y(x)\rangle=\tr(A(x)^{-1}S_x(a))$.
-The predictor is covariant, and the internal matrices transform by the
+The block average is covariant, and the internal matrices transform by the
 same congruence. Cyclicity of trace therefore makes $Y$ a covariant
 coarse vector. Constant colour rotations imply $Y(0)=0$.
 
@@ -551,9 +551,9 @@ tree gauge. Gauge invariance preserves stationarity; uniqueness of the
 local stationary solution identifies the restored configuration with the
 selected branch on this curve. Covariance and $Y(0)=0$ show that $Y$
 vanishes there. Differentiation proves the identity. This uses the actual
-predictor, rather than an independently chosen linear average.
+block average, rather than an independently chosen linear average.
 
-At fixed $L$, the finite-stencil predictor and the analytic inverse of
+At fixed $L$, the finite-stencil block average and the analytic inverse of
 $A(0)$ give common holomorphic kernels for every term in
 \eqref{ch07:contact-exact}. Normalized finite-torus traces are momentum
 mesh averages. Their limit is the integral of these same kernels;
@@ -573,7 +573,7 @@ need not be uniform in $L$, because this is an exact vanishing statement.
 The actual stationary tangent is $W_a$ from \eqref{ch05:corrected-transport}; its forest representative is $W_F$ from \eqref{ch05:stationary-tangent}. As above, $\beta$ is the actual inverse coupling, and $b$ is the soft constraint coefficient in the blocking kernel.
 
 We establish the operator estimates for the selected path and
-predictor. The inputs are their positive normalized metric, fixed
+block average. The inputs are their positive normalized metric, fixed
 exponential path bounds, and the stationary identification and smooth
 representative of Section~\ref{ch05:transports}; all refer to the same
 adjacent pair. The coarse scalar part of the smooth representative
@@ -595,7 +595,7 @@ Thus a unit internal direction has normalized residue $L^2$ norm
 $O(\mu)$ and its first fine difference has normalized $L^2$ norm
 $O(\mu^2)$. External smooth bridge legs have the same powers in
 supremum norm, by \eqref{ch05:actual-bridge}. Extending to the fixed
-padded predictor patch only changes constants: its number of residue
+padded block average patch only changes constants: its number of residue
 blocks is fixed at the given smoothing order, and its Bloch phases
 are uniformly bounded.
 
@@ -690,7 +690,7 @@ form needs a quotient estimate. In centered coordinates it is
                          +b|M u-d_{0,c}r|^2.
 \]
 Here $M$ is the straight averaged connector. Indeed the rooted
-linear predictor is $Q=M+d_{0,c}R$ by \eqref{ch05:actual-Q}; setting
+linear block average is $Q=M+d_{0,c}R$ by \eqref{ch05:actual-Q}; setting
 $r=r_{\rm root}-Ru$ converts $Qu-d_{0,c}r_{\rm root}$ to the
 displayed expression. Under a fine gauge variation, the new scalar
 coordinate changes by the smoothed scalar mean, since
@@ -743,10 +743,10 @@ The kinetic response cancels identically, including its two derivatives,
 in \eqref{ch07:theta}. The finite-rank terms retain their fixed-dimensional
 coarse intermediate spaces. For the regulator, the trace-class cube
 argument preceding this subsection applies. In the terms containing
-$m_\mu X$, its factor $\mu^2$ pays the $L^2$ frame derivative.
-In the separate term $P_f^*M_\mu P_f$, it pays two weighted-to-Euclidean
+$m_\mu X$, its factor $\mu^2$ compensates for the $L^2$ frame derivative.
+In the separate term $P_f^*M_\mu P_f$, it compensates for two weighted-to-Euclidean
 conversions, each of size $O(\mu^{-1})$. These costs occur in
-different terms; they are not charged simultaneously to one factor. Positive external derivatives of $d_U$ have a fine-link factor
+different terms; the same factor is not used to compensate for both. Positive external derivatives of $d_U$ have a fine-link factor
 $O(\mu)$; the single weighted conversion costs at most $O(\mu^{-1})$.
 Their first two insertion norms are therefore bounded in both
 placements needed for $d_U^*d_U$ and $d_Ud_U^*$. The remaining
@@ -755,20 +755,20 @@ $\Theta$ and its two insertions have uniform trace norm. This proves all operato
 Proposition~\ref{ch07:comparison-prop} for this same action and frame.
 
 Finally the common Fourier representations follow from the infinite
-path coefficients and finite predictor stencils. All derivatives are
+path coefficients and finite block average stencils. All derivatives are
 taken before restricting to a torus grid. Products and inverse derivatives
 preserve this identification, with intermediate momenta shifted by the
 inserted external momentum. The Fourier mesh estimate at the end of
 Proposition~\ref{ch07:integrand-input} gives the finite-volume exponential
 error. The preceding contact proof identifies the actual stationary
 thermal coefficient. Hence the comparison concerns the same density,
-predictor and stationary branch throughout.
+block average and stationary branch throughout.
 
 
 \begin{proposition}[Common comparison estimates]\label{ch07:comparison-input}
 On a fixed positive strip of coarse momenta, the stationary background
 insertions and all intermediate shifted momenta obey the following
-bounds, uniformly in $L$ and in the period. After removing the predictor
+bounds, uniformly in $L$ and in the period. After removing the block average
 contact term, the blocked completed matrix $C_0$ and
 $\widetilde A_\mu=\operatorname{diag}(A_\mu,I)$ have bounded inverses
 and bounded first and second normalized background insertions in
@@ -776,15 +776,15 @@ compatible weighted Hilbert norms. Their difference $\Theta$ and its
 first two insertions have bounded trace norm in these same norms.
 The common quadratic symbols represent the finite-torus coefficients
 with an error tending exponentially to zero with the coarse period.
-The stationary tangent represents the actual predictor and obeys the
+The stationary tangent represents the actual block average and obeys the
 exact coarse--fine matching identities.
 \end{proposition}
 
 The preceding weighted inverse, insertion and trace estimates prove this
-proposition for the actual normalized path and predictor.
+proposition for the actual normalized path and block average.
 
 \begin{proposition}[Block comparison]\label{ch07:comparison-prop}
-For the same normalized path and predictor, the curvature-square
+For the same normalized path and block average, the curvature-square
 coefficients of the blocked response and the auxiliary fine determinant
 satisfy $|\alpha_{N,m}-\alpha(\Pi_\mu)|\le C$, uniformly in $L,N,p$.
 \end{proposition}
@@ -883,7 +883,7 @@ centered representative. In particular
  \quad\text{for every internal }z.
 \end{equation}
 This is the differentiated stationarity equation, with the actual
-predictor identification of Chapter~\ref{ch05:gaussian}. Stationarity
+block average identification of Chapter~\ref{ch05:gaussian}. Stationarity
 in all joint internal directions follows from stationarity on the forest
 slice and gauge invariance: the forest slice together with the joint
 gauge directions spans the internal tangent space. Thus coarse-frame
@@ -1012,11 +1012,11 @@ both the matching and the bounds. Polarization converts the equality on
 rays to equality of all derivatives through order four.
 \end{proof}
 
-\subsection{Closing the classical coefficient budget}
+\subsection{Preserving the classical coefficient bound}
 
-These estimates can also be arranged to close a fixed classical
-coefficient budget, rather than producing an unspecified function of the
-incoming budget. Keep the Gaussian metric bounds fixed, and denote the
+These estimates can also be arranged to preserve a fixed classical
+coefficient bound, rather than producing an unspecified function of the
+incoming bound. Keep the Gaussian metric bounds fixed, and denote the
 bound on the remaining incoming path coefficients by $A$. Compare the
 fine action with the Wilson action, evaluated on the \emph{same}
 tangents $T$ and with the \emph{same} completed inverse $\mathscr C^{-1}$.
@@ -1025,7 +1025,7 @@ vertex difference has at least two finite differences, and their
 quartic vertex difference has at least one. Coordinate division of their
 common symbols gives these factors with exponentially summable
 coefficients bounded by a polynomial $P(A)$. A slightly stronger incoming
-exponential width pays the polynomial path-length factors.
+exponential width absorbs the polynomial path-length factors.
 
 When all legs are external, the extra difference gives $L^4\mu^5=\mu$.
 For the difference of the covectors $B$, move differences on the single
@@ -1043,7 +1043,7 @@ for a second weighted derivative. Thus the vertex and dual-vertex
 remainders are bounded by $P(A)/L$.
 
 The Wilson vertices, block penalty, and their exchange pairing have
-bounds depending only on the fixed Gaussian metric and predictor data.
+bounds depending only on the fixed Gaussian metric and block average data.
 The inverse in the exchange term depends only on the quadratic action,
 so higher incoming coefficients do not change it. Expanding the two
 factors $B=B_{\rm W}+\delta B$ in
@@ -1061,8 +1061,8 @@ The output strip is chosen from the Gaussian coarse strip. It need not
 shrink with each step: an incoming coefficient displaced by $z$ costs
 at most $e^{c\sigma|z|/L}$ on that output strip, which is absorbed by the
 fixed incoming width after choosing $L$ large enough. Finally choose an
-outgoing classical allowance larger than $a_{\rm stage}$ and then $L$
-so that the second term in \eqref{ch07:classical-budget} fits its reserve.
+outgoing classical bound larger than $a_{\rm stage}$ and then $L$
+so that the second term in \eqref{ch07:classical-budget} is smaller than the difference between these two bounds.
 For a finite collection of stage data these choices are simultaneous.
 
 Consequently the cubic and quartic curvature families are constructed
@@ -1108,7 +1108,7 @@ each of its two field arguments.
 
 The straight stationary transport $W_s$ has common exponentially local
 kernels with $\nabla_f^rW_s=O(L^{-1-r})$ for $r\le2$, by
-Section~\ref{ch05:transports}. By \eqref{ch05:corrected-transport}, the tangent of the actual predictor differs
+Section~\ref{ch05:transports}. By \eqref{ch05:corrected-transport}, the tangent of the actual block average differs
 from this representative by a fine gradient; the gauge-invariant
 quadratic symbol $S$ annihilates that difference on both sides.
 Consequently it is legitimate to use $W_s$ in this calculation, even
@@ -1123,7 +1123,7 @@ bound
 Displacing an argument by a fine displacement $z$ costs at most
 $Ce^{\sigma|z|/L}$ on a coarse strip of width $\sigma$.
 Choose $L$ after the fine coefficient width $w$ so that $\sigma/L<w$;
-absolute summability pays these displacements. Holomorphy and the
+absolute summability controls these displacements. Holomorphy and the
 common finite-torus representation follow from normal convergence.
 A final fixed strip reduction converts this to the weighted coefficient
 bound required in \eqref{ch07:inherited}.
@@ -1151,7 +1151,7 @@ This proves the weighted gain and retained moment cancellations for the
 actual inherited action, once the actual and straight stationary tangents
 have been identified up to gauge as above.
 
-\section{Output coefficients and the width reserve}\label{ch07:output}
+\section{Output coefficients and the remaining analytic width}\label{ch07:output}
 
 Suppose the stationary determinant symbol has bound $\Phi$ at a common
 width, the inherited loop symbol has bound $R$ and order four, and the
@@ -1194,10 +1194,10 @@ widths and fixed amplitudes, block ratio, then coupling threshold.
 
 The comparison bounds and lattice integrand estimates have now been
 derived from the same normalized analytic path, positive metric and
-actual stationary predictor. The inherited estimate follows from its
+actual stationary block average. The inherited estimate follows from its
 identified tangent and the common transport bounds. These results are
 one-step statements: their application to an entire selected history
-requires that its incoming paths obey the fixed stage budgets and its
+requires that its incoming paths obey the fixed stage bounds and its
 stationary charts satisfy the identifications of Chapter~\ref{ch05:gaussian}.
 They do not replace the nonlinear local-integral bounds or prove the
 existence of an infinite scale schedule.

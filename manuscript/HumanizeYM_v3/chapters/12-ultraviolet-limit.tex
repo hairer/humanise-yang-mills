@@ -21,7 +21,7 @@ insertions under one fixed transformation.
 Fix finitely many labels $v_i\in V_{d_i}$ and distinct physical origins.
 At a fixed level $m$ above their reference levels, use one dictionary
 of local supports and large-field inventories for all cutoffs $N>m$.
-All small-field masks and eligibility tests in this dictionary are
+All small-field event indicators and eligibility criteria in this dictionary are
 fixed at level $m$. A large-field profile is the sum of activities
 having one particular support and prescribed set of large-field sites; the original activity
 list can be infinite even though the number of such profiles on a
@@ -38,13 +38,13 @@ graph gives Cauchy output graphs and coefficient maps. This condition
 is stronger than contraction for two graphs acted on by the same map.
 For the common construction, Theorem~\ref{ch10:convergence} supplies
 the background limits. The marked estimates and fixed-input comparison
-in Section~\ref{ch11:one-graph} supply the corresponding singleton
+in Section~\ref{ch11:one-graph} supply the corresponding single-insertion
 maps. We keep the needed forms explicit to show how the two
 comparisons enter this argument.
 
 Here is a useful way to obtain the required path convergence. For
 canonical path indices $a$ of length $\ell(a)$, suppose the coefficients
-$c_{N,a}$ converge individually and obey a common budget at width
+$c_{N,a}$ converge individually and obey a common bound at width
 $w>v$. Then
 \[
  |c_{N,a}-c_a|e^{v\ell(a)}\le 2C e^{-(w-v)\ell(a)}.
@@ -71,7 +71,7 @@ arrays at level $m$. Its seminorm is the infimum of the sum of the
 regular derivative majorants and the large-field value majorants
 multiplied by $\kappa_m^{-1}$, where
 $\kappa_m=(\epsilon_m^{\rm for})^{1/2}$ is the square root of the
-actual level-$m$ large-field allowance, as in
+actual level-$m$ large-field bound, as in
 Section~\ref{ch11:one-graph}. We keep the arrays themselves, without
 identifying different arrays merely because their evaluations agree.
 Evaluation of the regular sum and of each large-field profile is a
@@ -112,14 +112,14 @@ Its norm is at most $(1+s_m)\delta_m a s_{m+1}\|x\|_1$,
 which is at most $as_m\|x\|_1/2$.
 \end{proof}
 The difference estimates are for the complete regular and large-field
-remainder on common supports. Linearity of a singleton insertion
-allows its primary part to cancel. A contraction only for the regular
+remainder on common supports. Linearity of a single insertion
+allows its local polynomial part to cancel. A contraction only for the regular
 part would not prove this lemma for the actual inserted density.
 For the actual transformation, \eqref{ch11:graph-estimates} gives
 ball invariance and the inverse bound, while
 \eqref{ch11:graph-difference} gives these two differences with
 $\delta_m=C_d\epsilon_m s_{m+1}$.
-The selected ratio and entry thresholds impose
+The selected ratio and thresholds for the starting scales impose
 $4\delta_m s_{m+1}\le1$. The fine and coarse remainder norms retain
 their distinct factors $\kappa_{m+1}^{-1}$ and $\kappa_m^{-1}$.
 Weighted path continuity at a strict width reserve and activity-norm
@@ -156,11 +156,11 @@ proves the assertion by finite induction. Evaluation of $G_{m,N}x_{m,N}$
 is Cauchy by the graph bound and its bounded evaluation maps.
 \end{proof}
 
-Consequently the complete singleton functions $f_{i,N,m}(U)$ and
-large-field singleton profiles $k_{i,N,m,Q}(U)$ converge uniformly in
+Consequently the complete functions multiplying a single source $f_{i,N,m}(U)$ and
+large-field profiles linear in the sources $k_{i,N,m,Q}(U)$ converge uniformly in
 $U$. Here $Q$ is a support together with its exact prescribed set of large-field sites.
-Multiplication by a fixed Borel mask preserves uniform convergence;
-no continuity of the mask as a function of $U$ is required.
+Multiplication by a fixed Borel event indicator preserves uniform convergence;
+no continuity of the event indicator as a function of $U$ is required.
 
 \section{The scalar normalization cancels}
 \label{ch12:normalization}
@@ -184,7 +184,7 @@ therefore converges uniformly.
 The limit of $Z^0_{N,m}$ is strictly positive. Choose a fixed link ball
 $\mathcal U_m$ about the identity small enough that every inspected
 plaquette satisfies the level-$m$ cutoff. On this set there are no
-large-field flags, so the exact-cover sum is one. The action and the
+large-field sites, so the exact-cover sum is one. The action and the
 regular sum are bounded above by a constant $A_{m,p}$ uniformly on
 the cutoff tail. Since Haar measure assigns positive mass to every
 nonempty open link ball,
@@ -198,14 +198,14 @@ not imply a positive limit.
 
 Let $z_1,\ldots,z_n$ be commuting variables with $z_i^2=0$, and write
 $z_S=\prod_{i\in S}z_i$. The exact marked density at level $m$ has
-regular singleton entries $\sum_i z_i f_i$, higher regular entries
+regular terms linear in the sources $\sum_i z_i f_i$, higher regular entries
 $H_X$, and large-field factors
 \[
  K_Q+\sum_i z_i k_{i,Q}+K_Q^{\ge2}.
 \]
 Every term in $H_X$ and $K_Q^{\ge2}$ contains at least two distinct
-markers. All marker origins belong to its support. Keep the complete
-singletons and set only these higher entries to zero. Call the
+source variables. All insertion origins belong to its support. Keep the complete
+terms linear in the sources and set only these higher entries to zero. Call the
 resulting density $\mathscr X^0_{N,m}(z,U)$. The expression
 \begin{equation}
  C_{N,p,m}(v;x)=
@@ -215,11 +215,11 @@ resulting density $\mathscr X^0_{N,m}(z,U)$. The expression
  \label{ch12:stopped}
 \end{equation}
 is Cauchy in $N$ for fixed $m$. Its numerator is a finite polynomial
-in uniformly convergent grouped profiles and singleton functions,
+in uniformly convergent grouped profiles and functions multiplying a single source,
 multiplied by a uniformly convergent exponential. Its denominator has
 the positive limit in \eqref{ch12:positive-partition}. The same scalar
-has been removed from both. In particular, deleting higher modes does
-not mean deleting the singleton large-field profiles.
+has been removed from both. In particular, deleting terms involving at least two insertions does
+not mean deleting the large-field profiles linear in the sources.
 
 \section{A stopping estimate uniform in the stopping level}
 \label{ch12:stopping}
@@ -232,10 +232,10 @@ is at least $\eta/a_m$ for some $\eta>0$. Since $a_mB_m^2\to0$,
 choose a fixed base level $r$ so that separation is at least $B_m^2$
 for every $m\ge r$. Enlarge $r$ to include all reference levels.
 
-We use the following marked norm conclusion. Higher modes have rooted
+We use the following marked norm conclusion. Terms involving at least two insertions have rooted
 majorant sums at most one at support exponent $\sigma_m$. The transfer
 accepts exponent $\sigma_{m+1}-4$ and restores exponent $\sigma_m$.
-It retains all inventories and marker origins. Moreover, after transfer
+It retains all inventories and insertion origins. Moreover, after transfer
 to the fixed base level, normalized coefficient extraction is bounded
 by
 \begin{equation}
@@ -243,19 +243,17 @@ by
                  {\prod_i w_i}.
  \label{ch12:root-bound}
 \end{equation}
-Here $q_r$ is the vacuum normalization bound; $w_i>0$ are fixed marker
-weights; $x_r$ bounds the weighted regular singleton sizes; and $y_r$
+Here $q_r$ is the vacuum normalization bound; $w_i>0$ are fixed source weights; $x_r$ bounds the weighted regular sizes of the terms linear in the sources; and $y_r$
 bounds their weighted large-field profile sums. Such weights can be
-chosen uniformly on the cutoff tail: the fixed-level singleton
-coefficients are bounded, so scale each weight down to its positive
+chosen uniformly on the cutoff tail: the fixed-level coefficients linear in the sources are bounded, so scale each weight down to its positive
 allowed size. Crucially all four quantities in \eqref{ch12:root-bound}
 are evaluated at $r$, not at the later stopping level $m$.
 These statements concern the complete actual marked transfer.
-They follow from the higher-mode estimate
-\eqref{ch11:higher-induction} and the normalized root bound
+They follow from the estimate for terms involving at least two insertions
+\eqref{ch11:higher-induction} and the normalized chessboard bound
 \eqref{ch11:root-bound}.
 
-\begin{lemma}[Removal of higher modes]
+\begin{lemma}[Removal of terms involving at least two insertions]
 \label{ch12:omission}
 Under these marked norm and transfer bounds, for each $m>r$ and all
 sufficiently large $N$,
@@ -268,7 +266,7 @@ depend on $m$.
 \end{lemma}
 \begin{proof}
 A support containing two origins separated by $B_m^2$ has cover
-number at least $B_m/64$. Multiply every higher entry, and only those
+number at least $B_m/64$. Multiply every term of source degree at least two, and only those
 entries, by a complex scalar $u$. For $|u|<S_m=e^{B_m/64}$ its
 majorant still fits exponent $\sigma_m-2$, since
 \[
@@ -277,15 +275,15 @@ majorant still fits exponent $\sigma_m-2$, since
 \]
 Transport the entire modified marked density to $r$. The support
 reserve allows its first and subsequent steps, and the constant and
-singleton coefficients are unchanged. If a mode contains $q$ origins,
+coefficients linear in the sources are unchanged. If a source monomial contains $q$ origins,
 the stronger geometric bound $B_mq\le64\operatorname{cov}_{B_m}(X)$
-also absorbs a change of each marker weight by at most $e^{B_m/128}$.
+also absorbs a change of each source weight by at most $e^{B_m/128}$.
 This is the weight reserve needed when using the marked transfer.
 
-Let $F_{N,m}(u)$ be the normalized integral of its full-marker
+Let $F_{N,m}(u)$ be the normalized integral of its full-source
 coefficient. Exact probability-kernel integration preserves that
 integral and its vacuum denominator. The fixed-base estimate gives
-$|F_{N,m}(u)|\le C_r$ throughout the disk. The marker algebra is
+$|F_{N,m}(u)|\le C_r$ throughout the disk. The source algebra is
 nilpotent; after grouping the finitely many support and prescribed-site profiles,
 $F_{N,m}$ is a polynomial in $u$, hence holomorphic. For $S_m>2$,
 Cauchy's derivative estimate on circles of radius $S_m/2$ about points
