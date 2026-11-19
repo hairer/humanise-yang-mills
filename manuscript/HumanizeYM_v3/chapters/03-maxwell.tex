@@ -557,7 +557,7 @@ avoiding $x_1,\ldots,x_n$. For a vector field $v$ define the flux
  S_{n+2}^{\mathrm{Max}}(T^{\mathrm{Max}}_{ab},P_0,\ldots,P_n;
                        y,x_0,\ldots,x_n)\,dy.
 \end{equation}
-The integral sees only a compact set separated from the insertions.
+The integrand is supported on $\operatorname{supp}\nabla\chi$, a compact set separated from all the insertions.
 It is therefore an ordinary integral of a smooth function; no extension
 of a product through $x_0$ is involved.
 
@@ -632,8 +632,10 @@ An integration by parts against $\rho_\epsilon$ shows that the flux
 converges to
 $\partial_i(v_bf_{bj})(x_0)-\partial_j(v_bf_{bi})(x_0)
 =(\mathcal L_vf)_{ij}(x_0)$.
-Here $\chi=1$ near the center, and the collar convergence is uniform
-with all fixed derivatives. Differentiating in the pulse center, while
+Here $\chi=1$ near the center. On $\operatorname{supp}\nabla\chi$,
+the regularized covariance $g_\epsilon$ and its derivatives of each fixed
+order converge uniformly to $g$ and the corresponding derivatives as
+$\epsilon\to0$. Differentiating in the pulse center, while
 holding $v,\chi$ fixed, gives the same identity for every jet probe.
 For dilation, \eqref{ch03:lie} becomes
 $(y-x_0)\cdot\nabla f+2f$; its order-$j$ jet at $x_0$ is
@@ -649,11 +651,11 @@ Leibniz derivation $\delta_v$.
 
 If both partners are at $x_0$, their jet orders $j,l$ give pulse
 homogeneities $-4-j$ and $-4-l$. Conservation away from $x_0$ makes
-the collar flux independent of the cutoff. Rescaling a cutoff by $t$
+the flux independent of the choice of $\chi$. Rescaling a cutoff by $t$
 about $x_0$ multiplies this same flux by $t^{e-5-j-l}$, where
 $e=0$ for translation and $e=1$ for rotation or dilation.
-Taking $t=2$ forces the flux to vanish. This argument uses only collars,
-not a distributional product of the pulses at their common singularity.
+Taking $t=2$ forces the flux to vanish. The flux integral involves the two
+pulses only away from their common singularity at $x_0$.
 The polarization counts each ordered pair twice, canceling its factor
 $1/2$. Combining the three types proves \eqref{ch03:ward-identity}.
 \end{proof}
@@ -882,9 +884,9 @@ Since $\partial_bQ(p,p)=2Q(p,\partial_bp)$, we have
 $A_b=c\partial_b$ on weight four, with $c=c_0/2$.
 
 Set $B_b=A_b-c\partial_b$. It kills the stress and still has zero
-Ward sums. Apply its Ward sum to a word with an additional stress
-insertion, multiply by the dilation collar in \eqref{ch03:flux}, and
-integrate. The term acting on the stress is zero. The free Ward identity
+Ward sums. Write its Ward sum for a word with an additional stress
+insertion. Apply the flux formula \eqref{ch03:flux} to this insertion
+with the dilation vector field $v(y)=y-x_0$. The term acting on the stress is zero. The free Ward identity
 then gives the Ward sum with $\mathscr E B_bP$ in the distinguished slot
 and $\mathscr EP$ in the other terms. Subtract the ordinary Ward sum
 for the word starting with $\mathscr EP$. It follows that
@@ -953,9 +955,9 @@ Bilinearity proves the claim. Covariance and the commutation just proved
 apply this observation to $\Delta(K,L)P$ for every weight-four $P$.
 In particular $U$ kills the stress.
 
-Use the rotational collar in \eqref{ch03:flux} in the same commutator
-argument as in the preceding proof. For each $H\in\mathfrak{so}(4)$,
-it gives $[\mathcal L_H,U]P\in\mathcal N_d$.
+For each $H\in\mathfrak{so}(4)$, repeat the preceding commutator
+argument using the rotation vector field $v(y)=H(y-x_0)$ in the flux
+formula \eqref{ch03:flux}. This gives $[\mathcal L_H,U]P\in\mathcal N_d$.
 This time the commutator itself lies in $\mathcal M_d^{\mathrm{Max}}$,
 so a single reflected two-point pairing shows that it vanishes. The uniform
 bound $D_*$ is unnecessary. Exponentiation in the finite-dimensional

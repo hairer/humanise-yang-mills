@@ -189,14 +189,13 @@ At $k=k_j$ the whole requested window stays on the same plateau.
 This is useful when a fixed finite calculation must be isolated from
 changes in derivative order or support exponent.
 
-Only finitely many steps belong to the first plateau. Choose an
-integer $M$ paying their period requirements and put
+Only finitely many steps belong to the first plateau. Choose an integer
+$M$ large enough that the lattice side $R_p/a_m$ meets the required
+lower bound at every step of this plateau for all $p\ge0$, where
 \begin{equation}\label{ch10:periods}
                  R_p=4(M+p+1),\qquad p\ge0.
 \end{equation}
-The level-$m$ lattice has side $R_p/a_m$. On later plateaux
-\eqref{ch10:late-entry} ensures the required lattice side; the finite
-initial segment is covered by $M$. These periods also contain
+On later plateaux \eqref{ch10:late-entry} ensures the required lattice side. These periods also contain
 arbitrarily late multiples of every positive integer: for a given
 integer $c$, take $p=c(M+z+1)-(M+1)$ with $z$ arbitrarily large.
 Finally
