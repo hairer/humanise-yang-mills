@@ -14,7 +14,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 - `μ_{N,p}` means the Wilson probability only. Use `δ^{F²}_{N,p}` for the additive unit counterterm of F² (Trish's repair of Scott's μ collision). Phase measure is ν and trace spectral measure is μ_Θ.
 - `S` and `S_n` denote continuum correlations, never a lattice action. Use `E_s^W` for the Wilson energy and `V_ρ` for the effective action.
 - `a_m` is always a spacing. Rename Martin's local quadratic/cubic/quartic coefficient arrays as `A_m^{(2)},A_m^{(3)},A_m^{(4)}`. `A_μ` is a connection component; in Gaussian sections use `K` for the kinetic operator, `Q` for linear block averaging and `C` or `Γ` for covariance, after giving their spaces. A localized approximate covariance is not necessarily the inverse of the original precision.
-- `N_fac` is factor-count operator (Scott mathsf N); N without subscript is a cutoff index. `d` is engineering-degree cutoff; `d_g` is dimension of the Lie algebra. A tag d is not automatically a scaling dimension.
+- `N_fac` is factor-count operator (Scott mathsf N); N without subscript is a cutoff index. `d` is scaling-dimension cutoff; `d_g` is dimension of the Lie algebra. A tag d is not automatically a scaling dimension.
 - Reserve `mathcal H` for Hilbert spaces, `H₄` for signed coordinate permutations and `mathcal D` for the common operator domain. `Ξ` is phase space, ξ a character and ξ_* selected phase. Do not use X for phase space because X is polymer support.
 - Reserve `mathsf Z_{N,p,d}` for terminal coefficient maps and `Z_{s,β}` for partition functions. Reserve `mathscr U_{k,d}` for scaling maps and `U(g)` for relativistic unitaries; `U_e` remains a lattice link variable.
 
@@ -50,7 +50,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 |---|---|---|
 | J, J_{≤d} | Formal radial jets, finite truncation through weight d | Ch. 2; def:D07 |
 | A_{k,μ} | Homogeneous radial potential of polynomial degree k+1 | Ch. 2; coordinates have weight k+2 |
-| V_d | Ad(G)-invariant jet polynomials of engineering weight ≤d | Ch. 2; def:D07 |
+| V_d | Ad(G)-invariant jet polynomials of scaling dimension ≤d | Ch. 2; def:D07 |
 | b_{d,i}, (w_i,f_i) | Nested real bihomogeneous basis, weight and factor count | Ch. 2; Outline II.1.1 |
 | N_fac, t^{N_fac} | Count operator; b_{d,i}↦t^{f_i}b_{d,i} | Ch. 2; sec:local-fields |
 | sc_h J | Jet scaling with h^{k+2} on A_k | Ch. 2; eq:I12-test-holonomy |
@@ -169,7 +169,7 @@ Do not translate a source metaphor by guessing: its domain, codomain, quantifier
 1. Same G representation and trace normalization throughout; every β or Casimir formula matches them.
 2. At level m the integer period is R_pD_m and physical spacing a_m; blocking decreases m.
 3. Unit label in V_d is 1, but normalized degree-d unit coefficient is a_{r(d)}^d1.
-4. Distinguish engineering weight, factor count and degree tag whenever transferring a label.
+4. Distinguish scaling dimension, factor count and degree tag whenever transferring a label.
 5. Record all constant dependencies: group, b, fixed degree/arity, derivative order, separation, but never silently N or p in a uniform estimate.
 6. Do not turn pointwise-in-degree estimates into uniform-in-degree OPE convergence.
 7. A common family and common volume refinement must be maintained through later constructions.
@@ -208,7 +208,7 @@ The Chapter18 contact prescription now uses the invariant summands E_j for one c
 |---|---|---|
 | H(x), h(x), r(x) | Original and reduced cutoff amplitudes, and recording-scale change; r is not a physical radius in this subsection | ch11:restart-construction |
 | D_k (mathscr), sigma_k | Actual restarted density and its scalar normalization; its integral is the original partition function | ch11:restart-density |
-| T, S_t, W_rho | Common polynomial extraction, factor-count dilation, engineering-weight dilation; in comparison sections T is not the stress tensor | ch11:common-extraction; ch11:simultaneous-detector-lifts |
+| T, S_t, W_rho | Common polynomial extraction, factor-count dilation, scaling-dimension dilation; in comparison sections T is not the stress tensor | ch11:common-extraction; ch11:simultaneous-detector-lifts |
 | R_I, G_I, omega | Corrected subset source, free subset moment, and source amplitude in the fixed-arity squarefree algebra | ch11:n-mark-comparison |
 | zeta_i, phi_i, omega_i^res | Small singleton allowance, adjacent source-weight ratio, and residual source weight | ch13:coarse-residual-supplier |
 | A_i, mathscr A_h | Full support exponent in the residual induction; separately, the complete pushed source polynomial at h | ch13:coarse-residual-supplier |
@@ -231,8 +231,8 @@ The residual marker weight is written omega_i^res, never t_i: t_i is already res
 | epsilon_j | log(2+C_j)/log(mathscr L_j), where C_j is fixed before the ratio is selected | ch17:window-product |
 | H_n, M_n | exp((log log beta-hat_n)^2), the same large small-field multiplier in the trace comparison | ch17:radii; ch17:variable-windows |
 | D_Y k (calligraphic) | Haar divergence of the outgoing block kernel times the smooth current displacement; a density-valued insertion | ch17:kernel-divergence |
-| P_5, P_(5,t) (calligraphic) | Engineering-degree-five extraction and its factor-count threshold normalization | ch17:marked-rates |
+| P_5, P_(5,t) (calligraphic) | Scaling-dimension-five extraction and its factor-count threshold normalization | ch17:marked-rates |
 | Sigma_k, j_k | Nonclassical marked current coefficient and coefficient of current divergence; the complete zero-moment coefficient is Sigma_k−beta j_k | ch17:finite-sigma |
 | v_i^eq | beta_i^(-1) Sigma_(k_i)−j_i, the approximate equation direction in the finite-dimensional vector space | ch17:marked-rates |
 
-In this chapter the scale index n is never the arity; fixed arity is N_*. The smooth gauge-fixed response W_s and the actual forest-coordinate response W_a must be distinguished. Polynomial transport is proved for W_s; using it for W_a requires the gauge-coordinate comparison. A remainder of high engineering order may still have field degree two; never infer an extra threshold factor from engineering order alone.
+In this chapter the scale index n is never the arity; fixed arity is N_*. The smooth gauge-fixed response W_s and the actual forest-coordinate response W_a must be distinguished. Polynomial transport is proved for W_s; using it for W_a requires the gauge-coordinate comparison. A remainder of high scaling dimension may still have field degree two; never infer an extra threshold factor from scaling dimension alone.
