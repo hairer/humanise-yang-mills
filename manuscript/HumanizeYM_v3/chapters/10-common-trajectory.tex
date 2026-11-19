@@ -1,0 +1,925 @@
+\chapter[Common trajectories and stability]{A common trajectory and fixed-scale stability}
+\label{ch10:trajectory}
+
+The one-step transformation must be used with a single sequence of
+scales and a consistent choice of coefficient arrays. There are two
+separate problems. First one must tune each finite Wilson theory to the
+same coarse coupling. Then one must compare theories with different
+ultraviolet cutoffs. Continuity of a finite step solves the first
+problem, but does not by itself solve the second.
+
+We first construct the numerical schedule and the tuned finite
+histories from Theorem~\ref{ch09:step-theorem}. We then describe the
+additional quantitative comparison needed for convergence of these
+histories. Its abstract consequences are proved here. The distinction
+between that comparison and ordinary continuity remains explicit;
+in particular we do not assert analytic dependence on the tuned
+endpoint. The elementary contraction arguments are applications of
+Banach's principle~\cite{Banach1922}; we give the estimates specific to
+the oppositely directed coupling and activity recursions.
+
+\section{What is fixed before choosing the scales}
+\label{ch10:choices}
+
+A stage $j\ge1$ specifies finitely many derivative orders, support
+exponents, path widths and coefficient allowances. These are numerical
+bounds for the representations of Chapter~\ref{ch04:blocking}, not a
+new collection of physical theories. Stages are nested: the conditions
+of stage $j+1$ include those already required at stage $j$. At a fixed
+stage there are only finitely many permitted adjacent pairs. Choose
+constants for all these pairs simultaneously.
+
+The order of choices is important. Fix the quadratic metric bounds,
+path widths and classical allowances first. Choose the odd block ratio
+large enough for the classical contraction
+\eqref{ch07:classical-budget}, inherited-loop contraction
+\eqref{ch07:inherited}, and the support reserves in the local integral.
+Only afterwards choose coupling thresholds and minimum auxiliary
+periods. Enlarging a coupling threshold does not change the block
+kernel or the coefficient construction. The Wilson initialization can
+be made smaller than any prescribed fixed fraction of its activity
+allowances by this enlargement, as follows from the estimates in
+Section~\ref{ch09:wilson}.
+
+Let $C_j^{\rm drift}$ be a stage bound for the error in the downward coupling step:
+\begin{equation}\label{ch10:step-drift}
+ \left|\beta_{m+1}-\beta_m-\kappa_G\log L_m\right|
+       \le C^{\rm drift}_{J(m+1)}.
+\end{equation}
+Here $J(m+1)$ is the stage used for this step and
+$\kappa_G=11C_{\gLie}/(24\pi^2)>0$. The scalar reset is included in $C_j^{\rm drift}$.
+Chapter~\ref{ch07:matching} fixes this coefficient with the same
+normalization of the Lie algebra metric as the block integral.
+Its error constant is fixed before the block ratio. Choose
+nondecreasing odd integers $\mathscr L_j\ge3$ above every stage floor,
+and also require
+\begin{equation}\label{ch10:drift-floor}
+ \frac{C_j^{\rm drift}}{\log\mathscr L_j}
+ \le \min\{\kappa_G/4,j^{-2}\}.
+\end{equation}
+Any further fixed logarithmic size bound $K_j$ can similarly be
+required to satisfy $K_j/\log\mathscr L_j\le j^{-2}$.
+Costs depending on the chosen $\mathscr L_j$ are covered by later entry
+thresholds, not by redefining the constants used in
+\eqref{ch10:drift-floor}.
+
+Future applications may prescribe countably many finite numerical
+requests, provided their analytic estimates have already been
+established for a fixed stage. At stage $j$ take the maximum of the
+first $j$ such requests. This diagonal choice pays finite numbers;
+it does not establish an estimate merely because it has been listed.
+In particular the comparison hypotheses below must be proved for the
+same coefficient and activity construction before they can be used.
+
+
+One particular later request can already be made explicit.
+Fix the equation-adapted sections of
+Theorem~\ref{ch02:equation-adapted} once and for all.
+For $d\le j$, let $a_{dj}$ be their derivative constants at the
+orders and spatial weights of stage $j$, and let $q_d$ bound their
+union stencil with $P_d^{\rm loc}$. These constants depend only on
+fixed cover paths, finite polynomials and the stage orders;
+Proposition~\ref{ch02:section-bounds} makes them independent of
+the block ratio, period and cutoff. Fix the stage column allowance
+$C_j$, support exponent $\sigma_j$, and finite symmetry norm
+$\mathcal O_d$ before choosing the ratio. With
+\[
+ Q_{dj}=2+e^{81\sigma_j}(a_{dj}+C_j+2q_d),
+ \qquad \delta_d=(2\mathcal O_d^2)^{-1},
+\]
+include the additional floor
+\begin{equation}\label{ch10:equation-floor}
+ \mathscr L_j^{1/8}\ge
+       \max_{d\le j}2(1+C_j)Q_{dj}\delta_d^{-1}.
+\end{equation}
+For the bounded coarse polynomial trials also include
+$\mathscr L_j^{1/8}\ge8(1+C_j)Q^{\rm coarse}_{dj}$ for $d\le j$,
+where $Q^{\rm coarse}_{dj}$ is their ordinary chart bound, fixed before
+the ratio. On that chart the relaxed small-field guard is one. Its
+complementary global value is controlled by the same later
+square-root large-field allowance condition described below.
+Here $C_j$ is the prescribed allowance, not a norm recomputed after
+choosing $\mathscr L_j$. No terminal radius enters this floor:
+the raw stencil is fixed; the terminal requirement that its cover
+be at most $81$ is imposed later by increasing the coupling
+threshold and hence the available localization radius.
+The remaining terminal value norms contain inverse powers of the
+small-field threshold. The delays require their product with the
+square root of the terminal large-field allowance to be at most one,
+as well as the fixed-stencil support and occupancy conditions.
+They are paid by the later coupling delays,
+not included in $Q_{dj}$. Those delays also impose
+$\widehat\beta_N\ge a_{d,J(N)}$ and all terminal reserve inequalities
+for $d\le J(N)$. Since only finitely many degrees are tested at a
+stage, this is a noncircular addition to the schedule. Its use is
+the near-identity comparison in
+Section~\ref{ch11:equation-calibration}.
+
+\section{A slowly increasing stage schedule}
+\label{ch10:schedule}
+
+We give an explicit construction, including the initial scales.
+Let $b_j,c_j$ be nonnegative integers specifying respectively the
+minimum entry time and a requested length for a stage plateau.
+If $\jmath_j$ is the largest smoothing order used in stage $j$ or a
+permitted adjacent pair, include
+$b_j\log3\ge2\log(\jmath_j+7)$ for $j>1$. This ensures that
+the full dependence radius of a probability-kernel pullback shrinks in
+physical units, including its frame-choice variables.
+Starting with $A_1=0$, define
+\[
+ k_j=c_j+2A_j+1,\qquad
+ A_{j+1}=A_j+b_{j+1}+2k_j+1,
+ \qquad J(m)=j\quad(A_j\le m<A_{j+1}).
+\]
+Then $J$ is nondecreasing, tends to infinity, and increases by at
+most one in a single step. If $J(m+1)=j>1$, then $m\ge b_j$.
+Moreover the interval
+$[k_j-\lfloor k_j/2\rfloor,k_j+\lfloor k_j/2\rfloor]$
+lies in the $j$th plateau: its lower endpoint is at least $A_j$,
+and its upper endpoint is less than $A_{j+1}$.
+
+Set
+\begin{equation}\label{ch10:scales}
+ L_m=\mathscr L_{J(m+1)},\qquad
+ \tau_0=0,\quad \tau_{m+1}=\tau_m+\log L_m,
+ \qquad a_m=e^{-\tau_m}.
+\end{equation}
+Thus $a_m$ is the lattice spacing, and $a_m^{-1}$ is an integer.
+Monotonicity gives
+\[
+ m\log3\le\tau_m\le m\log\mathscr L_{J(m)}.
+\]
+Choose a coarse target $\bar\beta>0$ and reference couplings
+\begin{equation}\label{ch10:reference}
+             \widehat\beta_m=\bar\beta+\kappa_G\tau_m.
+\end{equation}
+The first-stage threshold is satisfied by $\bar\beta$. Every subsequent
+stage threshold $d_j$ is satisfied by postponing its entry until
+$\widehat\beta_m\ge d_j$. We may simultaneously require
+\begin{equation}\label{ch10:late-entry}
+ \log\mathscr L_j\le\tau_m/j,\qquad
+ V_j(\tau_m)\le e^{\tau_m},
+ \quad J(m+1)=j>1,
+\end{equation}
+Also require, for the original support radius and its per-site
+normalization cost, $B_{m+1}^2\le2B_m^2$ and
+$(L_m B_m^2)^4q_{m+1}^{\rm site}/\tau_{m+1}\le1/j$ at stage $j$.
+Here $q_{m+1}^{\rm site}$ is bounded by
+$C_j(1+\log\widehat\beta_{m+1})$ using the Haar-ball normalization
+argument. At a fixed stage the numerator is a fixed polynomial in
+$\log(2+\tau_m)$, so this is a finite entry delay. It will keep
+replication costs subpower at a nearby sparse stopping scale. For the
+later grouping of finitely many local sources, also require
+$(\sigma_{m+1}+1)h_m/\tau_m\le1/j$, where
+$h_m=16[1+L_m(B_m+B_{m+1}+1)^2]^4$ and $\sigma_{m+1}$ is the
+prescribed support exponent. This is again a fixed polynomial in
+$\log(2+\tau_m)$ at each stage. It ensures that moving a finite
+number of source anchors has only a subpower cost.
+In \eqref{ch10:late-entry}, $V_j$ is any prescribed fixed polynomial bound for the required
+lattice side. The same argument works for a subexponential $V_j$.
+Choose $b_j$ so these inequalities hold whenever
+$\tau_m\ge b_j\log3$. They then hold at every step of stage $j$,
+not just at its first occurrence.
+
+For comparison estimates requiring a window $w_j(s)=o(s)$ around
+one level of stage $j$, increase $c_j$ so that
+$w_j(s)\le\lfloor k/2\rfloor$ whenever
+$k\ge c_j$ and $k\log3\le s\le k\log\mathscr L_j$.
+At $k=k_j$ the whole requested window stays on the same plateau.
+This is useful when a fixed finite calculation must be isolated from
+changes in derivative order or support exponent.
+
+Only finitely many steps belong to the first plateau. Choose an
+integer $M$ paying their period requirements and put
+\begin{equation}\label{ch10:periods}
+                 R_p=4(M+p+1),\qquad p\ge0.
+\end{equation}
+The level-$m$ lattice has side $R_p/a_m$. On later plateaux
+\eqref{ch10:late-entry} pays the required lattice side; the finite
+initial segment is covered by $M$. These periods also contain
+arbitrarily late multiples of every positive integer: for a given
+integer $c$, take $p=c(M+z+1)-(M+1)$ with $z$ arbitrarily large.
+Finally
+\[
+ \frac{\log L_m}{\tau_m}\longrightarrow0.
+\]
+This follows from \eqref{ch10:late-entry} outside the first plateau.
+No limit involving $\tau_0^{-1}$ is intended.
+
+\section{Tuning a finite history to the coarse endpoint}
+\label{ch10:shooting}
+
+The admissible coupling band at level $m$ is
+$[\widehat\beta_m/2,2\widehat\beta_m]$. Define inner barriers
+\[
+ \ell_m=\bar\beta+\tfrac12\kappa_G\tau_m,
+ \qquad u_m=\bar\beta+2\kappa_G\tau_m.
+\]
+Both lie in the band. If a step starts at $\ell_{m+1}$, its output
+is at most $\ell_m-\kappa_G\log L_m/4$ by
+\eqref{ch10:step-drift}--\eqref{ch10:drift-floor}. Starting at
+$u_{m+1}$ gives an output at least
+$u_m+3\kappa_G\log L_m/4$.
+
+We use only the intermediate value theorem. If a continuous function
+$f$ on $[x,y]$ satisfies $f(x)\le d<u\le f(y)$, take its first
+point $w$ with value $u$ and its last point $z\le w$ with value $d$.
+Then $f([z,w])\subset[d,u]$. An excursion below $d$ would force a
+later crossing of $d$; an excursion above $u$ an earlier crossing of
+$u$. When $d=u$, choose a single point of that level set. In
+particular no monotonicity of the output coupling is required.
+
+\begin{theorem}[Tuned finite histories]\label{ch10:finite-history}
+Fix the common numerical choices above and the compatible finite
+quadratic and path constructions of Chapters~\ref{ch05:gaussian}
+and \ref{ch07:matching}. For every cutoff $N$ and period $R_p$ there
+is a finite history starting at a Wilson density and ending with
+$\beta_{N,p,0}=\bar\beta$. It has the admissible activity bounds and
+exact block identities at every level $0\le m<N$. Its couplings
+stay between $\ell_m$ and $u_m$.
+\end{theorem}
+
+\begin{proof}
+At level $N$ use the Wilson curve with bare coupling in
+$[\ell_N,u_N]$. Apply the continuous step of
+Theorem~\ref{ch09:step-theorem}. The barrier inequalities and the
+interval argument give a compact subinterval on which the output
+stays between $\ell_{N-1}$ and $u_{N-1}$ and attains these endpoints.
+Restrict the entire previously constructed history to that interval.
+Restriction compatibility preserves the labels, activity bounds and
+exact identities. Repeat downwards. At level zero the barriers
+coincide at $\bar\beta$. For $N=0$ use the Wilson family directly.
+Every input to an applied step lies in its band; no continuation
+through a forbidden coupling interval has been used.
+\end{proof}
+
+Choose one such history for each $N,p$, retaining its path arrays,
+forests, local integral choices and output representations. The
+choice need not be unique. The paths fixed before the period are
+kept identical when the period changes. The exact identity is
+\[
+ \operatorname{dens}(\rho_{N,p,m})
+ =\mathcal B_m^{\beta_{N,p,m+1}}
+                  \operatorname{dens}(\rho_{N,p,m+1}).
+\]
+It is an identity of the actual densities, including the additive
+scalar normalization. That scalar is not asserted to converge.
+
+The same construction reaches any endpoint
+$|b-\bar\beta|\le h$, where
+$h=\min\{\bar\beta/2,\kappa_G\log L_0/4\}$.
+Descend to level one and use the last barrier crossing to reach $b$.
+This proves existence in a common endpoint interval, but neither
+uniqueness of the shooting parameter nor continuity of its selection.
+
+\section{Uniform logarithmic running}
+\label{ch10:running}
+
+Telescoping from the fixed endpoint gives
+\begin{equation}\label{ch10:running-error}
+ |\beta_{N,p,m}-\widehat\beta_m|
+ \le\sum_{i<m}C^{\rm drift}_{J(i+1)},\qquad N\ge m.
+\end{equation}
+For each $\epsilon>0$, choose $r$ so that
+$J(i+1)^{-2}\le\epsilon/2$ for $i\ge r$. The right side is at most
+\[
+ \sum_{i<r}C^{\rm drift}_{J(i+1)}+\tfrac\epsilon2(\tau_m-\tau_r).
+\]
+The finite initial sum is eventually at most $\epsilon\tau_m/2$.
+Consequently
+\begin{equation}\label{ch10:running-limit}
+ \beta_{N,p,m}=\bar\beta+\kappa_G\tau_m+o(\tau_m)
+\end{equation}
+uniformly in $N\ge m$ and $p$. In particular the bare Wilson
+coupling obeys $\beta_{N,p,N}/\log(a_N^{-1})\to\kappa_G$ uniformly
+in $p$. This conclusion does not use convergence of histories at a
+fixed scale. A bounded stage error is not summable by itself; the
+small ratio in \eqref{ch10:drift-floor} is essential.
+
+By using a smaller fixed constant than $\kappa_G/4$ in that floor,
+the ratios $\beta_{N,p,m}/\widehat\beta_m$ can all be kept in an
+arbitrarily prescribed fixed neighborhood of one. We henceforth
+choose it small enough that
+\[
+ 17/20\le\sqrt{\beta_{N,p,m}/\widehat\beta_m}\le23/20.
+\]
+For example an error at most $\kappa_G\log L_m/10$ at each step
+implies a relative error at most $1/10$ after summation. This also
+covers the initial indices, including $m=0$.
+
+\section{The coefficient comparison before the activity comparison}
+\label{ch10:path-stability}
+
+A representation by transported curvature terms is not unique.
+For comparisons we fix the linear curl-division and path-placement
+operations in Chapter~\ref{ch07:matching} once on the common
+coefficient dictionaries. An alternative is the orthogonal
+representative modulo the kernel of all periodic Taylor coefficients;
+then the orthogonal complement must be taken inside the admissible
+subspace, so that its invariance and moment constraints are preserved.
+Equality of the action on one torus is insufficient to identify its
+coefficient array.
+
+At a fixed stage enlarge each incoming classical or loop allowance
+by a factor $64$, one family at a time, and choose the ratio floor
+for that enlarged allowance. The bounds in
+\eqref{ch07:classical-budget} and \eqref{ch07:inherited} then retain
+ordinary output allowances. This enlargement does not concern the
+positive quadratic metric, which is kept fixed. The fixed-order
+stationary calculation is valid after reducing its local analytic
+neighborhood if necessary.
+
+With quadratic data fixed, the outgoing cubic coefficient is affine
+in the incoming cubic coefficient. With the cubic coefficient also
+fixed, the same holds for the quartic coefficient. Finally the
+quadratic loop coefficient is affine in the incoming loop. The
+stationary formula \eqref{ch07:uniform-stationary-jets} proves the
+first two assertions: its exchange term is fixed in the quartic
+comparison. The inherited Hessian and determinant formula prove the
+third. Fixed linear coefficient functionals preserve these identities.
+
+Normalize each coefficient norm by its stage allowance. If an affine
+map $T$ sends the admissible ball of radius $64$ into the output ball
+of radius one, then for $\|H\|,\|K\|\le1$, writing
+$\delta=\|H-K\|>0$, the admissible extrapolation
+$K_*=K+32(H-K)/\delta$ has norm at most $33$ and gives
+\begin{equation}\label{ch10:affine-contraction}
+ \|T(H)-T(K)\|\le\delta/16.
+\end{equation}
+The extrapolation preserves all linear symmetry and moment conditions.
+This is an affine estimate, not an assertion that the full nonlinear
+RG transformation is affine.
+
+Proposition~\ref{ch05:horizon-limit} gives convergence of the actual
+quadratic rows and free transports at every fixed level, with a
+strictly stronger exponential width than the required width. Choose
+the direct row coefficient strictly below its uniform positive metric
+gap, as required there.
+Their fixed-window inverses converge by the resolvent identity and the
+common inverse bound. In each successive coefficient comparison the
+change in these preceding data contributes an error
+$e_{N,N',i}\to0$ at fixed $i$. The current coefficient discrepancy
+therefore satisfies
+\[
+ \delta_i\le\tfrac14\delta_{i+1}+e_{N,N',i}.
+\]
+For $k>m$ and $N,N'>k$, iteration gives
+\begin{equation}\label{ch10:path-truncation}
+ \delta_m\le2(1/4)^{k-m}
+             +\sum_{i=m}^{k-1}(1/4)^{i-m}e_{N,N',i}.
+\end{equation}
+First send $N,N'\to\infty$ at fixed $k$, then $k\to\infty$.
+This proves the Cauchy property in succession for cubic, quartic and
+loop coefficients, for the actual nested quadratic history and the fixed common coefficient functionals.
+
+There is a useful precise version of the width reserve. If coefficients
+$c_N(\gamma)$ on a common dictionary converge coordinatewise and
+$\sum_\gamma |c_N(\gamma)|e^{w'\ell(\gamma)}\le C$ with $w'>w$,
+then their tails at width $w$ and length greater than $r$ are bounded
+by $Ce^{-(w'-w)r}$. If only finitely many dictionary entries have
+bounded length, finite-coordinate convergence and this tail bound
+prove convergence at width $w$. For a Hilbert encoding instead, one
+must verify summability of the encoding weights on that dictionary;
+a bound on individual coefficients alone does not pay the number of
+paths of a given length.
+
+\section{The stronger local comparison required for cutoff limits}
+\label{ch10:comparison-input}
+
+Fix a physical period $R_p$. At level $m$ let $\mathcal X_{m,p}$ be
+the completion of the actual activity arrays in their normalized
+weighted derivative and value norm. Zero seminorm arrays are
+identified. Equality of their evaluated partition functions is not
+this equivalence relation. Dictionaries, masks, supports and prescribed-site
+rules are fixed at this level independently of $N$. We pad absent
+labels by zero.
+
+To state the comparison, set
+\[
+ \chi_m=\widehat\beta_m^{-1/32},\qquad
+ \mathfrak b_m=\widehat\beta_m^{31/32},\qquad
+ \lambda_m=\chi_m^{-1}\sqrt{\beta_m/\widehat\beta_m},\qquad
+ b_m(\lambda)=\widehat\beta_m(\chi_m\lambda)^2.
+\]
+The symbol $b_m(\lambda)$ in this section is the coupling coordinate
+map; it is unrelated to the block penalty $b$. On the narrow band
+$17/20\le\chi_m\lambda\le23/20$ we have
+\begin{equation}\label{ch10:inverse-coordinate}
+ \mathfrak b_m|\lambda-\lambda'|\le
+               |b_m(\lambda)-b_m(\lambda')|.
+\end{equation}
+The extra factor in the right side is
+$\chi_m(\lambda+\lambda')\ge17/10$.
+
+Write the actual step maps at cutoff $N$ as
+\[
+ x_m=F_{m,N}(\lambda_{m+1},x_{m+1}),\qquad
+ q_m=Q_{m,N}(\lambda_{m+1},x_{m+1}),
+ \quad
+ \beta_m-\beta_{m+1}-\alpha_{N,m}=q_m.
+\]
+Here $x_m$ is the activity array and $q_m$ is the residual scalar
+coupling correction. It is not the vacuum normalization. The path
+coefficient $\alpha_{N,m}$ is the one already used in the exact step.
+
+The following strengthens the continuous finite-step statement of
+Theorem~\ref{ch09:step-theorem}. Its proof occupies the following
+subsections and uses the additional numerical reserves already allowed
+in the scale choices.
+\begin{proposition}[Quantitative comparison on the common data]
+\label{ch10:stability-assumption}
+The actual maps are defined for every prescribed narrow-band coupling
+sequence and every allowed activity array of norm at most $1/8$,
+including zero terminal arrays. They preserve that ball, satisfy
+$|Q_{m,N}|\le s_m/2$, and, on the same cutoff, obey
+\begin{align}\label{ch10:lipschitz}
+ \|F_{m,N}(z)-F_{m,N}(z')\|&\le\tfrac1{16}\|z-z'\|,\\
+ |Q_{m,N}(z)-Q_{m,N}(z')|&\le4s_m\|z-z'\|,\notag
+\end{align}
+where $\|z-z'\|=\max\{|\lambda-\lambda'|,\|x-x'\|\}$.
+The strengthened Wilson terminal arrays have norm at most $1/8$.
+The numerical choices satisfy $\sum_{i<m}s_i\le \mathfrak b_m/128$.
+The paths and $\alpha_{N,m}$ converge at each fixed scale with the
+strict width reserve above. Finally, for two sequences of admissible
+inputs at different cutoffs, common limits of their scalar coordinates
+and Cauchy activity arrays with difference tending to zero imply
+output differences tending to zero, in both the activity norm and
+the scalar correction. This last assertion applies also to every
+zero-terminal-array history with prescribed couplings.
+\end{proposition}
+
+The last condition compares changing maps $F_{m,N}$, not just changing
+inputs to one fixed map. Uniform contractions by themselves do not
+imply it. For example $F_N(x)=(-1)^N/10$ has Lipschitz constant zero
+and no cutoff limit. Nor does smallness of the output imply the
+small Lipschitz constant in \eqref{ch10:lipschitz}.
+
+\subsection{How real parameter tests yield the contraction}
+
+One sufficient quantitative estimate uses only real parameter lines.
+For a line $z+tv$ of admissible inputs, $|t|\le1$, suppose every finite
+choice of weights $a_i$ and points $t_i$ satisfies
+\begin{align}\label{ch10:finite-tests}
+ \left\|\sum_i a_i F(z+t_i v)\right\|
+ &\le d\sup_{n\ge0}\left|\sum_i a_i(t_i/r)^n\right|,\\
+ \left|\sum_i a_i Q(z+t_i v)\right|
+ &\le f_m\sup_{n\ge0}\left|\sum_i a_i(t_i/(2r))^n\right|,
+ \qquad r\ge2.\notag
+\end{align}
+These are estimates of the actual arrays in their derivative norm,
+not just of the value of a partition function. They imply an
+absolutely convergent one-variable expansion. Indeed the map
+$((t/r)^n)_{n\ge0}\mapsto F(z+tv)$ extends linearly and boundedly
+from its span in $c_0$ to its closure. That closure contains every
+coordinate vector: subtract the first $n$ coordinates, divide by
+$(t/r)^n$, and let $t\downarrow0$. Applying the bounded map to the
+geometric expansion gives coefficients of norm at most $d$.
+Consequently
+\[
+ \|F(z+tv)-F(z)\|\le d|t|/(r-|t|).
+\]
+The identical argument applies to $Q$. This short bounded-operator
+argument records the precise information in the tests; it is not an
+inference of analyticity from continuity.
+
+For two inputs at distance $0<h\le1/4$, use the line with direction
+$(z'-z)/(4h)$ and evaluate at $t=4h$. Activity norm along this line
+is at most $1/8+1/4<1$. A coupling reserve from the narrow band to
+$33/40\le\chi_m\lambda\le47/40$ makes the whole line admissible
+when $\chi_m\le1/128$. The resulting bounds are at most $4dh$ and
+$4f_mh$. If $h>1/4$, use the separate output bounds; if the distance
+is zero, use the same estimate with a vanishing seminorm direction
+and let the parameter tend to zero. Thus $d\le1/256$ and
+$s_m=2f_m$ imply \eqref{ch10:lipschitz} with room to spare.
+The finite-test inequalities require the analytic estimates on the
+local expansion established in the next subsection.
+
+\subsection{Producing the finite tests from the protected expansion}
+\label{ch10:parameter-supplier}
+
+Here is the parameter estimate for the actual local factors. It uses
+the protected change of variables and real Gaussian majorants of
+Chapter~\ref{ch06:large-fields}, retaining their fixed derivative
+order and support reserves. The incoming array is affine along the
+parameter line. The path, masks, held fine reads and coefficient
+projection are fixed. In particular the finite low-order collection in
+Chapter~\ref{ch09:renormalization} is chosen on the compact coupling
+band independently of incoming activity arrays. The estimates below
+therefore compare the same output construction on different lines.
+For the estimates one uses the explicit local expansion on the larger
+affine activity domain. Its polynomial products and convergent logarithmic
+series define the array and local scalar outputs there even when an
+extrapolated array has not been identified with a positive density.
+Positivity is required for actual histories, not for this algebraic
+extension of their local comparison formulas.
+
+Put $y=\widehat\beta_{m+1}$, $R=y^{1/256}$ and
+$\delta=y^{-1/128}$. The coupling is a square of an affine function
+of the line parameter. The relative change on $|t|\le6R$ is
+$O(Ry^{-1/32})=O(y^{-7/256})=o(\delta)$. Choose a slightly smaller
+reference coupling $\beta_0$ so that
+\[
+ \beta(t)=\beta_0\ell(t)^2,\quad \ell(t)=a+ct,
+ \qquad 1\le a-6R|c|\le a+6R|c|\le1+\delta.
+\]
+All these real couplings remain in the reserved band. Compensation
+keeps each fine field read fixed: the Gaussian coordinate is rescaled
+by $\ell(t)$ while its fluctuation coefficient is divided by
+$\ell(t)$. The cutoff-failure indicators and measurable incoming values
+are consequently not differentiated in this parameter.
+
+For a parameter series use the norm
+$|f|_R=\sum_{n\ge0}|f_n|R^n$. Its product estimate is the ordinary
+Cauchy-product inequality. A real local energy factor, including its
+coordinate prefactor, has the form
+\[
+ J(t,U)=A(U)\ell(t)^n\exp\{(1-\ell(t)^2)\Gamma(U)\}.
+\]
+The energy $\Gamma$ can have either sign. It cannot be replaced by
+its absolute value before estimating the exponential.
+For $q=\Gamma(U)$ the exponential series norm is at most $e^{H(q)}$,
+where
+\[
+ H(q)=(1-a^2)q+2aR|cq|+R^2c^2|q|.
+\]
+Choose the sign of $\xi$ so that $q c\xi\le0$ and take
+$3\le|\xi|\le4$. Since $a\ge1+6R|c|$, direct expansion gives
+$H(q)\le(1-\ell(R\xi)^2)q$. After $j$ coarse-field derivatives,
+factoring out $\ell(t)^n e^{(1-\ell(t)^2)q}$ leaves a polynomial
+of degree at most $2j$. Interpolate that polynomial at $2j+1$
+distinct such real nodes. Their scaled Lagrange polynomials have a
+fixed coefficient norm. Thus real jet bounds $C d^i$ at those nodes
+imply
+\begin{equation}\label{ch10:real-node-bound}
+ |D^iJ(\cdot,U)|_R\le K_j(1+\delta)^n C d^i,
+                   \qquad i\le j.
+\end{equation}
+The node sign is chosen only for a pointwise bound and is never
+differentiated. The same argument applied to the Gaussian density
+ratio in $D$ local real coordinates yields
+\[
+ \left|\ell(t)^D e^{(1-\ell(t)^2)Q(z)}\right|_R
+ \le(1+\delta)^D,\qquad Q(z)\ge0.
+\]
+Only coordinates read by the local term enter $D$.
+
+Small logarithmic factors require a different estimate. Their
+parameter dependence is polynomial of degree at most two; real
+values and derivatives of their exponential minus one have bound
+$v d^i$ at $-1,0,1$. For $v\le1/2$, taking the real logarithm at
+these three nodes preserves a bound $C_jv d^i$. Polynomial
+interpolation costs $C_jR^2$, and exponentiating in the coefficient
+algebra gives a bound $C_jR^2v d^i$ when $C_jR^2v\le1$.
+Affine forced activities have the same polynomial interpolation
+bound without taking a logarithm. These steps require no
+analyticity of the incoming activity as a function of the gauge
+field beyond the already imposed finite derivative order.
+
+For the primitive allowance $v=y^{-7/16+o(1)}$, this radius cost
+changes its exponent to
+$-7/16+2/256=-55/128<-2/5$.
+The local factor estimate \eqref{ch10:real-node-bound} retains its negative
+large-field energy: its additional $(1+\delta)^n$ is absorbed into
+the fixed local factor cost. A local read set in support $S$ has
+at most $C_L(1+B)^4 C_B(S)$ coordinates. Since $B$ is polynomial
+in $\log y$, its Gaussian prefactor satisfies, for any fixed
+$\eta>0$ and sufficiently large $y$,
+\[
+ (1+\delta)^{C_L(1+B)^4C_B(S)}\le e^{\eta C_B(S)}.
+\]
+This is absorbed by a support-exponent reserve, independently of the
+volume. The joint cutoff-failure probability and Gaussian score moments
+are those already used for the common majorant; Cauchy--Schwarz
+retains their cutoff-failure gain without assuming independent cutoff failures.
+
+We can therefore run the connected expansions of
+Chapter~\ref{ch08:chapter} in this coefficient norm. A derivative
+of order at most $j$ of a product with $k$ factors costs at most
+$k^j\le2^{jk}$, absorbed by inflating each vertex bound by $2^j$.
+Polynomial support moments are absorbed by another fixed support
+reserve. The first connected expansion has bound $y^{-2/5+o(1)}$;
+the logarithmic expansion and spatial derivative weights consequently
+have bound $y^{-3/8}$ at radius $R/2$, after increasing the entry
+threshold. The low-order projection uses finitely many auxiliary
+volumes of side $O(B)$ and supports coverable by a fixed number of
+$B$-balls. Its polynomial factors have exponent zero. Hence the
+actual raw projected regular family has finite-test bound
+\begin{equation}\label{ch10:broad-test}
+ \mathcal N\left(\sum_i a_i H(t_i)\right)
+ \le y^{-1/4}\sup_{n\ge0}\left|\sum_i a_i(2t_i/R)^n\right|.
+\end{equation}
+Here $\mathcal N$ is the full unnormalized regular derivative budget.
+The margin between $-3/8$ and $-1/4$ pays the projection factors.
+A cover number merely growing subpolynomially would not suffice
+inside an exponential weight; its uniform bound is used here.
+
+For completeness we explain the sharpening which makes this useful.
+At each real point, the stronger one-step remainder estimate gives
+\[
+ \mathcal N(H(t))\le 3\varepsilon C_{\rm st}x^{-11/10}
+                         +O(x^{-23/20+o(1)}),\qquad
+ x=\widehat\beta_m,
+\]
+where the fixed response allowance $\varepsilon$ can be made as
+small as desired before choosing the coupling threshold. This is the
+small remainder estimate of Chapter~\ref{ch09:renormalization}
+applied to this same collection.
+Let a finite test have moment norm $M_q$ at a fixed radius $q$.
+Interpolation at $k+1$ fixed real nodes separates its moments through
+degree $k$ from the remainder. The interpolating test has total
+variation at most $U_{k,q}M_q$; the remaining test has moment norm
+at radius $v\ge q$ at most
+$(1+U_{k,q})(q/v)^{k+1}M_q$. Applying the pointwise bound to the
+first part and \eqref{ch10:broad-test} to the second yields
+\[
+ M_q\{U_{k,q}\sup_t\mathcal N(H(t))
+             +(1+U_{k,q})(2q/R)^{k+1}y^{-1/4}\}.
+\]
+Take $k=300$. The last power is $y^{-365/256}$, strictly smaller
+than $y^{-23/20}$. First choose $\varepsilon$ to pay the fixed
+interpolation constant, then increase the coupling threshold. The
+result is an arbitrarily small multiple of $x^{-11/10}M_q$.
+The scalar projection costs the squared inverse field threshold;
+thus its allowance has the form
+\[
+ f_m=C\varepsilon x^{-11/10}/t(x)^2,
+ \qquad t(x)=x^{-1/2}e^{(\log\log x)^2}.
+\]
+The reset is linear on finite tests, and its fixed path contribution
+costs $O(|\alpha|t(x)^3)=o(x^{-11/10})$.
+
+Forced arrays retain one compulsory large-field factor throughout
+fusion. Work with their coefficientwise majorants, not separately
+chosen value bounds. A raw hard allowance $a_h\le C e^{-cP(y)^2}$,
+where $P(y)=e^{(\log\log y)^2}$, is negligible compared with any
+fixed fraction $\phi$ of $e^{-P(x)^{1/5}}$. The soft correction has
+series allowance $a_s\le y^{-1/8}$. Put $p=y^{1/16}$ and
+$\zeta=-\log(\phi p)\ge0$. Then
+$I=e^\zeta a_h+2a_s\le(8p)^{-1}+2a_s$ eventually, the support
+ball count times $I$ tends to zero, and
+\[
+ e^{-\zeta}(e^I-1)\le\phi(1/4+4pa_s)\le\phi.
+\]
+This is exactly the connected fusion estimate with the hard factor
+retained once. Radius reduction by a fixed factor converts the
+finite-test coefficient bounds into one summable majorant at every
+support. Eligibility indicators are parameter independent and
+preserve it. The result proves both inequalities
+\eqref{ch10:finite-tests}, with arbitrarily small fixed $d$, for the
+protected local construction. The coupling allowance above gives
+$s_m=2f_m\le C_jx^{-1/10}$ needed for cumulative control.
+
+This argument uses the real-node bounds for the same protected local
+sectors on the reserved coupling band. Those bounds follow by applying
+the real estimates of Chapter~\ref{ch06:large-fields} with their
+constants fixed on that band; the rescaling keeps all fine reads and
+masks fixed. It adds a parameter estimate to that construction,
+not a differentiation of measurable cutoff indicators.
+
+\subsection{Numerical cumulative control}
+
+The cumulative scalar bound is compatible with the schedule.
+Suppose at a fixed stage its allowance has the proved form
+$s(x)\le C_j x^{-1/10}$, where $x$ is the reference coupling.
+For the stage increment $a=\kappa_G\log\mathscr L_j>0$ and $x\ge a$,
+\[
+ (x+a)^{31/32}-x^{31/32}
+ \ge\tfrac{31}{32}2^{-1/32}a x^{-1/32}.
+\]
+Since $x^{-1/10}=o(x^{-1/32})$, an entry threshold ensures
+$s(x)\le((x+a)^{31/32}-x^{31/32})/128$.
+Summation gives the required bound by telescoping, including all
+initial scales once $\bar\beta$ pays the first threshold.
+The decay estimate for $s(x)$ is required before this numerical
+argument; an arbitrary stage constant would not suffice.
+
+\subsection{Common-input continuity and the zero-array histories}
+\label{ch10:cutoff-supplier}
+
+Use now the quadratic and path coefficient limits with the strict
+width reserve established in
+Section~\ref{ch10:path-stability}. We verify the cutoff-comparison
+part of Proposition~\ref{ch10:stability-assumption} on the actual
+allowed inputs. All assertions in this paragraph are at one fixed
+scale and period; constants need not be uniform in the scale.
+
+For a finite collection of elementary labels and bounded path lengths,
+the fine-coordinate dimension is finite. Write each integral in the
+same physical coordinates at the two cutoffs. Convergence of the path
+coefficients with a width reserve gives convergence of its finitely
+many required derivatives, uniformly on the smaller local chart.
+The inverse identity
+$H_N^{-1}-H^{-1}=H_N^{-1}(H-H_N)H^{-1}$, the common positive Hessian
+bound and stationary uniqueness give convergence of means, precisions
+and stationary jets. Differentiated Gaussian densities are their
+ordinary polynomial scores. On a sufficiently late tail their
+precisions have a common smaller positive lower bound, so a fixed
+Gaussian exponential times a polynomial dominates them. The protected
+change of variables leaves measurable fine reads fixed. Thus the
+same input activity discrepancy is bounded in its prescribed norm;
+no derivative of a measurable indicator is introduced.
+
+Use the physical fine coordinates also for the masks. At a fixed
+level their threshold is determined by the fixed reference coupling,
+and the cutoff-failure catalogue, support dictionary and clipping rule
+are independent of the terminal index. Thus the actual mask is the
+same measurable function in both integrals. Although its expression
+in a centered Gaussian variable would move with the mean or precision,
+no such moving expression is compared here. The local change of
+density includes its Jacobian and leaves that physical mask fixed.
+The coarse small-field masks are likewise identical. This avoids any
+uniform assertion about the measure of a moving threshold surface.
+
+To obtain the suprema in the output derivative budget, choose the
+protected Gaussian and chart estimates through one order beyond the
+outgoing order. This is a numerical derivative reserve for the
+integration kernels, and does not require one additional derivative
+of an incoming activity. Indeed in each differentiated integral the
+protected coordinate change holds its entire fine activity read
+fixed. An additional coarse increment differentiates the smooth
+density, chart and Jacobian scores, while the old measurable factors
+remain unchanged. The bounds of Chapter~\ref{ch06:large-fields} apply
+at every fixed requested score order; increase that order before
+selecting the stage constants. Direct path terms and the finite
+local projection are smooth and satisfy the same extra order by
+their exponential coefficient bounds. Thus this reserve is available
+also on a plateau with equal incoming and outgoing activity derivative
+orders. On each common small-field chart it gives equicontinuity of the
+finite collection of output derivatives. A finite net on the compact
+coarse configuration domain and dominated convergence then give
+uniform convergence there. The estimates extend to its closure from
+the protected neighborhood; multiplication by the same small-field mask
+preserves the resulting supremum bound.
+
+Next remove the finite-label restriction. Long paths have uniformly
+small tails by the strict exponential width reserve. Large connected
+supports and high cluster multiplicities have uniformly small tails
+by the support and attachment reserves of the polymer estimates.
+Remaining multiplicities inherited from the input arrays are treated
+by the Cauchy tail argument at the end of this chapter: a fixed late
+array has a summable value tail, and the activity-norm discrepancy
+bounds the tail of every later array. In a protected derivative the
+input factors are kept at fixed fine reads, so these are value tails;
+the differentiations fall on the controlled Gaussian and chart
+factors. If an input derivative is explicitly present, its difference
+is already controlled by the corresponding component of the input
+norm. First truncate with these uniform errors, then compare the
+finite integrals. This proves convergence in the output norm.
+
+The projected scalar is a finite linear functional of the same
+converging local derivatives and therefore also converges. Local
+subtraction preserves this conclusion by linearity; fusion preserves
+it by its convergent product expansion with a strict attachment
+margin. The finite auxiliary projection uses the same fields and
+periods at both cutoffs. Thus this comparison concerns the actual
+returned arrays and $Q_{m,N}$, not some other representation of their
+densities.
+
+The same proof applies when the terminal activity is zero and the
+couplings below it are prescribed in advance. At the initial auxiliary
+level the density is the positive bare path exponential, and all
+activity budgets are zero. After each step its activity array has the
+small bound proved above. Replacing the returned coupling by the next
+prescribed coupling multiplies the represented density by a strictly
+positive path exponential; its activity gas is unchanged. Therefore
+positivity is retained, and the next step is an allowed input to
+Theorem~\ref{ch09:step-theorem}. All stationary, support and cutoff
+conditions depend on the common path and reference band, which have
+not changed. In particular this induction supplies precisely the
+histories with prescribed couplings used in the convergence proof; it does not assume
+that every abstract element of a completed norm ball represents a
+positive density.
+
+The quadratic limit of Proposition~\ref{ch05:horizon-limit}, the affine
+coefficient comparison and the preceding local-integral argument give
+the common-input continuity required here, including all zero-array
+histories with prescribed couplings. Together with the finite-test
+estimates and cumulative bound, this proves
+Proposition~\ref{ch10:stability-assumption}.
+
+\section{Convergence of the coupled histories}
+\label{ch10:fixed-scale}
+
+Recall the schedule from Section~\ref{ch10:schedule}: $J(m)$ is the stage at scale $m$, $L_m=\mathscr L_{J(m+1)}$ is the block ratio, and $\tau_m=\log a_m^{-1}$. The reference clock $\widehat\beta_m=\bar\beta+\kappa_G\tau_m$ is distinct from the tuned actual coupling $\beta_m$.
+
+\begin{theorem}[Fixed-scale convergence]
+\label{ch10:convergence}
+Use the common construction above with its strengthened comparison
+reserves and fixed coefficient functionals. If the coarse endpoints
+converge to $b$, then for every fixed
+$m,p$ their couplings and activity arrays converge along the entire
+cutoff sequence. Their scalar corrections $q_m$ converge as well.
+The limits depend on $b$ and the fixed common construction, and not
+on the choices made in shooting. No convergence of additive vacuum
+normalizations is asserted.
+\end{theorem}
+
+\begin{proof}
+First prescribe two coupling sequences having the same limit at each
+fixed level. At a level $k>m$ replace the activity array by zero and
+run the same maps downwards using the prescribed coupling sequence, without
+imposing the scalar recursion on this auxiliary history. The
+hypothesis on its domain is needed here. Repeated use of
+\eqref{ch10:lipschitz} gives
+\begin{equation}\label{ch10:activity-truncation}
+ \|x_m-x_m^{[k]}\|\le(1/16)^{k-m}.
+\end{equation}
+For fixed $k$, the truncated arrays converge by finite downward
+induction and the common-input cutoff comparison. This statement
+is Cauchy convergence: apply that comparison to arbitrary pairs of
+subsequences. Then choose $k$ so the two errors in
+\eqref{ch10:activity-truncation} are small. Completeness gives a
+common activity limit for both prescribed coupling sequences, and common scalar
+correction limits follow from the same local comparison.
+
+At each fixed scale the coupling coordinate lies in a compact real
+interval. A diagonal subsequence therefore makes all coupling
+coordinates converge; the preceding paragraph supplies activity
+limits without compactness of their norm balls. Compare two such
+limiting histories. The finite scalar recursion, summed from their
+common bottom endpoint, gives
+\begin{equation}\label{ch10:prefix}
+ b_m(\lambda_m)-b_m(\lambda'_m)
+                 =-\sum_{i<m}(q_i-q'_i).
+\end{equation}
+The limits of the common path corrections $\alpha_{N,i}$ cancel.
+There is no infinite sum or ultraviolet boundary term.
+
+The estimates \eqref{ch10:lipschitz} pass to the two limits. To
+justify this without extending a map arbitrarily to the completed
+space, at each finite cutoff run the second limiting coupling sequence
+with a zero terminal array. The first paragraph identifies its limit
+with the second history. Compare it with the first history at the
+same cutoff and pass to the limit.
+Put
+$d_m=\max\{|\lambda_m-\lambda'_m|,\|x_m-x'_m\|\}$.
+The activity discrepancy is at most $1/4$. By
+\eqref{ch10:inverse-coordinate}, \eqref{ch10:prefix}, and the
+individual scalar bounds, its coupling discrepancy is at most
+$\mathfrak b_m^{-1}\sum_{i<m}s_i\le1/128$. Hence
+$D=\sup_m d_m\le1/4$. The sharper scalar comparison now gives
+\[
+ |\lambda_m-\lambda'_m|
+ \le4\mathfrak b_m^{-1}\sum_{i<m}s_iD\le D/32,
+ \qquad \|x_m-x'_m\|\le D/16.
+\]
+Thus $D\le D/16$ and $D=0$. Every subsequence has a further
+subsequence with these same limits. A subsequence staying a positive
+distance away at one fixed level would contradict this fact, so the
+whole sequence converges. Finally $b_m$ is continuous, giving the
+asserted convergence of the physical couplings.
+\end{proof}
+
+\section{Identifying the analytic comparison on the selected family}
+\label{ch10:identification}
+
+For clarity we record what the additional input requires of the local
+integral, so it can be checked independently of the preceding abstract
+argument. The finite path comparisons must use the same fixed
+coefficient functionals and rooted estimates as the actual history. Replacing a
+terminal Wilson normalization must leave every fixed lower-scale
+construction unchanged eventually, or have an explicitly vanishing
+comparison error. A new selection of equally bounded coefficients at
+each occurrence would not suffice.
+
+For a finite set of activity labels, write both local integrals in
+common physical coordinates. Converging means and positive precisions,
+with their uniform inverse and derivative bounds, give convergence
+against a common Gaussian majorant. The protected change of variables keeps the physical fine masks fixed,
+including their reference thresholds, and retains its common Jacobian. The common majorant of
+Chapter~\ref{ch06:large-fields} concerns the actual source and mask;
+it cannot be replaced by a bound for an unrelated flat Gaussian.
+The projected scalar coefficient also needs convergence in its local
+derivative norm. Convergence of the gas alone does not identify it.
+
+The infinite dictionaries require a separate tail argument. For an
+input array $f$, let $b_f(i)$ be the supremum of the absolute actual
+activity, including its mask. On a fixed finite torus the activity bounds
+give $\sum_i b_f(i)\le C_m\|f\|$. A Cauchy sequence has uniformly
+small value tails: compare with one late fixed member, truncate that
+member's summable tail, and use
+$b_f(i)\le b_{f-g}(i)+b_g(i)$. This does not assert density of finite
+arrays in every derivative norm. Output derivative tails require the
+stronger support reserve in the connected expansion. The local
+projection is finite and the fusion sum has a strict convergence
+margin, so these estimates, when proved on the common inputs, survive
+both operations.
+
+The auxiliary zero-array histories used in the proof require the same
+checks. Their incoming activity budgets vanish, but their path,
+stationary branch, cutoff geometry and differentiated Gaussian factors
+do not vanish. One must use the same block bridge, clipping data and
+stationary graph. Uniform implicit-function uniqueness identifies a
+replicated auxiliary graph with the selected one; merely invoking the
+existence of some admissible stationary graph is insufficient.
+
+The schedule,
+finite-history tuning and logarithmic running follow from the finite-step theorem. The fixed-scale conclusion is
+Theorem~\ref{ch10:convergence}. Sections~\ref{ch10:parameter-supplier} and
+\ref{ch10:cutoff-supplier} establish the stronger local comparisons
+from the protected expansion and converging background coefficients.
+Proposition~\ref{ch05:horizon-limit} supplies the fixed-scale quadratic
+limit for the actual nested history. This completes the fixed-scale
+construction, which remains distinct from subsequent convergence of
+all continuum correlations.

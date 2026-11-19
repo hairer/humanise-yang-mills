@@ -1,0 +1,176 @@
+% Fragment for Chapter13: insert after the coarse separated bound.
+\section{Sharp fixed-arity short-distance bounds}
+\label{ch13:sharp-section}
+
+For a fixed number of insertions the loss in
+\eqref{ch13:power} can be reduced to an arbitrarily small excess over
+the sum of their degrees. This uses the normalized replicated integral,
+not the stronger Gaussian comparison used for rank detection. We keep
+all incoming joint marked components; replacing them by a product of
+singletons would invalidate the estimate.
+
+Write $\tau_m=\log(1/a_m)$, so
+$\widehat\beta_m=\bar\beta+\kappa_G\tau_m$. Let $C_j\ge1$ include
+the inverse-column, finite-section and source constants at stage $j$.
+The stage ratio and entry may be chosen to satisfy
+\begin{equation}
+ \frac{\log C_j}{\log \mathscr L_j}\longrightarrow0,\qquad
+ B_{i+1}^2\le2B_i^2,\qquad
+ \frac{(L_iB_i^2)^4 q_{i+1}^{\rm site}}{\tau_{i+1}}
+                          \longrightarrow0.
+ \label{ch13:sharp-schedule}
+\end{equation}
+Here $B_i$ is the support-block radius, and $q_i^{\rm site}\ge1$ is
+the per-site normalization cost of \eqref{ch11:replicated-bound};
+it is not a marked density or the scalar coupling correction.
+For the admissible path-action representation one can use
+$q_i^{\rm site}\le C_{J(i)}(1+\log\widehat\beta_i)$.
+Indeed the scalar-free exponent has upper bound $C_{J(i)}V$, while
+on the event that every link has chord at most
+$\widehat\beta_i^{-1/2}/4$ it has lower bound $-C_{J(i)}V$ and
+all forced flags are absent. The leading positive path quadratic is
+bounded there by $C_{J(i)}\widehat\beta_i\rho^2V$ with
+$\rho=\widehat\beta_i^{-1/2}$; exponential path summability bounds
+the path lengths in this estimate. Signed regular costs and the absolute
+activity site sum have their admissible bounds. The Haar-ball argument
+of Section~\ref{ch11:replicated} therefore costs only
+$C_{J(i)}V+2D_GV\log\widehat\beta_i$, where $D_G$ is an ambient
+real matrix dimension for the gauge group.
+
+These requirements are compatible with delayed entry. At each fixed
+stage $B_i=O_j((\log(2+\tau_i))^2)$ and
+$q_i^{\rm site}=O_j(1+\log(2+\tau_i))$, so the last quotient in
+\eqref{ch13:sharp-schedule} tends to zero at its fixed ratio. Choose
+the ratio after $C_j$, then postpone entry until that quotient is at
+most $1/j$ for both adjacent-stage choices. The same postponement gives
+the displayed bound on consecutive $B_i$,
+$\log L_i=o(\tau_i)$, and $\log C_{J(i+1)}=o(\tau_i)$
+at transitions. Choose each ratio against both adjacent-stage column
+constants, which are fixed beforehand. These are conditions on the single selected
+schedule; no new schedule is chosen after fixing a correlation.
+
+\subsection{A normalized primary source}
+
+For degree $d$ and coefficients in a fixed bounded ball, set
+\[
+ E_k=C_{d,R}^{\rm sec} C_{J(k)}\prod_{i<k}C_{J(i+1)},\qquad
+ \omega_k=a_k^d\widehat\beta_k^{-w_d}E_k^{-1}.
+\]
+The fixed section constant $C_{d,R}^{\rm sec}$ includes the coefficient radius and all its signed and
+conjugated images. Choose the fixed integer $w_d$ large enough to absorb
+the finite powers of the inverse small-field threshold in the degree-$d$
+section and its forced counterpart, as well as the source attachment
+allowance. Multiplication of the one-mark inverse bounds gives the
+factor $E_k$; the engineering normalization is exactly $a_k^{-d}$.
+Thus multiplication of the \emph{complete} source by $\omega_k$
+puts its singleton exponential bound below three and its forced singleton
+bound below one. Its remaining normalized size can be placed below the
+attachment allowance by increasing $w_d$.
+
+The higher-mode bounds of Chapter~\ref{ch11:insertions} retain every
+incoming mode and every original eligibility event. Decreasing all mark
+weights only decreases their absolute mode sums. The source attachment
+inequalities at the intervening levels propagate this chosen small
+weight; they require the same inverse-column and threshold powers already
+included in $E_k,w_d$. Consequently \eqref{ch11:root-bound}, with
+$x=3,y=1$, gives
+\begin{equation}
+ \|O_{N,p}^{(d)}(c)\|_{\mathrm{cell}(m)}
+ \le \omega_k^{-1}
+           \exp\{(a_m/a_k)^4q_k^{\rm site}+6\}.
+ \label{ch13:sharp-root}
+\end{equation}
+It holds on a full cutoff tail uniformly in period and in the coefficient
+ball, whenever the reflected anchors at the stopping level have spacing
+at least $B_k^2$. Their spacing stays adequate at finer levels because
+$L_i\ge3$ whereas $B_{i+1}^2/B_i^2\le2$.
+
+The logarithm of $E_k$ is $o(\tau_k)$: split its sum into a finite
+initial segment and a tail where
+$\log C_{J(i+1)}\le\epsilon\log L_i$, then let $\epsilon\downarrow0$.
+The separate terminal column is absorbed by the same ratio bounds and
+$\log L_{k-1}=o(\tau_k)$. Also
+$\log\widehat\beta_k=o(\tau_k)$. Therefore
+\begin{equation}
+                        6-\log\omega_k=d\tau_k+o(\tau_k).
+ \label{ch13:weight-size}
+\end{equation}
+This is the reason the replicated prefactor does not introduce a fixed
+extra scaling degree.
+
+\subsection{The stopping scale and centered estimate}
+
+Choose $k=k(m)$ as the first level $k\ge m$ with
+$B_k^2\le a_m/a_k$. It exists because $B_k$ grows subexponentially
+in $\tau_k$, whereas $a_m/a_k=e^{\tau_k-\tau_m}$. By minimality,
+\[
+ (a_m/a_k)^4q_k^{\rm site}
+       \le (L_{k-1}B_{k-1}^2)^4q_k^{\rm site}=o(\tau_k).
+\]
+If the first level already qualifies the same conclusion follows from
+the fixed-stage cost bound. Since $q_k^{\rm site}\ge1$,
+\[
+ 0\le\tau_k-\tau_m=\log(a_m/a_k)
+       \le(a_m/a_k)^4q_k^{\rm site}=o(\tau_k).
+\]
+It follows that $\tau_k/\tau_m\to1$.
+Combining this with \eqref{ch13:sharp-root} and
+\eqref{ch13:weight-size} proves the following statement.
+
+\begin{proposition}[Sharp centered bound]
+\label{ch13:sharp-centered}
+For every degree $d$, coefficient radius $R$ and $\epsilon>0$, there
+is $C_{d,R,\epsilon}$, fixed before the cell scale $m$, such that
+\[
+ \|O_{N,p}^{(d)}(c,y)\|_{\mathrm{cell}(m,y)}
+        \le C_{d,R,\epsilon}a_m^{-d-\epsilon},\qquad\|c\|\le R.
+\]
+For each fixed $m$ this holds for all sufficiently large cutoffs,
+uniformly in $p,y$ and in signed and conjugated images. The insertion
+is interior in that cell on the same tail.
+\end{proposition}
+\begin{proof}
+For all sufficiently large $m$, the logarithm of the right side of
+\eqref{ch13:sharp-root} is at most $(d+\epsilon)\tau_m$ by the
+preceding limits. For the finite remaining set of $m$, use its selected
+fixed stopping level and take the maximum of the finite constants.
+The fixed lattice stencil becomes interior at every fixed physical cell
+scale as $N\to\infty$. Translation covariance makes the threshold
+independent of $y$.
+\end{proof}
+
+\subsection{Arbitrary separated points}
+
+The slow ratio condition gives a sharper first-below-scale estimate
+than \eqref{ch13:scale-thickness}. For any fixed $c>0$, let $m(r)$
+be the first level with $a_m<cr$. Then
+\begin{equation}
+            \frac{\log(1/a_{m(r)})}{\log(1/r)}\longrightarrow1
+                         \quad(r\downarrow0).
+ \label{ch13:first-below}
+\end{equation}
+Indeed $a_{m-1}\ge cr>a_m=a_{m-1}/L_{m-1}$, and the logarithm of
+the overshoot is at most $\log L_{m-1}=o(\tau_{m-1})$.
+Any fixed finite iteration of first-below choices has the same property.
+
+For a fixed arity $n$ and mutually separated anchors, first choose a
+cell side below a fixed small multiple of their minimum separation $r$.
+Translate its boundaries away from all anchors. Then choose a centered
+scale smaller than this side divided by $6(n+1)$.
+The interior-cell comparison and the chessboard inequality apply.
+Both chosen scales have logarithm $(1+o(1))\log(1/r)$ by
+\eqref{ch13:first-below}. Apply Proposition~\ref{ch13:sharp-centered}
+with a sufficiently small excess to each degree separately. We obtain,
+for every $\epsilon>0$,
+\begin{equation}
+ |S_n(A_1,\ldots,A_n;x)|
+    \le C_{\boldsymbol A,n,\epsilon}
+             r^{-\sum_i d_i-\epsilon},\qquad 0<r\le1,
+ \quad A_i\in F_{d_i},\quad\min_{i\ne j}|x_i-x_j|_\infty\ge r.
+ \label{ch13:sharp-separated}
+\end{equation}
+The same bound is uniform over bounded sets of fixed raw representatives.
+Its constant is independent of the diameter of the configuration.
+For fixed derivatives, replace the differentiated field by its degree-raised
+label; their total order is added to $\sum_i d_i$.
+

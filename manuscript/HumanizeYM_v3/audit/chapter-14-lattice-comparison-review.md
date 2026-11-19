@@ -1,0 +1,13 @@
+# Independent review: finite-menu lattice comparison
+
+Reviewed `chapters/14-lattice-comparison.tex` against the current Chapter 11 proposition `ch11:n-mark-comparison` and its common extraction/window covariance suppliers.
+
+- The polynomial map T and its same-insertion covariance are defined at the common reading level. They do not depend on the later magnification exponent. One longest restarted history can be restricted for the finite menu; no different top law or spectator-dependent coefficient extraction is introduced.
+- The full n-marker algebra retains all incoming joint modes. Dividing by the finite free moment polynomial is an exact coefficient identity with unchanged empty coefficient. Bounds depend on fixed marks per cell and their finite subsets, not the number of reflected cells. The general n Wick/log estimates weaken the covariance exponent appropriately.
+- Restored source amplitude H^(1/(8n)) and normalization H^(1/(16n)) give the announced negative root exponent for every nonempty mode. The leading and lower scale ratios, with the finite stage delay, give physical cell side at most a_k H^(b+5).
+- The lift relation at different magnifications is exact: the engineering dilation composes, and it commutes with factor scaling. The inverse bound is needed only uniformly in N,p at each fixed reading level; no uniform bound in k is falsely claimed.
+- The four exponent inequalities admit the stated choice. Enlarging the common part of all three alpha values preserves the first three inequalities and makes the last negative. They also imply s_k/delta_k tends to zero, including the degree-zero case. The normalization r_k s_k=a_k is correct.
+- The first-scale cells fit within fixed separated configurations; the second-scale cells fit within the strip margin r_k delta_k. The positional derivative is with respect to rescaled coordinates, giving 1/delta_k rather than 1/(r_k delta_k). Coordinate-hybrid strips still have volume O(delta_k). Uniform covariance estimates depend on full point separation, not on a nonzero difference in every coordinate.
+- Taking bounded coefficient limit points at each fixed k does not change the previously chosen full cutoff correlation limit. The finite-menu diagonal sequence is compatible with the original field family and its real/unit/signed identities.
+
+No concrete correction found in this targeted review. It relies on the actual restarted-family proof, whose recording versus actual coupling issue was independently corrected and audited. It does not replace the earlier original-source verification of the finite Gaussian transport and same-history local compiler.

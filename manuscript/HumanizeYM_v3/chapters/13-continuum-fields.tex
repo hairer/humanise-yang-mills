@@ -1,0 +1,401 @@
+\chapter{Continuum correlations and local fields}
+\label{ch13:continuum}
+
+The ultraviolet limit leaves a theory on each fixed physical torus.
+We now let its period grow. The construction may select a subsequence
+of volumes, but it does not select a new subsequence of ultraviolet
+cutoffs for the correlations. Local fields are then defined by their
+responses in all separated correlations. Polynomial labels that give
+the same responses represent the same field.
+
+We use the full fixed-volume limit of
+Theorem~\ref{ch12:uv-theorem}, the volume-uniform finite-difference
+bounds of Theorem~\ref{ch11:all-period-differences}, and the actual
+equation and detector comparisons of Chapter~\ref{ch11:insertions}.
+Compactness gives the volume extraction; the separate equation
+inclusion and rank bounds identify its local fields.
+
+\section{One subsequence of volumes}
+\label{ch13:extraction}
+
+Recall that $\Conf_n$ is the open set of pairwise distinct points in
+$(\RR^4)^n$, without any restriction on their coordinate projections.
+Let $p(k)$ be any strictly increasing sequence of volume indices.
+On every compact subset of $\Conf_n$, the periodic kernels
+$M^{\rm UV}_{p(k),v}$ are eventually defined with separation bounded
+below independently of $k$. Each of their derivatives is uniformly
+bounded there. The cutoff threshold used to prove the bound may
+depend on the fixed volume; after taking that ultraviolet limit it
+disappears from the bound.
+
+Arzel\`a--Ascoli and diagonal extraction
+\cite[Theorem~7.25]{Rudin1976} give one refinement $P(k)=p(q(k))$
+and a multilinear family $S_n$ such that
+\begin{equation}
+ M^{\rm UV}_{P(k),v}\longrightarrow S_n(v;\cdot)
+                    \quad\hbox{in }C^\infty_{\rm loc}(\Conf_n).
+ \label{ch13:volume-limit}
+\end{equation}
+The diagonal family is countable: arities, degree lists, basis-label
+lists, derivative lists, and compact exhaustions of the configuration
+spaces. Multilinearity extends its conclusions to all labels.
+Integration by parts identifies the extracted derivative limits with
+the derivatives of $S_n$. No diagonalization over all smooth tests is
+needed. For each fixed separated test $f$ the order of limits is
+\begin{equation}
+ \lim_{k\to\infty}\lim_{N\to\infty}
+ a_N^{4n}\sum_y f(a_Ny)M_{N,P(k)}(v;y)
+                   =\int f(x)S_n(v;x)\,dx.
+ \label{ch13:ordered-limit}
+\end{equation}
+The inner limit is the whole cutoff sequence. Every further volume
+refinement preserves \eqref{ch13:volume-limit} and
+\eqref{ch13:ordered-limit}.
+
+Permutation symmetry, conjugation, the distinguished unit and
+hypercubic covariance pass from the finite correlations by these
+limits. Translation by an arbitrary real vector is obtained by
+approximating it on the same lattice; the uniform first-difference
+bound controls the rounding error. Full orthogonal covariance will
+require a separate argument.
+
+\section{Separated cells and errors in local observables}
+\label{ch13:cells}
+
+The chessboard seminorm of Section~\ref{ch01:reflection} bounds an
+observable by its repeated reflected copies in a tiling. For local
+observables $F_1,\ldots,F_n$ interior to distinct cells of the same
+translated tiling $\mathcal T$, the chessboard inequality gives
+\begin{equation}
+ \left|\left\langle\prod_iF_i\right\rangle_{N,p}\right|
+                   \le\prod_i\|F_i\|_{\mathcal T}.
+ \label{ch13:chess}
+\end{equation}
+It is the lattice inequality already cited from
+\cite{FrohlichIsraelLiebSimon1978}, with the constant observable in every unused cell.
+The estimate does not grow with the distances between the cells.
+
+Here is the required geometric placement. For a tiling of physical
+side $a$, the translations in one coordinate bringing one of $n$
+anchors within distance $w$ of a boundary have total length at most
+$2nw$ modulo $a$. If $2nw<a$, a translation avoids all these strips;
+a lattice translation does so for sufficiently fine cutoff. Choose
+one in each coordinate. Anchors with pairwise maximum-coordinate
+distance greater than $a$ cannot share a cell. Hence if the centered
+local bounds apply at scale $k$ with margin $3a_k$, and
+$6na_k<a_m$, anchors separated by more than $a_m$ admit distinct
+side-$a_m$ cells with the required margins.
+
+We shall use an error family $E_{N,p}$ with the following property:
+for any fixed arity and sufficiently small fixed cell side, its
+chessboard seminorm is at most $\eta_{N,p}\to0$ in the ordered
+limits, uniformly over placements satisfying a specified interior
+margin. The cell side can be chosen after the arity and a requested
+lower scale, before the cutoff. The spectator insertions have
+uniform centered seminorm bounds on sufficiently fine fixed scales.
+Place the error and all spectators in distinct cells, choosing a
+still finer scale for the spectators' margins. Equation
+\eqref{ch13:chess} yields
+\begin{equation}
+ \left|\left\langle E_{N,p}(y_i)
+                  \prod_{h\ne i}O_{N,p}(v_h,y_h)\right\rangle\right|
+               \le C(v,\delta)\eta_{N,p},
+ \label{ch13:vanishing-error}
+\end{equation}
+for configurations separated by $\delta>0$. The weighted number of
+lattice points in a fixed compact test support is bounded. The same
+error therefore vanishes after separated smearing. This conclusion
+uses the stated order of choices for the error norm; pointwise
+smallness at one configuration would not suffice.
+
+\section{Fields as equivalence classes of labels}
+\label{ch13:quotient}
+
+A label includes its degree space: the same formal polynomial in
+$V_d$ and $V_e$ can have different cutoff normalizations. For
+$c\in V_d$, a fixed spectator list $v$, and a separated smooth test
+$f$, define the one-slot response
+\[
+ L_{v,f}(c)=\int f(x_0,x)S_{n+1}(c(x_0),v(x))\,dx_0\,dx.
+\]
+Let
+\begin{equation}
+ N_d(S)=\bigcap_{v,f}\ker L_{v,f},\qquad F_d=V_d/N_d(S).
+ \label{ch13:null}
+\end{equation}
+The intersection permits every finite spectator list, of arbitrary
+degrees. Smoothness makes this equivalent to vanishing in every
+pointwise separated correlation. Permutation symmetry ensures that
+nullity has the same meaning in every slot. The quotient $F_d$ is
+finite dimensional, but its dimension has not yet been identified.
+
+We use the bounded equivariant idempotents $\Pi_{d,N,p}$ of
+Section~\ref{ch11:uniform-differences}, with kernel
+$\mathsf Z_{N,p,d}P_{N,p,d}S_{t_N}R_d\mathcal I_d$.
+Choose a common ordered limit $\Pi_d$ after a coefficient refinement. More
+precisely, diagonal extraction over the countably many degrees and
+volumes gives one increasing sequence $N=n(j)$ along which the bounded
+coefficient arrays converge at each fixed volume. A further volume
+refinement makes those limits converge as well. All coefficient
+limits below use these refined ordered tails. This auxiliary selection
+does not change the already existing full cutoff limits of the
+correlations. Write
+$r_d=\dim\mathcal M_d^{\rm Max}$ for the dimension of the free Maxwell
+quotient in Chapter~\ref{ch03:maxwell}. The construction gives:
+\begin{enumerate}
+\item the ranks of $\Pi_{d,N,p}$ are at most $r_d$;
+\item every bounded family in $\ker\Pi_{d,N,p}$ has vanishing
+separated responses in the ordered limits;
+\item there are finite matrices of limiting separated responses,
+evaluated on comparison labels, that approach an invertible
+$r_d\times r_d$ free detector matrix.
+\end{enumerate}
+The first statement is exact rank equality, since every map defining
+the finite equation space is invertible. For the second,
+Lemma~\ref{ch11:uniform-sweep} makes its replicated root norms tend
+to zero; bounded rows have uniformly subpower inverse terminal
+coordinates, and \eqref{ch13:vanishing-error} supplies every spectator
+response. For the third, Proposition~\ref{ch11:finite-detector-input}
+gives the actual finite-cutoff matrices with error tending to zero
+as their comparison depth increases. Include their finitely many
+bounded label columns at each of the countably many comparison depths
+in the same coefficient refinement. At each fixed depth, their
+ordered limits preserve the matrix estimate by multilinearity and
+the uniform correlation bounds. An injective rectangular detector
+has an invertible square minor; retain those rows.
+
+\begin{proposition}[Identification by two rank bounds]
+\label{ch13:rank}
+For this selected continuum family,
+$N_d(S)=\ker\Pi_d$ and $\dim F_d=r_d$.
+\end{proposition}
+\begin{proof}
+For fixed $c$, the bounded family $(1-\Pi_{d,N,p})c$ has vanishing
+responses. Taking limits gives $L_{v,f}((1-\Pi_d)c)=0$ for all
+$v,f$, so $\ker\Pi_d\subset N_d(S)$. Converging idempotents have
+eventually constant ranks: if their norm difference is less than
+one, each is injective on the other's range. Thus
+$\dim F_d\le\operatorname{rank}\Pi_d\le r_d$.
+Each comparison matrix factors through $F_d$, since its rows are
+separated responses. Matrices sufficiently close to the invertible
+free detector matrix have rank $r_d$. Hence $\dim F_d\ge r_d$.
+Equality of dimensions and the kernel inclusion prove the result.
+\end{proof}
+
+\subsection{Representatives chosen before the spectators}
+
+Approximate inclusion and derivative labels need not stay bounded.
+The following finite-dimensional observation explains the normalized
+null estimate required to replace them by fixed vectors. It also
+avoids choosing a separate representative for every test.
+
+Let $V$ be finite dimensional, $\Pi_u\to\Pi$ idempotents, and
+$L_{i,u}\to L_i$ linear functionals, along a proper filter of indices.
+Assume $\ker\Pi=\bigcap_i\ker L_i$. If vectors $x_u$ satisfy
+\begin{equation}
+ L_{i,u}(x_u)\to t_i,\qquad
+ L_{i,u}\left(\frac{x_u-\Pi_ux_u}{1+\|\Pi_ux_u\|}\right)\to0
+                              \quad\hbox{for every }i,
+ \label{ch13:normalized-null}
+\end{equation}
+there is one $z\in\operatorname{ran}\Pi$ with $L_i(z)=t_i$ for
+all $i$. To see this, put $b_u=(1+\|\Pi_ux_u\|)^{-1}$ and
+$z_u=b_u\Pi_ux_u$. A common cluster point $(b,z)$ satisfies
+$b+\|z\|=1$, $\Pi z=z$ and $L_i(z)=bt_i$. If $b=0$, then
+$z\in\ker\Pi\cap\operatorname{ran}\Pi$, a contradiction.
+The vector $z/b$ is the desired representative. Compactness is used
+only in one fixed finite-dimensional space; all response identities
+hold at the same cluster point because they hold along the filter.
+
+In the application, the filter is generated by ordered tails:
+$p=P(k)$ with $k\ge k_0$, and $N=n(j)$ with $j\ge j_0(k)$.
+The normalized null condition is available for every admissible
+coefficient family in the sense of Section~\ref{ch11:uniform-differences}.
+Indeed, if $x_{N,p}$ has subpower inverse terminal coordinates, then
+$x/(1+\|\Pi x\|)$ has the same property, whereas
+$\Pi x/(1+\|\Pi x\|)$ is bounded and therefore admissible.
+Their difference lies in the exact finite equation kernel.
+Lemma~\ref{ch11:uniform-sweep}, followed by
+\eqref{ch13:vanishing-error}, proves
+\eqref{ch13:normalized-null} for all spectators on the same tail.
+This argument applies even when the original $x_{N,p}$ are unbounded.
+
+\section{Inclusions and derivatives}
+\label{ch13:calculus}
+
+For each basis label $c\in V_d$, the protected trial construction
+of Section~\ref{ch11:trial-descent} gives approximate representatives
+in $V_e$ for $e\ge d$ and in $V_{d+1}$ for a physical lattice
+difference. To check the inclusion trial, multiply the original
+cutoff observable by $a_N^e$; its local representative is
+$a_N^{e-d}$ times the degree-$d$ section, so its derivative and
+value bounds remain subpower. For a difference, the extra factor
+$a_N$ cancels the inverse step, and the fixed translated-stencil
+cost is bounded by the entry requirements used in
+Theorem~\ref{ch11:all-period-differences}.
+Trial descent yields admissible coefficients and vanishing replicated
+root errors, uniformly in period. The preceding paragraph gives
+their normalized null estimates.
+All representatives and comparison errors are chosen before
+the spectators and tests.
+Applying the preceding
+finite-dimensional observation gives fixed linear maps on labels,
+$\widehat\iota_{d,e}$ and $\widehat\partial_{d,\mu}$, such that
+\begin{align}
+ S(\widehat\iota_{d,e}c(x_0),v(x))&=S(c(x_0),v(x)),\label{ch13:inclusion-response}\\
+ S(\widehat\partial_{d,\mu}c(x_0),v(x))
+                      &=\partial_{x_0^\mu}S(c(x_0),v(x)).
+ \label{ch13:derivative-response}
+\end{align}
+For the derivative target, exact torus summation by parts is
+\[
+ a_N^{4n}\sum_y f(a_Ny)\Delta_{N,i,\mu}M_{N,p}(y)
+ =a_N^{4n}\sum_y
+ \frac{f(a_Ny-a_Ne_{i,\mu})-f(a_Ny)}{a_N}M_{N,p}(y).
+\]
+The quotient on the right tends uniformly to $-\partial_{i,\mu}f$;
+the zero-order separated bound controls its error. This identifies
+the distributional derivative target. Smoothness gives
+\eqref{ch13:derivative-response} pointwise.
+
+These maps descend to unique maps
+$\iota_{d,e}:F_d\to F_e$ and $\partial_\mu:F_d\to F_{d+1}$
+with the displayed responses. They preserve null classes by their
+definition. The inclusions are injective and satisfy
+\[
+ \iota_{d,d}=1,\qquad
+ \iota_{e,f}\iota_{d,e}=\iota_{d,f},\qquad
+ \partial_\mu\partial_\nu=\partial_\nu\partial_\mu.
+\]
+Each identity follows by testing against every spectator and using
+\eqref{ch13:null}; the derivative maps also commute with inclusions.
+Conjugation and hypercubic covariance descend in the same way.
+The union of the $F_d$ is therefore a filtered space of local fields,
+with derivatives raising the filtration by one. No multiplication of
+two fields at the same point has been defined by this construction.
+
+\section{Reflection positivity and separated power bounds}
+\label{ch13:positivity}
+
+Let a word mean a finite list of labels and positions, with correlation
+denoted $S(w)$. Write $w^*$ for conjugation of its labels and reversal
+of its order. Time is coordinate four. Let $\theta w$ reflect that
+coordinate and act on its labels by the corresponding signed
+transformation, as well as applying $*$. For words with strictly
+positive times, lattice bond reflection positivity passes to
+\[
+ \sum_{i,j}\overline{c_i}c_j S(\theta w_i\,w_j)\ge0.
+\]
+It also passes for joint smooth tests supported on positive-time
+separated configurations. Indeed their lattice supports stay away
+from both reflection planes on the ordered tail. The lattice plane
+$x^4=a_N/2$ tends to zero, and the uniform separated bound controls
+the moving tests. Taking the two limits preserves positivity of each
+finite matrix. Pointwise positivity follows by concentrating smooth
+bumps. This uses the finite lattice result of
+Section~\ref{ch01:reflection}; it asserts no positivity for unspecified
+extensions at coincident points.
+
+For later use take the centered chessboard estimate
+$\|O\|_k\le C a_k^{-(d+1)}$, uniform on a bounded set of labels
+of degrees at most $d$ and every sufficiently fine fixed level $k$.
+It follows by choosing $\epsilon=1$ in
+Proposition~\ref{ch13:sharp-centered}, whose proof below uses only
+the replicated bound of Chapter~\ref{ch11:insertions} and the
+selected schedule. Slow growth of the block
+ratios gives a constant $c>0$ with
+\begin{equation}
+                         a_{k+1}\ge c a_k^2.
+ \label{ch13:scale-thickness}
+\end{equation}
+The first scale below a length $r\le1$ is consequently at least a
+constant times $r^2$. Choose a cell side below $r/2$, then a centered
+scale below that side divided by $6(n+1)$. The latter is at least
+$c_n r^4$. The separated-cell estimate yields
+\begin{equation}
+ |S_n(v;x)|\le C_{n,v}\,r^{-4(d+1)n},
+ \qquad \min_{i\ne j}|x_i-x_j|_\infty\ge r.
+ \label{ch13:power}
+\end{equation}
+The constant is independent of the diameter of the configuration.
+Applying the same argument to the fixed degree-raised labels in
+\eqref{ch13:derivative-response} gives a polynomial separated bound
+for every derivative.
+
+\section{Repeated reflected words}
+\label{ch13:repeated}
+
+The preceding bound cannot be used with arity tending to infinity
+without controlling its constants. We need a more specific estimate.
+Let $w$ have $n\ge1$ insertions, degrees at most $d$ and coefficient
+norms at most $R$,
+pairwise separation at least $r$, and times in $[r,h-r]$, where
+$0<r\le1$. We call $r$ its buffer in the slab of width $h$.
+For a positive-time exterior word $v$, set
+\[
+ A_wv=w\,\tau_{se_4}v,\qquad w^\dagger=\tau_{se_4}\theta w,
+ \qquad \|v\|_{\rm OS}^2=S(\theta v\,v).
+\]
+At this point $A_w$ acts only on words; boundedness on a Hilbert
+space is not assumed.
+
+\begin{proposition}[Uniform bound for repetitions]
+\label{ch13:word-bound}
+Under the centered chessboard bounds and their interior-cell
+comparison used above, choose $0<s\le h$ so that $w$ still has
+buffer $r/2$. There are $C=C(d,R)$ and $\kappa=4(d+1)$ such that,
+for every exterior word $v$,
+\[
+ \|(A_{w^\dagger}A_w)^jv\|_{\rm OS}^2
+       \le B_v\,[C^n(n/r)^{\kappa n}]^{4j},\qquad j\ge0.
+\]
+Here $s,C,\kappa$ are chosen before $v$, and $B_v<\infty$ is
+independent of $j$.
+\end{proposition}
+\begin{proof}
+Choose a cell scale $a_m<r/32$ as the first permitted such scale,
+and $s=a_m\lfloor h/a_m\rfloor$. Equation
+\eqref{ch13:scale-thickness} gives $a_m\ge c_1r^2$.
+Choose a centered scale $a_k<\alpha(r/n)^2$, with $20\alpha<c_1$.
+Again taking the first such scale gives
+$20na_k<a_m$ and $a_k\ge c_2(r/n)^4$.
+
+The expanded reflection form contains $4jn$ main insertions and two
+exterior copies. Since $s$ is a multiple of $a_m$, the main points
+have at most $2n$ residue patterns modulo the side-$a_m$ tiling,
+independently of $j$. The strip count therefore places all main
+points in distinct cells with margins $5a_k$, using constants
+independent of the number of repetitions.
+
+Choose finer aligned cell and centered scales for the finitely many
+exterior points, with exterior cell side at most $a_k$.
+Their two copies have times $\pm(2js+t)$, so a
+choice depending on their minimum positive time and internal
+separation works for every $j$. A further translation smaller than
+the exterior cell side adjusts their margins while leaving the main
+margins at least $3a_k$. The odd integer ratios preserve the fine
+cell grid under coarse reflections. Apply the chessboard inequality
+first to the coarse cells, regarding all exterior factors in one
+coarse cell as a single observable, then to the fine cells for those
+factors. If $X$ bounds the exterior centered seminorms, the result is
+\[
+ X^{2|v|}(C_0a_k^{-(d+1)})^{4jn}.
+\]
+Take $B_v=\max(1,X^{2|v|})$ and use the lower bound on $a_k$.
+Every use of the lattice inequality is at fixed $j$ before taking
+the ordered limits. A cutoff threshold uniform in $j$ is unnecessary.
+\end{proof}
+
+This estimate is the input for bounded slab insertions in the
+reflection Hilbert space. Its derivation precedes that operator
+construction and does not use orthogonal covariance or a phase
+decomposition. The equation comparison, admissible trial encoding,
+finite detector and centered estimates all refer to the same selected
+family. Full orthogonal covariance and products at coincident points
+remain separate constructions.
+
+\input{chapters/13-sharp-bounds}
+\input{chapters/13-bounded-approximations}
+
+\input{chapters/18-graded-quotient}
+\input{chapters/18-lattice-products}

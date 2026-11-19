@@ -1,0 +1,497 @@
+% Fragment for Chapter17. Root owns integration and section numbering.
+\section{Exact current transport and the scalar regulator}
+\label{ch17:current-suppliers}
+
+Several ingredients of the trace transfer can be established before its
+quantitative current estimates. We give them separately, since they use
+the actual difference operator and the actual path action. They do not
+identify a lattice coefficient by comparison with a separately chosen
+continuum action.
+
+\subsection{Difference-preserving block averages}
+
+Let $L$ be a block ratio and $s_a$ a unit fine translation. Write
+$\delta_a=s_a-1$, $\delta_a^{\rm c}=s_a^L-1$, and let
+$\nabla_a=\sum_{j=1}^4c_j(s_a^j-s_a^{-j})$ be the eighth-order
+centered difference used above. Its coefficients satisfy
+$2\sum_jjc_j=1$. Define finite Laurent polynomials
+\begin{align*}
+ M_a&=L^{-1}\sum_{v=0}^{L-1}s_a^v,&
+ G_a&=\sum_{j=1}^4c_j\sum_{v=-j}^{j-1}s_a^v,\\
+ N_a&=G_a(s_a^L)M_a,&
+ K_0&=\prod_aM_aN_a,\\
+ K_a&=G_aM_a\prod_{c\ne a}M_cN_c,&
+ K_a^{\rm e}&=N_a\prod_{c\ne a}M_cN_c.
+\end{align*}
+All these operators act on the fine anchor of a local function before
+stationary substitution. If $\mathcal I F=F(U_{\rm stat}(V))$, coarse
+translation of $\mathcal IF$ is $\mathcal I(s_a^LF)$; fine unit shifts
+are not silently identified with coarse shifts.
+
+\begin{lemma}[Exact block identities]
+\label{ch17:block-identities}
+There is a finite Laurent polynomial $K_a^{\rm t}$ such that
+\begin{align}
+ K_0\nabla_a&=L^{-1}\nabla_a^{\rm c}K_a,&
+ K_0\delta_a&=L^{-1}\delta_a^{\rm c}K_a^{\rm e},&
+ K_a-K_0&=\delta_a^{\rm c}K_a^{\rm t}.
+ \label{ch17:block-algebra}
+\end{align}
+The kernels have support of radius $CL$ and absolute coefficient sums
+bounded by a numerical constant independent of $L$; their masses are one
+except that no mass is prescribed for $K_a^{\rm t}$.
+\end{lemma}
+\begin{proof}
+The identities $G_a\delta_a=\nabla_a$ and
+$M_a\delta_a=L^{-1}\delta_a^{\rm c}$ prove the first two assertions
+by commutation of Laurent polynomials. For the third, work in the
+quotient ring with $s_a^L=1$. There $M_a^2=M_a$,
+$M_aG_a=G_a(1)M_a=M_a$ and $G_a(s_a^L)=G_a(1)=1$.
+Thus $M_a(G_a-G_a(s_a^L)M_a)$ is zero in that quotient, which is
+precisely divisibility of $K_a-K_0$ by $s_a^L-1$.
+The original kernels have finite products of a fixed number of bounded
+coefficient-sum factors, each of range $CL$. For the quotient, group
+coefficients in each residue class modulo $L$. Its numerator has zero
+sum in each class, and only a bounded number of nonzero entries in that
+class. Division by $s_a^L-1$ is a partial sum along this finite sequence,
+so increases its absolute sum by only a bounded factor. This also proves
+the support bound for $K_a^{\rm t}$.
+\end{proof}
+
+For a fine current with $\operatorname{tr}J=\sum_a\delta_aq_a$, set
+\[
+ J'_{ab}=L^4\mathcal I(K_aJ_{ab}),\qquad
+ q'_a=L^3\mathcal I(K_a^{\rm e}q_a)
+                       +L^4\mathcal I(K_a^{\rm t}J_{aa}).
+\]
+Equation~\eqref{ch17:block-algebra} proves exactly
+$\operatorname{tr}J'=\sum_a\delta_a^{\rm c}q'_a$.
+Indeed split $K_a=K_0+\delta_a^{\rm c}K_a^{\rm t}$ and then apply
+the second identity to $K_0\delta_aq_a$.
+Similarly, if $J_{ab}-J_{ba}=\sum_c\delta_ct_{abc}$, the transferred
+antisymmetric part is the sum of the transferred old differences and
+\[
+ \delta_a^{\rm c} L^4\mathcal I(K_a^{\rm t}J_{ab})
+ -\delta_b^{\rm c} L^4\mathcal I(K_b^{\rm t}J_{ba}).
+\]
+In particular symmetry may fail pointwise after blocking, but its failure
+and the trace remain exact differences. This conclusion is independent
+of estimates on the current's Taylor coefficients.
+
+\subsection{What scalar mass regularization changes}
+
+Consider the same admissible path action used in Chapter~\ref{ch07:matching},
+with its left Hessian $H$ and infinitesimal gauge insertion $d$.
+At the zero field the completed vector operator is
+$H+dd^*=|k|^2I+O(|k|^3)$, and the ghost operator is
+$d^*d=|k|^2I+O(|k|^4)$, with the global lattice ellipticity stated there.
+Define $\Gamma_\mu$ with the scalar mass $\mu^2I$ as above.
+The normalized quadratic response of $\Gamma_\mu$ has the same logarithmic
+coefficient as the regulated response in Chapter~\ref{ch07:matching}.
+This fact concerns its coefficient integral, before any relation to the
+Haar divergence of a current.
+
+To see this directly, retain the actual vector and ghost first and second
+background insertions $b,c$ and replace only their denominators by the
+scalar-mass denominators. In each channel the logarithmic Hessian is
+\[
+ \operatorname{tr}\{a_\mu(k)^{-1}c(-p,p;k)
+ -a_\mu(k)^{-1}b(-p;k+p)a_\mu(k+p)^{-1}b(p;k)\}.
+\]
+The scalar mass has no background insertion. The actual local Taylor
+expansion and vertex estimates of Chapter~\ref{ch07:matching} therefore
+apply without the regulator-vertex terms. With $T=|k|+\mu$, the
+inverse and its $r$ momentum derivatives cost $CT^{-2-r}$, for every
+fixed required $r$. Differentiate $Ra=I$ repeatedly to obtain this bound;
+the denominator floor is now simply $a_\mu\ge cT^2I$.
+Two external derivatives of the displayed expression cost at most
+$CT^{-4}$. For $\mu\le|k|\le1$, comparison with the massless continuum
+vertices by the resolvent identity costs
+\[
+ C\bigl(|k|^{-3}+\mu^2|k|^{-6}\bigr).
+\]
+The first term is the actual lattice Taylor remainder, and the second
+is the scalar-mass denominator difference. Both have bounded integrals
+in four dimensions, uniformly in $\mu$. The region $|k|<\mu$ also
+has bounded integral, since its volume is $O(\mu^4)$ and its integrand
+is $O(\mu^{-4})$. Away from zero the integral is uniformly bounded.
+Thus the continuum homogeneous term alone determines the logarithm.
+With the twelve-plane coefficient convention of this chapter this gives
+\begin{equation}
+ R(\mu)=12\kappa_G\log\mu+O(1),\qquad0<\mu\le1.
+ \label{ch17:scalar-log-supplier}
+\end{equation}
+This is the same one-loop normalization already calculated using the
+actual action in Chapter~\ref{ch07:matching}. At fixed $\mu>0$ the
+integrand is periodic analytic on a common smaller strip, so its torus
+sums converge to this integral; no uniform rate as $\mu\downarrow0$
+is required. This proof does not differentiate the bounded remainder.
+
+\subsection{Exact integration by parts and the remaining current estimate}
+
+For a smooth vector field $Y$ on a finite product of compact link groups,
+Haar integration gives the exact identity
+\begin{equation}
+ \int\bigl[\operatorname{div}_{\rm Haar}Y
+                  -D\mathcal A[Y]\bigr]e^{-\mathcal A}\,dU=0.
+ \label{ch17:finite-haar}
+\end{equation}
+It follows by integrating the divergence of $e^{-\mathcal A}Y$.
+With a spectator $F$ the right side becomes
+$-\int DF[Y]e^{-\mathcal A}\,dU$. In particular it is zero when
+$Y$ acts only on links disjoint from those of $F$. Smooth truncations
+can be inserted before this identity is used; their differentiated terms
+must be retained as marked remainders.
+
+There is also an exact cancellation available for the inherited quadratic
+loop term. Chapter~\ref{ch07:matching} represents its Hessian as a sum
+with two lattice differences on each leg. Consequently it annihilates
+constant and affine polynomial link fields. The degree-three external
+momentum coefficient in its variation by the leading current pairs a
+constant leg with a quadratic leg, or two affine legs; both vanish.
+This proves the zero trace-functional coefficient of that quadratic
+loop contribution. It does not bound the nonlinear current remainder.
+
+The missing quantitative step is now quite specific. One needs the
+actual stationary pullback of the current defect, with the predictor
+frame correction, in the exponentially weighted order-two, -three and
+-four coefficient norms. In particular the order-two pullback must
+annihilate its affine--affine and affine--quadratic polynomial tests
+\emph{before} estimating the remainder. The usual smooth transport bound
+$\nabla_f^rW_a=O(L^{-1-r})$ alone does not assert these cancellations.
+After gauge removal the relevant affine field costs $L^{-2}$ and its
+quadratic term $L^{-3}$; multiplication by the current rescaling $L^5$
+would leave the unacceptable factors $L$ and $1$ from their two products.
+Only removal of these exact terms leaves the $L^{-1}$ remainder used
+in the proposed contraction. Fourth-order action matching must therefore
+be combined with an explicit identity for the current's matched jets,
+not merely with a bound on the action's matching error.
+
+The group-coordinate identity needed for this comparison is proved next.
+Its proof is independent of the contraction of the actual current
+sequence, established in Section~\ref{ch17:quadratic-current}.
+
+\subsection{The group-coordinate contact identity}
+\label{ch17:contact-section}
+
+Fix a finite lattice and a background $U$ in the product of link groups.
+Use the invariant inner product on its link Lie algebra and the chart
+$z\mapsto e^zU$ (edge by edge). Let $S$ be a smooth gauge-invariant action,
+$H=D_z^2S(e^zU)|_{z=0}$ its symmetric left-coordinate Hessian, and
+$d$ the infinitesimal gauge map at $U$. The displacement $Y$ is assumed
+gauge covariant, so its local flow
+$\Psi_s(U)=e^{sY(U)}U$ commutes with gauge transformations. It need not
+be the exact time-$s$ flow; all following identities use only its
+first derivative at zero.
+
+Define the chart velocity and its linear part by
+\[
+ \mathcal Y_U(z)=\left.\partial_s\right|_0
+    \log\bigl(\Psi_s(e^zU)\Psi_s(U)^{-1}\bigr),
+ \qquad V=D_z\mathcal Y_U(0).
+\]
+In particular $\mathcal Y_U(0)=0$. This definition includes the
+change of the left frame as the base point moves. Replacing $V$ by an
+ordinary derivative of the coefficient function $Y$ would omit that
+change. Let
+\[
+ J_U(v,z)=\left.\partial_s\partial_t\right|_{0}
+       \log\bigl(\operatorname{gauge}_{e^{sv}}(e^{tz}U)U^{-1}\bigr),
+ \qquad N_{i\alpha}=DS(U)[J_U(e_\alpha,e_i)].
+\]
+Indices $i$ run through link coordinates and $\alpha$ through gauge
+coordinates. Differentiating gauge invariance first in $v$, then in $z$,
+gives $Hd=-N$.
+
+For $\mu>0$ at a background where the following inverses exist, write
+\[
+ R=(H+dd^*+\mu^2I)^{-1},\qquad
+ G=(d^*d+\mu^2I)^{-1},
+\]
+\[
+ \Gamma=\tfrac12\log\det(H+dd^*+\mu^2I)
+                            -\log\det(d^*d+\mu^2I).
+\]
+Near the zero background the positive denominators of the preceding
+subsection make these ordinary real analytic functions. Define a link
+vector $Z$ by its action against an arbitrary covector $\ell$:
+\begin{align}
+ \ell(Z)={}&\tfrac12\sum_{i,j}R_{ij}\,
+                   \ell\bigl(D_z^2\mathcal Y_U(0)[e_i,e_j]\bigr)\notag\\
+ &-\sum_{i,\alpha}
+       [Gd^*(V+V^*)R]_{\alpha i}\,\ell(J_U(e_\alpha,e_i)).
+ \label{ch17:contact-Z}
+\end{align}
+All matrices and derivatives here belong to the same background and
+coordinate chart.
+
+\begin{proposition}[Exact contact identity]
+\label{ch17:contact-identity}
+With these definitions,
+\begin{equation}
+ \tfrac12\operatorname{tr}\bigl(RD^2(DS[Y])\bigr)
+       -\operatorname{div}_{\rm Haar}Y
+       =D\Gamma[Y]-\mu^2\operatorname{tr}(RV)+DS[Z].
+ \label{ch17:contact}
+\end{equation}
+No stationarity of $U$ is assumed. In particular the $DS[Z]$ term
+cannot be discarded before applying the relevant coefficient functional.
+\end{proposition}
+\begin{proof}
+Let a dot denote differentiation along $\Psi_s(U)$, using the left
+chart anew at that base point. The chain rule for
+$S(\Psi_s(e^zU))$ gives
+\[
+ D^2(DS[Y])=\dot H+V^*H+HV+C,
+ \qquad C_{ij}=DS[D_z^2\mathcal Y_U(0)[e_i,e_j]].
+\]
+This is an exact chart calculation, not a replacement of the group by
+its tangent space. The differential of $\Psi_s$ in these moving charts
+is $I+sV+o(s)$. Exponential charts have Haar density one at their origins,
+so its Jacobian at the base point has derivative
+$\operatorname{div}_{\rm Haar}Y=\operatorname{tr}V$.
+
+Gauge equivariance of $\Psi_s$ gives $\dot d=Vd$: differentiate
+$\Psi_s(\operatorname{gauge}_{e^v}U)
+=\operatorname{gauge}_{e^v}\Psi_s(U)$ first in $v$ and then in $s$.
+Consequently
+\[
+ D\Gamma[Y]=\tfrac12\operatorname{tr}(R\dot H)
+       +\operatorname{tr}(dd^*RV)
+       -\operatorname{tr}\bigl(dGd^*(V+V^*)\bigr).
+\]
+On the other hand the Hessian chain rule and
+$RH=I-Rdd^*-\mu^2R$ yield
+\[
+ \tfrac12\operatorname{tr}(RD^2(DS[Y]))-\operatorname{tr}V
+ =\tfrac12\operatorname{tr}(R\dot H)
+       -\operatorname{tr}(Rdd^*V)-\mu^2\operatorname{tr}(RV)
+       +\tfrac12\operatorname{tr}(RC).
+\]
+Finally $Hd=-N$ implies the exact resolvent identity
+\[
+                  Rd=dG+RNG.
+\]
+Subtract the two preceding displays. The leftover gauge terms are
+\[
+ -\operatorname{tr}\bigl((Rdd^*+dd^*R-2dGd^*)V\bigr)
+       =-\operatorname{tr}\bigl(Gd^*(V+V^*)RN\bigr).
+\]
+Inserting the definition of $N$ and the term $\frac12\operatorname{tr}(RC)$
+identifies their sum with $DS[Z]$ from \eqref{ch17:contact-Z}.
+This proves \eqref{ch17:contact}.
+\end{proof}
+
+\subsection{Cancellation of the action-gradient terms}
+
+The functional $\mathsf l$ above extracts the coefficient of $z^2t$
+from the diagonal polarization pair at momenta
+$p=ze_a$, $q=-ze_a+te_b$, and sums over $a\ne c$ and $b$.
+We check why it kills the action variations in
+\eqref{ch17:contact}. Work at fixed positive $\mu$ so all kernels
+are analytic in momentum near zero. A gauge-invariant, translation- and
+hypercubic-invariant scalar action $F$ has quadratic kernel
+$c_F(|p|^2I-p\otimes p)+O(|p|^3)$ by the Ward calculation in
+Chapter~\ref{ch07:matching}. This applies to both $S$ and $\Gamma$.
+Let $Z_b$ be any anchored gauge-covariant displacement, including $Y_b$
+or the displacement \eqref{ch17:contact-Z}. Simplicity of the gauge
+algebra implies $Z_b(0)=0$. The linearized covariance identity says
+$DZ_b(0)d_0=0$.
+
+Use $i$ for its output link direction and $c$ for its input polarization.
+Its joint momentum symbol, with output dual variable $p$ and input
+variable $q$, therefore has expansion
+\[
+ (DZ_b)_{ic}(p,q)=\sum_j q_j A_{b,ic}^{\,j}+O((|p|+|q|)^2),
+ \qquad A_{b,ic}^{\,j}=-A_{b,ij}^{\,c}.
+\]
+The factors $i$ from Fourier differentiation may be absorbed into $A$.
+There is no term depending only on $p$: the identity obtained by
+multiplying by the gradient symbol in $q$ forces it to vanish.
+For $a\ne c$, the coefficient of $z^2t$ in the quadratic variation
+$DF[Z_b]$ is, apart from the common factor $c_F$,
+\[
+       A_{b,cc}^{\,b}-2\delta_{ab}A_{b,cc}^{\,a}
+                              +\delta_{bc}A_{b,ac}^{\,a}.
+\]
+This follows by inserting the two kinetic kernels on its two legs.
+The first sum over $a\ne c$ gives
+$3\sum_{b,c}A_{b,cc}^{\,b}$. The second gives minus twice that sum,
+since $A_{c,cc}^{\,c}=0$. The last gives minus the same sum after
+using $A_{c,ac}^{\,a}=-A_{c,aa}^{\,c}$ and exchanging $a,c$.
+Thus
+\begin{equation}
+                  \mathsf l(DF[Z])=0.
+ \label{ch17:gradient-cancellation}
+\end{equation}
+Higher momentum orders cannot contribute to the coefficient of degree
+three. Gauge covariance of \eqref{ch17:contact-Z} follows by transforming
+its chart tensors, inverse operators and contracted indices together.
+The mass $\mu^2I$ is unchanged by these orthogonal gauge frame changes.
+The calculation therefore applies to both action-gradient terms of the
+exact contact identity. It is a finite-momentum cancellation, not a
+statement that the corresponding functions vanish pointwise.
+
+\subsection{Power counting the regulator remainder}
+
+The remaining estimate has a transparent sufficient numerator condition.
+Let $W^{(1)},W^{(0)}$ be the vector and ghost remainder operators obtained
+by subtracting the leading curvature displacement from $V$; in the
+notation of the current calculation these are
+\[
+ W_b^{(1)}=\operatorname{sym}(V_b-dM_b-D_b)+\tfrac12T_b^{(1)},
+ \qquad W_b^{(0)}=\operatorname{sym}(M_bd)-\tfrac12T_b^{(0)}.
+\]
+Here $\chi$ is the indicator of the anchored lattice site,
+$(M_bh)(x)=\chi(x)h_b(x)$,
+$(D_bh)_a(x)=\delta_a\chi(x)h_b(x)$, and
+$(T_b^{(r)}h)(x)=\delta_b\chi(x)h(x)$ on $r$-forms.
+The full lattice shifts and chart tensors must be retained when
+extracting their coefficient; their continuum symbols only identify
+the leading terms that cancel.
+
+For that leading calculation the gauge derivative is $d=-\partial$
+and the curvature displacement is
+$(V_bh)_a=\chi(\partial_bh_a-\partial_ah_b)$.
+Then $dM_b+D_b=-\chi\partial_ah_b$ and
+$\operatorname{sym}(\chi\partial_b)=-\frac12\partial_b\chi$.
+Thus both $W^{(r)}$ have zero first-order principal symbol. Covariantizing
+these expressions gives the same cancellation at constant background
+to first field order: the skew-adjoint multiplication by
+$\operatorname{ad}A_b$ has zero symmetric part, and the remaining
+$\operatorname{ad}A_a h_b$ term cancels the corresponding term of $dM_b$.
+Accordingly their zero-, one- and two-field symbols have orders
+$2,1,0$, respectively. A lattice/current sequence having the stated
+matched free jets inherits precisely these vanishings in its limit.
+Weighted coefficient bounds control the Taylor remainders.
+
+Here is the resulting estimate without suppressed differentiation orders.
+Set $z=|q|+\mu$. For $n\le2$ background derivatives and $r\le3$ external
+momentum derivatives the inverse estimates are
+$Cz^{-2-n-r}$. The remainder symbols have bounds
+$Cz^{2-n-r}$. The quadratic-field coefficient of
+$\operatorname{tr}(RW^{(1)})+\operatorname{tr}(GW^{(0)})$, after the
+three momentum derivatives defining $\mathsf l$, is therefore bounded
+by a sum of terms
+\[
+ Cz^{-2-n-r}\,z^{2-(2-n)-(3-r)}=Cz^{-5}.
+\]
+In four dimensions
+$\int_{|q|\le1}(|q|+\mu)^{-5}\,dq\le C/\mu$.
+The region away from zero is bounded. Hence the regulator factor
+$\mu^2$ gives a remainder at most $C\mu$.
+For approximate matched jets, first fix $\mu\ge\delta>0$; their
+errors then tend to zero uniformly on that regulator interval.
+Only afterwards send $\delta$ to zero. This is the order required
+by the logarithmic mean-value argument.
+
+\subsection{The corrected coefficient and order of limits}
+\label{ch17:regulator-completion}
+
+We can retain the lattice correction in $\mathsf h$ throughout, avoiding
+an unsupported claim that it vanishes separately. Write
+$\mathsf c(F)=\frac12\operatorname{Re}\sum_{a\ne c}[z^2]
+\widehat{F_c}_{c\alpha,c\alpha}(ze_a,-ze_a)$, so
+$\mathsf h=\mathsf l-\mathsf c$.
+The quadratic variation $DF[Z]$ in the preceding calculation starts at
+momentum degree three. Thus $\mathsf c(DF[Z])=0$, in addition to
+\eqref{ch17:gradient-cancellation}. Both functionals therefore annihilate
+the action-gradient terms of \eqref{ch17:contact}.
+
+Suppose now that the actual current sequence has the following
+properties at the fixed output level: uniform exponentially weighted
+order-two through order-four coefficient bounds; convergence of the
+needed low polynomial jets to the curvature current; the exact trace
+and antisymmetry difference identities; and defects tending to zero
+through order four in those weighted norms in
+\[
+                 DS[Y_b]\equiv_4\sum_a\nabla_aJ_{ab}-\mathcal E_b.
+\]
+The notation $\equiv_4$ refers to equality of field derivatives through
+order four at the zero background. It suffices because the contact
+expression uses two internal and two external field derivatives.
+At fixed $\mu\ge\delta>0$, contracted defect errors tend to zero.
+Translation covariance makes contraction by the inverse $R$ commute
+with translating the anchor. The $\mathsf l$ coefficient of the
+contracted current divergence selects $a=b$ at its sole linear
+ total-momentum derivative. The sum is the contracted trace of $J$,
+which has a further total-momentum zero because it is a forward
+difference. Its coefficient is zero. For $\mathsf c$, the total
+momentum is zero from the outset and the divergence vanishes directly.
+The exact contact identity consequently yields
+\[
+ \mathfrak h(Y)=\mu^2\mathsf h\bigl(\operatorname{tr}(RV_b)\bigr)+o(1),
+\]
+uniformly on every fixed positive regulator interval. All operators here
+are functions of the background before the two field derivatives are
+extracted.
+
+The definitions of $W^{(1)},W^{(0)}$ give an exact trace decomposition.
+Use $Rd=dG+RNG$ to obtain
+\begin{align*}
+ \operatorname{tr}(RV_b)
+  ={}&\operatorname{tr}\bigl(R(D_b-\tfrac12T_b^{(1)})\bigr)
+      +\tfrac12\operatorname{tr}(GT_b^{(0)})+DS[Z_b']
+      +\mathrm{Rem}_b,\\
+ \mathrm{Rem}_b={}&\operatorname{tr}(RW_b^{(1)})
+                                   +\operatorname{tr}(GW_b^{(0)}),\\
+ \ell(Z_b')={}&\sum_{i,\alpha}(GM_bR)_{\alpha i}
+                                       \ell(J_U(e_\alpha,e_i)).
+\end{align*}
+For example, the part containing $dM_b$ becomes
+$\operatorname{tr}(GM_bd)+\operatorname{tr}(RNGM_b)$;
+its symmetric ghost part is precisely
+$\frac12\operatorname{tr}(GT_b^{(0)})+\operatorname{tr}(GW_b^{(0)})$,
+and its remaining term is $DS[Z_b']$. This also fixes the sign of
+the gauge correction.
+
+For the three displayed principal terms the Fourier transform of
+$\delta_b\chi$ supplies $e^{-it}-1=-it+O(t^2)$ at total momentum
+$te_b$. With the factor $i$ in $\mathsf l$, the $D_b$ terms sum to
+$\mathsf q(\operatorname{tr}R)$: the selected derivative has $a=b$
+and the component trace then sums its diagonal entries. Each of the
+four $T_b^{(1)}$ terms gives $\mathsf q(\operatorname{tr}R)$, and each
+$T_b^{(0)}$ term gives $\mathsf q(\operatorname{tr}G)$.
+The volume normalization is exactly the translation average of the
+single anchor. Their total is therefore
+\[
+           -\mathsf q(\operatorname{tr}R)
+                              +2\mathsf q(\operatorname{tr}G).
+\]
+Their $\mathsf c$ coefficients are zero, since $\delta_b\chi$ has
+zero symbol at total momentum zero. Multiplication by $\mu^2$ gives
+$-\mu\partial_\mu\mathsf q(\Gamma)$ by differentiation of the two
+determinants. Thus, with the lattice correction fully retained,
+\begin{equation}
+ \mathfrak h(Y)=\mathcal D_\Lambda(\mu)
+                  +\mu^2\mathsf h(\mathrm{Rem})+o(1).
+ \label{ch17:corrected-regulated-ward}
+\end{equation}
+The action-gradient term $DS[Z_b']$ is annihilated by both parts of
+$\mathsf h$ as proved above.
+
+The $\mathsf l$ remainder was bounded by $C\mu$ after multiplication
+by $\mu^2$. The correction $\mathsf c$ uses only two external momentum
+derivatives, so the same product rule costs $Cz^{-4}$. Its integral
+is at most $C(1+|\log\mu|)$ in four dimensions, and
+$\mu^2(1+|\log\mu|)\le C\mu$ for $0<\mu\le1$.
+Consequently \eqref{ch17:corrected-regulated-ward} proves the regulator
+estimate, including the anchored correction, from the stated current
+hypotheses.
+
+Finally combine it with \eqref{ch17:scalar-log-supplier}. On a fixed
+interval $[u-A,u]$ in the variable $\log\mu$, the bounded error in
+$R(\mu)-12\kappa_G\log\mu$ implies that some regulator has
+$|\mathcal D_\Lambda(\mu)+12\kappa_G|\le(2C+o(1))/A$ after the
+period is large. The remainder is at most $Ce^u+o(1)$ on that interval.
+First take the current and period limits there, next $u\to-\infty$,
+and finally $A\to\infty$. Since $\mathfrak h(Y)$ is independent of
+$\mu$, this proves
+\[
+                         \mathfrak h(Y)\longrightarrow-12\kappa_G.
+\]
+The group-coordinate contact identity, coefficient cancellation and
+regulator estimate are now established. Their application still requires
+the actual transferred current sequence to satisfy the weighted bounds
+and matched-jet convergence stated at the start of this subsection;
+those conditions are not consequences of the contact algebra.

@@ -1,0 +1,300 @@
+\subsection{The stationary integral with its cutoff retained}
+\label{ch09:stationary-remainder}
+
+We now give the local analytic implication behind the auxiliary bound.
+It is an application of Laplace's method, for which we refer to
+\cite[Chapter II]{Wong2001}, with three features that must be checked
+here: the integration dimension grows with the auxiliary period, the
+stationary Hessian depends on the coarse field, and the integration
+cutoff cannot be discarded before estimating its complement.
+All actions and matrices in the following argument belong to the same
+pure small-field block integral: incoming activities are omitted, the
+prescribed path and block kernel are unchanged, and the fine-field
+indicator $\mathbf1_{\{\chi(U_p)\le t_f\ \text{for every fine }p\}}$
+is retained, where $t_f=t_{m+1}$. Thus its integrand is zero on the fine large-field
+complement. The other fine sectors have already been assigned to the
+large-field expansion.
+
+Put $z=\widehat\beta_{m+1}$, $g=\beta'^{-1/2}$ and
+$h=z^{-7/16}$. The letter $z$ is a scalar coupling parameter in this
+subsection; the Gaussian integration variable is $\xi$. Auxiliary
+periods and coordinate counts are bounded by fixed powers of
+$1+\log z$. Write $M=M_{m+1}^{\rm cut}$ for the cutoff amplitude
+in \eqref{ch04:thresholds}, and take $D=d_0M$ with a fixed small
+$d_0>0$. We shall use the following two distinct facts:
+\[
+ M=z^{o(1)},\qquad (1+\log z)^k=o(M^\epsilon)
+ \quad\text{for every fixed }k,\epsilon>0.
+\]
+Both follow directly by taking logarithms of
+$M=\exp((\log\log z)^2)$.
+
+Let $x$ be the coarse logarithmic coordinates, with their supremum
+norm, and $y\in\RR^n$ the free fine coordinates after tree gauge
+fixing. The actual classical action including the block penalty is
+$\phi(x,y)$; write $\rho(x)$ for its stationary branch and
+$A(x)=D_y^2\phi(x,\rho(x))$ for its positive Hessian.
+The extra exponent $\psi(x,y)$ includes the fine loop term and minus
+the logarithm of the product Haar-chart Jacobian. Suppose the branch,
+action, extra exponent and relative logarithmic determinant have the
+fixed derivative orders required below on a common neighborhood,
+with bounds $z^{o(1)}$. The Hessian gap is uniform in the auxiliary
+volume at the fixed block ratio. These are the stationary and path
+estimates of Chapters~\ref{ch05:gaussian}--\ref{ch07:matching}; no
+different flat covariance is substituted here.
+
+Set $s(x)=\tfrac12\log\det A(x)$ and define the smooth divided
+difference
+\[
+ V(g,x,\xi)=\int_0^1(1-t)
+ D_y^2\phi(x,\rho(x)+tg\xi)[\xi,\xi]\,dt.
+\]
+Stationarity gives
+$\phi(x,\rho(x)+g\xi)-\phi(x,\rho(x))=g^2V(g,x,\xi)$,
+including the limiting value
+$V(0,x,\xi)=\tfrac12\xi^*A(x)\xi$.
+With $\gamma_0=N(0,A(0)^{-1})$, put
+\begin{align}
+ a(g,x,\xi)&=s(x)-s(0)+V(0,0,\xi)-V(g,x,\xi)\notag\\
+ &\quad+\psi(x,\rho(x))-\psi(x,\rho(x)+g\xi),\notag\\
+ R(g,x)&=\int_{|\xi|\le D}e^{a(g,x,\xi)}\,d\gamma_0(\xi),
+ \qquad L(g,x)=\log R(g,x).
+ \label{ch09:truncated-integral}
+\end{align}
+The determinant factor is essential: at $g=0$ the exact identity is
+\[
+ R(0,x)=N(0,A(x)^{-1})\{\,|\xi|\le D\,\},
+\]
+which is a truncated mass, not identically one. Changing $\xi$ to
+$-\xi$ also gives the exact parity $R(-g,x)=R(g,x)$.
+
+Here are the uniform bounds needed for this elementary application
+of Laplace's method. Differentiating the divided difference on
+$|\xi|\le D$ costs a fixed polynomial in $D$ and the stationary
+derivative bounds. It is therefore $z^{o(1)}$ at every fixed order.
+The exponent vanishes at $(g,x)=(0,0)$, so on
+$|g|,\|x\|_\infty\le h$ it is at most one in absolute value for
+large $z$. If the reference truncated mass is at least $1/2$, then
+$e^{-1}/2\le R\le e$, and the same subpower derivative bounds hold
+for $L$. To obtain derivatives through order $r$ and the two
+derivatives in $g$ used for parity, it suffices to retain derivatives
+of $\phi,\rho$ through order $r+4$ and of the other terms through
+order $r+2$. These are finite-stage requirements.
+
+If $A(x)^{-1}\le cI$ and $n$ is at most a fixed polynomial in
+$\log z$, a coordinate Gaussian tail bound gives
+\[
+ 1-R(0,x)\le 2n\exp\{-D^2/(2cn)\}.
+\]
+This is smaller than every fixed inverse power of $z$.
+The same conclusion for its fixed derivatives follows either by
+the Gaussian score formula or by finite-order interpolation on a
+ball of radius $z^{-1}$ inside the parameter domain. We recall the
+needed interpolation fact: a superpolynomially small value and
+polynomially bounded derivatives through order $r+1$ imply
+superpolynomially small derivatives through order $r$ on a smaller
+ball. It follows successively from Taylor's estimate
+$\|DF\|\le2\sup|F|/u+u\sup\|D^2F\|$ on a radius-$u$ ball,
+applied to successive derivatives with shrinking radii.
+No coordinate-dimension factor is needed when operator norms are
+used. Parity and Taylor's theorem in $g$ now yield, for every fixed
+$K>0$,
+\begin{equation}
+ \|D_x^r L(g,x)\|\le C_r(z)\beta'^{-1}+z^{-K},
+ \qquad C_r(z)=z^{o(1)}.
+ \label{ch09:even-gain}
+\end{equation}
+This includes $r=0$; the cutoff error at $g=0$ has been retained
+throughout the argument.
+
+\subsection{Identifying the retained region in the actual integral}
+\label{ch09:stationary-exterior}
+
+Write $\mathcal D_x(y)$ for the actual tree-gauge configuration map.
+Consider the region
+$\mathcal S_x=\mathcal D_x(\rho(x)+g\overline B(0,D))$.
+Let $\mathscr Z(x)$ be the pure block integral, and set
+\[
+ \Phi(x)=\beta'\phi(x,\rho(x))+\psi(x,\rho(x))
+                         +\tfrac12\log\det A(x).
+\]
+If $N$ is the number of free fine links and $c_H$ the Haar density
+constant, its scalar normalization is
+$\Omega=\pi_{\beta'}(\sqrt{2\pi}g)^n c_H^N$;
+$\pi_{\beta'}$ is the block-kernel normalizing prefactor.
+When $\mathcal S_x$ lies in the chart, all its fine plaquettes pass
+the cutoff, and all live tag actions coincide with $\phi$, the
+change of variables gives exactly
+\begin{equation}
+ \int_{\mathcal S_x}\text{(pure integrand)}
+                  =\Omega e^{-\Phi(x)}R(g,x).
+ \label{ch09:retained-identity}
+\end{equation}
+Tag probabilities sum to one, so there is no additional tag-count
+factor. The hypotheses about this region must be established before
+using the identity.
+
+Here is a verification using the actual geometry and Hessian gap.
+The actual tree comparison recognizes a fine
+configuration as lying in a fixed safe chart whenever its fine
+plaquettes and predictor mismatches are below a fixed $\delta>0$.
+On that chart assume $D_y^2\phi\ge\gamma I/2$. Stationarity gives
+\[
+ \phi(x,y)-\phi(x,\rho(x))
+                      \ge\gamma|y-\rho(x)|^2/4.
+\]
+Thus a chart point outside $\mathcal S_x$ costs at least
+$\Delta=\gamma D^2/4$ in the exponent. A point outside the chart
+with all fine plaquettes small must have a mismatch exceeding
+$\delta$, and pays a fixed positive multiple of $\beta'\delta^2$.
+The possibly negative cubic, quartic and loop terms are bounded by
+the path budgets. If $W$ bounds the auxiliary coordinate and site
+counts, their total cost is at most
+\[
+ W B_{\rm loop},\qquad
+ B_{\rm loop}=\beta'C(t_f^3+t_f^4)+\Lambda t_f^2,
+ \qquad 0\le\Lambda\le2M.
+\]
+All such terms and the logarithmic Haar/determinant normalization
+cost are $o(M^2)$. In particular, the normalization loss
+$-N\log[c_H(\sqrt{2\pi}g)^{\dim\gLie}]$ is only a polynomial
+in $\log z$. The bound on $\phi(x,\rho(x))$ on $\|x\|<h$
+also leaves the fixed large-mismatch penalty available, because
+that value tends to zero and $\Delta/\beta'\to0$.
+Consequently the exterior integrand, in stationary units, is
+bounded by $e^{-\Delta+o(M^2)}$.
+
+It remains to verify the fine cutoff on the retained ball. For the
+folded auxiliary configurations used here, this can be done directly
+from the curvature transport, without a lower bound from a sector
+expansion. A full coordinate cycle of a folded field traverses an
+original path and then its inverse. Its holonomy is therefore exactly
+one at every transverse base point. Equivalently, choose a coordinate
+axial gauge on the original cube and pull that gauge back under the
+folding map. Plaquette filling bounds give logarithmic coordinates
+with
+\[
+ \|x\|_\infty\le P(B)t_c,\qquad
+ \|d_{1,c}x\|_\infty\le C t_c+P(B)t_c^2,
+ \qquad t_c=t_m.
+\]
+The second estimate follows by expanding each plaquette product in
+these small link coordinates. Crucially, its leading constant is
+independent of $B$; the polynomial loss occurs only in the quadratic
+error. This argument would fail for an arbitrary small-curvature
+periodic field with nontrivial winding holonomies.
+
+Let $\mathcal U(x)=\mathcal D_x(\rho(x))$ be the physical stationary
+fine field. Its tangent is the forest-coordinate lift $W_F$ of
+Chapter~\ref{ch05:gaussian}. Its curl agrees with that of the smooth
+actual lift $W_a$. The curvature identity and the
+fine-row bound of the two-form transport give
+\[
+ d_{1,f}W_a=H_f^{-1}TH_c d_{1,c},\qquad
+ \|H_f^{-1}TH_c\|_{\infty\to\infty}\le C_jL^{-2}.
+\]
+The operator norm here sums each fine-output row over coarse
+inputs; the opposite column sum has a different scaling.
+The quadratic remainder of the stationary map and the plaquette
+product is bounded using their common second derivatives. Thus
+\begin{equation}
+ \sup_p\chi(\mathcal U(x)_p)
+       \le C_jL^{-2}t_c+P_{j,L}(B)t_c^2.
+ \label{ch09:stationary-cutoff-margin}
+\end{equation}
+Choose $L$ so that $C_jL^{-2}t_c\le t_f/8$, using the uniform
+bound $t_c/t_f\le2$. Then increase the coupling threshold so that
+the second term is at most $t_f/8$. These choices are in the
+required order: the constant in the first term is fixed before
+$L$, while the polynomial in the second term may depend on $L$.
+
+Plaquette functions have a fixed Lipschitz constant $L_0$ in the
+physical fine-link supremum coordinates. Local chart maps have
+fixed-stage derivative bounds. Consequently variation of $x$ by
+$z^{-1}$ and of the stationary fine coordinates by $g\xi$,
+$|\xi|\le D$, changes every plaquette chord by at most
+$C_{j,L}z^{-1}+L_0gD$, after incorporating the fixed chart norm
+conversion into $L_0$. Choose $d_0$ sufficiently small, so that
+$L_0gD\le t_f/8$, and then raise the threshold for the microscopic
+term. Every point of each retained region is now fine small-field,
+with a strict margin. The common chart and tag-coincidence radius
+contain these regions because $h+gD\to0$.
+We have therefore obtained, on a full microscopic neighborhood of
+each tested small-field coarse configuration,
+\begin{equation}
+ 0\le\mathscr Z(y)-\Omega e^{-\Phi(y)}R(g,y)
+       \le\Omega e^{-\Phi(y)}e^{-c_0M^2},\qquad c_0>0.
+ \label{ch09:exterior-bound}
+\end{equation}
+This deduction uses the actual stationary tangent, its second
+derivatives, the compatible path bounds and the geometric
+chart-recognition estimate. The direct cutoff proof applies to the
+folded auxiliary fields and their microscopic neighborhoods, which
+are precisely the configurations used for localization.
+
+\subsection{Centering the full logarithm}
+\label{ch09:centered-log}
+
+Put $E=\log\mathscr Z-\log\Omega+\Phi-L(g,\cdot)$.
+Since $R\ge e^{-1}/2$, \eqref{ch09:exterior-bound} gives
+$0\le E\le2e\,e^{-c_0M^2}$. To pass to derivatives, write
+the positive pure integrand at a fixed fine field and tag as
+$a(\omega)e^{p(x,\omega)}$, with $a\ge0$ independent of $x$.
+Only the coarse-link kernel is differentiated. Its exponent has
+fixed-order derivatives bounded by $C_r\beta' n_b$, where
+$n_b$ is the number of coarse links. The exponential chain rule
+and integration give relative bounds
+\[
+ \|D^r\mathscr Z(x)\|\le P_r(\beta'n_b)\mathscr Z(x).
+\]
+The logarithm chain rule thus gives polynomial bounds without
+dividing an absolute error by a possibly tiny partition function.
+The other terms in $E$ have polynomial derivative bounds from the
+stationary estimates. Interpolation on the microscopic neighborhoods
+in \eqref{ch09:exterior-bound} proves that every fixed jet of $E$
+is smaller than every inverse power of $z$.
+
+Let $a_c$ be the prescribed coarse classical action and $d_c$ its
+quantum contribution. Define
+\[
+ C=a_c-\phi(\cdot,\rho),\qquad
+ W=d_c-\psi(\cdot,\rho)-\tfrac12\log\det A.
+\]
+The corrected logarithm has the exact decomposition
+\begin{equation}
+ \log\mathscr Z+\beta'a_c+d_c
+                  =\log\Omega+L+E+\beta'C+W.
+ \label{ch09:pure-decomposition}
+\end{equation}
+Classical matching gives $D^rC(0)=0$ for $0\le r\le4$.
+The quadratic quantum matching bounds $D^2W(0)$ by an
+exponentially small finite-period error, with polynomial coordinate
+norm costs. Its higher fixed derivatives are $z^{o(1)}$.
+The full corrected logarithm has zero first derivative at zero
+by constant gauge invariance and simplicity of $\gLie$.
+Thus $DW(0)=-DL(0)-DE(0)$; no separate parity claim about each
+determinant contribution is needed.
+
+For a function on the radius-$h$ ball write its scaled derivative
+bound through order $r$ as
+$\max_{0\le k\le r}h^k\sup\|D^kf\|$.
+Taylor's theorem, \eqref{ch09:even-gain}, and the two matching
+cancellations show that the centered expression in
+\eqref{ch09:pure-decomposition} has this bound at most
+\begin{equation}
+ C_r(z)\{\beta'^{-1}h+\beta'h^5+h^3\}+z^{-K},
+ \qquad C_r(z)=z^{o(1)},
+ \label{ch09:pure-small-bound}
+\end{equation}
+where $K$ is arbitrary and the exponentially small quadratic
+finite-period error has been included in the last term.
+For $h=z^{-7/16}$ the three powers are respectively
+$z^{-23/16}$, $z^{-19/16}$ and $z^{-21/16}$.
+Their largest exponent is $-19/16<-23/20$.
+Actual small-field logarithmic coordinates and the reflected
+normalized directions are bounded by a polynomial in $B$ times
+$t_m$, which is $o(h)$. They therefore obey the same estimate.
+This proves the auxiliary remainder needed for localization from
+the explicit stationary, matching and actual-sector inputs above.
+It does not require a formal expansion of an untruncated
+exponential of a cubic Gaussian polynomial.

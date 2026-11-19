@@ -1,0 +1,187 @@
+\section{Calibrating the microscopic equations on the same history}
+\label{ch11:equation-calibration}
+
+Fix a degree $d$. The section $\mathcal V_d$ and automorphism $R_d$
+are those of Theorem~\ref{ch02:equation-adapted}; neither is chosen
+again when the cutoff or period changes. The physical section remains
+$P_d^{\rm loc}$. We compare the two on the history already used to
+define $\mathsf Z_{N,p,d}$.
+
+We first specify an additional finite stage requirement.
+At stage $j$, let $a_{dj}$ bound the derivatives of $\mathcal V_d$
+requested by that stage, for every $d\le j$. These are finite constants
+by the powered-curvature-factor estimate in Chapter~\ref{ch02:observables}.
+Let $q_d$ bound the fixed union stencil and put
+\[
+ Q_{dj}=2+e^{81\sigma_j}(a_{dj}+C_j+2q_d).
+\]
+Here $\sigma_j$ is the support exponent and $C_j$ the column bound.
+These quantities are fixed before the block length.
+Let $\mathcal O_d\ge1$ bound both the finite symmetry actions on
+coefficient $\ell^1$ norm and their averaging coefficients, and put
+$\delta_d=(2\mathcal O_d^2)^{-1}$. Include the finite maximum
+\begin{equation}
+ L^{1/8}\ge
+ \max_{d\le j}2(1+C_j)Q_{dj}\delta_d^{-1}
+ \label{ch11:calibration-floor}
+\end{equation}
+in the stage-$j$ block floor. Include
+$\widehat\beta_N\ge a_{d,J(N)}$ in the adjacent stage entry
+conditions. These requests are compatible with the selection order:
+the section and its derivative constants are fixed first, then the
+length, then the coupling threshold. Raising a later threshold does
+not change the section. Thus they can be imposed for all stages
+before selecting the common history, with no dependence on $p$.
+
+Define the normalized microscopic section at the origin by
+\[
+ O^{\mathcal V}_{N,p}(v)
+   =a_N^{-d}\mathcal V_d[S_{1/t_N}v](0).
+\]
+The factor scaling $S_{1/t_N}$ commutes with $R_d$ only when
+$R_d$ preserves factor count, which is not asserted here.
+Accordingly its exact equation labels at this normalization are
+\begin{equation}
+ I_{N,d}^{\mathcal V}
+    =S_{t_N}R_d\mathcal I_d.
+ \label{ch11:scaled-equation-labels}
+\end{equation}
+Since $\mathcal I_d$ is homogeneous in factor count, one can equally
+write $I_{N,d}^{\mathcal V}=
+(S_{t_N}R_dS_{1/t_N})\mathcal I_d$.
+This conjugation must be retained when using a cutoff-independent
+unscaled equation section.
+
+\begin{proposition}[One comparison map for all equation labels]
+\label{ch11:equation-comparison}
+Under \eqref{ch11:calibration-floor} and the terminal attachment
+bounds of Section~\ref{ch11:trial-descent}, there is, for every
+sufficiently large $N$ and every $p$, one real equivariant map
+$P_{N,p,d}:V_d\to V_d$ such that
+\[
+ \|P_{N,p,d}-I\|_{1\to1}\le\tfrac12,\qquad
+ \|P_{N,p,d}^{-1}\|_{1\to1}\le2.
+\]
+For each fixed stopping pair $(m,k)$,
+\begin{equation}
+ \mathcal R_m\!\left\{
+ O^{\mathcal V}_{N,p}(v)
+   -O_{N,p}(d,\mathsf Z_{N,p,d}P_{N,p,d}v;0)\right\}
+ \le C_{d,m,k}\|v\|_1 E_N e^{-\tau_N/8},
+ \label{ch11:equation-root-error}
+\end{equation}
+where $E_N$ is subpower in $a_N^{-1}$, uniformly in $p$.
+The same map works for every spectator; it is constructed before
+any spectator is specified.
+\end{proposition}
+\begin{proof}
+For each basis vector, the exact terminal decomposition used in
+Section~\ref{ch11:trial-descent} applies to the fixed section
+$\mathcal V_d$. Its part with zero polynomial coefficient is localized on the union
+stencil; the complementary part is attached to the original
+large-field selection, with no change of density.
+It gives coefficient $e_j$, ordinary charge
+$Q_N=Q_{d,J(N)}$, and complete root charge bounded by
+\[
+ E_N=4(1+C_N)Q_N+
+ e^{81\sigma_N+162}Z_N^{\rm val}\zeta_{d,N}u_N^{-1}.
+\]
+Here
+$Z_N^{\rm val}=(A_{\mathcal V}+2A_{\rm loc})
+ \sum_jt_N^{-s_j}$, with $A_{\mathcal V},A_{\rm loc}$
+the global value norms of the two fixed sections.
+The ordinary terminal charge uses a sharper attachment estimate
+than the general trial bound. If $w_N^{\rm for}$ is the terminal
+large-field allowance and $D$ the union stencil, its contribution
+to the remainder norm normalized by $\sqrt{w_N^{\rm for}}$ is
+\[
+ 2|D|\sqrt{w_N^{\rm for}}\,
+       e^{\sigma_N c_{B_N}(D)}Z_N^{\rm val}.
+\]
+Indeed attach the complementary local function to the original
+nonempty prescribed large-field set and sum its possible distinguished
+sites in $D$; the remaining half of the allowance bounds this
+normalized mass. The same exact attachment retains reserved mass
+$e^{(\sigma_N+2)c_{B_N}(D)}Z_N^{\rm val}$.
+Impose the additional entry conditions
+\[
+ |D|w_N^{\rm for}\le1,\qquad c_{B_N}(D)\le81,\qquad
+ \sqrt{w_N^{\rm for}}Z_N^{\rm val}\le1.
+\]
+Then $|D|\le q_d$ bounds the ordinary contribution by
+$2q_de^{81\sigma_N}$, explaining exactly the definition of $Q_N$.
+These are post-length threshold conditions. At fixed adjacent
+stages the value norm is a fixed polynomial in the inverse
+small-field threshold, whereas the large-field allowance decays
+faster than every such power. Their finite simultaneous threshold
+therefore exists. The unweighted reserved mass is not discarded.
+This last term is required: the ordinary derivative charge alone
+does not bound the complementary large-field contribution.
+
+Backward comparison gives a reference coefficient $v_j$ and the
+root error in \eqref{ch11:trial-error}. Put
+$u_j=\mathsf Z_{N,p,d}^{-1}v_j$.
+There is a slightly stronger endpoint estimate than the displayed
+bulk descent bound. At the last step its cone inequality gives
+\[
+ |e_j-u_j|\le
+ 4K_{N-1}L_{N-1}^{-3/8}c_N
+ \le L_{N-1}^{-1/8}c_N
+ \le 2(1+C_N)Q_N L_{N-1}^{-1/8}.
+\]
+The middle inequality follows from the previously imposed block
+floor. Requirement \eqref{ch11:calibration-floor} bounds this by
+$\delta_d$.
+
+Let $Ue_j=u_j$. Average $U$ by conjugation with the finite geometric
+symmetry group, and then with the real structure, obtaining $P$.
+For the conjugation term use $\overline{U\overline v}$, so the result
+is still complex linear. The norm of $P-I$ is at most
+$\mathcal O_d^2\delta_d=1/2$, and the Neumann series gives the stated
+inverse bound. Apply the same averaging to the field errors.
+Linearity and the triangle inequality for the replicated root
+seminorm give \eqref{ch11:equation-root-error}, enlarging its fixed
+constant to cover the finite orbit. This preserves one common
+history, all marker modes, and one common map.
+
+Finally $C_N$, $e^{81\sigma_N}$, $t_N^{-1}$,
+$\zeta_{d,N}$, and $u_N^{-1}$ have the subpower bounds already
+required for trial descent. The extra entry condition bounds
+$a_{d,J(N)}$ by $\widehat\beta_N$, which is subpower.
+Finite sums and products preserve this property, proving the claim
+for $E_N$.
+\end{proof}
+
+The varying equation subspace in reference coordinates is therefore
+\begin{equation}
+ \mathsf E_{N,p,d}
+   =\mathsf Z_{N,p,d}P_{N,p,d}
+               S_{t_N}R_d\mathcal I_d.
+ \label{ch11:actual-equation-subspace}
+\end{equation}
+For $v_N\in I_{N,d}^{\mathcal V}$ of subpower norm, the first term
+in \eqref{ch11:equation-root-error} has exactly zero correlation
+against every bounded spectator outside its microscopic stencil,
+by \eqref{ch02:microscopic-null}. For fixed positive physical
+separation, this exclusion holds at every sufficiently fine mesh,
+uniformly in period. Holder's chessboard bound then shows that the
+physical insertion with coefficient
+$\mathsf Z_{N,p,d}P_{N,p,d}v_N$ has vanishing separated correlations
+against any finite family of spectators with bounded replicated
+root norms. This proves the equation inclusion needed for the
+finite detector argument; equality with the full null space still
+uses the free nondegeneracy and detection estimates.
+
+The scaling in \eqref{ch11:actual-equation-subspace} also has a
+useful check. Since $R_d-I$ never lowers factor count and $t_N\to0$,
+the conjugate $S_{t_N}R_dS_{1/t_N}$ remains bounded.
+Its strictly factor-raising terms tend to zero. Terms at equal
+factor count can still raise engineering weight and need not tend
+to zero under this scaling alone. Thus the raw triangular
+construction and the near-identity comparison $P$ do not, by
+themselves, prove that this equation subspace approaches the
+unmodified Maxwell ideal. No such identification is required here: use bounded projections
+with kernel exactly \eqref{ch11:actual-equation-subspace} and establish
+the detector bound \eqref{ch11:detector-bound} on their complements.
+The terminal map $\mathsf Z$ already includes the engineering-weight
+evolution; its physical convention has not been changed.

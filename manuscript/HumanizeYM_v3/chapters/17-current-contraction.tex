@@ -1,0 +1,396 @@
+% Current defect and uniform transfer bounds.
+\section{Current conservation and uniform transfer bounds}
+\label{ch17:quadratic-current}
+
+The potentially dangerous quadratic defect has an exact cancellation
+that should be imposed before estimating its norm. We prove preservation
+of that cancellation for the actual stationary tangent. This removes
+an additive interpretation of the order-two matching error. We then control the nonlinear
+stationary jets and the current itself.
+
+Fix a stage and an admissible action. Let $\mathcal E_b$ be a
+gauge-invariant anchored current defect, with zero constant and linear
+field coefficients. Its Hessian at zero has an exponentially local
+joint Fourier symbol $E_b(p,q)$, with two independent field momenta.
+Gauge invariance gives a Ward identity on each leg. We say that its
+quadratic defect has order at least four when
+\begin{equation}
+                    E_b(p,q)=O((|p|+|q|)^4)
+                              \quad\hbox{near }(0,0).
+ \label{ch17:defect-four}
+\end{equation}
+This refers to spatial momentum degree, not the field degree of the
+Hessian. It includes the affine--affine and affine--quadratic polynomial
+cancellations needed in the current estimate.
+
+For the initial Wilson current, \eqref{ch17:defect-four} follows from
+the leading continuum identity. Its linearized curvature is $dA$;
+the leading quadratic action is the curvature square; and the centered
+difference $\nabla$ has linear symbol $ip$. The quadratic Taylor
+coefficient of
+$\sum_a\nabla_aJ_{ab}-DS[Y_b]$ therefore has leading spatial
+momentum degree three. At that degree it is exactly
+\[
+ \partial_a\left(\tfrac14\delta_{ab}\sum_{c,d}F_{cd}^2
+                         -\sum_c F_{ac}F_{bc}\right)
+       +\sum_c F_{bc}\partial_aF_{ac}=0.
+\]
+The identity uses the linear Bianchi equation; colour inner products
+are implicit. Lower spatial degrees vanish because each curvature
+contains a difference and the action variation contains one more.
+All remaining lattice Taylor terms have degree at least four.
+The same reasoning applies to any initial path action with the
+normalized weight-four Taylor polynomial already established in
+Chapter~\ref{ch07:matching}.
+
+\subsection{Preservation of the low moments}
+
+Let $W$ be the actual stationary tangent from coarse link variables to
+fine link variables, with block ratio $L$. The first derivative of the
+nonlinear stationary substitution is this $W$; its higher derivatives
+cannot enter the quadratic pullback because the defect has zero first
+field derivative. Fine gauge changes of $W$ have no effect on this
+quadratic calculation by the Ward identities of $E_b$.
+
+The exact stationary identity of Chapter~\ref{ch05:gaussian} implies,
+for the alias $k_l(p)=(p+2\pi l)/L$,
+\begin{equation}
+              K_f(k_l(p))N_l(p)=A_l(p)K_c(p),
+ \label{ch17:current-alias}
+\end{equation}
+where $N_l$ is the alias amplitude of $W$, $A_l$ is the corresponding
+predictor-adjoint amplitude, and $K_c(p)=O(|p|^2)$. At a nonprincipal
+alias $l\ne0$, project $N_l$ off the fine gradient direction. The
+completed fine kinetic matrix is invertible near $k_l(0)\ne0$;
+hence that projected amplitude is analytic and $O(|p|^2)$.
+The removed gradient is killed by the defect Ward identity. The
+principal amplitude is analytic by the exponential locality of $W$.
+No bound uniform in $L$ on an individual nonprincipal inverse is
+needed for this exact Taylor-order statement.
+
+Consider the actual anchor average $K_0$ from
+Lemma~\ref{ch17:block-identities}, performed before stationary
+substitution. Its symbol has a double zero at every nonprincipal
+alias: at least one coordinate of $l$ is nonzero, and the factor
+$M_a^2G_a(s_a^L)$ has two factors of the block average $M_a$ there.
+In a two-leg alias term the averaging multiplier is evaluated at
+$k_l(p)+k_{l'}(q)$. The quadratic pullback therefore has the
+following three kinds of terms.
+
+If both aliases are principal, \eqref{ch17:defect-four} and analytic
+amplitudes retain order four. If exactly one is nonprincipal, its
+transverse amplitude has order two and the anchor average has another
+order-two zero, giving order at least four. If both are nonprincipal,
+the two projected amplitudes already give order four, including when
+their alias indices cancel in the anchor multiplier. Every term thus
+satisfies \eqref{ch17:defect-four} on the coarse lattice. This is a
+finite alias identity and holds on the same actual history.
+
+In particular the quadratic jet is not merely close to having the
+required affine cancellations: it has them exactly, provided the
+current update uses the exact pulled-back defect
+$\mathcal E'_b=L^5\mathcal I(K_0\mathcal E_b)$ through the relevant
+field order. If an implementation redefines that defect by action
+matching, equality of these quadratic jets must be retained; a bounded
+additive matching error would not preserve this argument.
+
+\subsection{A homogeneous bound for the quadratic channel}
+
+The analytic division argument of Section~\ref{ch07:division} can be
+applied to each of the two independent momentum legs of $E_b$.
+The Ward identities produce one curvature difference on each leg.
+Their homotopy divisions lower Taylor order by one each, so
+\eqref{ch17:defect-four} leaves a coefficient of total order at least
+two. Coordinatewise Taylor division in the remaining eight variables
+factors two additional differences, distributed between the legs.
+On a fixed smaller coefficient width these operations are bounded by
+constants depending only on the stage and the width loss. Thus $E_b$
+is a sum of terms with either one and three differences, or two and
+two differences, on its two field legs. The coefficient sum is bounded
+by $C_j\|E_b\|$ in the original weighted norm.
+
+The actual tangent may be replaced by the smooth representative $W_a$
+because the quadratic Ward identities kill its gradient correction.
+Its fine-difference bounds are
+\[
+                  \|\nabla_f^rW_a\|\le C_{j,r}L^{-1-r},
+                                  \qquad r\le3.
+\]
+Consequently either allocation of four differences costs at most
+$C_jL^{-6}$ for the two legs. The anchor average $K_0$ has bounded
+absolute coefficient sum, not a factor $L^4$; it is an average rather
+than an unnormalized sum. Translated coefficient weights are absorbed
+by a fixed narrower coarse width, exactly as in the inherited quadratic
+action estimate of Chapter~\ref{ch07:matching}. Multiplication by the
+current normalization $L^5$ proves
+\begin{equation}
+             \|D^2\mathcal E'_b(0)\|_{\rm out}
+                  \le \frac{C_j}{L}\,
+                            \|D^2\mathcal E_b(0)\|_{\rm in}.
+ \label{ch17:quadratic-current-contraction}
+\end{equation}
+This is homogeneous in the actual defect. No constant source term has
+been introduced. Dividing the coefficients by $(\log\widehat\beta)^2$
+only adds the adjacent logarithmic ratio, which is bounded and tends
+to one on a fixed-stage tail. The selected block ratio makes this
+quadratic channel a strict contraction.
+
+\subsection{The nonlinear terms need fixed-ratio bounds}
+
+The nonlinear stationary jets enter only below the diagonal in field
+order. Their constants may depend on $L$, because coupling entry is
+chosen after the ratio. What must remain uniform before $L$ is the
+coarse coefficient width on which these constants are measured.
+We obtain that width from the completed inverse of
+Chapter~\ref{ch07:matching}.
+
+Write $z(v)$ for the stationary internal coordinates, and
+$\mathscr S(v,z)$ for the same joint fine-plus-frame action as there.
+Let $T u=(u,Dz(0)u)$, and let $\mathscr H$ be its internal Hessian.
+On the forest slice implicit differentiation gives
+\begin{align}
+ \mathscr H z_2[u,v]
+    &=-D^3\mathscr S[T u,T v,\,\cdot\,],\notag\\
+ \mathscr H z_3[u,v,w]
+    &=-D^4\mathscr S[T u,T v,T w,\,\cdot\,]
+      -\sum_{\{ij\}\{k\}}
+             D^3\mathscr S[(0,z_2[u_i,u_j]),T u_k,\,\cdot\,].
+ \label{ch17:stationary-higher-jets}
+\end{align}
+There are three terms in the sum. The right sides are internal
+covectors, with all mixed predictor and frame terms included.
+
+These formulas have period-independent bounds $C_{j,L}$ on one
+fixed smaller coarse Fourier strip. To check the width statement,
+let $\Pi_F$ be projection onto the forest slice along the joint gauge
+directions. At zero it is computed by finite sums along the block tree
+and the root frame; its coefficients and those of $\Pi_F^*$ have norm
+bounded by a finite $C_{j,L}$, but bounded range in coarse blocks.
+The dual $\Pi_F^*$ extends a slice covector by zero on gauge directions.
+For such a covector the completed inverse $\mathscr C^{-1}$ of
+Chapter~\ref{ch07:matching} solves the Hessian equation modulo gauge.
+Thus the slice inverse is
+\[
+                       \Pi_F\mathscr C^{-1}\Pi_F^*.
+\]
+The completed inverse has a common positive coarse width chosen before
+$L$; multiplication by the finite-range projections does not destroy it.
+The path vertices and predictor derivatives also have a common coarse
+width, with finite $C_{j,L}$ norms. Restrict the external strips by a
+fixed factor so all intermediate momentum sums lie in this inverse
+strip. Formula~\eqref{ch17:stationary-higher-jets} then proves the
+asserted bounds for $z_2,z_3$. It does not assert bounds uniform in $L$
+for their norms.
+
+For every anchored gauge-invariant function, evaluate this stationary
+branch in an anchored radial gauge. At first order, the gauge-corrected
+link at fine displacement $x$ is a sum of the tangent curvature over
+coordinate rectangles of total area at most $C(1+|x|)$. The smooth
+curvature bound for $W_a$ gives
+\[
+ |W^{\rm rad}(x,y)|
+ \le C_jL^{-2}(1+|x|)
+                   e^{C|x|/L}e^{-c_jd(0,y)}.
+\]
+The polynomial factor and fine exponential are absorbed by the weighted
+local coefficient norm. A common strip reduction handles the coarse
+weight. Higher derivatives of this gauge change are finite products
+along the same paths; the fixed-order factors are polynomial in path
+length. Their period-independent norms are therefore still finite
+$C_{j,L}$ on the same smaller coarse width.
+
+The raw higher coefficients $D^3\mathcal E,D^4\mathcal E$ need not
+separately satisfy linear Ward identities. We use gauge invariance of
+the complete function to make this radial substitution first; its
+nonlinear derivatives multiply only lower field derivatives of the
+defect.
+
+Now differentiate the exact pullback $\mathcal E'=L^5\mathcal I(K_0\mathcal E)$.
+In field order $r$ the term involving $D^r\mathcal E$ has only $r$
+first stationary tangents. For $r=3,4$, radial gauge bounds it by
+$C_jL^{5-2r}\|D^r\mathcal E\|$. The quadratic diagonal has the
+stronger estimate \eqref{ch17:quadratic-current-contraction}.
+Every other chain-rule term involves $D^s\mathcal E$ with $s<r$
+and higher stationary or gauge jets. Hence, for $r=2,3,4$,
+\begin{equation}
+ e'_r\le a_{j,r}(L)e_r+\sum_{2\le s<r}C_{j,L,r,s}e_s,
+ \qquad
+ a_{j,2}(L),a_{j,3}(L)\le C_j/L,
+ \quad a_{j,4}(L)\le C_j/L^3.
+ \label{ch17:unnormalized-defect}
+\end{equation}
+Here $e_r$ is the weighted norm of the field derivative of order $r$.
+The estimates are homogeneous in the defect, because every term in the
+composition contains one of its derivatives. There is no action-independent
+source on the right.
+
+Put $\bar e_{m,r}=e_{m,r}/(\log\widehat\beta_m)^r$. For a fine-to-coarse
+step from $m+1$ to $m$, the coefficient below the diagonal becomes
+\[
+ C_{j,L,r,s}
+       \frac{(\log\widehat\beta_{m+1})^s}
+            {(\log\widehat\beta_m)^r},\qquad s<r.
+\]
+At fixed $j,L$ this tends to zero as the coupling entry increases.
+The diagonal logarithmic ratio tends to one. Choose $L$ first so the
+three diagonal coefficients are at most $1/8$, then choose its entry
+so each row sum, including the below-diagonal terms, is at most $1/2$.
+The finitely many adjacent-stage cases are included before each choice.
+This proves a homogeneous contraction of the normalized defect vector.
+Starting with the Wilson defect, whose normalized norm is bounded, its
+value after $n$ transfers is at most $C2^{-n}$. At a fixed output level
+the logarithmic normalization is fixed, so the actual unnormalized
+defect derivatives tend to zero as well.
+
+\subsection{Why action matching introduces no source}
+
+We specify the displacement map, including its sign. At the stationary
+fine field and coarse frame, let $\widetilde Q(U,h)$ be the actual
+framed predictor. Its left-trivialized differential is
+\[
+ (R_f\eta)_e=\left.\frac d{ds}\right|_0
+ \log\bigl(\widetilde Q(e^{s\eta}U,h)_e
+                              \widetilde Q(U,h)_e^{-1}\bigr).
+\]
+Let $b_{y,f}$ be the fixed frame-route coefficients defined by
+$\sum_f b_{y,f}\eta_f=\tau_y(0;\eta)-\sum_rw_r^{\rm av}\tau_y(r;\eta)$,
+where $\tau$ is the signed path average in
+\eqref{ch05:frame-linearization}. With the fixed route $\gamma_{y,f}$
+from coarse root $Ly$ to the tail of the fine link $f$, set
+\[
+ (R_0\eta)(y)=\sum_f b_{y,f}
+             \operatorname{Ad}(h(y)U(\gamma_{y,f}))\eta_f,
+ \qquad (d_V\phi)_e=\phi(e^-)-\operatorname{Ad}(V_e)\phi(e^+).
+\]
+At coarse anchor zero the displaced coarse current is
+\begin{equation}
+ Y'_b=L^5\sum_xK_0(x)(R_f+d_VR_0)
+                              Y_b^x(U_{\rm stat}(V)).
+ \label{ch17:actual-current-map}
+\end{equation}
+Translations give the other anchors. The sum is over fine anchors;
+the output is a vector on coarse links. At the identity $R_0=R$ of
+\eqref{ch05:actual-Q}, $R_f=Q=M+d_{0,c}R$, and
+$d_V=-d_{0,c}$. In this convention the plus sign in
+\eqref{ch17:actual-current-map} cancels the root correction exactly:
+\begin{equation}
+                         (R_f+d_VR_0)|_{0}=M.
+ \label{ch17:flat-current-map}
+\end{equation}
+The smooth straight average, rather than a rough root-path row,
+therefore controls its equal-order Taylor terms. All derivatives of
+$R_f+d_VR_0$ have finite $C_{j,L}$ bounds on the common coarse strip.
+Their fixed paths have length $O_j(L)$ and remain within bounded
+coarse distance; differentiation adds only finite path-length factors.
+
+For the exact stationary action the current identity is preserved before
+any estimates. The envelope theorem differentiates the stationary value
+only through the explicit coarse field. In the block penalty, simultaneous
+left multiplication of the predictor and the coarse link leaves the
+penalty unchanged. Thus a fine displacement $Y$ induces the coarse
+displacement $R_fY$; its root correction $d_VR_0Y$ has zero action
+variation by coarse gauge invariance. Together with
+\eqref{ch17:block-algebra} this gives
+\[
+ DS_{\rm stat}[Y'_b]
+  =L^5\mathcal I K_0DS[Y_b],\qquad
+ \sum_a\nabla_a^{\rm c}J'_{ab}
+  =L^5\mathcal I K_0\sum_a\nabla_aJ_{ab}.
+\]
+Joint fine and frame stationarity is used here, as in the completed
+quotient calculation of Chapter~\ref{ch07:matching}. Matching replaces
+$S_{\rm stat}$ by an action with identical Taylor coefficients through
+field order four. Since $Y'(0)=0$, its action variation still agrees
+through order four. Therefore the displayed defect pullback is exact
+at every field order used in \eqref{ch17:unnormalized-defect}.
+A separate additive $C/(\log\widehat\beta)^2$ matching error is neither
+needed nor permitted in this argument.
+
+\subsection{Uniform current and difference-primitive bounds}
+
+Recall that $J_{ab}$ is the lattice stress current and $Y_b$ its
+associated gauge-covariant displacement. The functions $q_a$ and
+$t_{abc}$ are the forward-difference primitives of its trace and
+antisymmetric part, respectively, as defined in
+Section~\ref{ch17:current-suppliers}. They are distinct from the
+small-field threshold $t$ used in marked norms.
+
+For completeness we describe the accompanying bounds needed in the
+regulator criterion. Subtract fixed local reference stress and curvature
+displacements, whose leading engineering jets are those used initially.
+The reference functions have finite stencils and fixed coefficient bounds.
+The lowest jets of the transported functions agree with them exactly.
+For the stress this follows from the principal tangent amplitude
+$N_0(0)=L^{-1}I$, the mass-one anchor average, and the fact that
+nonprincipal transverse amplitudes have order at least two. If exactly
+one alias is nonprincipal, the linear Ward identity on the other leg
+supplies one further principal momentum, so this contribution has
+order at least three. Two nonprincipal aliases have order at least four.
+Consequently only the principal pair contributes to the quadratic
+weight-four coefficient, which is unchanged.
+
+For the displacement one additionally uses the predictor's column sum.
+By \eqref{ch17:flat-current-map}, the corrected differential is exactly
+$M$ at zero. The block-average alias formula
+for $M$ kills every nonprincipal alias at zero coarse momentum, so its
+fine column sum in a fixed direction is constant. Its row mass is $L$;
+there are $L^4$ fine residues. The column sum is therefore $L^{-3}$.
+This is an identity for the corrected differential, with no residual
+root-gradient term. Since the leading fine curvature of $W_a$ is $L^{-2}$ times
+the coarse curvature, the factors in the current update multiply to
+$L^5L^{-3}L^{-2}=1$. This preserves the linear curvature jet of $Y$.
+Gauge covariance then fixes its accompanying quadratic commutator term:
+its leading covariant weight-two polynomial is that same curvature.
+
+The stress remainder's quadratic symbol now has order at least three.
+Two-leg curl division leaves one extra difference, so its diagonal
+transfer is $C_jL^4L^{-5}\le C_j/L$. Higher stress orders have
+radial-tangent bounds $C_jL^{4-2r}$.
+For $Y$, its zero-order corrected differential $M$ has row sum at most
+$C_jL$, while $\|K_0\|_\infty\le C_jL^{-4}$.
+To see the resulting local gain, write a translated current coefficient
+as $y(f-x;z_1-x,\ldots,z_r-x)$, with output link $f$ and anchor $x$.
+For each fixed coarse output edge $e$ its absolute sum is bounded by
+\[
+ \|K_0\|_\infty\sum_f|M_{ef}|
+        \sum_x|y(f-x;\,\cdot\,)|
+                   \le C_jL^{-3}\|y\|.
+\]
+Only a bounded number of coarse output edges are within the predictor
+and averaging patches; exponential coefficient tails control the rest.
+This proves the same gain for the full local output-link norm.
+The linear displacement remainder has a curvature difference and one
+additional difference. If the extra difference acts on its field leg,
+it costs $L^{-1}$ through $W_a$. If it acts on the fine output index,
+summation by parts moves it onto $M_{ef}$; the box-filter identity gives
+$\sum_f|\nabla_fM_{ef}|\le C_j$, again gaining $L^{-1}$ relative to
+its row mass $C_jL$. Thus its diagonal factor is
+$C_jL^5L^{-3}L^{-3}=C_j/L$.
+For field order $r\ge2$ its diagonal factor is $C_jL^{2-2r}$.
+Derivatives of the predictor or its frame correction multiply lower
+field orders of $Y$, so their fixed-$L$ constants are absorbed by the
+same logarithmic normalization as above. Evaluating in a local radial
+gauge is legitimate for this covariant displacement: transform its
+output frame and the predictor differential together. The additional
+frame derivatives again occur only below the field-order diagonal.
+
+The trace and antisymmetry primitives start at field order two. Their
+old terms carry $L^3$ and hence gain $C_jL^{3-2r}\le C_j/L$.
+Their new terms are the explicit $L^4K_a^{\rm t}J$ terms proved in
+Lemma~\ref{ch17:block-identities}; the equal-order forcing from $J$
+is bounded independently of $L$. Choose a fixed smaller weight for
+these primitive norms so this one-way forcing has norm at most $1/8$.
+The other diagonal terms are then made small by $L$, and all lower-order
+terms by coupling entry. Reference functions contribute finite
+$C_{j,L}$ forcing, divided by positive powers of $\log\widehat\beta$;
+entry can make that forcing at most $1/4$.
+
+Thus a weighted sum of the normalized current and primitive norms obeys
+$X_m\le\frac12X_{m+1}+\frac14$. The initial Wilson current and zero
+primitives have bounded normalized norms. Uniform bounds follow throughout
+the history, and in particular at each fixed output level. At that level
+these are the unnormalized finite constants required by the regulator
+criterion, since $\widehat\beta_m$ is fixed. The needed free engineering
+jets are unchanged, and the defect tends to zero by the homogeneous
+contraction above. All estimates use the same predictor, stationary
+branch, action matching and periodized kernels as the marked trajectory.

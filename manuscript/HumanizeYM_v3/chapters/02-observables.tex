@@ -1,0 +1,446 @@
+\chapter{Local gauge-invariant observables}
+\label{ch02:observables}
+
+A continuum observable needs more than a lattice expression with the right
+classical limit. Integration over fluctuations can mix it with other
+observables, including the constant. We therefore separate two tasks. This
+chapter constructs finite-dimensional spaces of classical polynomial labels
+and local lattice representatives of those labels. Later, the
+renormalization group will supply the cutoff-dependent linear maps that
+normalize the representatives at a fixed physical scale.
+
+The classical connections used below are test configurations. Their jets
+provide a precise way to say which local polynomial a lattice observable
+represents. We do not assume that a continuum random gauge field is a smooth
+connection, or even that such a random connection has been constructed.
+Throughout, $G\subset U(n_G)$ and the metric on its Lie algebra $\gLie$ are
+those of Section~\ref{ch01:gauge}.
+
+\section{Radial jets and polynomial labels}
+\label{ch02:jets-section}
+
+For a smooth connection near the origin, radial gauge is the condition
+$x^\mu A_\mu(x)=0$. In this gauge the connection is recovered from curvature
+by the usual radial identity
+\begin{equation}
+ A_\mu(x)=\int_0^1 t x^\nu F_{\nu\mu}(tx)\,dt.
+ \label{ch02:radial-identity}
+\end{equation}
+Repeated coordinate indices are summed from $1$ to $4$. The identity
+explains why a homogeneous potential of polynomial degree $k+1$ carries
+the same engineering weight as a $k$th derivative of curvature, namely
+$k+2$. We use this observation to define labels algebraically.
+
+\begin{definition}[Radial jets]
+\label{ch02:radial-jets}
+A formal radial jet is a sequence $J=(A_k)_{k\ge0}$, where
+$A_k=(A_{k,\mu})_{\mu=1}^4$ is a $\gLie$-valued one-form with homogeneous
+polynomial coefficients of degree $k+1$, satisfying
+\[
+ \sum_{\mu=1}^4x^\mu A_{k,\mu}(x)=0.
+\]
+Write $\mathcal J$ for the space of these sequences and
+$\mathcal J_{\le d}$ for the finite-dimensional real space obtained by
+retaining only $k+2\le d$. It is the zero space for $d<2$.
+\end{definition}
+Only finitely many jet coordinates enter any polynomial below. A coordinate
+of $A_k$ is assigned engineering weight $k+2$ and polynomial degree one.
+The ordinary polynomial degree counts factors of jet coordinates; to
+distinguish it from engineering weight we call it the \emph{factor count}.
+Constant gauge transformations act on every coefficient by $\Ad(G)$.
+Orthogonal changes of Euclidean coordinates act by the corresponding
+one-form transformation. Both actions preserve weight and factor count.
+
+\begin{definition}[Polynomial labels]
+\label{ch02:labels}
+For $d\in\NN$, let
+\begin{equation}
+ V_d=\CC[\mathcal J]^{\Ad(G)}_{\text{weight}\le d}
+ \label{ch02:label-space}
+\end{equation}
+be the space of gauge-invariant complex polynomials of engineering weight
+at most $d$. Choose nested real bases $(b_{d,i})$ homogeneous in weight
+$w_i$ and factor count $f_i$, with the constant polynomial as one basis
+vector. Conjugation means conjugating coefficients in these real bases.
+Define the factor-count operator by
+\begin{equation}
+ N_{\mathrm{fac}}b_{d,i}=f_i b_{d,i},\qquad
+ t^{N_{\mathrm{fac}}}b_{d,i}=t^{f_i}b_{d,i}\quad(t>0).
+ \label{ch02:factor-scaling}
+\end{equation}
+\end{definition}
+The spaces are finite-dimensional: only $A_k$ with $k+2\le d$ can occur,
+and every nonconstant coordinate has weight at least two. The invariant
+subspace decomposes into its finitely many weight and factor-count
+components, so the stated bases can be chosen once and for all. The
+constant has bidegree $(0,0)$; the zero-factor subspace is precisely
+$\CC\mathbf1$.
+
+The curvature at the origin is
+$F_{\mu\nu}=\partial_\mu A_{0,\nu}-\partial_\nu A_{0,\mu}$: the
+commutator term vanishes there in radial gauge. Its coordinates have weight
+two and factor count one. An important invariant polynomial is
+\begin{equation}
+ c_{F^2}=\frac14\sum_{\mu,\nu}
+                 \langle F_{\mu\nu},F_{\mu\nu}\rangle_{\gLie},
+ \label{ch02:curvature-square}
+\end{equation}
+with bidegree $(4,2)$. The inner product is extended complex bilinearly when
+used in a complex polynomial, not sesquilinearly.
+
+There are three distinct integers in this notation. A basis element has
+weight $w_i$ and factor count $f_i$; it also belongs to a chosen space
+$V_d$ with $w_i\le d$. We shall retain that last choice as part of the
+observable label, writing $v=(d,c)$ with $c\in V_d$. The same polynomial
+$c$ can occur at different tags $d$. Its eventual normalization depends on
+the tag, so the resulting insertions must not be identified without a
+comparison theorem. None of these integers is being asserted to be the
+exact scaling dimension of the interacting quantum field.
+
+\section{Test holonomies and Taylor normalization}
+\label{ch02:taylor-section}
+
+A label is a polynomial of a jet. A lattice observable is a function of
+link matrices. To compare them, insert the parallel transports of a
+truncated radial connection into the lattice observable.
+
+For $J\in\mathcal J_{\le d}$, write
+$A^{\le d}_\mu(x)=\sum_{k+2\le d}A_{k,\mu}(x)$. For a positive link
+$(y,\mu)$ of $\ZZ^4$ and a real parameter $h$, define
+\begin{equation}
+ U(h,J)(y,\mu)=u(1),\qquad
+ u'(t)=u(t)h A^{\le d}_\mu(h(y+te_\mu)),\quad u(0)=1.
+ \label{ch02:test-holonomy}
+\end{equation}
+The solution remains in $G$. Standard dependence of solutions of analytic
+ordinary differential equations on parameters gives analytic dependence on
+the finitely many jet coordinates near zero; see
+\cite{Teschl2012}. Reversed links have inverse transport, in the convention
+of Section~\ref{ch01:wilson-section}.
+
+Define the jet dilation
+\begin{equation}
+ \operatorname{sc}_hJ=(h^{k+2}A_k)_k.
+ \label{ch02:jet-dilation}
+\end{equation}
+Homogeneity in \eqref{ch02:test-holonomy} gives
+$U(h,J)=U(1,\operatorname{sc}_hJ)$. In particular, a homogeneous label of
+weight $w$ satisfies $c(\operatorname{sc}_hJ)=h^wc(J)$.
+
+\begin{definition}[Taylor map and local section]
+\label{ch02:taylor-map}
+For a finite-link function $O$ analytic near the identity configuration,
+$\operatorname{Tay}_d O$ is the part of engineering weight at most $d$ in
+the Taylor expansion at $J=0$ of $O(U(1,J))$.
+A local polynomial section is a complex-linear map
+\[
+ P_d^{\mathrm{loc}}:V_d\longrightarrow
+       \{\text{polynomial functions of finitely many link entries and their
+       conjugates}\}
+\]
+with $\operatorname{Tay}_dP_d^{\mathrm{loc}}[c]=c$.
+\end{definition}
+The term section simply means a right inverse of the Taylor map. The
+polynomial condition is global in the link matrices; it is stronger than
+analyticity near the identity. For a gauge-invariant observable the Taylor
+polynomial is $\Ad(G)$-invariant, since constant gauge transformations
+conjugate the test holonomies.
+
+Equivalently, the section identity requires, for every $J$ and $0\le q\le d$,
+\begin{equation}
+ \left.\frac{d^q}{dh^q}P_d^{\mathrm{loc}}[c](U(h,J))\right|_{h=0}
+ =\left.\frac{d^q}{dh^q}c(\operatorname{sc}_hJ)\right|_{h=0}.
+ \label{ch02:taylor-identity}
+\end{equation}
+It prescribes all weights up to $d$, not just the leading term of one
+chosen label. It also does not prescribe the value of the lattice observable
+on a typical rough configuration.
+
+\section{Finite-stencil representatives}
+\label{ch02:sections}
+
+The construction uses lattice curvature transported to a common point.
+Extend the metric \eqref{ch01:metric} to the ambient real matrix space as
+$\operatorname{Re}\tr(X^*Y)/n_G$, and let $\Pi_{\gLie}$ be orthogonal
+projection onto $\gLie$. For a plaquette based at $z$, set
+\[
+ F_\square(U)=\Pi_{\gLie}\frac{U_\square-U_\square^{-1}}2.
+\]
+If $\gamma$ is a lattice path from the origin to $z$, its transported
+curvature is
+\begin{equation}
+ \sigma_{\gamma,\square}(U)=\Ad(U_\gamma)F_\square(U).
+ \label{ch02:transported-curvature}
+\end{equation}
+Under a site gauge transformation it is conjugated by the gauge element
+at the origin. It is a real polynomial in the entries and conjugate
+entries of the links it reads, because inverse unitary matrices are
+conjugate transposes.
+
+\begin{theorem}[Local polynomial representatives]
+\label{ch02:local-sections}
+For each $d$ there is a finite centered stencil $\Sigma_d\subset\ZZ^4$,
+invariant under the signed permutation group $H_4$, and a local polynomial
+section $P_d^{\mathrm{loc}}$ with the following properties.
+Its values are gauge invariant and local on $\Sigma_d$. It preserves the
+unit and complex conjugation, and satisfies
+\begin{equation}
+ P_d^{\mathrm{loc}}[c](h^*U)=P_d^{\mathrm{loc}}[h\cdot c](U),
+ \qquad h\in H_4.
+ \label{ch02:section-covariance}
+\end{equation}
+Here $h^*$ pulls back lattice links and
+$(h\cdot c)(J)=c(h^{-1}\cdot J)$ is the induced action on labels.
+Moreover, each basis column $P_d^{\mathrm{loc}}[b_{d,i}]$ is a polynomial
+in finitely many transported curvatures, and every monomial in that
+polynomial has at least $f_i$ factors.
+\end{theorem}
+The last assertion is what makes the section useful for estimates. An
+arbitrary right inverse of the Taylor map need not preserve this lower
+bound on factor count.
+
+\begin{proof}
+We give the finite-dimensional construction, invoking the usual inverse
+function theorem rather than reproving it.
+
+First consider the maps $J\mapsto\sigma_{\gamma,\square}(U(1,J))$.
+Their linearizations at the zero jet separate $\mathcal J_{\le d}$.
+Indeed, differentiating transport at the identity gives the line integral
+of the connection along the link. The derivative of a plaquette curvature
+is therefore its circulation. The derivative of the conjugating transport
+in \eqref{ch02:transported-curvature} contributes nothing, since the
+curvature itself vanishes at the identity.
+
+To verify separation, suppose all these linearized plaquette measurements
+vanish on $A=\sum_{k=0}^{d-2}A_k$. For each coordinate plane the circulation
+around its unit square based at $z$ is the polynomial
+\[
+ N_{\mu\nu}(z)=\int_0^1\!\int_0^1
+ (\partial_\mu A_\nu-\partial_\nu A_\mu)
+                  (z+te_\mu+ue_\nu)\,dt\,du.
+\]
+It vanishes at every integer $z$, and hence is the zero polynomial. If $k$
+is the largest degree index with $A_k\ne0$, its homogeneous part of degree
+$k$ is $\partial_\mu A_{k,\nu}-\partial_\nu A_{k,\mu}$. Thus $dA_k=0$.
+The radial identity and Euler's identity give
+\[
+ \sum_\mu x^\mu
+  (\partial_\mu A_{k,\nu}-\partial_\nu A_{k,\mu})=(k+2)A_{k,\nu}.
+\]
+It follows that $A_k=0$, a contradiction. Descending through the degree
+indices proves separation. Since $\mathcal J_{\le d}$ is finite-dimensional,
+a finite collection of measurements already has injective joint derivative.
+
+Fix such a collection and write
+\[
+ \mathscr S(J)=\bigl(\sigma_1(U(1,J)),\ldots,
+                          \sigma_M(U(1,J))\bigr)\in\gLie^M,
+ \qquad D=D\mathscr S(0).
+\]
+The map is analytic, $\mathscr S(0)=0$, and $D$ is injective. Both the jet
+space and $\gLie^M$ have invariant real inner products. Hence the inverse
+of $D$ on its range, composed with orthogonal projection onto that range,
+is an equivariant linear map $C$ with $CD=1$. The inverse function theorem
+applied to $C\mathscr S$ gives an analytic local inverse $g$; this is the
+standard finite-dimensional theorem, for example
+\cite[Theorem~9.24]{Rudin1976} together with its analytic form.
+Set $f=gC$. Then $f(0)=0$ and $f\mathscr S(J)=J$ near zero.
+Equivariance follows from uniqueness of the inverse as a germ.
+
+Let $T_df$ be the ordinary Taylor polynomial of $f$ through degree $d$.
+It has no constant term and is equivariant. For each real basis polynomial
+$b_{d,i}$ define $Q_i(z)=b_{d,i}(T_df(z))$. Then $Q_i$ is invariant, is real
+on real arguments, and has no monomial of degree below $f_i$. The unit
+column is one. Consequently
+\[
+ \Psi_c(U)=\sum_i c_iQ_i(\sigma_1(U),\ldots,\sigma_M(U))
+ \quad\text{for }c=\sum_i c_i b_{d,i}
+\]
+is a gauge-invariant polynomial cylinder function. Since
+$T_df(\mathscr S(J))=J+O(|J|^{d+1})$, its Taylor map is $c$.
+In passing from ordinary to weighted Taylor order, we use that each jet
+coordinate has weight at least two; an omitted ordinary degree cannot
+produce a retained weight. No truncation of $Q_i$ after substitution is
+needed.
+
+Finally average over the finite lattice symmetry group:
+\begin{equation}
+ P_d^{\mathrm{loc}}[c](U)
+   =\frac1{|H_4|}\sum_{h\in H_4}\Psi_{h^{-1}\cdot c}(h^*U).
+ \label{ch02:section-average}
+\end{equation}
+Uniqueness of the parallel-transport equation gives
+$h^*U(h_0,J)=U(h_0,h^{-1}\cdot J)$ for a scale parameter $h_0$.
+Thus every summand still has Taylor map $c$. Reindexing the finite sum
+proves \eqref{ch02:section-covariance}. Reality and the unit are preserved.
+A signed image of a transported curvature is another such curvature,
+possibly with a minus sign from orientation reversal. The group action
+preserves factor count, so the lower bound on monomial degree survives
+averaging. Enclosing all paths and plaquettes in a centered box produces
+the finite stencil $\Sigma_d$.
+For $d<2$ there are only constants and the construction reduces to the
+constant section.
+\end{proof}
+
+All choices in this theorem are made on the covering lattice $\ZZ^4$,
+before selecting a torus period. For a site $y\in\Lambda_s$, write
+$P_d^{\mathrm{loc}}[c](y;U)$ for evaluation after translating the stencil
+to $y$ and reducing its links modulo $s$. The construction remains
+well-defined if different covering links become the same torus link.
+Gauge invariance, covariance and the polynomial identities survive that
+identification.
+
+The abstract jet space admits an $O(4)$ action, but the covariance in
+\eqref{ch02:section-covariance} concerns only $H_4$. Arbitrary rotations do
+not act on the lattice links. This distinction prevents the classical
+label symmetry from being mistaken for an already proved symmetry of the
+continuum correlations.
+
+\section{Small-field bounds for the representatives}
+\label{ch02:bounds}
+
+Recall that $V_d$ is the polynomial label space of engineering weight at most $d$ from Definition~\ref{ch02:labels}; factor count counts curvature-jet factors instead of their engineering weights.
+
+We now use the factor-count property of
+Theorem~\ref{ch02:local-sections}. Recall from \eqref{ch01:chord} that
+$\chi(u)=\|u-1\|_{\mathrm F}/\sqrt{n_G}$ measures the size of a plaquette.
+On a fixed local stencil, a bound $\chi(U_\square)\le t$ gives a factor
+$t$ for each transported curvature in \eqref{ch02:transported-curvature}.
+The same factor is retained under suitably scaled derivatives.
+
+For a collection $A=(A_e)_{e\in E_s}$ of Lie algebra elements, define the
+left derivative
+\[
+ D_A^L F(U)=\left.\frac{d}{d\varepsilon}
+       F\bigl((\exp(\varepsilon A_e)U_e)_{e\in E_s}\bigr)
+          \right|_{\varepsilon=0}.
+\]
+An ordered list of these derivatives is used; no commutation of Lie
+derivatives is assumed. Fix a nonnegative spatial exponent $p_0$ and a
+site $y$. A permitted direction at threshold $t$ satisfies
+\begin{equation}
+ |A_e|_{\gLie}\le t\bigl(1+\operatorname{dist}_s(e^-,y)\bigr)^{p_0},
+ \label{ch02:direction}
+\end{equation}
+where $e^-$ is the initial site of the positive link. This is a local
+definition for the estimate; the later polymer norms will specify which
+orders and spatial exponents they retain.
+
+\begin{proposition}[Uniform section bounds]
+\label{ch02:section-bounds}
+For every $d,q,p_0$ there are finite constants $C_{d,q,p_0}$ and $C_d$,
+independent of $s$, $y$ and $0<t\le1$, with the following properties.
+If every plaquette used by the translated section has chord at most $t$,
+then for every list of permitted directions of length $k\le q$,
+\begin{equation}
+ \left|D_{A_1}^L\cdots D_{A_k}^L
+       P_d^{\mathrm{loc}}[b_{d,i}](y;U)\right|
+       \le C_{d,q,p_0}t^{f_i}.
+ \label{ch02:section-small-bound}
+\end{equation}
+For arbitrary configurations,
+\begin{equation}
+ \sup_{i,y,U}|P_d^{\mathrm{loc}}[b_{d,i}](y;U)|\le C_d.
+ \label{ch02:section-global-bound}
+\end{equation}
+The same constants apply when the stencil wraps around the torus.
+\end{proposition}
+\begin{proof}
+Projection is contractive and $U^{-1}=U^*$, so
+\[
+ |F_\square(U)|_{\gLie}
+ \le\frac{\|U_\square-U_\square^*\|_{\mathrm F}}{2\sqrt{n_G}}
+ \le\chi(U_\square).
+\]
+Transport by a unitary matrix preserves the metric. An undifferentiated
+curvature measurement is therefore bounded by $t$ on the stated domain.
+
+On the fixed stencil the right side of \eqref{ch02:direction} is bounded
+by a constant times $t$, uniformly in the period: periodic distance is
+no larger than distance to a chosen covering-space representative.
+Differentiating a fixed path product $k$ times gives a finite sum of
+products with exactly $k$ direction matrices and otherwise unitary
+factors. Its derivatives are bounded by a constant times $t^k$.
+The same conclusion holds for each transported curvature. For a positive
+order $k$, this is in particular bounded by a constant times $t$, since
+$t\le1$.
+
+Every monomial representing the column $b_{d,i}$ has at least $f_i$
+curvature factors. Apply the ordered product rule: each factor, whether
+or not differentiated, contributes a factor bounded by a constant times
+$t$. Summing the finitely many resulting terms proves
+\eqref{ch02:section-small-bound}. Matrix entries of a unitary matrix have
+modulus at most one, so the polynomial cylinder formula gives
+\eqref{ch02:section-global-bound}.
+If covering links coincide on the torus, one first differentiates the
+covering expression and assigns the same direction to identified links.
+The number of terms and their bounds do not increase with the period.
+\end{proof}
+
+The scaling operator $t^{N_{\mathrm{fac}}}$ from
+\eqref{ch02:factor-scaling} is tailored to this estimate. By linearity,
+permitted derivatives of $P_d^{\mathrm{loc}}[t^{-N_{\mathrm{fac}}}c]$
+are bounded by $C_{d,q,p_0}\sum_i|c_i|$ on the small-field domain. The
+powers $t^{f_i}$ cancel column by column. Outside that domain the global
+bound instead gives $C_d\sum_i|c_i|t^{-f_i}$. The missing small-field gain
+must later be supplied by the probability cost of a large-field region;
+it cannot be obtained by extrapolating \eqref{ch02:section-small-bound}.
+
+\input{chapters/02-equation-section}
+
+\section{Examples and the remaining normalization problem}
+\label{ch02:normalization}
+
+The unit illustrates the simplest section: $P_d^{\mathrm{loc}}[\mathbf1]=1$
+for every $d$. Its eventual physical normalization still depends on the
+degree tag. There will be a reference scale for each $d$, and a choice of
+coefficient making the renormalized insertion exactly one. This does not
+follow by putting a universal factor $a_N^{-d}$ in front of the raw
+constant section.
+
+For the curvature-square polynomial $c_{F^2}$ in
+\eqref{ch02:curvature-square}, a useful classical representative is the
+clover average
+\begin{equation}
+ P^{\mathrm{cl}}(y;U)=\frac14\sum_{\square\ni y}w(U_\square),
+ \label{ch02:clover}
+\end{equation}
+where the sum has four corner plaquettes in each of the six coordinate
+planes, hence $24$ terms. Orientation does not matter because $w(u^{-1})=w(u)$.
+For a smooth test connection the expansion
+\eqref{ch01:classical-curvature} yields
+\[
+ P^{\mathrm{cl}}(y;U(h,J))
+     =h^4 c_{F^2}(J)+O(h^5)
+\]
+at the origin, and thus $\operatorname{Tay}_4P^{\mathrm{cl}}=c_{F^2}$.
+The factors are consistent: each plaquette contributes
+$\frac12h^4|F_{\mu\nu}|_{\gLie}^2$, four copies occur per plane, and the
+prefactor is $1/4$. This example fixes the normalization, but the general
+construction is free to use a different section satisfying the same
+Taylor identity.
+
+The clover formula does not solve the quantum normalization problem.
+Under blocking, the curvature square can mix with the constant. A general
+renormalized version therefore involves both a multiplicative coefficient
+and an additive constant, with coefficients depending on the cutoff and
+volume. More generally, a label in $V_d$ can mix with other labels in the
+same finite-dimensional space. The correct normalization is consequently
+an invertible linear map on $V_d$, whose existence and estimates must be
+proved along the chosen renormalization trajectory.
+
+There is also a distinction between polynomial relations and vanishing
+fields. Some polynomial combinations represent free Maxwell equations of
+motion. The interacting lattice equations arise instead from Haar
+integration by parts, and include nonlinear corrections. To identify the
+null space of continuum observables requires both those identities and a
+rank estimate. Neither the section theorem nor its classical Taylor
+normalization identifies the interacting null space with the unmodified
+free equation ideal.
+
+The output of this chapter is therefore concrete but limited: a common
+finite-stencil representative for every polynomial label, with symmetry
+and threshold estimates uniform in the torus period. These are exactly
+the local data needed to begin the renormalization of observables. The
+uniform control of their correlations and their continuum normalization
+remain the task of the subsequent construction.

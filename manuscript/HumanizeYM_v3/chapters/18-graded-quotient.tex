@@ -1,0 +1,130 @@
+\section{Engineering degree and the physical quotient}
+\label{ch18:graded-quotient-section}
+
+An estimate on a polynomial coefficient is useful for local product replacement only if
+it retains the degree of the field that coefficient represents.
+We derive the required quotient estimate from the triangular marked
+transfer. This step uses the corrected physical inclusions and the
+normalized-null statement of Section~\ref{ch13:quotient}; those statements
+were established using the exact microscopic equation space.
+
+Fix an output degree $t$. Let $x_l(v)$ be the coefficient of a reference
+label $v\in V_t$ after transport to level $l$, and use the sum norm
+$|x|_1$. The leading polynomial map at one step has the form
+$M_l\mathsf d_l$, where
+\[
+ (\mathsf d_lx)_\alpha=L_l^{t-|\alpha|}x_\alpha.
+\]
+Here $|\alpha|$ is the engineering degree of the basis polynomial, not
+its factor count. The leading map fixes the constant and is triangular:
+$(M_l)_{\alpha\beta}=0$ off the diagonal whenever
+$|\alpha|\le|\beta|$. Both $M_l$ and its inverse have norm at most the
+prescribed stage constant $K_l$. The full map differs from it by the
+marked remainder bound of Section~\ref{ch11:one-graph}.
+Enlarge the prescribed column bounds $C_l$ and block floors so that
+\begin{equation}
+ 64K_l^2\le C_l,C_{l+1},\qquad C_{l+1}\le L_l,
+ \qquad 2K_lL_l^{-3/8}(1+C_{l+1})\le1.
+ \label{ch18:graded-room}
+\end{equation}
+These are finite-stage inequalities, with constants fixed before the
+block ratio, and the schedule gives
+$\sum_{l<m}\log C_{l+1}=o(\tau_m)$.
+
+\begin{proposition}[Graded quotient estimate]
+\label{ch18:graded-estimate}
+For $0\le i\le t$ there are constants $C_{t,i}(m)$ with
+$\log C_{t,i}(m)=o(\tau_m)$ such that the following holds.
+Suppose $v_{N,p}\in V_t$ converges on an ordered cutoff and volume
+refinement to $v$, and $|x_m(v_{N,p})|_1\le\epsilon$ on that tail.
+Then
+\begin{equation}
+ \operatorname{dist}_{F_t}([v],\iota_{i-1,t}F_{i-1})
+       \le C_{t,i}(m)a_m^{-(t-i)}\epsilon,
+ \label{ch18:graded-distance}
+\end{equation}
+where $F_{-1}=0$. Constants are independent of the refinement and the
+convergent label family. The norm on $F_t$ is fixed once.
+\end{proposition}
+\begin{proof}
+For $i>0$ let $P$ project onto engineering degrees below $i$.
+Triangularity makes $\ker P$ invariant under $M_l$ and its inverse.
+The degree scaling expands low coordinates by at least
+$L_l^{t-i+1}$, and high coordinates by at most $L_l^{t-i}$.
+The one-step marked bound and \eqref{ch18:graded-room} imply
+\begin{align}
+ |x_{l+1}|_1\le C_{l+1}|Px_{l+1}|_1
+ &\ \Longrightarrow\quad
+ |x_l|_1\le C_l|Px_l|_1,\quad
+ L_l^{t-i+1}|Px_{l+1}|_1\le C_{l+1}|Px_l|_1,
+ \label{ch18:low-cone}\\
+ Px_{l+1}=0
+ &\ \Longrightarrow\quad
+ |x_l|_1\le C_{l+1}L_l^{t-i}|x_{l+1}|_1.
+ \label{ch18:high-step}
+\end{align}
+To check the first implication, put $Y=|P\mathsf d_lx_{l+1}|_1$.
+The premise and $C_{l+1}\le L_l$ give
+$|\mathsf d_lx_{l+1}|_1\le2Y$ and $|x_{l+1}|_1\le Y$. Applying the inverse leading map
+to the low part and absorbing the marked error gives
+$Y\le2K_l|Px_l|_1$. The full output is at most $3K_lY$;
+\eqref{ch18:graded-room} gives both assertions. When the low part
+is zero, the high-degree scaling and $K_l+1\le C_{l+1}$ give
+\eqref{ch18:high-step}.
+
+At the microscopic level take the low plane $PV_t$ and transport it.
+Equation~\eqref{ch18:low-cone} shows that its projection onto the low
+coordinates at every later level is injective, and hence onto that
+fixed-dimensional coordinate space. At level $m$ subtract its vector
+with the same low coordinates as $x_m(v_{N,p})$. The remaining
+coefficient has zero low part and norm at most $(1+C_m)\epsilon$.
+Repeat the subtraction after each step towards the fixed reference
+level, applying \eqref{ch18:high-step} between subtractions. The sum of
+all subtracted vectors still lies in the transported microscopic low
+plane. Calling its reference label $y_{N,p}$, we obtain
+\[
+ |v_{N,p}-y_{N,p}|_1\le
+ G_m(1+C_m)(a_{r(t)}/a_m)^{t-i}\epsilon,
+ \qquad G_m=\prod_{l<m}(1+C_l)C_{l+1}.
+\]
+Finite initial transfer and norm-equivalence constants are absorbed in
+$G_m$. Its logarithm is $o(\tau_m)$ by the prescribed column bounds.
+
+It remains to identify this microscopic low plane with physical lower
+degrees; it is not the naive inclusion of unnormalized polynomials.
+The labels $y_{N,p}$ are bounded by the displayed inequality.
+The expansion in \eqref{ch18:low-cone}, iterated from the microscopic
+level, bounds their microscopic low coefficients by
+$a_N^{t-i+1}e^{o(\tau_N)}$. Therefore their degree-$t$ physical
+representatives can be written with the normalization $a_N^{-(i-1)}$
+and coefficient/derivative growth $e^{o(\tau_N)}$, on the same fixed
+stencil. Their global value bounds also have this growth, since the
+threshold inverses have subpower growth.
+
+The local-trial comparison of Chapter~\ref{ch11:insertions} matches
+these representatives to degree-$(i-1)$ reference labels with vanishing
+separated residuals. The matched coefficients need not be bounded.
+Apply the normalized-null representative argument of
+Section~\ref{ch13:quotient}: division by one plus the norm of their
+corrected projection makes the equation remainder uniformly controlled,
+and its separated responses vanish. Since $y_{N,p}$ has a bounded
+reference limit, that argument gives a physical degree-$(i-1)$ field
+with exactly its limiting responses. The all-spectator definition and
+corrected inclusion thus put every such limit $[y]$ in
+$\iota_{i-1,t}F_{i-1}$. Passing to a convergent subsequence of the bounded
+$y_{N,p}$ proves \eqref{ch18:graded-distance}. Extending a tail-defined
+bounded family by zero outside its tail changes none of these limits.
+
+For $i=0$ no low plane is removed. The reverse coefficient estimate
+directly bounds $|v|_1$ by
+$e^{o(\tau_m)}(a_{r(t)}/a_m)^t\epsilon$. Passing to the quotient
+proves the same conclusion. All fixed reference spacings are absorbed
+in $C_{t,i}(m)$.
+\end{proof}
+
+The power $t-i$ in \eqref{ch18:graded-distance} is what recovers a
+coefficient of degree $i$ from an auxiliary extraction at a much higher
+degree $t$. An ungraded bound on $[v]$ would lose precisely that power.
+The proof also explains why identifying the lower field requires all
+spectator responses, even though its eventual coefficient is measured
+by a fixed finite family of probes.

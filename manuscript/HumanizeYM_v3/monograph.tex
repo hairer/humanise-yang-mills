@@ -1,0 +1,86 @@
+\documentclass[11pt,oneside,openany]{book}
+\input{preamble}
+\title{Four-dimensional Yang--Mills theory\\[6pt]
+ \large A constructive approach}
+\author{Working exposition from the supplied manuscripts}
+\date{Draft of 19 November 2026}
+\begin{document}
+\frontmatter
+\maketitle
+\chapter*{About this draft}
+\addcontentsline{toc}{chapter}{About this draft}
+
+This book is being written from three supplied accounts of a proposed
+construction of four-dimensional Yang--Mills theory, together with the
+detailed outline accompanying Scott's account. The aim is a readable
+mathematical exposition with definitions at their first use, consistent
+notation, and precise separation of standard arguments from estimates
+specific to the construction.
+
+The present draft contains the nineteen planned chapters, including the
+construction, reconstruction, quantitative trace law and finite-order
+operator products. The accompanying blueprint gives bounded source
+packets and a common notation registry; the audits record the detailed
+hypothesis matching and corrections made while writing. This is a
+working exposition, not an independent certification of the supplied
+manuscripts or a substitute for further mathematical review.
+
+The intended construction first removes the lattice spacing at each fixed
+physical volume and then extracts an infinite-volume subsequence. Its
+limiting correlations describe gauge-invariant local observables.
+Reconstruction, the stress tensor and operator products are developed
+after the continuum field spaces. No positive mass gap is asserted. Nor does the plan assert
+uniqueness of the infinite-volume limit or independence of all choices
+in the blocking procedure.
+
+The reader is assumed to know basic probability, analysis, compact Lie
+groups and the general aims of constructive quantum field theory.
+Standard results are cited where used; their application is explained
+without reproducing textbook proofs. Source-specific claims whose
+hypotheses have not yet been matched are not treated as proved merely
+because the source labels them theorems.
+
+\input{reading-guide}
+\tableofcontents
+\mainmatter
+\IfFileExists{chapters/01-lattice.tex}{\input{chapters/01-lattice}}{}
+\IfFileExists{chapters/02-observables.tex}{\input{chapters/02-observables}}{}
+\setcounter{chapter}{2}
+\IfFileExists{chapters/03-maxwell.tex}{\input{chapters/03-maxwell}}{}
+\setcounter{chapter}{3}
+\IfFileExists{chapters/04-blocking.tex}{\input{chapters/04-blocking}}{}
+\setcounter{chapter}{4}
+\IfFileExists{chapters/05-gaussian.tex}{\input{chapters/05-gaussian}}{}
+\setcounter{chapter}{5}
+\IfFileExists{chapters/06-large-fields.tex}{\input{chapters/06-large-fields}}{}
+\setcounter{chapter}{6}
+\IfFileExists{chapters/07-matching.tex}{\input{chapters/07-matching}}{}
+\setcounter{chapter}{7}
+\input{chapters/08-polymers}
+\setcounter{chapter}{8}
+\IfFileExists{chapters/09-renormalization.tex}{\input{chapters/09-renormalization}}{}
+\setcounter{chapter}{9}
+\IfFileExists{chapters/10-common-trajectory.tex}{\input{chapters/10-common-trajectory}}{}
+\setcounter{chapter}{10}
+\IfFileExists{chapters/11-marked-insertions.tex}{\input{chapters/11-marked-insertions}}{}
+\setcounter{chapter}{11}
+\IfFileExists{chapters/12-ultraviolet-limit.tex}{\input{chapters/12-ultraviolet-limit}}{}
+\setcounter{chapter}{12}
+\IfFileExists{chapters/13-continuum-fields.tex}{\input{chapters/13-continuum-fields}}{}
+\setcounter{chapter}{13}
+\input{chapters/14-reflection-ward}
+\setcounter{chapter}{14}
+\input{chapters/15-phases}
+\setcounter{chapter}{15}
+\input{chapters/16-reconstruction}
+\setcounter{chapter}{16}
+\input{chapters/17-trace-law}
+\setcounter{chapter}{17}
+\input{chapters/18-operator-products}
+\setcounter{chapter}{18}
+\input{chapters/19-assembly}
+\backmatter
+\input{notation-index}
+\bibliographystyle{alpha}
+\bibliography{references}
+\end{document}

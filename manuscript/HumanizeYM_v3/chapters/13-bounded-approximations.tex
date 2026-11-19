@@ -1,0 +1,340 @@
+\section{Bounded real approximations for separated words}
+\label{ch13:bounded-approximations}
+
+The later phase argument needs real approximants bounded uniformly in
+the cutoff. Compactness of the link space at each cutoff is insufficient:
+the physical normalization of a local field grows as the mesh shrinks.
+We instead stop at one fixed coarse level and pull back a bounded coarse
+function through the probability block kernels.
+
+We record the precise marked estimate used in this construction. It is
+the replicated local-trial comparison, with every higher marked mode
+retained, not only its one-column coefficient estimate. At a coarse
+level $h$, write $C_h$ for its prescribed coefficient-column bound,
+$Q_h$ for the ordinary norm bound of a normalized local trial, and
+$E_h$ for its complete bound, including the complementary large-field
+part. For the selected trajectory these bounds and all fixed coefficient
+products are subpower in $a_h^{-1}$. The last-step endpoint estimate
+and replicated residual estimate required here are
+\begin{align}
+ \|J_h-I\|_{1\to1}&\le
+           2(1+C_h)Q_hL_{h-1}^{-1/8}\le\tfrac14,
+ \label{ch13:coarse-matrix}\\
+ \|\text{replicated trial residual}\|_{\mathcal C_k}
+       &\le C_{k,m,d}E_h e^{-(\tau_h-\tau_m)/8}.
+ \label{ch13:coarse-residual}
+\end{align}
+Here $k,m$ are fixed before $h$; $\mathcal C_k$ is the centered
+cell tiling at level $k$ from Section~\ref{ch13:cells}, and $J_h$
+maps trial basis coordinates to their selected level-$h$ polynomial
+coordinates. Both estimates must concern the history restricted from
+the actual cutoff $N$, uniformly in $N\ge h$ and the physical period.
+
+The first inequality is the endpoint comparison used in
+Proposition~\ref{ch11:equation-comparison}. Its final $1/4$ is an
+additional finite stage requirement: require $L_{h-1}^{1/8}\ge8(1+C_h)Q_h$. For the normalized small-field polynomial the local guard
+is identically one on the ordinary chart, so its ordinary derivative
+constant is fixed before this block choice. Its global value is paid by
+the square-root large-field allowance, by a later entry threshold as in
+Section~\ref{ch11:equation-calibration}. This does not replace $E_h$ by
+$Q_h$ in the second estimate.
+
+The second inequality requires more than a small singleton coefficient.
+We prove its complete marked version next. The source weight is increased
+across successive scales; it is not increased by its entire final factor
+on an already formed coarse component.
+
+\begin{lemma}[The replicated coarse-trial residual]
+\label{ch13:coarse-residual-supplier}
+On the selected histories, after the finite stage-entry requirements
+specified below, \eqref{ch13:coarse-residual} holds with all incoming
+higher regular and large-field modes retained. Its constant is independent
+of the outer cutoff, the period, and the number of replica cells.
+\end{lemma}
+\begin{proof}
+Fix the degree ceiling before the schedule. At level $i$, choose a
+positive number $\zeta_i$ so that a singleton of complete normalized
+size at most $\zeta_i$ fits every local attachment and adjacent
+comparison bound of Chapter~\ref{ch11:insertions}. Include the finite
+signed symmetry orbit in these bounds. More explicitly, if $D_i$ is
+the complete adjacent comparison constant and $u_i>0$ the terminal
+attachment allowance, require
+\[
+ C_i\zeta_i\le1,\qquad 2D_i\zeta_{i+1}\le1,\qquad
+ e^{81\sigma_i+162}Z_i^{\rm val}\zeta_i/u_i\le1.
+\]
+Here $Z_i^{\rm val}$ bounds the global section and its complementary
+cutoff part; this symbol denotes a bound, not a partition function.
+Also decrease $\zeta_i$ to put the singleton incidence below the
+small constant in \eqref{ch11:higher-induction}. These choices concern
+normalized coefficients, before the physical factor $a_i^{-d}$.
+
+These positive allowances can be chosen with
+$|\log\zeta_i|=O_j(1+\log\widehat\beta_i)$ on every fixed stage.
+Indeed the section derivatives, inverse small-field thresholds, and
+adjacent comparison constants have finite powers of
+$\widehat\beta_i$, with stage-dependent constants. The terminal attachment allowance may be taken as $u_i=\tfrac14\widehat\beta_i^{-1/2}$; the original large-field suppression
+is reserved separately in the attachment estimate and need not be
+inverted to define $u_i$. The factor $e^{81\sigma_i+162}$ is constant
+on each stage. Taking the minimum of this finite list of reciprocal
+bounds gives such a choice. At adjacent-stage entries use the minimum
+of both lists. All requirements below therefore follow by delaying
+entry, since $B_i$ grows as a positive constant times
+$(\log\widehat\beta_i)^2$ on a fixed stage.
+
+Choose $0<\phi_i\le1$ such that
+\begin{equation}
+ \phi_i L_i^{d+1}\max(1,C_{i+1})\zeta_i\le\zeta_{i+1},
+ \qquad \phi_i^{-1}\le e^{B_i/128}.
+ \label{ch13:residual-height}
+\end{equation}
+For example take the minimum of one and the ratio in the first
+inequality. The logarithm of its inverse is bounded by a finite
+stage constant times $1+\log\widehat\beta_i$, plus
+$(d+1)\log L_i$, and hence is eventually below $B_i/256$.
+Any finite local incidence allowance $\delta_i>0$ can simultaneously
+be included so that $\delta_i\phi_i e^{B_i/128}\ge1$:
+its inverse has at most another fixed power of
+$\widehat\beta_i$. This verifies the comparison and attachment
+allowances as well as the displayed, weaker upper bound on
+$\phi_i^{-1}$. These are countably many finite degree requests to
+the single delayed-entry schedule.
+
+Put $G(h,i)=e^{(\tau_h-\tau_i)/8}$ and choose
+\[
+ w=\frac{\zeta_m a_m^dG(h,m)}{2E_h},\qquad
+ \omega_i^{\rm res}=w\prod_{j=m}^{i-1}\phi_j.
+\]
+The residual coefficients from \eqref{ch11:descent-error}, with the
+fixed harmless column factors included in $E_h$, satisfy
+$c_i+|x_i|\le E_h/G(h,i)$. Since the ratio of
+$a_i^{-d}/G(h,i)$ at successive levels is $L_i^{d+1/8}$,
+\eqref{ch13:residual-height} gives
+\begin{equation}
+ \omega_i^{\rm res} a_i^{-d}\{c_i+|x_i|\}
+       \le \omega_i^{\rm res} a_i^{-d}E_h/G(h,i)\le\zeta_i/2
+                  \quad(m\le i\le h).
+ \label{ch13:residual-height-bound}
+\end{equation}
+In particular the negative primary used in the subtraction has
+normalized cost at most $\zeta_h$ at $h$. Above $h$, its inverse
+coefficient bounds grow by at most $C_{i+1}$ per step; the same allowance
+recurrence controls these factors and the physical factor $L_i^d$.
+Thus its terminal source satisfies the joint attachment bound at $N$,
+and its complete push to $h$ is available at the weights $\omega_i^{\rm res}$.
+
+Here is the support calculation for its higher modes, including modes
+formed above $h$. Open the centered cells at $m$ with spacing at least
+$B_m^2$. This spacing persists because $L_i\ge3$ and the adjacent
+support radii satisfy the schedule of \eqref{ch13:sharp-schedule}.
+Apply reweighting on the incoming fine support $X$. If it contains
+$r\ge2$ distinct marked ancestors, then
+$B_{i+1}r\le64c_{B_{i+1}}(X)$ by \eqref{ch11:separated-cover}.
+Since $B_i\le B_{i+1}$ and $\omega_i^{\rm res}/\omega_{i+1}^{\rm res}=\phi_i^{-1}$, one incoming
+spare support unit gives
+\[
+ (\omega_i^{\rm res}/\omega_{i+1}^{\rm res})^r e^{-c_{B_{i+1}}(X)}
+ \le e^{B_i r/128-c_{B_{i+1}}(X)}
+ \le e^{-c_{B_{i+1}}(X)/2}.
+\]
+To make this argument iterable, let $A_i>4$ be the full exponent
+maintained in the higher-mode norm at level $i$, and impose
+\[
+ 10\cdot15^4(A_i+9)\le L_i(A_{i+1}-4).
+\]
+Reserve four units of the incoming $A_{i+1}$ norm for this weight
+increase, site conversion, and attachments. The support contraction
+of Chapter~\ref{ch11:insertions} converts the remaining exponent
+$A_{i+1}-4$ into the full outgoing exponent $A_i$, including its local
+reserves. Thus the estimate does not lose two exponent units at each
+successive step. Choosing the singleton allowances small enough makes
+\eqref{ch11:higher-induction} preserve the bound one in these full norms
+for both higher arrays. This calculation applies to every cardinality and
+period. A large-field array is treated as one incoming factor with
+its complete original prescribed set of large-field sites, not as a product of its singleton
+coefficients. The terminal joint construction reserves the original
+large-field decay for the complementary factors. Hence there is no
+uncontrolled reweighting by $w^r$ at the intermediate level $h$.
+
+At that level insert the positive local trial in every cell.
+If $\mathscr A_h$ is the complete pushed negative source, the new polynomial is
+\[
+ \mathscr A_h\exp_{\rm nil}\Bigl(\sum_v z_vF_v\Bigr).
+\]
+In its local representation this adds $F_v$ only to the regular
+singleton entry. All regular higher modes and all original large-field
+modes remain unchanged. The scalar part is an exact unit entry in the global exponential.
+The guarded nonconstant part has zero complementary profile because
+its small-field restriction is included in its definition.
+Linearity makes the new singleton precisely the residual whose
+coefficients satisfy \eqref{ch13:residual-height-bound}; its adjacent
+regular and large-field comparisons have bounds at most one by the
+choice of $\zeta_i$. Descend this whole polynomial to $m$. Its regular
+singleton bound is at most two, its large-field singleton bound at most
+one, and its two higher-mode incidence bounds are at most one.
+
+For completeness, if $\mathcal I$ is the cell census and $U_v$ the
+negative terminal primary without its minus sign, its full coefficient
+at $h$ is
+\[
+ \sum_{A\subseteq\mathcal I}
+ \mathsf P_{h,N}\left(\rho_N\prod_{v\notin A}(-U_v)\right)
+                       \prod_{v\in A}F_v.
+\]
+Duality and the disjoint-cone identity
+\eqref{ch13:cone-factorization} identify its integral with the original
+partition function times the expectation of
+$\prod_v(\mathcal P_{N,h}F_v-U_v)$.
+No product of separately pushed singleton densities has replaced it.
+Equation~\eqref{ch11:root-bound} now yields
+\[
+ \|\mathcal P_{N,h}F-U\|_{\mathcal C_k}
+ \le w^{-1}\exp\{(a_k/a_m)^4q_m+5\}
+ =\frac{2e^{(a_k/a_m)^4q_m+5}}{\zeta_ma_m^d}
+       E_h e^{-(\tau_h-\tau_m)/8}.
+\]
+The prefactor depends only on the fixed stopping data. This proves
+\eqref{ch13:coarse-residual}, once the cones have the room verified
+below. All identities and estimates use the original selected history.
+\end{proof}
+
+\begin{proposition}[Coarse bounded approximation]
+\label{ch13:bounded-singleton}
+Use the selected histories with the stage requirements above. Fix a degree, a real reference coefficient $c$, a
+sufficiently fine centered tiling $k$, and $\delta>0$. There are real
+observables $\mathcal B_{N,p}(c,y)$ with a finite bound independent of
+$N,p,y$, such that
+\[
+ \|\mathcal B_{N,p}(c,y)-O_{N,p}(d,c;y)\|_{\mathcal C_k(y)}\le\delta
+\]
+on the ordered cutoff and volume tails. Both observables are interior
+to the same cell. The construction includes their signed and conjugated
+images with the same bound.
+\end{proposition}
+\begin{proof}
+Fix $m\ge k$ with $B_m^2\le a_k/a_m$. At a finer level $h$, use the
+coarse trial
+\[
+ V_h(v;U)=a_h^{-d}\left(v_0+
+       \mathbf1_{\text{small-field stencil}}
+                    P_d^{\rm loc}[S_{1/t_h}v^\circ](U)\right).
+\]
+The scalar part is retained exactly. The full inspected stencil includes
+the links needed by the relaxed small-field test. For fixed $h$ this is
+a bounded measurable function, with bound uniform in the outer cutoff
+and period: its coefficient range and allowed couplings are compact,
+and its section is a fixed polynomial in compact group variables.
+
+Let $\mathcal K_{N,h}(U,dV)$ be the forward probability kernel from
+fine links to level $h$, and set
+$\mathcal P_{N,h}F(U)=\int F(V)\mathcal K_{N,h}(U,dV)$.
+It preserves real values and contracts the supremum norm. Locality here
+must include every random variable used to choose a predictor or gauge
+frame. Conditional on the preceding link field, use independent primitive
+random variables for those choices and for each coarse-link sample.
+The full ancestor cone of a stencil contains its fine-link reads and
+all these random variables at every intermediate level. For disjoint
+cones, conditioning and integrating the independent variables gives
+\begin{equation}
+ \prod_C\mathcal P_{N,h}F_C
+                   =\mathcal P_{N,h}\left(\prod_CF_C\right).
+ \label{ch13:cone-factorization}
+\end{equation}
+This does not assert that coarse links remain conditionally independent
+after a shared frame choice has been averaged out. The full cones,
+including that choice, must be disjoint. Here is an explicit uniform
+radius bound. Let $j_i$ be the smoothing order in the step $i+1\to i$.
+In Chapter~\ref{ch04:blocking}, each endpoint frame reads a box of
+fine-lattice radius $(j_i+3)L_i$; the other endpoint is at distance
+$L_i$, and the connector paths stay in these boxes and the intervening
+strip. Thus every input link and every shared frame seed for an output
+link lies within physical distance $(j_i+7)a_i$ of its initial endpoint,
+in the maximum norm. This bound also includes eligibility tests and
+one boundary-link margin. If the coarse inspected stencil has radius
+$r_d$ in level-$h$ units, its full ancestor cone therefore has radius at
+most
+\[
+ r_da_h+\sum_{i=h}^{N-1}(j_i+7)a_i.
+\]
+The growing smoothing orders require a schedule condition, not merely
+finiteness at each step. Impose $(j_i+7)\le a_i^{-1/2}$ at all sufficiently
+late levels. This is a permitted finite stage-entry request: if
+$\jmath_q$ is the largest smoothing order used at stage $q$ or its
+permitted adjacent pairs, require
+$b_q\log3\ge2\log(\jmath_q+7)$ in the entry times of
+Section~\ref{ch10:schedule}. When $J(i+1)=q>1$, that schedule has
+$i\ge b_q$ and $a_i\le3^{-i}$, giving the desired inequality.
+The finitely many initial levels are irrelevant after increasing $h$.
+Since $a_{i+1}\le a_i/3$, the radius is bounded, independently of $N$, by
+\[
+ r_da_h+\frac{a_h^{1/2}}{1-3^{-1/2}}\longrightarrow0.
+\]
+Choose $h$ so that this is smaller than the fixed interior margin of
+each reflected level-$k$ cell. The cones, including their shared seeds,
+then lie strictly inside disjoint cells; sufficiently large physical
+periods prevent wrapping identifications.
+
+The bound \eqref{ch13:coarse-matrix} gives
+$\|J_h^{-1}\|_1\le2$. Thus the reference insertion with coefficient
+$c$ is a linear combination of the trial columns, with sum of absolute
+coefficients bounded by
+$2\|c\|_1\exp(\sum_{i<h}\log C_{i+1})$. Replace these columns by
+$\mathcal P_{N,h}V_h(e_j)$ and call the resulting observable
+$\mathcal B'$. Its supremum is finite for fixed $h$ and independent
+of $N,p,y$.
+
+Replicate the discrepancies before applying the kernel. At level $h$
+the coarse factors multiply the complete source density, including its
+higher modes. Equation~\eqref{ch13:cone-factorization} identifies the
+resulting residual with the product of the pullback discrepancies.
+Lemma~\ref{ch13:coarse-residual-supplier} and recombination give
+\[
+ \|\mathcal B'-O(c)\|_{\mathcal C_k}
+ \le C_{k,m,d,c}\exp\left(\sum_{i<h}\log C_{i+1}\right)
+                       E_h e^{-(\tau_h-\tau_m)/8}.
+\]
+The prefactor is $e^{o(\tau_h)}$, so choose $h$ to make this at most
+$\delta$, before choosing the cutoff. For real $c$ take
+$\mathcal B=\operatorname{Re}\mathcal B'$; conjugation invariance
+and the triangle inequality for the chessboard seminorm preserve the
+bound. Translations and the finite symmetry orbit use the same stencils
+and constants. Outside the ordered tails set the approximants to zero
+if a bound for every index is desired.
+\end{proof}
+
+\begin{corollary}[Real word differences]
+\label{ch13:bounded-word}
+On these selected histories, the bounded-real approximation used for phase
+reflection in Section~\ref{ch15:phase-symmetry} holds on a cofinal set of
+generic grids. Its supremum bound is independent of copy number and copy
+position; approximation thresholds may depend on each fixed pair.
+\end{corollary}
+\begin{proof}
+Choose the grid level after the degree bound and any prescribed lower
+level, then fix a generic real word $w$ of length $n$. Include all its
+signed and conjugated labels in a finite family. Choose centered cells
+with margins fitting between its distinct coordinate projections, and
+let $C$ bound the singleton seminorms there. Apply
+Proposition~\ref{ch13:bounded-singleton} with error $\delta\le1$.
+The approximants have seminorm at most $C+\delta$, regardless of their
+possibly much larger supremum norms.
+
+For a product of $q$ such separated factors, telescoping and the
+chessboard inequality give
+\[
+ \left|\left\langle\prod_{a=1}^q\mathcal B_a-\prod_{a=1}^qO_a
+               \right\rangle\right|
+                  \le q\delta(C+\delta)^{q-1}.
+\]
+Form the difference $g_j$ of the bounded products for a translated word
+and its linear time reflection, using the same singleton approximation
+at every translated copy. If their singleton supremum bounds are $M_i$,
+then $|g_j|\le2\prod_iM_i=:R_\varepsilon$, independent of all copy
+positions and indices. For two sufficiently widely separated copies,
+expand their product of differences into four products of $2n$ factors.
+Choose $\delta$ with $8n\delta(C+1)^{2n-1}\le\varepsilon$.
+The preceding inequality gives the desired pair error. Only finitely
+many configurations are involved at each fixed pair, so ordered tails
+can be intersected. The empty word difference is zero. Increasing the
+initial lower-level request gives the required cofinal grids.
+\end{proof}
