@@ -1,7 +1,7 @@
 {
   "pages": 268,
   "cited_references": 40,
-  "pdf_sha256": "1aae39ca79ead3cbc7966488a46214e92666b2628ca544758e0fe4d51b8c6f41",
+  "pdf_sha256": "4576116ebfbd88ccb6b98bb9efb5f5b10361dfbcfa995bf7ebde8d64ff4b1dcb",
   "sources": {
     "monograph.tex": "96d7463f0c513bcfe51e071b8f0b7eba8647743524a6b382336e7b9ab9ead2e5",
     "preamble.tex": "6e399943fcc7aa5c2baaa6c0c8bf80d456d5ed5c794ffe62f15ac6b03226d6d0",
@@ -11,7 +11,7 @@
     "chapters/01-lattice.tex": "5a9b401d5683da20e1f08e3079d1e6c8d7a400459e18ef4c0fe67097eb6a4dab",
     "chapters/02-equation-section.tex": "feab717fefc39e04d35b10e6cc8af40df2821180fc70aa4b0dfe3b5c57294691",
     "chapters/02-observables.tex": "1df4e41d530a859149e62686f98833e37bffbd71057a90b5b798570e121a616c",
-    "chapters/03-maxwell.tex": "0eb02a2e344a62b1e5eb6421490219da80039cdb74150824e124c621d395eb7b",
+    "chapters/03-maxwell.tex": "98b84298c35974dfd6ef90f86a5a1d8a115dd4dd6b4fa7b77b4924bfee9d5d28",
     "chapters/04-blocking.tex": "9ef98ad43ee64c861ee35a84801c4de8f7c4ed6eee22b66936605a9b34ad041c",
     "chapters/05-gaussian.tex": "cc58d2fb5bcff9398b7343446bdf71ba239f4ecae15f415b39c4cb8f0d0c6454",
     "chapters/06-large-fields.tex": "35b65829b03b85b7fb9605e347cd49cf9925136899831b0ecc14c6ae497aaafc",
