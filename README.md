@@ -8,7 +8,11 @@ Existing mathematical results should be found and cited wherever applicable.
 Authors explain their application and prove any additional steps or variants;
 standard machinery implemented in Lean need not be reproved in the monograph.
 
-**Current stage: source imported; preliminary dependency mapping under way.** The
+The current authoritative manuscript is [HumanizeYM_v3](manuscript/HumanizeYM_v3/).
+The [monograph PDF](manuscript/HumanizeYM_v3/monograph.pdf) opens with the main
+theorem and a guide to its proof.
+
+**Lean source and dependency mapping.** The
 source is pinned to revision `3456e5e75cf8d4cd558955a5c7638fba2d68f464`.
 The 17 audited release roots and a first-pass mathematical decomposition are
 recorded in the [source audit](source/audit.md), [proof outline](blueprint/outline.md),
@@ -63,7 +67,7 @@ See the [coordination rules](docs/coordination.md).
 | `Lean/` | The upstream formalisation, preserved at a fixed revision |
 | `source/` | Source provenance, build instructions, and audit evidence |
 | `blueprint/` | Interfaces, literature notes, source correspondence, and review records |
-| `manuscript/` | Authoritative LaTeX exposition, including drafts and chapter assembly |
+| `manuscript/HumanizeYM_v3/` | Current authoritative manuscript, LaTeX sources and compiled PDF |
 | `Bots/` | Durable discoveries and handoffs for future sessions |
 | `templates/` | Proof unit and review templates |
 | `docs/` | Contributor, coordinator, and mathematical review guidance |

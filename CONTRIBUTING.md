@@ -5,6 +5,11 @@ review, or tooling task. The final document should give detailed proofs at the
 level of a research monograph. Useful contributions include locating an applicable
 published theorem, checking its hypotheses, or identifying a gap in an interpretation.
 
+The authoritative manuscript is [HumanizeYM_v3](manuscript/HumanizeYM_v3/).
+Make manuscript edits in that directory. Its [LaTeX master](manuscript/HumanizeYM_v3/monograph.tex)
+gives the chapter order, and its [notation guide](manuscript/HumanizeYM_v3/blueprint/notation.md)
+records the conventions used throughout the book.
+
 ## Before starting
 
 For a public repository, use your own GitHub account and fork; ordinary contributors
@@ -59,12 +64,12 @@ does not by itself justify a new exposition task.
 
 The canonical extraction issue supplies the stable unit ID: issue 123 becomes
 `YM-000123`. Later revision and review issues refer to that existing unit.
-Use `templates/proof-unit/`: place the mathematical section in `manuscript/`,
+Use `templates/proof-unit/`: place the mathematical section in `manuscript/HumanizeYM_v3/`,
 and put `unit.json` and `correspondence.md` in `blueprint/units/YM-000123/`.
 The metadata's `manuscript` list names the section and all local mathematical
 support files (macros, references, included text). Replace every placeholder.
 Write the proof once, in LaTeX, and keep source/audit details in the correspondence
-record. Follow [the manuscript build instructions](manuscript/README.md).
+record. Follow [the manuscript build instructions](manuscript/HumanizeYM_v3/README.md).
 
 Start a section once its own interface is precise. Earlier inputs may still be
 drafts or outstanding obligations: state their exact content and status. A complete
