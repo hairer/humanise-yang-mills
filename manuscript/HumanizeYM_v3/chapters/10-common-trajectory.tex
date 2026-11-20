@@ -422,8 +422,7 @@ inverse coupling correction. It is not the vacuum normalization. The path
 coefficient $\alpha_{N,m}$ is the one already used in the exact step.
 
 The following strengthens the continuous finite-step statement of
-Theorem~\ref{ch09:step-theorem}. Its proof occupies the following
-subsections and uses the additional numerical reserves already allowed
+Theorem~\ref{ch09:step-theorem}. Its proof uses the additional numerical reserves already allowed
 in the scale choices.
 \begin{proposition}[Quantitative comparison on the common data]
 \label{ch10:stability-assumption}
@@ -453,8 +452,13 @@ imply it. For example $F_N(x)=(-1)^N/10$ has Lipschitz constant zero
 and no cutoff limit. Nor does smallness of the output imply the
 small Lipschitz constant in \eqref{ch10:lipschitz}.
 
-\subsection{How finite evaluations of the real parameters yield the contraction}
+\begin{proof}[Proof of Proposition~\ref{ch10:stability-assumption}]
+We derive the contraction from finite parameter evaluations, bound those
+evaluations using the local expansion, sum the errors over scales, and
+finally prove continuity as the cutoff is removed.
 
+\begin{enumerate}[label=\emph{Step \arabic*.},ref=\arabic*,leftmargin=*,align=left]
+\item \emph{Contraction from finite parameter evaluations.}
 One sufficient quantitative estimate uses only real parameter lines.
 For a line $z+tv$ of admissible inputs, $|t|\le1$, suppose every finite
 choice of weights $a_i$ and points $t_i$ satisfies
@@ -491,9 +495,9 @@ is zero, use the same estimate with a vanishing seminorm direction
 and let the parameter tend to zero. Thus $d\le1/256$ and
 $s_m=2f_m$ imply \eqref{ch10:lipschitz} with room to spare.
 The finite-evaluation inequalities require the analytic estimates on the
-local expansion established in the next subsection.
+local expansion established in the next step.
 
-\subsection{Producing the finite parameter evaluations from the protected expansion}
+\item \emph{Parameter estimates from the local expansion.}
 \label{ch10:parameter-supplier}
 
 Here is the parameter estimate for the actual local factors. It uses
@@ -674,7 +678,7 @@ constants fixed on that band; the rescaling keeps all fine reads and
 event indicators fixed. It adds a parameter estimate to that construction,
 not a differentiation of measurable cutoff indicators.
 
-\subsection{Numerical cumulative control}
+\item \emph{Summation over scales.}
 
 The cumulative scalar bound is compatible with the schedule.
 Suppose at a fixed stage its bound has the proved form
@@ -691,7 +695,7 @@ initial scales once $\bar\beta$ exceeds the first threshold.
 The decay estimate for $s(x)$ is required before this numerical
 argument; an arbitrary stage constant would not suffice.
 
-\subsection{Common-input continuity and the zero-array histories}
+\item \emph{Continuity for a common input.}
 \label{ch10:cutoff-supplier}
 
 Use now the quadratic and path coefficient limits with the strict
@@ -793,7 +797,9 @@ coefficient comparison and the preceding local-integral argument give
 the common-input continuity required here, including all zero-array
 histories with prescribed inverse couplings. Together with the finite-evaluation
 estimates and cumulative bound, this proves
-Proposition~\ref{ch10:stability-assumption}.
+Proposition~\ref{ch10:stability-assumption}. \qedhere
+\end{enumerate}
+\end{proof}
 
 \section{Convergence of the coupled histories}
 \label{ch10:fixed-scale}
@@ -913,8 +919,9 @@ existence of some admissible stationary graph is insufficient.
 
 The schedule,
 finite-history tuning and logarithmic running follow from the finite-step theorem. The fixed-scale conclusion is
-Theorem~\ref{ch10:convergence}. Sections~\ref{ch10:parameter-supplier} and
-\ref{ch10:cutoff-supplier} establish the stronger local comparisons
+Theorem~\ref{ch10:convergence}. Steps~\ref{ch10:parameter-supplier} and
+\ref{ch10:cutoff-supplier} in the proof of Proposition~\ref{ch10:stability-assumption}
+establish the stronger local comparisons
 from the protected expansion and converging background coefficients.
 Proposition~\ref{ch05:horizon-limit} supplies the fixed-scale quadratic
 limit for the actual nested history. This completes the fixed-scale
