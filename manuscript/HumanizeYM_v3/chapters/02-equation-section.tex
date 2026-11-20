@@ -101,7 +101,13 @@ Stokes' formula averages $dA_j$ over that square, which changes only
 lower polynomial degrees. This also explains why no assumption
 about an infinite-dimensional configuration space enters the lemma.
 
-\subsection{Wilson forces and the linear equation ideal}
+\subsection{Construction of the equation-adapted section}
+
+\begin{proof}[Proof of Theorem~\ref{ch02:equation-adapted}]
+We first represent the generators of the equation ideal by Wilson forces.
+We then integrate by parts in a single link and assemble the local section.
+
+\smallskip\noindent\emph{Step 1. Representation by Wilson forces.}
 
 Write $S_W$ for the Wilson action without its factor $\beta$.
 For a positive link $e$ and an orthonormal colour basis $(E_a)$,
@@ -177,7 +183,7 @@ its remaining linear terms increase the scaling dimension while preserving the f
 count. This is why the order in
 \eqref{ch02:equation-triangle} puts factor count first.
 
-\subsection{Exact integration by parts and assembly}
+\smallskip\noindent\emph{Step 2. Integration by parts and construction of the section.}
 
 Every force term above has the form
 $\langle E_a,F_e\rangle H_a$, where $H_a$ includes the transporting
@@ -233,8 +239,8 @@ $\mathcal V_dR_d p=\mathcal F_dp$ for $p\in\mathcal I_d$.
 Both $R_d$ and its inverse preserve the lower bound on factor
 count. The fixed finite products therefore obey exactly the
 small-field derivative argument used for $P_d^{\rm loc}$,
-with new constants for the new stencil. This completes the proof
-of Theorem~\ref{ch02:equation-adapted}.
+with new constants for the new stencil.
+\end{proof}
 
 The identity \eqref{ch02:microscopic-null} is exact at each cutoff.
 It gives no bound on a renormalized coefficient change.

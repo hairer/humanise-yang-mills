@@ -298,7 +298,8 @@ is at most $K|D|$. Here
 \]
 \end{proposition}
 
-We verify this proposition in the following paragraphs. In a lifted patch
+\begin{proof}
+In a lifted patch
 of radius $(j+7)L$, let $\mathcal P_y(U)=\sum_qm_y(q)r_q^f$ be the sum of
 fine plaquette distances from the identity with the actual route multiplicities. The required comparison
 is
@@ -396,6 +397,7 @@ The count \eqref{ch06:counts} and the limits \eqref{ch06:scales} yield
 \eqref{ch06:unaffected}. This completes the verification of Proposition~\ref{ch06:signed-input}.
 It uses the aligned flat identities for the chosen path family, not merely
 a decay estimate for a flat Fourier kernel.
+\end{proof}
 
 \begin{proposition}[Energy bound under the local comparisons]
 \label{ch06:energy}
@@ -1117,20 +1119,6 @@ uses weights $w_{ia}>0$ with $\sup_a\sum_iw_{ia}\le C$; then
 $|\sum_i\eta_i(a)|^2\le C\sum_i|\eta_i(a)|^2/w_{ia}$.
 It controls the cross terms in the common square.
 
-The standard Gaussian quadratic-exponential formula, with
-$\widetilde K=\Gamma^{1/2}K\Gamma^{1/2}$, is
-\[
- \mathbb E_\Gamma e^{\eta\cdot z+z^*Kz/2}
- =\det(I-\widetilde K)^{-1/2}
-   \exp\left\{\tfrac12\eta^*\Gamma^{1/2}
-           (I-\widetilde K)^{-1}\Gamma^{1/2}\eta\right\}.
-\]
-Use it also with doubled exponent to control the square of the majorant.
-The strict norm inequality in \eqref{ch06:quadratic-control} bounds the tilted
-covariance and mean; Gaussian polynomial moments remain controlled.
-Cauchy--Schwarz and \eqref{ch06:power-tail} then give the following precise
-consequence.
-
 \begin{proposition}[Common local integral bound]
 \label{ch06:common-majorant}
 Assume \eqref{ch06:majorant-form}--\eqref{ch06:quadratic-control}, with
@@ -1147,6 +1135,20 @@ The statement holds after integration of the frozen Haar variables when
 all inputs are uniform in those variables. It requires no independence
 between the local factors or the tail events.
 \end{proposition}
+\begin{proof}
+The standard Gaussian quadratic-exponential formula, with
+$\widetilde K=\Gamma^{1/2}K\Gamma^{1/2}$, is
+\[
+ \mathbb E_\Gamma e^{\eta\cdot z+z^*Kz/2}
+ =\det(I-\widetilde K)^{-1/2}
+   \exp\left\{\tfrac12\eta^*\Gamma^{1/2}
+           (I-\widetilde K)^{-1}\Gamma^{1/2}\eta\right\}.
+\]
+Use it also with doubled exponent to control the square of the majorant.
+The strict norm inequality in \eqref{ch06:quadratic-control} bounds the tilted
+covariance and mean; Gaussian polynomial moments remain controlled.
+Cauchy--Schwarz and \eqref{ch06:power-tail} give the asserted bound.
+\end{proof}
 
 Finally, Proposition~\ref{ch06:energy} contributes
 $e^{-\kappa\beta t_f^2|A|}$. Throughout the actual band,
