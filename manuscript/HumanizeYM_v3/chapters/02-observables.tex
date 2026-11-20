@@ -44,22 +44,25 @@ $\mathcal J_{\le d}$ for the finite-dimensional real space obtained by
 retaining only $k+2\le d$. It is the zero space for $d<2$.
 \end{definition}
 Only finitely many jet coordinates enter any polynomial below. A coordinate
-of $A_k$ is assigned scaling dimension $k+2$ and polynomial degree one.
+of $A_k$ has classical scaling dimension $k+2$ and polynomial degree one.
+The scaling dimension of a monomial is the sum of those of its factors.
+For a homogeneous polynomial in jet coordinates, we also call its scaling
+dimension its \emph{weight}.
 The ordinary polynomial degree counts factors of jet coordinates; to
 distinguish it from scaling dimension we call it the \emph{factor count}.
 Constant gauge transformations act on every coefficient by $\Ad(G)$.
 Orthogonal changes of Euclidean coordinates act by the corresponding
-one-form transformation. Both actions preserve weight and factor count.
+one-form transformation. Both actions preserve scaling dimension and factor count.
 
 \begin{definition}[Polynomial labels]
 \label{ch02:labels}
 For $d\in\NN$, let
 \begin{equation}
- V_d=\CC[\mathcal J]^{\Ad(G)}_{\text{weight}\le d}
+ V_d=\CC[\mathcal J]^{\Ad(G)}_{\text{scaling dimension}\le d}
  \label{ch02:label-space}
 \end{equation}
 be the space of gauge-invariant complex polynomials of scaling dimension
-at most $d$. Choose nested real bases $(b_{d,i})$ homogeneous in weight
+at most $d$. Choose nested real bases $(b_{d,i})$ whose elements have definite scaling dimension
 $w_i$ and factor count $f_i$, with the constant polynomial as one basis
 vector. Conjugation means conjugating coefficients in these real bases.
 Define the factor-count operator by
@@ -70,15 +73,14 @@ Define the factor-count operator by
 \end{equation}
 \end{definition}
 The spaces are finite-dimensional: only $A_k$ with $k+2\le d$ can occur,
-and every nonconstant coordinate has weight at least two. The invariant
-subspace decomposes into its finitely many weight and factor-count
-components, so the stated bases can be chosen once and for all. The
+and every nonconstant coordinate has scaling dimension at least two. The invariant
+subspace decomposes according to scaling dimension and factor count, so the stated bases can be chosen once and for all. The
 constant has bidegree $(0,0)$; the zero-factor subspace is precisely
 $\CC\mathbf1$.
 
 The curvature at the origin is
 $F_{\mu\nu}=\partial_\mu A_{0,\nu}-\partial_\nu A_{0,\mu}$: the
-commutator term vanishes there in radial gauge. Its coordinates have weight
+commutator term vanishes there in radial gauge. Its coordinates have scaling dimension
 two and factor count one. An important invariant polynomial is
 \begin{equation}
  c_{F^2}=\frac14\sum_{\mu,\nu}
@@ -89,7 +91,7 @@ with bidegree $(4,2)$. The inner product is extended complex bilinearly when
 used in a complex polynomial, not sesquilinearly.
 
 There are three distinct integers in this notation. A basis element has
-weight $w_i$ and factor count $f_i$; it also belongs to a chosen space
+scaling dimension $w_i$ and factor count $f_i$; it also belongs to a chosen space
 $V_d$ with $w_i\le d$. We shall retain that last choice as part of the
 observable label, writing $v=(d,c)$ with $c\in V_d$. The same polynomial
 $c$ can occur at different tags $d$. Its eventual normalization depends on
@@ -125,7 +127,7 @@ Define the jet dilation
 \end{equation}
 Homogeneity in \eqref{ch02:test-holonomy} gives
 $U(h,J)=U(1,\operatorname{sc}_hJ)$. In particular, a homogeneous label of
-weight $w$ satisfies $c(\operatorname{sc}_hJ)=h^wc(J)$.
+scaling dimension $w$ satisfies $c(\operatorname{sc}_hJ)=h^wc(J)$.
 
 \begin{definition}[Taylor map and local section]
 \label{ch02:taylor-map}
@@ -152,8 +154,7 @@ Equivalently, the section identity requires, for every $J$ and $0\le q\le d$,
  =\left.\frac{d^q}{dh^q}c(\operatorname{sc}_hJ)\right|_{h=0}.
  \label{ch02:taylor-identity}
 \end{equation}
-It prescribes all weights up to $d$, not just the leading term of one
-chosen label. It also does not prescribe the value of the lattice observable
+It fixes every homogeneous component of scaling dimension at most $d$. It also does not prescribe the value of the lattice observable
 on a typical rough configuration.
 
 \section{Finite-stencil representatives}
@@ -258,9 +259,9 @@ column is one. Consequently
 \]
 is a gauge-invariant polynomial cylinder function. Since
 $T_df(\mathscr S(J))=J+O(|J|^{d+1})$, its Taylor map is $c$.
-In passing from ordinary to weighted Taylor order, we use that each jet
-coordinate has weight at least two; an omitted ordinary degree cannot
-produce a retained weight. No truncation of $Q_i$ after substitution is
+Each jet coordinate has scaling dimension at least two, so every monomial
+of polynomial degree greater than $d$ also has scaling dimension greater
+than $d$. No truncation of $Q_i$ after substitution is
 needed.
 
 Finally average over the finite lattice symmetry group:

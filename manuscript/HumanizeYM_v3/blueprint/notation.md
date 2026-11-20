@@ -48,10 +48,10 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 
 | Symbol | Definition/type | First definition; source |
 |---|---|---|
-| J, J_{≤d} | Formal radial jets, finite truncation through weight d | Ch. 2; def:D07 |
-| A_{k,μ} | Homogeneous radial potential of polynomial degree k+1 | Ch. 2; coordinates have weight k+2 |
+| J, J_{≤d} | Formal radial jets, finite truncation through scaling dimension d | Ch. 2; def:D07 |
+| A_{k,μ} | Homogeneous radial potential of polynomial degree k+1 | Ch. 2; coordinates have scaling dimension k+2 |
 | V_d | Ad(G)-invariant jet polynomials of scaling dimension ≤d | Ch. 2; def:D07 |
-| b_{d,i}, (w_i,f_i) | Nested real bihomogeneous basis, weight and factor count | Ch. 2; Outline II.1.1 |
+| b_{d,i}, (w_i,f_i) | Nested real bihomogeneous basis, scaling dimension (also called weight) and factor count | Ch. 2; Outline II.1.1 |
 | N_fac, t^{N_fac} | Count operator; b_{d,i}↦t^{f_i}b_{d,i} | Ch. 2; sec:local-fields |
 | sc_h J | Jet scaling with h^{k+2} on A_k | Ch. 2; eq:I12-test-holonomy |
 | U(h,J) | Exact link holonomies of truncated smooth test connection | Ch. 2; eq:I12-test-holonomy |
