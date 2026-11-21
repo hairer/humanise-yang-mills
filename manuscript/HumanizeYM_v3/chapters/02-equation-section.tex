@@ -75,17 +75,23 @@ $\mathcal J_{\le d}$.
 It suffices to show that their common annihilator is zero.
 Removing one link does not disconnect $\ZZ^4$, so every plaquette
 not containing $e$ admits a transporting path avoiding $e$.
-At the zero jet transport has no effect on linearized curvature.
-Consequently a jet in the annihilator has zero sampled linear curl
-on all plaquettes except the finitely many containing $e$.
+Let $A$ be the polynomial one-form representing a jet in the annihilator.
+At the zero connection the derivative of transport around an oriented
+unit plaquette $\square$ in direction $A$ is
+$\oint_{\partial\square}A=\int_\square dA$ by Stokes' theorem.
+Transport to the anchor does not change this first variation.
+Consequently $\int_\square dA=0$ for every plaquette that does not
+contain $e$.
 
-For each orientation, this sampled curl is a polynomial in the
-plaquette's integer base point. A polynomial vanishing at all but
-finitely many integer points vanishes identically: fix all but one
-coordinate, use the one-variable assertion, and repeat.
-If $A_j$ is the highest nonzero homogeneous layer, the highest-degree
-part of its sampled curl is $dA_j$; lower layers cannot contribute
-to that part. Thus $dA_j=0$. Radial gauge and Euler's identity give
+For each orientation $(\mu,\nu)$, this integral is a polynomial in
+the base point $z$ of the plaquette. It vanishes at all but finitely
+many integer points and hence identically, by the one-variable polynomial
+identity applied successively in each coordinate. Let $A_j$ be the
+highest nonzero homogeneous layer of $A$. Averaging a polynomial over
+a translated unit square preserves its highest homogeneous part as a
+polynomial in $z$. Thus the degree-$j$ part of the integral is
+$(dA_j)_{\mu\nu}(z)$. Since the integral vanishes for every orientation,
+$dA_j=0$. Radial gauge and Euler's identity give
 \[
  0=\partial_i(x^\mu A_{j,\mu})
    =A_{j,i}+x^\mu\partial_i A_{j,\mu}
@@ -96,12 +102,6 @@ This contradicts the choice of $j$. Descending through the layers
 proves the assertion. Finite-dimensional duality now selects a
 finite spanning collection of admissible coordinates.
 \end{proof}
-
-The equality of the leading sampled curl with $dA_j$ follows directly
-by integrating the polynomial connection around a unit square:
-Stokes' formula averages $dA_j$ over that square, which changes only
-lower polynomial degrees. This also explains why no assumption
-about an infinite-dimensional configuration space enters the lemma.
 
 \subsection{Construction of the equation-adapted section}
 
@@ -124,8 +124,8 @@ as a signed sum of plaquette-curvature coordinates based at the
 initial vertex of $e$. The precise signs follow the chosen
 plaquette orientations. Transport the force to the anchor by a
 path avoiding $e$, and pair it there with an arbitrary element of $\gLie$.
-Its linearization is the corresponding discrete divergence of
-sampled linear curls.
+At the zero connection the force is the signed sum, to first order in
+$A$, of the integrals $\int_\square dA$ over plaquettes incident on $e$.
 
 Fix a layer $j$. These linear force functionals, restricted to jets
 through layer $j$, span every functional which acts only on $A_j$
@@ -136,8 +136,9 @@ terms are
 \[
  -\sum_\mu\partial_\mu(dA_j)_{\mu\nu}.
 \]
-This follows by taking the first difference of the sampled curl
-in its transverse coordinate. Thus the top layer is a Maxwell
+For a link in direction $\nu$, the two incident $(\mu,\nu)$ plaquettes
+enter with opposite signs. Their integrals therefore give a first
+difference in the $\mu$ direction. Thus the top layer is a Maxwell
 solution potential. Every functional of the indicated type
 annihilates the common force kernel and is therefore a finite
 linear combination of these forces. Notice that this argument
