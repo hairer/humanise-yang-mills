@@ -160,16 +160,16 @@ These three tensors span the centered degree-four symmetric
 hypercubic tensors. Before imposing the Maxwell equation, their
 vector divergences have coordinates in $E=\RR^3$, represented by
 \[
- \sum_c F_{bc}\partial_bF_{bc},\qquad
- \sum_{a,c}F_{ac}\partial_bF_{ac},\qquad
- \sum_{a,c}F_{bc}\partial_aF_{ac},
+ \sum_c {:}\langle F_{bc},\partial_bF_{bc}\rangle_{\gLie}{:},\qquad
+ \sum_{a,c}{:}\langle F_{ac},\partial_bF_{ac}\rangle_{\gLie}{:},\qquad
+ \sum_{a,c}{:}\langle F_{bc},\partial_aF_{ac}\rangle_{\gLie}{:}.
 \]
-with the inner product in $\gLie$ and Wick ordering understood. The free
+The free
 quotient $s:E\to V$ has kernel spanned by $v=(0,0,1)$, and $V$
 is the two-dimensional vector space of Section~\ref{ch14:stress-line}.
 For a tensor with diagonal entries
-$z_0\sum_cF_{ac}^2+z_1\sum_{b,c}F_{bc}^2$ and off-diagonal entries
-$z_2\sum_cF_{ac}F_{bc}$, Bianchi gives divergence coordinates
+$z_0\sum_c{:}\|F_{ac}\|_{\gLie}^2{:}+z_1\sum_{b,c}{:}\|F_{bc}\|_{\gLie}^2{:}$ and off-diagonal entries
+$z_2\sum_c{:}\langle F_{ac},F_{bc}\rangle_{\gLie}{:}$, Bianchi gives divergence coordinates
 $(2(z_0-z_2),2z_1+z_2/2,z_2)$. Hence
 \begin{equation}
  \rho(x,y,z)=-2x-8y,\qquad

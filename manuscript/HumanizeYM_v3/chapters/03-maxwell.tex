@@ -608,14 +608,14 @@ used throughout in its usual form~\cite{Wick1950}.
 \begin{proof}
 Polarize our stress between closed two-forms $f,g$:
 \[
- t_{ab}(f,g)=-\sum_c(f_{ac}g_{bc}+g_{ac}f_{bc})
-             +\tfrac12\delta_{ab}\sum_{c,d}f_{cd}g_{cd},
+ t_{ab}(f,g)=-\sum_c\bigl(\langle f_{ac},g_{bc}\rangle_{\gLie}+\langle g_{ac},f_{bc}\rangle_{\gLie}\bigr)
+             +\tfrac12\delta_{ab}\sum_{c,d}\langle f_{cd},g_{cd}\rangle_{\gLie}.
 \]
-with inner products in $\gLie$ understood. The Bianchi identity gives
+The Bianchi identity gives
 \[
  \sum_a\partial_at_{ab}
- =-\sum_c\big((\operatorname{div}f)_cg_{bc}
-                         +f_{bc}(\operatorname{div}g)_c\big).
+ =-\sum_c\big(\langle (\operatorname{div}f)_c,g_{bc}\rangle_{\gLie}
+                         +\langle f_{bc},(\operatorname{div}g)_c\rangle_{\gLie}\big).
 \]
 The tensor is symmetric and traceless. Thus contracting with a constant,
 skew-linear or scalar-linear $v$ produces no additional divergence term
