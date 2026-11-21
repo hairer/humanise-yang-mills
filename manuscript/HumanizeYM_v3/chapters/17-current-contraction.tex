@@ -31,12 +31,11 @@ coefficient of
 $\sum_a\nabla_aJ_{ab}-DS[Y_b]$ therefore has leading spatial
 momentum degree three. At that degree it is exactly
 \[
- \partial_a\left(\tfrac14\delta_{ab}\sum_{c,d}F_{cd}^2
-                         -\sum_c F_{ac}F_{bc}\right)
-       +\sum_c F_{bc}\partial_aF_{ac}=0.
+ \partial_a\left(\tfrac14\delta_{ab}\sum_{c,d}\|F_{cd}\|_{\gLie}^2
+                         -\sum_c \langle F_{ac},F_{bc}\rangle_{\gLie}\right)
+       +\sum_c \langle F_{bc},\partial_aF_{ac}\rangle_{\gLie}=0.
 \]
-The identity uses the linear Bianchi equation; colour inner products
-are implicit. Lower spatial degrees vanish because each curvature
+The identity uses the linear Bianchi equation. Lower spatial degrees vanish because each curvature
 contains a difference and the action variation contains one more.
 All remaining lattice Taylor terms have degree at least four.
 The same reasoning applies to any initial path action with the

@@ -263,16 +263,15 @@ the free and mixed field spaces. Centered means that each component
 has zero expectation. Let $\mathcal V^0,\mathcal V$ be the degree-five
 covariant vector spaces. The free divergence calculation of Chapter~\ref{ch03:maxwell}
 has rank two. To check that its target is the full covariant vector
-space, note that degree five permits only colour-contracted
-$F\partial F$. Sign parity and permutations leave the two
+space, note that degree five permits only pairings of $F$ with $\partial F$ in $\gLie$. Sign parity and permutations leave the two
 expressions
 \[
- V_b^{(1)}=\sum_c{:}F_{bc}\partial_bF_{bc}{:},\qquad
- V_b^{(2)}=\sum_{c<d,\ c,d\ne b}{:}F_{cd}\partial_bF_{cd}{:},
+ V_b^{(1)}=\sum_c{:}\langle F_{bc},\partial_bF_{bc}\rangle_{\gLie}{:},\qquad
+ V_b^{(2)}=\sum_{c<d,\ c,d\ne b}{:}\langle F_{cd},\partial_bF_{cd}\rangle_{\gLie}{:}.
 \]
-with colour summation understood. The apparent further contractions
-$\sum_{c,d}F_{bd}\partial_cF_{cd}$ and
-$\sum_{c,d}F_{cd}\partial_cF_{bd}$ reduce to these: use the
+The apparent further contractions
+$\sum_{c,d}{:}\langle F_{bd},\partial_cF_{cd}\rangle_{\gLie}{:}$ and
+$\sum_{c,d}{:}\langle F_{cd},\partial_cF_{bd}\rangle_{\gLie}{:}$ reduce to these: use the
 Maxwell equation in the first and the Bianchi identity in the second.
 The two independent rows of correlation pairings in \eqref{ch03:divergence-matrix}
 show that these vectors are independent and in the divergence image.

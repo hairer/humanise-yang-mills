@@ -150,9 +150,9 @@ comparison estimates used in these windows.
 
 Use the free scalar and tensor
 \[
- \mathcal O=\tfrac14\sum_{a,b,\alpha}{:}(F_{ab}^\alpha)^2{:},
+ \mathcal O=\tfrac14\sum_{a,b}{:}\|F_{ab}\|_{\gLie}^2{:},
  \quad L=T^{\rm Max},\quad D_{ab}=\delta_{ab}\mathcal O,
- \quad X_{ab}=(1-\delta_{ab})\sum_{c,\alpha}{:}F_{ac}^\alpha F_{bc}^\alpha{:}.
+ \quad X_{ab}=(1-\delta_{ab})\sum_c{:}\langle F_{ac},F_{bc}\rangle_{\gLie}{:}.
 \]
 The coordinate sum in $\mathcal O$ is over ordered pairs. The symbol
 $X$ here denotes the off-diagonal tensor, not a polymer support.
@@ -160,16 +160,16 @@ These three tensors span the centered degree-four symmetric
 hypercubic tensors. Before imposing the Maxwell equation, their
 vector divergences have coordinates in $E=\RR^3$, represented by
 \[
- \sum_c F_{bc}\partial_bF_{bc},\qquad
- \sum_{a,c}F_{ac}\partial_bF_{ac},\qquad
- \sum_{a,c}F_{bc}\partial_aF_{ac},
+ \sum_c {:}\langle F_{bc},\partial_bF_{bc}\rangle_{\gLie}{:},\qquad
+ \sum_{a,c}{:}\langle F_{ac},\partial_bF_{ac}\rangle_{\gLie}{:},\qquad
+ \sum_{a,c}{:}\langle F_{bc},\partial_aF_{ac}\rangle_{\gLie}{:}.
 \]
-with colour contraction and Wick ordering understood. The free
+The free
 quotient $s:E\to V$ has kernel spanned by $v=(0,0,1)$, and $V$
 is the two-dimensional vector space of Section~\ref{ch14:stress-line}.
 For a tensor with diagonal entries
-$z_0\sum_cF_{ac}^2+z_1\sum_{b,c}F_{bc}^2$ and off-diagonal entries
-$z_2\sum_cF_{ac}F_{bc}$, Bianchi gives divergence coordinates
+$z_0\sum_c{:}\|F_{ac}\|_{\gLie}^2{:}+z_1\sum_{b,c}{:}\|F_{bc}\|_{\gLie}^2{:}$ and off-diagonal entries
+$z_2\sum_c{:}\langle F_{ac},F_{bc}\rangle_{\gLie}{:}$, Bianchi gives divergence coordinates
 $(2(z_0-z_2),2z_1+z_2/2,z_2)$. Hence
 \begin{equation}
  \rho(x,y,z)=-2x-8y,\qquad
@@ -198,22 +198,22 @@ Initially the trace and antisymmetric part of $J$ vanish. During
 transfer they must remain exact forward differences; smallness of their
 values alone would not suffice for the trace rate below.
 
-We fix the coefficient functionals in that calculation. For a local scalar
-$F$, its Hessian Fourier kernel is
+Fix a unit vector $u\in\gLie$ and write $e_{x,c}(u)$ for the variation
+equal to $u$ on link $(x,c)$ and zero elsewhere. For a local scalar $F$,
+the Fourier kernel of its Hessian in this direction is
 \[
- \widehat F_{c\alpha,c\alpha}(p,q)=
+ \widehat F_{cu,cu}(p,q)=
  \sum_{x,y}e^{i(p\cdot x+q\cdot y)}
- D^2F(0)[e_{x,c,\alpha},e_{y,c,\alpha}],
+ D^2F(0)[e_{x,c}(u),e_{y,c}(u)].
 \]
-where $e_{x,c,\alpha}$ is the link-coordinate basis vector. Fix one
-colour $\alpha$. For a vector $F_b$ and a scalar action $F$ put
+For a vector $F_b$ and a scalar action $F$ put
 \begin{align*}
  \mathsf l(F)&=\operatorname{Re}\sum_{a\ne c,b}
-      i[z^2t]\widehat{F_b}_{c\alpha,c\alpha}(ze_a,-ze_a+te_b),\\
+      i[z^2t]\widehat{F_b}_{cu,cu}(ze_a,-ze_a+te_b),\\
  \mathsf q(F)&=|\Lambda|^{-1}\operatorname{Re}\sum_{a\ne c}
-            [z^2]\widehat F_{c\alpha,c\alpha}(ze_a,-ze_a),\\
+            [z^2]\widehat F_{cu,cu}(ze_a,-ze_a),\\
  \mathsf h(F)&=\mathsf l(F)-\tfrac12\operatorname{Re}\sum_{a\ne c}
-            [z^2]\widehat{F_c}_{c\alpha,c\alpha}(ze_a,-ze_a).
+            [z^2]\widehat{F_c}_{cu,cu}(ze_a,-ze_a).
 \end{align*}
 Brackets denote Taylor coefficients including reciprocal factorials.
 The volume normalization in $\mathsf q$ is for the translation-invariant
@@ -359,7 +359,7 @@ the curvature covariance is
 $(H_{ai}H_{bj}-H_{aj}H_{bi})/(\pi^2|x|^4)$ with
 $H=I-2xx^{\mathsf T}/|x|^2$ orthogonal. The sum of its squared
 numerators over ordered pairs is $24$. The two Wick pairings and
-the two factors $1/4$ give $2\cdot24/16=3$ per colour.
+the two factors $1/4$ give $2\cdot24/16=3$ for each of the $d_{\gLie}$ orthogonal components.
 
 Start with any prescribed null sequence of radii, and take its
 comparison subsequence. Proposition~\ref{ch17:coefficient} gives

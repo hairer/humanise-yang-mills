@@ -9,10 +9,10 @@ construction must eventually reproduce these data in an appropriate
 short-distance comparison. No interacting limit is assumed in this chapter.
 
 We fix the positive inner product on the real Lie algebra $\gLie$ and write
-$d_{\gLie}=\dim_{\RR}\gLie$. Choose an orthonormal basis
+$d_{\gLie}=\dim_{\RR}\gLie$. Use the orthonormal basis of Section~\ref{ch01:gauge},
 $(e_\alpha)_{\alpha=1}^{d_{\gLie}}$. Greek letters $\mu,\nu,\rho,\sigma$
 from the middle of the alphabet denote coordinate indices in
-$\{1,2,3,4\}$; $\alpha,\beta$ denote colour indices. Time is the fourth
+$\{1,2,3,4\}$; $\alpha,\beta$ denote indices in this basis. Time is the fourth
 coordinate. The superscript $\mathrm{Max}$ always denotes the free
 reference theory. We first define its correlations at distinct points;
 this requires no multiplication of distributions at the same point.
@@ -33,7 +33,10 @@ computing the covariance; it is not one of the gauge-invariant local
 observables used in the construction.
 
 Write $F^\alpha_{\mu\nu}=-F^\alpha_{\nu\mu}$ for the curvature
-components. Their two-point function is
+components in this basis. The covariance is the product of the inner
+product on $\gLie$ and a spacetime kernel $C$: pairing the two fields
+with $u,v\in\gLie$ gives $\langle u,v\rangle_{\gLie}C_{\mu\nu,\rho\sigma}(x-y)$.
+In coordinates,
 \begin{equation}\label{ch03:curvature}
  S^{\mathrm{Max}}_2(F^\alpha_{\mu\nu},F^\beta_{\rho\sigma};x,y)
  =\delta_{\alpha\beta}C_{\mu\nu,\rho\sigma}(x-y),
@@ -167,7 +170,7 @@ A linear coordinate on $\mathcal S_j$ has scaling dimension $j+2$. As in Definit
 `weight' the scaling dimension of a homogeneous jet polynomial.
 Consequently polynomials of weight at most $d$ use only the spaces
 $\mathcal S_j$ with $j\le d-2$. Constants are retained at every degree.
-The colour action is the adjoint action of $G$; invariant polynomials
+The action on $\gLie$ is the adjoint action of $G$; invariant polynomials
 are the gauge-invariant local observables of the free reference theory.
 
 To compare this definition with the radial-potential labels $V_d$,
@@ -276,7 +279,7 @@ of homogeneous degree-$j$ Maxwell curvature solutions. Write a member as
 \]
 The derivative-index coefficients are symmetric. On this coefficient
 space use the Frobenius inner product, summing both orders of the
-antisymmetric field indices, all ordered derivative indices and colours.
+antisymmetric field indices, all ordered derivative indices and components in the basis of Section~\ref{ch01:gauge}.
 In particular, no factor $1/2$ is inserted for the field indices.
 The linear jet probe represented by $P$ is
 \begin{equation}\label{ch03:probe}
@@ -424,12 +427,12 @@ correlations still requires a quantitative comparison estimate.
 \section{Quadratic fields and normalization checks}\label{ch03:quadratic}
 
 We return to the free curvature covariance
-\eqref{ch03:curvature}; each of the $d_{\gLie}$ colours has that same
-covariance and different colours have zero cross-covariance. Define
+\eqref{ch03:curvature}; in the basis of Section~\ref{ch01:gauge}, each component has the same
+covariance and orthogonal components have zero cross-covariance. Define
 \begin{align}
  Q_{\mu\nu}
- &=\sum_{\alpha=1}^{d_{\gLie}}\sum_{\rho=1}^4
-       {:}F^\alpha_{\mu\rho}F^\alpha_{\nu\rho}{:},
+ &=\sum_{\rho=1}^4
+       {:}\langle F_{\mu\rho},F_{\nu\rho}\rangle_{\gLie}{:},
  & Q_{\mathrm{tot}}&=\sum_\mu Q_{\mu\mu},\label{ch03:quadratics}\\
  \mathcal E^{\mathrm{Max}}&=\tfrac14 Q_{\mathrm{tot}},
  &T^{\mathrm{Max}}_{\mu\nu}
@@ -456,8 +459,7 @@ With the present normalization, Wick's rule gives
  =\frac{3d_{\gLie}}{\pi^4|x-y|^8},\qquad x\ne y.
 \end{equation}
 For checking constants, at separation $re_4$ one has
-$\mathcal E^{\mathrm{Max}}=\tfrac12\sum_{\alpha,\mu<\nu}
-{:}(F^\alpha_{\mu\nu})^2{:}$. The two cross-pairings of each square,
+$\mathcal E^{\mathrm{Max}}=\tfrac12\sum_{\mu<\nu}{:}\|F_{\mu\nu}\|_{\gLie}^2{:}$. The two cross-pairings of each square,
 the six unordered components, and the prefactor $1/4$ give
 $\tfrac14\cdot2\cdot6d_{\gLie}=3d_{\gLie}$.
 Orthogonal covariance makes the answer independent of the direction of
@@ -475,7 +477,7 @@ The finite-dimensional classification needed for the stress tensor is
 small enough to state explicitly. In this section \emph{centered} means
 that the constant Wick coefficient is zero. By the Wick prescription it
 is also the one-point expectation. We consider real symmetric tensor
-fields $J_{ab}$ of degree at most four, invariant under the colour action
+fields $J_{ab}$ of degree at most four, invariant under the adjoint action
 and transforming as a rank-two tensor under the signed coordinate
 permutations $H_4$. Conservation is an identity in the on-shell polynomial
 space, or equivalently in every separated free correlation by
@@ -488,12 +490,12 @@ $T^{\mathrm{Max}}$ as in \eqref{ch03:stress}.
 \end{proposition}
 
 \begin{proof}
-Simplicity of $\gLie$ excludes invariant linear colour forms and makes
-an invariant symmetric bilinear colour form a multiple of the fixed
+Simplicity of $\gLie$ excludes invariant linear forms on $\gLie$ and makes
+an invariant symmetric bilinear form on $\gLie$ a multiple of the fixed
 metric. Through degree four a centered invariant polynomial therefore
 contains two undifferentiated curvature factors. Indeed, a derivative on
 one of two factors would raise the degree to at least five, while a
-single differentiated factor still has no invariant colour contraction.
+single differentiated factor still has no invariant linear functional on $\gLie$.
 
 Recall the quadratic fields $Q_{ab}$ and $Q_{\mathrm{tot}}$ from
 \eqref{ch03:quadratics}. A basis of the tensor candidates is
@@ -509,12 +511,12 @@ Permutations fixing its distinguished axis divide them into two classes:
 those containing that axis, and those containing neither instance of it.
 An off-diagonal component with indices $a,b$ must be odd in axes $a,b$
 and even in the others. Its possible contractions are
-$\sum_\alpha{:}F^\alpha_{ac}F^\alpha_{bc}{:}$ with $c\notin\{a,b\}$;
+${:}\langle F_{ac},F_{bc}\rangle_{\gLie}{:}$ with $c\notin\{a,b\}$;
 permutations identify their coefficients. This gives exactly the three
 candidates displayed above.
 
 For an explicit rank check, let
-$Q_{ij,ij}=\sum_\alpha{:}(F^\alpha_{ij})^2{:}$.
+$Q_{ij,ij}={:}\|F_{ij}\|_{\gLie}^2{:}$.
 Evaluate the first component of the divergence of each $Z^{(l)}$ at
 $e_1$, against $Q_{12,12}(0)$ and $Q_{23,23}(0)$. The two rows of
 these evaluations, after division by $d_{\gLie}/(4\pi^2)^2$, are
@@ -529,7 +531,7 @@ $S_2^{\mathrm{Max}}(Q_{11},Q_{12,12};te_1,0)
 entry after the stated division. The first two columns are independent.
 Also $Z^{(1)}_{12}=Z^{(2)}_{12}=0$, whereas the correlation of
 $Z^{(3)}_{12}(e_1)$ with
-$\sum_\alpha{:}F^\alpha_{13}F^\alpha_{23}{:}(0)$ equals
+${:}\langle F_{13},F_{23}\rangle_{\gLie}{:}(0)$ equals
 $-16d_{\gLie}/(4\pi^2)^2$. Thus the candidate tensors are themselves
 independent, and the kernel of divergence has dimension at most one.
 
@@ -584,7 +586,7 @@ operator
                                   \frac{\partial}{\partial X_{j,\lambda}},
 \end{equation}
 where $X_{j,\lambda}$ are any linear coordinates on order-$j$ solution
-jets, including colour. The sum is finite on each polynomial.
+jets, including the $\gLie$ components. The sum is finite on each polynomial.
 
 \begin{proposition}[Normalized free Ward identities]\label{ch03:free-ward}
 For translations, centered rotations and centered dilation,
@@ -606,14 +608,14 @@ used throughout in its usual form~\cite{Wick1950}.
 \begin{proof}
 Polarize our stress between closed two-forms $f,g$:
 \[
- t_{ab}(f,g)=-\sum_c(f_{ac}g_{bc}+g_{ac}f_{bc})
-             +\tfrac12\delta_{ab}\sum_{c,d}f_{cd}g_{cd},
+ t_{ab}(f,g)=-\sum_c\bigl(\langle f_{ac},g_{bc}\rangle_{\gLie}+\langle g_{ac},f_{bc}\rangle_{\gLie}\bigr)
+             +\tfrac12\delta_{ab}\sum_{c,d}\langle f_{cd},g_{cd}\rangle_{\gLie}.
 \]
-with colour pairings understood. The Bianchi identity gives
+The Bianchi identity gives
 \[
  \sum_a\partial_at_{ab}
- =-\sum_c\big((\operatorname{div}f)_cg_{bc}
-                         +f_{bc}(\operatorname{div}g)_c\big).
+ =-\sum_c\big(\langle (\operatorname{div}f)_c,g_{bc}\rangle_{\gLie}
+                         +\langle f_{bc},(\operatorname{div}g)_c\rangle_{\gLie}\big).
 \]
 The tensor is symmetric and traceless. Thus contracting with a constant,
 skew-linear or scalar-linear $v$ produces no additional divergence term
@@ -721,10 +723,12 @@ positive two-point pairing of $P_k$ with its reflected conjugate,
 contradicting \eqref{ch03:ND}. This proves detection at bounded jet order.
 
 To obtain a uniform bound, we use a collision that lowers the highest
-jet order. Write $X_{j,\alpha}(p)$ for the colour-$\alpha$ order-$j$
-coordinate associated with an uncoloured probe $p$. Fix a polynomial
+jet order. For a linear functional $p$ on scalar order-$j$ jets, let
+$X_j(p)\in\gLie$ be its evaluation on the spacetime indices of the jet.
+Write $X_{j,\alpha}(p)=\langle e_\alpha,X_j(p)\rangle_{\gLie}$ in
+the basis of Section~\ref{ch01:gauge}. Fix a polynomial
 $P$ with highest jet order $j$ and a quadratic spectator
-$\sum_\alpha{:}X_{k,\alpha}(p)X_{l,\alpha}(q){:}$, where $l<k$.
+${:}\langle X_k(p),X_l(q)\rangle_{\gLie}{:}$, where $l<k$.
 Contracting just its order-$k$ leg with the top-order variables of $P$
 leaves the polynomial
 \begin{equation}\label{ch03:replacement}
@@ -733,7 +737,7 @@ leaves the polynomial
  C_{k,j}(p,e_\lambda;z)
            \frac{\partial P}{\partial X_{j,\alpha}(e_\lambda)}.
 \end{equation}
-The covariance $C_{k,j}$ is in one colour. We claim that
+The covariance $C_{k,j}$ is in a single unit direction in $\gLie$. We claim that
 \begin{equation}\label{ch03:replacement-null}
  P\in\mathcal N_D,\quad k+l+4\le D
  \quad\Longrightarrow\quad
@@ -778,10 +782,10 @@ $P$. Strong induction on weight and \eqref{ch03:replacement-null}
 therefore make it zero.
 
 The matrix of polynomial entries $(X_{l,\alpha}(q_l))_{l,\alpha}$
-has nonzero determinant: assigning the chosen order-$l$ jet to colour
-$l+1$ and zero to the other colours makes it the identity. Multiplication
+has nonzero determinant: choose the jets so that $X_l(q_l)=e_{l+1}$
+for each $l$. At these jets the matrix is the identity. Multiplication
 by its adjugate, in the polynomial integral domain, shows that every
-colour-resolved top-order contraction derivative in
+componentwise top-order contraction derivative in
 \eqref{ch03:replacement} vanishes. As $p,z$ vary, the functionals
 $C_{k,j}(p,\cdot;z)$ span the dual of the order-$j$ solution space.
 To verify this last assertion, a vector annihilated by all of them has
@@ -825,10 +829,9 @@ Translation invariance proves one direction. We prove the converse,
 starting at weight four. Let $\mathcal S_j^{\mathrm{sc}}$ be the
 scalar-valued solution jets, so $\mathcal S_j=\gLie\otimes
 \mathcal S_j^{\mathrm{sc}}$, and write
-$U_j=(\mathcal S_j^{\mathrm{sc}})^*$ for the uncoloured
-order-$j$ probes and
-$Q(p,q)=\sum_\alpha X_{j,\alpha}(p)X_{k,\alpha}(q)$ for their
-colour-contracted quadratic. The invariant metric on a simple Lie
+$U_j=(\mathcal S_j^{\mathrm{sc}})^*$ for the scalar order-$j$ probes and
+$Q(p,q)=\langle X_j(p),X_k(q)\rangle_{\gLie}$ for the corresponding
+quadratic polynomial. The invariant metric on a simple Lie
 algebra is unique up to scalar. Hence $\mathcal M_4^{\mathrm{Max}}$
 is spanned by the unit and $Q(p,q)$ with $p,q\in U_0$;
 weight five adds exactly the mixed quadratics with $p\in U_0,q\in U_1$.
@@ -840,10 +843,10 @@ linear map $D_p:\mathcal S_0^{\mathrm{sc}}\to U_1$:
  A_bQ(p,p)=\sum_\lambda Q(e^\lambda,D_p(e_\lambda)).
 \]
 Uniqueness follows by assigning independent zero- and first-order
-solution jets in one colour. Here and until the coefficient comparison,
+solution jets in a single unit direction in $\gLie$. Here and until the coefficient comparison,
 $b$ is fixed.
 
-Denote the one-colour covariance of probes by $C(p,q;z)$.
+Denote the scalar covariance of probes by $C(p,q;z)$.
 The three-quadratic Wick rule is
 \begin{align*}
 &S_3^{\mathrm{Max}}(Q(a,v),Q(p,p),Q(q,q);x,y,z)\\
@@ -933,7 +936,7 @@ Fix $K,L$ and put $U=\Delta(K,L)$. At weight four write
 $B_x(P,Q)=S_2^{\mathrm{Max}}(P,Q;x,0)$.
 Recall $R_x=I-2xx^{\mathsf T}/|x|^2$, the reflection normal to $x$.
 The zero-order covariance is
-$\pi^{-2}|x|^{-4}\bigwedge^2R_x$ in each colour.
+$\pi^{-2}|x|^{-4}\bigwedge^2R_x$ tensored with the identity on $\gLie$.
 Wick's rule consequently gives, for $|x|=|y|$,
 \[
  B_x(P,Q)=B_y(\rho(R_yR_x)P,Q)

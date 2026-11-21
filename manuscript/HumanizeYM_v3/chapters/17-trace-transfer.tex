@@ -200,7 +200,7 @@ change. Let
  \qquad N_{i\alpha}=DS(U)[J_U(e_\alpha,e_i)].
 \]
 Indices $i$ run through link coordinates and $\alpha$ through gauge
-coordinates. Differentiating gauge invariance first in $v$, then in $z$,
+coordinates, using the basis of Section~\ref{ch01:gauge} at each link and site. Differentiating gauge invariance first in $v$, then in $z$,
 gives $Hd=-N$.
 
 For $\mu>0$ at a background where the following inverses exist, write
@@ -388,11 +388,13 @@ by the logarithmic mean-value argument.
 \subsection{The corrected coefficient and order of limits}
 \label{ch17:regulator-completion}
 
-We can retain the lattice correction in $\mathsf h$ throughout, avoiding
-an unsupported claim that it vanishes separately. Write
-$\mathsf c(F)=\frac12\operatorname{Re}\sum_{a\ne c}[z^2]
-\widehat{F_c}_{c\alpha,c\alpha}(ze_a,-ze_a)$, so
-$\mathsf h=\mathsf l-\mathsf c$.
+Retain the lattice correction in $\mathsf h$. For the same unit vector
+$u\in\gLie$, set
+\[
+ \mathsf c(F)=\tfrac12\operatorname{Re}\sum_{a\ne c}[z^2]
+ \widehat{F_c}_{cu,cu}(ze_a,-ze_a),
+ \qquad \mathsf h=\mathsf l-\mathsf c.
+\]
 The quadratic variation $DF[Z]$ in the preceding calculation starts at
 momentum degree three. Thus $\mathsf c(DF[Z])=0$, in addition to
 \eqref{ch17:gradient-cancellation}. Both functionals therefore annihilate
@@ -427,7 +429,7 @@ are functions of the background before the two field derivatives are
 extracted.
 
 The definitions of $W^{(1)},W^{(0)}$ give an exact trace decomposition.
-Use $Rd=dG+RNG$ to obtain
+Using the same link and site bases induced by Section~\ref{ch01:gauge}, apply $Rd=dG+RNG$ to obtain
 \begin{align*}
  \operatorname{tr}(RV_b)
   ={}&\operatorname{tr}\bigl(R(D_b-\tfrac12T_b^{(1)})\bigr)
