@@ -378,6 +378,41 @@ sequence has a subsequence with limit $\mathcal A_G$, which proves
 \eqref{ch17:trace-law} by the subsequence criterion.
 \end{proof}
 
+\paragraph{The dilation current at short separation.}
+Let $v$ be a continuously differentiable vector field on $\RR^4$ with
+$\partial_av_b+\partial_bv_a=2\varphi\,\delta_{ab}$ for a real function
+$\varphi$. For $x_0\neq x_1$ put
+$j_a(x_0)=\sum_bv_b(x_0)\,S_2^{\xi_*}(T_{ab},\Theta;x_0,x_1)$, the current
+$\sum_bT_{ab}v_b$ at $x_0$ against the centered trace at $x_1$. Then
+\[
+ \sum_a\partial_{(x_0)_a}j_a(x_0)=\varphi(x_0)\,S_2^{\xi_*}(\tau,\Theta;x_0,x_1)
+       =\varphi(x_0)\,G_\Theta(|x_0-x_1|)\qquad(x_0\neq x_1).
+\]
+Indeed, the product rule gives two sums. The one containing the derivatives
+of the correlations vanishes because $T$ is conserved
+(Proposition~\ref{ch14:normalized-stress}). In the other, symmetry of $T$
+allows $\partial_av_b$ to be replaced by
+$\tfrac12(\partial_av_b+\partial_bv_a)=\varphi\,\delta_{ab}$, and
+bilinearity leaves $\varphi\,S_2^{\xi_*}(\tau,\Theta;x_0,x_1)$. Finally
+$\tau=\Theta+e_{\rm tr}1$; a unit insertion leaves correlations unchanged
+and $\Theta$ is centered (Section~\ref{ch17:spectrum}), so
+$S_2^{\xi_*}(\tau,\Theta;x_0,x_1)=S_2^{\xi_*}(\Theta,\Theta;x_0,x_1)
+=G_\Theta(|x_0-x_1|)$ by translation and rotation invariance.
+
+For the dilation field $v(z)=z$ one has $\varphi=1$, so for a pair at
+distance $r$ the divergence of $j$ is $G_\Theta(r)$, and
+Theorem~\ref{ch17:all-radii} gives
+$r^8\log^2(1/r)\,G_\Theta(r)\to\mathcal A_G>0$. Thus, against the centered
+trace, the dilation current is not divergence free at short separation, although the classical
+Yang--Mills action is scale invariant. In fact $G_\Theta(r)>0$ for every
+$r>0$: in \eqref{ch17:laplace} the measure $\rho_\Theta$ is positive, and
+nonzero since the limit is positive. For translations and rotations
+$\varphi=0$, and the identity is the conservation behind the Ward identities
+of Chapter~\ref{ch14:ward}. In the free Maxwell theory of
+Chapter~\ref{ch03:maxwell} the stress is traceless, and the dilation
+current is divergence free.
+
+
 \section{What the trace law excludes}
 \label{ch17:exclusion}
 
