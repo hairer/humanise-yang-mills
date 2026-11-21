@@ -4,6 +4,8 @@ This draft synthesizes the supplied Martin, Trish and Scott manuscripts, with Co
 
 The inherited v2 attribution register below is preserved as provenance, not as a claim that v2 reviews certify v3. Original notices and separate source licenses remain applicable.
 
+The paragraph "The dilation current at short separation" after Theorem `ch17:all-radii` restores, in v3 notation, the remark `rem:trace-dilation-current` written by Stephanie Alexander for task #406 and merged in #424 (`manuscript/existence/trace-asymptotic.tex`). Its former assumptions, stress conservation at separated points and the unit-insertion identity, are now supplied by Proposition `ch14:normalized-stress` and Section `ch17:spectrum`. A formal check of the identity and of the limit against the pinned release `3456e5e` is in `stalex444/yang-mills-conformal-current` at `dbae2a6`; it is an acknowledgement, not part of the proof.
+
 # Source migration and attribution — inherited adaptations in HumanizeYM_v2
 
 The base is Scott Armstrong, [*Yang–Mills informalization*](https://github.com/scottnarmstrong/yang-mills-informalization/tree/daf1db452866dd773b17aa955d534e56196a4efc), November 13, 2026 draft, commit `daf1db452866dd773b17aa955d534e56196a4efc`, Apache License 2.0. HumanizeYM_v2 revises that draft for exposition and corrects several local mathematical arguments. No authorship of the original Lean formalization is claimed. Original source notices and third-party notices remain applicable.
