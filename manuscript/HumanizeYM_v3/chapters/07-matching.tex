@@ -30,7 +30,7 @@ coefficient of an action $E$. A translation-invariant coefficient is
 specified by its values on plane waves. After division by the number
 of lattice sites, its symbol is a tensor
 $f(p_1,\ldots,p_{n-1})$, with $p_0=-\sum_{i>0}p_i$.
-The tensor has one direction and one colour index for each field.
+The tensor has one spacetime index and one argument in $\gLie$ for each field.
 The symbol is periodic with period $2\pi$ in each independent momentum.
 A common symbol means one function chosen on the infinite lattice whose
 restriction to each finite momentum grid describes the corresponding
@@ -40,7 +40,7 @@ extension of each finite grid.
 For $\sigma>0$, write $|f|_\sigma\le A$ when every component is
 holomorphic and bounded by $A$ on the strip
 $|\operatorname{Im}p_i^a|<\sigma$. There are only finitely many direction
-and colour components at fixed $n$. Reducing the strip gives an
+and Lie algebra components in the basis of Section~\ref{ch01:gauge} at fixed $n$. Reducing the strip gives an
 exponentially weighted sum of Fourier coefficients, with a constant
 depending on $n,\sigma,G$. Thus common strip bounds imply locality
 uniformly in the period. An order-$r$ zero means that all momentum Taylor
@@ -59,7 +59,7 @@ Consequently its first nonzero symbol satisfies
 Contraction is algebraic, without complex conjugation; it acts only on
 the direction index of the indicated leg. Reality means
 $\overline{f(-p)}=f(p)$ on real momenta. Constant gauge transformations
-make its colour tensor adjoint invariant. A Ward identity verified on
+make the tensor invariant under the diagonal adjoint action. A Ward identity verified on
 all finite momentum grids passes to the common continuous symbol by
 density. This last step requires a common kernel.
 
@@ -80,7 +80,7 @@ with two-form legs such that
  f=\delta_0\cdots\delta_{n-1}g,\qquad |g|_\eta\le KA.
 \]
 For $n=2$ the same assertion holds if $f$ has order $r+2$, $r\ge0$;
-then $g$ can be chosen with order $r$. Reality and invariant colour
+then $g$ can be chosen with order $r$. Reality and adjoint-invariant
 coefficients can be imposed with a fixed additional norm factor.
 \end{lemma}
 
@@ -136,7 +136,7 @@ last division leaves order $r$. All operations are bounded on a common
 smaller strip and their number is fixed.
 
 Finally replace $g$ by $(g(p)+\overline{g(-p)})/2$ and project each
-colour coefficient onto the invariant real tensors. Contraction acts
+coefficient tensor on $\gLie$ onto the invariant real tensors. Contraction acts
 on direction indices and commutes with this finite-dimensional
 projection. These operations preserve the reconstruction and all
 retained orders, with a fixed norm factor.
@@ -151,7 +151,7 @@ path is
  \qquad \gamma:0\longrightarrow z.
 \end{equation}
 All factors transform at the common anchor $x$, so an invariant
-multilinear colour contraction is gauge invariant. Its length is the
+multilinear form on $\gLie$ is gauge invariant. Its length is the
 sum of the path lengths plus four per plaquette. The linearization of
 each factor is the corresponding curl. The Fourier coefficients of
 $g$ therefore produce an exact leading Taylor coefficient $f$.
@@ -159,7 +159,7 @@ Symmetrizing the legs implements the convention $C_n=D^n/n!$;
 it introduces no extra factorial.
 
 If $a$ denotes such a multilinear term and $|a|$ the sum of absolute
-colour coefficients, the result is
+components in the basis of Section~\ref{ch01:gauge}, the result is
 \begin{equation}\label{ch07:path-norm}
  \sum_a |a|e^{w\operatorname{length}(a)}\le K_w A
  \qquad(0<w<\eta).
@@ -171,7 +171,7 @@ For the two-leg case with $r=2$, the curvature coefficients $c(z)$ obey
  \sum_zc(z)=0,\qquad \sum_z z_ac(z)=0\quad(1\le a\le4).
 \end{equation}
 These are the value and first derivatives of its symbol at zero.
-They hold separately for each orientation and colour pair.
+They hold separately for each orientation and each pair of Lie algebra arguments.
 
 \section{The marginal quadratic coefficient}\label{ch07:quadratic}
 
@@ -180,7 +180,7 @@ entry, define
 \begin{equation}\label{ch07:alpha}
  \alpha(f)=2\operatorname{Re}[t^2]f_{22}^{uu}(te_1),
 \end{equation}
-where $u$ is any unit colour basis vector. The kinetic symbol $b_H$ of
+where $u$ is any unit vector in $\gLie$, inserted in both Lie algebra arguments. The kinetic symbol $b_H$ of
 $J$ has quadratic homogeneous term
 \[
  (b_H)_{ab}^{uv,[2]}(p)=\tfrac12
@@ -193,7 +193,7 @@ fixed by the Taylor convention, not by a choice of coupling scheme.
 An analytic quadratic symbol from an invariant real action, with
 exchange symmetry and signed-coordinate symmetry, has
 $f-\alpha(f)b_H=O(|p|^4)$. Its coefficient $\alpha$ is independent
-of the transverse axis pair and the chosen unit colour.
+of the transverse axis pair and the unit vector $u$.
 \end{lemma}
 
 \begin{proof}
@@ -203,7 +203,7 @@ one-form indices and negatively on a linear momentum polynomial.
 Edge translation phases have constant term one; their higher terms
 multiply the already vanishing constant coefficient.
 
-At quadratic order the colour-symmetric diagonal forms are scalar
+At quadratic order the symmetric diagonal forms on $\gLie$ are scalar
 multiples of the invariant metric. A self-adjoint operator commuting
 with the adjoint action has invariant eigenspaces, which are ideals;
 simplicity leaves only one eigenvalue. Coordinate reflections allow
@@ -291,7 +291,7 @@ for the lattice application. Recall that $\alpha$ includes the factor
 two converting a normalized quadratic Taylor coefficient into the
 coefficient of $\frac12\langle d_1v,d_1v\rangle$.
 
-For external momentum $te_1$, polarization $e_2$, and unit colour $u$,
+For external momentum $te_1$, polarization $e_2$, and unit vector $u\in\gLie$,
 the leading ghost vertex is $-2ik_2\operatorname{ad}u$. The vector
 vertex has four copies of this orbital term and the spin term
 $2it(E_{21}-E_{12})\operatorname{ad}u$. The orbital--spin trace is zero.
@@ -303,7 +303,7 @@ and $\tr(\operatorname{ad}u)^2=-C_G$, the coefficient extracted by
        -\frac{4k_1^2k_2^2}{|k|^8}-\frac1{|k|^4}\right).
 \end{equation}
 This is the standard background-field bubble calculation, with its
-colour normalization expressed in our metric. It is not a claim that
+Lie algebra normalization expressed in our metric. It is not a claim that
 the full lattice integrand equals $h$.
 
 \begin{proposition}[The lattice integrand remainder]\label{ch07:integrand-input}
@@ -349,7 +349,7 @@ leading term $\epsilon^2(da+[a,a])$ in the corresponding orientation.
 Its remaining terms have weight at least three; a Taylor derivative or
 a factor of $A$ counts as one weight. This follows by expanding the four
 edge exponentials and their transports. At weight four the row squares
-and direct term therefore have colour-direction coefficient
+and direct term therefore have coefficient on $\gLie$-valued one-forms
 $c_{\rm dir}I+\widehat\rho(0)^*\widehat\rho(0)=I$.
 Cubic and quartic curvature terms have weights at least six and eight.
 The leading local density is consequently the Wilson curvature-square
@@ -374,7 +374,7 @@ In particular the completed vector denominator is
 \]
 The ghost denominator is $\omega(k)I$, with
 $\omega(k)=\sum_a|q_a(k)|^2=|k|^2+O(|k|^4)$.
-For a mark of direction $a$ and colour $u$, expanding the Wilson cubic
+For a mark of direction $a$ and Lie algebra direction $u$, expanding the Wilson cubic
 vertex and adding the gauge-fixing vertex gives the linear vector
 insertion
 \[
@@ -504,7 +504,7 @@ We verify the contact assertion for the block average actually used in the
 block integral. Let $\zeta(x)$ be its stationary representative in centered
 coordinates, with $\zeta(0)=0$ and tangent $(Wx,r_x)$, where $r_x$ is its
 coarse scalar component after recentering.
-For each scalar determinant function $f(x,z)$, constant colour rotations
+For each scalar determinant function $f(x,z)$, constant gauge transformations
 act orthogonally on its matrices and leave $f$ invariant. Every invariant
 linear functional on the simple Lie algebra vanishes, since it annihilates
 brackets and $[\gLie,\gLie]=\gLie$. Applying this to each coordinate gives
@@ -531,7 +531,7 @@ so it does not change the determinant. Define $Y(x)$ by
 $\langle a,Y(x)\rangle=\tr(A(x)^{-1}S_x(a))$.
 The block average is covariant, and the internal matrices transform by the
 same congruence. Cyclicity of trace therefore makes $Y$ a covariant
-coarse vector. Constant colour rotations imply $Y(0)=0$.
+coarse vector. Constant gauge transformations imply $Y(0)=0$.
 
 The linear block identity $QW=I-b^{-1}K_c$ fixes the derivative of the
 penalty gradient:
@@ -560,7 +560,7 @@ mesh averages. Their limit is the integral of these same kernels;
 exponential Fourier decay gives uniform convergence also along varying
 external mesh momenta. Write $M(p)$ for the mixed kernel of $DY$.
 Its Ward identity along $p=te_\nu$ reads
-$q_\nu(te_\nu)M_{j\nu}(te_\nu)=0$ in each colour.
+$q_\nu(te_\nu)M_{j\nu}(te_\nu)=0$ as an identity on $\gLie$.
 Hence every column of $M(0)$ is zero and $M(p)=O(|p|)$.
 Since $J(p)=-K_c(p)=O(|p|^2)$, the first two terms of
 \eqref{ch07:contact-exact} have order at least three, and the last has
@@ -1093,7 +1093,7 @@ fine link symbol
  S(p)=d_1(-p)^{\mathsf T}\widehat r(p)d_1(p)
 \]
 has order four, satisfies $S d_0=d_0^*S=0$, and has strip bound
-$C\Lambda_{m+1}^{\rm loop}$. Symmetrization and colour indices are
+$C\Lambda_{m+1}^{\rm loop}$. Symmetrization and Lie algebra indices in the basis of Section~\ref{ch01:gauge} are
 understood; they cost fixed constants.
 
 An analytic periodic function with an order-four zero is a sum of

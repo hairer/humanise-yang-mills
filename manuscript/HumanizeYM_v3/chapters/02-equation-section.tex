@@ -58,8 +58,10 @@ equation-of-motion identity for Wilson's measure
 
 \subsection{Curvature tests avoiding a prescribed link}
 
-A curvature coordinate means a real colour component of
-$\sigma_{\gamma,\square}$ in \eqref{ch02:transported-curvature}.
+For $u\in\gLie$, pairing the transported curvature
+\eqref{ch02:transported-curvature} with $u$ gives the real-valued function
+$U\mapsto\langle u,\sigma_{\gamma,\square}(U)\rangle_{\gLie}$.
+We call any such function a curvature coordinate.
 Call it admissible for an oriented link $e$ if neither its plaquette
 nor its transporting path uses the underlying unoriented link $e$.
 Such a coordinate is independent of $U_e$.
@@ -110,18 +112,18 @@ We then integrate by parts in a single link and assemble the local section.
 \smallskip\noindent\emph{Step 1. Representation by Wilson forces.}
 
 Write $S_W$ for the Wilson action without its factor $\beta$.
-For a positive link $e$ and an orthonormal colour basis $(E_a)$,
-define its force $F_e$ by
+For a positive link $e$ and a direction $X\in\gLie$,
+the force $F_e\in\gLie$ is characterized by
 \[
- \partial_{e,a}S_W=\langle E_a,F_e\rangle,\qquad
- \partial_{e,a}f(U)=
- \left.\frac{d}{dt}f(U_e\leftarrow e^{tE_a}U_e)\right|_{t=0}.
+ \partial_{e,X}S_W=\langle X,F_e\rangle,\qquad
+ \partial_{e,X}f(U)=
+ \left.\frac{d}{dt}f(U_e\leftarrow e^{tX}U_e)\right|_{t=0}.
 \]
 Differentiating the plaquettes incident on $e$ expresses $F_e$
 as a signed sum of plaquette-curvature coordinates based at the
 initial vertex of $e$. The precise signs follow the chosen
 plaquette orientations. Transport the force to the anchor by a
-path avoiding $e$, and take a colour component there.
+path avoiding $e$, and pair it there with an arbitrary element of $\gLie$.
 Its linearization is the corresponding discrete divergence of
 sampled linear curls.
 
@@ -186,16 +188,17 @@ count. This is why the order in
 \smallskip\noindent\emph{Step 2. Integration by parts and construction of the section.}
 
 Every force term above has the form
-$\langle E_a,F_e\rangle H_a$, where $H_a$ includes the transporting
-matrix, the other curvature factors, and an exterior spectator.
-All these factors avoid $e$. Freeze the other links. Haar invariance
+$H\langle X,F_e\rangle$, where $X$ is the fixed direction at the
+anchor transported back to the link, and $H$ is the product of the
+remaining curvature coordinates and the exterior spectator.
+Freeze the other links. Both $X$ and $H$ are then constant in $U_e$. Haar invariance
 on the compact group gives
 \[
- 0=\int_G\partial_{e,a}\{e^{-\beta S_W}\}\,dU_e
-   =-\beta\int_G\langle E_a,F_e\rangle
+ 0=\int_G\partial_{e,X}\{e^{-\beta S_W}\}\,dU_e
+   =-\beta\int_G\langle X,F_e\rangle
                           e^{-\beta S_W}\,dU_e.
 \]
-Multiplication by $H_a$ is legitimate because it is constant in
+Multiplication by $H$ is legitimate because it is constant in
 $U_e$. Fubini then proves the desired zero expectation, even for a
 merely bounded measurable exterior spectator. This proof never
 differentiates that spectator.
@@ -209,7 +212,7 @@ They are independent of $\beta$ and of the exterior spectator.
 
 Average the constructed functions over the gauge element at the
 anchor. Every transported curvature transforms there by the adjoint
-action, so this is a finite-dimensional average of colour tensors.
+action, so this is a finite-dimensional average of tensors under the adjoint action.
 It preserves the number of curvature factors and
 \eqref{ch02:equation-triangle}. It also preserves the exact zero
 identity: gauge invariance of the Wilson law transfers the gauge
