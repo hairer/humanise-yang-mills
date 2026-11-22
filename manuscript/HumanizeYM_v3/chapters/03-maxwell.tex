@@ -1,3 +1,4 @@
+% !TEX root = ../monograph.tex
 \chapter{The free Maxwell comparison theory}\label{ch03:maxwell}
 
 The reference theory for short distances consists of independent Maxwell
@@ -171,31 +172,42 @@ $\mathcal S_j$ with $j\le d-2$. Constants are retained at every degree.
 The action on $\gLie$ is the adjoint action of $G$; invariant polynomials
 are the gauge-invariant local observables of the free reference theory.
 
-To compare this definition with the radial-potential labels $V_d$,
-associate to a closed homogeneous curvature $F^{(j)}$ the radial
-potential
+Each $F_j\in\mathcal S_j$ has a unique homogeneous radial potential
+$A_j$ of degree $j+1$. The radial homotopy formula gives
 \begin{equation}\label{ch03:radial}
- A^{(j+1)}_\mu(x)=\int_0^1 t x^\nu F^{(j)}_{\nu\mu}(tx)\,dt
- =\frac{1}{j+2}\sum_\nu x^\nu F^{(j)}_{\nu\mu}(x).
+ (A_j)_\mu(x)=\int_0^1 t\sum_\nu x^\nu(F_j)_{\nu\mu}(tx)\,dt
+ =\frac{1}{j+2}\sum_\nu x^\nu(F_j)_{\nu\mu}(x).
 \end{equation}
-There is a sum over $\nu$ in the integral as well. This is the usual
-radial homotopy formula: $x^\mu A_\mu=0$ and $dA=F$ when $dF=0$.
-The connection here is the \emph{linear} Maxwell potential; no
-nonabelian commutator is inserted into this formula. Restricting a label
-in $V_d$ to these radial potentials gives a map
-\[
- \omega_d:V_d\longrightarrow
- \{
- \text{complex polynomials on Maxwell solution jets of weight at most }d
- \}.
-\]
-It preserves the unit, conjugation and the geometric actions. Define
+Here $x^\mu(A_j)_\mu=0$ and $dA_j=F_j$ since $F_j$ is closed.
+Thus $(F_j)_j\mapsto(A_j)_j$ identifies
+$\bigoplus_{0\le j\le d-2}\mathcal S_j$ with the linear subspace of
+$\mathcal J_{\le d}$ consisting of radial jets satisfying
+$\delta dA_j=0$ in every layer.
+
+For $P\in V_d$, define $\omega_dP$ to be the restriction of $P$ to
+this subspace. In curvature coordinates,
+$(\omega_dP)((F_j)_j)=P((A_j)_j)$ with $A_j$ given by \eqref{ch03:radial}.
+Restriction preserves the unit and commutes with conjugation, gauge
+transformations at the origin and orthogonal changes of coordinates.
+Its kernel is precisely $\mathcal I_d$ of Section~\ref{ch02:equation-section},
+the polynomials in $V_d$ vanishing on all Maxwell solution jets. Hence
+the free polynomial space is
 \begin{equation}\label{ch03:free-space}
- \mathcal M_d^{\mathrm{Max}}=\operatorname{im}\omega_d.
+ \mathcal M_d^{\mathrm{Max}}=\operatorname{im}\omega_d
+ \simeq V_d/\mathcal I_d .
 \end{equation}
-Equivalently, this is $V_d/\ker\omega_d$ as a vector space. The image
-formulation is useful: it does not assume a separate surjectivity theorem
-onto a larger invariant-polynomial space.
+
+This description of the solution jets is the constant-coefficient case
+of the $D$-module description of a linear differential system
+\cite[\S\,3, p.~84]{Malgrange1964}. Take
+$D=\RR[\partial_1,\ldots,\partial_4]$ and let $M$ be the graded
+$D$-module generated in degree zero by the components of the two-form $F$,
+with relations $dF=0$ and $\delta F=0$. Multiplying the relations by
+derivatives imposes the differentiated equations on the Taylor coefficients.
+Thus $\mathcal S_j$ is the dual of the degree-$j$ part of $M$: an
+order-$j$ derivative pairs with $F_j$ by applying it to the corresponding
+component and evaluating at the origin. The map $\omega_d$ then restricts
+polynomial observables to these jets.
 
 The covariance identities \eqref{ch03:maxwell-equations} make the Wick
 correlations well defined on these on-shell polynomial images. Products
@@ -226,40 +238,103 @@ and reverses the order of the list.
 This is the antilinear reflection used in the Osterwalder--Schrader
 form, not merely conjugation of scalar coefficients.
 
-If every insertion in each word $w_i$ lies at positive time,
+If a collection of words $w_i$ is such that every insertion in each word $w_i$ lies at positive time,
 the free field has reflection positivity:
 \begin{equation}\label{ch03:rp}
  \sum_{i,j}\overline{c_i}c_j
  S^{\mathrm{Max}}(\theta w_i\,w_j)\ge0.
 \end{equation}
 Here $S^{\mathrm{Max}}(\theta w_i\,w_j)$ is the separated correlation
-of all insertions in the concatenated list. The same inequality holds for smooth joint test functions supported on separated
-positive-time configurations. This is the standard Gaussian
-reflection-positive construction underlying
-Osterwalder--Schrader reconstruction~\cite{OsterwalderSchrader1973,OsterwalderSchrader1975},
-applied to the curvature covariance rather than to an unconstrained
-vector-potential observable. Its hypotheses can be checked at the
-one-particle level: spatial Fourier transformation of
-\eqref{ch03:green} gives
-\[
- \frac{e^{-|\boldsymbol p|(t+s)}}{2|\boldsymbol p|}
- \qquad(t,s>0),
-\]
-and taking the two curls with the reflected two-form indices gives the
-positive transverse-polarization Gram form. Derivative jets act on the
-same factors. The Gaussian Fock construction then gives
-\eqref{ch03:rp}. On compact separated supports the kernels are smooth,
-so the corresponding form on joint test functions follows by integration. We use this
-standard argument by citation rather than repeating the Fock-space
-construction.
+of all insertions in the concatenated list. We first verify the inequality for linear curvature insertions.
 
-A simple sign check is informative. At separation $z=re_4$, the six
-unordered curvature components have diagonal covariance. Three purely
-spatial components have value $1/(\pi^2r^4)$; the three components
-$F_{i4}$ have value $-1/(\pi^2r^4)$. Reflection changes the sign of
-$F_{i4}$ in the first slot. The reflected one-jet form is therefore
-positive in all six directions. Without the tensorial reflection, the
-same displayed covariance would give the wrong positivity statement.
+Write $x=(\boldsymbol x,t)$ and $y=(\boldsymbol y,s)$ with $t,s>0$.
+Let $u$ denote the time difference and let $\widehat\Gamma(\boldsymbol p,u)$
+denote the Fourier transform of $\Gamma(\boldsymbol z,u)$ in $\boldsymbol z$
+alone. Taking this spatial transform in $-\Delta\Gamma=\delta_0$ gives
+\[
+ (|\boldsymbol p|^2-\partial_u^2)\widehat\Gamma(\boldsymbol p,u)=\delta_0(u).
+\]
+Indeed, the spatial Laplacian has symbol $-|\boldsymbol p|^2$ and the
+spatial transform of the point mass in four dimensions leaves the time
+point mass $\delta_0(u)$. Transforming also in $u$, with dual variable
+$\xi$, gives $(|\boldsymbol p|^2+\xi^2)\,\mathcal F_u\widehat\Gamma(\boldsymbol p,\xi)=1$.
+For $\boldsymbol p\ne0$ we can divide and invert in $\xi$ to obtain
+\[
+ \widehat\Gamma(\boldsymbol p,u)
+ =\int_{\RR}\frac{e^{i\xi u}}{|\boldsymbol p|^2+\xi^2}\,\frac{d\xi}{2\pi}
+ =\frac{e^{-|\boldsymbol p|\,|u|}}{2|\boldsymbol p|}.
+\]
+In the reflected two-point function the arguments are $\vartheta x$ and $y$,
+so $u=-t-s$. In particular, one has
+\[
+ \Gamma(\vartheta x-y)
+ =\int_{\RR^3}e^{i\boldsymbol p\cdot(\boldsymbol y -\boldsymbol x)}
+       \,\frac{e^{-|\boldsymbol p|(t+s)} d^3\boldsymbol p}{(2\pi)^3\,2|\boldsymbol p|}.
+\]
+Here we used the evenness of $\widehat\Gamma$ in $\boldsymbol p$.
+Writing $h_{\boldsymbol p}(x)=e^{i\boldsymbol p\cdot\boldsymbol x-|\boldsymbol p|t}$,
+the two exponential factors have product
+$\overline{h_{\boldsymbol p}(x)}\,h_{\boldsymbol p}(y)$.
+
+To see the effect of the curl, work in one Lie algebra component.
+For a linear combination $L=\sum_{a,\mu<\nu}c^a_{\mu\nu}F_{\mu\nu}(x_a)$
+at positive times, consider its action on a vector potential of the form
+$A(x)=v h_{\boldsymbol p}(x)$ with constant amplitude $v\in\mathbb C^4$.
+Writing $q=(i\boldsymbol p,-|\boldsymbol p|)$, the curl gives
+\[
+ L(A)=\sum_{a,\mu<\nu}c^a_{\mu\nu}h_{\boldsymbol p}(x_a)
+           (q_\mu v_\nu-q_\nu v_\mu)
+     =\sum_{\nu=1}^4 J_\nu(\boldsymbol p)v_\nu .
+\]
+This defines $J=(\boldsymbol J,J_4)$. Substituting $v=q$ makes each
+curl vanish, hence $|\boldsymbol p|J_4=i\boldsymbol p\cdot\boldsymbol J$.
+Reflection commutes with the curl and acts on the potential by
+$\operatorname{diag}(1,1,1,-1)$. Applying $L$ in the second slot and
+its reflected conjugate in the first slot of the factorized potential
+covariance therefore gives
+\[
+ S^{\mathrm{Max}}(\theta L\,L)
+ =\int_{\RR^3}\bigl(|\boldsymbol J|^2-|J_4|^2\bigr)
+       \,\frac{d^3\boldsymbol p}{(2\pi)^3\,2|\boldsymbol p|}
+ =\int_{\RR^3}\left|\boldsymbol J-
+       \frac{\boldsymbol p\cdot\boldsymbol J}{|\boldsymbol p|^2}\boldsymbol p\right|^2
+       \,\frac{d^3\boldsymbol p}{(2\pi)^3\,2|\boldsymbol p|}\ge0 .
+\]
+A derivative $\partial^b F_{\mu\nu}$ supplies the extra factor $q^b$
+in its summand, so the same calculation applies to curvature derivatives.
+The full covariance sums these forms over the orthonormal Lie algebra components.
+
+For polynomial words, Wick's rule gives the usual Gaussian extension of
+reflection positivity~\cite{OsterwalderSchrader1973,OsterwalderSchrader1975}.
+First contract any number of pairs within each word, allowing only pairs
+from distinct insertions as in Section~\ref{ch03:wick}. For each word, sum
+the symmetrized tensors of the remaining linear factors, weighted by the
+internal contractions, grouping terms by the number $n$ of remaining factors.
+The contractions across the reflection plane then pair two such tensors
+by summing over all $n!$ bijections. This is $n!$ times their inner product
+in the symmetric tensor power of the one-particle space defined by the
+preceding Gram form (with symmetrization by averaging).
+Thus the left side of \eqref{ch03:rp} is a sum of squared norms with
+coefficients $n!$. The same inequality holds after smearing with smooth
+joint test functions compactly supported on separated positive-time
+configurations, by approximation of the integrals by finite sums.
+
+For an explicit sign check, take $x=\tfrac r2 e_4$ with $r>0$, so that
+$\vartheta x-x=-r e_4$. In a fixed unit Lie algebra direction,
+\eqref{ch03:kernel} and \eqref{ch03:hessian} give the diagonal entries
+of the curvature covariance at this separation:
+\[
+ C_{ij,ij}(-r e_4)=\frac{1}{\pi^2 r^4}\quad(1\le i<j\le3),
+ \qquad
+ C_{i4,i4}(-r e_4)=-\frac{1}{\pi^2 r^4}\quad(1\le i\le3).
+\]
+The entries between distinct index pairs vanish when each pair is written
+in increasing order. Reflection of the first insertion contributes a further
+minus sign precisely for $F_{i4}$. Thus for each $1\le\mu<\nu\le4$,
+\[
+ S^{\mathrm{Max}}\bigl(\theta(F_{\mu\nu}(x))\,F_{\mu\nu}(x)\bigr)
+ =\frac{1}{\pi^2 r^4}.
+\]
 
 Positive semidefiniteness of \eqref{ch03:rp} alone does not identify its
 null space. For later rank arguments one needs the stronger statement
@@ -397,8 +472,8 @@ $x,y$, the linear map
  P\longmapsto
  \big(S_2^{\mathrm{Max}}(P,P_j;x,y)\big)_{j=1}^s
 \]
-is injective. Consequently a label in $V_d$ vanishes in every separated
-correlation if and only if its on-shell polynomial $\omega_d$ vanishes.
+is injective. Consequently $P\in V_d$ vanishes in every separated correlation if
+and only if its restriction $\omega_dP$ vanishes.
 \end{corollary}
 
 \begin{proof}
