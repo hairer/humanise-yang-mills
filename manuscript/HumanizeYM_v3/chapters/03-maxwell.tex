@@ -557,20 +557,24 @@ quantitative estimates on moving comparison fields.
 
 \section{The conserved tensor of scaling dimension four}\label{ch03:classification}
 
-The finite-dimensional classification needed for the stress tensor is
-small enough to state explicitly. In this section \emph{centered} means
-that the constant Wick coefficient is zero. By the Wick prescription it
-is also the one-point expectation. We consider real symmetric tensor
-fields $J_{ab}$ of scaling dimension at most four, invariant under the adjoint action
-and transforming as a rank-two tensor under the signed coordinate
-permutations $H_4$. Conservation is an identity in the on-shell polynomial
-space, or equivalently in every separated free correlation by
-Corollary~\ref{ch03:detectors}.
+Let $\mathscr T_{\le 4}$ be the real vector space of centered symmetric
+tensor fields $J=(J_{ab})$ in the free Maxwell theory whose components
+are adjoint-invariant local polynomials of scaling dimension at most four
+and which transform as rank-two tensors under the group $H_4$ of signed
+coordinate permutations. Centering means that each component has zero
+constant Wick coefficient, equivalently zero one-point expectation.
+For $J\in\mathscr T_{\le 4}$, write
+$(\operatorname{div}J)_b=\sum_a\partial_a J_{ab}$. Its vanishing is
+understood in the on-shell polynomial space, equivalently in every
+separated free correlation by Corollary~\ref{ch03:detectors}.
 
 \begin{proposition}[Conserved tensor line]\label{ch03:stress-line}
-The space of such centered tensors has dimension three. Its conserved
-subspace is the line $\RR T^{\mathrm{Max}}$, with
-$T^{\mathrm{Max}}$ as in \eqref{ch03:stress}.
+The space $\mathscr T_{\le 4}$ has dimension three, and
+\[
+ \{J\in\mathscr T_{\le 4}:\operatorname{div}J=0\}
+ =\RR T^{\mathrm{Max}},
+\]
+where $T^{\mathrm{Max}}$ is the Maxwell stress tensor of \eqref{ch03:stress}.
 \end{proposition}
 
 \begin{proof}
@@ -582,7 +586,7 @@ one of two factors would raise the scaling dimension to at least five, while a
 single differentiated factor still has no invariant linear functional on $\gLie$.
 
 Recall the quadratic fields $Q_{ab}$ and $Q_{\mathrm{tot}}$ from
-\eqref{ch03:quadratics}. A basis of the tensor candidates is
+\eqref{ch03:quadratics}. We claim that the following tensors form a basis of $\mathscr T_{\le 4}$:
 \begin{align*}
  Z^{(1)}_{ab}&=\delta_{ab}Q_{aa},\\
  Z^{(2)}_{ab}&=\delta_{ab}(Q_{\mathrm{tot}}-2Q_{aa}),\\
@@ -592,12 +596,11 @@ There is no sum over $a$ on the right sides of the first two formulas.
 To see that these span, consider sign reversal of each coordinate.
 A diagonal component can contain only squares of curvature components.
 Permutations fixing its distinguished axis divide them into two classes:
-those containing that axis, and those containing neither instance of it.
+those containing that axis, and those with both indices distinct from that axis.
 An off-diagonal component with indices $a,b$ must be odd in axes $a,b$
 and even in the others. Its possible contractions are
 ${:}\langle F_{ac},F_{bc}\rangle_{\gLie}{:}$ with $c\notin\{a,b\}$;
-permutations identify their coefficients. This gives exactly the three
-candidates displayed above.
+permutations identify their coefficients. Thus $Z^{(1)},Z^{(2)},Z^{(3)}$ span $\mathscr T_{\le 4}$.
 
 For an explicit rank check, let
 $Q_{ij,ij}={:}\|F_{ij}\|_{\gLie}^2{:}$.
@@ -616,16 +619,16 @@ entry after the stated division. The first two columns are independent.
 Also $Z^{(1)}_{12}=Z^{(2)}_{12}=0$, whereas the correlation of
 $Z^{(3)}_{12}(e_1)$ with
 ${:}\langle F_{13},F_{23}\rangle_{\gLie}{:}(0)$ equals
-$-16d_{\gLie}/(4\pi^2)^2$. Thus the candidate tensors are themselves
-independent, and the kernel of divergence has dimension at most one.
+$-16d_{\gLie}/(4\pi^2)^2$. Thus the three tensors are linearly independent. In this basis of
+$\mathscr T_{\le 4}$, every conserved tensor has its coefficient vector
+in the kernel of \eqref{ch03:divergence-matrix}, which has dimension one.
 
 The Maxwell stress is conserved and
 \[
  -T^{\mathrm{Max}}
  =\tfrac12 Z^{(1)}-\tfrac14 Z^{(2)}+Z^{(3)}.
 \]
-It is nonzero by the preceding off-diagonal correlation. Hence it spans that
-kernel.
+It is nonzero by the preceding off-diagonal correlation. Hence it spans the conserved subspace of $\mathscr T_{\le 4}$.
 \end{proof}
 
 This result fixes only a line of conserved tensors. Multiplying the
