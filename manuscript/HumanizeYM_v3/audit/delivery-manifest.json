@@ -1,7 +1,7 @@
 {
   "pages": 273,
   "cited_references": 40,
-  "pdf_sha256": "c0698cb41e7c64a04869ca26260c7af6c3619ef2921ffd5ed3b0f0ea63033372",
+  "pdf_sha256": "262ee7c362716a3eb6e875cd0e162f7b30cb49e0ed2fba7ecb3c77ce8f77e59e",
   "sources": {
     "monograph.tex": "e091079eb65f594cb9c7edf19f6907b0350de54204cb42659e07fbf796744d6d",
     "preamble.tex": "6e399943fcc7aa5c2baaa6c0c8bf80d456d5ed5c794ffe62f15ac6b03226d6d0",
@@ -11,7 +11,7 @@
     "chapters/01-lattice.tex": "52ec8893f85be3a8d02509e709c68c46472e5095593436584a3a63c829502157",
     "chapters/02-equation-section.tex": "e942ca055b00ae81f64eb6e5d2530c2251a8afc6979843fa806c3b50f6facce4",
     "chapters/02-observables.tex": "e6546ad9cdd0c6a0386796b50d6e7cdad8050cd37419b1ccf82d345670ad85de",
-    "chapters/03-maxwell.tex": "6b8ab2c255c86154e3dfc0b1269189097f2e030da1312dab2c0e92d3ebb0dab9",
+    "chapters/03-maxwell.tex": "491590b27f1bb64859101dc4eef23410c14fd772111dca93e5d83ed8faae1397",
     "chapters/04-blocking.tex": "e7c6432355eae458298536f56464de3eae997eabf0a9e722f4fb080c2a51f54d",
     "chapters/05-gaussian.tex": "032406848ef3e5377d684513a21cb66a643bb3936cc5cdfd9cdcf4c97b5eb3f7",
     "chapters/06-large-fields.tex": "8dfbf29d4642673c0dba235a1002e27ffb11ae6797626125841907235ab32b80",
@@ -44,5 +44,5 @@
     "chapters/19-assembly.tex": "dcdf60412b5a186a5499b3f9d4fb8d8e0019d59fa010e721d4a6f7d73931493a",
     "main-theorem.tex": "e8e86684e500e4c24cd8a98afdac9e9d863072f3c698e8a79f3a8c502a00306c"
   },
-  "review": "Definition of a word in Chapter 3: complete LaTeX build and cross-reference check."
+  "review": "Insertion pairs and reflection in Chapter 3: complete LaTeX build and cross-reference check."
 }
