@@ -352,15 +352,16 @@ of homogeneous degree-$j$ Maxwell curvature solutions. Write a member as
  P_{ab}(v)=\sum_{i_1,\ldots,i_j}
  P_{ab;i_1\cdots i_j}v_{i_1}\cdots v_{i_j}.
 \]
-The derivative-index coefficients are symmetric. On this coefficient
-space use the Frobenius inner product, summing both orders of the
-antisymmetric field indices, all ordered derivative indices and components in the basis of Section~\ref{ch01:gauge}.
-In particular, no factor $1/2$ is inserted for the field indices.
+The coefficients $P_{ab;i_1\cdots i_j}\in\gLie$ are symmetric in the
+derivative indices. Their Frobenius inner product $\langle P,Q\rangle_F$
+is the sum of the Lie algebra inner products of corresponding coefficients
+over all ordered tuples $(a,b,i_1,\ldots,i_j)$. Both orders of the
+antisymmetric pair $(a,b)$ are included, with no factor $1/2$.
 The linear jet probe represented by $P$ is
 \begin{equation}\label{ch03:probe}
- \ell_P(F)=\frac1{j!}\sum_{a,b,i_1,\ldots,i_j,\alpha}
- P^\alpha_{ab;i_1\cdots i_j}
- \partial_{i_1}\cdots\partial_{i_j}F^\alpha_{ab}.
+ \ell_P(F)=\frac1{j!}\sum_{a,b,i_1,\ldots,i_j}
+ \big\langle P_{ab;i_1\cdots i_j},
+       \partial_{i_1}\cdots\partial_{i_j}F_{ab}\big\rangle_{\gLie}.
 \end{equation}
 The factor $1/j!$ matches our Taylor convention. Every linear functional
 on the order-$j$ solution jets has this form.
