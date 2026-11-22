@@ -118,10 +118,7 @@ For instance, if $X_1,X_2,Y_1,Y_2$ are linear curvature derivatives,
  &\quad+C(X_1,Y_2;x-y)C(X_2,Y_1;x-y).
 \end{align*}
 Here $C(X,Y;z)$ denotes the bilinear covariance obtained from
-\eqref{ch03:jet-covariance}. By contrast, in a word containing several
-insertions in the same time half-space, contractions between those
-\emph{different} insertions are included. Wick ordering removes
-self-contractions at each insertion, not all contractions inside a word.
+\eqref{ch03:jet-covariance}.
 
 The pairing rule gives complex multilinearity, symmetry under simultaneous
 permutation of labels and positions, reality, and the unit identity
@@ -222,17 +219,21 @@ Let $\vartheta(\boldsymbol x,t)=(\boldsymbol x,-t)$.
 Reflection acts on a two-form by pullback, so a component with one time
 index changes sign and a purely spatial component does not. On a local
 polynomial, $\theta$ combines this action with complex conjugation.
-On a word it also reverses the order and reflects every insertion point.
+A \emph{word} is a finite ordered list of insertions at distinct points,
+written as the product $w=P_1(x_1)\cdots P_n(x_n)$. Each $P_i(x_i)$
+denotes one Wick-ordered local polynomial. Reflection acts on each
+insertion, reflects its point, and reverses the order of the product.
 This is the antilinear reflection used in the Osterwalder--Schrader
 form, not merely conjugation of scalar coefficients.
 
-For words $w_i$ supported at distinct points in the positive half-space,
+If every insertion in each word $w_i$ lies at positive time,
 the free field has reflection positivity:
 \begin{equation}\label{ch03:rp}
  \sum_{i,j}\overline{c_i}c_j
  S^{\mathrm{Max}}(\theta w_i\,w_j)\ge0.
 \end{equation}
-The same inequality holds for smooth joint test functions supported on separated
+Here $S^{\mathrm{Max}}(\theta w_i\,w_j)$ is the separated correlation
+of all insertions in the concatenated list. The same inequality holds for smooth joint test functions supported on separated
 positive-time configurations. This is the standard Gaussian
 reflection-positive construction underlying
 Osterwalder--Schrader reconstruction~\cite{OsterwalderSchrader1973,OsterwalderSchrader1975},
@@ -247,8 +248,7 @@ one-particle level: spatial Fourier transformation of
 and taking the two curls with the reflected two-form indices gives the
 positive transverse-polarization Gram form. Derivative jets act on the
 same factors. The Gaussian Fock construction then gives
-\eqref{ch03:rp}; contractions within each positive-time word are included
-in its Fock vector. On compact separated supports the kernels are smooth,
+\eqref{ch03:rp}. On compact separated supports the kernels are smooth,
 so the corresponding form on joint test functions follows by integration. We use this
 standard argument by citation rather than repeating the Fock-space
 construction.
