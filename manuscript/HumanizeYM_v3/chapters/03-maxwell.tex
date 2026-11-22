@@ -88,15 +88,16 @@ uniform bounds required from the lattice construction.
 
 \section{Local polynomials and Wick correlations}\label{ch03:wick}
 
-A local polynomial is a polynomial in finitely many curvature derivatives
-at one point. Its scaling dimension is computed by assigning degree $2$
-to $F$ and degree $1$ to each derivative. For example,
-$F^\alpha_{\mu\nu}F^\beta_{\rho\sigma}$ has degree $4$, whereas
-$\partial_\lambda F^\alpha_{\mu\nu}$ has degree $3$.
-Scaling dimension is an algebraic grading of the reference model; it is
-not an assertion about anomalous dimensions of the interacting fields.
+A \emph{local polynomial at a point}, or \emph{insertion}, is a pair
+$(P,x)$, where $x\in\RR^4$ and $P$ is a polynomial in finitely many
+components of the curvature and its derivatives. All factors of $P$ are
+taken at $x$. We use the classical scaling dimension of
+Definition~\ref{ch02:labels}: curvature has scaling dimension two, each
+derivative adds one, and dimensions add in a product. Thus
+$F^\alpha_{\mu\nu}F^\beta_{\rho\sigma}$ has scaling dimension four and
+$\partial_\lambda F^\alpha_{\mu\nu}$ has scaling dimension three.
 
-The polynomial attached to one insertion is Wick ordered. We use the
+We write \({:}P(x){:}\) for the Wick-ordered insertion $(P,x)$. We use the
 usual Gaussian pairing rule, whose operator formulation is due to
 Wick~\cite{Wick1950}. Here it can be taken as the definition of the
 separated correlation functions. Expand each polynomial into monomials,
@@ -118,13 +119,10 @@ For instance, if $X_1,X_2,Y_1,Y_2$ are linear curvature derivatives,
  &\quad+C(X_1,Y_2;x-y)C(X_2,Y_1;x-y).
 \end{align*}
 Here $C(X,Y;z)$ denotes the bilinear covariance obtained from
-\eqref{ch03:jet-covariance}. By contrast, in a word containing several
-insertions in the same time half-space, contractions between those
-\emph{different} insertions are included. Wick ordering removes
-self-contractions at each insertion, not all contractions inside a word.
+\eqref{ch03:jet-covariance}.
 
 The pairing rule gives complex multilinearity, symmetry under simultaneous
-permutation of labels and positions, reality, and the unit identity
+permutation of the pairs $(P_i,x_i)$, reality, and the unit identity
 \[
  S_{n+1}^{\mathrm{Max}}(1,P_1,\ldots,P_n;x_0,x_1,\ldots,x_n)
  =S_n^{\mathrm{Max}}(P_1,\ldots,P_n;x_1,\ldots,x_n).
@@ -133,15 +131,15 @@ Differentiating an insertion differentiates its incident covariances.
 The product rule therefore agrees with ordinary differentiation of the
 correlation function in that insertion position.
 
-If the labels are homogeneous of degrees $d_1,\ldots,d_n$, then
+If each polynomial $P_i$ is homogeneous of scaling dimension $d_i$, then
 \begin{equation}\label{ch03:homogeneity}
  S_n^{\mathrm{Max}}(P_1,\ldots,P_n;\lambda x_1,\ldots,\lambda x_n)
  =\lambda^{-\sum_i d_i}
  S_n^{\mathrm{Max}}(P_1,\ldots,P_n;x_1,\ldots,x_n)
  \quad(\lambda>0).
 \end{equation}
-For general labels of bounded degree, decompose into finitely many
-homogeneous pieces. Equations \eqref{ch03:jet-covariance} and
+For general polynomials of bounded scaling dimension, decompose each $P_i$
+into its homogeneous components. Equations \eqref{ch03:jet-covariance} and
 \eqref{ch03:homogeneity} give bounds on all derivatives on separated
 configuration spaces. In particular, smearing against a smooth compactly
 supported function whose support avoids collisions is well defined.
@@ -209,30 +207,33 @@ argument; it does not follow from writing down the equations.
 The free spaces form a filtration. The inclusion
 $\mathcal M_d^{\mathrm{Max}}\to\mathcal M_e^{\mathrm{Max}}$ for
 $d\le e$ retains the same polynomial, while differentiation raises
-weight by one. For a simple nonabelian Lie algebra there is no nonzero
+scaling dimension by one. For a simple nonabelian Lie algebra there is no nonzero
 invariant linear form on $\gLie$. Therefore every gauge-invariant field
-of degree less than four in this polynomial image is a constant.
-This low-degree statement follows from the weights: a nonconstant
-monomial below degree four would have just one curvature factor or one
+of scaling dimension less than four in this polynomial image is a constant.
+Indeed, a nonconstant monomial of scaling dimension less than four would have just one curvature factor or one
 of its first derivatives.
 
 \section{Reflection and the meaning of nondegeneracy}\label{ch03:reflection}
 
 Let $\vartheta(\boldsymbol x,t)=(\boldsymbol x,-t)$.
 Reflection acts on a two-form by pullback, so a component with one time
-index changes sign and a purely spatial component does not. On a local
-polynomial, $\theta$ combines this action with complex conjugation.
-On a word it also reverses the order and reflects every insertion point.
+index changes sign and a purely spatial component does not. Write $\theta P$ for the polynomial obtained by this pullback and
+complex conjugation. Reflection sends the insertion $(P,x)$ to
+$(\theta P,\vartheta x)$. A \emph{word} is a finite ordered list of
+such pairs at distinct points, written as the product
+$w={:}P_1(x_1){:}\cdots{:}P_n(x_n){:}$. Reflection acts on each pair
+and reverses the order of the list.
 This is the antilinear reflection used in the Osterwalder--Schrader
 form, not merely conjugation of scalar coefficients.
 
-For words $w_i$ supported at distinct points in the positive half-space,
+If every insertion in each word $w_i$ lies at positive time,
 the free field has reflection positivity:
 \begin{equation}\label{ch03:rp}
  \sum_{i,j}\overline{c_i}c_j
  S^{\mathrm{Max}}(\theta w_i\,w_j)\ge0.
 \end{equation}
-The same inequality holds for smooth joint test functions supported on separated
+Here $S^{\mathrm{Max}}(\theta w_i\,w_j)$ is the separated correlation
+of all insertions in the concatenated list. The same inequality holds for smooth joint test functions supported on separated
 positive-time configurations. This is the standard Gaussian
 reflection-positive construction underlying
 Osterwalder--Schrader reconstruction~\cite{OsterwalderSchrader1973,OsterwalderSchrader1975},
@@ -247,8 +248,7 @@ one-particle level: spatial Fourier transformation of
 and taking the two curls with the reflected two-form indices gives the
 positive transverse-polarization Gram form. Derivative jets act on the
 same factors. The Gaussian Fock construction then gives
-\eqref{ch03:rp}; contractions within each positive-time word are included
-in its Fock vector. On compact separated supports the kernels are smooth,
+\eqref{ch03:rp}. On compact separated supports the kernels are smooth,
 so the corresponding form on joint test functions follows by integration. We use this
 standard argument by citation rather than repeating the Fock-space
 construction.
@@ -417,7 +417,7 @@ coefficient has weight one. Restricting to the gauge-invariant image
 preserves positivity. If all basis-column pairings vanish, the pairing
 with the reflected conjugate of the polynomial vanishes too, forcing
 that polynomial to be zero. This also identifies the correlation-null
-labels. On any fixed finite-dimensional degree space, the map of correlation pairings
+labels. For each fixed bound $d$ on scaling dimension, the map of correlation pairings
 has a positive minimum norm on the unit sphere. Small perturbations of
 its matrix remain injective; applying this fact to interacting
 correlations still requires a quantitative comparison estimate.
@@ -471,13 +471,13 @@ interacting trace, its coefficient, or its logarithmic asymptotic.
 Those conclusions require the interacting stress Ward identity and
 quantitative estimates on moving comparison fields.
 
-\section{The degree-four conserved tensor}\label{ch03:classification}
+\section{The conserved tensor of scaling dimension four}\label{ch03:classification}
 
 The finite-dimensional classification needed for the stress tensor is
 small enough to state explicitly. In this section \emph{centered} means
 that the constant Wick coefficient is zero. By the Wick prescription it
 is also the one-point expectation. We consider real symmetric tensor
-fields $J_{ab}$ of degree at most four, invariant under the adjoint action
+fields $J_{ab}$ of scaling dimension at most four, invariant under the adjoint action
 and transforming as a rank-two tensor under the signed coordinate
 permutations $H_4$. Conservation is an identity in the on-shell polynomial
 space, or equivalently in every separated free correlation by
@@ -492,9 +492,9 @@ $T^{\mathrm{Max}}$ as in \eqref{ch03:stress}.
 \begin{proof}
 Simplicity of $\gLie$ excludes invariant linear forms on $\gLie$ and makes
 an invariant symmetric bilinear form on $\gLie$ a multiple of the fixed
-metric. Through degree four a centered invariant polynomial therefore
+metric. Up to scaling dimension four a centered invariant polynomial therefore
 contains two undifferentiated curvature factors. Indeed, a derivative on
-one of two factors would raise the degree to at least five, while a
+one of two factors would raise the scaling dimension to at least five, while a
 single differentiated factor still has no invariant linear functional on $\gLie$.
 
 Recall the quadratic fields $Q_{ab}$ and $Q_{\mathrm{tot}}$ from
@@ -547,7 +547,7 @@ kernel.
 This result fixes only a line of conserved tensors. Multiplying the
 stress by a scalar preserves all the properties used in the proposition.
 We next fix its normalization by a local Ward flux and then classify
-linear responses on fields of arbitrary bounded degree.
+linear responses on fields of bounded scaling dimension.
 
 
 \section{Local stress fluxes}\label{ch03:ward}
@@ -669,10 +669,10 @@ $1/2$. Combining the three types proves \eqref{ch03:ward-identity}.
 
 The polynomial labels and their scaling dimensions are those of Section~\ref{ch02:jets-section}; throughout this section they are evaluated in the free curvature field defined in Section~\ref{ch03:covariance}.
 
-Corollary~\ref{ch03:detectors} detects a field of degree $d$ by another
-field of degree $d$. A different statement is needed when a charge can
-raise degree: its response must be tested by spectators whose degree
-remains fixed. Their \emph{number} may be arbitrary.
+Corollary~\ref{ch03:detectors} separates the fields of scaling dimension
+at most $d$ by pairings with fields in the same space. When a charge
+can raise scaling dimension, we need a single bound on the scaling
+dimensions of the spectator fields. Their \emph{number} may be arbitrary.
 
 We first make explicit the polynomial space used here. The free image
 $\mathcal M_d^{\mathrm{Max}}$ in \eqref{ch03:free-space} is the full
@@ -694,7 +694,7 @@ $\mathfrak P^G$ its invariant subalgebra. For $D\ge0$, define
 \end{equation}
 where the equality is required for every separated word with
 $P_i\in\mathcal M_D^{\mathrm{Max}}$. There is no restriction on
-the degree of $P$ or the length $n$.
+the scaling dimension of $P$ or the length $n$.
 
 \begin{proposition}[A separating family of insertions of bounded scaling dimension]
 \label{ch03:uniform-detector}
