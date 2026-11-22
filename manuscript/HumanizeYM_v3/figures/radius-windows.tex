@@ -1,0 +1,26 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small]
+  % Horizontal positions are schematic; interval lengths and order are exact
+  % in the labels.  The common band is the intersection of the two windows.
+  \fill[ymInk!9] (1,.62) rectangle (6.65,1.51);
+  \node[left] at (-.26,1.51) {level $n$};
+  \node[left] at (-.26,.62) {level $n+1$};
+  \draw[ymInk,line width=1pt,|-|] (0,1.51) -- (6.65,1.51);
+  \draw[ymInk,line width=1pt,|-|] (1,.62) -- (7.73,.62);
+  \node[above=4pt] at (0,1.51) {$\tau_n-(\alpha_0+1)\log M_n$};
+  \node[above=4pt] at (6.65,1.51) {$\tau_n-\alpha_0\log M_n$};
+  \draw[black!60,-{Stealth[length=1.8mm]}] (-.12,0) -- (9.40,0)
+    node[right] {$\log(1/r)$};
+  \draw[ymAccent,dashed,thick] (4,0) -- (4,1.76);
+  \fill[ymAccent] (4,0) circle[radius=1.7pt];
+  \node[below=2pt] at (4,0) {$\log(1/r_*)$};
+\end{tikzpicture}
+\caption[Overlapping comparison windows for the trace law]{At level $n$,
+varying $u$ in $r=a_nM_n^u$ sweeps out an interval of width $\log M_n$
+on the logarithmic axis. The shaded overlap lets a prescribed radius
+$r_*$ be represented at either of two neighbouring levels. Successive
+windows reach arbitrarily far to the right, which allows the comparison
+to start from any prescribed sequence of radii tending to zero.}
+\label{ch17:fig-radius-windows}
+\end{figure}

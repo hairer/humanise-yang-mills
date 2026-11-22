@@ -471,10 +471,20 @@ is a finite geometric sum. This proves positivity on the whole tower,
 including mixtures of derivative orders.
 \end{proof}
 
+For $z\ne0$ and complex polynomials $P,Q$ in the curvature jets, define
+their reflected pairing by
+\[
+ (P,Q)_{z,\mathrm{ref}}
+   =S_2^{\mathrm{Max}}(P,R_z\cdot\overline Q;z,0).
+\]
+Here $R_z$ acts on every field and derivative index, and the bar
+conjugates the coefficients. For real linear polynomials
+$P=\ell_U(F)$ and $Q=\ell_V(F)$ this pairing equals $B_z(U,V)$.
+
 \begin{corollary}[Polynomial positivity and finite separating families]
 \label{ch03:detectors}
-Every nonzero element of $\mathcal M_d^{\mathrm{Max}}$ has strictly
-positive reflected two-point pairing at a fixed separated pair.
+For every $z\ne0$ and nonzero $P\in\mathcal M_d^{\mathrm{Max}}$,
+$(P,P)_{z,\mathrm{ref}}>0$.
 For any basis $(P_1,\ldots,P_s)$ of this space and fixed distinct points
 $x,y$, the linear map
 \[
@@ -486,21 +496,31 @@ and only if its restriction $\omega_dP$ vanishes.
 \end{corollary}
 
 \begin{proof}
-This is the standard symmetric-Fock-space consequence of the one-particle
-Gram form and Wick's rule~\cite{Wick1950}. Explicitly, choose coordinates
-$X_1,\ldots,X_M$ diagonalizing the positive form on a tower containing
-all variables of the polynomial, with positive squared lengths $b_i$.
-The reflected pairing of Wick monomials is
+Fix $z\ne0$ and choose $m$ large enough to include all derivative orders
+occurring in the polynomials under consideration. By
+Proposition~\ref{ch03:jet-positive}, the real space
+$\bigoplus_{j<m}\mathcal S_j$ has a $B_z$-orthonormal basis
+$U_1,\ldots,U_M$. The corresponding linear jet coordinates
+$X_i=\ell_{U_i}(F)$ therefore satisfy
+$(X_i,X_j)_{z,\mathrm{ref}}=B_z(U_i,U_j)=\delta_{ij}$.
+
+For multi-indices $a,c\in\mathbb N_0^M$, write $X^a=\prod_i X_i^{a_i}$
+and $a!=\prod_i a_i!$. Each monomial is Wick ordered at its insertion.
+Wick's rule~\cite{Wick1950} thus pairs every factor at $z$ with a factor
+at the origin. A contraction vanishes unless the two indices agree.
+Consequently a pairing contributes only if $a=c$, in which case there
+are $a!$ ways to match the factors and each contributes one. Hence
 \[
- \langle X^a,X^c\rangle_{\rm ref}
-   =\mathbf1_{a=c}\,a!\prod_i b_i^{a_i}.
+ (X^a,X^c)_{z,\mathrm{ref}}=\mathbf1_{a=c}\,a!,
+ \qquad (P,P)_{z,\mathrm{ref}}=\sum_a a!\,|p_a|^2
+ \quad\text{for }P=\sum_a p_a X^a .
 \]
-Thus the squared norm of a polynomial is the sum of the squared absolute
-values of its coefficients with these positive weights; the constant
-coefficient has weight one. Restricting to the gauge-invariant image
-preserves positivity. If all basis-column pairings vanish, the pairing
-with the reflected conjugate of the polynomial vanishes too, forcing
-that polynomial to be zero. This also identifies the correlation-null
+This proves strict positivity, including on the gauge-invariant subspace
+$\mathcal M_d^{\mathrm{Max}}$. For the injectivity assertion take $z=x-y$.
+The reflected conjugate $R_z\cdot\overline P$ belongs to the same space.
+If every $S_2^{\mathrm{Max}}(P,P_j;x,y)$ vanishes, linearity in the second
+argument and translation invariance therefore give $(P,P)_{z,\mathrm{ref}}=0$,
+so $P=0$. Applied to $\omega_dP$, this also identifies the correlation-null
 labels. For each fixed bound $d$ on scaling dimension, the map of correlation pairings
 has a positive minimum norm on the unit sphere. Small perturbations of
 its matrix remain injective; applying this fact to interacting

@@ -4,6 +4,8 @@ This draft synthesizes the supplied Martin, Trish and Scott manuscripts, with Co
 
 The inherited v2 attribution register below is preserved as provenance, not as a claim that v2 reviews certify v3. Original notices and separate source licenses remain applicable.
 
+The illustrations were drawn for this synthesis. The diagrams of transported curvatures, framed block paths, exact covers, cutoff histories, ordered limits, Ward shells and cluster exchange develop examples from Scott's and Trish's figures (`fig:A-transported`, `fig:B-predictor`, `fig:covers`, `fig:two-cutoffs`, `fig:two-limits`, `fig:G-shell` and `fig:H-exchange`). Trish's `fig:rg-block-step` and `fig:rg-cutoff-comparison` also informed the blocking and cutoff diagrams. The chessboard, Fourier alias, radius window and pair projection figures illustrate the corresponding constructions directly in the notation of this manuscript.
+
 The paragraph "The dilation current at short separation" after Theorem `ch17:all-radii` restores, in v3 notation, the remark `rem:trace-dilation-current` written by Stephanie Alexander for task #406 and merged in #424 (`manuscript/existence/trace-asymptotic.tex`). Its former assumptions, stress conservation at separated points and the unit-insertion identity, are now supplied by Proposition `ch14:normalized-stress` and Section `ch17:spectrum`. A formal check of the identity and of the limit against the pinned release `3456e5e` is in `stalex444/yang-mills-conformal-current` at `dbae2a6`; it is an acknowledgement, not part of the proof.
 
 # Source migration and attribution — inherited adaptations in HumanizeYM_v2

@@ -1,0 +1,46 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,>=Stealth,
+  retained/.style={draw=ymAccent,line width=.8pt,rounded corners=2pt,
+                   inner xsep=5pt,inner ysep=4pt}]
+  \node[anchor=east] at (-1.25,2.05) {Period};
+  \node[anchor=east] at (-1.25,1.05) {Spacing $a_N$};
+  \node[anchor=east] at (-1.25,-.49) {Spacing $a_{N+1}$};
+  \node[anchor=east] at (-1.25,-1.78) {Full $N\to\infty$};
+  \node[anchor=east] at (-1.25,-2.35) {Torus kernel};
+  % Circles are one periodic coordinate. The number of sites is
+  % proportional to the circumference at each of the two resolutions.
+  \foreach \cx/\radius/\nsites/\idx in
+     {0/.35/8/j,3.05/.525/12/{j+1},6.25/.70/16/{j+2}}{
+    \node at (\cx,2.05) {$R_{p(\idx)}$};
+    \foreach \cy/\mult in {1.05/1,-.49/3}{
+      \begin{scope}[shift={(\cx,\cy)}]
+        \draw[ymGrid,line width=.55pt] (0,0) circle[radius=\radius cm];
+        \pgfmathtruncatemacro{\total}{\nsites*\mult}
+        \pgfmathtruncatemacro{\last}{\total-1}
+        \foreach \i in {0,...,\last}{
+          \fill[ymInk] ({90+(360/\total)*\i}:\radius) circle[radius=.85pt];}
+      \end{scope}}
+    \draw[->,ymInk,line width=.65pt] (\cx,-1.40) -- (\cx,-2.03);
+  }
+  \foreach \cy in {2.05,1.05,-.49,-2.35}
+    \node at (8.25,\cy) {$\cdots$};
+  \node[retained] (first) at (0,-2.35) {$M^{\rm UV}_{p(j),v}$};
+  \node at (3.05,-2.35) {$M^{\rm UV}_{p(j+1),v}$};
+  \node[retained] (later) at (6.25,-2.35) {$M^{\rm UV}_{p(j+2),v}$};
+  \draw[ymAccent,line width=.8pt] (first.south) -- (0,-3.08);
+  \draw[ymAccent,line width=.8pt] (later.south) -- (6.25,-3.08);
+  \draw[->,ymAccent,line width=.8pt] (0,-3.08) -- (8.5,-3.08)
+    node[right,text=black] {$S_n(v;\cdot)$};
+  \node[anchor=north] at (3.10,-3.11) {$k\to\infty$ along $P(k)=p(q(k))$};
+\end{tikzpicture}
+\caption[Full cutoff limits and a common volume subsequence]{The two
+limits for separated correlations. Each column shows one periodic
+coordinate at successive lattice spacings (schematic). The full cutoff
+sequence at that period gives the torus kernel and the limit for every
+separated test supported inside its period cell.
+The framed kernels illustrate a subsequence of the prescribed volumes.
+One such choice gives convergence in $C^\infty_{\rm loc}(\Conf_n)$ for
+all arities and label lists, hence for every separated test function.}
+\label{ch13:fig-ordered-limits}
+\end{figure}

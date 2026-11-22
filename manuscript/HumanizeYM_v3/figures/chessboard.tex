@@ -1,0 +1,33 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.44cm,y=.44cm,font=\small,
+    loop/.style={draw=ymInk,line width=1.05pt,line join=round},
+    direction/.style={-{Stealth[length=1.65mm,width=1.35mm]},ymInk}]
+  \fill[ymInk!9] (0,0) rectangle (5,5);
+  \foreach \x in {0,...,20} \draw[ymGrid,very thin] (\x,0) -- (\x,10);
+  \foreach \y in {0,...,10} \draw[ymGrid,very thin] (0,\y) -- (20,\y);
+  \foreach \x in {0,5,...,20}
+    \draw[black!62,densely dashed] (\x,0) -- (\x,10);
+  \foreach \y in {0,5,10}
+    \draw[black!62,densely dashed] (0,\y) -- (20,\y);
+  % Each adjacent cell is a reflection of the preceding cell.
+  \foreach \tx/\sx in {0/1,10/-1,10/1,20/-1}{
+    \foreach \ty/\sy in {0/1,10/-1}{
+      \begin{scope}[shift={(\tx,\ty)},xscale=\sx,yscale=\sy]
+        \draw[loop] (1,1) -- (3,1) -- (3,2) -- (1,2) -- cycle;
+        \draw[direction] (1.35,1) -- (2.42,1);
+        \fill[ymInk] (1,1) circle[radius=1.6pt];
+      \end{scope}
+    }
+  }
+  \draw[black!65,|-|] (0,-.46) -- (5,-.46)
+    node[midway,fill=white,inner xsep=3pt] {$\ell$};
+\end{tikzpicture}
+\caption[Reflected loops in the chessboard estimate]{Part of a coordinate
+section of the chessboard tiling. Starting with the based loop in the shaded cell,
+reflect its links across each dashed seam. One reflection reverses the
+orientation in this plane and two perpendicular reflections restore it.
+Every copy lies strictly inside its cell. The product in
+\eqref{ch01:chessboard-root} uses the copies in all four directions.}
+\label{ch01:fig-chessboard}
+\end{figure}

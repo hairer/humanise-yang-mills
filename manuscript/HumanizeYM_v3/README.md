@@ -15,6 +15,7 @@ The supplied sources are preserved unchanged. Work in this directory is an edito
 - `blueprint/source-index.json` and `source-index.md`: all headings and labels in 312 supplied LaTeX files, with snapshot line numbers and file hashes in the JSON.
 - `blueprint/scott-trish-comparison.md`: comparison locating the substantive differences between the two similar manuscripts.
 - `chapters/`: book text and included proof fragments.
+- `figures/`: editable TikZ illustrations, each included from the chapter that discusses it.
 - `audit/`: chapter-specific source checks and independent mathematical reviews.
 - `monograph.tex`, `preamble.tex`, `references.bib`: standalone LaTeX build.
 
@@ -32,4 +33,4 @@ python3 tools/collect_references.py
 latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build monograph.tex
 ```
 
-The most recently reviewed draft PDF is copied to `monograph.pdf`; build logs and rendered review images stay in `build/`. The current source covers all nineteen planned chapters, including the current-transfer and arbitrary-radius estimates. The delivered PDF is 273 pages. Pages i–ii state the main theorem and point to the proofs of its parts. Consult `PROGRESS.md` for the final review record and the scope of the claims.
+The most recently reviewed draft PDF is copied to `monograph.pdf`; build logs and rendered review images stay in `build/`. The current source covers all nineteen planned chapters, including the current-transfer and arbitrary-radius estimates. The illustrated PDF is 279 pages. Its linked list of figures is on page x. Pages i–ii state the main theorem and point to the proofs of its parts. Consult `PROGRESS.md` for the final review record and the scope of the claims.

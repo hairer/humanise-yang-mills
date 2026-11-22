@@ -1,11 +1,11 @@
 # Progress and review record
 
-Updated 19 November 2026. The requested blueprint and a full first draft of the monograph are complete in this folder. The draft is **273 pages**, with all nineteen chapters, a notation index and 41 cited references. It is a working mathematical exposition of the supplied construction and still merits expert review; the writing and focused dependency audits are not independent certification of the underlying existence claim.
+Updated 22 November 2026. The requested blueprint and a full first draft of the monograph are complete in this folder. The draft is **279 pages**, with all nineteen chapters, eleven figures, a notation index and 41 cited references. It is a working mathematical exposition of the supplied construction and still merits expert review; the writing and focused dependency audits are not independent certification of the underlying existence claim.
 
 ## Delivered files
 
 - `monograph.pdf`: reviewed standalone PDF.
-- `monograph.tex`, `preamble.tex`, `chapters/`, `references.bib`: complete buildable LaTeX sources.
+- `monograph.tex`, `preamble.tex`, `chapters/`, `figures/`, `references.bib`: complete buildable LaTeX sources.
 - `BLUEPRINT.md` and `blueprint/`: chapter/section instructions, bounded source packets, dependencies, shared notation, source translations and literature policy.
 - `audit/`: source matching, corrections and independent focused reviews.
 
@@ -21,9 +21,11 @@ Chapter19 assembles the construction and states the trace law separately to show
 
 ## Verification
 
-The master includes all 39 text files checked by `tools/check_draft.py`; there are no unattached chapter fragments, duplicate labels or unresolved explicit references. The complete LaTeX build has no undefined-reference/citation warnings or overfull/underfull boxes. At first-draft delivery the PDF was rendered and inspected, including every newly written or changed region; unchanged regions were covered by the earlier recorded checkpoints. The final layout removes the nearly empty closing page of Chapter18.
+The master includes all 50 TeX files checked by `tools/check_draft.py`; there are no unattached chapter fragments, duplicate labels or unresolved explicit references. The complete LaTeX build has no undefined-reference/citation warnings or overfull/underfull boxes. At first-draft delivery the PDF was rendered and inspected, including every newly written or changed region; unchanged regions were covered by the earlier recorded checkpoints. The final layout removes the nearly empty closing page of Chapter18.
 
 The terminology revision covers all nineteen chapters, the reading guide and the notation index. The revised PDF builds without warnings. Selected pages, including the contents and revised section headings, were rendered and inspected.
+
+The illustrated edition adds eleven chapter figures. The list of figures and each in-text reference link to the illustrations.
 
 ## Continuing editorial work
 
