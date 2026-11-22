@@ -357,7 +357,8 @@ derivative indices. Their Frobenius inner product $\langle P,Q\rangle_F$
 is the sum of the Lie algebra inner products of corresponding coefficients
 over all ordered tuples $(a,b,i_1,\ldots,i_j)$. Both orders of the
 antisymmetric pair $(a,b)$ are included, with no factor $1/2$.
-The linear jet probe represented by $P$ is
+The constant-coefficient differential operator $\ell_P$ acts on a
+two-form $F$ by
 \begin{equation}\label{ch03:probe}
  \ell_P(F)=\frac1{j!}\sum_{a,b,i_1,\ldots,i_j}
  \big\langle P_{ab;i_1\cdots i_j},
@@ -374,10 +375,14 @@ $R_z=1-2zz^{\mathsf T}/|z|^2$. For a two-form, $R_z^{(2)}$ means
 applying $R_z$ to both form indices. The full reflection on a
 polynomial solution is
 $(R_z\cdot P)(v)=R_z^{(2)}P(R_zv)$: the derivative indices are
-reflected as well. For real probes define
+reflected as well. For real $P\in\mathcal S_j$, $Q\in\mathcal S_k$ and
+$z\ne0$, define
 \[
- B_z(P,Q)=S_2^{\mathrm{Max}}(\ell_P,\ell_{R_z\cdot Q};z,0).
+ B_z(P,Q)=S_2^{\mathrm{Max}}\bigl(\ell_P(F),\ell_{R_z\cdot Q}(F);z,0\bigr).
 \]
+Here $F$ is the free Maxwell curvature. Applying the two operators to $F$
+gives the linear polynomials in its derivatives that are inserted at $z$
+and at the origin, respectively.
 Extend this bilinearly across different derivative orders. Covariance and
 exchange of the two insertions show that $B_z$ is symmetric.
 
