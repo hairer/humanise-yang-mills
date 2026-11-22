@@ -1,0 +1,34 @@
+\begin{figure}[!hbp]
+\centering
+\begin{tikzpicture}[font=\small, x=1cm, y=1cm, >=Stealth,
+    history/.style={ymInk, line width=.9pt},
+    truncated/.style={ymAccent, dashed, line width=.9pt}]
+  \node[anchor=east] at (-.3,.66) {level};
+  \foreach \x/\level in {0/0,2.8/m,6.2/k,8.8/N,10.4/{N'}}
+    \node at (\x,.66) {$\level$};
+  \foreach \x in {2.8,6.2}
+    \draw[ymGrid] (\x,.42) -- (\x,-1.65);
+
+  \foreach \y/\cutoff/\name in {0/8.8/N,-1.17/10.4/{N'}} {
+    \begin{scope}[shift={(0,\y)}]
+      \node[anchor=east] at (-.3,0) {cutoff $\name$};
+      \draw[history,->] (\cutoff,0) -- (6.29,0);
+      \draw[history,->] (6.2,0) -- (2.89,0);
+      \draw[history,->] (2.8,0) -- (.09,0);
+      \foreach \x in {0,2.8,6.2,\cutoff}
+        \fill[ymInk] (\x,0) circle[radius=1.7pt];
+      \draw[truncated,->] (6.2,-.35) -- (2.8,-.35);
+      \draw[ymAccent,fill=white,line width=.8pt]
+        (6.14,-.41) rectangle (6.26,-.29);
+      \node[anchor=west,inner xsep=3pt] at (6.27,-.35) {$x_k^{[k]}=0$};
+    \end{scope}
+  }
+\end{tikzpicture}
+\caption[Comparing two cutoff histories at a fixed level]{Activity comparison at a fixed period $R_p$. The two solid
+rows reach the same tuned inverse coupling $\bar\beta$ at level zero.
+In each dashed run the activity is reset to zero at $k$, retaining
+that row's inverse couplings and block maps down to $m$.
+At $m$ the error from this replacement is at most $16^{-(k-m)}$ in
+each row, uniformly in its cutoff.}
+\label{ch10:fig-cutoff-histories}
+\end{figure}

@@ -134,7 +134,8 @@ uniformity across changes of stage, from marked propagation.
 The coupling thresholds can be chosen to ensure $L_n\le\log\widehat\beta_n$.
 Since $M_n$ increases and $L_n\le M_{n+1}$ eventually,
 $r(n,\alpha_0)\le r(n+1,\alpha_0+1)$. The intervals therefore
-cover every sufficiently small radius. The first crossing places a
+cover every sufficiently small radius, as illustrated on a logarithmic
+scale in Figure~\ref{ch17:fig-radius-windows}. The first crossing places a
 prescribed radius in one of them. Diagonalize finite degree, arity,
 window and derivative requests, requiring
 $(\alpha_0+1)\log M_{n_i}\le(\log\widehat\beta_{n_i})^{48}$.
@@ -143,6 +144,8 @@ $\widehat\beta_n$, as is the logarithm of the radius multiplier.
 The running law in Chapter~\ref{ch10:trajectory} then gives
 \eqref{ch17:running-radius}. This proves radius coverage. It remains to verify the uniform
 comparison estimates used in these windows.
+
+\input{figures/radius-windows}
 
 \input{chapters/17-variable-windows}
 

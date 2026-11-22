@@ -1,0 +1,44 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  x=1cm,y=1cm,font=\small,
+  diagonal/.style={draw=ymInk!62,line width=.6pt},
+  normal/.style={-{Stealth[length=1.7mm,width=1.2mm]},draw=ymAccent,
+                 line width=.95pt,shorten >=2.1pt},
+  foot/.style={circle,draw=ymInk,fill=white,line width=.7pt,inner sep=1.55pt},
+  configuration/.style={circle,fill=ymInk,inner sep=1.9pt}]
+  % In the centered plane use the orthonormal coordinates
+  % (2x_3-x_1-x_2)/sqrt(6) and (x_2-x_1)/sqrt(2).
+  \foreach \offset in {0,6.8}{
+    \begin{scope}[xshift=\offset cm]
+      \draw[diagonal] (-1.27,0) -- (3.80,0) node[right] {$\Delta_{12}$};
+      \draw[diagonal] (240:.79) -- (60:1.96) node[above right] {$\Delta_{23}$};
+      \draw[diagonal] (300:.79) -- (120:1.96) node[above left] {$\Delta_{13}$};
+    \end{scope}}
+  \begin{scope}
+    \fill[ymInk] (0,0) circle (1.4pt) node[below=3pt] {$0$};
+    \draw[normal] (3.08,0) -- (3.08,.36);
+    \node[foot] at (3.08,0) {};
+    \node[below=3pt] at (3.08,0) {$\pi_{12}x$};
+    \node[configuration,label=above:$x$] at (3.08,.36) {};
+    \node at (1.33,-1.04) {One active pair};
+  \end{scope}
+  \begin{scope}[xshift=6.8cm]
+    \coordinate (p) at ({sqrt(3)},1);
+    \foreach \base in {(0,0),({sqrt(3)},0),({sqrt(3)/2},1.5)}{
+      \draw[normal] \base -- (p);
+      \node[foot] at \base {};}
+    \node[below=3pt] at (0,0) {$0$};
+    \node[configuration,label=right:$x$] at (p) {};
+    \node at (1.33,-1.04) {Three active pairs};
+  \end{scope}
+\end{tikzpicture}
+\caption[Normal projections near a multiple collision]{Pair projections for three insertions on a fixed line, with centroid
+at zero. Their configurations form a Euclidean plane in which the pair
+diagonals $\Delta_{ij}=\{x_i=x_j\}$ meet at the triple collision.
+Each arrow runs from $\pi_{ij}x$ to $x$ along the normal displacement
+$z_{ij}$. On the left only $a_{12}$ is nonzero.
+On the right, $x=(-d,0,d)$ has $\rho=2d/3$, so all three weights are
+$1/3$. The jet for the outer pair is taken at $\pi_{13}x=0$.}
+\label{ch18:fig-pair-subtraction}
+\end{figure}

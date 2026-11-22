@@ -1,0 +1,40 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[font=\small,
+    inner shell/.style={draw=ymInk,semithick},
+    outer shell/.style={draw=ymAccent,semithick,dashed}]
+  % A central section of two radial cutoffs in four dimensions.
+  \fill[ymAccent!13,even odd rule] (0,0) circle (1.80) (0,0) circle (1.20);
+  \fill[ymInk!16,even odd rule] (0,0) circle (.99) (0,0) circle (.66);
+  \foreach \r in {.66,.99} \draw[inner shell] (0,0) circle (\r);
+  \foreach \r in {1.20,1.80} \draw[outer shell] (0,0) circle (\r);
+  \fill (0,0) circle (1.6pt) node[below=2pt] {$A(x_0)$};
+  \fill (-2.26,.76) circle (1.6pt) node[above] {$B_1(x_1)$};
+  \fill (2.23,-.68) circle (1.6pt) node[below] {$B_2(x_2)$};
+
+  % The horizontal scale here is twice that of the central section.
+  \begin{scope}[shift={(3.60,-.85)}]
+    \fill[ymInk!12] (1.32,0) rectangle (1.98,1.70);
+    \fill[ymAccent!10] (2.40,0) rectangle (3.60,1.70);
+    \draw[-{Stealth[length=1.7mm]}] (0,0) -- (5.02,0)
+        node[above left=1pt] {$|y-x_0|$};
+    \draw[-{Stealth[length=1.7mm]}] (0,0) -- (0,2.12);
+    \node[left=2pt] at (0,1.70) {$1$};
+    \node[left=2pt] at (0,0) {$0$};
+    \draw[inner shell] (0,1.70) -- (1.32,1.70)
+        .. controls (1.60,1.70) and (1.70,0) .. (1.98,0) -- (4.42,0);
+    \draw[outer shell] (0,1.70) -- (2.40,1.70)
+        .. controls (2.90,1.70) and (3.10,0) .. (3.60,0) -- (4.42,0);
+    \node[anchor=east] at (1.53,.88) {$\chi_\rho$};
+    \node[anchor=west] at (3.18,.88) {$\chi_R$};
+    \foreach \r/\name in {1.98/\rho,3.60/R}
+      \draw (\r,0) -- +(0,-.09) node[below=1pt] {$\name$};
+  \end{scope}
+\end{tikzpicture}
+\caption[Deformation of a local Ward shell]{Shrinking the Ward shell. The two shaded annuli are planar
+sections of the supports of $\nabla\chi_\rho$ and $\nabla\chi_R$.
+The radial profiles agree near $x_0$ and near both spectators. Thus
+$\chi_R-\chi_\rho$ is supported away from all three insertions, and
+conservation gives the same flux on the two shells.}
+\label{ch14:fig-ward-shell}
+\end{figure}

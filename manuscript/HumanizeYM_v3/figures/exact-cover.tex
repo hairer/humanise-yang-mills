@@ -1,0 +1,44 @@
+% !TEX root = ../monograph.tex
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1cm,y=.70cm,font=\small,
+  support/.style={draw=ymInk,line width=.85pt,rounded corners=2pt},
+  lattice/.style={draw=ymGrid,thin}]
+  \foreach \offset/\case/\titletext in
+    {0/1/One support,4.4/2/Two disjoint supports,8.8/3/Excluded pair}{
+    \begin{scope}[xshift=\offset cm]
+      \ifcase\case\or
+        \draw[support,fill=ymInk!7] (.67,.65) rectangle (2.33,2.35);
+      \or
+        \draw[support,fill=ymInk!7] (.67,.65) rectangle (1.33,2.35);
+        \draw[support,fill=ymInk!7] (1.67,.65) rectangle (2.33,2.35);
+      \or
+        \draw[support,fill=ymInk!7] (.67,.65) -- (1.33,.65) --
+          (1.33,2.68) -- (2.36,2.68) -- (2.36,3.36) --
+          (.67,3.36) -- cycle;
+        \draw[support] (1.73,.65) rectangle (2.27,3.25);
+      \fi
+      \foreach \x in {0,...,3}
+        \draw[lattice] (\x,.44) -- (\x,3.48);
+      \foreach \y in {1,2,3}
+        \draw[lattice] (-.15,\y) -- (3.15,\y);
+      \draw[ymAccent,line width=1.35pt] (1,1) rectangle (2,2);
+      \foreach \x in {1,2}
+        \foreach \y in {1,2}
+          \fill (\x,\y) circle[radius=2.2pt];
+      \ifnum\case=3
+        \draw[ymInk,line width=.8pt,fill=white] (2,3) circle[radius=2.5pt];
+      \fi
+      \node at (1.5,-.04) {\titletext};
+    \end{scope}
+  }
+\end{tikzpicture}
+\caption[Exact covers of a large-field set]{Exact covers in a coordinate plane. One plaquette exceeds the
+large-field threshold. Its four vertices (dots) form \(D\).
+The outlined supports in either of the first two panels cover \(D\)
+exactly, assuming the additional eligibility tests hold. In the middle
+panel the indicators in both supports read the four links of the same
+highlighted plaquette. In the last panel the prescribed large-field sets
+still partition \(D\), but the supports share the circled site outside \(D\).}
+\label{ch08:fig-exact-cover}
+\end{figure}

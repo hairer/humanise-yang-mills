@@ -1,0 +1,38 @@
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[x=0.87cm,y=0.87cm,font=\small,
+  axis/.style={->,>=Stealth,black!65,thin},
+  centre/.style={circle,fill=ymInk,inner sep=0pt,minimum size=4.3pt},
+  word/.style={fill=white,inner sep=1pt,outer sep=2pt}]
+  \foreach \shift/\heading in {0/{Exchange of the middle clusters},6.5/{Centres on the fixed ray}}{
+    \begin{scope}[xshift=\shift cm]
+      \foreach \k in {1,2,3}{
+        \draw[ymGrid,thin] (0,\k) -- (3.25,\k);
+        \draw[ymGrid,thin] (\k,0) -- (\k,3.25);
+      }
+      \draw[axis] (-0.18,0) -- (3.8,0) node[right,black] {$x^1/j$};
+      \draw[axis] (0,-0.18) -- (0,3.72) node[above,black] {$x^4/j$};
+      \draw[ymInk,dashed] (0,0) -- (3.35,3.35);
+      \node[centre] at (0,0) {}; \node[word,below right] at (0,0) {$w_1$};
+      \node[centre] at (3,3) {}; \node[word,below right] at (3,3) {$w_4$};
+      \node at (1.75,-0.92) {\heading};
+    \end{scope}
+  }
+  \draw[<->,>=Stealth,ymAccent,thick,shorten <=3.5pt,shorten >=3.5pt]
+    (2,1) -- (1,2);
+  \node[centre] at (2,1) {}; \node[word,right] at (2,1) {$w_2$};
+  \node[centre] at (1,2) {}; \node[word,left] at (1,2) {$w_3$};
+  \begin{scope}[xshift=6.5cm]
+    \node[centre] at (1,1) {}; \node[word,below right] at (1,1) {$w_3$};
+    \node[centre] at (2,2) {}; \node[word,below right] at (2,2) {$w_2$};
+  \end{scope}
+\end{tikzpicture}
+\caption[Exchanging two clusters in the phase algebra]{Each point gives the displacement of a whole word. Read the
+  points from bottom to top for the original time order and from left to
+  right for the time order after the coordinate exchange $s$. On the left
+  the order changes from $w_1,w_2,w_3,w_4$ to $sw_1,sw_3,sw_2,sw_4$.
+  On the right $s$ fixes all four centres. Here the cluster limit gives
+  the same vacuum expectation with $s$ removed from each word in the
+  reordered product.}
+\label{ch15:fig-cluster-exchange}
+\end{figure}

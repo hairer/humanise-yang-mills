@@ -1,0 +1,57 @@
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth,
+    principal/.style={ymInk, line width=1.05pt},
+    negative/.style={ymAccent, dashed, line width=.95pt},
+    positive/.style={black!68, densely dotted, line width=1.05pt}]
+  % Both horizontal axes are the coarse momentum coordinate in units of pi.
+  \begin{scope}[x=2.4cm,y=1.25cm]
+    \node at (0,1.56) {Fine momentum $\theta_{z,1}$};
+    \draw[ymGrid] (0,-1) -- (0,1);
+    \draw[black!55,->] (-1.08,0) -- (1.12,0)
+      node[right,text=black,inner sep=1pt] {$p_1$};
+    \foreach \x in {-1,1}
+      \draw[black!55] (\x,.045) -- (\x,-.045);
+    \node[below left,inner sep=1.4pt] at (-1,-.045) {$-\pi$};
+    \node[below right,inner sep=1.4pt] at (1,-.045) {$\pi$};
+    \draw[negative] (-1,-1) -- (1,{-1/3});
+    \draw[principal] (-1,{-1/3}) -- (1,{1/3});
+    \draw[positive] (-1,{1/3}) -- (1,1);
+    \foreach \y/\tick in {{-2/3}/{-2\pi/3},0/0,{2/3}/{2\pi/3}} {
+      \fill (0,\y) circle[radius=1.5pt];
+      \node[above left,inner sep=1.4pt] at (0,\y) {$\tick$};
+    }
+  \end{scope}
+  \begin{scope}[shift={(7cm,-.6cm)},x=2.4cm,y=1.9cm]
+    \node at (0,1.34) {Centered box multiplier $\widehat w_3(\theta_z)$};
+    \draw[ymGrid] (0,-.34) -- (0,1.08);
+    \draw[black!55,->] (-1.08,0) -- (1.12,0)
+      node[right,text=black,inner sep=1pt] {$p_1$};
+    \foreach \x/\tick in {-1/{-\pi},1/\pi} {
+      \draw[black!55] (\x,.03) -- (\x,-.03);
+      \node[below] at (\x,-.03) {$\tick$};
+    }
+    \draw[negative] plot[domain=-1:1,samples=51]
+        (\x,{(1+2*cos(60*(\x-2)))/3});
+    \draw[positive] plot[domain=-1:1,samples=51]
+        (\x,{(1+2*cos(60*(\x+2)))/3});
+    \draw[principal] plot[domain=-1:1,samples=51]
+        (\x,{(1+2*cos(60*\x))/3});
+    \fill (0,1) circle[radius=1.5pt] (0,0) circle[radius=1.5pt];
+    \node[above,inner sep=2pt] at (0,1) {$1$};
+    \node[below,fill=white,inner sep=1pt,yshift=-2pt] at (0,0) {$0$};
+  \end{scope}
+  \foreach \x/\style/\z in {-.3/negative/{-1},2.8/principal/0,5.9/positive/1} {
+    \draw[\style] (\x,-1.68) -- ++(.62,0)
+       node[right,text=black] {$z_1=\z$};
+  }
+\end{tikzpicture}
+\caption[Fourier aliases under block averaging]{Fourier aliases for $L=3$ on the slice
+  $p_\nu=z_\nu=0$ for $\nu=2,3,4$.
+  At a fixed coarse momentum $p_1$, the three fine momenta on the
+  left satisfy $3\theta_{z,1}\equiv p_1\pmod{2\pi}$.
+  On the right their box multipliers are
+  $(1+2\cos\theta_{z,1})/3$. As $p_1\to0$ the principal multiplier
+  tends to one and both other multipliers vanish.}
+\label{ch05:fig-fourier-aliases}
+\end{figure}
