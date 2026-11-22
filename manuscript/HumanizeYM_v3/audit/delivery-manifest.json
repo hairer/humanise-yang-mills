@@ -1,7 +1,7 @@
 {
-  "pages": 273,
+  "pages": 274,
   "cited_references": 41,
-  "pdf_sha256": "e833e0e2473b903c3f4f71c67b7e2e9e9d71bbfd9f8dd5fa64f216f4e7a0a10d",
+  "pdf_sha256": "2a65a69788ca1b50f75a60d42e94a0000de508a5e374943b287d70072184baaf",
   "sources": {
     "monograph.tex": "e091079eb65f594cb9c7edf19f6907b0350de54204cb42659e07fbf796744d6d",
     "preamble.tex": "6e399943fcc7aa5c2baaa6c0c8bf80d456d5ed5c794ffe62f15ac6b03226d6d0",
@@ -11,7 +11,7 @@
     "chapters/01-lattice.tex": "b71857535b7ced6b2874bd15bed81a4d8709672a876c7fcc32ec51162f1de039",
     "chapters/02-equation-section.tex": "c230f1bf42b9be9dc5a8bf3c7e854f7b3ad532c21d428e9250ce8fae69de1047",
     "chapters/02-observables.tex": "f9f082f56e8650f645cac85c9a0b3d87701af5e79c785f0f1397682aba99c3b3",
-    "chapters/03-maxwell.tex": "9b0a081b3f1ac223693f51ef51db85092a74da31306bab2c6950da6ced977a36",
+    "chapters/03-maxwell.tex": "719eeb9a285240ae677303ab0dd9540175b6808a388f92ab0b4a948a0821efd8",
     "chapters/04-blocking.tex": "7a606553c1d9daac60b90a4b17819c326b8231444626b0dd5fac64556ccd76f3",
     "chapters/05-gaussian.tex": "f31fa0cc936ca9fdb8ad1d5251f4b138bea144dce0f50f5538fad28bfbc5b203",
     "chapters/06-large-fields.tex": "cafc4ba5f55007ac137fb6c861a18b374ba3d88659bbf20c1132122dcb306ff3",
@@ -44,5 +44,5 @@
     "chapters/19-assembly.tex": "e5f0e9d7ef214ba8cf6250f19254a39761ec3ff0170b19514b521f7b0f9db12e",
     "main-theorem.tex": "e8e86684e500e4c24cd8a98afdac9e9d863072f3c698e8a79f3a8c502a00306c"
   },
-  "review": "Revised the reflection-positivity argument in Section 3.4. Complete LaTeX build and cross-reference check."
+  "review": "Clarified the reflected pairing in Corollary 3.2. Rebuilt the PDF, checked cross-references and inspected page 24."
 }
