@@ -1,0 +1,115 @@
+# Subject | destinations in the booklet, ordered by the text
+[I]
+Activities, weighted norms | ch04:density-norms
+Adjoint Casimir | ch01:casimir
+Block averaging, gauge-covariant | ch04:block-map ch05:actual-coordinates
+Block transformation, Gaussian | ch05:schur
+Continuum limit, order of limits | ch01:ordered-limit
+Covariance, fluctuation field | ch05:schur-data
+Curvature, Maxwell covariance | ch03:covariance
+Equation of motion, lattice representatives | ch02:equation-section
+Forest coordinates | ch05:forest-chart
+Fourier alias formula | ch05:alias
+Gauge frames, local | ch04:frames
+Gauge group, normalization | ch01:gauge
+Holonomy | ch01:wilson-section ch02:taylor-section
+Jets, radial | ch02:radial-jets
+Jets, solution space | ch03:shell
+Lattice differential forms | ch05:forms
+Local observables, finite-stencil representatives | ch02:local-sections
+Maxwell fields, separating insertions | ch03:bounded-detector
+Minimizing frame | ch04:frame-lemma ch05:frame-linearization
+Minimizing lift | ch05:schur-data ch05:actual-tangent
+Plaquette energy | ch01:chord
+Polynomial labels | ch02:labels
+Reflection positivity | ch01:lattice-rp ch03:reflection
+Small-field bounds, local observables | ch02:section-bounds
+Small-field cutoffs | ch04:density-coordinates
+Stationary background | ch05:stationary-prop ch05:actual-stationary
+Stress tensor, free theory | ch03:classification ch03:ward
+Ward identities, free theory | ch03:free-ward ch03:finite-ward
+Wick correlations | ch03:wick
+Wilson measure | ch01:wilson
+Zero modes | ch05:forms
+[II]
+Activities, incompatibility | ch08:activities
+Analytic width | ch07:output
+Block integral, local expansion | ch09:integral
+Classical matching | ch07:classical-match
+Cluster expansion, convergence | ch08:criterion
+Connected insertions | ch08:parameters
+Curl, division by | ch07:division
+Cutoff windows | ch06:windows
+Determinants, one-loop coefficient | ch07:one-loop ch07:slope
+Determinants, uniform comparison | ch07:comparison-prop
+Energy cost, selected large fields | ch06:energy
+Gaussian integration, sector matrix | ch06:sector
+Gaussian tails, simultaneous bounds | ch06:joint-tails
+Haar measure | ch07:completion
+Koteck\'y--Preiss criterion | ch08:kp
+Large-field activities, logarithmic corrections | ch09:fusion-prop
+Large-field constraints, reassembly | ch08:forced
+Local factors, weighted bounds | ch06:primitive-bounds
+Marginal quadratic coefficient | ch07:quadratic
+Mean cancellation | ch06:mean-cancellation
+Path action, quadratic replacement | ch09:path-reset
+Polymer expansion, geometric tail | ch08:tail
+Polymers, deletion | ch08:deletion
+Quadratic subtraction | ch09:subtraction
+Renormalization step | ch09:step-theorem
+Taylor kernels | ch07:kernels
+Wilson initialization | ch09:wilson
+[III]
+Bare coupling, tuning | ch10:finite-history
+Bounded approximations, local observables | ch13:bounded-approximations
+Cluster replacement on the lattice | ch18:lattice-replacement
+Correlation bounds, sharp centered | ch13:sharp-centered
+Coupled histories, convergence | ch10:convergence
+Cumulants, marked insertions | ch11:cumulants
+Cutoff stability | ch10:fixed-scale
+Derivatives, continuum fields | ch13:calculus
+Equation space, calibration | ch11:equation-calibration
+Finite differences, uniform bounds | ch11:all-period-differences
+Finite-dimensional detection | ch11:uniform-detector
+Gaussian comparison, marked step | ch11:joint-gaussian
+Infinite-volume subsequence | ch13:extraction
+Local fields, null space and quotient | ch13:null ch13:rank
+Marked insertions, source algebra | ch11:cumulants ch11:source-density
+Marked remainder, contraction | ch12:forgetting
+Normalization, cancellation in ratios | ch12:normalization
+Reflection positivity | ch13:positivity
+Reflected words, repeated | ch13:repeated
+Renormalization scales, schedule | ch10:schedule
+Restarted histories | ch11:restart-endpoint ch11:restart-family
+Running coupling | ch10:running
+Scaling dimension, physical quotient | ch18:graded-quotient-section
+Smoothness, fixed-volume limit | ch12:smooth
+Stopping estimates | ch12:stopping
+Ultraviolet limit, fixed volume | ch12:uv-theorem
+[IV]
+Boundary distributions, tempered | ch16:boundary
+Charges, local stress tensor | ch14:charges ch16:charges-section
+Cluster replacement, marked estimate | ch18:replacement-input
+Commutant, weak | ch16:irreducible
+Contact terms, Taylor subtraction | ch18:extension-theorem ch18:scope
+Current, regulated | ch17:current ch17:quadratic-current
+Euclidean rotations | ch14:rotations
+Ground space, zero energy | ch15:ground ch15:selection
+Hilbert space, reflection construction | ch14:reflection
+Locality, relativistic fields | ch16:locality
+Lorentz covariance | ch16:covariance-section
+Mass gap, scope of the construction | ch19:scope
+Mass-shell kernels, finite class | ch17:exclusion
+Operator product expansion | ch18:prescription ch18:ope-theorem
+Phases, character decomposition | ch15:characters
+Phases, symmetry and positivity | ch15:phase-symmetry ch15:fields
+Reconstruction, smeared fields | ch16:fields
+Slab insertions | ch14:slab-bound
+Spectral measure, trace | ch17:spectrum
+Spectrum condition | ch16:covariance-section ch16:fields
+Stress tensor, Ward normalization | ch14:normalized-stress
+Trace coefficient | ch17:coefficient
+Trace law, all radii | ch17:all-radii
+Vacuum uniqueness | ch16:vacuum
+Ward identities, propagation | ch14:propagation
+Wilson family, assembly of the theorem | ch19:conditional

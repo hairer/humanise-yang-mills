@@ -1,0 +1,83 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage{xr}
+\input{preamble}
+\usepackage{multicol}
+\usepackage{etoolbox}
+\newcommand{\indexletter}[1]{\par\addvspace{6pt}{\bfseries\color{MidnightBlue}#1}\par\nobreak}
+\newcommand{\subjectentry}[2]{\par\hangindent=1em
+  #1\nobreak\hspace{.4em}\def\lastindexpage{-1}\forcsvlist{\indexlocator}{#2}\par}
+\newcommand{\indexlocator}[1]{%
+  \edef\thisindexpage{\getpagerefnumber{#1}}%
+  \ifx\thisindexpage\lastindexpage\else
+    \ifnum\lastindexpage<0\else,\nobreak\space\fi
+    \pageref{#1}\let\lastindexpage\thisindexpage
+  \fi}
+\input{\jobname-settings}
+\hypersetup{pdftitle={Four-dimensional Yang-Mills theory - Booklet \volumeRoman: \volumeTitle},
+  pdfsubject={HumanizeYM v3, chapters \chapterRange}}
+\newcommand{\seriesrow}[3]{%
+  {\ifnum#1=\volumeNumber\bfseries\fi #2} &
+  {\ifnum#1=\volumeNumber\bfseries\fi #3}\\[4pt]}
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\thispagestyle{empty}
+\begingroup
+\setlength{\parindent}{0pt}
+\vspace*{12mm}
+{\large Four-dimensional Yang--Mills theory\par}
+{\large\itshape A constructive approach\par}
+\vspace{18mm}
+{\sffamily\small\color{MidnightBlue}\MakeUppercase{Booklet \volumeRoman\ of IV}
+  \quad / \quad CHAPTERS \chapterRange\par}
+\vspace{4mm}
+{\Huge\bfseries\raggedright\volumeTitle\par}
+\vspace{5mm}
+{\color{MidnightBlue}\rule{18mm}{1pt}\par}
+\vspace{5mm}
+\begin{minipage}{.88\textwidth}
+\large\raggedright\volumeGuide
+\end{minipage}
+\vfill
+{\sffamily\small THE FOUR BOOKLETS\par}
+\vspace{3mm}
+\begin{tabular}{@{}l@{\hspace{6mm}}l@{}}
+\seriesTable
+\end{tabular}
+\vspace{2mm}
+
+{\small Chapter, theorem and equation numbers follow the manuscript.
+Page numbers are local to each booklet.\par}
+\vspace{5mm}
+
+{\small HumanizeYM v3\enspace $\cdot$\enspace Manuscript draft of 19 November 2026\par
+Working exposition from the supplied manuscripts\par}
+\endgroup
+\clearpage
+\hypersetup{pageanchor=true}
+\pdfbookmark[0]{Contents}{booklet-contents}
+\tableofcontents
+\ifnum\volumeNumber=1
+  \input{booklet-main-theorem}
+  \input{booklet-about}
+  \input{reading-guide}
+\fi
+\mainmatter
+\setcounter{chapter}{\previousChapter}
+\input{\jobname-chapters}
+\backmatter
+\input{notation-index}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{alpha}
+\bibliography{references}
+\chapter{Subject index}
+\markboth{Subject index}{Subject index}
+\noindent Page numbers point to definitions, arguments and principal results in this booklet.
+\begin{multicols}{2}
+\raggedcolumns\raggedright\small
+\setlength{\parindent}{0pt}
+\input{\jobname-index}
+\end{multicols}
+\end{document}
