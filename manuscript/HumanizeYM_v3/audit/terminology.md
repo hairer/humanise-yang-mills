@@ -7081,6 +7081,8 @@ Conventions. The first column gives the symbol (Latin letters, lower case before
 
 **Repaired on this branch** (commits `ac15effb` and `75cdd683`; wording recovered from the pre-replacement text where possible; line numbers unchanged): 6:730; 7:1086; 9:212, 548; 10:922; 11:247, 296, 365, 938, 1312, 1589, 1595, 1636, 1868–1869; 11R:302; 14:832; 16:380; 17w:76; 17m:144, 285, 303; 18lp:43, 136. Three fresh readers reread every repaired sentence: all now parse, and all are plausible in context except 11:1595, listed below.
 
+**Formula corrected on this branch** (issue 1, item 7; 23 November 2026): 11:1238 now reads `‖Au‖ ≤ H^{bd+c_d}`, `D > bd + c_d + v`; the term `bd` had been lost. It agrees with 11:1363, 1842, 1925 and with the source (`existence/actual-rank-purchases.tex:1028–1029`: "`|Au|_1 ≤ H^{bd+q_*+2}` … any fixed `D > bd+q_*+2+v`"), all read by the coordinating agent. Entries written before the correction (*target*, *column*) still describe the discrepancy.
+
 **Left for the author**, because the intended meaning is not certain:
 
 - 17t:159–160 "the order-two pullback must annihilate its affine–affine and affine–quadratic polynomial moment conditions" (earlier wording: "polynomial tests"). One satisfies conditions or annihilates polynomials; 17c:24–25 has "the affine–affine and affine–quadratic polynomial cancellations" for the same thing.
