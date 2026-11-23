@@ -6,7 +6,7 @@
 
 ## Contents
 
-- [Dictionary](#dictionary): 971 entries, A to Z (141 with more than one sense; 173 are pointers to another entry).
+- [Dictionary](#dictionary): 971 entries, A to Z (145 with more than one sense; 175 are pointers to another entry).
 - [Appendix A](#appendix-a). How the vocabulary is distributed over the book.
 - [Appendix B](#appendix-b). Concepts with several names.
 - [Appendix C](#appendix-c). Symbols with several meanings, and symbols used without definition.
@@ -69,8 +69,8 @@
 *See also:* noise.
 
 #### action-gradient terms
-- **Meaning.** The terms of the form `DF[Z]` (derivative of a function in the direction of a vector field) in the contact identity (17.contact).
-  *Basis:* R (17t:286). *Where:* 17t:286, 332, 402, 473. *Proposed:* *the terms `DS[Z]`, `DΓ[Y]`*.
+- **Meaning.** The two terms `DΓ[Y]` and `DS[Z]` on the right of the contact identity (17.contact), `½ tr(R D²(DS[Y])) − div_Haar Y = DΓ[Y] − μ² tr(RV) + DS[Z]` (17t:233–235); generically `DF[Z]`, the derivative of a gauge-invariant action `F` (here `S` or `Γ`) in the direction of an anchored gauge-covariant displacement `Z` (17t:294–299, 399–400).
+  *Basis:* R (17t:332, 400–402, 473). *Where:* 17t:286 (title), 332, 402, 473. *Proposed:* *the terms `DS[Z]`, `DΓ[Y]`*.
 *Across chapters:* one sense; chapter 17 only.
 
 #### active coordinates
@@ -341,9 +341,9 @@ See *sector* (sense 1).
 *See also:* degree.
 
 #### array
-*Variants:* activity array, activity arrays; path arrays; field array (14:281, 282).
-- **Meaning.** A family indexed by sites, paths or polymers: "`x_m` is the activity array" (10:421).
-  *Basis:* I; R for the activity array (10:421). *Where:* 5:861, 945; 6:479; 10:6, 256, 390–395, 421 and passim; 12:33, 70–77; 13ba:151–152; 14:281, 282. *Proposed:* *family* (*of activities*, *of coefficients*).
+*Variants:* activity array, activity arrays; path arrays; coefficient arrays; tensor arrays (14:262).
+- **Meaning.** A family indexed by sites, paths, polymers or tensor indices: "`x_m` is the activity array" (10:421).
+  *Basis:* I; R for the activity array (10:421). *Where:* 5:861, 945; 6:479; 10:6, 256, 390–395, 421, 431–447 and passim; 11:550, 573, 687 ("Gaussian array", "symmetric array", "conditional curvature array"); 12:33, 70–77; 13ba:151–152; 14:262, 299 ("degree-four tensor arrays", "its pulled-back arrays"). *Proposed:* *family* (*of activities*, *of coefficients*).
 *Across chapters:* one sense throughout; chapters 3–6 do not determine it, 10:421 gives the one explicit instance.
 *See also:* activity; dictionary.
 
@@ -373,10 +373,10 @@ See *sector* (sense 1).
 
 #### auxiliary
 1. **The regulated fine determinant** and the objects introduced with it.
-   *Basis:* I. *Where:* ch. 7, 8 uses. *Proposed:* *regulated*.
-2. **The small reflected tori** `Λ_i` and the fields on them.
-   *Basis:* D (9:324–329). *Where:* ch. 9 and 9s, 16 uses. *Proposed:* keep.
-*Across chapters:* 24 uses in chapters 7–9. In chapters 10–11 "auxiliary history" names two further objects, with an entry of their own.
+   *Basis:* I. *Where:* ch. 7, 7 uses (7:274, 282, 315, 470, 684, 791, 811). *Proposed:* *regulated*.
+2. **The small reflected tori** `Λ_i` and the fields on them; also their periods and volumes ("minimum auxiliary periods", 10:38; "finitely many auxiliary volumes of side `O(B)`", 10:606–607; "The finite auxiliary projection", 10:776).
+   *Basis:* D (9:324–329). *Where:* ch. 9 and 9s, 16 uses; 10:38, 606, 776. *Proposed:* keep.
+*Across chapters:* 24 uses in chapters 7–9, of which 7:108 ("auxiliary constraints") is the ordinary word; sense 2 recurs at 10:38, 606, 776. In chapters 10–11 "auxiliary history" names two further objects, with an entry of their own (10:826, 918; 11:736; 11R:5; 11:8 "an auxiliary sequence of block kernels" belongs with it). "Auxiliary bound" and "auxiliary site sum" at 11:1501–1521 and the uses at 5:170, 205, 1224; 11:2215; 13:143; 18gq:127; 18lp:228, 320; 18:213; 18r:28, 45; 19:37; RG:37 are the ordinary word. Not classified: 10:782 ("the initial auxiliary level"), 10:923 ("auxiliary graph").
 *See also:* actual (sense 9); auxiliary history; auxiliary tori.
 
 #### auxiliary history
@@ -397,15 +397,15 @@ See *sector* (sense 1).
 
 #### available weight
 *Variants:* available (product) weight `ω`.
-- **Meaning.** Not defined in chapters 12–16. One of the positive numbers (`w_i`, `ω`) by which the source variables are scaled in the marked norm, so that the coefficient of `z_S` is bounded by `1/∏ w_i` (12:243–244; display 11:808–811). The weights are defined at 11:43–49.
-  *Basis:* R (12:243–244; 11:43–49). *Where:* 12:247, 281, 282; 13sb:72–75; 13ba:44, 124; 14lc:58, 61; 18lp:73, 84, 105, 128, 138, 168, 188 (about 25; the list covers the whole group of weight words). *Proposed:* *weight of the source variable `z_i` in the norm*, one word for the group.
-*Across chapters:* one object in chapters 12–18, under several names (source, mark, marker, residual, available weight).
+- **Meaning.** Not defined in chapters 12–16. One of the positive numbers (`w_i`, `ω`) by which the source variables are scaled in the marked norm, so that the coefficient of `z_S` is bounded by `1/∏ w_i` (12:243–244; display 11:808–811). The weights are defined at 11:43–49. In 18lp "available" says more: it is the source weight of a group that remains after the reductions for support enlargement and the per-step losses, bounded below by (ch18:group-weight): "With `g` groups left, their available product weight is consequently at least `(a_j/a_l)^{4n}(α_j/8)^{n(n−g)}∏w_i`" (18lp:128–131); `ω` at 18lp:168 is this remaining weight of the single group ("the cluster has become one group at level `m+1`, with available weight `ω`", 18lp:167–168; "divide by the available weight", 18lp:175).
+  *Basis:* R (12:243–244; 11:43–49) for the weights; R (18lp:128–131, 167–168) for "available". *Where:* the phrase itself: 18lp:128, 168, 175. The whole group of weight words: 12:247, 281, 282; 13sb:72–75; 13ba:44, 124; 14lc:58, 61; 18lp:73, 84, 105, 128, 138, 168, 188 (about 25). *Proposed:* *the remaining weight `ω` of the group*; for the group of words, *weight of the source variable `z_i` in the norm*.
+*Across chapters:* one object in chapters 12–18, under several names (source, mark, marker, residual, available weight); "available weight" occurs only in 18lp, for what is left of the weight after the losses.
 *See also:* amplitude (sense 4); source weight.
 
 #### averaged measurements
-- **Meaning.** Undefined. Read as the values of the finite family of correlation functionals `L_i` on a coefficient (`G` is the free counterpart).
-  *Basis:* I. *Where:* 11:983, 1806, 1920, 2177, 2233–2235, 2248, 2255, 2276, 2288, 2314, 2320 (the list is shared with "measurement", "tested correlation", "correlation pairing"). *Proposed:* *value of the functional `L_i`*.
-*Across chapters:* chapter 11 only.
+- **Meaning.** The values, on the rows `(I − Π_i)u_{j,i}`, of the correlation functionals `L_i`, which are defined as normalised averages over the shifts `0, …, h_N − 1` of the distinguished insertion ("These normalized averages define `L_i`", 11:2249–2251; "their averaged measurements tend to zero", 11:2253–2255).
+  *Basis:* R (11:2249–2255). *Where:* 11:2255 (single occurrence). *Proposed:* *value of the functional `L_i`*.
+*Across chapters:* chapter 11 only. "Measurement magnification" (11:1806), "measurement cell" (11:1920) and "local insertion measurement" (11:2247–2248) are other objects; see *measurement*.
 *See also:* detection; measurement.
 
 ### B
@@ -509,11 +509,11 @@ See *sector* (sense 1).
 
 #### block penalty
 *Variants:* the penalty; block parameter (1:420; 5:102); penalty parameter (MT:12); soft-block penalty `b` (19:17); soft constraint, soft constraint coefficient (1:409; 7:574).
-1. **The constant `b > 0`** of the Gaussian block weight `exp(−(b/2)‖Qa − v‖²)`: "Fix the block penalty `b > 0`" (4:226); "`b > 0` the block penalty" (5:87–88); "the penalty `b > 0`" (6:21).
-   *Basis:* D (4:226). *Where:* 4:226; 5:88, 102; 6:21, 125; MT:12; 19:17; called "soft constraint (coefficient)" at 1:409, 7:574 and "block parameter" at 1:420. *Proposed:* *the penalty parameter `b`* (the phrase of the main theorem, MT:12), one phrase in every chapter.
-2. **The penalty term itself,** the function `(b/2)‖Qa − v‖²` in the exponent of the block kernel: "Let `r(x)` be the derivative of the block penalty with respect to that block average increment" (7:523–524); the joint action "contains the fine kinetic action and the actual block penalty" (7:873–875). Its Hessian is the matrix `B` ("`B` for its penalty Hessian", 7:475–477, entering as `H*BH`).
-   *Basis:* R (7:523–524, 873–875). *Where:* 7:476, 523, 538, 874, 913, 1048; 9s:35. *Proposed:* *penalty term of the block-spin kernel* (a different object from the penalty parameter `b`).
-*Across chapters:* the meaning changes: the constant in chapters 4–6, 19 and the main theorem, the term in chapters 7 and 9s. "Block penalty" at 7:523, 874 and "penalty Hessian" (7:476) are not synonyms of the constant `b`.
+1. **The constant `b > 0`** of the block kernel `q_{bβ}` (4:226, 239), which in the normalised Gaussian form of chapter 5 is the weight `exp(−(b/2)‖Qa − v‖²)` (5:87–103): "Fix the block penalty `b > 0`" (4:226); "`b > 0` the block penalty" (5:87–88); "the block parameter remains `b` after normalization, although the original block kernel has penalty `bβ`" (5:102–103); "the penalty `b > 0`" (6:21).
+   *Basis:* D (4:226). *Where:* 4:226; 5:88, 102–103, 312; 6:21, 125; 10:405; MT:12; 19:17, 143; called "soft constraint (coefficient)" at 1:409, 7:574 and "block parameter" at 1:420. *Proposed:* *the penalty parameter `b`* (the phrase of the main theorem, MT:12), one phrase in every chapter.
+2. **The penalty term itself,** the function `(b/2)‖Qa − v‖²` in the exponent of the block kernel: "the stationary fine action together with its block penalty is exactly the coarse quadratic action" (5:145–146); "Let `r(x)` be the derivative of the block penalty with respect to that block average increment" (7:523–524); the joint action "contains the fine kinetic action and the actual block penalty" (7:873–875); "In the block penalty, simultaneous left multiplication … leaves the penalty unchanged" (17c:288–290). Its Hessian is the matrix `B` ("`B` for its penalty Hessian", 7:475–477, entering as `H*BH`).
+   *Basis:* R (7:523–524, 873–875). *Where:* 5:146; 7:476, 523, 538, 874, 913, 1048; 9s:35; 17c:288–290. *Proposed:* *penalty term of the block-spin kernel* (a different object from the penalty parameter `b`).
+*Across chapters:* the meaning changes: the constant in chapters 4–6, 10, 19 and the main theorem; the term at 5:146, in chapters 7 and 9s and at 17c:288–290. "Block penalty" at 7:523, 874 and "penalty Hessian" (7:476) are not synonyms of the constant `b`.
 *See also:* block-completed form; soft constraint.
 
 #### block root
@@ -553,13 +553,13 @@ See *trial*.
 
 #### branch
 *Variants:* minimising branch; fallback branch; alternative branch; common minimizing branch (5:1383); stationary branch; selected branch.
-1. **A case of a piecewise definition;** "fallback" is the complementary case, in which the smallness condition fails.
-   *Basis:* I. *Where:* 4:32, 76, 106, 208–211, 361–393; 5:948–970. *Proposed:* *case*; *in the complementary case*.
+1. **A case of a piecewise definition;** "fallback" is the complementary case, in which the smallness condition fails. Also "three alias branches" (5:210) and "clip is its quadratic branch" (6:1416).
+   *Basis:* I. *Where:* 4:32, 76–78, 106, 208–212, 252, 281, 288, 296, 365, 389–390; 5:210, 948, 968–970, 1376, 1383–1384; 6:312, 362, 496, 606, 671, 981, 1107, 1416; 11R:21, 237. *Proposed:* *case*; *in the complementary case*.
 2. **Branch of stationary solutions:** the locally unique solution of the stationarity equation as a function of the coarse field ("write `ρ(x)` for its stationary branch", 9s:36); the "stationary graph" of chapters 5–6 is this object.
-   *Basis:* R (9s:36). *Where:* 7:501, 517, 553, 766, 949, 953, 1152; 9:292; 9s:36, 39; 10:920; 17c:147, 186; 17t:28. *Proposed:* *branch of critical points*; *critical-point map*.
-3. **Branch of the logarithm** (standard).
-   *Basis:* R. *Where:* 8:129. *Proposed:* keep.
-*Across chapters:* sense 1 in chapters 4–5 only; sense 2 from chapter 7 on; sense 1 does not occur in chapters 7–9. "Stationary branch" at 10:920 is sense 2, settled by 9s:36.
+   *Basis:* R (9s:36). *Where:* 7:501, 517, 553, 766, 949, 953, 1152; 9:292; 9s:36, 39; 10:920; 17c:186, 396. *Proposed:* *branch of critical points*; *critical-point map*.
+3. **Branch of the logarithm** (standard): "The series defines the branch continued from zero activity" (8:129); "No branch of a complex logarithm is chosen" (11R:364).
+   *Basis:* R. *Where:* 8:129; 11R:364. *Proposed:* keep.
+*Across chapters:* sense 1 in chapters 4–6 and 11R (the cases of the block kernel); sense 2 from chapter 7 on; sense 1 does not occur in chapters 7–9. "Stationary branch" at 10:920 is sense 2, settled by 9s:36. 17c:147 ("stationary internal coordinates") and 17t:28 ("stationary substitution") speak of the same object without the word.
 *See also:* branch masses; fallback; stationary graph.
 
 #### branch masses
@@ -653,7 +653,7 @@ See *stage*. "Windows crossing changes of stage" (17w:2, 124); the related "fixe
 
 #### channel
 1. **Each of the two determinants (vector, ghost), or the field type they belong to.**
-   *Basis:* I (7:331, 414; 17t:97 "In each channel the logarithmic Hessian is"). *Where:* 7:331, 414–415, 440; 17t:97. *Proposed:* *the vector and the ghost determinant*; *term*.
+   *Basis:* I (7:331, 414; 17t:97 "In each channel the logarithmic Hessian is"). *Where:* 7:331, 414; 17t:97. *Proposed:* *the vector and the ghost determinant*; *term*.
 2. **One term of the quadratic part of the path action**: a plaquette term or an ordered pair of entries of a row square ("plaquette channel", "channel `d`", "low, high, raw channels").
    *Basis:* R (9:543–547). *Where:* 9:543–546, 571, 609–612, 770, 861 (8 uses in ch. 9). *Proposed:* *term*.
 3. **The component of field order two of the defect recursion** ("the quadratic channel").
@@ -701,17 +701,15 @@ See *contact projection*.
 See *threshold for the starting scale*: the requirement `τ_m ≥ b_j log 3` (10:181–182), a *lower bound on the starting scale `b_j`* (10:63, 606, 692; 11:1070, 1397; 11R:79, 219, 336; 11E:30, 106, 113, 148).
 
 #### chosen
-*Variants:* chosen phase (17:15); chosen before `L` (7:23).
-1. **Ordinary: fixed by a choice**, by the construction or inside a proof (4:160). This covers all uses in chapters 1, 2, 7–9 (26 lines) except 7:23, all uses in files 10 / 11 / 11R / 11E (4 / 18 / 3 / 1, e.g. 10:63; 11:218, 713, 1392), and the 18 occurrences of chapters 17–19.
-   *Basis:* I. *Where:* 4:160, 210, 383, 393; 5:738, 858, 1378; 6:134, 165, 177, 362, 1557; ch. 1, 2, 7–9 (26 lines); 10 / 11 / 11R / 11E (4 / 18 / 3 / 1); ch. 17–19 (18), e.g. 17:15. *Proposed:* *chosen*; *fixed*.
-2. **Chosen by the random index** of the block step, where a statement holds for every value of the index `α`. Which of the chapter 4–6 lines of sense 1 carry this sense was not split.
-   *Basis:* I. *Where:* among the lines of chapters 4–6 listed under sense 1; none in chapters 10–11. *Proposed:* *for every value of `α`*.
-3. **Of a finite subfamily of activities**: at 4:456 and 4:616 the "chosen" objects are finite subfamilies of activities (sense 4 of *selected*); at 14lc:101, 109 the word is a synonym of "selected" (fixed by the construction, or along the subsequence).
-   *Basis:* I (4:456, 616; 14lc:101, 109). *Where:* 4:456, 616; 14lc:101, 109. *Proposed:* *the given finite subfamily*; *fixed*.
-4. **"Chosen before `L`"** (7:23): of a constant, fixed before the block ratio `L` in the order of constants; see *pre-L factor*.
-   *Basis:* I (7:23). *Where:* 7:23. *Proposed:* *independent of `L`*.
-*Across chapters:* ordinary almost everywhere; the house uses are senses 2–4. 4:456 and 4:616 are assigned to sense 3, not to the "random index" sense (text read).
-*See also:* selected.
+*Variants:* chosen phase (17:15); chosen before / after `L` (6:355, 518; 7:23).
+1. **Ordinary: fixed by a choice**, by the construction or inside a proof ("can be chosen arbitrarily small", 4:108; "the chosen block kernel", 5:1376). This covers all uses in chapters 1, 2, 7–9 (26 lines) except 7:23, all uses in files 10 / 11 / 11R / 11E (4 / 18 / 3 / 1, e.g. 10:63; 11:218, 713, 1392), and the uses of chapters 12–19.
+   *Basis:* I. *Where:* 3:546, 967; 4:108, 151, 641; 5:165, 208, 749, 751, 850, 1003, 1057, 1255, 1291, 1376, 1381; 6:15, 134, 139, 188, 276, 399, 479, 1546; ch. 1, 2, 7–9 (26 lines); 10 / 11 / 11R / 11E (4 / 18 / 3 / 1); ch. 12–16 (24: 12:249, 306; 13:96, 188, 241, 354; 13sb:16, 51, 74, 162; 13ba:73; 14:224, 227, 354, 495, 643, 993; 14lc:9, 69, 101, 110; 15:207, 261; 15sp:11); ch. 17–19 (19), e.g. 17:15; RG:33. *Proposed:* *chosen*; *fixed*.
+2. **Chosen by the random index** of the block step: "Every chosen frame tag must have positive mass" (6:63), in the definition of a consistent selection. That the frame tag is the one assigned by the random index is inferred.
+   *Basis:* I (6:63). *Where:* 6:63. *Proposed:* *chosen*, saying once who chooses (the frame tag given by the random index `α`). The other random-index lines (4:210, 393) have "select"; see *selected* (sense 9).
+3. **Fixed in the order of constants** relative to the block ratio `L`: "constants described as uniform in `L` are chosen before `L`" (7:22–23); "this constant is chosen after `L`" (6:355); "needed before `L` is chosen" (6:518); see *pre-L factor*.
+   *Basis:* I (7:22–23; 6:355, 518). *Where:* 6:355, 518; 7:23. *Proposed:* *independent of `L`* / *depending on `L`*.
+*Across chapters:* ordinary almost everywhere; the house uses are senses 2 and 3. The word does not occur at 4:160, 210, 383, 393, 456, 616; 5:738, 858, 1378; 6:165, 177, 362, 1557, which have "selected" or "select" and belong to *selected* (senses 2, 4 and 9); in particular the finite subfamilies of 4:456 and 4:616 are "selected", not "chosen" (*selected*, sense 4). At 14lc:101, 110 the word is a synonym of "selected" (fixed by the construction, or along the subsequence: senses 2 and 6 of that entry).
+*See also:* selected; pre-L factor.
 
 #### classical bound contraction
 - **Meaning.** The inequality (ch07:classical-budget), `A_out ≤ a_stage + P_stage(A)/L` (7:1055–1057). It is the invariance of a bound, not a contraction.
@@ -847,10 +845,12 @@ See *linear graph*. The notation is introduced only at 11:379–380 (R); lines 1
 *See also:* normalizations of local observables.
 
 #### coefficient recovery
-*Variants:* coefficient conversions.
-- **Meaning.** Inversion of a finite matrix of pairings, by which coefficients are recovered from the values of finitely many functionals.
-  *Basis:* I (17m:251–301). *Where:* 17m:251–301, 471. *Proposed:* *inversion of the finite system*.
-*Across chapters:* 17m only.
+*Variants:* coefficient conversions (sense 2).
+1. **Coefficient recovery.** Inversion of a finite matrix of pairings, by which coefficients are recovered from the values of finitely many functionals: "Finite coefficient recovery has a fixed stage cost" (17m:301).
+  *Basis:* I (17m:251–301). *Where:* 17m:301 (single occurrence). *Proposed:* *inversion of the finite system*.
+2. **Coefficient conversions.** A change of coefficient normalisation with a stated cost: "Subexponential coefficient conversions and support truncation make this `O(a_k^η)`" (17m:471); "sum the finite coefficient conversions and support moments" (18lp:176). Neither passage says that the conversion is the inversion of sense 1.
+  *Basis:* I. *Where:* 17m:471; 18lp:176. *Proposed:* name the change of coefficients and print its bound.
+*Across chapters:* sense 1 in 17m only; sense 2 in 17m and 18lp. That the two phrases name one operation is not established.
 *See also:* deterministic coefficient evaluation.
 
 #### cofinal grids
@@ -964,16 +964,16 @@ See *comparison level*.
 
 #### comparison level
 *Variants:* comparison depth; comparison level / depth `k`; (fixed) deep comparison level; admissible comparison depth (14lc:23).
-1. **The level `k` below which the history is restarted and at which the comparison with the free (Gaussian) theory is made**; the top of the three levels `k > ℓ > w` of chapter 11 ("top level `k`", 11R:218; `m = k − ℓ`, 11:1754). At that level `H_k = exp((log log β̂_k)²)` (14lc:23–24).
-   *Basis:* I (11:734–737; 11R:218; 14lc:23–24); the three levels are never defined together. *Where:* 11:734–737, 1149, 1343, 1361, 1753, 2032, 2064, 2085–2088; 11R:70, 218; 13:163–165; 14:226–227; 14lc:23; 15:253. *Proposed:* *comparison level `k`* (one word, "level"), named once together with `ℓ` and `w`; afterwards only the symbols.
+1. **The level `k` below which the history is restarted and at which the comparison with the free (Gaussian) theory is made**; the top of the three levels `k > ℓ > w` of chapter 11 ("top level `k`", 11:2085; 11R:218; `m = k − ℓ`, 11:1754). At that level `H_k = exp((log log β̂_k)²)` (14lc:23–24).
+   *Basis:* I (11:734–737; 11:1753–1754, 2085–2088; 11R:217–218; 14lc:23–24); the three levels are never defined together. *Where:* 11:734–737, 1149, 1343, 1361, 1401, 2032, 2035, 2064, 2179–2180; 11R:7, 70; 13:163–165; 14:226–227; 14lc:23; 15:253. *Proposed:* *comparison level `k`* (one word, "level"), named once together with `ℓ` and `w`; afterwards only the symbols.
 2. **In 17m: the finer insertion level** ("At the comparison level `k`", 17m:136, where `k` is the level `k_i` of the insertion, 17m:386), while in 17w the restart runs backwards from the radius level `n` (17w:31–33, 100–103).
    *Basis:* I (17m:136). *Where:* 17m:136. *Proposed:* *insertion level `k_i`*.
 *Across chapters:* "level" and "depth" are the same index. Chapters 11–15 use sense 1; chapter 17 attaches the word to different levels in 17w and 17m (inferred from those lines). "Admissible comparison depth" (14lc:23) is undefined: "comparison depth" occurs elsewhere without "admissible", and 11:884 defines an admissible comparison coefficient, not a depth; probably a depth allowed by the schedule (`?`). In chapter 17 the word stands beside "radius level `n_i`", "output level" and "middle and output stopping levels" (17:85, 86, 120; 17w:41, 102; 17t:405; 17c:241, 391; 17m:136, 331, 416; not split by term); the output level of chapter 17 is not the `w` of chapter 11.
 *See also:* comparison window; output level; level.
 
 #### comparison term
-- **Meaning.** The quantities `Φ v_c` and `Φ_n v_c` (defined). That they are the fine curvature and the mismatch predicted linearly from the truncated coarse curvature is inferred.
-  *Basis:* D (6:186–188) for the quantities; I for the interpretation. *Where:* 6:186–188. *Proposed:* *linear prediction from the coarse field*.
+- **Meaning.** The quantities `Φ v_c` and `Φ_n v_c` (defined): "The rows `Φ v_c` and `Φ_n v_c` are the transported linear comparison terms. Throughout this chapter, a comparison term means one of these specified rows, not an independently chosen approximation" (6:186–188). That they are the fine curvature and the mismatch predicted linearly from the truncated coarse curvature is inferred.
+  *Basis:* D (6:186–188) for the quantities; I for the interpretation. *Where:* 6:186–188 (definition); 6:611, 895, 947, 965, 986–987, 1007–1010, 1022, 1397, 1410, 1552, 1558. *Proposed:* *linear prediction from the coarse field*.
 *Across chapters:* chapter 6 only.
 
 #### comparison window
@@ -1012,10 +1012,10 @@ See *compensation*.
 See *complementary* (sense 1) and *large-field profile*.
 
 #### complete
-*Variants:* complete remainder, source, bound, transfer, push, marked version.
-- **Meaning.** Including both the regular and the large-field parts, and usually all terms with at least two insertions: "the complete regular and large-field remainder on common supports" (12:115); "its complete bound, including the complementary large-field part" (13ba:16).
-  *Basis:* R (12:115; 13ba:16). *Where:* 12:67, 115, 160, 208, 252; 13sb:65; 13ba (8 uses); 18lp:90; 15:184 (16 in all). *Proposed:* *full*; say what is included each time.
-*Across chapters:* one sense in chapters 12–15; its opposite there is "ordinary" (13ba:15–16).
+*Variants:* complete remainder, source, bound, transfer, push, marked version; complete signed density.
+- **Meaning.** Including both the regular and the large-field parts, and usually all terms with at least two insertions: "the complete regular and large-field remainder on common supports" (12:115); "its complete bound, including the complementary large-field part" (13ba:16); "the complete signed density, with every term involving at least two insertions" (18r:21).
+  *Basis:* R (12:115; 13ba:16; 18r:21). *Where:* 12:67, 115, 160, 252; 13sb:65; 13ba:16, 44, 57, 61, 124, 158, 284; 18lp:90; 15:184; 18:413; 18r:11, 21. Chapter 11 has the same use: 11:95, 507, 775, 899, 1038, 1159, 1498, 1916, 1949, 2114; 11E:84 ("complete `q_k`, including all regular and large-field coefficients involving several insertions", 11:775). *Proposed:* *full*; say what is included each time.
+*Across chapters:* one sense in chapters 11–18; its opposite is "ordinary" (13ba:15–16). At 12:208 ("the complete terms linear in the sources") and 13ba:153 ("complete original prescribed set") it is the ordinary word "whole", as at 3:547; 6:717, 1074; 7:313; 9:82, 966; 17:280; 17c:204; 17m:37 is the verb.
 *See also:* complementary.
 
 #### completed
@@ -1070,8 +1070,8 @@ See *threshold for the starting scale*.
 #### connected covering number
 *Variants:* `cov_B(X)`; `c_B(S)`; `c_B`; `c(X)`; covering number; connected cover number; fine cover number; cover units.
 - **Meaning.** The minimum number of radius-`B` periodic balls whose union is connected in the nearest-neighbour graph and covers `X`. Activities are weighted by `e^{α c_B(X)}`; a "cover unit" or "unit of support exponent" is one unit of the exponent multiplying `c_B(X)`.
-  *Basis:* D (4:587–589). *Where:* 4:587–589; 6:1172, 1296–1297; 9:219, 419, 511; 11:396, 495, 502, 528, 533, 939, 1368, 1446; 12:229, 274–280; 13ba:132–137; 18lp:78–82; 17m:331–332, 412–413. *Proposed:* keep, with one name and one notation: *connected covering number `c_B(X)`*.
-*Across chapters:* one sense throughout, under two notations: `cov_B` (chapters 4, 9, 12) and `c_B` (chapters 6, 11, 13, 18lp), with "boxes" at 12:274–280 against "balls" elsewhere. Later chapters use it without recalling the definition of chapter 4 (11:1368 "Here `c_B(X)` is the connected cover number at radius `B`"). The symbol is at 6:1297; 6:1296 has "fine cover number".
+  *Basis:* D (4:587–589). *Where:* 4:587–589; 6:1172, 1296–1297; 9:219, 419, 511; 10:616; 11:268, 396, 495, 502, 528, 533, 939, 1161–1162, 1368, 1446; 12:229, 269, 274–280; 13ba:132–137; 18lp:78–82; 17m:331–332, 412–413. *Proposed:* keep, with one name and one notation: *connected covering number `c_B(X)`*.
+*Across chapters:* one sense throughout, under two notations: `cov_B` (chapters 4, 9, 12) and `c_B` (chapters 6, 11, 13, 18lp), with "boxes" at 12:229–230 against "balls" elsewhere. Chapter 11 uses it with a one-line reminder (11:1368 "Here `c_B(X)` is the connected cover number at radius `B`"); 12:228–230 and 18lp:78 recall the definition in words ("counts a connected cover of `X` by radius-`B_m` boxes"; "counts the radius-`B` balls in a smallest connected cover of `X`"). The symbol is at 6:1297; 6:1296 has "fine cover number".
 *See also:* containing-site bound; cover.
 
 #### connected expansion
@@ -1127,11 +1127,11 @@ See *contact* (sense 3).
 See *contact* (senses 1 and 2).
 
 #### containing-site bound
-*Variants:* containing-site sum; containing-site norm; site norm `‖z‖_α`; site bound; site sum.
-- **Meaning.** The bound `sup_x Σ_{λ: x ∈ S_λ} e^{α c_B(S_λ)} a_λ ≤ ε`: every activity is counted at each site of its support, as opposed to an anchored sum, which counts it at one chosen anchor ("It counts every polymer at each site in its support. A norm which counts only the chosen anchor of a polymer is different", 8:75–76).
-  *Basis:* D (4:603–606; 8:69–74). *Where:* 4:603–606; 6:1170–1178; 8:69–79; 9:513–518, 607; 11:257, 266–272, 300, 1473, 1918; 11R:74, 125, 141–142, 170–181. *Proposed:* *weighted polymer-activity norm (sum over activities containing a site)*; name each normalisation once.
-*Across chapters:* one notion in chapters 4, 6, 8, 9, 11, under the names "containing-site bound" (chapter 4), "site norm" (chapter 8), "containing-site norm" (9:518), "site bound / site sum" (chapter 11). That "support norm" (8:196), "attachment norm" (9:697) and "rooted activity norm" (12:178) are the same norm is not stated by the text; 9:513–518 distinguishes anchored from containing-site bounds, and 11:266–272 converts one into the other.
-*See also:* anchored; connected covering number.
+*Variants:* containing-site sum; containing-site norm; site norm `‖z‖_α`; support norm; site bound; site sum.
+- **Meaning.** The bound `sup_x Σ_{λ: x ∈ S_λ} e^{α c_B(S_λ)} a_λ ≤ ε` (6:1172–1178), and the norm it defines, `‖z‖_α = sup_x Σ_{γ: x ∈ X_γ} |z_γ| e^{α c(X_γ)}` (8:69–74): every activity is counted at each site of its support, as opposed to an anchored sum, which counts it at one chosen anchor ("It counts every polymer at each site in its support. A norm which counts only the chosen anchor of a polymer is different", 8:75–76). Chapter 4 has both kinds side by side: of the two sums of (ch04:weighted-sums) the first, for regular activities, is anchored and the second, for large-field activities, is of the containing-site kind, and "Replacing an anchored sum by a containing-site sum requires a bound for the number of possible anchors; it is not a harmless notational change" (4:596–606). "The support norm" (8:196; 11:217; 11R:7) has no formula; that it is the same norm is inferred.
+  *Basis:* D (4:596–606; 6:1172–1178; 8:69–74); I for "support norm". *Where:* 4:605; 6:1174, 1227, 1243, 1316; 8:69–79, 143, 196; 9:513–518, 607, 894; 11:172, 217, 255, 257, 266, 301, 336, 790, 1473, 1480, 1515, 1520, 1529, 1577, 1945; 11R:7, 74, 125, 142, 170, 181, 314, 319, 322, 330; 13sb:36. *Proposed:* *site norm `‖z‖_α`* (*containing-site norm*), kept and defined once, against *anchored norm*; "weighted polymer-activity norm" alone would cover both and drop the distinction the text insists on (4:603–606; 8:75–78).
+*Across chapters:* one notion in chapters 4, 6, 8, 9, 11, under the names "containing-site sum / bound" (chapters 4, 6), "site norm" (chapter 8; 9:607), "containing-site norm" (9:518), "site bound / site sum" (chapters 6, 11, 11R). That "support norm" (8:196), "attachment norm" (9:697) and "rooted activity norm" (12:178) are the same norm is not stated by the text; 9:513–518 distinguishes anchored from containing-site bounds, and 11:266–272 converts one into the other.
+*See also:* anchored; connected covering number; site conversion; support-weight reserve.
 
 #### contraction
 *Variants:* strict contraction; graph contraction; rebasing contraction; tensor contraction.
@@ -1154,8 +1154,8 @@ See *coordinate ties*.
 
 #### coordinate half-space spectrum
 *Variants:* coordinate spectral measures.
-- **Meaning.** The joint spectral measure `P_μ` of the generator `H_μ` of translations in the coordinate direction `μ` and of the transverse momenta; its support lies in a half-space, and "No cone bound `E ≥ |p|` has been proved or used" (14:76–77).
-  *Basis:* R (14:76–77). *Where:* 14:76, 410, 422. *Proposed:* *joint spectral measure of `H_μ` and the transverse momenta*.
+- **Meaning.** The joint spectral measure `P_μ` of the generator `H_μ` of translations in the coordinate direction `μ` and of the transverse momenta, a projection-valued measure on `[0,∞) × ℝ³` (14:69–75); its support lies in a half-space, and "No cone bound `E ≥ |p|` has been proved or used" (14:76–77).
+  *Basis:* R (14:69–77; 14:413–414 "the joint measure of nonnegative heat energy and transverse momentum"). *Where:* 14:76, 410. *Proposed:* *joint spectral measure of `H_μ` and the transverse momenta*.
 *Across chapters:* chapter 14 only.
 *See also:* cone (sense 3).
 
@@ -1284,10 +1284,10 @@ See *counting norm*.
 See *coupling threshold*.
 
 #### coupling threshold
-*Variants:* coupling thresholds; inverse coupling threshold (chapters 10–11); coupling entry threshold (7:1190); coupling-threshold-controlled (17w:76); "the threshold" unqualified (9:202; 9s:219).
-- **Meaning.** A lower bound imposed on the reference coupling `β̂` (at a stage, after the block ratio `L` has been chosen) above which the estimates hold: "choose `L` so that `C L^{-2} ≤ 1/4`, then the coupling entry threshold" (7:1189–1190); "sufficiently large coupling thresholds".
-  *Basis:* R (7:1189–1190; 11:443–444). *Where:* 6:322, 432; 7:1190; 9:145, 430, 709; 9s:207; 11:443; 13:237; 13sb:16, 41, 45; 13ba:39, 50, 83, 101, 258, 261; 14lc:69; 18lp:101, 148; 17:134; 17w:23, 42, 74, 76, 95; 17c:141, 234, 236, 384, 386; 17m:142–143, 174, 185, 315, 346–347, 365, 430; 19:20 (19 uses in ch. 17–19). *Proposed:* *lower bound on `β̂`* (depending on the stage `j` and on `L`); in running text *for `β̂` sufficiently large*.
-*Across chapters:* one sense throughout; the parts agree, with two wordings of the same equivalent. "Threshold" alone is not safe: it is also the small-field threshold `t` (an upper bound on the field; 2:326; 9:19; 17c:316; 17m:304), a lower bound on the period (2e:210) and a lower bound `N_0` on the cutoff (12:265; 13:27, 388).
+*Variants:* coupling thresholds; inverse coupling threshold (chapters 10–11); stage threshold `d_j` (10:157–158); coupling entry threshold (7:1190); coupling-threshold-controlled (17w:76); "the threshold" unqualified (9:202; 9s:219).
+- **Meaning.** A lower bound imposed on the reference coupling `β̂` (at a stage, after the block ratio `L` has been chosen) above which the estimates hold: "choose `L` so that `C L^{-2} ≤ 1/4`, then the coupling entry threshold" (7:1189–1190); "Only afterwards choose inverse coupling thresholds and minimum auxiliary periods. Enlarging an inverse coupling threshold does not change the block ratio" (10:38–39); "Every subsequent stage threshold `d_j` is satisfied by increasing its starting scale until `β̂_m ≥ d_j`" (10:157–159); "sufficiently large coupling thresholds".
+  *Basis:* R (7:1189–1190; 10:38–39, 157–158; 11:443–444). *Where:* 6:322, 432; 7:1190; 9:145, 430, 709; 9s:207; 10:38, 39, 110, 157–158 ("stage threshold `d_j`"), 627, 643; 11:278, 443, 711; 11E:32; 11R:10; 13:237; 13sb:16, 41, 45; 13ba:39, 50, 83, 101, 258, 261; 14lc:69; 18lp:101, 148; 17:134; 17w:23, 42, 74, 76, 95; 17c:141, 234, 236, 384, 386; 17m:142–143, 174, 185, 315, 346–347, 365, 430; 19:20 (19 uses in ch. 17–19). *Proposed:* *lower bound on `β̂`* (depending on the stage `j` and on `L`); in running text *for `β̂` sufficiently large*.
+*Across chapters:* one sense throughout; the parts agree, with two wordings of the same equivalent. "Threshold" alone is not safe: it is also the small-field threshold `t` (an upper bound on the field; 2:326; 9:19; 17c:316; 17m:304), a lower bound on the period (2e:210), a lower bound `N_0` on the cutoff (12:265; 13:27, 388), the "threshold for the starting scale" (10:63, 606, 692; 12:123), the mesh threshold (11:1119, 1815) and the restarted large-field threshold `ϑ` (11:749).
 *See also:* coupling band.
 
 #### cover
@@ -1329,9 +1329,10 @@ See *connected covering number*.
 See *coefficient functional*.
 
 #### curl-division
+*Variants:* curl division (17c:346); two-leg division (7:1162).
 - **Meaning.** The division by the lattice curl of chapter 7 (section "Division by the lattice curl", 7:67 ff.), built from the elementary division `D_a f(p) = (f(p) − f(p|_{p_a=0}))/(e^{ip_a} − 1)` (7:89–91). Chapter 10 fixes these linear operations once in order to make the representation by transported curvature terms unique (10:313–316).
-  *Basis:* R (7:67, 89–91; 10:313–316). *Where:* 10:314. *Proposed:* *division by the lattice curl (Section 7.…)*; keep, cite chapter 7.
-*Across chapters:* used in chapter 10, defined in chapter 7 (text read at 10:313–316 and 7:67, 88–91). The "path-placement operations" fixed in the same sentence (10:314–315) were not found under that name in chapter 7 (7:753 has "placement" in another sense); their meaning stays open (`?`).
+  *Basis:* R (7:67, 89–91; 10:313–316). *Where:* 10:314; 17c:346 (unhyphenated: "Two-leg curl division leaves one extra difference"); 7:1162 ("the two-leg division"). *Proposed:* *division by the lattice curl (Section 7.…)*; keep, cite chapter 7.
+*Across chapters:* defined in chapter 7, used in chapters 10 and 17c (text read at 10:313–316 and 7:67, 88–91). The "path-placement operations" fixed in the same sentence (10:314–315) were not found under that name in chapter 7 (7:753 has "placement" in another sense); their meaning stays open (`?`).
 
 #### current defect
 *Variants:* current defect `𝓔_b`.
@@ -1352,16 +1353,16 @@ See *coefficient functional*.
 *See also:* curvature insertion; curvature measurement.
 
 #### curvature defect
-*Variants:* defect (chapters 5–6).
-- **Meaning.** `Z₀ = B_c − T* B_f T − b⁻¹ d₁ d₁*` with `B = H⁻¹` (5:638–641), and its version with the modified operators, which is positive: `K*K = 𝖡_c − T* 𝖡_f T − b⁻¹ d_{1,c} d_{1,c}*` (6:147–148; the text has no symbol for this modified quantity).
-  *Basis:* R (5:638–641; 6:147–148). *Where:* 5:603, 638–641; 6:135, 145. *Proposed:* *positive remainder in the recursion for `H⁻¹`* (no standard name known).
-*Across chapters:* chapters 5–6. At 6:213 "the two signed defects" are instead `E_L`, `E_D`; in chapter 17 "defect" is the *current defect*, and at 14:932–937 there is a space of "internal defects". At 6:176 the word is only in a label.
+*Variants:* defect (chapters 5–6); amended curvature defect (5:1371).
+- **Meaning.** `Z₀ = B_c − T* B_f T − b⁻¹ d_{1,c} d_{1,c}*` with `B = H⁻¹` for the unmodified metrics (5:638–641). The "amended curvature defect" (5:1371) is the same expression with the modified inverse metrics `B̃_c`, `B̃_f` (5:662–666, 674–676), which is positive: `H̃_c (B̃_c − T* B̃_f T − b⁻¹ d_{1,c} d_{1,c}*) H̃_c = d_{2,c}* D_c* R₀ D_c d_{2,c}` (5:672–680), and in chapter 6 `K*K = 𝖡_c − T* 𝖡_f T − b⁻¹ d_{1,c} d_{1,c}*` (6:147–148; the text has no symbol for this modified quantity).
+  *Basis:* R (5:638–641, 672–680; 6:147–148). *Where:* 5:453 (title), 603, 638–641, 672–680, 1371; 6:135, 145–148. *Proposed:* *positive remainder in the recursion for `H⁻¹`* (no standard name known).
+*Across chapters:* chapters 5–6. The compound "curvature defect" itself occurs only at 5:453 and 5:1371; 5:603 and 6:135 have "defect" and "positive-defect". At 6:213 "the two signed defects" are instead `E_L`, `E_D`; in chapter 17 "defect" is the *current defect*, and at 14:932–937 there is a space of "internal defects". At 6:176 the word is only in a label.
 *See also:* current defect; curvature metric.
 
 #### curvature family
 *Variants:* cubic, quartic, quadratic curvature family.
-- **Meaning.** The collections of curvature terms `S_3`, `S_4`, and the quadratic one.
-  *Basis:* R (7:1060–1062). *Where:* 7:1054, 1060–1062, 1071, 1163, 1168. *Proposed:* *the terms `S_3`, `S_4`*.
+- **Meaning.** A family of transported curvature terms representing a homogeneous part of an action. The cubic and quartic families are (inferred) the "invariant cubic and quartic curvature terms `S_3`, `S_4`" of Proposition "Classical matching" (7:994–997): "the cubic and quartic curvature families are constructed" (7:1071); "the cubic/quartic families of Proposition (ch07:classical-match)" (7:1168–1169). The lines 7:1060–1062 ("the quartic contribution of the constructed cubic family … linear in that cubic family") name no symbol. The quadratic family of 7:1163, produced by "Lemma (ch07:unique) and the two-leg division" (7:1162), is a separate object without a symbol.
+  *Basis:* I (7:994–997 with 7:1071, 1168–1169). *Where:* 7:1054, 1060–1062, 1071, 1163, 1168. *Proposed:* *the terms `S_3`, `S_4`*; *the quadratic curvature terms* for 7:1163.
 *Across chapters:* chapter 7 only.
 
 #### curvature insertion
@@ -1405,12 +1406,12 @@ See *coefficient functional*.
 *See also:* cutoff (sense 3).
 
 #### cutoff failure
-*Variants:* failed cutoff condition; failed-cutoff factor; cutoff-failure indicator, probability, catalogue; failures of smooth local cutoffs.
-1. **The event that a Gaussian coordinate is large where the field is small**, so that a smooth local cutoff differs from one: "Failures of smooth local cutoffs in the remaining coordinates are controlled by simultaneous Gaussian tail estimates" (6:9–10); the event is `ℰ_w = {∃ i : d(i,w) ≤ 2B, |z_i| ≥ T}`, `T = ξ t_f/(2g)` (6:837–843).
-   *Basis:* R (6:7–11, 837–843). *Where:* 6:9, 1018; 10:393, 532, 595–597, 727, 921; 11:1613; 11R:283–284, 311. *Proposed:* *cutoff-failure event* (defined once); *the event `{|z_i| ≥ T for some i near w}`*. Not *large-field event*.
+*Variants:* failed cutoff condition; failed-cutoff factor; failed remote cutoff (9:280); cutoff-failure indicator, label, probability, catalogue; failures of smooth local cutoffs.
+1. **The event that a Gaussian coordinate is large where the field is small**, so that a smooth local cutoff differs from one: "Failures of smooth local cutoffs in the remaining coordinates are controlled by simultaneous Gaussian tail estimates" (6:9–10); the event is `ℰ_w = {∃ i : d(i,w) ≤ 2B, |z_i| ≥ T}`, `T = ξ t_f/(2g)` (6:837–843). In chapter 9: "Distinct cutoff-failure labels" (9:111); "cutoff failure at a distinct label" (9:133); "a failed remote cutoff has the joint Gaussian-tail bound of Chapter 6" (9:280).
+   *Basis:* R (6:7–11, 837–843). *Where:* 6:9, 1018; 9:111, 133, 280; 10:532, 595–597, 727; 11:1613; 11R:283–284, 311. *Proposed:* *cutoff-failure event* (defined once); *the event `{|z_i| ≥ T for some i near w}`*. Not *large-field event*.
 2. **Failure of the small-field indicator, that is, presence of a large-field site**: "a complementary stencil containing a failed cutoff condition meets at least one selected support" (11:150–151); the "failed-cutoff factor" `1 − (1−χ) R z_I`, whose "support contains a large-field indicator covered by an original prescribed large-field set" (11:1487–1497); "Every nonzero failed cutoff and every old large-field activity meets a new large-field site" (11:1932–1933).
-   *Basis:* R (11:150–151, 1487–1497). *Where:* 11:150–151, 1476–1500, 1932–1933; 11R:378. *Proposed:* *failure of the small-field indicator*; *large-field site*.
-*Across chapters:* Not *large-field event* for sense 1: chapter 6 separates the two mechanisms (6:7–11). Text read (6:1014–1019; 10:530–533; 11:147–152, 1486–1492, 1611–1614, 1931–1934): chapter 6, chapter 10 and part of chapter 11 have sense 1, and chapter 11 also has sense 2. The "cutoff-failure catalogue" (10:393, 727, 921; undefined) is read as the list of these events, part of the combinatorial data fixed at each level independently of `N` (inferred); with the clipping data, *the fixed data: prescribed large-field sets, list of cutoff events, clip parameters*. "Tail events" (11R:43–45, 283–284) are the events of sense 1, those of (ch06:tail-event). "Warnings" (6:1476; 11:319) probably refers to sense 1; inferred.
+   *Basis:* R (11:150–151, 1487–1497). *Where:* 11:150–151, 1476–1500, 1523, 1562, 1932–1933; 11R:378. *Proposed:* *failure of the small-field indicator*; *large-field site*.
+*Across chapters:* Not *large-field event* for sense 1: chapter 6 separates the two mechanisms (6:7–11). Text read (6:1014–1019; 10:530–533; 11:147–152, 1486–1492, 1611–1614, 1931–1934): chapters 6, 9, 10 and part of chapter 11 have sense 1, and chapter 11 also has sense 2. The "cutoff-failure catalogue" (10:727, once; undefined) is read as the list of these events, part of the combinatorial data fixed at each level independently of `N` (inferred); with the clipping data, *the fixed data: prescribed large-field sets, list of cutoff events, clip parameters*. 10:393 ("event indicators") and 10:921 ("clipping data") name the same fixed data without the word. "Tail events" (11R:43–45, 283–284) are the events of sense 1, those of (ch06:tail-event). "Warnings" (6:1476; 11:319) probably refers to sense 1; inferred.
 *See also:* complementary; cutoff-failure label; cutoff remainder.
 
 #### cutoff-failure catalogue
@@ -1576,12 +1577,12 @@ See *descent* (sense 1).
 #### descent
 *Variants:* descend; descending induction; derivative descent; trial descent; bulk descent bound; descending graph; quantitative descent (7:1187).
 1. **Transfer down the block steps** of a trial, a polynomial or a graph, from fine to coarse: the backward comparison of 11:890–917 ("Descend this whole polynomial to `m`", 13ba:170; "ordinary trial descent gives", 17m:461; "the descending graph", 17m:444). Not a downward induction (11:908–909).
-   *Basis:* R (11:890–917). *Where:* 11:27, 890, 945; 11E:121, 125; 13:239; 13ba:170; 17m:444, 461, 469, 470. *Proposed:* *transfer down the block steps*; for the named argument, *backward comparison* (cited by section number); "graph" is kept.
-2. **Downward induction on the degree.**
-   *Basis:* R (18r:48, 53). *Where:* 18r:48, 53; 18lp:342 ("Descend in total degree"). *Proposed:* *downward induction on the degree*.
+   *Basis:* R (11:890–917). *Where:* 11:945, 2311; 11E:125, 148; 13:239; 13ba:170; 17m:444, 461, 469; the argument is named "backward comparison", not "descent", at 11:27, 890 and 11E:121 (only the label of the section 11:890 has "trial-descent"). *Proposed:* *transfer down the block steps*; for the named argument, *backward comparison* (cited by section number); "graph" is kept.
+2. **Downward induction** on a degree, a layer or a level: "Descending through the degree" (2:236); "Descending through the layers" (2e:102); "Descending removes every jet order above `g`" (3:903); "descending from the highest nonzero homogeneous" (11:1821); "finite descending induction" (11R:386); "Descend in total degree" (18lp:342).
+   *Basis:* R (18r:48, 53). *Where:* 2:236; 2e:102; 3:903; 11:1821; 11R:386; 18r:48, 53; 18lp:342. *Proposed:* *downward induction on the degree* (on the layer, on the level).
 3. **Passage to a quotient** ("These maps descend to unique maps", 13:263; "The operators descend and extend to self-adjoint contractions", 14:51). Standard.
    *Basis:* R (13:263; 14:51). *Where:* 13:263, 274; 14:51; 16:135. *Proposed:* keep.
-*Across chapters:* the meaning changes: sense 1 in chapters 11, 13 and 17m, sense 2 in chapter 18, sense 3 in chapters 13–16. For sense 1, *transfer* is the one verb for moving an object through the block steps (not *propagation*). "Quantitative descent" (7:1187), the step from the loop bound at `m+1` to that at `m`, is a fourth use (*induction step*).
+*Across chapters:* the meaning changes: sense 1 in chapters 11, 13 and 17m; sense 2 in chapters 2, 3, 11, 11R and 18; sense 3 in chapters 13–16. For sense 1, *transfer* is the one verb for moving an object through the block steps (not *propagation*). "Quantitative descent" (7:1187), the step from the loop bound at `m+1` to that at `m`, is a fourth use (*induction step*). "Descend to level one" (10:271) is passage to a lower level (ordinary).
 *See also:* backward comparison; transfer; trial.
 
 #### detecting family
@@ -1777,12 +1778,12 @@ See *re-expression of the endpoint*; for the level concerned, *endpoint*, sense 
 *Across chapters:* this entry covers only the chapter 10–11 use. Other compounds are treated elsewhere: "heat energy" (14:414) is the spectral variable of `H` (see *heat*); plaquette, local and core energy are separate terms.
 
 #### entry
-*Variants:* lower / higher entry; higher (regular) entries.
+*Variants:* lower / higher entry; higher (regular) entries; regular entry linear in the sources (13ba:163).
 1. **Member of a family.** A member `P_i` of the family.
    *Basis:* I. *Where:* 11R:384–385. *Proposed:* *member*.
-2. **Coefficient of a source monomial.** The "higher (regular) entries" are the coefficients of the monomials `z_S` in the nilpotent source variables with `|S| ≥ 2` ("set only these higher entries to zero", 12:207–212).
-   *Basis:* R (12:200–209). *Where:* 12:202, 209. *Proposed:* *terms of source degree ≥ 2* (the text has "source degree" at 12:270).
-*Across chapters:* two unrelated uses, in 11R and in chapter 12.
+2. **Term of the local representation of the marked density**, of any source degree: "this adds `F_v` only to the regular entry linear in the sources" (13ba:162–163). The "higher (regular) entries" are the terms containing at least two source variables `z_i` ("Every term in `H_X` and `K_Q^{≥2}` contains at least two distinct source variables … set only these higher entries to zero", 12:207–209; "Multiply every term of source degree at least two, and only those entries, by a complex scalar `u`", 12:270–271). The degree is carried by "higher", not by "entry".
+   *Basis:* R (12:200–209, 270–271; 13ba:162–163). *Where:* 12:202, 209, 271; 13ba:163. *Proposed:* *term*; *terms of source degree ≥ 2* for the higher entries (the text has "source degree" at 12:270).
+*Across chapters:* two unrelated uses: sense 1 in 11R, sense 2 in chapters 12 and 13ba.
 
 #### envelope
 *Variants:* summable envelope; output envelope; weighted output envelope; scalar envelope; polynomial envelope; derivative envelopes.
@@ -1791,11 +1792,11 @@ See *re-expression of the endpoint*; for the level concerned, *endpoint*, sense 
 *Across chapters:* one sense throughout. At 6:1187 ("exponentially small weighted entry and fixed derivative envelopes for `D`") the same reading fits (inferred; text read). Not interchangeable with the text's own "majorant", which bounds a single factor or activity (9:106, 124, 655), whereas the envelope of 9:793–794 is built from majorants.
 
 #### equation calibration floor
-*Variants:* stage-`j` block floor (11E:29); calibration floor.
-- **Meaning.** The lower bound `L^{1/8} ≥ max_{d≤j} 2(1+C_j) Q_{dj} δ_d^{-1}` on the block ratio `L`, which the text includes "in the stage-`j` block floor" (label `ch11:calibration-floor`). The same sentence adds a separate condition on the coupling, `β̂_N ≥ a_{d,J(N)}`, "in the adjacent stage conditions on the starting scale"; this second condition is not called a floor. 19:29–31 ("finite stage requirements, such as the equation calibration floor") may be meant to cover both.
+*Variants:* calibration floor (label `ch11:calibration-floor`).
+- **Meaning.** The lower bound `L^{1/8} ≥ max_{d≤j} 2(1+C_j) Q_{dj} δ_d^{-1}` on the block ratio `L` (label `ch11:calibration-floor`). The text includes it "in the stage-`j` block floor" (11E:23–29): the block floor is the whole collection of lower bounds on the block ratio at stage `j`, and this bound is one member of it. The same sentence adds a separate condition on the coupling, `β̂_N ≥ a_{d,J(N)}`, "in the adjacent stage conditions on the starting scale"; this second condition is not called a floor. 19:29–31 ("finite stage requirements, such as the equation calibration floor") may be meant to cover both.
   *Basis:* R (11E:23–30). *Where:* 11E:23–30; 19:30. *Proposed:* *the lower bound (11.calibration-floor) on the block ratio `L`*, with the accompanying condition on `β̂_N`.
 *Across chapters:* one sense; used in chapter 19, stated in 11E (text read at 11E:23–30).
-*See also:* floor.
+*See also:* floor (sense 1); block floor.
 
 #### equation direction
 *Variants:* `v_i^eq`; `v_eom`.
@@ -1817,9 +1818,9 @@ See *re-expression of the endpoint*; for the level concerned, *endpoint*, sense 
 
 #### equation space
 *Variants:* equation subspace / kernel / labels / component; finite equation kernel; moving, varying, actual equation space; microscopic equation space; equation comparison; equation inclusion.
-- **Meaning.** The image at cutoff `(N,p)` of the equation ideal: `𝖤_{N,p,d} = 𝖹 P S_{t_N} R_d 𝓘_d` (11E:155–159), written `K_i = X_i P S_t R_e I_e` at 11:1089–1093; in chapter 13 it is `ker Π_{d,N,p}` (13:136–137). "Moving", "varying" and "actual" say that it depends on `(N,p)`; "equation labels" are its elements; "equation comparison" compares the two realisations of the equations of motion.
+- **Meaning.** The image at cutoff `(N,p)` of the equation ideal: `𝖤_{N,p,d} = 𝖹 P S_{t_N} R_d 𝓘_d` (11E:155–159), written `K_i = X_i P S_t R_e I_e` at 11:1089–1093; in chapter 13 it is `ker Π_{d,N,p}`, given by the same formula without a symbol (13:136–137). "Moving", "varying" and "actual" say that it depends on `(N,p)`. "Equation labels" are the elements of `I^𝒱_{N,d} = S_{t_N} R_d 𝓘_d` (11E:43–46), a space independent of `p`, whose image under `𝖹_{N,p,d} P_{N,p,d}` is the equation subspace "in reference coordinates" (11E:154–159). "Equation comparison" compares the two realisations of the equations of motion.
   *Basis:* D (11E:155–159; 11:1089–1093). *Where:* 11:966, 989, 1083, 1089–1093, 1107, 2218, 2224; 11E:43–46, 154–159; 13:14, 15–16, 136–137, 157, 220, 394; 18gq:10, 110. *Proposed:* *space of equation-of-motion labels at cutoff `(N,p)`*.
-*Across chapters:* one object under two notations (`𝖤_{N,p,d}` in 11E, `K_i` in 11 and 13). Not *cutoff-dependent subspace of field equations*: the elements are labels; the cutoff dependence is stated in the proposed name instead.
+*Across chapters:* one object: `𝖤_{N,p,d}` in 11E, `K_i` in chapter 11 (11:1089–1093, 2218), `E_i` in the abstract lemma (11:965–967), and the formula without a symbol in chapter 13 (13:136–137). Not *cutoff-dependent subspace of field equations*: the elements are images of labels; the cutoff dependence is stated in the proposed name instead.
 *See also:* equation ideal; equation remainder.
 
 #### event indicator
@@ -1868,8 +1869,8 @@ See *re-expression of the endpoint*; for the level concerned, *endpoint*, sense 
 *Across chapters:* one sense. The related identity of Proposition 9:651 ("exact regrouping", label "fusion") is a different statement; see *fusion*.
 
 #### exact unit rule
-- **Meaning.** The rule for the constant field `e_0` and its coefficient; a compound of *unit*, sense 1. The same passage has "the circle deletes the unit coordinate".
-  *Basis:* R. *Where:* 11:87–90, 389, 451, 1050. *Proposed:* *the rule for the identity field `e_0`*.
+- **Meaning.** The fact that each step sends the identity field `e_0` exactly to `L^d e_0`, with zero remainder: "The unit has zero remainders and is sent exactly to `L^d` times itself" (11:451). It gives the reference coefficient `a_{r(d)}^d e_0` of the identity field in a degree-`d` convention (11:87–90; "the exact unit rule gives the reference unit coefficient `a_{r(d)}^d e_0`", 11:1049–1050). A compound of *unit*, sense 1.
+  *Basis:* R (11:451, 1049–1050). *Where:* 11:1049–1050 (one occurrence). *Proposed:* *the rule for the identity field `e_0`*, stated once (`e_0 ↦ L^d e_0`).
 *Across chapters:* chapter 11 only; "unit" is rendered *identity field* throughout.
 *See also:* unit.
 
@@ -1931,11 +1932,13 @@ See *exceptional phases*.
 *See also:* frame; extraction.
 
 #### exterior
-*Variants:* exterior factors; exterior word; exterior separation; exterior insertions; exterior probes.
-- **Meaning.** Said of the insertions that lie outside the cell of the cluster under study: the "exterior word" is the word of remaining insertions on which `A_w` / `B_h(w)` acts or against which a cluster is paired.
-  *Basis:* I. *Where:* 13:336, 349; 18lp:8, 154, 207, 238, 286, 294, 308; 14:106; 15:244; 16:46; 18:251; 18r:9–12, 33, 36. *Proposed:* *spectator word* (one term for "exterior word" and "spectator word", 14:722, 898; 14lc:43).
-*Across chapters:* one sense in chapters 13–18; never defined. The opposite word is "interior" (supported inside the cell). *Spectators* is kept, defined once, for the whole cluster of names.
-*See also:* exterior spectator.
+*Variants:* exterior factors; exterior word; exterior separation; exterior insertions; exterior probes; exterior moments, zero-exterior-moment source, exterior discrepancy (17m).
+1. **Outside the cell of the cluster.** Said of the insertions that lie outside the cell of the cluster under study: the "exterior word" is the word of remaining insertions on which `A_w` / `B_h(w)` acts or against which a cluster is paired.
+   *Basis:* I. *Where:* 13:336, 349; 18lp:8, 154, 207, 238, 286, 294, 308; 14:106; 15:244; 16:46; 18:251; 18r:9–12, 33, 36. *Proposed:* *spectator word* (one term for "exterior word" and "spectator word", 14:722, 898; 14lc:43).
+2. **Against outside spectators (17m).** "Exterior moments" of a source are its integrals against spectators independent of the varied coarse links: "its integral against every spectator independent of the varied coarse links is zero … not an assertion that a finite Taylor polynomial alone has zero exterior moments" (17m:67–70); "the full zero-exterior-moment source" (17m:155–156); "the normalized exterior discrepancy" (17m:442).
+   *Basis:* R (17m:67–70). *Where:* 17m:70, 155–156, 442. *Proposed:* *integrals against spectators independent of the varied links*.
+*Across chapters:* sense 1 in chapters 13–16 and 18, never defined; sense 2 in 17m, explained in place; in 2e the "exterior spectator" is a function of far links (see that entry). The opposite word is "interior" (supported inside the cell). *Spectators* is kept, defined once, for the whole cluster of names. "The exterior integrand" (9s:165) and "the corresponding exterior row" (11R:266) are ordinary uses (outside a region). The standard "exterior derivative / multiplication" of chapters 5, 7 and 11 is not this word.
+*See also:* exterior spectator; discrepancy (sense 5).
 
 #### exterior discrepancy
 - **Meaning.** Not determined: a quantity of chapter 11 named without a reference ("the normalized exterior discrepancy is at most `e^{−T_n/100}`").
@@ -1943,9 +1946,9 @@ See *exceptional phases*.
 *Across chapters:* one occurrence.
 
 #### exterior identity
-- **Meaning.** An identity that is not displayed where it is used, to control "the sum of transverse and longitudinal parts"; presumably `d_1* d_1 + d_0 d_0* = Δ` on one-forms. 11:1692 ("The exterior identity gives coercivity at least `c|q|²`") agrees with this; 5:839 uses the phrase for a different identity ("a fresh arbitrary solution of the exterior identity").
-  *Basis:* I. *Where:* 7:408, 686; 11:1692; 5:839. *Proposed:* none proposed; state the identity.
-*Across chapters:* the chapter 5 use is a different identity, so the phrase has at least two referents, neither displayed.
+- **Meaning.** The identity `|q∧a|² + |q̄⌟a|² = λ(p)|a|²` on one-forms (5:66–72), that is, `d_1* d_1 + d_0 d_0* = Δ` in Fourier variables: "The symbol of `d_r` is exterior multiplication by `q`. In particular, on one-forms, … Here contraction denotes the adjoint of exterior multiplication." It is displayed there without a name and cited as "the exterior identity" at 7:408 ("controls the sum of transverse and longitudinal parts"), 7:686 and 11:1692 ("The exterior identity gives coercivity at least `c|q|²`"; `X`, `U` are "exterior multiplication by `q`", 11:1683–1685). At 5:839 ("a fresh arbitrary solution of the exterior identity") the phrase means the equation solved by the coordinate exterior lifts of (ch05:defect-lifts), a different identity.
+  *Basis:* R (5:66–72) for 7:408, 686 and 11:1692 (the link between the name and the display is inferred); I for 5:839. *Where:* 7:408, 686; 11:1692; 5:839. *Proposed:* cite the display by number; no name is needed.
+*Across chapters:* two referents; the first is displayed at 5:66–72, the second (5:839) is not displayed under this name.
 
 #### exterior row
 - **Meaning.** Not determined: "the corresponding exterior row, determinant and Haar bounds are `y^{-1/4+o(1)}`".
@@ -2032,11 +2035,11 @@ See *branch* (sense 1): the complementary case of a piecewise definition, in whi
 *See also:* factor count.
 
 #### field reconstruction
-*Variants:* unsymmetrized, symmetric field reconstruction.
-- **Meaning.** `H_d(w) = Σ b_α(w) u_α`: the field in `F_d` with the same values of the functionals `b_α`, `|α| ≤ d`, as the word `w`. It is not a projection.
-  *Basis:* D (18:67–69, 84–85). *Where:* 18:67, 82, 149, 212, 227, 228; 18r:7, 35. *Proposed:* *the field in `F_d` with the same values of the functionals `b_α`, `|α| ≤ d`*.
-*Across chapters:* chapter 18 only.
-*See also:* reconstruction.
+*Variants:* unsymmetrized field reconstruction `H_d(w)`; symmetric reconstruction `A_d w`, `B_d w`; reconstruction identity; reconstruction comparison.
+- **Meaning.** (a) Unsymmetrized: `H_d(w) = Σ_{|α|≤d} b_α(w) u_α`, the field in `F_d` with the same values of the functionals `b_α`, `|α| ≤ d`, as the cluster word `w`, where `b_α(w)` is obtained by replacing the distinguished field in the probe correlations by the whole cluster (18:67–72). (b) Symmetric: `A_d w = ∫_{O(4)} R_d(K) H_d(K⁻¹w) dK`, the average of `H_d` over `O(4)`, and `B_d w = ½{A_d w + \overline{A_d w̄}}`, which is `A_d` made compatible with complex conjugation (18:82–85); 18:212 opposes "the unsymmetrized and symmetric reconstructions" without saying which of `A_d`, `B_d` is meant. Both maps fix every single field of degree at most `d` inserted at zero (18:87). On words they are not projections: a cluster word is not an element of a space containing `F_d`.
+  *Basis:* D (18:67–69) for (a); D (18:82–85) for (b). *Where:* 18:67, 82, 149, 212, 227, 228; 18r:7, 35 (8 of the 17 uses of "reconstruction" in ch. 17–19). *Proposed:* *the field in `F_d` with the same values of the functionals `b_α`, `|α| ≤ d`*; for (b), *its `O(4)`-average `A_d w`* and *`B_d w`*.
+*Across chapters:* chapter 18 only (18 and 18r); distinct from the relativistic (word) reconstruction of chapter 16.
+*See also:* reconstruction; cluster; word.
 
 #### field word
 - **Meaning.** A finite sequence of letters `(A,f)`. "Word" itself is not defined at 16:291–293.
@@ -2062,9 +2065,9 @@ See *branch* (sense 1): the complementary case of a piecewise definition, in whi
 See *held fine reads*.
 
 #### fine residue
-- **Meaning.** The position `r` of a fine site in its block, `x = Ly + r`.
-  *Basis:* R (5:654). *Where:* 5:654, 660, 713; 7:585, 595, 599. *Proposed:* *position within the block*.
-*Across chapters:* one sense in chapters 5 and 7 ("block Fourier transform `P(p)` on fine residues", 7:585; chapter 7 gives no gloss of its own).
+- **Meaning.** The position of a fine site in its block, that is, its class modulo `L` in each coordinate; there are `L^4` of them (5:656; 11:271; 17c:337). The text does not write the decomposition `x = Ly + r`.
+  *Basis:* I (5:654–660; the count `L^4` at 5:656, 11:271, 17c:337). *Where:* 5:654, 660, 713; 7:585; 11:271; 17c:337; "residue" alone in the same sense at 5:389–390, 656; 7:595, 599, 910. *Proposed:* *position within the block*.
+*Across chapters:* one sense in chapters 5, 7, 11 and 17 ("block Fourier transform `P(p)` on fine residues", 7:585; "Background roots have `L^4` possible fine residues", 11:271; chapter 7 gives no gloss of its own; compare "each residue class modulo `L`", 17t:55).
 
 #### finite covariant path completion
 *Variants:* covariant completion; finite covariant completion; covariant path completion.
@@ -2207,8 +2210,8 @@ See *pre-ratio constants*.
 
 #### fold
 *Variants:* folded (auxiliary configuration, field); folding map.
-1. **Aliasing sum.**
-   *Basis:* R. *Where:* 7:810. *Proposed:* *aliasing sum*.
+1. **Aliasing sum.** "Folding the fine symbol into coarse momentum also preserves `α`" (7:810); the text does not say what folding is, and that it is the sum over the aliases is read from the next sentences ("For a nonprincipal alias …", 7:812).
+   *Basis:* I (7:810–813). *Where:* 7:810. *Proposed:* *aliasing sum*.
 2. **Reflected extension.** Pullback of the field under the reflection map `π_v(q) = min(q̄, 2v − q̄)`; the map is given at 9:326–330 without a name.
    *Basis:* R (9:326–330). *Where:* 9s:169–175, 233. *Proposed:* *reflected periodic extension*.
 *Across chapters:* two unrelated uses, in chapters 7 and 9s.
@@ -2242,16 +2245,17 @@ See *fold* (sense 2): "folded auxiliary configurations", "a folded field", "fold
 
 #### forest prescription
 *Variants:* the source prescription (18:411).
-- **Meaning.** A prescription of the text from which the book was written; it is not stated in the book (`notation.md`: "unverified sharper source forest prescription").
-  *Basis:* R (through `notation.md`). *Where:* 18:411, 419. *Proposed:* *a degree-sensitive (forest-type) prescription*.
+- **Meaning.** The degree-sensitive subtraction over collision subsets that the text describes for a single shell at 18:398–410: for each collision subset `h`, with normal dimension `q_h = 4(|h| − 1)`, total input degree `d_h = Σ_{i∈h} d_i` and `L_h = max(0, d_h + 1 − q_h)`, "one subtracts the normal Taylor jet of the test function through order `L_h − 1 − q` when `q < L_h`". The text reports it as the prescription of its source ("This explains the source prescription and its proposed sharper local-order bound", 18:411) and does not use it: "A one-shell estimate alone does not verify that stronger forest prescription. We have therefore used the fully specified pair-weighted subtraction" (18:418–421). What the full prescription is for several nested collisions is not stated (`blueprint/notation.md`: "unverified sharper source forest prescription").
+  *Basis:* R (18:398–411) for the one-shell rule; ? for the nested case. *Where:* 18:398–419 (the words at 18:411, 419). *Proposed:* *a degree-sensitive (forest-type) prescription*.
 *Across chapters:* chapter 18 only.
+*See also:* source prescription.
 
 #### forgetting
 *Variants:* "Forgetting the terminal graph" (title of a proposition).
 - **Meaning.** Independence of the level-`m` graph from the graph inserted at level `m+h`, up to `2^{1−h}` (12:139–143). The title is the only occurrence of "terminal" in chapter 12 and does not say which graph is terminal: the graph at the cutoff level `N`, or the graph replaced at level `m+h` in the proof.
-  *Basis:* R for the statement (12:139–143); I for "terminal". *Where:* 12:131. *Proposed:* *independence of the initial remainder graph*.
+  *Basis:* R for the statement (12:139–143); I for "terminal". *Where:* 12:131. *Proposed:* *independence of the graph at the fine end* (statement: the graphs at a fixed level are Cauchy in the cutoff, 12:133–136). Not "initial": the text's word is "terminal", and the graph forgotten is the one at the fine end `m+h` (see *terminal*, sense 2).
 *Across chapters:* chapter 12 only; the word is also in the label `ch12:forgetting`.
-*See also:* graph.
+*See also:* graph; terminal.
 
 #### forward-difference primitive
 *Variants:* primitive `q_a`, `t_abc`; difference-primitive bounds; primitive norms.
@@ -2442,8 +2446,8 @@ See *zero-energy subspace* (the "ground vector" is `Ω`, not the space).
 
 #### Haar coefficient
 *Variants:* `𝔥(Y)`.
-- **Meaning.** `𝔥(Y) = 𝗵(div_Haar Y)`, where `𝗵` is one of the explicit Taylor-coefficient functionals `𝗾`, `𝗹`, `𝗵`, `𝖼` of 17:213–225.
-  *Basis:* D (17:213–225; 17t:395). *Where:* 17:213–237; 17t:239, 288, 395, 482; 17m:351, 356. *Proposed:* keep the symbols.
+- **Meaning.** `𝔥(Y) = 𝗵(div_Haar Y)` (17:225), where `𝗵` is one of the explicit Taylor-coefficient functionals `𝗹`, `𝗾`, `𝗵` of 17:214–220; a fourth, `𝖼`, is at 17t:395.
+  *Basis:* D (17:214–225). *Where:* 17:225, 236–239; 17t:426, 469–470, 491–494; 17m:355, 359. *Proposed:* keep the symbols.
 *Across chapters:* chapter 17 only.
 
 #### Haar logarithm
@@ -2459,10 +2463,10 @@ See *zero-energy subspace* (the "ground vector" is `Ω`, not the space).
 *Across chapters:* one sense; chapter 6 uses it without gloss, 11R settles it.
 
 #### halo
-*Variants:* halo multiplier `h`; projected `hB` halo.
-- **Meaning.** The `hB`-neighbourhood of a support ("a halo multiplier `h`", 6:1170; "its projected `hB` halo", 6:1297); in 11R the fixed neighbourhood `Y^{[8]}`.
-  *Basis:* R (6:1170, 1297). *Where:* 6:1170, 1297; 9:84, 278; 11R:139, 158. *Proposed:* *`hB`-neighbourhood of the support*.
-*Across chapters:* one sense throughout.
+*Variants:* halo multiplier `h`; projected `hB` halo; full fixed halos (6:1243); Gaussian covariance halo (9:83–84); dependence halos (9:278); fixed halo (11R:139).
+- **Meaning.** A fixed enlargement of a support. In chapter 6 the `hB`-neighbourhood, `h` the "halo multiplier" ("a halo multiplier `h`", 6:1170; "its projected `hB` halo", 6:1297). In chapter 9, with no multiplier `h`, the further region that a factor reads through the finite-range Gaussian covariance ("every Haar coordinate, tag variable and Gaussian covariance halo read by its factor", 9:83–84; "the local windows and their dependence halos must be clean", 9:278–279). In 11R the fixed neighbourhood `Y^{[8]}` (11R:139).
+  *Basis:* R (6:1170, 1297; 9:83–84). *Where:* 6:1170, 1223, 1243, 1293, 1297, 1305; 9:84, 278; 11R:139, 158. *Proposed:* *`hB`-neighbourhood of the support* (chapter 6); *dependence region* (chapter 9).
+*Across chapters:* one idea, three different sets: the `hB`-neighbourhood in chapter 6, the dependence region in chapter 9, `Y^{[8]}` in 11R.
 
 #### hard
 *Variants:* hard bound `a_h`; raw hard bound; hard factor.
@@ -2588,9 +2592,9 @@ See *transport* (sense 1). Standard term, used by the text itself in chapters 1 
 *See also:* insertion.
 
 #### inflated activities
-- **Meaning.** The rescaled activities `q^{-1}|z_γ| e^{α c(X_γ)}`.
-  *Basis:* D (8:171). *Where:* 8:170; 9:180. *Proposed:* *rescaled activities*.
-*Across chapters:* one sense in chapters 8–9; chapter 11 uses "inflated" for a different operation (see *inflation factors*).
+- **Meaning.** Activities multiplied by a factor at least one before the rooted bound of chapter 8 is applied: `z̃_γ = q^{-1}|z_γ| e^{α c(X_γ)}` at 8:170–171; at 9:174–180 the elementary majorants multiplied by `h = 𝔟^{3/8}`, one factor per unit of degree, "before performing either expansion".
+  *Basis:* D (8:170–171); R (9:174–180). *Where:* 8:170; 9:180. *Proposed:* *rescaled activities*.
+*Across chapters:* the same operation in chapters 8–9 with two different factors (`q^{-1}e^{α c(X_γ)}` in chapter 8, `h = 𝔟^{3/8}` per degree in chapter 9); chapter 11 uses "inflated" for a different operation (see *inflation factors*).
 
 #### inflation
 *Variants:* inflated; uninflated.
@@ -2771,31 +2775,31 @@ See *level*.
 
 #### joining bound
 *Variants:* joining bound `h_l`; joining path.
-- **Meaning.** The number `h_l = 16[1 + L_l(B_l + B_{l+1} + 1)^2]^4` (18lp:100–103), "a deliberately generous" bound on the number of cover balls per mark needed to join a discarded representative of a group of marks to a retained one; joining enlarges the support by at most `h|I|` cover balls, `c_B(X ∪ {y_i : i ∈ I}) ≤ c_B(X) + h|I|` (18lp:79–82).
-  *Basis:* D (18lp:100–103); the role R (18lp:79–82, 96–98). *Where:* 18lp:79–86, 96–106. *Proposed:* keep, define once.
+- **Meaning.** The number `h_l = 16[1 + L_l(B_l + B_{l+1} + 1)^2]^4` (18lp:97–99), "a deliberately generous" bound on the number of cover balls per mark needed to join a discarded representative of a group of marks to a retained one; joining enlarges the support by at most `h|I|` cover balls, `c_B(X ∪ {y_i : i ∈ I}) ≤ c_B(X) + h|I|` (18lp:79–82). The condition `(σ_{l+1}+1)h_l = o(τ_l)` imposed on it is at 18lp:101–103.
+  *Basis:* D (18lp:97–99); the role R (18lp:79–86, 93–96). *Where:* 18lp:79–86, 93–106 (the words at 18lp:86, 97). *Proposed:* keep, define once.
 *Across chapters:* 18lp only. "Join" here is said of representatives of groups of marks; in chapters 10–11 it is said of large-field supports.
 *See also:* join; merger; live group; mark.
 
 #### joint bound
-- **Meaning.** A bound under the single measure `ν` under which all the factors of a product are integrated together (the "common law").
-  *Basis:* R (9:97–118). *Where:* 9:97–118, 139, 785. *Proposed:* *joint estimate under one measure*.
-*Across chapters:* chapter 9.
+- **Meaning.** A bound under the single measure `ν` under which all the factors of a product are integrated together (the "common law"): the estimate (ch09:joint-input), "this joint bound on their common law" (9:114–115).
+  *Basis:* R (9:97–118). *Where:* 9:114–115 (one occurrence). *Proposed:* *joint estimate under one measure*.
+*Across chapters:* chapter 9. "Common integral" (9:139) and "common-law estimate" (9:785) are other words for it and belong to *common law*.
 *See also:* common law.
 
 ### K
 
 #### kernel
 1. **Null space** of a linear map. *Basis:* R. *Where:* 11:2218 ("moving equation kernel `K_i`"); 17:172, 262; 17m:455. *Proposed:* keep (standard).
-2. **Convolution kernel** `K_ab(z)`, `z ∈ ℤ⁴`, of a translation-invariant operator, or a displacement-indexed coefficient of it; in chapter 5 this is what "row" denotes. Also the Fourier or quadratic kernels of chapter 17 and the finite Laurent polynomials `K_0`, `K_a` (17t:19–27). *Basis:* R (5:711–713). *Where:* 5:711–713, 738, 751, 826, 844, 849, 854, 1379; 17:207; 17t:294; 17m:350, 352. *Proposed:* keep (standard).
-3. **Block probability kernel** `k` of the blocking step. *Basis:* R. *Where:* 17m:10–54, 391. *Proposed:* keep (standard).
+2. **Convolution kernel** `K_ab(z)`, `z ∈ ℤ⁴`, of a translation-invariant operator, or a displacement-indexed coefficient of it. In chapter 5 this object is mostly called "row" (5:711–713, 738, 1379), and "kernel" at 5:153, 520, 1124–1126. Also the Taylor and Fourier kernels of chapter 7, the Fourier or quadratic kernels of chapter 17 and the finite Laurent polynomials `K_0`, `K_a` (17t:19–27, called "kernels" at 17t:41). *Basis:* R (5:711–713). *Where:* 5:153, 520, 1124–1126; 7:27, 65, 558–562, 900, 1113, 1182–1185; 17:207; 17t:41, 53, 292–294; 17m:350, 352. *Proposed:* keep (standard).
+3. **Block probability kernel** `k` of the blocking step, (ch04:kernel). *Basis:* D (4:234–240). *Where:* 4:169, 234–240, 249, 257, 282; 5:103, 123, 1376; 9:49, 810; 9s:13, 125; 10:127; 11:8, 17–19, 94–95, 112; 11R:21, 388; 12:285; 13ba:9, 225, 283; 17m:10–61, 391; 18lp:12. *Proposed:* keep (standard).
 4. **Correlation kernel.** *Basis:* R. *Where:* 18:355. *Proposed:* keep (standard).
-*Across chapters:* all four are standard uses; the reader has to tell from the context which is meant. In chapter 17 "row" is a row of a kernel at a fixed output index and must not be replaced by "kernel".
+*Across chapters:* all four are standard uses; the reader has to tell from the context which is meant. Sense 3 is defined in chapter 4 and used from there on. Further standard uses, not classified above: 11:870–875 (transfer kernels), 14:446, 507 (two-point kernel), 14:844 (Gram kernel), 17:424 (Laplace kernels); the null-space sense also occurs in chapters 2e, 3, 13 and 14. In chapter 17 "row" is a row of a kernel at a fixed output index and must not be replaced by "kernel".
 *See also:* kernel identities; mass.
 
 #### kernel identities
-- **Meaning.** In "The next section proves them using the kernel identities" (17:307–308): probably the identities for the block kernel `k` proved in the next section, namely (17.kernel-divergence) and the two integrals at 17m:396–398, not identities for `K_0`, `K_a`.
-  *Basis:* I (17:308 with 17m:10–66, 396–398). *Where:* 17:308. *Proposed:* cite the identities by number.
-*Across chapters:* chapter 17 only; the settling lines are in the same chapter (17m).
+- **Meaning.** Not determined between two candidates. In "The next section proves them using the kernel identities" (17:307–308) the identities may be those for the block kernel `k` proved in the next section, namely (17.kernel-divergence) (17m:63) and the two integrals at 17m:396–398; or the "Exact block identities" (ch17:block-algebra) for the finite Laurent polynomials `K_0`, `K_a`, `K_a^e`, `K_a^t` (Lemma at 17t:32–44, which says "The kernels have support of radius `CL`" and is used at 17c:379–380).
+  *Basis:* ? (17:308 with 17m:10–66, 396–398 and 17t:32–44). *Where:* 17:308. *Proposed:* cite the identities by number.
+*Across chapters:* chapter 17 only; both candidates are in the same chapter (17m, 17t).
 *See also:* kernel; low moments.
 
 #### kill
@@ -2805,8 +2809,8 @@ See *level*.
 *Across chapters:* one sense throughout.
 
 #### kinetic
-*Variants:* kinetic operator; kinetic symbol `b_H`; kinetic coefficient, action, Hessian, normalization, matrix; kinetic energies `K_f`, `K_c`.
-1. **The operator of the quadratic action.** `K = d₁*Hd₁`, with `S₀(a) = ½⟨d₁a, Hd₁a⟩` (5:44–46). Chapter 7 uses the same object: "The zero-background representation is exactly `d_1^*Hd_1`" (7:611–612), and `b_H` is its normalised Taylor symbol, with quadratic term `½(|p|²δ_ab − p_ap_b)δ_uv` (7:184–190). The text says "kinetic symbol `b_H` of `J`" (7:184–185) although `J` is introduced only at 7:976. *Basis:* D (5:44–46). *Where:* 5:44–46; 7:184, 193, 216, 275, 312, 478, 603–621, 743, 856, 874, 904, 1161; 17c:58 ("kinetic symbols `K_f`, `K_c`"), 64. *Proposed:* keep *kinetic operator*, define once (physics usage); otherwise *operator of the quadratic form `S₀`*.
+*Variants:* kinetic operator; kinetic symbol `b_H`; kinetic coefficient, action, Hessian, normalization, matrix; kinetic kernels (17t:318); kinetic energies `K_f`, `K_c`.
+1. **The operator of the quadratic action.** `K = d₁*Hd₁`, with `S₀(a) = ½⟨d₁a, Hd₁a⟩` (5:44–46). Chapter 7 uses the same object: "The zero-background representation is exactly `d_1^*Hd_1`" (7:611–612), and `b_H` is its normalised Taylor symbol, with quadratic term `½(|p|²δ_ab − p_ap_b)δ_uv` (7:184–190). The text says "kinetic symbol `b_H` of `J`" (7:184–185) although `J` is introduced only at 7:976. *Basis:* D (5:44–46). *Where:* 5:44–46; 7:184, 193, 216, 275, 312, 478, 603–621, 743, 856, 874, 904, 1161; 17c:58 (the symbols `K_f`, `K_c`, unnamed), 64 ("completed fine kinetic matrix"); 17t:318 ("kinetic kernels"). *Proposed:* keep *kinetic operator*, define once (physics usage); otherwise *operator of the quadratic form `S₀`*.
 2. **Local quantities** `K_f(p)`, `K_c(p)` of chapter 6 ("local kinetic energies", 6:110): the clipped plaquette action plus a cut-off path square. Nothing kinetic. *Basis:* R (6:110–118). *Where:* 6:110. *Proposed:* *local action density*.
 *Across chapters:* sense 1 in chapters 5, 7 and 17; sense 2 only at 6:110. Not *quadratic curvature form* for the "kinetic symbol" of chapter 7: 7:611–612 and 7:184–190 show that it is the object of 5:44–46. If "kinetic operator" is kept, the quantities of 6:110 should not be called "kinetic energies".
 *See also:* metric; inherited loop action.
@@ -3002,10 +3006,10 @@ See *line*, sense 2.
 *See also:* local energy; mandatory factor.
 
 #### local-integral estimate
-*Variants:* local-integral bounds; local integral estimates.
-- **Meaning.** The nonlinear bounds on the one-step fluctuation integral, cited by nickname ("They do not replace the nonlinear local-integral bounds"); compare the section title "The exact local integral and its first expansion" (9:44) and the proposition "Common local integral bound" (6:1123).
-  *Basis:* I. *Where:* 7:1075, 1205; 9:34. *Proposed:* cite the propositions.
-*Across chapters:* one reader only.
+*Variants:* local-integral bounds; local integral estimates; local-integral argument; common local integral bound.
+- **Meaning.** The nonlinear bounds on the one-step fluctuation integral, cited by nickname ("They do not replace the nonlinear local-integral bounds", 7:1205): the bounds of the proposition "Common local integral bound" (6:1123) and its consequences ("The local integral estimate now follows from the actual gap", 6:1551; "The common local integral bound of Chapter 6", 11:274). Compare the section title "The exact local integral and its first expansion" (9:44).
+  *Basis:* I. *Where:* 6:1551; 7:1075, 1205; 9:34; 10:797; 11:274 (proposition title 6:1123). "Local integral" as a noun: 1:453, 459; 6:16, 1485; 9:44, 925; 10:37, 257, 895; 11R:249. *Proposed:* cite the propositions.
+*Across chapters:* one sense in chapters 6–11.
 
 #### local inverse columns
 - **Meaning.** The columns of the approximate inverse `P`, built by inverting `A` on the windows `Ω_i` (6:534–535).
@@ -3073,13 +3077,16 @@ See *trial*.
 *See also:* logarithmic; logarithmic correction.
 
 #### logarithmic
-1. **In Lie-algebra coordinates** (see *logarithm*). *Where:* 9s:33, 176, 295; 6:953. *Basis:* I. *Proposed:* *in exponential coordinates*.
-2. **Term of the exponent** (see *logarithmic correction*). *Where:* 9:368, 607, 633–698; 8:228 ("logarithmic cluster terms"). *Basis:* R. *Proposed:* *large-field correction terms in the exponent*.
-3. **Logarithmic derivative.** *Where:* 7:522, 673; 9:247. *Basis:* R. *Proposed:* keep (standard).
-4. **Of a log-determinant.** *Where:* 7:335, 471; 9s:40, 159. *Basis:* R. *Proposed:* keep (standard).
-5. **Growth like a logarithm**: of the inverse coupling in the cutoff ("the leading logarithmic growth of the inverse coupling", 1:50–51); in the block ratio ("logarithmic in the block ratio", 1:462–463). *Basis:* R (1:50–51; 1:462–463). *Proposed:* keep (standard).
-6. **"polynomial logarithmic costs"** (9:712): unclear. *Basis:* ?. *Proposed:* none.
-*Across chapters:* 23 matches in chapters 1, 7, 8, 9. Sense 5 is not "in `log β`": 1:50–51 speaks of the growth of the coupling and 1:462–463 of `log L`.
+1. **In Lie-algebra coordinates** (see *logarithm*): "logarithmic coordinates", "logarithmic chart", "logarithmic field", "the logarithmic map". *Where:* 6:694, 735, 953–954, 970; 9s:33, 175, 295; 11:1171; 17m:41. *Basis:* I. *Proposed:* *in exponential coordinates*.
+2. **Term of the exponent** (see *logarithmic correction*): logarithmic correction, label, term, selection; the "small logarithmic factors" of 10:570 are the same terms (the estimate is for "their exponential minus one", 10:572). *Where:* 9:368, 432, 607, 630–698; 10:570. *Basis:* R. *Proposed:* *large-field correction terms in the exponent*.
+3. **Logarithmic derivative.** *Where:* 6:762, 1075, 1529; 7:522, 673; 9:247. *Basis:* R. *Proposed:* keep (standard).
+4. **Of a log-determinant** or of the logarithm of a normalisation ("logarithmic Hessian", "logarithmic determinant", "local logarithmic normalization"). *Where:* 6:1289; 7:335, 471; 9s:40, 159; 17t:97. *Basis:* R. *Proposed:* keep (standard).
+5. **Growth like a logarithm**: of the inverse coupling in the cutoff ("the leading logarithmic growth of the inverse coupling", 1:50–51; "logarithmic running", 10:275, 927; "the logarithmic ultraviolet law", 19:134; "its logarithmic asymptotic", 3:574); in the block ratio ("logarithmic in the block ratio", 1:462–463). *Where:* 1:50, 462; 3:574; 10:275, 927; 19:134. *Basis:* R (1:50–51; 1:462–463). *Proposed:* keep (standard).
+6. **Of the size of a power of `log β̂`**: "the radii are logarithmic powers" (11R:46); "powers of logarithmic radii" (18lp:178); "current norms are logarithmic" (17m:309, 365); "logarithmic losses of size `O(B^d(1+log β̂_f)^d)` …" (6:1157–1158); "all polynomial logarithmic costs" (9:712), which are costs polynomial in `log β̂`; "the original logarithmic-square radius" (11:750); "logarithmic current bounds" (17m:173). *Where:* 6:1157; 9:712; 11:750; 11R:46; 17m:173, 309, 365; 18lp:178. *Basis:* I (R at 6:1157–1158). *Proposed:* *polynomial in `log β̂`*.
+7. **Logarithmic scale** `τ_m = log D_m`: "Here `τ_m = log D_m` is the logarithmic scale" (4:416); "the output logarithmic scale" (11:2020); "The entire logarithmic window has length `O(log H_n)`" (17w:37). *Where:* 4:416; 11:2020; 17w:37. *Basis:* D (4:416). *Proposed:* keep.
+8. **Of the logarithm of the partition function**: "their logarithmic cluster terms cancel unless a cluster contains a changed activity" (8:228) are the terms of the cluster expansion of `log Z`; "convergent logarithmic series" (10:514) and "the logarithmic expansion" (10:605, after "the first connected expansion") are read in the same way (inferred). *Where:* 8:228; 10:514, 605. *Basis:* R (8:228); I (10:514, 605). *Proposed:* *terms of the cluster expansion of the logarithm*.
+*Across chapters:* 60 occurrences in chapters 1, 3, 4, 6–11, 17–19. Sense 5 is not "in `log β`": 1:50–51 speaks of the growth of the coupling and 1:462–463 of `log L`. Other occurrences, not classified: 10:61 ("fixed logarithmic size bound `K_j`", compared with `log ℒ_j`); 17:137 ("illustrated on a logarithmic scale", of a figure; ordinary); 17w:42 ("logarithmic block length"); 17t:90 ("the same logarithmic coefficient as the regulated response in Chapter 7"); 17t:387 ("the logarithmic mean-value argument"); 17c:134, 235 ("logarithmic ratio") and 17c:242, 372 ("logarithmic normalization"), which come from dividing the coefficients by `(log β̂)²` (17c:133–134).
+*See also:* logarithm; logarithmic correction.
 
 #### logarithmic correction
 *Variants:* logarithmic correction `L_x`, `ℓ_a`; logarithmic label, term, selection; logarithmic correction factor `e^{ℓ_a} − 1`.
@@ -3105,9 +3112,10 @@ See *inherited loop action*.
 *See also:* low plane.
 
 #### low-energy estimate
-- **Meaning.** `μ_ξ{0 < E ≤ u} ≤ Cu²` (16:424–428); "bounds spectral mass near zero by a power" (19:135).
-  *Basis:* R (16:424–428). *Where:* 19:107, 134. *Proposed:* keep.
-*Across chapters:* one sense; stated in chapter 16, cited in chapter 19.
+*Variants:* uniform low-energy bound (16:424).
+- **Meaning.** `μ_ξ{0 < E ≤ u} ≤ C_A u²` for `0 < u ≤ 1` (Theorem "Uniform low-energy bound", 16:424–428); "bounds spectral mass near zero by a power" (19:135).
+  *Basis:* R (16:424–428). *Where:* 16:376 (section title "The low-energy estimate and uniqueness of the vacuum in each phase"), 424–428 (statement); 19:107, 134. *Proposed:* keep.
+*Across chapters:* one sense in chapters 16 and 19; stated in chapter 16, cited in chapter 19. The "low-energy lower bound" of 14:477 is an unrelated bound.
 
 #### low moments
 *Variants:* low-moment cancellations; low-moment estimate; polynomial moment conditions; zero moments; exterior moments.
@@ -3170,7 +3178,7 @@ See *leading*, sense 2.
 
 #### mark
 *Variants:* marked; unmarked; marker; marked point, site, ancestor; marked factor, term, component, activity; marked density, expansion, step, polynomial; two-mark; mark weights; marker weight, marker amplitude; nilpotent marker; symbols `δ^mark`, `E_mark`.
-1. **Marked = carrying insertions tracked by nilpotent source variables.** The unmarked density is the coefficient of `z_∅`: "let `ρ_N ≥ 0` be the unmarked density" (11:70), `q_N = ρ_N∏(1 + z_iF_i)` (11:75); "the exact marked density" is a polynomial in the nilpotent `z_i` (12:200–206). Said of a single term, factor or component it means carrying a nonempty set of insertion labels; said of a whole object (density, expansion, step) it means "with insertions". *Basis:* R (11:70–75; 12:200–206). *Where:* about 100 uses in chapters 11–19 (e.g. 11:2, 138, 176, 218, 252, 381; 12 (15); 13sb:10, 26; 18gq:7, 24; 18lp:26, 42; 14:16, 168; 17:119, 132; 18:9, 119; 19:48), about 20 of "unmarked"; earlier at 5:861, 945; 6:479 ("with observable insertions"; chapters 3–6 use the word without determining it). *Proposed:* *with insertions*; *term carrying insertions*; *density with insertions*.
+1. **Marked = carrying insertions tracked by nilpotent source variables.** The unmarked density is the coefficient of `z_∅`: "let `ρ_N ≥ 0` be the unmarked density" (11:70), `q_N = ρ_N∏(1 + z_iF_i)` (11:75); "the exact marked density" is a polynomial in the nilpotent `z_i` (12:200–206). Said of a single term, factor or component it means carrying a nonempty set of insertion labels; said of a whole object (density, expansion, step) it means "with insertions". *Basis:* R (11:70–75; 12:200–206). *Where:* about 100 uses in chapters 11–19 (e.g. 11:2, 138, 176, 218, 252, 381; 12 (15); 13sb:10, 26; 18gq:7, 24; 18lp:26, 42; 14:16, 168; 17:119, 132; 18:9, 119; 19:48), about 20 of "unmarked"; earlier only at 5:861 ("marked integral maps"; presumably "with observable insertions", which chapter 5 does not determine). *Proposed:* *with insertions*; *term carrying insertions*; *density with insertions*.
 2. **Mark = one insertion**, its point, its lattice site or its index ("marks project to a coarse site", "per mark", "the insertion incidence sum at a fixed mark"; "several marks", 18:128). The "marked ancestors" of 13ba:131 are the ancestors of an insertion point. *Basis:* R. *Where:* about 30 in chapter 11 (e.g. 11:184, 216, 258, 260, 268, 272, 496, 516); 13ba:131; 14:332; 15:252, 260; 18lp:67, 71, 72, 80, 86, 127, 183, 215; 17m:441; 18:128. *Proposed:* *insertion (point)*; *insertion index*.
 3. **Marked with a factor that is not an observable**: in most of 17m the inserted factor is the differentiated block kernel `𝒟_Yk` ("an admissible marked conditional integral. Its extra factor is a finite sum of smooth local kernel scores", 17m:72–73). *Basis:* R (17m:72–73). *Where:* 17t:145; 17m:2, 72, 81, 84, 120–122, 150, 176, 381, 393, 411. *Proposed:* *with the differentiated kernel inserted*.
 4. **Marker**: the nilpotent variable attached to an insertion (18:123), or the insertion itself ("Markers may merge", 18:124); "mark weights", "marker weight", "marker amplitude" (13sb:72; 14lc:58, 61) are the source weights. *Basis:* R / I. *Where:* 18:123, 124; 13sb:72; 14lc:58, 61. *Proposed:* *nilpotent source variable*; *insertion*; *source weight*.
@@ -3245,8 +3253,8 @@ See *mark*, sense 4.
 *See also:* jet menu.
 
 #### merger
-- **Meaning.** The joining of a discarded representative of a group of marks to a retained neighbour, by which two groups become one: "At each level retain a maximal `B_l^2`-separated set of representatives … and join each discarded representative to a retained neighbor. A merger decreases the number of groups; there are at most `n − 1` mergers within a cell" (18lp:96–99).
-  *Basis:* R (18lp:96–99). *Where:* 18lp:98–99, 110, 134 (4 uses). *Proposed:* keep, define once.
+- **Meaning.** The joining of a discarded representative of a group of marks to a retained neighbour, by which two groups become one: "At each level retain a maximal `B_l^2`-separated set of representatives … and join each discarded representative to a retained neighbor. A merger decreases the number of groups; there are at most `n − 1` mergers within a cell" (18lp:93–96).
+  *Basis:* R (18lp:93–96). *Where:* 18lp:95, 96, 110, 134 (4 uses). *Proposed:* keep, define once.
 *Across chapters:* 18lp only; "Markers may merge" (18:124) is the same event seen from the insertions.
 *See also:* joining bound; live group; mark.
 
@@ -3283,12 +3291,12 @@ See *metric*.
 #### middle level
 See *level*.
 
-#### minimising branch
-*Variants:* fallback branch; alternative branch.
-- **Meaning.** One case of a piecewise definition; the "fallback" branch is the complementary case, in which the smallness condition fails.
-  *Basis:* I. *Where:* 4:32, 76, 106, 208–211, 361–393; 5:948–970. *Proposed:* *case*; *in the complementary case*.
-*Across chapters:* chapters 4–5.
-*See also:* branch; label (sense 7).
+#### minimizing branch
+*Variants:* fallback branch; alternative branch; common minimizing branch (5:1383–1384). The text spells "minimizing".
+- **Meaning.** The case in which the smallness test holds with strict inequality and the frame, or the block average, is defined as the unique minimiser (4:76–78, 201–213: "On this branch set `Q_e^pred` to that minimizer"; "the strict inequalities defining the minimizing branches are part of the convention"). The "fallback" or "alternative" branch is the complementary case, in which the test fails; it includes equality ("Equality with either cutoff belongs to the alternative branch", 4:211–212).
+  *Basis:* R (4:208–213). *Where:* 4:76, 212, 281, 389; 5:968, 1383–1384; 6:496; fallback / alternative: 4:211, 361, 390, 393. *Proposed:* *case*; *in the complementary case*.
+*Across chapters:* chapters 4–6. The title 5:948 ("A common analytic branch for all local labels") is a branch of an analytic function, not this term; other compounds of "branch" in chapter 4 ("branch rules", 4:32; "tested branch", 4:106) are under *branch*.
+*See also:* branch; fallback; label (sense 7).
 
 #### mismatch
 *Variants:* mismatch edge; mismatch distance; mismatch test; block average discrepancy; signed mismatch terms.
@@ -3393,8 +3401,8 @@ See *mismatch*.
 #### neutral
 *Variants:* neutral reference; neutral version; neutral estimates; neutral Gaussian integral.
 - **Meaning.** In the factorisation `R = e^{-E} R^0`, the neutral density `R^0` is the one "obtained by deleting only the regular additive family `E`"; neutral estimates and integrals are those of `R^0`.
-  *Basis:* D (11R:196–198). *Where:* 11:613; 11R:195–213, 254–259, 282, 310, 319, 334. *Proposed:* *density without the regular terms*.
-*Across chapters:* chapters 11 and 11R; one sense.
+  *Basis:* D (11R:196–198). *Where:* 11R:195–213, 255, 282. *Proposed:* *density without the regular terms*.
+*Across chapters:* 11R only; one sense. 11:611–613 states the same distinction with "genuine" and without "neutral" ("Exact reconstruction always uses the genuine density"), and the "genuine" lines 11R:310, 319, 334 do not contain the word.
 *See also:* regular; presentation.
 
 #### new-small-field
@@ -3403,10 +3411,10 @@ See *mismatch*.
 *Across chapters:* one sense, 11R only.
 
 #### nilpotent marker
-*Variants:* nilpotent marker coefficient; marker.
-- **Meaning.** An auxiliary commuting variable `t_i` with `t_i² = 0` attached to an insertion; the correlation is the coefficient of the product of these variables. At 18:124 ("Markers may merge") and 18:128 ("several marks") the word means the insertions themselves.
-  *Basis:* R (18:123; RG:37–38 says it in plain words) for the variable; I for the use as "insertion". *Where:* 17m:441; 18:123, 124, 128. *Proposed:* *source variable `t_i` with `t_i² = 0`*; *insertion* at 18:124, 128.
-*Across chapters:* one object; the word slides from the variable to the insertion inside 18:123–128.
+*Variants:* nilpotent marker coefficient; marker; marker weight; marker amplitude.
+- **Meaning.** The commuting variable `z_i` with `z_i² = 0` attached to an insertion, a generator of `𝒜_𝓘 = ℂ[z_i : i ∈ 𝓘]/(z_i² : i ∈ 𝓘)` (11:33–37); the correlation is the coefficient of the product of these variables. At 18:124 ("Markers may merge") the word means the insertions themselves, as "several marks" does at 18:128. "Marker-weight restoration" (14lc:58) and "marker amplitude `e^{2q}`" (14lc:61) refer to the source weights (see *mark*, sense 4).
+  *Basis:* D for the variable (11:33–37); R for the phrase (18:123; RG:37–38 says it in plain words); I for the use as "insertion" and for 14lc:58, 61. *Where:* 18:123, 124; 14lc:58, 61. *Proposed:* *source variable `z_i` with `z_i² = 0`*; *insertion* at 18:124.
+*Across chapters:* one object; the word slides from the variable to the insertion inside 18:123–128. The text's symbol is `z_i` throughout; 17m:441 ("The physical mark normalization") and 18:128 have "mark", not "marker".
 *See also:* mark; source.
 
 #### node sign
@@ -3427,9 +3435,9 @@ See *mismatch*.
 See *noise* (sense 2).
 
 #### nonlinear step
-- **Meaning.** One renormalisation transformation ("the actual nonlinear step"), i.e. one block transformation with the non-Gaussian integral, as opposed to its Gaussian model.
-  *Basis:* I (5:1380). *Where:* 5:1380. *Proposed:* *step* (*renormalisation step*).
-*Across chapters:* single occurrence; one of several words for one block transformation, for which the one word is *step*.
+- **Meaning.** One renormalisation transformation ("the actual nonlinear step"), i.e. one block transformation with the non-Gaussian integral, as opposed to its Gaussian model ("retained by the nonlinear step; a Gaussian identity alone would not justify dropping them", 5:1387–1388).
+  *Basis:* I (5:1380–1388). *Where:* 5:1380–1381, 1387; RG:58. *Proposed:* *step* (*renormalisation step*).
+*Across chapters:* three occurrences (chapter 5 and the reading guide); one of several words for one block transformation, for which the one word is *step*.
 *See also:* step; update.
 
 #### nonprincipal
@@ -3461,11 +3469,11 @@ See *principal*.
 *Across chapters:* front matter and chapter 19 only; one sense.
 
 #### normalized directions
-*Variants:* normalized / dimensionless directions; normalized affine directions; reflected normalized directions.
-- **Meaning.** Directions of variation scaled by the small-field threshold: the seminorm directions with `|(A_r)_e| ≤ t_m (1 + dist(e⁻, o_i))^ϖ` (4:580–581); "dimensionless variation parameters … bounded by `C_k t_f` … in these normalized directions" (6:626–638). 9:503 (`t²|q_f(q,r)| ≤ 3a_f`) agrees. The adjectives "affine" (9:35, 502) and "reflected" (9s:296) are not explained.
-  *Basis:* R (4:580–581; 6:626–638) for the scaling; ? for "affine" and "reflected". *Where:* 6:627–628, 638, 824; 9:35, 502; 9s:296. *Proposed:* *directions of size `t_m`*.
-*Across chapters:* one sense; the scaling is read off chapters 4 and 6.
-*See also:* permitted direction.
+*Variants:* normalized / dimensionless directions; normalized affine directions; reflected normalized directions; normalized small-field directions (6:1282).
+- **Meaning.** Directions of variation scaled by the small-field threshold: the seminorm directions with `|(A_r)_e| ≤ t_m (1 + dist(e⁻, o_i))^ϖ` (4:580–581); "dimensionless variation parameters … bounded by `C_k t_f` … in these normalized directions" (6:626–638). The "normalized affine directions" (9:35, 502) are the affine link fields `A^{q,T}` of 9:458–465 ("For an affine potential `A_μ(y) = u_μ + Σ_ν y^ν v_{μν}`"; `A^{q,T}_c(y) = 1_{c=b} ξ_o(y)^a T`), those of the affine Hessian condition (4:628–633), scaled by `t`: "The evaluations in normalized affine directions and polarization give `t²|q_f(q,r)| ≤ 3a_f`" (9:502–503). "Reflected" (9s:295–296) presumably refers to the directions on the reflected auxiliary tori, next to the "folded auxiliary fields" of 9s:233 (inferred).
+  *Basis:* R (4:580–581; 6:626–638) for the scaling; R (9:458–467, 502–503) for "affine"; I for "reflected". *Where:* 6:627–628, 638, 824; 9:35, 502; 9s:296. *Proposed:* *directions of size `t_m`*.
+*Across chapters:* one sense; the scaling is read off chapters 4 and 6, "affine" off chapter 9.
+*See also:* permitted direction; affine Hessian; auxiliary tori.
 
 #### normalized large-field majorants
 - **Meaning.** Not determined. The phrase occurs once: "bounds these terms by `C exp[−2R/(2B_k+1)]`, with their normalized large-field majorants as well" (17m:414).
@@ -3480,10 +3488,10 @@ See *principal*.
 
 #### normalized mass
 *Variants:* incoming normalized mass.
-- **Meaning.** "For a large-field input of physical support-weighted mass `m`, the incoming normalized mass is `m/κ_f`."
-  *Basis:* R (11:423–424) for the value; what "physical support-weighted mass" is, is not classified (see *physical*, sense 9). *Where:* 11:423–424. *Proposed:* *weighted norm* (divided by `κ_f`).
-*Across chapters:* chapter 11; "reserved mass" (11E:104–105, 117) belongs to the same group of words.
-*See also:* mass; physical (sense 9).
+- **Meaning.** "For a large-field input of physical support-weighted mass `m`, the incoming normalized mass is `m/κ_f`." Used again in "the remaining large-field suppression bounds this normalized mass" (11E:103–104) and "the large-field terms have normalized mass `f_l ≤ 𝔪`" (18lp:116).
+  *Basis:* R (11:423–424) for the value; what "physical support-weighted mass" is, is not classified (see *physical*, sense 9). *Where:* 11:423–424; 11E:104; 18lp:116. *Proposed:* *weighted norm* (divided by `κ_f`).
+*Across chapters:* chapters 11, 11E and 18lp; "reserved mass" (11E:104–105, 117) belongs to the same group of words.
+*See also:* mass (sense 2); physical (sense 9).
 
 #### normalized null condition
 *Variants:* normalized null estimate; normalized-null (representative) argument; normalized-null lemma.
@@ -3594,9 +3602,9 @@ See *ordered limit*.
 *See also:* ordered tail.
 
 #### ordered tail
-*Variants:* ordered tails; "ordered cutoff and volume tail" (18lp:16–17).
+*Variants:* ordered tails; "ordered cutoff and volume tail(s)" (13ba:207; 18lp:16–17); ordered cutoff tails (15:194).
 - **Meaning.** A tail in two indices along the chosen sequences: "the filter is generated by ordered tails: `p = P(k)` with `k ≥ k₀`, and `N = n(j)` with `j ≥ j₀(k)`" (13:213–214; the sequence `N = n(j)` is fixed at 13:140–143). The cutoff threshold depends on the volume index.
-  *Basis:* D (13:213–214). *Where:* 13:213–214; 18lp:16–17; 19:38. *Proposed:* keep, with its definition; or *for all `k ≥ k₀` and all `j ≥ j₀(k)` along the chosen sequences*.
+  *Basis:* D (13:213–214). *Where:* 13:143, 213–214, 293; 13ba:207, 298, 334; 15:194; 18lp:16–17, 239; 19:38. *Proposed:* keep, with its definition; or *for all `k ≥ k₀` and all `j ≥ j₀(k)` along the chosen sequences*.
 *Across chapters:* one sense (text read at 13:210–215). Not *for all sufficiently large `N`*, which drops the volume index; that phrase renders "cutoff tail" (12:190, 249; 13sb:84), a different notion.
 *See also:* ordered limit; cutoff tail; tail.
 
@@ -3629,9 +3637,9 @@ See *physical* (sense 4).
 *See also:* anchor; physical (sense 1).
 
 #### outgoing
-- **Meaning.** Of an action, activity or bound: the output of the renormalisation step, against "incoming" (its input).
-  *Basis:* I. *Where:* chapters 7 and 9 (with incoming / inherited: 22 lines in chapter 7, 27 in chapter 9); 13sb:10, 72; 13ba (6); 18lp (4); 14lc:60. *Proposed:* *output of the step*.
-*Across chapters:* one sense, the counterpart of "incoming".
+- **Meaning.** Of an action, activity, path, graph or bound: the output of the renormalisation step, against "incoming" (its input): "outgoing classical bound" (7:1067), "the outgoing weight" (9:231), "Construct the outgoing path" (9:926), "The outgoing graph `G' = R_GM_G^{-1}`" (11:447), "outgoing large-field bound" (11:1641, 1659; 11R:372).
+  *Basis:* I. *Where:* 7:1067, 1195; 9:231, 926; 10:332, 738, 749; 11:434, 436, 447, 1641, 1649, 1659; 11R:372; 13ba:147 (15 lines, all the occurrences). *Proposed:* *output of the step*.
+*Across chapters:* one sense, the counterpart of "incoming", in chapters 7, 9, 10, 11, 11R and 13ba; far rarer than "incoming" and "inherited", whose lines are listed under *incoming*.
 *See also:* incoming; output level.
 
 #### output anchors
@@ -3760,11 +3768,11 @@ See *placement* (sense 4).
 *See also:* block penalty.
 
 #### period
-*Variants:* torus side; torus size.
-- **Meaning.** Side length of the periodic lattice.
-  *Basis:* R (5:320). *Where:* 5:320, 446, 731, 916. *Proposed:* *side length* (one word for the three).
-*Across chapters:* one sense. "Volume" is not a synonym: in chapters 4–6 it is the number of sites or the finite lattice (5:190; 6:504); only "uniformly in the volume" and "uniformly in the period" say the same thing. The "physical period" `R_p` is the side length in continuum units.
-*See also:* physical (sense 1); admissible periods.
+*Variants:* torus period; coarse period; physical period `R_p`; period `p`; auxiliary period; torus side; torus size.
+- **Meaning.** Side length of the periodic lattice: in lattice units (the integer `s`, "a coarse period `s ≥ 100(j+8)`", 5:916; "torus period", 2:292; 5:320) or in continuum units (the "physical period" `R_p`: "Choose strictly increasing physical periods `R_p`", 1:202; 4:14; 12:5; MT:15–21). "Period `p`" ("every `N ≥ N_0` and every period `p`", 11:1087; 11:2299) is the index of `R_p`. The "auxiliary periods" (9:929; 9s:8, 22) are the side lengths of the auxiliary tori.
+  *Basis:* D (1:202) for `R_p`; R (5:320, 916). *Where:* 1:202; 2:292, 365, 383, 449; 2e:210; 4:14, 308, 317; 5:320, 446, 635, 828, 848, 916, 1041, 1316, 1327 ("torus sides" 5:731; "torus size" 5:1214); 6:40–41, 382, 407, 547; 7:47, 324, 772, 779, 995, 1171; 8:363; 9:929–935; 9s:8, 22, 272, 291; 10:39, 83, 199, 235, 258–259, 389, 707, 777; 11 / 11R / 11E (25 / 1 / 2 lines, e.g. 11:1087, 2038, 2299); 12:5, 169, 356, 374–375; chapters 13–19 (25 lines); MT:15, 19, 21. *Proposed:* keep *period* (it is the word of the main theorem), saying once that it is the side length of the torus; *side length* for "torus side" and "torus size".
+*Across chapters:* one sense, in lattice or in continuum units; about 110 lines in 26 chapter files and the main theorem. "Period `2π`" of a symbol (7:35) and "a cyclic coordinate `q` of period `2v`" (9:326) are the ordinary sense. "Volume" is not a synonym: in chapters 4–6 it is the number of sites or the finite lattice (5:190; 6:504); only "uniformly in the volume" and "uniformly in the period" say the same thing. The "physical period" `R_p` is the side length in continuum units.
+*See also:* physical (sense 1); admissible periods; torus period; auxiliary tori.
 
 #### period recovery
 - **Meaning.** The statement that an infinite-lattice kernel is the limit of its periodisations on tori of unbounded size.
@@ -3880,8 +3888,8 @@ See *placement* (sense 1).
 
 #### plateau
 *Variants:* fine plateau; strict plateau width; stage plateau.
-1. **Region where a cutoff equals one.** Of a smooth cutoff or weight: the set of configurations on which it is identically one ("on their plateaux", 6:919–920, 1014–1016).
-   *Basis:* I. *Where:* 5:973, 1044, 1241; 6:281, 917 ff.; 11:712–713. *Proposed:* *where the cutoff equals one*.
+1. **Region where a cutoff equals one.** Of a smooth cutoff or weight: the set of configurations on which it is identically one ("on their plateaux", 6:920, 1016).
+   *Basis:* I. *Where:* 5:973; 6:917, 920, 1011–1012, 1016, 1023, 1380; 11:712–713. *Proposed:* *where the cutoff equals one*.
 2. **Interval of levels with constant stage.** The maximal interval of levels `m` with `J(m) = j`: "lies in the `j`th plateau: its lower endpoint is at least `A_j` … less than `A_{j+1}`".
    *Basis:* R (10:123–140). *Where:* 10:123, 139, 189, 193, 195, 199, 206, 749; 11:1965; 17w:7. *Proposed:* *interval of levels `m` on which the stage `J(m)` is constant*.
 *Across chapters:* two senses: sense 1 in chapters 5, 6 and at 11:712–713; sense 2 ("plateau of a stage", "stage plateau") in chapters 10, 11 and 17.
@@ -3891,7 +3899,7 @@ See *placement* (sense 1).
 *Variants:* harmonic pole; product pole.
 - **Meaning.** Two related uses in one argument. A "harmonic pole of order `r`" is a harmonic function of `z ∈ ℝ⁴` homogeneous of degree `−r` (3:865); in "successively removing the highest powers of `t^{-1}`" and "no fifth-order pole" (3:869–876, 964) the poles are in the scaling parameter `t`.
   *Basis:* I (3:865–876, 964). *Where:* 3:865–876, 964. *Proposed:* *harmonic function homogeneous of degree `−r`*; *term of order `t^{-r}`*.
-*Across chapters:* chapter 3 only (text read at 3:863–877, 962–965). Not *homogeneous singularity `|z|^{-r}` at the origin*, which covers the first use only.
+*Across chapters:* the house use is in chapter 3 only (text read at 3:863–877, 962–965). "Apparent massless pole", "pole cancellation", "apparent poles" (5:275, 278, 540; 17m:212) are poles of a meromorphic symbol in momentum, the standard sense. Not *homogeneous singularity `|z|^{-r}` at the origin*, which covers the first use only.
 *See also:* cleared by.
 
 #### polynomial attenuation
@@ -3965,8 +3973,8 @@ See *uniform mass*: "Every chosen frame tag must have positive mass" (6:63–64)
 *See also:* sector.
 
 #### post-length threshold conditions
-- **Meaning.** Conditions on the starting scale imposed after the block ratio `L` is fixed (compare "pre-`L`").
-  *Basis:* R (11E:113). *Where:* 11E:113. *Proposed:* *conditions imposed after `L` is fixed*.
+- **Meaning.** Conditions on the starting scale imposed after the block length (the block ratio `L`) is fixed (compare "pre-`L`"): "Impose the additional conditions on the starting scale … These are post-length threshold conditions" (11E:106–113).
+  *Basis:* R for "conditions on the starting scale" (11E:106–113). "Post-length" is not glossed at 11E:113; that it means "after the block length is fixed" is read from the selection order of the same file ("These quantities are fixed before the block length", 11E:20; "the section and its derivative constants are fixed first, then the length, then the inverse coupling threshold", 11E:31–32); that the block length is the block ratio `L` is I (11E:25–29). *Where:* 11E:113. *Proposed:* *conditions imposed after `L` is fixed*.
 *Across chapters:* single occurrence.
 *See also:* pre-ratio constants; threshold for the starting scale.
 
@@ -3974,8 +3982,8 @@ See *uniform mass*: "Every chosen frame tag must have positive mass" (6:63–64)
 See *pre-ratio constants*.
 
 #### powered-curvature-factor estimate
-- **Meaning.** Not determined. A nickname at 11E:14 for a result of chapter 2, not identified.
-  *Basis:* ?. *Where:* 11E:14. *Proposed:* none proposed; cite the chapter 2 statement by number.
+- **Meaning.** The bound by `t^{f_i}`, with `f_i` the number of curvature factors, of Proposition "Uniform section bounds" ((ch02:section-small-bound), 2:335–345): if every plaquette used by the section is within `t` of the identity, then `|D^L_{A_1}⋯D^L_{A_k} P_d^loc[b_{d,i}](y;U)| ≤ C_{d,q,p_0} t^{f_i}`, because "Every monomial representing the column `b_{d,i}` has at least `f_i` curvature factors" and each contributes a factor `t` (2:313–314, 374–377). It is applied to `𝒱_d`, the object bounded at 11E:12–14, through "The small-field derivative bounds for a fixed section proved above also apply to `𝒱_d`" (2e:48–49). The nickname itself occurs only at 11E:14 and is not attached to the proposition by the text.
+  *Basis:* I (11E:12–14 with 2:313–314, 335–345, 374–377; 2e:48–49). *Where:* 11E:14. *Proposed:* *Proposition (ch02:section-bounds)*, cited by number.
 *Across chapters:* single occurrence.
 
 #### pre-L factor
@@ -4194,10 +4202,13 @@ See *prescribed coarse classical action*.
 See *prescribed coarse classical action*.
 
 #### quotient estimate
-*Variants:* weighted quotient.
-- **Meaning.** The estimate `inf_a ‖(u,r) − 𝓡a‖_p² ≤ C_j 𝒢(u,r)`: the distance to the gauge directions is controlled by the quadratic form `𝒢`.
-  *Basis:* R (7:719). *Where:* 7:688, 719, 728, 870. *Proposed:* *coercivity modulo gauge directions* (tentative).
-*Across chapters:* chapter 7 only.
+*Variants:* weighted quotient; graded quotient estimate.
+1. **Coercivity modulo gauge directions (chapter 7).** The estimate `inf_a ‖(u,r) − 𝓡a‖_p² ≤ C_j 𝒢(u,r)` (7:719): the distance to the gauge directions is controlled by the quadratic form `𝒢` ("The block-completed form needs a quotient estimate", 7:687–688).
+   *Basis:* R (7:688, 719). *Where:* 7:688, 728; 7:870 ("weighted quotient"). *Proposed:* *coercivity modulo gauge directions* (tentative).
+2. **Graded quotient estimate (chapter 18).** The bound (ch18:graded-distance), `dist_{F_t}([v], ι_{i−1,t}F_{i−1}) ≤ C_{t,i}(m) a_m^{-(t−i)} ε`, on the distance of a coefficient from `F_{i−1}` in the degree filtration (Proposition "Graded quotient estimate", 18gq:35–46): "We derive the required quotient estimate from the triangular marked transfer" (18gq:7); "The graded quotient estimate … shows that a degree-`i` coordinate of `A_t` has exponent `Z − iθ`" (18lp:312–313). It has nothing to do with gauge directions.
+   *Basis:* D (18gq:35–46). *Where:* 18gq:7, 35; 18lp:312; 18:176–177. *Proposed:* keep *graded quotient estimate*; cite the proposition by number.
+*Across chapters:* two unrelated estimates under one name, in chapter 7 and in 18gq, 18lp, 18. The equivalent proposed for sense 1 does not apply to sense 2.
+*See also:* block-completed form; completion; low plane.
 
 ### R
 
@@ -4221,11 +4232,12 @@ See *prescribed coarse classical action*.
 *See also:* regular logarithms with holes.
 
 #### random index
-*Variants:* random index `α`; tag (in this sense).
-- **Meaning.** The auxiliary discrete variable `α`, with law `λ(U,α)`, that records which case of the definition of the frame and of the block average is used. "Tag" is used for the same object.
-  *Basis:* D (4:217). *Where:* 4:78, 209–217, 316; 5:948–970; 6:63, 87, 363, 486, 1108, 1344; 9:83, 85; 9s; 11:244, 679; 11R:358. *Proposed:* *auxiliary index `α`*; drop "tag".
+*Dictionary's own name: the phrase "random index" does not occur in the manuscript; the text says "label `α`" (4:217) and "tag".*
+*Variants:* label `α`; tag (in this sense); redundant labels.
+- **Meaning.** The auxiliary discrete variable `α`, with law `λ(U,α)`, that records which case of the definition of the frame and of the block average is used: "Collect all frame and block average choices in a finite label `α` and denote their joint probability by `λ(U,α)`" (4:217–218). "Tag" is used for the same object.
+  *Basis:* D (4:217–218). *Where:* 4:78, 209–217, 316; 5:948–970; 6:63, 87, 363, 486, 1108, 1344; 9:83, 85; 9s:127, 134, 221, 242; 11:244, 679; 11R:358. *Proposed:* *index `α`*; drop "tag".
 *Across chapters:* one sense. "Tag" has a second, unrelated use for the index `d` of `V_d` (2:98, 99: "The same polynomial `c` can occur at different tags `d`").
-*See also:* tag.
+*See also:* tag; label (sense 7).
 
 #### rate-sensitive tensor cancellation
 - **Meaning.** A nickname, in the assembly chapter, for the statement labelled `17.coefficient`.
@@ -4315,14 +4327,16 @@ See *raw* (sense 2).
 *See also:* chart recognition.
 
 #### reconstruction
-*Variants:* field reconstruction; fixed-probe reconstruction; reconstruction identity; reconstruction comparison (all sense 2).
+*Variants:* field reconstruction; unsymmetrized / symmetric reconstruction; fixed-probe reconstruction; reconstruction identity; reconstruction comparison (all sense 2); relativistic reconstruction; word reconstruction; reconstruction theorem (sense 1); Fourier reconstruction (sense 3).
 1. **Reconstruction of the relativistic theory** from the Euclidean correlation functions.
-  *Basis:* R. *Where:* 17:16, 20; 18:32; 19:93, 105, 128, 162; RG:62 (8). *Proposed:* keep (standard).
-2. **Field reconstruction `H_d`; fixed-probe reconstruction `𝒫_D`.** The map that assigns to a word (a cluster of nearby insertions) the field of `F_D` with the same fixed probe coordinates: "the degree-`D` reconstruction of a field in `F_t`, `t > D`, is exactly its low-degree component in this fixed biorthogonal system" (18lp:276–278); "Denote the resulting reconstruction of a word by `𝒫_D w`" (18lp:278–279). The "reconstruction identity" and "reconstruction comparison" of chapters 18 and 18r are the identity and the comparison for the field reconstruction `H_d(w)`.
-  *Basis:* R (18lp:266–279, a prose construction). *Where:* 18lp:266–279; 18:67, 82, 149, 212, 227, 228; 18r:7, 35. *Proposed:* keep, define once (*projection onto `F_D` along the fixed probes*).
+  *Basis:* R. *Where:* 1:415–418, 495–499; 12:404; 14:9, 37; 15:339; 16:2, 22, 79, 313; 17:16, 20; 18:32; 19:93, 105, 128, 162; RG:62. *Proposed:* keep (standard).
+2. **Field reconstruction `H_d`; fixed-probe reconstruction `𝒫_D`.** The map that assigns to a word (a cluster of nearby insertions) the field of `F_D` with the same fixed probe coordinates: "For a cluster word `w`, define the unsymmetrized field reconstruction `H_d(w) = Σ_{|α|≤d} b_α(w) u_α`, where `b_α(w)` means replacing the distinguished field in its probe correlations by the entire cluster" (18:67–72); "the degree-`D` reconstruction of a field in `F_t`, `t > D`, is exactly its low-degree component in this fixed biorthogonal system" (18lp:276–278); "Denote the resulting reconstruction of a word by `𝒫_D w`" (18lp:278–279). Chapter 18 distinguishes the unsymmetrized reconstruction `H_d` from the symmetric ones `A_d w = ∫_{O(4)} R_d(K) H_d(K^{-1}w) dK`, `B_d w = ½{A_d w + conj(A_d w̄)}` (18:82–85; "the unsymmetrized and symmetric reconstructions", 18:212). The "reconstruction identity" and "reconstruction comparison" of chapters 18 and 18r are the identity and the comparison for the field reconstruction `H_d(w)`.
+  *Basis:* D (18:67–70) for `H_d`; D (18:82–85) for the symmetrised `A_d`, `B_d`; R (18lp:266–279, a prose construction) for `𝒫_D`. *Where:* 18lp:266–279; 18:67, 82, 149, 212, 227, 228; 18r:7, 35. *Proposed:* keep, define once (*projection onto `F_D` along the fixed probes*).
 3. **Fourier inversion.**
-  *Basis:* R. *Where:* 17m:239 (1). *Proposed:* *Fourier inversion*.
-*Across chapters:* 17 occurrences in chapters 17–19 (8 / 8 / 1). For sense 2, 18lp:266–279 is a prose construction without a formula, so the basis is R, not D. That `𝒫_D` (18lp) and `H_d` (18) are the same map is inferred; the text does not say so.
+  *Basis:* R. *Where:* 5:819; 17m:239. *Proposed:* *Fourier inversion*.
+4. **Exact recovery** of a field or a density from its parts ("it reconstructs the original fine field on every selected stencil", 6:1377; "Exact reconstruction always uses the genuine …", 11:613; "an exact reconstruction of every stencil value", 11:1826; "It remains to reconstruct the coarse presentation", 11R:339). Ordinary.
+  *Basis:* R. *Where:* 6:1377; 11:613, 1826; 11R:339. *Proposed:* keep (ordinary); *recover*.
+*Across chapters:* sense 1 in chapters 1, 12, 14–19; sense 2 in 18lp, 18, 18r; sense 3 in chapters 5 and 17m; sense 4 in chapters 6 and 11. For sense 2, 18lp:266–279 is a prose construction without a formula (basis R), while chapter 18 defines `H_d` and its symmetrisations by formulae (18:67–70, 82–85; basis D). That `𝒫_D` (18lp) and `H_d` (18) are the same map is inferred; the text does not say so. Other occurrences, not classified: 3:761 ("reconstructs Wick's rule"); 6:1561 ("Reconstruction of the exact block density"); 7:142 ("preserve the reconstruction").
 *See also:* replacement; raw.
 
 #### recording
@@ -4353,10 +4367,10 @@ See *recording estimate* (chapter 7) and *recording scale* (chapter 11R).
 See *row* (sense 8).
 
 #### refinement
-*Variants:* volume refinement; coefficient refinement.
-- **Meaning.** A further subsequence: of the sequence of volumes, `P = p_seq ∘ q_seq` (1:395–397); in chapters 12–16 also of the sequence of cutoffs or coefficients ("coefficient refinement"), in the passages on ordered limits.
-  *Basis:* R (1:393–397). *Where:* 1:393; chapters 12–16, with the ordered limits (see *ordered tail*). *Proposed:* *subsequence*.
-*Across chapters:* one sense, a subsequence.
+*Variants:* coefficient refinement; refined ordered tails (13:143).
+- **Meaning.** A further subsequence: of the sequence of volumes, `P = p_seq ∘ q_seq` (1:395–397; "one refinement `P(k) = p(q(k))`", 13:32); in chapters 13, 15, 18 and 19 also of the sequence of cutoffs or coefficients ("coefficient refinement", 13:138, 165; "coefficient-convergent refinement", 18lp:306), in the passages on ordered limits.
+  *Basis:* R (1:393–397). *Where:* 1:393; 13:32, 53, 138–143, 165; 15:257; 18gq:40, 47; 18lp:306, 309; 19:36, 60, 141. *Proposed:* *subsequence*.
+*Across chapters:* one house sense (a subsequence) in chapters 1, 13, 15, 18 and 19; the ordinary sense "improvement" at 6:82 ("This refinement adds local eligibility tests"), 17:21 and RG:70.
 *See also:* retained volumes; ordered tail.
 
 #### reflected normalized directions
@@ -4465,11 +4479,11 @@ See *weight restoration*.
 *See also:* recentering (sense 2); residual.
 
 #### remote
-1. **Far from the large-field set.** Farther than `30B` from the large-field set (6:1008 "the remote event indicator", 1249 "remote nonlinear action remainders"); "a failed remote cutoff" (9:280).
-  *Basis:* I. *Where:* 6:1008, 1249, 1251; 9:280; 11:679, 709, 721. *Proposed:* *far from the large-field set* (at distance greater than `30B`).
+1. **Far from the large-field set.** Farther than `30B` from the selected (large-field) set: "A target more than `30B` from the selected set" (6:934); the estimate "holds uniformly at targets farther than `30B` from the selected set" (6:949–950), and 6:1008 calls the conclusion of that proposition "the remote event indicator implication". Also "remote nonlinear action remainders" (6:1249); "a failed remote cutoff" (9:280).
+  *Basis:* R (6:949–950 with 6:1008). *Where:* 6:1008, 1249, 1251; 9:280; 11:709. *Proposed:* *far from the large-field set* (at distance greater than `30B`).
 2. **At a fixed distance.** "Remote spectators" (3:873): spectators kept at a fixed distance from the insertions.
   *Basis:* I. *Where:* 3:873. *Proposed:* *spectators at a fixed distance*.
-*Across chapters:* sense 1 in chapters 6, 9 and 11, used together with "clean" and "clearance" (the latter is *distance*); sense 2 once in chapter 3.
+*Across chapters:* sense 1 in chapters 6, 9 and 11, used together with "clean" and "clearance" (the latter is *distance*); sense 2 once in chapter 3. 11:679 ("clean neighborhood") and 11:721 ("clearance") are the neighbouring words, not "remote".
 *See also:* clean; spectators.
 
 #### repeated copies
@@ -4503,8 +4517,8 @@ See *uniform in the number of reflected copies* (also for "repeated-word bound" 
 See *uniform in the number of reflected copies*.
 
 #### replicate
-- **Meaning.** As a verb: take a reflected tiling at the stated scale and apply the chessboard estimate. "Replicate at the first backward crossing of `B_n²`" (17m:432) refers to 11:815–817, "A reflected tiling at scale `a_m`, stopped at `a_k`, has `(a_m/a_k)⁴` sites per cell. Taking the number-of-cells root …", for the estimate `(11.replicated-bound)`. The verb itself is not explained; in chapter 11 it occurs only in the label `ch11:replicated` (11:780, the section "The normalized integral with several insertions"); it is in prose at 13ba:283 ("Replicate the discrepancies before applying the kernel").
-  *Basis:* R for the operation (11:815–817); ? for the verb. *Where:* 13ba:283; 17m:432. *Proposed:* *apply the chessboard estimate (11.root-bound) with a reflected tiling at the scale …*.
+- **Meaning.** As a verb: place one copy in each cell of a reflected tiling. At 13ba:283 ("Replicate the discrepancies before applying the kernel") this forms the product of the copies over the reflected cells (13ba:269–271, 283–286: "the resulting residual" is "the product of the pullback discrepancies"); no estimate is applied in that sentence. At 17m:432 ("Replicate at the first backward crossing of `B_n²`") the copies are then bounded by the estimate `(11.replicated-bound)` (11:806–812, cited at 17m:433–434), whose root over the cells is `(11.root-bound)`: "A reflected tiling at scale `a_m`, stopped at `a_k`, has `(a_m/a_k)⁴` sites per cell. Taking the number-of-cells root …" (11:815–820). The verb itself is not explained; in chapter 11 it occurs only in the labels `ch11:replicated` (11:780) and `ch11:replicated-bound` (11:812).
+  *Basis:* R for the estimate (11:806–820; 17m:432–434); I for the verb (13ba:283). *Where:* 13ba:283; 17m:432. *Proposed:* *place a copy in each reflected cell*; at 17m:432 *apply (11.replicated-bound) with the reflected tiling at the scale …*.
 *Across chapters:* one sense. `B_n` at 17m:432–438 is the chapter 4 support radius `⌈(log β̂_n)²⌉` (4:413), not the restarted radius (see *restart*).
 *See also:* reflected replica cell; replication costs; root estimate.
 
@@ -4529,13 +4543,13 @@ See *returned*.
 
 #### request
 *Variants:* numerical, finite, degree, derivative, arity, window, comparison, threshold, admissible request; lower-level request; requested (order, power, window).
-1. **Condition on the schedule.** A finite numerical requirement that a later argument adds to the choice of the stage constants: "Future applications may prescribe countably many finite numerical requests, provided their analytic estimates have already been established for a fixed stage. At stage `j` take the maximum of the first `j` such requests" (10:66–69); "countably many finite degree requests to the single schedule of coupling thresholds" (13ba:100); "Make all finite requests before selecting the stage orders" (11:2084).
-  *Basis:* R (10:66–69). *Where:* 10:67, 69, 75, 123, 189, 745; 11:356, 1634, 1777, 2084, 2090, 2208; 11R:217, 241, 296; 11E:13, 30; 13ba:100; 18lp:103, 151. *Proposed:* *requirement on the schedule*; *prescribed (order, power)* for "requested".
-2. **Finite set of data.** A fixed finite tuple (arity, degrees, derivative order, compact set of configurations, error) for which constants or thresholds are then chosen: "Fix `n ≥ 1`, finitely many real polynomial labels of bounded degree, and a compact set of point configurations … The selected stage requirements can be imposed for this finite request" (11:2052–2057); "All constants … are chosen for this one finite request" (14lc:9); "Fix a finite degree, arity and derivative request" (17w:10).
-  *Basis:* R (11:2052–2057; 14:224–227). *Where:* 11:2057; 14:224, 225, 227; 14lc:9, 79, 108; 17:140; 17w:10, 13, 73, 85; 17m:88, 142, 285; 18:144. *Proposed:* *fixed finite data `(n, D, K, ε)`*; *for the given orders*.
+1. **Condition on the schedule.** A finite numerical requirement that a later argument adds to the choice of the stage constants: "Future applications may prescribe countably many finite numerical requests, provided their analytic estimates have already been established for a fixed stage. At stage `j` take the maximum of the first `j` such requests" (10:66–69); "countably many finite degree requests to the single schedule of coupling thresholds" (13ba:100); "Make all finite requests before selecting the stage orders" (11:2084). "Requested" is "prescribed": "through the requested derivative order" (6:1555); "the fixed requested finite power" (11R:296).
+  *Basis:* R (10:66–69). *Where:* 6:1555 ("requested"); 10:67, 69, 75, 123, 189, 745; 11:356, 1634, 1777, 2084, 2090, 2208; 11R:296 ("requested"); 11E:13, 30; 13ba:100; 18lp:103, 151. *Proposed:* *requirement on the schedule*; *prescribed (order, power)* for "requested".
+2. **Finite set of data.** A fixed finite tuple (arity, degrees, derivative order, compact set of configurations, error) for which constants or thresholds are then chosen: "Fix `n ≥ 1`, finitely many real polynomial labels of bounded degree, and a compact set of point configurations … The selected stage requirements can be imposed for this finite request" (11:2052–2057); "All constants … are chosen for this one finite request" (14lc:9); "Fix a finite degree, arity and derivative request" (17w:10); in the same wording "Fix the finite degree and derivative requests and the comparison window" (11R:217), continued by "for the fixed requests" (11R:241).
+  *Basis:* R (11:2052–2057; 14:224–227). *Where:* 11:2057; 11R:217, 241; 14:224, 225, 227; 14lc:9, 79, 108; 17:140; 17w:10, 13, 73, 85; 17m:88, 142, 285; 18:144. *Proposed:* *fixed finite data `(n, D, K, ε)`*; *for the given orders*.
 3. **Prescribed lower bound on a level.**
   *Basis:* R. *Where:* 13:96; 13ba:336; 15:207. *Proposed:* *lower bound on the level*.
-*Across chapters:* three uses of one scheduling word, never defined. 11:2057 is the data of sense 2, not a condition of sense 1 (text read: 10:65–70; 11:2052–2058). With 10:66–69, 11:2052–2057 and 14:224–227 the basis is R also in chapters 17–19, whose uses are sense 2. "Window request" at 17:140 uses "window" for a compact set of separated configurations (I, by parallel with 14:225–226).
+*Across chapters:* three uses of one scheduling word, never defined. 11:2057 is the data of sense 2, not a condition of sense 1 (text read: 10:65–70; 11:2052–2058); 11R:217, 241 are the data of sense 2 as well, by their wording (that of 17w:10). With 10:66–69, 11:2052–2057 and 14:224–227 the basis is R also in chapters 17–19, whose uses are sense 2. "Window request" at 17:140 uses "window" for a compact set of separated configurations (I, by parallel with 14:225–226).
 *See also:* regularity-stage index `J_m`; stage; schedule; diagonalize.
 
 #### reserve
@@ -4626,8 +4640,8 @@ See *returned*.
 
 #### restart
 *Variants:* restarted history; restarted representation(s); restarted threshold; restarted small-field indicator; restarted family.
-1. **Restarted history.** The auxiliary sequence of densities `D_i = 𝓑_{i,β} D_{i+1}`, `D_k = ρ_{N,p,k}`, in which the actual inverse coupling is frozen at `β = β_{N,p,k}` below the comparison level `k`: "A useful auxiliary history keeps the actual inverse coupling constant below a comparison level while retaining the paths, adjacent quadratic identities, and block geometry" (11:736–738).
-  *Basis:* D (11:736–741). *Where:* 11:26, 734–765, 1155, 1220, 1309, 1663, 1967, 2058, 2090, 2198; 11R:2, 7, 215; 17w:102; 19:49. *Proposed:* keep *restarted history*, defined once as *the history with the inverse coupling frozen below the comparison level `k`* (not "sequence", "trajectory" or "schedule": *history* is the kept word).
+1. **Restarted history.** The auxiliary sequence of densities `D_k = ρ_{N,p,k}`, `D_i = 𝓑_{i,β} D_{i+1}`, with `∫D_i = Z_{N,p}` (11R:231–234), in which the actual inverse coupling is frozen at `β = β_{N,p,k}` below the comparison level `k` (11R:223–224): "A useful auxiliary history keeps the actual inverse coupling constant below a comparison level while retaining the paths, adjacent quadratic identities, and block geometry" (11:736–738).
+  *Basis:* R (11:736–741); D for the densities (11R:215–235, Proposition "One restarted history on the comparison window"). *Where:* 11:26, 734–765, 1155, 1220, 1309, 1663, 1967, 2058, 2090, 2198; 11R:2, 7, 215–235, 377, 390; 17w:102; 19:49. *Proposed:* keep *restarted history*, defined once as *the history with the inverse coupling frozen below the comparison level `k`* (not "sequence", "trajectory" or "schedule": *history* is the kept word).
 2. **Restarted representation.** The local representation of the densities along that history ("Constructing the restarted representations", 11R:2), with new radius and threshold: "The new representation at level `i` has radius `B_i = b(x_i)²` and threshold `ϑ(x_i)`" (11R:18), where `b(x) = ⌈(log x)²⌉` and `x_i = β̂_i` (11R:12–18).
   *Basis:* D (11R:12–18). *Where:* 11R:2–242; 11:1152–1156; 17w:33. *Proposed:* *local representation along the restarted history*.
 *Across chapters:* same two objects in chapters 11, 11R, 17 and 19. Two radii carry the letter `B` in chapter 17: `B_n` at 17m:432–438 (and `B_k` at 17m:332, 413) is the chapter 4 support radius `B_m = ⌈(log β̂_m)²⌉` (4:413), so `B_n = O((log β̂_n)²)` at 17m:438; `B_n` at 17w:33 is the restarted radius `b(x_n)²` ("Here `B_n` is the radius of the restarted representation", read). Chapter 11 says so itself: "The original insertion norm uses radius `M`, whereas the restarted representation uses radius `B`. These are different radii" (11:1152–1156, read). Caution: "auxiliary history" is not one object across chapters; in chapter 10 it is the zero-terminal-array history (10:824–827, 918), in chapter 11 the restarted one.
@@ -4797,31 +4811,33 @@ See *row* (sense 6).
 *See also:* same-history; schedule.
 
 #### same-history
-*Variants:* on the same history.
-- **Meaning.** For one and the same history, i.e. the same fixed choice of block kernels, inverse couplings, adjacent path pairs and local representations (definition of *history* at 11:18–19): "the signed residual must be transported on the same history and compared in the physical quotient" (18:129–130).
-  *Basis:* R (18:129–130, through 11:18–19). *Where:* 18:130, 146; also 18lp:48. *Proposed:* *for the same history*, with *history* defined once.
-*Across chapters:* one sense. Not *along the same sequence of block transformations*: a history is more than the sequence of maps (11:18–19), and it is neither a trajectory nor a schedule. Narrower than *same-family*, and not a synonym of it.
+*Variants:* on the same history; on the same actual history (17c:87).
+- **Meaning.** For one and the same history, i.e. the same fixed choice of block kernels, inverse couplings, adjacent path pairs and local representations (definition of *history* at 11:18–19): "The estimates of Chapters 6 and 9 are used only on that same history" (11:20–21); "the signed residual must be transported on the same history and compared in the physical quotient" (18:129–130).
+  *Basis:* R (11:18–21; 18:129–130). *Where:* 11:21; 11E:2; 17c:87; 18lp:48; 18:130, 146. *Proposed:* *for the same history*, with *history* defined once.
+*Across chapters:* one sense, in chapters 11, 17 and 18. Not *along the same sequence of block transformations*: a history is more than the sequence of maps (11:18–19), and it is neither a trajectory nor a schedule. Narrower than *same-family*, and not a synonym of it.
 *See also:* same-family.
 
 #### scalar
-*Variants:* scalar `v_sc`; scalar normalization; scalar bookkeeping; coarse scalar component; scalar principal alias; scalar correction; scalar discrepancy; scalar heights.
+*Variants:* scalar `v_sc`; scalar normalization; scalar bookkeeping; coarse scalar component; scalar principal alias; scalar correction; scalar discrepancy; scalar heights; scalar mass, scalar regulator, scalar-mass denominators (7:686; 17t).
 1. **Constant term of the action or exponent; normalisation constant.** The field-independent term `−v_sc|Λ|` of `V_ρ`, where the density is `e^{−V_ρ}`; the text calls it "a scalar normalization". Later `v_0` ("`v_0` is the scalar", 11:789) and `σ`. "Scalar bookkeeping" (9:56) is the tracking of the field-independent prefactors of the Gaussian change of variables (inferred).
-   *Basis:* D (4:550–551). *Where:* 4:9, 550–551, 555, 658; 8:359; 9:56, 399, 717–720, 757, 764, 814, 904; 9s:123; 10:266; 11:609, 726, 789, 814, 2014; 11R:73, 190, 362–363; 12:34, 166, 170; 13sb:26, 29; 13ba:219. *Proposed:* *constant term per site*; *normalisation constant*.
+   *Basis:* D (4:550–551). *Where:* 4:9, 550–551, 555, 658; 8:359; 9:56, 399, 717–720, 757, 764, 814, 904; 9s:123; 10:266; 11:609, 726, 789, 814, 2014; 11R:73, 190, 362–363; 12:166, 170; 13sb:29; 13ba:219. *Proposed:* *constant term per site*; *normalisation constant*.
 2. **Zero-form component.** The zero-form (frame, gauge-parameter) variable at coarse sites carried along with the fine field ("coarse scalar component", "scalar principal alias").
-   *Basis:* I. *Where:* 7:477, 507, 580, 591, 696–703, 721–722, 892, 915. *Proposed:* *coarse frame variable `r`*.
-3. **The coupling correction `q_m`.** `q_m = β_m − β_{m+1} − α_{N,m}` ("scalar correction", "projected scalar", "scalar recursion", "cumulative scalar bound"); "It is not the vacuum normalization".
-   *Basis:* D (10:416–422). *Where:* 10:421–422, 445, 645, 684, 772, 816, 826, 842, 849, 868–870, 902. *Proposed:* *coupling correction `q_m`*.
+   *Basis:* I. *Where:* 7:507, 580, 591, 696–703, 721–722, 915. *Proposed:* *coarse frame variable `r`*.
+3. **The coupling correction `q_m`.** `q_m = β_m − β_{m+1} − α_{N,m}` ("scalar correction", "projected scalar", "scalar recursion", "cumulative scalar bound"); "It is not the vacuum normalization". Outside chapter 10: "it is not a marked density or the scalar coupling correction" (13sb:26).
+   *Basis:* D (10:416–422). *Where:* 10:421–422, 445, 645, 684, 772, 816, 826, 842, 849, 868–870, 902; 13sb:26. *Proposed:* *coupling correction `q_m`*.
 4. **The coordinate `λ`.** "scalar coordinates".
    *Basis:* I. *Where:* 10:443. *Proposed:* *the coordinates `λ`*.
 5. **Purely time-directed imaginary parts.** "strictly ordered scalar heights", "positive scalar imaginary gaps".
    *Basis:* I. *Where:* 16:218, 248. *Proposed:* *imaginary times*.
-6. **Multiples of the identity.** "scalar operators"; also the "scalar part" of a polynomial, its coefficient of the identity (13ba:164).
-   *Basis:* R (16:481). *Where:* 16:481; 13ba:164. *Proposed:* *multiples of the identity*.
+6. **Multiples of the identity.** "scalar operators"; "commutant is scalar" (19:73); also the "scalar part" of a polynomial, its coefficient of the identity (13ba:164).
+   *Basis:* R (16:481). *Where:* 16:481; 13ba:164; 19:73. *Proposed:* *multiples of the identity*.
 7. **The two constants subtracted in centering.** "scalar corrections".
    *Basis:* R. *Where:* 14:283–284. *Proposed:* *the two constants subtracted*.
-8. **Number-valued (ordinary).** Scalar multiple, scalar majorant, scalar division, scalar bound.
-   *Basis:* R. *Where:* 7:124, 134, 207, 214, 508, 519, 686; 9s:20; 11:85, 1011, 1105, 1579, 2136; 17:284–285. *Proposed:* keep (ordinary usage).
-*Across chapters:* sense 1 is the same in chapters 4, 8–13 (`v_sc` at 9:399, 717–720, 904); senses 2–7 are local to chapter 7, chapter 10, chapter 16 and chapter 14. The "scalar discrepancy" of 9:757 is the function `f(d)` of 9:757–759. Counts: 28 matches in chapters 1, 2, 7–9; 16 / 13 / 4 / 0 in files 10 / 11 / 11R / 11E.
+8. **Number-valued (ordinary).** Scalar multiple, scalar majorant, scalar division, scalar bound; "The scalar multiple of the density need not converge" (12:34); "by a complex scalar `u`" (12:271).
+   *Basis:* R. *Where:* 7:124, 134, 207, 214, 508, 519; 9s:20; 11:85, 1011, 1105, 1579, 2136; 12:34, 271; 17:284–285; chapters 3 and 5 (ordinary: scalar product, 5:28; scalar-valued, 3:937). *Proposed:* keep (ordinary usage).
+9. **The regulator mass on the zero-form component.** "Define `Γ_μ` with the scalar mass `μ²I`" (17t:89); "the scalar regulator" (17t:3; "the scalar regulator floor", 7:686); "scalar-mass denominators" (17t:97, 115). A mass term for the zero-form (gauge-parameter) component, not "number-valued".
+   *Basis:* R (17t:86–89). *Where:* 7:686; 17t:3, 82, 89, 97, 102, 115. *Proposed:* *regulator mass `μ²` for the gauge-parameter component*.
+*Across chapters:* sense 1 is the same in chapters 4, 8–13 (`v_sc` at 9:399, 717–720, 904); senses 2, 4, 5 and 7 are local to chapter 7, chapter 10, chapter 16 and chapter 14; sense 3 is of chapter 10 and recurs at 13sb:26; sense 6 is in chapters 13ba, 16 and 19; the scalar regulator (sense 9) is in chapters 7 and 17t. The "scalar discrepancy" of 9:757 is the function `f(d)` of 9:757–759. Counts: 28 matches in chapters 1, 2, 7–9; 16 / 13 / 4 / 0 in files 10 / 11 / 11R / 11E. The uses in chapters 3 (14 lines), 5 (7), 14:154–156, 15:130, 17 (5 lines) and 17m:157, 208 were not assigned line by line; those opened are ordinary (sense 8).
 *See also:* discrepancy.
 
 #### scalar bookkeeping
@@ -5025,16 +5041,18 @@ See *separated*.
 
 #### shell
 1. **On shell.** Restricted to jets of solutions ("on-shell polynomial space").
-   *Basis:* R (3:166). *Where:* 3:149, 166, 213, 588. *Proposed:* keep (standard).
-2. **Support of the gradient of a cutoff.** The annular region `supp ∇χ` through which a flux is taken: "shell flux", "shell integrals", "total shell response" `−∫∂_μV_c S(J_{μc}, A)` (14:777), which the text calls a response, not a flux.
-   *Basis:* R (3:666–672; 14:777). *Where:* 3:546, 656–671; 14:318–328, 373, 777, 796; 16:538, 558; 17:99, 341–344; 17w:122. *Proposed:* *flux of the current through the shell `supp ∇χ`*; *the flux integral*.
-3. **Shell factor.** The power `ρ^{3+ϰ}` by which the cancelling coefficients are multiplied (14:340, 358).
-   *Basis:* R (14:358). *Where:* 14:340, 358. *Proposed:* *the factor `ρ^{3+ϰ}`*.
-4. **Region of comparable radius.** The region where `ρ` is comparable to one value ("one-shell estimate"), in the tree vocabulary for nested collision subsets.
-   *Basis:* I. *Where:* 18:257, 404–418. *Proposed:* *the region `ρ ≤ |…| ≤ 2ρ`*.
+   *Basis:* R (3:166). *Where:* 3:149, 166, 213, 216, 341, 552, 588. *Proposed:* keep (standard).
+2. **Support of the gradient of a cutoff.** The annular region `supp ∇χ` through which a flux is taken: "shell flux", "shell integrals", "shell identity", "stress shell", "total shell response" (14:796), said of `−∫∂_μV_c S(J_{μc}, A)` (14:776–777), which the text calls a response, not a flux.
+   *Basis:* R (3:666–672; 14:776–777). *Where:* 3:546; 14:312 (title "Shrinking shells and local charge fields"), 384, 395, 404, 776, 796, 825, 1014; 15:245; 16:538, 558; 17:99; 17w:122. The flux itself is defined at 3:666–672 and 14:318–322, where the word is not used; at 14:328–330 it is only in the name of the figure `ward-shell`. *Proposed:* *flux of the current through the shell `supp ∇χ`*; *the flux integral*.
+3. **Shell factor.** The power `ρ^{3+ϰ}` by which the cancelling coefficients are multiplied (formula at 14:340; the phrase at 14:358).
+   *Basis:* R (14:358). *Where:* 14:358. *Proposed:* *the factor `ρ^{3+ϰ}`*.
+4. **Region of comparable size.** The region where `ρ` is comparable to one value ("A single shell", "one-shell estimate"), in the tree vocabulary for nested collision subsets; similarly the dyadic energy range "On the shell `u/2 < E ≤ u`" (16:415).
+   *Basis:* I (18:406–418); R at 16:415. *Where:* 18:406, 413, 418; 16:415. *Proposed:* *the region `ρ ≤ |…| ≤ 2ρ`*; at 16:415 *the range `u/2 < E ≤ u`*.
 5. **Lattice shell sum.** `sup_v Σ_i e^{−η d(v,a_i)}`; similarly "roots in shell `j`" (11:269), sites at distance of order `j`.
    *Basis:* R. *Where:* 5:1212; 11:269. *Proposed:* print the sum.
-*Across chapters:* five unrelated uses: sense 1 in chapter 3; sense 2 in chapters 3, 14, 16, 17 (one sense, the shell `supp ∇χ`); sense 3 in chapter 14; sense 4 in chapter 18; sense 5 in chapters 5 and 11. For sense 2, not *smeared charge of the current*: it contradicts `blueprint/notation.md` ("integral of a conserved-current correlation against an annular cutoff derivative") and names a different object.
+6. **Mass shell** (standard physics term). "Mass-shell Laplace kernels" `K_{m,k,h}` (17:424–426), "mass-shell polynomial comparison" (17:455), "mass-shell correlation functions" (MT:102).
+   *Basis:* R (17:424–426). *Where:* 17:424, 455; 19:123; MT:102. *Proposed:* keep (standard).
+*Across chapters:* six unrelated uses: sense 1 in chapter 3; sense 2 in chapters 3, 14, 15, 16, 17 (one sense, the shell `supp ∇χ`); sense 3 in chapter 14; sense 4 in chapters 16 and 18; sense 5 in chapters 5 and 11; sense 6 in chapters 17, 19 and the main theorem. For sense 2, not *smeared charge of the current*: it contradicts `blueprint/notation.md` ("integral of a conserved-current correlation against an annular cutoff derivative") and names a different object.
 
 #### shell factor
 See *shell* (sense 3).
@@ -5078,18 +5096,16 @@ See *shell* (sense 3).
 See *site conversion*.
 
 #### site conversion
-*Variants:* root-to-site conversion; support conversion; support conversion cost `T_l`; site bound; site sum.
-- **Meaning.** The passage from a bound for supports anchored (rooted) at a point to a bound for supports containing a given site, at the cost of one unit of exponential support decay: "The conversion of anchored bounds to containing-site bounds" (9:513); "The site bound is `Σ` at exponent `v+1`. To see the latter conversion, root a support at one of its actual fine sites or marks …" (11:266–272); "the extra unit used to turn an anchored bound into a site bound. These are the support conversions" (11R:141–142); "Root-to-site conversion costs only `𝒲(B)`" (11:1918). A site bound (site sum) is the sum over the terms containing a site. The cost `T_e = exp(15⁴(e+7))` is given by formula at 11:233–238.
-  *Basis:* R (9:513; 11:266–272; 11R:141–142). *Where:* 9:513; 11:257, 266–272, 300, 1473, 1918; 11R:74, 125, 141–142, 170–181; 13ba:145; 18lp:112–113. *Proposed:* *passage from anchored to containing-site bounds*; *site sum* for the sum over terms containing a site.
-*Across chapters:* one sense; chapters 13 and 18lp use it without explanation and are settled by chapters 9 and 11 (11:264–272 read). The "incidence" bounds of chapter 11 (sum over terms containing a given insertion) are contrasted with the site bound.
-*See also:* incidence; site norm.
+*Variants:* root-to-site conversion; support conversion, support conversions; support conversion cost `T_l`; support conversion constants.
+1. **Site conversion (root-to-site conversion).** The passage from a bound for supports anchored (rooted) at a point to a bound for supports containing a given site, at the cost of one unit of the support exponent and a factor `𝒲(B)`: "The conversion of anchored bounds to containing-site bounds is explicit … An additional exponent in the support weight absorbs this polynomial" (9:513–517); "The site bound is `Σ` at exponent `v+1`. To see the latter conversion, root a support at one of its actual fine sites or marks …" (11:266–272); "Root-to-site conversion costs only `𝒲(B)`" (11:1918).
+   *Basis:* R (9:513–517; 11:266–272, 1918). *Where:* 9:513; 11:267, 502, 1918; 13ba:145. *Proposed:* *passage from anchored to containing-site bounds*.
+2. **Support conversion.** The change of the exponential support weight from one cover radius or level to another: `e^{(v+2)c_{B_c}(X^↑)} ≤ T_e e^{σ_f c_{B_f}(X)}` with `T_e = exp(15⁴(e+7))` ((ch11:cover-transfer), 11:228–238), from the fine cover number at radius `B_f` to the coarse cover number of the enlarged support. "Its full support conversion cost is `T_l ≤ L_l`, as in (ch11:cover-transfer)" (18lp:112–113). `T_e` is the constant of this step, not the cost of sense 1. In 11R the plural covers this and sense 1 together: "Eventually its old exponent absorbs this new exponent and the extra unit used to turn an anchored bound into a site bound. These are the support conversions" (11R:140–143).
+   *Basis:* R (11:228–238; 18lp:112–113; 11R:140–143). *Where:* 11:515, 527–528; 11R:142, 281, 320–321; 18lp:112–113. *Proposed:* *change of cover radius, (ch11:cover-transfer)*.
+*Across chapters:* two operations: sense 1 in chapters 9, 11 and 13ba, sense 2 in chapter 11, 11R and 18lp; 13ba and 18lp use them without explanation and are settled by chapters 9 and 11 (11:226–238, 264–272 read). "Site bound" and "site sum" are the sums over the terms containing a site and belong under *containing-site bound*. The "incidence" bounds of chapter 11 (sum over terms containing a given insertion) are contrasted with the site bound.
+*See also:* incidence; containing-site bound; connected covering number.
 
 #### site norm
-*Variants:* site norm `‖z‖_α`; support norm; containing-site norm.
-- **Meaning.** `‖z‖_α = sup_x Σ_{γ: x ∈ X_γ} |z_γ| e^{α c(X_γ)}`: "It counts every polymer at each site in its support. A norm which counts only the chosen anchor of a polymer is different" (8:75–76). It is the "containing-site bound" of chapter 4 (4:603–606). "The support norm" (8:196) has no formula; that it is the same norm is inferred.
-  *Basis:* D (8:69–74); I for "support norm". *Where:* 8:69–79, 143, 196; 9:518, 607. *Proposed:* *weighted polymer-activity norm* (one name).
-*Across chapters:* same norm in chapters 4, 8, 9. That the "attachment norm" (9:697) and the "rooted activity norm" (12:178) are the same norm is not verified; 9:513–518 distinguishes anchored from containing-site bounds.
-*See also:* site conversion; support-weight reserve.
+See *containing-site bound*.
 
 #### sites declared to be in the large-field region
 *Variants:* sites assigned to an activity.
@@ -5336,8 +5352,8 @@ See *stationary graph*.
 #### stationary graph
 *Variants:* stationary branch; selected branch; stationary solution; stationary jets; stationary formula.
 - **Meaning.** The locally unique solution `ψ = ρ(v)` of the stationarity equation `D_ψ f = 0`, as a function of the coarse field: "write `ρ(x)` for its stationary branch and `A(x) = D_y²φ(x, ρ(x))` for its positive Hessian" (9s:36–37). "Stationary jets" are its Taylor coefficients (10:717; "stationary formula", 10:336).
-  *Basis:* D (5:1145–1180); R (9s:36) for "branch". *Where:* 5:1145–1180 and about 25 lines; 7:501, 517, 553, 766, 949, 953, 1152; 9:292; 9s:36, 39; 10:717, 920–924; 17c:147, 186. *Proposed:* *critical-point map `ρ`*.
-*Across chapters:* one object under two words, "graph" in chapter 5 and "branch" in chapters 7, 9, 10: 10:918–924 names "stationary branch" and "stationary graph" in consecutive sentences for the same datum of a history, and 9s:36 writes `ρ(x)` for the branch (both read). Not *stationary solution* for the branch at 10:920. "Branch" in the sense of a case of a piecewise definition does not occur here. A different object from the "graph" `G` of 11:379–382 and 12:82–94, which keeps that name.
+  *Basis:* D (5:1145–1180); R (9s:36) for "branch". *Where:* 5:972, 1145–1180, 1309, 1328, 1336, 1373 (7 lines with the term in chapter 5); 7:501, 517, 552–553, 766, 949, 953, 1152; 9:292; 9s:36, 39; 10:336, 717, 920–924; 17c:10, 140, 185–186, 395–396. *Proposed:* *critical-point map `ρ`*.
+*Across chapters:* one object under two words, "graph" in chapter 5 and "branch" in chapters 7, 9, 10, 17c: 10:918–924 names "stationary branch" and "stationary graph" in consecutive sentences for the same datum of a history, and 9s:36 writes `ρ(x)` for the branch (both read). Not *stationary solution* for the branch at 10:920. "Branch" in the sense of a case of a piecewise definition does not occur here. A different object from the "graph" `G` of 11:379–382 and 12:82–94, which keeps that name.
 *See also:* stationary chart; stationary tangent; stationary substitution.
 
 #### stationary identification
@@ -5508,10 +5524,10 @@ See *site norm*.
 *See also:* site norm; support exponent.
 
 #### suppression
-*Variants:* suppression (of a large-field component).
-- **Meaning.** The decay factor of a large-field component: "whose suppression is `exp(−cβ_N t_N² n)`" (11:167–168). Its exponent is called "energy" ("selected-component energy", 11R:63; "energy reserve", 11:521).
-  *Basis:* R (11:167–168); I for "energy". *Where:* 11:167–168, 521; 11R:63. *Proposed:* *decay factor*; *its exponent*.
-*Across chapters:* chapter 11 files only.
+*Variants:* suppression (of a large-field component); large-field suppression.
+- **Meaning.** The decay factor of a large-field component: "whose suppression is `exp(−cβ_N t_N² n)`" (11:167–168); "the remaining suppression tends to zero faster than every inverse power" (11:169–170); "the large-field term retains half the suppression of its original …" (18lp:39). Its exponent is called "energy" ("selected-component energy", 11R:63; "energy reserve", 11:521).
+  *Basis:* R (11:167–168); I for "energy". *Where:* 8:329; 11:167–170, 216; 11E:103; 13ba:77; 18lp:39 (for "energy": 11:521; 11R:63). *Proposed:* *decay factor*; *its exponent*.
+*Across chapters:* chapters 8, 11, 11E, 13ba and 18lp; one sense.
 *See also:* energy.
 
 ### T
@@ -5583,9 +5599,9 @@ See *site norm*.
 
 #### Taylor map
 *Variants:* `Tay_d`.
-- **Meaning.** The map `Tay_d` from lattice observables to polynomial labels in `V_d`; a *local polynomial section* is a right inverse of it ("The term section simply means a right inverse of the Taylor map", 2:138–146; `Tay_d P_d^loc[c] = c`).
-  *Basis:* D (2:133–146). *Where:* 2:133–146; 11E:4–7. *Proposed:* keep, define once.
-*Across chapters:* one sense throughout.
+- **Meaning.** The map `Tay_d` from lattice observables to polynomial labels in `V_d`; a *local polynomial section* is a right inverse of it ("The term section simply means a right inverse of the Taylor map", 2:138–146; `Tay_d P_d^loc[c] = c`). At 2:266 and 2:280 ("its Taylor map is `c`") the phrase names the value `Tay_d O` on one observable; at 2e:227–229 ("Its Taylor map is `R_d = Tay_d 𝓕_d = I + T_d`") the composite of `Tay_d` with a linear map.
+  *Basis:* D (2:133–146). *Where:* 2:133–146, 205, 266, 280; 2e:227–229; the symbol alone at 2:422; 2e:31, 178. *Proposed:* keep, define once.
+*Across chapters:* one sense, in chapter 2 only (2 and 2e). "Its first-order Taylor map" at 6:1513 is the ordinary linearisation of another nonlinear map, not this term.
 *See also:* section; test configuration.
 
 #### terminal
@@ -5652,13 +5668,13 @@ See *site norm*.
 
 #### threshold
 *Variants:* coupling threshold; inverse coupling threshold; coupling entry threshold; small-field threshold; mesh threshold; period threshold; cutoff / convergence / approximation / translation thresholds.
-1. **Lower bound on `β̂`.** "Coupling threshold": a lower bound imposed on `β̂` at a stage ("for `β̂` sufficiently large"); at 9:202 and 9s:219 "the threshold" without qualifier. *Basis:* R. *Where:* 6:322, 432; 7:1190; 9:145, 202, 430, 709; 9s:207, 219; ch. 12–16 (about 14); 17:134; 17w:23, 42, 74, 76, 95; 17c:141, 234, 236, 384, 386; 17m:142–143, 174, 185, 315, 346–347, 365, 430; 19:20 (19 in ch. 17–19). *Proposed:* *lower bound on `β̂`* ("for `β̂` sufficiently large, depending on `j`, `L`").
-2. **Small-field threshold `t`.** An upper bound on the field size (`t_m = β̂_m^{-1/2} M_m^cut`, 4:410–413; also `ε_pred`, `t_f`). *Basis:* D (4:410–413). *Where:* 2:326, 449; 4:203, 211, 406; 9:19; 13sb:62; 13ba:75; 18lp:179; 17c:316; 17m:153, 272, 304, 378, 427. *Proposed:* keep *small-field threshold `t_m`*; reserve the unqualified word for it.
+1. **Lower bound on `β̂`.** "Coupling threshold": a lower bound imposed on `β̂` at a stage ("for `β̂` sufficiently large"); at 9:202 and 9s:219 "the threshold" without qualifier. *Basis:* R. *Where:* 6:322, 432; 7:1190; 9:145, 202, 430, 709; 9s:207, 219; 10:38–39, 104–105, 110, 627, 643; 11:278, 443, 711; 11R:10; 11E:32; ch. 12–16 (about 14); 17:134; 17w:23, 42, 74, 76, 95; 17c:141, 234, 236, 384, 386; 17m:142–143, 174, 185, 315, 346–347, 365, 430; 19:20 (19 in ch. 17–19). *Proposed:* *lower bound on `β̂`* ("for `β̂` sufficiently large, depending on `j`, `L`").
+2. **Small-field threshold `t`.** An upper bound on the field size (`t_m = β̂_m^{-1/2} M_m^cut`, 4:410–414, label `ch04:thresholds`; also `ε_pred`, `t_f`); in chapters 11 and 11R also the restarted threshold `ϑ` ("The restarted large-field threshold is `ϑ`, not `t`", 11:749). *Basis:* D (4:410–414). *Where:* 2:326, 449; 4:410–414, 420, 534, 572; 9:19; 10:107, 645, 726, 734, 899; 11:749, 795, 1220, 1313; 11R:19–23, 45–46, 71, 187; 11E:115; 13sb:62; 13ba:75; 18lp:179; 17c:316; 17m:153, 272, 304, 378, 427. *Proposed:* keep *small-field threshold `t_m`*; reserve the unqualified word for it.
 3. **Lower bound on the cutoff `N`.** "Mesh threshold" ("once the mesh is sufficiently fine relative to the fixed physical cell", 11:1123–1131); cutoff, convergence, approximation and translation thresholds (an `N_0`). *Basis:* R (11:1123–1131). *Where:* 11:1119, 1129–1131, 1815, 2351; 12:265, 395; 13:27, 388; 13sb:139; 13ba:307; 15:262; 18:165; 18r:20. *Proposed:* *for `N` large enough*.
-4. **Lower bound on the starting scale of a stage.** See *threshold for the starting scale*.
+4. **Lower bound on the starting scale of a stage.** See *threshold for the starting scale* (in chapters 10–11: 10:63, 606, 692; 11R:79, 219).
 5. **Lower bound on the period.** "Enlarge one period threshold" (2e:210). *Basis:* R (2e:210). *Where:* 2e:210. *Proposed:* *lower bound on the period*.
 6. **Upper bound on the radius `r`.** "Small-`r` threshold". *Basis:* R. *Where:* 18:165, 205; 18r:70. *Proposed:* *for `r` small enough*.
-*Across chapters:* chapters 1–9 have senses 1, 2 and 5 (text read at 2:326, 9:19, 2e:210); senses 3, 4 and 6 are added from chapter 10 on. 17m:197 "stage orders and thresholds" is not assigned to a sense.
+*Across chapters:* chapters 1–9 have senses 1, 2 and 5 (text read at 2:326, 9:19, 2e:210); senses 3, 4 and 6 are added from chapter 10 on, and chapters 10, 11, 11R and 11E continue to use senses 1 and 2. At 4:203, 211 and 406 the text's word for the small-field bound is "cutoff", not "threshold" (see *cutoff*). 17m:197 "stage orders and thresholds" is not assigned to a sense. Other occurrences in chapters 10–11, not classified (mostly "the threshold" or "stage threshold" without qualifier): 10:157–158, 695; 11:219, 464, 523, 723, 936, 1186, 1338, 1396, 1599, 1845, 1904, 2038, 2244, 2335; 11R:249, 265; 11E:113, 116.
 *See also:* threshold coordinates; threshold for the starting scale; floor; cutoff; tail events.
 
 #### threshold coordinates
@@ -5748,8 +5764,8 @@ See *total dilation*.
 
 #### trace functional
 *Variants:* `ρ`.
-- **Meaning.** The linear functional `ρ(x,y,z) = −2x − 8y` on `E = ℝ³`, the space of coordinates of divergences "before imposing the Maxwell equation".
-  *Basis:* D (17:164–181). *Where:* 17:179–183, 301; 17m:356, 462. *Proposed:* keep, define once.
+- **Meaning.** The linear functional `ρ(x,y,z) = −2x − 8y` on `E = ℝ³`, the space of coordinates of divergences "before imposing the Maxwell equation". The name occurs once, in the section title "Quantitative stability of the trace functional" (17:258); elsewhere the text has only the symbol `ρ`, or "the bounded functional" (17m:463).
+  *Basis:* D (17:164–181) for `ρ`; I that the title 17:258 names it (it fits `ρ(div_raw B)𝒪 = −tr B`, 17:180). *Where:* 17:258 (the name, once); for `ρ`: 17:179–183, 266–278, 301; 17m:356–357, 463. *Proposed:* keep, define once.
 *Across chapters:* chapter 17 only. The letter `ρ` has other uses there (spectral measure `ρ_Θ`, 17:55).
 *See also:* `v_eom`; raw.
 
@@ -5835,7 +5851,7 @@ See *tree slice*.
 #### trial descent
 *Variants:* backward comparison; descent; bulk descent bound.
 - **Meaning.** The propagation of the terminal trial from fine to coarse through the block steps and its comparison with a normalized insertion, giving `c_i + |x_i| ≤ 4(1+C_N) w e^{−(τ_N−τ_i)/8}` (11:913–915). The induction on the cone condition runs upward from the bottom (11:908–909); it is not a downward induction.
-  *Basis:* R (11:890–917). *Where:* 11:27, 890, 945; 11E:121, 125; 13:230; 17m:444, 461, 469, 470. *Proposed:* *backward comparison of a local trial (Section 11)*, cited by number.
+  *Basis:* R (11:890–917). *Where:* 11:27, 890–917, 945, 2311; 11E:121, 125, 148; 13:239; 17m:461, 469. The section at 11:890, "Backward comparison of a local trial", has the label `ch11:trial-descent`; 13:230 and 18lp:34, 49 cite that label only. *Proposed:* *backward comparison of a local trial (Section 11)*, cited by number.
 *Across chapters:* one sense (11:890–917). Not *propagation of the terminal trial down the block steps*: the section title's own wording, backward comparison, is kept.
 *See also:* trial; terminal norm bounds; transfer.
 
@@ -5880,10 +5896,10 @@ See *tree slice*.
 ### U
 
 #### uncut
-*Variants:* uncut action.
+*Variants:* uncut action; uncut path actions (5:1302).
 - **Meaning.** Without the smooth small-field cutoff functions.
-  *Basis:* I. *Where:* 5:973, 1044, 1241; 6:281, 917 ff. *Proposed:* *without cutoff functions*.
-*Across chapters:* one sense in chapters 5–6.
+  *Basis:* I. *Where:* 5:973, 1044, 1241, 1286, 1302, 1325; 6:281. *Proposed:* *without cutoff functions*.
+*Across chapters:* one sense in chapters 5–6. 6:917–920 has "plateau", not "uncut".
 *See also:* plateau; cutoff.
 
 #### undamped measure
@@ -5894,10 +5910,10 @@ See *tree slice*.
 *See also:* damping; word measures.
 
 #### uniform in the number of reflected copies
-*Variants:* uniform in the number of copies; replica number; repeated-word identity / bound; repeated copies; full-copy estimates.
+*Variants:* uniform in the number of copies; replica number; repeated-word identity / bound / estimate; repeated copies; full-copy estimates.
 - **Meaning.** Moment bounds `⟨(Z*Z)^k⟩ ≤ C^{2k}` with `C` independent of the number `k` of reflected copies.
-  *Basis:* R (18:161–165). *Where:* 17:130; 17w:120; 18:159, 185; 18r:6, 13, 20; 19:52, 91; RG:74. *Proposed:* *with a constant independent of the number of reflected copies* (one phrase).
-*Across chapters:* one sense in chapters 17–19.
+  *Basis:* R (18:159–165). *Where:* 14:114; 15:263, 276; 15sp:12, 25; 17:130; 17w:120; 18lp:70, 91, 239; 18:159, 185; 18r:6, 13, 20; 19:91; RG:74. *Proposed:* *with a constant independent of the number of reflected copies* (one phrase).
+*Across chapters:* one sense in chapters 14–19; the phrase itself is at 15:276 and 18:159, 185. Chapter 11 and 13ba say "uniformly in the number of replica (reflected) cells" (11:345, 1379; 13ba:53). 19:52 has "the repeated estimate for a separating family", not this phrase.
 *See also:* copy; replica.
 
 #### uniform mass
@@ -5960,18 +5976,14 @@ See *unit* (sense 3).
 *See also:* graph; remainder.
 
 #### unselected
-*Variants:* unselected local exponent; unselected components; unselected plaquette.
-- **Meaning.** Not belonging to the selected large-field part: in chapter 6 a plaquette outside the selection ("every unselected fine plaquette has distance from the identity at …", 6:1340–1341); in 11R a local exponent or component not carrying a failed cutoff condition.
-  *Basis:* I (complement of "selected"). *Where:* 6:336, 1341, 1342, 1437; 11R:264, 313. *Proposed:* *small-field* (term, plaquette).
+*Variants:* unselected local exponent; unselected components; unselected plaquette; unselected tests; unselected rows.
+- **Meaning.** Not belonging to the selection `A = (A_f, A_n, A_c)` (complement of *selected*, sense 1): in chapter 6 a fine plaquette with `p ∉ A_f` or a block-average test with `e ∉ A_n` (6:49–60), and at 6:1437 a row outside the selection ("Unselected rows subtract zero"); in 11R a local exponent or component not belonging to the selected large-field part (inferred). Being unselected is not being small: the bounds `r_p^f ≤ t_f/2 (p ∉ A_f)`, `n_e ≤ 2Wt_f (e ∉ A_n)` hold only for a *consistent* selection (6:54–60), and 6:1340–1342 imposes them as a separate condition ("every unselected fine plaquette has distance from the identity at most `t_f/2`, every unselected block average discrepancy is at most `2Wt_f`").
+  *Basis:* R (6:49–60) for chapter 6; I for 11R:264, 313. *Where:* 6:336, 1341, 1342, 1437; 11R:264, 313. *Proposed:* *outside the selection `A`* (*not in `A_f`*, *not in `A_n`*); never *small-field*.
 *Across chapters:* same use in chapters 6 and 11R.
 *See also:* selected.
 
 #### unsymmetrized, symmetric field reconstruction
-*Variants:* field reconstruction `H_d(w)`; `A_d w`; `B_d w`; reconstruction identity; reconstruction comparison.
-- **Meaning.** `H_d(w) = Σ b_α(w) u_α`: the field in `F_d` on which the functionals `b_α`, `|α| ≤ d`, take the same values as on the cluster `w`. Not a projection: a cluster word is not an element of a space containing `F_d`.
-  *Basis:* D (18:67–69, 84–85). *Where:* 18:67, 82, 149, 212, 227, 228; 18r:7, 35 (8 of the 17 uses of "reconstruction" in ch. 17–19). *Proposed:* *the field in `F_d` with the same values of the functionals `b_α`, `|α| ≤ d`*.
-*Across chapters:* chapter 18 only; distinct from the relativistic (word) reconstruction of chapter 16.
-*See also:* reconstruction; cluster; word.
+See *field reconstruction*.
 
 #### update
 *Variants:* current update.
@@ -6038,7 +6050,7 @@ See *vacuum normalization bound*.
 *Variants:* vertical coordinates; vertical Hessian; vertical gap.
 - **Meaning.** In the fluctuation variables `ψ` at fixed `v`.
   *Basis:* I. *Where:* 5:944, 1078, 1334, 1339. *Proposed:* *in the fluctuation variables*.
-*Across chapters:* chapter 5 only.
+*Across chapters:* chapter 5 only. 5:905 "the vertical slice `Re p = x`" is a different, geometric use (a line in complex momentum space).
 
 #### volume
 *Variants:* finite volume; uniformly in the volume; retained volumes.
@@ -6148,11 +6160,11 @@ See *quotient estimate*.
 
 #### width
 *Variants:* path width; width reserve; strict width reserve; slab width; width exponents.
-1. **Decay rate of path coefficients.** The weight `e^{wℓ(γ)}` on path coefficients; a "strict width reserve" is a bound at `w′ > w`, giving tails `C e^{−(w′−w)r}` (10:375–381). In chapter 5 the same number is described as the width of the analyticity strip, equivalently the exponential decay rate. *Basis:* D (10:375–381). *Where:* 5:744–745, 854, 1380; 6:1381; 7:165, 360, 1000, 1128, 1177; 10:375–381; 12:48, 62, 126; 17c:106, 143, 164; 17m:35. *Proposed:* *exponential decay rate `w` of the path coefficients*.
+1. **Decay rate of path coefficients.** The weight `e^{wℓ(γ)}` on path coefficients; a "strict width reserve" is a bound at `w′ > w`, giving tails `C e^{−(w′−w)r}` (10:375–381). In chapter 5 the same number is described as the width of the analyticity strip, equivalently the exponential decay rate. *Basis:* D (10:375–381). *Where:* 5:744–745, 854, 1380; 7:165, 360, 1000, 1128, 1177; 10:26, 34, 355, 375–381, 442, 703, 712, 758; 11:471, 474, 1745, 1748; 12:48, 62, 126; 17c:106, 143, 164; 17m:35. *Proposed:* *exponential decay rate `w` of the path coefficients*.
 2. **Slab width `h`.** *Basis:* D (13:335; 14:86–88). *Where:* 11:844; 13:335; 14:86 ff.; 15:53. *Proposed:* keep (ordinary).
 3. **Width of a frequency profile.** With "width exponents" (`K ≥ 0` bounds the magnitudes of the negative width exponents, 14:549–550). *Basis:* R. *Where:* 14:550–665. *Proposed:* keep (ordinary).
-4. **Width of a strip or plateau.** Coordinate-equality strips of width `4δ_k` (14:174–200); "strict plateau width" (11:712–713). Ordinary.
-*Across chapters:* sense 1 is the house sense and is the same from chapter 5 to chapter 17; it is made precise only at 10:375–381. Senses 2–4 are ordinary uses added in chapters 11 and 13–15.
+4. **Width of a strip or plateau.** Coordinate-equality strips of width `4δ_k` (14:174–200); "strict plateau width" (11:712–713); the plateau of a cutoff in chapter 6: "the block average plateau width `W`" (6:1011) and "the cutoff support gives `|ũ| ≤ 2w t_f`; take the fixed width `w` larger than the frozen comparison constant" (6:1380–1382). Ordinary. *Where:* 6:1011, 1381; 11:713; 14:174–200.
+*Across chapters:* sense 1 is the house sense and is the same from chapter 5 to chapter 17; it is made precise only at 10:375–381. Senses 2–4 are ordinary uses in chapters 6, 11 and 13–15; the letter `w` at 6:1381 is a cutoff width, not the decay rate of sense 1.
 *See also:* weight; reserve; slab.
 
 #### "will be spent"
@@ -6217,9 +6229,9 @@ See *nonwrapping*.
 ### Z
 
 #### zero-energy subspace
-*Variants:* ground space (of the mixture); mixed ground space; ground vector; ground projection; `H_0`.
-- **Meaning.** `ker H` in the reflection Hilbert space of the undecomposed family, with projection `P_0` (in a phase: `Q_ξ`, 16:437). "This conclusion concerns the ground space of the mixture; it does not say that this space is one dimensional" (15:47–48).
-  *Basis:* R (15:7, 47–48). *Where:* 15:7, 47–48; 16:379, 437; 19:98–99. *Proposed:* *zero-energy subspace of the reflection Hilbert space*, adding *of the undecomposed family* where the mixture is meant.
+*Variants:* ground space (of the mixture); mixed ground space; ground vector; ground projection; zero-energy space; `𝓗_0`.
+- **Meaning.** `𝓗_0 = ker H` in the reflection Hilbert space of the undecomposed family, with projection `P_0`: "Let `P_0` be the projection onto `𝓗_0 = ker H`" (15:27–28); in a phase the projection is `Q_ξ` (16:437). "This conclusion concerns the ground space of the mixture; it does not say that this space is one dimensional" (15:47–48).
+  *Basis:* D (15:27–28). *Where:* 15:7, 21 (section title), 27–28, 47–48, 301 ("ground vector"); 16:379, 437; 19:98–99. *Proposed:* *zero-energy subspace of the reflection Hilbert space*, adding *of the undecomposed family* where the mixture is meant.
 *Across chapters:* one sense in chapters 15, 16 and 19. "Vacuum" and "space of invariant vectors of the mixed theory" are rejected equivalents; "ground vector" names the vector `Ω`, not the space.
 *See also:* vacuum; phase; exceptional vacua.
 
@@ -6591,7 +6603,7 @@ Three identifications with standard notions were suggested by a checking agent f
 
 These entries have basis **?** for at least one sense. See each entry for what is known.
 
-actual free history; admissible; admissible comparison depth; admissible marked conditional integral; affine; alphabet; anchored marked support bound; annular estimates; bottom; bounded approximations; centered; coarse forecast; coarse kernel level; column; completion; compulsory; contact; coordinate hybrids; coordinatewise splice; corrected body product estimate; cross-modes; direction selectors; discrepancy; exterior discrepancy; exterior row; factor after deterministic subtraction; finite decorations; finite momentum approximation; front-column; group-coordinate contact identity; Hilbert encoding; inspected; inverse source-weight bounds; leading; likelihood; live tag actions; logarithmic; missing-coordinate factor; moment; moving comparison fields; normalized directions; normalized large-field majorants; numerical band margin; orientation of the line; physical; physical mark normalization; placement; polynomial-source propagation constants; powered-curvature-factor estimate; preselection bound; principal; protected; `Q^pred`; recording estimate; reflected normalized directions; replicate; representative; response bound `ε`; same-data restart conditions; seeded sector; selected slot; signed local transport; source; source construction; support compression; tag-coincidence radius; tangent; Trace norms and recording; weight; with these same frames.
+actual free history; admissible; admissible comparison depth; admissible marked conditional integral; affine; alphabet; anchored marked support bound; annular estimates; bottom; bounded approximations; centered; coarse forecast; coarse kernel level; column; completion; compulsory; contact; coordinate hybrids; coordinatewise splice; corrected body product estimate; cross-modes; direction selectors; discrepancy; exterior discrepancy; exterior row; factor after deterministic subtraction; finite decorations; finite momentum approximation; forest prescription; front-column; group-coordinate contact identity; Hilbert encoding; inspected; inverse source-weight bounds; kernel identities; leading; likelihood; live tag actions; missing-coordinate factor; moment; moving comparison fields; normalized large-field majorants; numerical band margin; orientation of the line; physical; physical mark normalization; placement; polynomial-source propagation constants; preselection bound; principal; protected; `Q^pred`; recording estimate; reflected normalized directions; representative; response bound `ε`; same-data restart conditions; seeded sector; selected slot; signed local transport; source; source construction; support compression; tag-coincidence radius; tangent; Trace norms and recording; weight; with these same frames.
 
 ---
 
@@ -6771,6 +6783,162 @@ Points the agents could not decide from the text, by letter range. They were wri
 - About 30 entries of Part III's table (those without a line reference, e.g. "partition functions", "`H_4`", "bounds `B_H`, `B_loop`") were not located by the audit or by this merge; they are carried over as the note gives them.
 - Whether `‖O‖_k` (13:302) and `‖·‖_𝒯` (13:74) denote the chessboard seminorm.
 
+### Corrections proposed by the sample check and not yet applied
+
+Each block is the note of one agent that rewrote the sampled entries. "The report" is the sample-check report it worked from.
+
+#### From sample check 1
+
+All corrections were confirmed against the chapter lines (checkout `/Users/mgubi/ym-terminology`, grep with `\label`, `\ref`, `\eqref` arguments stripped) before being applied. 27 entries rewritten (26 MINOR, 1 WRONG).
+
+#### Corrections not applied, or applied differently
+
+- *chosen*, sense 2: the proposed equivalent *every frame tag of positive probability* was not taken over. The sentence is "Every chosen frame tag must have positive mass" (6:63), so that equivalent would make it circular. The entry keeps *chosen* with the reading "assigned by the random index" marked as inferred (basis I).
+- *chosen*: RG:33 ("It is chosen slowly enough") added to sense 1; the main theorem has no "chosen".
+- *low-energy estimate*: 16:439 not added to *Where*; the line contains only `\eqref{ch16:low-energy}` and "the estimate", not the phrase.
+- *logarithmic*:
+  - 9s:176 corrected to 9s:175 (the word is on line 175); 6:953 written as 6:953–954.
+  - 10:514, 570, 605 were not left "to be checked" under sense 2. 10:570 ("Small logarithmic factors", estimated through "their exponential minus one") is sense 2. 10:514 ("convergent logarithmic series") and 10:605 ("the logarithmic expansion") are put with the new sense of 8:228 (logarithm of the partition function), basis I.
+  - 17t:90 ("the same logarithmic coefficient as the regulated response") was not added to sense 4 (log-determinant); only 17t:97 ("logarithmic Hessian") is clear. 17t:90 is listed as not classified.
+  - 10:61 ("fixed logarithmic size bound `K_j`") was not put in the "power of `log β̂`" sense: `K_j` is compared with `log ℒ_j`. Listed as not classified.
+  - Added by grep, beyond the report: 6:1075 (sense 3); 11:750 and 17m:173 (sense 6). Nine lines (17c ×4, 17t:90, 387; 17w:42; 17:137; 10:61) are listed as not classified. The count is 60 exactly.
+  - The new senses are numbered 7 (logarithmic scale) and 8 (logarithm of the partition function); sense 6 is rewritten as proposed.
+- *period*: the *Where* list was rebuilt by grep; counts are 108 lines in 26 chapter files plus 3 in the main theorem ("about 110", not "about 120"); chapter 11 has 25 lines, not 26; chapters 13–19 have 25, not "about 30". "10:196–199" is given as 10:199 (lines 196–198 are a label and a formula).
+- *trace functional*: `ρ` lines given as 17:266–278 (the symbol does not occur at 262–265).
+- *suppression*: 13ba:77 ("the original large-field suppression") added by grep; "Across chapters" therefore includes 13ba.
+- *curvature family*: 7:1168–1169 ("the cubic/quartic families of Proposition (ch07:classical-match)") added as further support for the identification with `S_3`, `S_4`; basis kept at I as proposed.
+- *scalar*: the new sense is numbered 9 (after the ordinary sense 8) so that the references "scalar (sense N)" elsewhere stay valid. Chapter 3 has 14 lines with the word (not 15).
+- *reconstruction*: 3:761, 6:1561, 7:142 are listed as not classified (not in the report).
+- *descent*: 17m:470 removed from sense 1 (the word is at 17m:469 only).
+
+#### Found wrong or unverified in the report
+
+- Nothing in the report was contradicted by the text, apart from the small line and count differences listed above.
+- Not flagged by the report but found while checking *exterior*: in sense 1 *Where*, 18lp:207 and 18lp:238 contain "interior", not "exterior". The list was left as it stands, since the report does not correct it; these two lines should be removed or marked "(interior)". Uncited sense-1 lines found by grep: 13:366, 373, 377, 380, 382; 14:354; 16:66, 245; 18lp:323, 332.
+- *normalized directions*: 6:1282 ("normalized small-field directions") is not in *Where*; it was added to *Variants* only.
+
+#### Corrections for other entries (not in the sample), not made here
+
+- plateau: sense 1 *Where* should read "5:973; 6:917–920, 1011–1016, 1023; 11:712–713" (5:1044, 5:1241 and 6:281 have "uncut" and no "plateau"; confirmed by grep. The report gives "6:1014–1016"; the word is at 6:1011, 1012, 1016, 1023).
+- selected: its "Across chapters" line and the new *chosen* entry now agree on 4:456, 4:616; no change needed there. Sense 9 of *selected* should mention 6:63 ("chosen frame tag") as the one "chosen" among the random-index lines.
+- clean: carries the shared list 11:679, 709, 721 with *remote*; 11:709 has "remote", 11:679 "clean", 11:721 "clearance". The list should be split by word.
+- backward comparison: 11:27, 890 and 11E:121 belong to this entry (they have "Backward comparison", not "descent"); check that they are listed there.
+- second cluster expansion / first expansion: both carry 9:44, 88–89, 148, 173, 192; the phrase "second cluster expansion" occurs only at 9:192. Split the list by word.
+- source weight: carries the same chapter 12–18 list as *available weight*; say that "available weight" occurs only at 18lp:128, 168, 175.
+- stationary graph: 17c:147 ("stationary internal coordinates") and 17t:28 ("stationary substitution") have neither "branch" nor (to be checked) "graph"; removed from *branch*, to be checked in *stationary graph*.
+- mass (sense 2): already lists 11E:104–105 and 18lp:115–116; now consistent with *normalized mass*. No change needed.
+- discrepancy (sense 5): "exterior discrepancy" (17m:426–442) is marked `?`/"not identified"; 17m:67–70 explains "exterior" (integrals against spectators independent of the varied coarse links). Replace the `?` by a pointer to *exterior* (sense 2).
+- replacement: says, like the old *reconstruction*, that 18lp:266–279 has no formula and concludes basis R; 18:67–70 defines `H_d` by a formula (and 18:82–85 the symmetrised `A_d`, `B_d`). Same correction needed.
+- soft constraint: omits 5:146 and 17c:288–290 (the penalty term), as *block penalty* did; add them.
+- torus period, physical (sense 1), admissible periods, volume: *period* now proposes to keep "period" and to use *side length* only for "torus side" / "torus size"; check that these entries do not propose *side length* for "period".
+- expense: basis R is too strong (nearer I), 11:2137–2138.
+- core: 6:1359, 1389, 1438 could be added to *Where*.
+- group: uses continue to 18lp:167, 183, 246.
+- General (section 3 of the report): entries whose *Where* list was copied from a source row covering two words can be found mechanically (does the headword or a variant occur within the cited line ±1?); entries still scoped to one chapter group can be found by comparing the files in *Where* with the files where `grep -w` finds the word; "only in chapter X" statements should each be checked by one grep.
+- Proposed equivalents not checked against the literature or `blueprint/notation.md`: *Mayer expansion* (first expansion), *holonomy* for "path word" (6:630; an open path, so *parallel transport along the path* may be safer), *critical-point map*, *threshold ratio* for `M^cut`.
+
+#### From sample check 2
+
+All 31 MINOR and WRONG entries of the report were opened against the chapter text (worktree `/Users/mgubi/ym-terminology`, which differs from commit `7bec3925` in 24 line-preserving edits) and every correction was confirmed, with the adjustments below. 32 blocks are given: the 31 entries plus *containing-site bound*, which becomes the full entry for the duplicate *site norm*.
+
+#### Corrections applied differently from the report
+
+- **comparison level**: the report lists `11R:217–218` in *Where*; those lines have "comparison window with top level `k`", not the term. They are cited in the meaning and basis only, as are 11:1753–1754 (`m = k − ℓ` is at 1754, not 1753) and 11:2085–2088.
+- **complete**: the report corrects "chapters 12–15" to "12–18". Grep shows the same use throughout chapter 11 (11:95, 507, 775, 899, 1038, 1159, 1498, 1916, 1949, 2114; 11E:84; 11:775 states the inclusion explicitly), so the entry now says chapters 11–18. 12:208 and 13ba:153 are removed from *Where* (ordinary "whole") and the count "16 in all" is dropped. The assignment of the individual chapter 11 lines was made from the line alone, except 11:775, 1038–1039, 1159–1160, which were opened.
+- **coordinate half-space spectrum**: the report keeps `14:69–77, 413–414` in *Where*; only 14:76 (headword) and 14:410 (variant, section title) contain the term, so the other lines are cited in the basis.
+- **exact unit rule**, **joint bound**: *Where* gives the single occurrence (11:1049–1050; 9:114–115); the passages that state the content are cited in meaning and basis.
+- **quotient estimate**: 7:719 is the formula and does not contain the term; it is cited in meaning and basis, not in *Where*.
+- **site conversion**, sense 1: the report lists `11:266–272`; the word "conversion" is at 11:267 only. The lines 11:257, 300, 1473; 11R:74, 125, 170–181 of the old list are "site bound" lines and moved to *containing-site bound*.
+- **kernel**, sense 3: the report gives `4:240` (the label line); the definition is at 4:234–240 and the word also at 4:169, 249, 257, 282. Block-kernel uses found by grep and added: 9:49, 810; 9s:13, 125; 10:127. Chapter 7 lines of sense 2 are listed (10 lines; the report says 11 uses). Senses 1 and 4 were not rechecked beyond the report; the null-space sense has many uncited occurrences (2e:20, 147, 153; 3:161, 192, 644, 931, 1021; 11:967–969, 1096, 2222, 2320; 13:185, 220; 14:279, 817–821, 955), mentioned in *Across chapters* only by chapter.
+- **auxiliary**: sense 1 has 7 lines, not 8 (7:108 removed). 10:782 and 10:923 could not be assigned and are listed as not classified; 11:8 is placed with *auxiliary history*.
+- **array**: the meaning was widened by "or tensor indices" to cover 14:262; 10:321, 507–516, 654 ff., 11:453, 471, 13:141, 17w:109 also contain the word and stay under "passim" / uncited.
+- **site norm / containing-site bound**: the two entries duplicate each other; *containing-site bound* is made the full entry (it is the chapter 4 notion and already had "site norm", "site bound", "site sum" as variants) and *site norm* a pointer. Its *Where* list was rebuilt by grep for "containing-site", "site norm", "support norm", "site bound", "site sum" (11:1896 "separated-site bound" excluded). The proposal follows the report (*site norm*, kept, against *anchored norm*).
+- **unselected**: variants "unselected tests" (6:336) and "unselected rows" (6:1437) added; "unselected plaquette" kept.
+
+#### Corrections not applied
+
+- **low plane** (classified CORRECT, note only): not rewritten. Suggested change, confirmed at 18gq:76, 94–95: *Proposed* should read "*span of the basis polynomials of scaling dimension below `i`* at the microscopic level; elsewhere *its image under the transfer*".
+- **ordered tail**: 18gq:39–40 ("converges on an ordered cutoff and volume refinement … on that tail") was not added; the phrase is not "ordered tail".
+
+#### Found wrong or imprecise in the report
+
+- comparison level: "11:1753 (`m = k − ℓ`)" is line 1754.
+- complete: "one sense in chapters 12–18" overlooks chapter 11 (see above).
+- kernel: "7 (11 uses)" is 10 lines; "defined at 4:240" is the label line of the display beginning at 4:234.
+- stationary graph: 7:949, 1152 and 9s:39 have "branch" alone (kept, as in the present entry).
+- Nothing else in the report was found unsupported by the text.
+
+#### Changes needed in other entries and in the appendices (not made)
+
+- uncut: *Where* is the list shared with *plateau*; it should be `5:973, 1044, 1241, 1286, 1302, 1325; 6:281` (the report gives the first four and 6:281; 5:1286, 1302, 1325 found by grep). Remove "6:917 ff.".
+- common law: *Where* should be `9:115, 139 ("common integral"), 785 ("common-law estimate")`; *Proposed* should be *the joint law `ν`* alone, since *joint estimate under one measure* is the proposal of *joint bound*. 11:510 also has "common integral".
+- incoming: the counts "ch. 7, 22 lines; ch. 9, 27 lines" are for incoming / inherited / outgoing together; the lines 13sb:10, 72; 13ba (6); 18lp (4); 14lc:60 contain no "outgoing". The variant "outgoing" should point to the entry *outgoing*.
+- site bound (pointer): should read "See *containing-site bound*." instead of "See *site conversion*.".
+- support norm (pointer): should read "See *containing-site bound*." instead of "See *site norm*.".
+- support conversion cost (pointer), root-to-site conversion (pointer): still valid; could say "See *site conversion* (sense 2)" and "(sense 1)".
+- weighted quotient (pointer, line 6140): could say "See *quotient estimate* (sense 1)".
+- See-also lines naming *site norm* (attachment, support-weight reserve and others, lines 372, 5498, 5508): now reach the pointer; could be retargeted to *containing-site bound*.
+- selected: no change needed; the new *unselected* agrees with its sense 1.
+- candidate field / trial: the proposals cross (*candidate field* → *trial field*, *trial* → *candidate local observable*); one of the two must be changed.
+- reserve: 8:150–151 does not contain the word (the label is at 8:146).
+- ordered limit: 11:1031 could be added to *Where*.
+- tuned: the verb also occurs at 1:464, 4:407, 9:975, MT:62 in the same sense.
+- vacuum normalization bound: 10:422 could be added to *Where*.
+- forward-difference primitive: 13ba:230 "primitive random variables" is a further ordinary use.
+- *block-completed form* (line 489) and *completion* (sense 2, line 1028) quote "The block-completed form needs a quotient estimate": should refer to *quotient estimate*, sense 1.
+- Appendix G (line 6594): remove *powered-curvature-factor estimate* (now basis I); add *kernel identities* (now basis `?`).
+- Appendix H (line 6698): remove *powered-curvature-factor estimate* from "Undetermined in every part"; add an item for *kernel identities* (which of (ch17:kernel-divergence) with 17m:396–398 or (ch17:block-algebra) is meant at 17:308); lines 6728 and 6753 (*site norm*) should name *containing-site bound*.
+- Appendix B (line 6329, polymer-activity norms): add "support norm" at 11:217 and 11R:7; "Not synonyms" could add site conversion against support conversion ((ch11:cover-transfer)), and unselected against small-field (6:54–60, 1340–1342).
+- Appendix J (line 7058, kernel identities "basis I kept"; line 7323, site conversion "Parts I, IV, V agree"; line 7393, unselected): superseded by the entries above.
+- Contents line: the counts change (one more pointer, *site norm*; two more entries with several senses, *quotient estimate* and *site conversion*).
+- General: several entries list in *Where* lines that explain the term without containing it; a separate "cf." list would remove the ambiguity (done here for the rewritten entries by moving such lines to meaning or basis).
+
+#### From sample check 3
+
+All 26 MINOR entries of the report have a block above (the report has no WRONG entry). Line numbers were checked against the working tree of `/Users/mgubi/ym-terminology` (HEAD `e533a10a`, not `7bec3925`; the report's line numbers agree with this tree).
+
+#### Corrections not applied, or applied differently
+
+- **post-length threshold conditions.** The report says that "length = block ratio `L`" is a bare inference. The text is more explicit than that: 11E:20 "These quantities are fixed before the block length" and 11E:31–32 "the section and its derivative constants are fixed first, then the length, then the inverse coupling threshold". The basis line now gives R for "conditions on the starting scale", cites 11E:20, 31–32 for "post-length = after the block length is fixed", and keeps I only for "block length = block ratio `L`" (11E:25–29).
+- **shell, sense 2.** The report says the word is at 14:328. It is not in the prose there: line 328 has only `\ref{ch14:fig-ward-shell}` and line 330 `\input{figures/ward-shell}`. Both are left out of *Where* and mentioned as a figure name. The report's "14:312–313" is 14:312 (the title is one line).
+- **shell, sense 6.** The report gives no basis; I put R (17:424–426, where the kernels `K_{m,k,h}` are displayed). I did not read the display beyond its first line, so whether it is a definition of "mass shell" is not checked.
+- **shell, sense 4.** The report adds 16:415 to this sense; the headline was widened from "comparable radius" to "comparable size" so that the energy range fits, with basis R for that line.
+- **threshold, sense 2.** The report's corrected list omits 17m:304, 378, 427 without giving a reason. All three lines contain "threshold" ("threshold ball", "threshold coordinates", "threshold costs"), so they are kept. The report cites 11:748 and 11R:18; the word is at 11:749 and 11R:19. Lines 4:420, 534, 572; 10:734, 899; 11:795, 1313; 11R:20–23, 45–46, 71, 187; 11E:115 were added after reading the context (not in the report). Sense 1 received 10:104–105, 11:278, 443, 711, 11R:10, 11E:32 in addition to the report's four lines ("inverse coupling threshold" is explicit in each). The remaining chapter 10–11 lines are listed as unclassified in *Across chapters*; sense 4 points to the five lines that say "threshold(s) for the starting scale(s)".
+- **zero-energy subspace.** The defining sentence is at 15:27–28, not 15:26–27.
+- **joining bound.** The report gives the role as 18lp:79–86, 94–96; the sentence about retained representatives starts at 18lp:93, so 93–96 is cited.
+- **replicate.** The report's "place one copy in each cell of a reflected tiling" for 13ba:283 is itself a reading: the sentence does not mention a tiling (the reflected cells are at 13ba:269–271). The basis is therefore I for the verb, R for the estimate.
+- **averaged measurements.** The report's formula `L_i((I − Π_i)u_{j,i})` is not printed in the text; the entry says in words "the values of `L_i` on the rows `(I − Π_i)u_{j,i}`" (11:2253–2255).
+- **coefficient recovery.** Of the report's two options the second sense was chosen, because a pointer entry *coefficient conversions* → *coefficient recovery* exists (dictionary line 818) and would otherwise point to nothing.
+- **width, sense 1.** In addition to the report's lines, 10:34, 442, 712, 758 were added (grep; "path widths", "width reserve").
+- **random index.** The headword is kept (no RENAME): the report asks only for a line saying it is the dictionary's own name. The bare "9s" in *Where* was replaced by the four lines found by grep (9s:127, 134, 221, 242).
+- **field reconstruction.** Which of `A_d`, `B_d` the text means by "symmetric reconstruction" (18:212) is not said in the text; the entry says so instead of naming `B_d` alone as the report does.
+- **nilpotent marker.** 18:128 is removed from *Where* (it has "marks") but still quoted in the meaning; "*insertion* at 18:124, 128" in *Proposed* became "at 18:124".
+
+#### Not verified
+
+- **refinement.** The lines were confirmed by grep; 17:21 was read (ordinary sense), 13:53, 15:257, 18gq:40, 47, 19:36, 60 were seen only as single grep lines. The variant "volume refinement" was removed: it does not occur in the manuscript (grep).
+- **fine residue.** The meaning "class modulo `L`" rests on the count `L^4` and on 17t:55; no line defines the term.
+- 18lp:266–279 (the basis of *reconstruction* sense 2) was not read.
+
+#### Changes needed in other entries (not made here)
+
+- reconstruction (sense 2, line 4322): replace the proposal "projection onto `F_D` along the fixed probes" by "the field of `F_D` with the same fixed probe coordinates"; it contradicts "not a projection" in *field reconstruction*. Its variant "field reconstruction" should point to that entry.
+- defect (sense 2, line 1462): the formula should read `Z₀ = B_c − T*B_fT − b⁻¹ d_{1,c} d_{1,c}*`; add 5:453, 603, 1371 to *Where*.
+- branch (sense 1, line 556): same meaning, basis and *Where* as the new *minimizing branch* (remove 5:948, which is a branch of an analytic function; add 6:496; "chapters 4–6", so the *Across chapters* sentence "sense 1 in chapters 4–5 only" is false); variant "minimising branch" should be spelt "minimizing branch".
+- fallback (line 2011): its pointer to *branch* sense 1 says "the smallness test fails"; add that equality belongs to this case (4:211–212).
+- inflation (line 2595): the pointer gives the formula of 8:171 for "chapters 8–9"; chapter 9 inflates by `h = 𝔟^{3/8}` per unit of degree (9:174–180).
+- source prescription (line 5212): duplicate of *forest prescription*; make it a pointer (`See *forest prescription*.`) or give it the same meaning (the one-shell rule of 18:398–410 is stated in the book).
+- mark (sense 4, line 3172 ff.): consistent with the new *nilpotent marker*; no change needed except that 13sb:72 ("mark weights") is not a "marker" line.
+- integral shear (line 2684), interpolated link fields (line 2716): delete "one reader only" from *Across chapters* (unexplained process note).
+- "(note 2749): new entry" and similar notes: not explained in "How to read an entry".
+- Entries that use "the random index" as if it were the text's term (lines 566, 707, 713, 2833, 2945, 2979, 3198, 4945, 5121, 5528, 5535, 5547, 5905, 6109; Appendix B lines 6283, 6285; Appendix C lines 6415, 6484; line 6642): say "the index `α`" or "the label `α` (4:217)".
+- block floor (line 497) and Appendix B (line 6267): "stage-`j` block floor" (11E:29) is correctly a variant there; "calibration floor" in the Appendix B row is one member of the block floor, not a synonym for it.
+- comparison coefficient (line 958): the variant "comparison family" does not occur in the chapters; the text has "coefficient family" (11:1101) (not checked by me).
+- free (line 2276): the across-chapters note places the Gaussian sense of "free" in chapter 3 only; it runs through chapters 11–19 as well (11:2065, 15:275) (not checked by me).
+- `hot(s)` (line 2544): basis I in the entry, R in Appendix C (line 6515) for the same comparison (not checked by me).
+- cutoff: should cover 4:203, 211, 406 (the small-field cutoff of chapter 4), now removed from *threshold* sense 2 (whether the *cutoff* entry already lists them was not checked).
+- replicate: "replicated coarse field" (6:180, 341, 445, 587) is a further use of the word in chapter 6 that the entry does not mention; whether it has its own entry was not checked.
+
 ---
 
 <a id="appendix-i"></a>
@@ -6781,9 +6949,10 @@ Points the agents could not decide from the text, by letter range. They were wri
 - **Three rounds of independent checks.** In each round fresh agents, which had written none of the text they checked, compared the entries with the chapter files. Round 1 (five agents) found six to ten definite errors per survey. Round 2 (four agents) found 25 definite errors in the overview and the chapter 3–6 dictionary. Round 3 (five agents, each reading its chapter files in full and nearly every row of its part) found 43 definite errors, 80 doubtful claims and 69 inconsistencies between the chapter-group dictionaries. The number of errors found did not fall from round to round, so more remain.
 - **Consolidation by term.** The note was then reorganised from chapter groups into this alphabetical dictionary. An index of the 1,566 entries of the previous version was split by first letter among eight agents, with a ninth for the symbol and synonym tables. Each merged the entries for a term, applied the round 3 corrections, and opened the chapter text wherever chapter-group dictionaries disagreed. A second pass by eight fresh agents moved material from rows that listed several terms to the entry of each term and applied the book-wide word choices. A last agent closed 54 dangling cross-references and added 21 entries. Every agent tallied its assigned index lines; non-term lines dropped are listed in Appendix J.
 - **Mechanical checks on this file.** No duplicate headword; every "See" and "See also" target is a headword; every `chapter:line` reference lies within its file; tables have consistent columns. These checks do not confirm that a cited term is on the cited line.
+- **Sample check of the merged dictionary.** Three fresh agents checked a random sample of 180 of the 795 full entries against the chapter text. 96 were correct; 80 had minor defects, most often a cited line that lacks the headword, a *Where* list shared with a neighbouring entry of a different word, or a false "one sense throughout" or "chapter N only"; 4 were wrong in a way that would mislead (`chosen`, `quotient estimate`, `unselected`, and one variant under `site conversion`). All 84 were corrected, after the corrections were confirmed against the text. By extrapolation, roughly 270 of the unchecked entries have a minor defect and about 14 a misleading one. The checks also listed about 50 corrections to entries outside the sample; these are not applied and are listed in Appendix H.
 - **Verification by the coordinating agent.** About 105 passages in the first two rounds. In the last revision the coordinating agent assembled the agents' output and did not reread the entries.
 - **Not done.**
-  - The merged entries have not been independently checked after the merge, except for the sample described at the end of this appendix if present.
+  - Only a sample of the merged entries was checked after the merge (next point); the other 615 full entries were not.
   - Entries marked I are inferences by one or two readers. About 170 entries were added in the checks and the merge on one reading.
   - No proposed equivalent was checked against the literature. No Lean declaration was consulted. Figures were not read.
   - `monograph.pdf` and the booklets were not rebuilt after the sentence repairs.
