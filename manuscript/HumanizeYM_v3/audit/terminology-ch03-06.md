@@ -298,7 +298,7 @@ These need the author, the formal source, or a cross-reference before any replac
 
 ### 4.1a Settled or narrowed by the surveys of the other chapters
 
-See [`terminology-book-overview.md`](terminology-book-overview.md), section 3. In short: `regularity-stage index J_m` is defined in chapter 10 (10:25–29, 129–134: `J(m)` is the stage in force at level `m`, a stage being a finite set of orders, exponents and bounds); `inherited loop action` is the `β`-independent quadratic part `ℒ` of `P^path = β𝒦 + ℒ` (9:20–28); `Warnings` are probably cutoff-failure events (11:319), `centered log determinant` is probably `s(x) − s(0)` with `s = ½ log det A` (9s:47), and `compulsory` the large-field factor an activity covering prescribed sites must contain (10:654). Still open: `moving comparison fields`, `seeded / unseeded`, `output anchors`, `likelihood tests`.
+See [`terminology-book-overview.md`](terminology-book-overview.md), section 3. In short: `regularity-stage index J_m` is defined in chapter 10 (10:25–29, 129–134: `J(m)` is the stage in force at level `m`, a stage being a finite set of orders, exponents and bounds); `inherited loop action` is the `β`-independent quadratic part `ℒ` of `P^path = β𝒦 + ℒ` (9:20–28); `Warnings` are probably cutoff-failure events (11:319), `centered log determinant` is probably `s(x) − s(0)` with `s = ½ log det A` (9s:47), and `compulsory` the large-field factor an activity covering prescribed sites must contain (10:654). Still open: `moving comparison fields`, `seeded / unseeded`, `output anchors`, `likelihood tests`. The line 6:730 quoted in section 2.3 as garbled was repaired on this branch.
 
 ### 4.2 House terms not yet glossed in detail
 
