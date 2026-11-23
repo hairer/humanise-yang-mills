@@ -11,7 +11,7 @@
 - **I** — the meaning is inferred from context. Check before using the proposed replacement.
 - **?** — the four chapters do not determine the meaning (section 4).
 
-Entries marked † were rechecked against the text during the harmonisation pass; the others rest on the per-chapter surveys (section 7).
+Line references marked † were reread during the audit (section 8); the others rest on the per-chapter surveys (section 7).
 
 ---
 
@@ -34,10 +34,10 @@ These are the most damaging, because the reader cannot tell which sense is meant
 
 | Sense | Where | Meaning | Basis | Proposed wording |
 |---|---|---|---|---|
-| the nonlinear object | 4:293; 5:912 ff.; 6:15, 78 | The gauge-covariant block average of chapter 4 and its linearisation `𝒬 = M + d₀R`, as opposed to the linear ("straight") average `M`. | I | *gauge-covariant block average*; write the symbol |
-| at the true background | 6:137, 141, 161, 468 | Evaluated at the non-flat background field, as opposed to the flat (translation-invariant) model. | I | *at the background field `V`*; *non-flat* |
+| the nonlinear object | 4:293†; 5:912† ff.; 6:15, 78, 161† | The gauge-covariant block average of chapter 4 and its linearisation `𝒬 = M + d₀R`, as opposed to the linear ("straight") average `M`. | I | *gauge-covariant block average*; write the symbol |
+| at the true background | 6:468† ("without identifying actual and flat matrices"); other places not rechecked | Evaluated at the non-flat background field, as opposed to the flat (translation-invariant) model. The chapter 6 survey reports this as the most frequent sense there; only 6:468 was confirmed. | I | *at the background field `V`*; *non-flat* |
 | the running value | 4:407, 418, 533; 6:406 | The coupling `β ∈ [β̂/2, 2β̂]`, as opposed to the reference value `β̂_m`. | R | *the coupling `β`* vs *the reference coupling `β̂`* |
-| of this construction | 5:751, 782, 1057, 1379 and elsewhere | The specific kernels, parameters or action fixed by the construction, as opposed to an arbitrary admissible choice. | I | delete, or *the … constructed above* |
+| of this construction | 5:751†, 782, 1057, 1379; 6:137† ("rows actually used"), 141 and elsewhere | The specific kernels, parameters or action fixed by the construction, as opposed to an arbitrary admissible choice. | I | delete, or *the … constructed above* |
 
 `selected` and `chosen` are used as near-synonyms of the last sense (5:738, 858, 1314; 6:134–177, 362). Proposal: delete or replace by *fixed*.
 
@@ -84,7 +84,7 @@ This agrees with `blueprint/notation.md`, which reserves "test" for test functio
 
 | Sense | Where | Meaning | Basis | Proposed wording |
 |---|---|---|---|---|
-| minimiser map | 5:453–534 and about 20 further; 6:135, 161 | `W`: coarse field ↦ stationary fine field of the Gaussian block step (`QW = I − b⁻¹K_c`), and its companion `T` on two-forms. | R | *minimiser operator `W`* (Bałaban's `H_k`); *induced map `T` on curvatures* |
+| minimiser map | 5:453–534 and about 20 further; 6:135, 161 | `W`: coarse field ↦ stationary fine field of the Gaussian block step (`QW = I − b⁻¹K_c`), and its companion `T` on two-forms. | R | *minimiser operator `W`*; *induced map `T` on curvatures* |
 | parallel transport | 5:1003, 1008; 6:179–186, 217 | Holonomy along a path; "transported kernel" = flat kernel made gauge-covariant by parallel transport along fixed paths. | R | *parallel transport*; *covariantised kernel* |
 
 ### 1.8 Other words with two or three senses
@@ -94,7 +94,7 @@ This agrees with `blueprint/notation.md`, which reserves "test" for test functio
 | `anchor` | (i) distinguished site of a support, 4:435, 506, 573; 6:90, 190 ff.; (ii) site `a_i` attached to a coordinate, 5:1204; (iii) real base point of a holomorphic weight, 5:902 | R | *base point*; *site of the coordinate*; *real part `x`* |
 | `eligible` | (i) pair `(z,o)` satisfying the axial bound, 4:68–75; (ii) an extra gauge-invariant event, 4:442 | D / I | *admissible pair*; *additional event* |
 | `centered` | (i) zero-mean, 3:580–584; (ii) about the point `x₀`, 3:699; (iii) normalised, 4:132, 628; 5:1338 | D / I | *zero-mean*; *about `x₀`*; *normalised* |
-| `separation` | (i) displacement `x − y`, 3:61, 322; (ii) nondegeneracy property, 3:973, 981; (iii) of singularities, 3:854 | I | *displacement*; *nondegeneracy* |
+| `separation` | (i) displacement `x − y`, 3:61†, 429†; (ii) nondegeneracy property, 3:973†, 981; (iii) of singularities, 3:854 | I | *displacement*; *nondegeneracy* |
 | `cutoff` | (i) threshold (`ε_pred`, `t_m`), 4:203, 211, 406; (ii) cutoff function `χ`, 3:758; (iii) ultraviolet cutoff `N`, 5:705 | R | *threshold*; *cutoff function*; *ultraviolet cutoff* |
 | `physical` | (i) position-space, 5:520, 1085; (ii) unscaled, 5:97; (iii) before the change of variables, 6:691 ff. | I | *position-space*; *unscaled*; *original* |
 | `mismatch` | (i) `n_e = χ(V_e Q_e(U)⁻¹)`, 6:47†; (ii) the error terms `E_L`, `E_D`, 6:1410 | D / R | *deviation from the block average*; *error terms* |
@@ -148,10 +148,10 @@ One row per concept. Chapters are abbreviated `3`–`6`.
 | route; route matrices; walk | 4:107, 109; 5:995, 1003; 6:180 ff. | Lattice path; its holonomy. In 6:1025 "route" also means "method". | I | *path*; *holonomy* |
 | feedback matrices | 4:124–133 | `F_x(h) = av h_y W_{xy;o}⁻¹`. | D | *local mean* |
 | straight (average, transport) | 5:535, 859, 993, 1084 | The linear average `M` without the gradient correction. | D (5:993) | *linear block average* |
-| first-power (bound, estimate) | 4:293, 308–312; 5:976 | A bound linear in `χ`. | D | *linear bound* |
+| first-power (bound, estimate) | 4:293, 308–312; 5:1007†, 1019† | A bound linear in `χ`. | D | *linear bound* |
 | forest; forest coordinates / chart / slice | 5:916–935; 6:516, 629, 966 ff. | A rooted spanning tree in each block; coordinates `(v, ψ)` with `ψ` on non-tree links. | D | *maximal-tree gauge in each block* |
 | tree slice; tree coordinates; tree-straightened | 5:916 ff.; 6:466–490, 972, 1492 | Gauge slice where tree links equal the identity. | I | *tree gauge* |
-| tree comparison | 4:296; 5:1000†, 1289 | The inequality `‖a‖² ≤ B‖d₁a‖² + C‖𝒬a‖²` for `a` vanishing on tree links. | D (ch. 5) | *coercivity inequality in tree gauge* |
+| tree comparison | 4:296; 5:1000†, 1036–1040†, 1289 | The inequality `‖a‖² ≤ B‖d₁a‖² + C‖𝒬a‖²` for `a` vanishing on tree links. | D (ch. 5) | *coercivity inequality in tree gauge* |
 | replica `rep V`; replicated field; parent | 5:920–929; 6:180, 341 ff. | Fine field equal to `1` inside blocks and to `V` on links between blocks; "parent" of `x` is the block containing it. | D | *block-constant lift of `V`* |
 | vertical (coordinates, Hessian, gap) | 5:944, 1078, 1334, 1339 | The fluctuation variables `ψ` at fixed `v`. | I | *in the fluctuation variables* |
 | stationary graph / tangent / background | 5:1145–1180 and 25 lines | `ψ = ρ(v)` solving `D_ψ f = 0`, and its derivative at zero. | D | *critical-point map*; *background field* |
@@ -164,7 +164,7 @@ One row per concept. Chapters are abbreviated `3`–`6`.
 | House term (variants) | Where | Meaning | Basis | Standard equivalent |
 |---|---|---|---|---|
 | density coordinates; coordinate tuple | 4:8, 403, 469, 530, 550†, 656–676 | The data `(β, v_sc, regular activities, large-field activities)` parametrising a density. Not coordinates: the map to densities is not claimed injective or onto. | D | *parametrisation*; *representation data* |
-| regular activity | 4:433–438, 452, 551 | `(X_i, o_i, E_i^reg)`: a local term entering the exponent additively. Not a polymer activity. | D | *local term of the small-field action* |
+| regular activity | 4:433–438†, 452, 554† | `(X_i, o_i, E_i^reg)`: a local term entering the exponent additively. Not a polymer activity. | D | *local term of the small-field action* |
 | scalar; `v_sc` | 4:9, 550, 658 | Constant per-site term of the exponent. | D | *vacuum energy density* |
 | direct (row, term, coefficient `c_dir`) | 4:474; 5:749; 6:101, 137, 143 ff. | The single-plaquette term and its coefficient, as in `H = c_dir I + ρ*ρ` (ch. 7:974†). | I | *plaquette term*; *its coefficient* |
 | path action; path rows; path budget (label) | 4:496–521; 5:1241–1252; 6 passim | Action written as `Σ_γ c_γ ×` (local analytic term in holonomies along paths), with `sup_z Σ |c_γ| e^{σℓ(γ)} ≤ P`. | D | *non-local terms of the effective action*; *weighted norm of the path coefficients* |
@@ -174,16 +174,16 @@ One row per concept. Chapters are abbreviated `3`–`6`.
 | (curvature) defect; amended defect; positive-defect identity | 5:638–641, 603; 6:135, 145, 176 | `Z₀ = B_c − T*B_fT − b⁻¹d₁d₁*` and its version with modified metrics, with `K*K = Z ≥ 0`. | R | *positive remainder in the covariance recursion* |
 | aligned; alignment premise | 6:136–141, 164 ff. | `C_ν*C_ν = H_ν`: the action's terms factorise the chosen quadratic form. | R | *factorisation of the Hessian* |
 | quadratic coefficient condition | 5:1052–1058 | The quadratic Taylor coefficient of the input action is `d₁*H_f d₁` with `H_f ≥ εI`. | D | *hypothesis on the quadratic part* |
-| uncut (action); plateau | 5:973, 1044, 1241; 6:243, 917 ff. | Without the smooth small-field cutoffs; region where a cutoff equals one. | I | *without cutoff functions*; *where the cutoff equals one* |
-| clip; clipped; capped | 4:477–528; 6:109–121 | `clip_t`: quadratic below `t`, linear above, with a jump at `t` (4:528). "Capped": multiplied by `min(1, t_c/r)`. | D | *truncated quadratic*; give it a symbol |
-| relaxed (`χ^rel`, `R^rel`) | 4:474–493 | Small-field condition with threshold growing like `t_m e^{dist/R^rel}`. | I | *exponentially weighted small-field condition* |
+| uncut (action); plateau | 5:973†, 1044, 1241; 6:281†, 917 ff. | Without the smooth small-field cutoffs; region where a cutoff equals one. | I | *without cutoff functions*; *where the cutoff equals one* |
+| clip; clipped; capped | 4:476–480†, 528†; 6:109–121 | `clip_t`: quadratic below `t`, linear above, with a jump at `t` (4:528). "Capped": multiplied by `min(1, t_c/r)`. | D | *truncated quadratic*; give it a symbol |
+| relaxed (`χ^rel`, `R^rel`) | 4:481–493† | Small-field condition with threshold growing like `t_m e^{dist/R^rel}`. | I | *exponentially weighted small-field condition* |
 | kinetic energies `K_f`, `K_c` | 6:110 | Clipped plaquette action plus cut-off path square. Nothing kinetic. | R | *local action density* |
-| comparison term | 6:186–188 | `Φ v_c`: fine curvature predicted linearly from the truncated coarse curvature. | D | *linear prediction from the coarse field* |
+| comparison term | 6:186–188† | The specified quantities `Φ v_c` and `Φ_n v_c` (defined). That they are the fine curvature and mismatch predicted linearly from the truncated coarse curvature is inferred. | D / I | *linear prediction from the coarse field* |
 | coarse counterterm | 6:1407 | The term `E_c`. Not a renormalisation counterterm. | I | *subtracted coarse energy* |
 | affine stack | 6:446–452 | The vector `Du + b_Y`. | R | *vector of residuals* |
 | source (`b_Y`, `f_Y`) | 6:581–612 | Constant and linear terms of the quadratic form. | R | *linear term* |
 | extracted; Gaussian extraction | 6:1251, 1280, 1326 ff. | After the affine squares are moved into the Gaussian measure. | I | *after completing the square* |
-| local transfer identity | 6:466, 924, 942 | `m_Y − v = E*v − P*(Av + f_Y)`. | R | *comparison identity for the mean* |
+| local transfer identity | 6:466, 924–931†, 942 | `m_Y − v = E*v − P*(Av + f_Y)` with `E = AP − I`. | R | *comparison identity for the mean* |
 
 ### 2.4 Large-field regions, supports and localisation
 
@@ -197,7 +197,7 @@ One row per concept. Chapters are abbreviated `3`–`6`.
 | exact cover | 4:543–547 | Family with pairwise disjoint `Y_i` whose large-field parts have union `Bad_m(U)`. | D | *compatible family covering the large-field set* |
 | footprint; stencil | 4:505–506; 6:453, 459 ff. | Set of links a term depends on. | R | *support* |
 | reads; read by | 4:450–507; 5:961, 1054; 6:382, 742, 1349 | "depends on"; "is computed from". | I | *depends on* |
-| window `Ω_i`; local inverse columns; principal compression | 6:520–574 | Index neighbourhood on which `A` is inverted to build `P`; `A[Ω,Ω]`. | D | *localisation neighbourhood*; *localised approximate inverse*; *principal submatrix* |
+| window `Ω_i`; local inverse columns; principal compression | 6:520–574 | Two index neighbourhoods `Ω_i^sec` (radius `B/20`) and `Ω_i^loc` (radius `B`) of an edge coordinate, defined at 6:522–529†. That `A` is inverted on them to build `P`, and that the compression is `A[Ω,Ω]`, is inferred. | D / I | *localisation neighbourhood*; *localised approximate inverse*; *principal submatrix* |
 | core; annulus; ownership components | 6:1330–1333 | Terms within `2B` of a component and the rest out to `200B`; components of large-field sets whose `500B`-neighbourhoods meet. | D | *inner part*, *collar*; *components for the `1000B`-adjacency* |
 | clean; remote; clearance | 6:925–997, 1008, 1249; 496, 603 | Containing no large-field element; farther than `30B` from the large-field set; distance margin. | I | *small-field region*; *far from the large-field set*; *distance* |
 | protected | 6:694–737, 806 | Carrying a smooth cutoff so that the change of variables is the exact logarithm. | I | *cut off inside the chart* |
@@ -315,6 +315,27 @@ Not terminology, but they compound the difficulty.
 ## 7. Method and limits
 
 - **Data gathering.** Three independent agent surveys, one for chapters 3–4, one for chapter 5 and one for chapter 6, each reading its chapters in full and reporting every non-standard term with line numbers, the decisive sentence, and whether the meaning was read or inferred. They returned 34 + 48, 69 and 93 entries.
-- **Audit and harmonisation.** The entries were merged by concept, the proposed equivalents made uniform across chapters and aligned with `blueprint/notation.md`. Entries marked † were rechecked against the chapter text or resolved by a cross-chapter search (for example `direct coefficient` = `c_dir` from ch. 7:974; `tree comparison` = the inequality of ch. 5; `minimum-cost test` from ch. 4:391; `atoms` from ch. 9).
-- **Not done.** Most unmarked entries rest on a single survey and were not independently reread. Occurrence counts for frequent terms are approximate. Chapters outside 3–6 were searched only to locate first uses. No formal-source declaration was consulted, so no claim is made about which Lean names the terms come from. The proposed equivalents are editorial suggestions by an agent and need a mathematician's review; entries with basis **I** in particular may misread the text.
-- **Agent assistance.** Claude Code (Claude Fable 5.2), with three subagents for the surveys.
+- **Harmonisation.** The entries were merged by concept, the proposed equivalents made uniform across chapters and aligned with `blueprint/notation.md`. Some terms were resolved by a cross-chapter search (`direct coefficient` = `c_dir` from ch. 7:974; `tree comparison` = the inequality of ch. 5; `minimum-cost test` from ch. 4:391; `atoms` from ch. 9).
+- **Audit of this note** (section 8).
+- **Not done.** Entries without † rest on a single survey. Chapters outside 3–6 were searched only to locate first uses. No formal-source declaration was consulted, so no claim is made about which Lean names the terms come from. The proposed equivalents are editorial suggestions by an agent and need a mathematician's review; entries with basis **I** in particular may misread the text.
+- **Agent assistance.** Claude Code (Claude Fable 5.2), with three subagents for the surveys. The audit was done by the same agent that wrote the note, so it is a self-check, not an independent review.
+
+## 8. Audit record
+
+**Mechanical check of references.** A script extracted every chapter-and-line reference from the tables (421 references) and tested whether the cited lines, with two lines of margin, contain the term. 409 matched. The 12 that did not were read by hand:
+
+- Three were wrong line numbers and are corrected above: `separation` (3:322 → 3:429), `first-power` in chapter 5 (5:976 → 5:1007, 1019), `uncut` in chapter 6 (6:243 → 6:281; line 243 has "omitted rows").
+- Nine were artefacts of the matcher: the line is a formula that carries the object without the word (for example 6:47 for `mismatch`, 5:638–641 for the defect `Z₀`), or the word appears in a variant spelling ("zero germ", "null relations", "bond").
+
+**Check of meanings.** The defining passage was reread for the entries now marked † (about 45), and the context of the first cited line was read for every entry with basis **I**. Corrections made:
+
+- **`actual`, sense "at the true background".** The note had cited 6:137, 141 and 161 for this sense. Line 137 says "rows actually used" and line 161 "the actual block average of (ch05:actual-Q)"; they belong to the senses "of this construction" and "the nonlinear object". Only 6:468 was confirmed for the flat versus non-flat contrast, and the entry now says so.
+- **`comparison term`.** The text defines the term as the two quantities `Φ v_c` and `Φ_n v_c`; the gloss "linear prediction from the coarse field" is an inference and is now marked as such.
+- **`window`.** The text defines two windows by distance; their role in building `P` is an inference and is now marked.
+- **`transport`.** An identification with a symbol of Bałaban's was removed; it was not checked against the literature.
+
+Confirmed as stated: the definitions of `history`, `selection`, `sector`, `consistent`, `exact`, `density coordinate tuple`, `regular activity` (it enters `V_ρ` additively, 4:554), `exact cover`, `Bad_m`, `clip` (with its jump at `r = t`), the relaxed condition, `replica`, `suffix`, the defect `Z₀`, the metric modification, the tree comparison inequality, `subpower`, the containing-site bound, core/annulus/ownership, `signal`, the local transfer identity, `response` (3:409 and 6:953), `Ward sum`, `flux`, `weight operator`, the free polynomial space and `tower`.
+
+**Occurrence counts** were recomputed by search: `row(s)` 1 / 0 / 19 / 82 in chapters 3 / 4 / 5 / 6; `actual` 0 / 4 / 46 / 60; `select-` 0 / 8 / 7 / 44; `test(s)` 4 / 17 / 2 / 24; `frozen` 27 in chapter 6. These agree with the figures given.
+
+**Limits of the audit.** About two thirds of the entries were not reread beyond the first cited line. The assignment of individual occurrences of a multi-sense word to a sense was checked only at the lines marked †; with 82 uses of "row" and 60 of "actual" in chapter 6, other misassignments like the one found for "actual" are likely. Whether each proposed equivalent is the best standard term is a judgement that was not tested against the literature.
