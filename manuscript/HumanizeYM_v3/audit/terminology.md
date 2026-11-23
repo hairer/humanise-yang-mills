@@ -37,7 +37,7 @@
 
 | Object | Word proposed |
 |---|---|
-| scale index | *level `m`* |
+| scale index | *scale index `m`*; *scale* alone is the spacing `a_m` (Bałaban's usage, B87 p. 256). Bałaban's index `k` runs the other way: `k = 0` is the finest lattice |
 | one block transformation | *step* |
 | regularity class of 10:25 | *stage `j`* (for this only) |
 | the constant `b` | *the penalty parameter `b`* (MT:12); the penalty term of chapter 7 is a different object |
@@ -2923,7 +2923,7 @@ See *incidence*.
 *See also:* label; mark.
 
 #### insertion level
-See *level*.
+See *scale index*.
 
 #### insertion origins
 *Variants:* physical origins; origins.
@@ -3151,7 +3151,7 @@ See *inventory*.
 *See also:* selected; mismatch; local energy.
 
 #### late level
-See *level*.
+See *scale index*.
 
 #### lattice family
 *Variants:* common family; same-family; one family; the same lattice family.
@@ -3213,10 +3213,10 @@ See *level*.
 #### level
 *Variants:* insertion level `k_i`; radius level `n_i`; comparison level `k`; top, middle, output level; stopping levels; reference level; late level; adjacent levels; kernel level.
 - **Meaning.** The scale index `m` of the sequence of lattices. Larger index is finer; blocking goes from `m+1` to `m` (12:6–7). "Scale", "depth" and "step" are used for the same index. Named levels: the **radius level** `n_i` is the level whose spacing `a_n` fixes the radius `r = a_nM_n^u`, and the **insertion level** `k_i` is the finer level at which the insertion and its coupling are taken ("`β_i` … at a finer insertion level `k_i` … The radius level `n_i` precedes `k_i`", 17:84–87; `k(n)` by the formula at 17:108). They are related by `k_i = k(n_i)`, which v3 does not write. The **output level** is, in chapter 11, the lowest of the three levels `k > ℓ > w` of the restart argument; at 17t:405, 17c:241, 391 it is the fixed level `k` at which the transferred current is evaluated, later the insertion level `k_i` (see *output level*). The **middle level** `ℓ` is the middle one of the three levels `k > ℓ > w` of chapter 11 (`m = k − ℓ`, 11:1754; `ℓ − w`, 11:1571). The "middle and output stopping levels" of 17w:101–102 are the two backward stops of 17w:31–33 (from `n`, the first crossing of `(b+2) log H_n`, then of a further `10 log B_n`); they are the `ℓ` and `w` of chapter 11, with the radius level `n` in the place of `k` (compare 11:2085–2088, "Neither … depends on the choice of middle or output level"). The **comparison level** is, in chapter 11, the level `k` below which the history is restarted (11:734–741); in 17w the window runs backwards from the radius level `n`, and at 17m:136 "the comparison level `k`" is the insertion level. "Sufficiently late level" (17:120) is the ordinary phrase for a large index. "Coarse kernel level" (11:352) is not a level in this sense: it is the stage index of the block kernel at the coarse level (see *coarse kernel level*).
-  *Basis:* R for the index and for the names `n_i`, `k_i` (17:84–87); S for `k_i = k(n_i)` (I from 17:108, 139–142; 17m:386, 420 alone), for the stopping levels and for the chapter 17 output level; I for the middle level. *Where:* 4:15; 7:15; 9:262; ch. 10–11 passim; ch. 12–16 (77); 17:85, 86, 120; 17w:31–33, 41, 101–102; 17t:405; 17c:241, 391; 17m:136, 331, 416. *Proposed:* *level `m`* for the index (and *step* for the map between two levels); *level `n_i`*, *level `k_i = k(n_i)`* with a sentence saying what each indexes; the three levels of the restart argument by their symbols `k`, `ℓ`, `w` only.
+  *Basis:* R for the index and for the names `n_i`, `k_i` (17:84–87); S for `k_i = k(n_i)` (I from 17:108, 139–142; 17m:386, 420 alone), for the stopping levels and for the chapter 17 output level; I for the middle level. *Where:* 4:15; 7:15; 9:262; ch. 10–11 passim; ch. 12–16 (77); 17:85, 86, 120; 17w:31–33, 41, 101–102; 17t:405; 17c:241, 391; 17m:136, 331, 416. *Proposed:* *scale index `m`* for the index (and *step* for the map between two levels); *level `n_i`*, *level `k_i = k(n_i)`* with a sentence saying what each indexes; the three levels of the restart argument by their symbols `k`, `ℓ`, `w` only.
   *Source:* Scott `part2/I-section.tex:109`: "Diagonal extraction over degrees, arities, compact sets and jet orders gives `n_i`, `k_i = k(n_i)` and frames"; `I-section.tex:91` (the two backward stops, quoted under *first crossing*); Scott `part2/E-Gaussian-sources.tex:77–81`: "A comparison window is a triple of levels `k < l < t` … (Win1) `log(a_l/a_t) ≥ (b+2) log 𝓜`, `log(a_k/a_l) ≥ 10 log B_t`" (top `t`, middle `l`, bottom `k`); `I-section.tex:213`, `331` for the output level (quoted under *output level*).
-*Literature:* no fixed word: the index `k` of the "k-th renormalization transformation"; "scale" `η = L^{−k}`; "unit lattice", "unit scale" `K` (B87 p. 256: "We continue the calculation of the effective actions until we reach the unit lattice, or rather until we reach a scale which we define as the unit scale. Let us denote the corresponding index by K"); "step k", "level K", "truncated at the jth level" (D1 p. 1330010-42: "the total mass at level K"; D2 p. 092301-29); lattices `Ω^(j) = Ω ∩ L^jηℤ^d` (B85a p. 17, (1)). An analogue with the index reversed: Bałaban's and Dimock's `k = 0` is the finest (bare) lattice and `k` increases towards the unit lattice, with a fixed `L` and a rescaling after each step; v3's `m` increases towards the fine lattice, with level-dependent `L_m`. For fixed `L`, Bałaban's `k` is `N − m` (an inference). In B84a–B85d the objects `Q_k`, `H_k`, `G_k`, `U_k(V)` are `k`-step composites, so the subscript counts composed steps, not a level. "Scale" in these papers can also mean the lattice spacing `L^{-j}` of a region. Suggested: keep *level `m`*; note the reversal once.
-*Across chapters:* the index has one meaning throughout, but "comparison level" and "output level" are attached to different levels in chapter 11 and in chapter 17: the letter `k` is the top of the window in chapter 11 and the insertion level in 17t, 17c, 17m, while in 17w the top of the window is `n`. Not *scale* for the index: *level* is the text's most frequent word, and *stage `j`* is kept for the regularity class of 10:25 only. v3 should restore `k_i = k(n_i)` at 17:139–141.
+*Literature:* no fixed word: the index `k` of the "k-th renormalization transformation"; "scale" `η = L^{−k}`; "unit lattice", "unit scale" `K` (B87 p. 256: "We continue the calculation of the effective actions until we reach the unit lattice, or rather until we reach a scale which we define as the unit scale. Let us denote the corresponding index by K"); "step k", "level K", "truncated at the jth level" (D1 p. 1330010-42: "the total mass at level K"; D2 p. 092301-29); lattices `Ω^(j) = Ω ∩ L^jηℤ^d` (B85a p. 17, (1)). An analogue with the index reversed: Bałaban's and Dimock's `k = 0` is the finest (bare) lattice and `k` increases towards the unit lattice, with a fixed `L` and a rescaling after each step; v3's `m` increases towards the fine lattice, with level-dependent `L_m`. For fixed `L`, Bałaban's `k` is `N − m` (an inference). In B84a–B85d the objects `Q_k`, `H_k`, `G_k`, `U_k(V)` are `k`-step composites, so the subscript counts composed steps, not a level. "Scale" in these papers can also mean the lattice spacing `L^{-j}` of a region. Adopted: *scale* for the spacing, *scale index `m`* for the integer; note the reversal once.
+*Across chapters:* the index has one meaning throughout, but "comparison level" and "output level" are attached to different levels in chapter 11 and in chapter 17: the letter `k` is the top of the window in chapter 11 and the insertion level in 17t, 17c, 17m, while in 17w the top of the window is `n`. The index is called *scale index*, following Bałaban ("a scale which we define as the unit scale. Let us denote the corresponding index by K", B87 p. 256); "level" is the text's most frequent word and is Dimock's, and *stage `j`* is kept for the regularity class of 10:25 only. v3 should restore `k_i = k(n_i)` at 17:139–141.
 *See also:* leading; middle level; microscopic; mesh threshold; output level; comparison level; coarse kernel level.
 
 #### lift
@@ -3601,7 +3601,7 @@ See *metric*.
 *See also:* local polynomial section; microscopic.
 
 #### middle level
-See *level*.
+See *scale index*.
 
 #### minimizing branch
 *Variants:* fallback branch; alternative branch; common minimizing branch (5:1383–1384). The text spells "minimizing".
@@ -5287,9 +5287,9 @@ See *scalar* (sense 2).
 #### scale
 *Variants:* level; depth; step (when used for the index).
 - **Meaning.** The index `m` of a lattice in the sequence (spacing `a_m = e^{−τ_m}`, 10:145–146), for which the text uses "scale", "level", "depth" and "step" interchangeably ("that index is different from the scale `m`", 4:651–652; "`J(m)` is the stage at scale `m`", 10:808). "Level" has about 77 uses in chapters 12–16.
-  *Basis:* R (4:651–652; 10:808). *Where:* throughout. *Proposed:* *level `m`* for the index (and *step* for the map between two consecutive levels; *stage* only for `j`).
-*Literature:* see *level*.
-*Across chapters:* one object under several words. The index is *level `m`* and not *scale*, because "scale" also names the spacing `a_m` ("stopping scale", "cell scale"); one block transformation is a *step*; *stage `j`* is kept for the regularity class of 10:25 only.
+  *Basis:* R (4:651–652; 10:808). *Where:* throughout. *Proposed:* *scale index `m`* for the index (and *step* for the map between two consecutive levels; *stage* only for `j`).
+*Literature:* see *scale index*.
+*Across chapters:* one object under several words. The index is *scale index `m`*; *scale* alone is kept for the spacing `a_m` ("stopping scale", "cell scale"); one block transformation is a *step*; *stage `j`* is kept for the regularity class of 10:25 only.
 *See also:* stage; step; schedule.
 
 #### scale schedule
@@ -5880,7 +5880,7 @@ See *stationary substitution*.
 #### step
 *Variants:* nonlinear step; update; renormalisation step; block step.
 - **Meaning.** One renormalisation (block) transformation, from level `m+1` to level `m`; occasionally its index. "The constants may depend on the fixed step" (6:950); "the actual nonlinear step" (5:1380); "The update in Theorem (ch09:step-theorem)" (6:171).
-  *Basis:* I. *Where:* 5:1380; 6:171 ("update"), 950; throughout the later chapters. *Proposed:* *step* for the map (*renormalisation step* at first use); *level* for the index.
+  *Basis:* I. *Where:* 5:1380; 6:171 ("update"), 950; throughout the later chapters. *Proposed:* *step* for the map (*renormalisation step* at first use); *scale index* for the index.
 *Literature:* **renormalization transformation** `T`, `T_k`; **step** (B87 p. 254: "Now we consider renormalization transformations, which have the general form (Tρ)(V) = ∫dU t(V,U)ρ(U)"; p. 256: "Thus we obtain after k steps"; D1 p. 1330010-6: "After k steps we will have a density ρ_k(Φ_k)"; B95 p. 107: "Thus applying k renormalization and scaling transformations yields a density ρ_k"); "RG transformation" (D1). The same object in role. Differences: in B84a, B95 and D1 each step is followed by a rescaling `S` to the unit lattice, which v3 does not have; Bałaban's kernel is a delta function (see *kernel*, *penalty parameter*); and in D2, D3 a step is also called a "stage" (see *stage*). Suggested: keep *step*; at first use "renormalization (block) transformation, called a step".
 *Across chapters:* one sense. `stage` is not a synonym. "Update" occurs once in chapters 3–6, at 6:171 (6:170–172 read).
 *See also:* stage; scale; suffix.
@@ -6798,7 +6798,7 @@ Conventions. Each row is one object: the first column describes it, the second l
 
 | Concept (the object) | Words in use, with where | Proposed single word | Basis / remarks |
 |---|---|---|---|
-| Scale index `m` (index of a lattice in the sequence; larger = finer, 12:6–7) | level (ch. 12–16, about 77); scale ("cell scale", "centered scale", "stopping scale"; ch. 10 passim); depth ("comparison depth", "cell depth" 11:2192); step; "base level", "reference level" | *level `m`* | R. Not *scale*: the word also names the spacing `a_m` and occurs in the compounds listed. *Step* is kept for the map (next row); *stage `j`* only for the regularity class of 10:25 (see *Not synonyms*). |
+| Scale index `m` (index of a lattice in the sequence; larger = finer, 12:6–7) | level (ch. 12–16, about 77); scale ("cell scale", "centered scale", "stopping scale"; ch. 10 passim); depth ("comparison depth", "cell depth" 11:2192); step; "base level", "reference level" | *scale index `m`* | R. Not *scale*: the word also names the spacing `a_m` and occurs in the compounds listed. *Step* is kept for the map (next row); *stage `j`* only for the regularity class of 10:25 (see *Not synonyms*). |
 | One block transformation (the map from level `m+1` to `m`) | step; nonlinear step (5:1380); update (6:171, its only occurrence in ch. 3–6); "fixed step" (6:950) | *step* | R. |
 | The schedule: the sequence `J(m)`, `L_m`, `τ_m`, `a_m` fixed in Chapter 10 | "stage schedule" (10:118, construction 10:121–147); "scale schedule" (7:1075, 1206); "selected schedule", "the single (selected) schedule" (13sb:50–51); "common schedule" (19:18–21), widened there to all choices (block lengths, derivative orders, support weights, coupling thresholds, periods) | *the parameter sequence of Chapter 10* | R (10:118–147; 13sb:50–51). The phrase is for the schedule only: schedule, history and trajectory are fixed together and are not one object (see the next two rows). |
 | A history: "one fixed choice of these kernels, inverse couplings, adjacent path pairs, and local representations" (11:18–19) | history (2e:253; 7:1202); "selected histories" (13ba:50); "same history"; "original selected history" (13ba:195) | keep *history*, defined once at 11:18–19 | D (11:18–19). Other senses of the same word, not members: the "finite history" of 5:303–305 (odd ratios `L_1..L_n` and smoothing orders `j_0..j_n` only); the finite sequence at one cutoff (10:232–257); "auxiliary history" (see *Fields and gauges*). |
