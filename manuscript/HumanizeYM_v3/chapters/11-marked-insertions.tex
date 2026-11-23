@@ -244,7 +244,7 @@ cover cost.
 In one sector and tag, distinguish three kinds of factors: unmarked
 local corrections, incoming large-field factors, and insertion factors
 with nonempty sets of labels. Their full dependence regions determine
-the intersection graph. The exact prescribed set of large-field sites condition says that every
+the intersection graph. The exact condition on prescribed sets of large-field sites says that every
 selected incoming prescribed large-field set is supplied by the unmarked
 local correction factors in its component. In particular a component
 with no unmarked correction has no incoming large-field factor.
@@ -293,7 +293,7 @@ For a compatible connected collection $C$, therefore,
 Here $\nu$ is the single actual Gaussian/Haar law of the sector.
 If an unmarked correction occurs, its inflated common product bound
 absorbs $t_C$, while the other factors are bounded pointwise.
-If none occurs, the prescribed set of large-field sites condition removes incoming large-field
+If none occurs, the condition on prescribed sets of large-field sites removes incoming large-field
 factors; use either the pointwise or event bound for one nonleading
 insertion. No independence is used in either case.
 
@@ -362,7 +362,7 @@ of the actual large-field bound at level $i$.
 The remainder norm used here is the sum of the anchored,
 support-weighted regular majorants and $\kappa_i^{-1}$ times the
 anchored, support-weighted large-field majorants, with their original
-support--prescribed set of large-field sites indices. Thus the fine and coarse remainder norms
+indices of support and prescribed set of large-field sites. Thus the fine and coarse remainder norms
 use $\kappa_f$ and $\kappa_c$, respectively, not a common value.
 
 For this degree write $w_i$ and $f_i$ for the scaling
@@ -1309,7 +1309,7 @@ therefore apply to this actual localization onto the polynomial label space.
 Finally let $\chi$ be the restarted small-field indicator on the
 whole patch. Define $f_u^{\rm near,mask}$ to be only the near sum
 with its original event indicators restored, including its scalar term.
-It equals the without its event indicator $F_u^{\rm near}$ wherever $\chi=1$,
+It equals $F_u^{\rm near}$ without its event indicator wherever $\chi=1$,
 because the restarted threshold is smaller than the original one.
 Then
 \[
@@ -1592,7 +1592,7 @@ the source weight nor the small initial remainder needed here.
 \paragraph{The two weighted step estimates.}
 The inflations required here depend on the inverse coupling, so the
 fixed-inflation statement alone is insufficient.
-Split the positive prescribed set of large-field sites decay of
+Split the positive decay of the prescribed set of large-field sites in
 Chapter~\ref{ch06:large-fields} into reserved fractions and choose
 the reported bound $G(x)$ so that multiplication by $G(x)^{-2}$
 leaves a fixed positive fraction. This choice is made before the
@@ -1865,8 +1865,8 @@ proved give, for every subset of the two insertions, moment
 error at most $C H^{-2}H^{2D\lambda}\le H^{-3/2}$.
 The empty moment is exactly one.
 The actual nonlinear-to-polynomial error has the same bound:
-use \eqref{ch11:raw-polynomial-error}, the common with a smooth cutoff
-Gaussian estimate, and telescope the finitely many polynomial
+use \eqref{ch11:raw-polynomial-error}, the common
+Gaussian estimate with a smooth cutoff, and telescope the finitely many polynomial
 transport steps. If a step has coefficient norm at most
 $A_{2D}$ and discrepancy at most $H^{-v}$, the product error
 over $m$ steps is at most $mH^{-v}A_{2D}^m$.
