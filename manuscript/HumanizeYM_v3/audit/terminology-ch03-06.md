@@ -2,6 +2,8 @@
 
 **Status:** draft audit, not an edit of the chapters. **Scope:** `chapters/03-maxwell.tex`, `04-blocking.tex`, `05-gaussian.tex`, `06-large-fields.tex` at upstream commit `7bec3925`. Line numbers refer to those files at that commit.
 
+**Companion files.** The rest of the book is covered by [`terminology-book-overview.md`](terminology-book-overview.md) and the surveys in `terminology-surveys/`.
+
 **Purpose.** These chapters use many words as technical terms that are not standard mathematical or mathematical-physics vocabulary. Most come from the names of the formal source or from programming and accounting metaphors. This note lists them, states what each means in the text, and proposes one standard equivalent per concept, the same in every chapter. It extends the short translation table in `blueprint/notation.md` ("Terminology translation and restrictions") and follows its rule: *do not translate a metaphor by guessing; its domain, codomain, quantifiers and estimates determine its meaning.*
 
 **How to read the "Basis" column.**
@@ -293,6 +295,10 @@ These need the author, the formal source, or a cross-reference before any replac
 | terminal fine metric | 6:174–175 | The fine metric at the ultraviolet cutoff scale `N` ("at Wilson initialization"), unmodified (`ζ_f = 0`). "Terminal" as in section 2.1. | R |
 | pre-`L` factor / pre-`L` excess estimate | 5:1021; 6:356, 517–518 | A bound whose constant is fixed before `L` is chosen, hence independent of `L` ("the excess constant in (macro-comparison), which is needed before `L` is chosen"). | R |
 | stationary-field estimates | 4:166 | The estimates for the stationary background of chapter 5, which use analyticity of the frame (5:950–959). | I |
+
+### 4.1a Settled or narrowed by the surveys of the other chapters
+
+See [`terminology-book-overview.md`](terminology-book-overview.md), section 3. In short: `regularity-stage index J_m` is defined in chapter 10 (10:25–29, 129–134: `J(m)` is the stage in force at level `m`, a stage being a finite set of orders, exponents and bounds); `inherited loop action` is the `β`-independent quadratic part `ℒ` of `P^path = β𝒦 + ℒ` (9:20–28); `Warnings` are probably cutoff-failure events (11:319), `centered log determinant` is probably `s(x) − s(0)` with `s = ½ log det A` (9s:47), and `compulsory` the large-field factor an activity covering prescribed sites must contain (10:654). Still open: `moving comparison fields`, `seeded / unseeded`, `output anchors`, `likelihood tests`.
 
 ### 4.2 House terms not yet glossed in detail
 
