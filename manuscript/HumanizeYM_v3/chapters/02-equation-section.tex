@@ -36,9 +36,9 @@ $(\text{factor count},\text{scaling dimension})$ is strictly larger than $(s,w)$
 in lexicographic order. Every term of $\mathcal V_dp$ is a product
 of at least $s$ transported curvature coordinates.
 \item For every $p\in\mathcal I_d$, every torus of side at least $M_d$,
-every anchor $o$, every real $\beta\ne0$, and every bounded measurable
+every base point $o$, every real $\beta\ne0$, and every bounded measurable
 $S$ depending only on links with both endpoints farther than $r_d$
-from $o$,
+from $o$ (an \emph{exterior function}),
 \begin{equation}
  \int \mathcal V_d(R_dp)(o,U)S(U)\,d\mu_\beta(U)=0.
  \label{ch02:microscopic-null}
@@ -49,22 +49,22 @@ The small-field derivative bounds for a fixed section proved above
 also apply to $\mathcal V_d$, with its own finite constants.
 \end{theorem}
 
-The regrading $R_d$ is essential: the exact interacting relation is
+The automorphism $R_d$ is essential: the exact interacting relation is
 $\mathcal V_d(R_d\mathcal I_d)$, not an assertion that
 $P_d^{\rm loc}(\mathcal I_d)$ has zero Wilson correlations.
-The proof below supplies the finite-stencil construction, whereas the
+The proof below gives the finite-stencil construction, whereas the
 compact-group integration by parts underlying it is the usual lattice
 equation-of-motion identity for Wilson's measure
 \cite{Wilson1974,OsterwalderSeiler1978}.
 
-\subsection{Curvature tests avoiding a prescribed link}
+\subsection{Curvature coordinates avoiding a prescribed link}
 
 For $u\in\gLie$, pairing the transported curvature
 \eqref{ch02:transported-curvature} with $u$ gives the real-valued function
 $U\mapsto\langle u,\sigma_{\gamma,\square}(U)\rangle_{\gLie}$.
 We call any such function a curvature coordinate.
 Call it admissible for an oriented link $e$ if neither its plaquette
-nor its transporting path uses the underlying unoriented link $e$.
+nor its transporting contour uses the underlying unoriented link $e$.
 Such a coordinate is independent of $U_e$.
 
 \begin{lemma}\label{ch02:avoiding-tests}
@@ -75,20 +75,20 @@ $\mathcal J_{\le d}$.
 \begin{proof}
 It suffices to show that their common annihilator is zero.
 Removing one link does not disconnect $\ZZ^4$, so every plaquette
-not containing $e$ admits a transporting path avoiding $e$.
+not containing $e$ admits a transporting contour avoiding $e$.
 Let $A$ be the polynomial one-form representing a jet in the annihilator.
-At the zero connection the derivative of transport around an oriented
+At the zero connection the derivative of the holonomy around an oriented
 unit plaquette $\square$ in direction $A$ is
 $\oint_{\partial\square}A=\int_\square dA$ by Stokes' theorem.
-Transport to the anchor does not change this first variation.
+Transport to the base point does not change this first variation.
 Consequently $\int_\square dA=0$ for every plaquette that does not
 contain $e$.
 
 For each orientation $(\mu,\nu)$, this integral is a polynomial in
-the base point $z$ of the plaquette. It vanishes at all but finitely
+the initial point $z$ of the plaquette. It vanishes at all but finitely
 many integer points and hence identically, by the one-variable polynomial
 identity applied successively in each coordinate. Let $A_j$ be the
-highest nonzero homogeneous layer of $A$. Averaging a polynomial over
+highest nonzero homogeneous component of $A$. Averaging a polynomial over
 a translated unit square preserves its highest homogeneous part as a
 polynomial in $z$. Thus the degree-$j$ part of the integral is
 $(dA_j)_{\mu\nu}(z)$. Since the integral vanishes for every orientation,
@@ -99,8 +99,8 @@ $dA_j=0$. Radial gauge and Euler's identity give
    =(j+2)A_{j,i},
 \]
 where closedness was used in the last equality.
-This contradicts the choice of $j$. Descending through the layers
-proves the assertion. Finite-dimensional duality now selects a
+This contradicts the choice of $j$. Downward induction on the degree of the components
+proves the assertion. Finite-dimensional duality now gives a
 finite spanning collection of admissible coordinates.
 \end{proof}
 
@@ -123,32 +123,32 @@ the force $F_e\in\gLie$ is characterized by
 Differentiating the plaquettes incident on $e$ expresses $F_e$
 as a signed sum of plaquette-curvature coordinates based at the
 initial vertex of $e$. The precise signs follow the chosen
-plaquette orientations. Transport the force to the anchor by a
-path avoiding $e$, and pair it there with an arbitrary element of $\gLie$.
+plaquette orientations. Transport the force to the base point by a
+contour avoiding $e$, and pair it there with an arbitrary element of $\gLie$.
 At the zero connection the force is the signed sum, to first order in
 $A$, of the integrals $\int_\square dA$ over plaquettes incident on $e$.
 
-Fix a layer $j$. These linear force functionals, restricted to jets
-through layer $j$, span every functional which acts only on $A_j$
-and annihilates the Maxwell solution potentials in that layer.
+Fix a degree index $j$. These linear force functionals, restricted to jets
+through the component of degree index $j$, span every functional which acts only on $A_j$
+and annihilates the Maxwell solution potentials in that component.
 Indeed, if all force functionals vanish, their values at integer
-base points form identically zero polynomials. Their top-degree
+initial points form identically zero polynomials. Their top-degree
 terms are
 \[
  -\sum_\mu\partial_\mu(dA_j)_{\mu\nu}.
 \]
 For a link in direction $\nu$, the two incident $(\mu,\nu)$ plaquettes
 enter with opposite signs. Their integrals therefore give a first
-difference in the $\mu$ direction. Thus the top layer is a Maxwell
+difference in the $\mu$ direction. Thus the top component is a Maxwell
 solution potential. Every functional of the indicated type
 annihilates the common force kernel and is therefore a finite
 linear combination of these forces. Notice that this argument
-identifies the top layer only; it does not identify the entire
+identifies the top component only; it does not identify the entire
 kernel of the discrete force system with the continuum solution
 jet space.
 
 Here is the corresponding description of the polynomial ideal.
-Choose a linear projection of each jet layer onto its solution
+Choose a linear projection of each homogeneous jet component onto its solution
 subspace and let $\mathcal E$ be their direct sum. In the full,
 not necessarily invariant, polynomial algebra the kernel of
 $p\mapsto p(\mathcal EJ)$ is generated by linear functionals
@@ -164,7 +164,7 @@ an ideal-generation theorem, use
 Choose homogeneous linear coordinates, so both gradings are
 preserved. Every homogeneous element of $\mathcal I_d$ is
 therefore a sum of products $\lambda z_1\cdots z_{s-1}$,
-where $\lambda$ is a one-layer equation functional.
+where $\lambda$ is an equation functional of a single component.
 Individual summands need not be gauge invariant.
 
 Represent $\lambda$ by the finite force combination just constructed
@@ -182,7 +182,7 @@ curvature factors. Its Taylor polynomial is
 \end{equation}
 There are two distinct errors. The nonlinear part of a curvature
 or force coordinate increases factor count. The linear force
-representation was fixed only through the layer of $\lambda$;
+representation was fixed only through the component of $\lambda$;
 its remaining linear terms increase the scaling dimension while preserving the factor
 count. This is why the order in
 \eqref{ch02:equation-triangle} puts factor count first.
@@ -191,8 +191,8 @@ count. This is why the order in
 
 Every force term above has the form
 $H\langle X,F_e\rangle$, where $X$ is the fixed direction at the
-anchor transported back to the link, and $H$ is the product of the
-remaining curvature coordinates and the exterior spectator.
+base point transported back to the link, and $H$ is the product of the
+remaining curvature coordinates and the exterior function $S$.
 Freeze the other links. Both $X$ and $H$ are then constant in $U_e$. Haar invariance
 on the compact group gives
 \[
@@ -202,29 +202,29 @@ on the compact group gives
 \]
 Multiplication by $H$ is legitimate because it is constant in
 $U_e$. Fubini then proves the desired zero expectation, even for a
-merely bounded measurable exterior spectator. This proof never
-differentiates that spectator.
+merely bounded measurable exterior function. This proof never
+differentiates that function.
 
 All lists used in constructing a basis are finite. Enlarge one
-radius to contain their plaquettes, paths, and differentiated links.
-Enlarge one period threshold so that distinct relevant cover links
+radius to contain their plaquettes, contours, and differentiated links.
+Enlarge one lower bound on the period so that distinct relevant links of $\ZZ^4$
 cannot become identified with a differentiated link after
-periodization. These two choices work for every anchor by translation.
-They are independent of $\beta$ and of the exterior spectator.
+periodization. These two choices work for every base point by translation.
+They are independent of $\beta$ and of the exterior function.
 
 Average the constructed functions over the gauge element at the
-anchor. Every transported curvature transforms there by the adjoint
+base point. Every transported curvature transforms there by the adjoint
 action, so this is a finite-dimensional average of tensors under the adjoint action.
 It preserves the number of curvature factors and
 \eqref{ch02:equation-triangle}. It also preserves the exact zero
-identity: gauge invariance of the Wilson law transfers the gauge
-transformation to the bounded exterior spectator without changing
+identity: gauge invariance of the Wilson law moves the gauge
+transformation to the bounded exterior function without changing
 its support. The result is fully gauge invariant.
 
 Choose a basis of each homogeneous part of $\mathcal I_d$, perform
 this construction there, and extend to a basis of $V_d$ by using
 $P_d^{\rm loc}$ on a complement. The resulting linear map
-$\mathcal F_d$ preserves the unit. Its Taylor map is
+$\mathcal F_d$ preserves the identity field. Its Taylor map is
 \[
  R_d=\operatorname{Tay}_d\mathcal F_d=I+T_d,
 \]
@@ -233,7 +233,7 @@ Thus $T_d$ is nilpotent and
 $R_d^{-1}=I-T_d+T_d^2-\cdots$ is a finite sum.
 Average $\mathcal F_d$ simultaneously on domain and range over
 signed coordinate permutations and over conjugation. These
-operations preserve the ideal, both gradings, and the unit;
+operations preserve the ideal, both gradings, and the identity field;
 hence the same triangular conclusion remains valid.
 Finally put
 \[
@@ -250,5 +250,5 @@ with new constants for the new stencil.
 The identity \eqref{ch02:microscopic-null} is exact at each cutoff.
 It gives no bound on a renormalized coefficient change.
 To use it for continuum null fields one must compare this section
-with the section used along the actual renormalization history,
+with the section used along the renormalization history (a history is defined in Chapter~\ref{ch11:insertions}),
 with one invertible comparison map for all labels and all spectators.
