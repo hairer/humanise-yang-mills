@@ -1,23 +1,23 @@
 % !TEX root = ../monograph.tex
-\chapter{Gaussian kernels and stationary backgrounds}
+\chapter{Gaussian kernels and background fields}
 \label{ch05:gaussian}
 
 The quadratic approximation serves two purposes. It identifies the
-covariance of the fluctuations eliminated by a block transformation, and
-it supplies the inverse needed to construct a stationary background for
+covariance of the fluctuation field eliminated by one step, and
+it supplies the inverse needed to construct the critical configuration, the background field for
 the nonlinear action. These uses require different estimates. Exact matrix
 identities hold on each finite lattice; uniform locality requires bounds
-which survive changes of the lattice size and of the blocking history.
+which survive changes of the lattice size and of the sequence of blocking parameters.
 
 We first fix the normalization of the exact identities. We then isolate the
 additional hypotheses for uniform analytic continuation and for a
-stationary background. The general block transformation algebra is
+critical configuration. The general block transformation algebra is
 standard; see Ba{\l}aban--Feldman--Kn\"orrer--Trubowitz
 \cite{BalabanFeldmanKnoerrerTrubowitz2016}. The construction of local
 propagators and backgrounds for lattice gauge theory originates in
 Ba{\l}aban's work \cite{Balaban1984Propagators,Balaban1985Variational}.
 Those references explain the method. Their results cannot be applied to a
-different averaging map without checking its hypotheses.
+different averaging operation without checking its hypotheses. Moreover, Ba{\l}aban's background field is a minimum of the action at fixed averages (his ``minimal configuration''), for several steps at once; the critical configuration constructed in Section~\ref{ch05:stationary} is a stationary point of the fine action plus the penalty term of the block kernel, for one step.
 
 \section{Lattice differential forms and zero modes}
 \label{ch05:forms}
@@ -37,7 +37,7 @@ $\nabla_\mu u(x)=u(x+e_\mu)-u(x)$, and the exterior derivative is
        u_{\mu_0\cdots\widehat{\mu_i}\cdots\mu_r}.
 \]
 Commutation of the differences gives $d_{r+1}d_r=0$.
-An adjoint is always taken for the stated counting scalar products.
+An adjoint is always taken for the stated unnormalized $\ell^2$ scalar products.
 
 A linearized gauge transformation of a one-form $a$ is
 $a\mapsto a+d_0\phi$. If $H$ is a positive self-adjoint operator on
@@ -85,7 +85,7 @@ remain valid on a space where no normalized massless Gaussian exists.
 \label{ch05:schur}
 
 Let $E_f,E_c$ be real finite-dimensional inner-product spaces, $Q:E_f\to
-E_c$ a linear block map, and $b>0$ the block penalty. Suppose initially
+E_c$ a linear averaging operator, and $b>0$ the penalty parameter. Suppose initially
 that $K_f>0$ on $E_f$. Define
 \begin{equation}
  A=K_f+bQ^*Q,\qquad
@@ -99,10 +99,10 @@ $\beta(\langle A_f,K_fA_f\rangle+b\|QA_f-V\|^2)/2$,
 the variables here are $a=\sqrt{\beta}A_f$ and
 $v=\sqrt{\beta}V$. In unscaled link logarithms the fluctuation
 covariance is $\beta^{-1}(K_f+bQ^*Q)^{-1}$.
-Thus the block parameter remains $b$ after normalization, although
+Thus the penalty parameter remains $b$ after normalization, although
 the original block kernel has penalty $b\beta$.
 
-The map $W$ sends a coarse field to the stationary fine field. The
+The map $W$ sends a coarse field to the fine critical configuration. The
 fluctuation covariance is $A^{-1}$. The Schur-complement formulas give
 \begin{align}
  K_c&=(b^{-1}I+QK_f^{-1}Q^*)^{-1}, \label{ch05:coarse-cov}\\
@@ -124,7 +124,7 @@ In a normalized block kernel there is also the factor
 $(b/2\pi)^{\dim E_c/2}$.
 
 There is an equivalent probabilistic statement. If $a$ and $\xi$ are
-independent centered Gaussians with covariances $K_f^{-1}$ and $I$,
+independent zero-mean Gaussians with covariances $K_f^{-1}$ and $I$,
 then $v=Qa+b^{-1/2}\xi$ has covariance
 $b^{-1}I+QK_f^{-1}Q^*$. Conditional on $v$, the fine field has mean
 $Wv$ and covariance $A^{-1}$.
@@ -142,8 +142,8 @@ The useful consequences, with the same domains and adjoints, are
  K_fW=Q^*K_c,\qquad QW=I-b^{-1}K_c,\qquad
  W^*K_fW+b(QW-I)^*(QW-I)=K_c.
 \]
-The last identity says that the stationary fine action together with
-its block penalty is exactly the coarse quadratic action.
+The last identity says that the fine action at the critical configuration together with
+its penalty term is exactly the coarse quadratic action.
 
 \section{Averaging and the Fourier alias formula}
 \label{ch05:alias}
@@ -151,7 +151,7 @@ its block penalty is exactly the coarse quadratic action.
 To check the scaling factor in the covariance recursion, take
 $\Lambda_{Ls}$ as fine lattice and $\Lambda_s$ as coarse lattice, with
 odd $L\ge3$. Let $w(z)$ be a finitely supported real averaging kernel
-of total mass one, periodized on the fine lattice, and use
+of total mass one, periodized on the fine lattice, and use the linear averaging operator
 \[
  (Ma)_\mu(y)=\sum_z w(z)\sum_{r=0}^{L-1}
                     a_\mu(Ly+z+re_\mu).
@@ -192,7 +192,7 @@ ones carry $s^4$. Consequently the covariance factor is
 $L^{-8}L^2L^4=L^{-2}$. This is the factor used in
 \eqref{ch05:alias-recursion}.
 
-The particular smoothing in the supplied construction uses
+The smoothing used in this construction is
 \[
  \widehat w_L(\theta)=
  \prod_{\nu=1}^4\left(L^{-1}
@@ -203,7 +203,7 @@ where $j$ is the integer smoothing order. Centering makes
 $\widehat w_L$ even on real and complex momenta.
 The recurrence then contains $\widehat w_L(\theta_z)^{2j}$.
 This choice fixes an auxiliary covariance. Identification with the
-quadratic form of a particular gauge-equivariant block map additionally
+quadratic form of a particular gauge-equivariant averaging operation additionally
 requires checking that its linearization differs from $M$ only by an
 appropriate gradient, and that the chosen treatment of zero modes agrees.
 Figure~\ref{ch05:fig-fourier-aliases} shows the centered box multiplier
@@ -237,8 +237,8 @@ Formula \eqref{ch05:H0} is initially an identity away from zero.
 Its regular extension at zero is a separate issue.
 
 Here is the cancellation used for that extension. Let $M$ now denote
-the total dilation over several steps; it is a number, distinct from
-the averaging operator of the previous section.
+the total scaling factor over several steps; it is a number, distinct from
+the linear averaging operator of the previous section.
 Put $\lambda_M(p)=M^2\lambda(p/M)$.
 Suppose the accumulated covariance has the representation
 \[
@@ -247,7 +247,7 @@ Suppose the accumulated covariance has the representation
  A_\mu(p)=F(p)r_M(p_\mu/M)r_M(-p_\mu/M),
  \quad B_\mu=A_\mu+\lambda_MG_\mu.
 \]
-The remainder $G_\mu$ collects the nonprincipal aliases and the
+The remainder $G_\mu$ collects the nonzero aliases and the
 accumulated block noise. Assume that $F,G_\mu,A_\mu,B_\mu$ are
 holomorphic on a common neighborhood and that $F,A_\mu,B_\mu$ do
 not vanish there. The elementary identity
@@ -276,9 +276,9 @@ extension through the apparent massless pole.
 When $F(0)=A_\mu(0)=1$, it gives $H_0(0)=I$.
 
 This calculation proves pole cancellation, not a uniform zero-free
-strip. For that stronger conclusion the nonprincipal aliases,
+strip. For that stronger conclusion the nonzero aliases,
 accumulated noise, and reciprocal factors must be bounded uniformly
-over every admitted blocking history. These are precisely the
+over every admitted sequence of blocking parameters. These are precisely the
 estimates which cannot be replaced by finite-dimensional Gaussian
 algebra.
 
@@ -295,28 +295,28 @@ $Hd_1=H_0d_1$. Positivity on all two-forms and agreement on exact
 two-forms are different assertions; this modification is useful
 because later estimates need both.
 
-\section{Uniform estimates over finite blocking histories}
+\section{Uniform estimates over finite sequences of blocking parameters}
 \label{ch05:histories}
 
 We now verify the uniform reciprocal bounds required in
-\eqref{ch05:pole-cancel} for the actual averaging recurrence.
-A finite history consists of odd ratios $L_1,\ldots,L_n\ge3$ and
+\eqref{ch05:pole-cancel} for the averaging recurrence.
+A finite sequence of blocking parameters consists of odd ratios $L_1,\ldots,L_n\ge3$ and
 smoothing orders $j_0,\ldots,j_n\ge4$, with
 $j_{h-1}-j_h\in\{0,1\}$. Set $M_h=L_1\cdots L_h$, $M_0=1$.
-The order used by the $h$th block map is its incoming order
+The order used by the $h$th linear averaging operator is its incoming order
 $j_{h-1}$. Denote the centered box symbol $\widehat w_L$ of
 Section~\ref{ch05:alias} by $w_L$ in the following formulas.
 
 \begin{proposition}[Uniform curvature metric]
 \label{ch05:history-prop}
-Fix the final smoothing order $j=j_n\ge4$ and the penalty $b>0$.
+Fix the final smoothing order $j=j_n\ge4$ and the penalty parameter $b>0$.
 Start with the nonzero-mode covariance $c_\mu(p)=1/\lambda(p)$
 and iterate \eqref{ch05:alias-recursion} along any such finite
-history. The resulting curvature metric $H_0$ has a holomorphic,
+sequence. The resulting curvature metric $H_0$ has a holomorphic,
 periodic extension to a common strip about real momenta, with
 uniformly bounded entries and inverse entries. On real momenta
 $H_0$ has uniform positive upper and lower bounds and $H_0(0)=I$.
-The constants depend on $j,b$, but not on the history length,
+The constants depend on $j,b$, but not on the length of the sequence,
 ratios or torus period.
 \end{proposition}
 
@@ -325,14 +325,14 @@ The box composition identity
 $w_A(B\theta)w_B(\theta)=w_{AB}(\theta)$ holds for odd
 $A,B$, by decomposing a centered interval of length $AB$
 into centered intervals of length $B$.
-Thus the accumulated filter is
+Thus the accumulated symbol of the averaging operators is
 \begin{equation}
  f(\theta)=w_{M_n}(\theta)^j
        \prod_{\{h:j_{h-1}=j_h+1\}}w_{M_h}(\theta).
  \label{ch05:history-filter}
 \end{equation}
-The directional filter is
-$f(\theta)r_{M_n}(\theta_\mu)$: the link factors compose by
+The directional symbol is
+$f(\theta)r_{M_n}(\theta_\mu)$: the multipliers of the averages along the links compose by
 $r_A(Bt)r_B(t)=r_{AB}(t)$.
 
 Here and below momentum estimates are on an enlarged cube
@@ -348,8 +348,8 @@ $z_\mu\in[-(M-1)/2,(M-1)/2]$. The finite geometric sum gives
 \]
 Indeed the numerator of the geometric quotient is bounded, and
 $M|e^{i(p_\mu+2\pi z_\mu)/M}-1|$ is bounded below by
-$c(1+|z_\mu|)$ for $z_\mu\ne0$; the principal case is bounded
-directly by the finite sum. At the principal real alias the
+$c(1+|z_\mu|)$ for $z_\mu\ne0$; the case $z_\mu=0$ is bounded
+directly by the finite sum. At the zero alias with real momentum the
 centered factor has a positive lower bound.
 
 The additional factors in \eqref{ch05:history-filter} have a
@@ -357,7 +357,7 @@ uniform product bound. A factor of side $A\le M$ has modulus
 at most $\exp(C\eta A/M)$ on the cube evaluated at $p/M$
 or any other alias. The sides occurring in the product increase
 at least geometrically, so their sum divided by $M$ is bounded.
-On the real principal alias the same factors have product bounded
+At the zero alias with real momentum the same factors have product bounded
 away from zero. To see this without multiplying a fixed lower
 bound infinitely often, use
 $|\log w_A(p/M)|\le C A/M$ on that real cube, with the value
@@ -376,7 +376,7 @@ real slice.
 
 There is also an exact description of the accumulated noise.
 The independent noise introduced at step $h$ is propagated only
-through the suffix $h+1,\ldots,n$. If that suffix has total ratio
+through the subsequent, coarser steps $h+1,\ldots,n$, with accumulated symbol $f_{\rm suffix}$. If these steps have total scaling factor
 $D=M_n/M_h$, its contribution, before multiplication by $b^{-1}$,
 is
 \[
@@ -387,11 +387,11 @@ is
 This includes $1$ when $h=n$ and $D=1$.
 To verify the formula, apply \eqref{ch05:alias-recursion} to one
 constant covariance and split each residue modulo a product of
-ratios into its successive residues. The filter composition
+ratios into its successive residues. The symbol composition
 identities above identify the summands and the factors multiply
 to $D^{-2}$. Summing over the noises gives precisely the noise
 part of the iterated recurrence.
-Each suffix contribution is bounded by $C_jD^{-2}$ because
+Each such contribution is bounded by $C_jD^{-2}$ because
 \[
  \sum_z\Gamma(z)^{-2j}\le
  \left(\sum_{k\in\ZZ}(1+|k|)^{-2}\right)^4<81.
@@ -399,7 +399,7 @@ Each suffix contribution is bounded by $C_jD^{-2}$ because
 As $D\ge3^{n-h}$, the total noise is at most
 $C_j\sum_{r\ge0}3^{-2r}$, uniformly in $n$.
 
-Separate the principal alias of the propagated initial
+Separate the zero alias of the propagated initial
 covariance from all other aliases. The former gives
 $A_\mu/\lambda_M$ with the notation of
 \eqref{ch05:pole-cancel}; the latter are
@@ -409,20 +409,20 @@ $A_\mu/\lambda_M$ with the notation of
                  r_M(\theta_{z,\mu})r_M(-\theta_{z,\mu})}
                       {M^2\lambda(\theta_z)}.
 \]
-For a nonprincipal real alias the denominator is bounded below
+For a real alias with $z\ne0$ the denominator is bounded below
 by $c(1+\max_\mu|z_\mu|)^2$. Its change on a complex strip of
 width $\eta$ is at most
 $C\eta(1+\max_\mu|z_\mu|)+C\eta^2$.
 Decreasing $\eta$ gives the same lower bound in modulus.
 The preceding summability therefore bounds this sum holomorphically.
-Together with the suffix noise estimate it proves a uniform
+Together with the estimate of the accumulated noise it proves a uniform
 holomorphic bound for $G_\mu$, which is nonnegative on the real
 slice.
 
 Recall that $F=f(p/M)f(-p/M)$,
 $A_\mu=F r_M(p_\mu/M)r_M(-p_\mu/M)$ and
 $B_\mu=A_\mu+\lambda_MG_\mu$.
-The principal filter bounds give positive real lower bounds for
+The bounds for the symbol at the zero alias give positive real lower bounds for
 $F,A_\mu$, and hence for $B_\mu$. All three have uniform complex
 upper bounds. Cauchy estimates on a slightly larger cube therefore
 give uniformly bounded reciprocals on a smaller one.
@@ -446,17 +446,17 @@ then joins the cubes to a strip. The same Fourier symbol works on
 every finite-period grid.
 \end{proof}
 
-This proves uniform bounds for arbitrary finite histories.
-Convergence for a prescribed sequence of growing histories is
+This proves uniform bounds for arbitrary finite sequences of blocking parameters.
+Convergence for prescribed growing sequences of blocking parameters is
 stronger and is not a consequence of this proposition alone.
 
-\section{Exact transports and the curvature defect}
+\section{The linearization of the critical configuration, the induced map on curvatures, and the curvature defect}
 \label{ch05:transports}
 
 Recall that $H_0$ is the two-form metric in \eqref{ch05:H0}; $H$ denotes its positive completion from \eqref{ch05:metric-modification}, agreeing with $H_0$ on exact two-forms. Fine and coarse subscripts below specify the scale of each metric.
 
 We describe the algebra at one real nonzero coarse momentum.
-This also specifies which transport must be estimated. The use
+This also specifies which operators must be estimated. The use
 of aliases and block-periodic Fourier coordinates is standard;
 see \cite{BalabanFeldmanKnoerrerTrubowitzBloch2016}.
 Write $\theta_l=(p+2\pi l)/L$,
@@ -495,7 +495,7 @@ Introduce the positive scalar
 $\alpha=\sum_l|m_l|^2\tr D_l$, and put
 $e_l=\overline m_l\tr D_l/\alpha$,
 $y_l=|m_l|^2\rho/\rho_l$, and $C=Hd_1Dd_1^*$.
-The rescaled one-form and two-form transports are
+The rescaled alias components of the operators $W$ and $T$ introduced below are
 \begin{align}
  \mathcal A_l&=D_lF_{1,l}^*R+e_lx_l\pi,\\
  \mathcal T_l&=H_l\delta_1D_lF_{1,l}^*d_1^*
@@ -515,7 +515,7 @@ using \eqref{ch05:transport-input}; in the last equality the
 gradient contribution is $x\pi\sum_lm_le_l=x\pi$.
 In particular the term $I-C$ cannot simply be omitted: it is
 annihilated by $d_1^*$ and annihilates $Hd_1$, but controls the
-transport on the complementary two-forms.
+induced map on the complementary two-forms.
 
 The physical kernels from a coarse site to a fine site $Ly+r$
 are obtained from the alias sums
@@ -525,27 +525,27 @@ are obtained from the alias sums
  L^{-2}\sum_l e^{i\theta_l\cdot r}\mathcal T_l(p)
 \]
 by coarse Fourier inversion. Denote the resulting operators by
-$W$ and $T$. Restoring counting adjoints gives
+$W$ and $T$: the linearization of the critical configuration of the quadratic problem and the induced map on curvatures. Restoring the adjoints for the unnormalized $\ell^2$ scalar products gives
 \begin{equation}
  T^*d_{1,f}=d_{1,c}Q,\qquad
  TH_cd_{1,c}=H_fd_{1,f}W,\qquad
  QW=I-b^{-1}d_{1,c}^*H_cd_{1,c}.
  \label{ch05:physical-transports}
 \end{equation}
-Here $Q$ is the straight averaging operator in this construction.
-The same statements for a block average containing a gradient
+Here $Q$ is the linear averaging operator of this construction, and $W$ is the representative written $W_s$ in Section~\ref{ch05:actual-tangent}.
+The same statements for an averaging operator containing a gradient
 correction require its corresponding choice of the gradient
 part of $W$.
 
 The apparent poles in \eqref{ch05:transport-formula} can be
-removed using the principal covariance split. We record the
+removed using the decomposition of $D$ displayed below. We record the
 crucial cancellation to avoid concealing a uniformity assumption.
 Write $s=\lambda_{M_c}(p)$, $D=s^{-1}\operatorname{diag}(B_\mu)$,
 $D_0=s^{-1}\operatorname{diag}(B_{0,\mu})$, and
 \[
  D=F_{1,0}D_0F_{1,0}^*+U,\qquad U=\operatorname{diag}(u_\mu).
 \]
-The tail $U$ consists of nonprincipal aliases and the current
+The remainder $U$ consists of nonzero aliases and the current
 noise; it is uniformly holomorphic by the estimates just proved.
 Let $z_\mu=u_\mu/B_\mu$. Then
 \[
@@ -568,7 +568,7 @@ $s\mathcal B=H_0-y_0F_{2,0}^*HF_{2,0}$, and hence
                                 -H_0Jd_1U\bigr)d_1^*.
 \]
 All factors are regular at zero. For $\mathcal A_0$, the
-corresponding principal denominator is
+corresponding denominator at the zero alias is
 $s\alpha=|m_0|^2\sum_\mu B_{0,\mu}+s\alpha_{\ne0}$,
 which is bounded below on the real cube. Its reciprocal is
 therefore uniformly holomorphic. Subtracting the leading
@@ -576,7 +576,7 @@ diagonal term in $\mathcal A_0$ leaves the regular factor
 \[
  m_0^{-1}\left(u_\mu/B_\mu-\alpha_{\ne0}/(s\alpha)\right).
 \]
-For nonprincipal aliases the denominators have the lower bounds
+For nonzero aliases the denominators have the lower bounds
 used in Proposition~\ref{ch05:history-prop}.
 These formulas give bounded principal columns and bounds
 $C\Gamma(l)^{-j}$ for both nonprincipal columns on a smaller cube.
@@ -608,7 +608,7 @@ standard Koszul algebra \cite[Lemma 15.31.2]{StacksKoszul}.
 The quantitative version needed here preserves exponential
 coefficient bounds: if an exponentially summable matrix row
 $A$ on positive-degree forms satisfies $Ad_r=0$, it can be
-written $A=Vd_{r+1}$ on a smaller strip, with a fixed norm cost.
+written $A=Vd_{r+1}$ on a smaller strip, with the norm increased by at most a fixed factor.
 One obtains this version by successively dividing
 $A(p)-A(p)|_{p_a=0}$ by $e^{ip_a}-1$ and contracting the
 $a$th exterior index. The elementary quotient
@@ -617,21 +617,21 @@ $a$th exterior index. The elementary quotient
    =\sum_{h=0}^{n-1}e^{ihp_a}\quad(n>0)
 \]
 and the corresponding negative sum for $n<0$ show that a
-division costs at most $C/\eta$ when width $\eta$ is reduced
+division multiplies the norm by at most $C/\eta$ when width $\eta$ is reduced
 to $\eta/2$. There are only four coordinates. This is the
 usual coordinate proof of Koszul exactness, with the coefficient
 norm retained. Applying it on both sides shows that a symmetric
 two-form row $E$ with $Ed_1=d_1^*E=0$ has
 $E=d_2^*C_0d_2$, with $C_0$ symmetric and exponentially summable.
-For completeness, first choose a left lift $d_2^*W_0=E$.
+For completeness, first choose a left preimage $W_0$, that is, $d_2^*W_0=E$.
 Since $d_2^*W_0d_1=0$, exactness gives
 $W_0d_1=d_3^*V_0$. The top differential $d_3^*$ has trivial
 kernel on analytic four-form coefficients, so $V_0d_0=0$.
-A right lift gives $V_0=X_0d_1$. Thus
+A right preimage gives $V_0=X_0d_1$. Thus
 $W_1=W_0-d_3^*X_0$ satisfies both $W_1d_1=0$ and
-$d_2^*W_1=E$. Lift once more to write $W_1=C_0d_2$,
+$d_2^*W_1=E$. Take a preimage once more to write $W_1=C_0d_2$,
 and replace $C_0$ by $(C_0+C_0^*)/2$.
-All these lifts act on the infinite lattice coefficients before
+All these preimages are taken on the infinite lattice coefficients before
 periodization; finite-period harmonic modes do not supply the
 analytic exactness used here.
 
@@ -642,8 +642,8 @@ and
 \]
 Equation \eqref{ch05:physical-transports} gives
 $Z_0H_cd_{1,c}=0$.
-Applying the two-sided lift to $H_cZ_0H_c$ and the one-sided
-lift to $d_{2,f}B_fTH_c$ produces
+Applying the two-sided preimage construction to $H_cZ_0H_c$ and the one-sided
+one to $d_{2,f}B_fTH_c$ produces
 \begin{equation}
  Z_0=(d_{2,c}B_c)^*C_0(d_{2,c}B_c),\qquad
  Sd_{2,c}B_c=d_{2,f}B_fT.
@@ -651,13 +651,13 @@ lift to $d_{2,f}B_fTH_c$ produces
 \end{equation}
 The estimates are
 $\|C_0\|\le C_0'$ and $\|S^*S\|\le C_1L^{-2}$.
-Indeed a fixed fine-residue entry of $T$ or $B_fT$ has
+Indeed an entry of $T$ or $B_fT$ at a fixed position within the block has
 weighted coefficient bound $CL^{-2}$ and one fine difference
-has bound $CL^{-3}$. A Gram product sums over $L^4$ residues.
+has bound $CL^{-3}$. A Gram product sums over $L^4$ positions within the block.
 Its bounds are thus $L^4(CL^{-2})^2=O(1)$ and
 $L^4(CL^{-3})^2=O(L^{-2})$, respectively.
-The lift acts on coarse exterior indices separately for every
-fine residue, so it introduces no further residue sum.
+The preimage is taken on coarse exterior indices separately for every
+position within the block, so it introduces no further sum over positions.
 
 Modify the inverse metrics as in
 \eqref{ch05:metric-modification}, with coefficients
@@ -686,31 +686,31 @@ root have exponential coefficient bounds on a smaller strip
 by the usual analytic functional calculus.
 This proves positivity on the whole three-form space.
 
-For each adjacent pair of stages choose the coarse modification
+For each pair of stages of one step (Section~\ref{ch10:choices}) choose the coarse modification
 large enough for its finitely many incoming possibilities.
 Fix these coefficients before choosing the block ratios.
 Then the condition $L^2\ge\zeta_f C_1$ is a finite lower
 bound on each permitted ratio. No constant uniform over all
 smoothing orders is asserted: the estimates are uniform over
-histories ending at a fixed order.
+sequences of blocking parameters ending at a fixed order.
 
 \section{Convergence at a fixed scale}
 \label{ch05:horizon-convergence}
 
-The curvature metrics and transport operators in this section are those of Sections~\ref{ch05:curvature} and~\ref{ch05:transports}; their histories now vary while the observation scale stays fixed.
+The curvature metrics and the operators $W$, $T$ in this section are those of Sections~\ref{ch05:curvature} and~\ref{ch05:transports}; their sequences of blocking parameters now vary while the observation scale stays fixed.
 
 The preceding uniform bounds also give convergence for the particular
-nested histories used in the construction. The nesting is essential:
+nested sequences of blocking parameters used in the construction. The nesting is essential:
 fix the ratios, smoothing orders and modification coefficients at every
-scale, and increase only the terminal cutoff. At a fixed scale $m$, the
-history with terminal scale $N+1$ extends the history with terminal scale
-$N$ at its fine end. An arbitrary sequence of bounded histories need
+scale, and increase only the ultraviolet cutoff $N$. At a fixed scale $m$, the
+sequence with ultraviolet cutoff $N+1$ extends the sequence with ultraviolet cutoff
+$N$ at its fine end. An arbitrary succession of bounded sequences of blocking parameters need
 not converge.
 
 We first record how to identify limits on the infinite lattice. Write a
-translation-invariant row as $K_{ab}(z)$, where $z\in\ZZ^4$ and $a,b$
-range over fixed finite coordinate sets. For an adjacent-scale row,
-include the finitely many fine residues in these coordinate sets. Suppose
+translation-invariant kernel as $K_{ab}(z)$, where $z\in\ZZ^4$ and $a,b$
+range over fixed finite coordinate sets. For a kernel between adjacent scales,
+include the finitely many positions within the block in these coordinate sets. Suppose
 \[
  \sum_z e^{\sigma|z|_1}|K_{N,ab}(z)|\le C
  \qquad(\sigma>0)
@@ -725,65 +725,65 @@ convergence implies
 \end{equation}
 Indeed each summand is bounded by
 $2C e^{-(\sigma-\tau)|z|_1}$, a summable sequence. If the symbols have
-a specified limit on a dense set of real momenta, any two cluster
+a specified limit on a dense set of real momenta, any two subsequential limits of the
 symbols agree there, hence everywhere by continuity. Fourier inversion
-then identifies every coefficient. Alternatively, agreement of cluster
-matrices on an unbounded sequence of torus sides suffices: for fixed $z$,
+then identifies every coefficient. Alternatively, agreement of the matrices of the subsequential
+limits on an unbounded sequence of side lengths of the torus suffices: for fixed $z$,
 the periodized entry is $\sum_h K(z+nh)$, and its terms with $h\ne0$
 tend to zero as $n\to\infty$. Either criterion proves uniqueness of
-the cluster limit and therefore convergence of the full sequence.
-This argument identifies the lattice-cover coefficients, not merely a
+the subsequential limit and therefore convergence of the full sequence.
+This argument identifies the coefficients on the infinite lattice $\ZZ^4$, not merely a
 matrix on one fixed torus.
 
-\begin{proposition}[Convergence of the selected Gaussian rows]
+\begin{proposition}[Convergence of the selected Gaussian kernels]
 \label{ch05:horizon-limit}
-Fix a scale and the nested schedule just described. The unmodified
-curvature metrics, their inverses, the adjacent one- and two-form
-transports, and the modified metrics of
+Fix a scale and the nested choice of parameters just described. The unmodified
+curvature metrics, their inverses, the operators $W$ and $T$ between adjacent
+scales, and the modified metrics of
 \eqref{ch05:metric-modification} converge in the sense of
 \eqref{ch05:horizon-weighted}, at every width strictly smaller than a
 common positive width available at that scale. The same conclusion
-holds for the specified coordinate exterior lifts, their amended
+holds for the specified coordinate exterior preimages, their amended
 three-form metric in \eqref{ch05:positive-defect}, and their positive
 square roots. It also holds for a positive square root of
 $\widetilde H-cI$ whenever the fixed direct coefficient $c$ is chosen
 strictly below the uniform lower bound of $\widetilde H$.
-All limits are for the actual chosen rows on the cover and their
+All limits are for the chosen kernels on the infinite lattice $\ZZ^4$ and their
 periodizations. No choice of a subsequence, matrix eigenbasis or
 square-root signs is made.
 \end{proposition}
 
 \begin{proof}
-Let $d=N-m$ be the history depth and $M_{d,m}$ its total dilation.
+Let $d=N-m$ be the depth of the sequence of blocking parameters and $M_{d,m}$ its total scaling factor.
 Let $u_{d,m,\mu}(p)$ be the squared modulus of its accumulated directional
-filter, evaluated at $p/M_{d,m}$. Thus $u_{0,m,\mu}=1$; the filter is the
-product of the centered-box and link factors used in
+symbol, evaluated at $p/M_{d,m}$. Thus $u_{0,m,\mu}=1$; the symbol is the
+product of the centered-box factors and the multipliers of the averages along the links used in
 \eqref{ch05:history-filter}. Write $g_{m,\mu}(\theta)$ for the
-single-step directional filter at scale $m$, including the link average
-$r_{L_m}(\theta_\mu)$. Composition gives
+single-step directional symbol at scale $m$, including the multiplier
+$r_{L_m}(\theta_\mu)$ of the average along the link. Composition gives
 \[
  u_{d+1,m,\mu}(p)=|g_{m,\mu}(p/L_m)|^2
                          u_{d,m+1,\mu}(p/L_m).
 \]
 Every factor is an average of unit complex numbers on real momenta,
 possibly multiplied by a unit phase. Its modulus is at most one.
-Induction, with the schedule fixed at each scale, gives
+Induction, with the parameters fixed at each scale, gives
 $0\le u_{d+1,m,\mu}(p)\le u_{d,m,\mu}(p)\le1$.
-Thus the directional filter squares converge at every real $p$, including
+Thus the squared moduli of the directional symbols converge at every real $p$, including
 any fixed reciprocal translate.
 
-The accumulated noise is also convergent. Extending the history adds one
+The accumulated noise is also convergent. Extending the sequence of blocking parameters adds one
 independent noise contribution propagated through all the previously
 fixed coarser steps. The old contributions are unchanged, and every
 new contribution is nonnegative at real momenta. The accumulated noise
-therefore increases with depth. The suffix estimate in
+therefore increases with depth. The estimate of the propagated noise in
 Proposition~\ref{ch05:history-prop} bounds it uniformly, and the noise
 at the last blocking step contributes one. Its limit is finite and at
-least one. This argument concerns the actual nested noise list; it is
-not a monotonicity assertion for arbitrary histories of the same length.
+least one. This argument concerns the nested noise list; it is
+not a monotonicity assertion for arbitrary sequences of blocking parameters of the same length.
 
-For the initial covariance contribution, extend the finite nonprincipal
-alias sum to all $z\in\ZZ^4\setminus\{0\}$ by zero outside the centered
+For the initial covariance contribution, extend the finite sum over nonzero
+aliases to all $z\in\ZZ^4\setminus\{0\}$ by zero outside the centered
 representatives modulo $M=M_{d,m}$. Its summand at an eventually included
 fixed $z$ is
 \[
@@ -793,7 +793,7 @@ The denominator tends to $|p+2\pi z|^2$, which is positive for nonzero
 $z$ and $p$ in the base cube. The alias estimates above dominate these
 summands by $C\prod_\nu(1+|z_\nu|)^{-2}$, independently of depth.
 Dominated convergence proves convergence of the sum. At $p\ne0$ the
-principal summand converges by the same argument without an alias sum.
+summand at the zero alias converges by the same argument without an alias sum.
 Consequently each directional covariance $c_{N,m,\mu}(p)$ has a finite
 limit at real $p\ne0$, bounded below by $b^{-1}$.
 
@@ -802,11 +802,11 @@ The curvature metric is the rational expression
 scalar quotient denominator is
 $\sum_\mu|q_\mu(p)|^2/c_{N,m,\mu}(p)$; its limit is positive away from
 zero. Thus its symbol converges there. The uniform analytic bounds
-already proved and the cluster-limit criterion identify one limit on
-the cover, including at zero. Inverses have the same conclusion.
+already proved and the criterion for subsequential limits identify one limit on
+the infinite lattice, including at zero. Inverses have the same conclusion.
 This avoids assigning a finite massless covariance to the zero mode.
 
-For adjacent transports the ratio $L=L_m$ is fixed as $N$ increases.
+For the operators $W,T$ between adjacent scales the ratio $L=L_m$ is fixed as $N$ increases.
 At $p\ne0$, every one of its finitely many aliases
 $\theta_l=(p+2\pi l)/L$ is a nonzero real momentum. All covariance
 factors in \eqref{ch05:transport-formula} therefore converge.
@@ -814,19 +814,19 @@ The denominators $\rho,\rho_l$ have positive limits, and so does
 \[
  \alpha=\sum_l |m_l|^2\tr D_l:
 \]
-the principal centered-box factor is nonzero on the real base cube and
+the centered-box factor at the zero alias is nonzero on the real base cube and
 $D_l$ has a positive diagonal limit. Hence the finite alias formulas
-and their Fourier reconstruction converge. The previously proved
-uniform exponential bounds identify unique cover limits for $W,T$.
+and their Fourier inversion converge. The previously proved
+uniform exponential bounds identify unique limits on the infinite lattice for $W,T$.
 At exceptional zero momenta uniqueness follows from continuity of
-cluster symbols, rather than division by a vanishing expression.
+subsequential limits of the symbols, rather than division by a vanishing expression.
 
 Products preserve this convergence by the weighted convolution
 inequality, with the fixed finite coordinate multiplicity included.
-For uniformly bounded inverse rows, cluster limits satisfy the inverse
+For uniformly bounded inverse kernels, subsequential limits satisfy the inverse
 identity on each torus; uniqueness of the finite-dimensional inverse
-and recovery from unbounded periods identify their cover limit.
-The coordinate exterior lifts used in \eqref{ch05:defect-lifts} are
+and the recovery of a kernel on $\ZZ^4$ from its periodizations along unbounded periods identify their limit on the infinite lattice.
+The coordinate exterior preimages used in \eqref{ch05:defect-lifts} are
 also continuous after a width decrease. Each elementary operation is
 coordinate evaluation or a divided difference
 \[
@@ -834,29 +834,29 @@ coordinate evaluation or a divided difference
 \]
 Its numerator converges, its denominator is nonzero on a dense set,
 and its smaller-width bound was proved in the exterior construction.
-The cluster criterion consequently applies through the finitely many
-coordinate operations. This requires the fixed coordinate lift of that
+The criterion for subsequential limits consequently applies through the finitely many
+coordinate operations. This requires the fixed coordinate preimage of that
 construction, not a fresh arbitrary solution of the exterior identity.
 
 It follows that $C_0,S,D_c$ and $D_c^*R_0D_c$ in
 \eqref{ch05:positive-defect} converge, as do the modified metrics and
 inverses. Finally consider one of the stated positive square roots.
-Its uniform analytic bound gives cluster rows. On each finite torus
+Its uniform analytic bound gives subsequential limits of the kernels. On each finite torus
 their matrices are positive semidefinite and have the same square,
 namely the limit of the underlying positive matrix. The positive
 semidefinite square root is unique by the finite-dimensional spectral
-theorem. Thus the cluster matrices agree on every torus, and period
-recovery identifies the cover row. This proves convergence for the
+theorem. Thus the matrices of the subsequential limits agree on every torus, and the
+recovery from the periodizations identifies the kernel on the infinite lattice. This proves convergence for the
 chosen roots themselves, not merely for their squares.
 \end{proof}
 
-In particular all canonical path-row coefficients obtained from these
-rows converge, with a strictly positive gap between the available width and
+In particular all canonical path-component coefficients obtained from these
+kernels converge, with a strictly positive gap between the available width and
 the width used to sum paths. Finite products, fixed exterior operations
 and the fixed positive factorizations preserve this conclusion. The
-actual block average correction introduced below is a fixed finite-range
-row at the selected scale, so its application to the convergent
-straight transport also preserves convergence. These are statements
+gradient correction introduced below for the averaging operation is a fixed finite-range
+operator at the selected scale, so its application to the convergent
+operator $W$ built with the linear averaging operator also preserves convergence. These are statements
 about the quadratic data. They do not imply cutoff continuity of the
 nonlinear activity arrays or of marked integral maps; those require
 their own stability arguments.
@@ -899,7 +899,7 @@ statement is dimension independent.
 
 In weighted Fourier spaces the weights often involve
 $|q(\operatorname{Re}p)|$ and are not holomorphic. The preceding
-argument is justified if, at every real anchor $x$, the matrices
+argument is justified if, at every real base point $x$, the matrices
 defining the weighted norms have holomorphic replacements in a
 fixed neighborhood of $x$, uniformly equivalent to the original
 norms, and coinciding with them on the vertical slice
@@ -909,15 +909,15 @@ alone does not justify differentiating the weighted matrix.
 This distinction is essential when the weight degenerates with a
 scale parameter.
 
-\section{The actual block average and the forest coordinates}
+\section{The averaging operation and the coordinates of the block axial gauge}
 \label{ch05:actual-coordinates}
 
 We now identify the nonlinear coordinates behind the Gaussian calculation.
 Fix $j,L$, a coarse period $s\ge100(j+8)$, and in each centered block
 $Ly+\mathbb B_{(L-1)/2}$ a spanning tree rooted at $Ly$. Trees contain
-only internal block edges. Denote by $\iota_F$ extension from free-edge
+only internal block edges. Denote by $\iota_F$ extension from non-tree-edge
 coordinates to all fine edges, with value zero on tree edges. For coarse
-links $V$, their replica is
+links $V$, their pull-back under the parent map is
 \[
  (\operatorname{rep}V)_e=
  \begin{cases}1,&\operatorname{parent}(e_-)=\operatorname{parent}(e_+),\\
@@ -926,32 +926,32 @@ links $V$, their replica is
  \end{cases}
 \]
 The centered-block convention and odd $L$ make these the only possibilities
-for a positive fine edge in direction $\mu$. In particular the replica
-is one on every tree edge. The actual forest chart is
+for a positive fine edge in direction $\mu$. In particular this pull-back
+is one on every tree edge. The chart of the block axial gauge, the gauge in which the links of the chosen spanning tree of each block equal the identity, is
 \begin{equation}
  U(v,\psi)_e=\exp((\iota_F\psi)_e)
                          (\operatorname{rep}\exp v)_e.
  \label{ch05:forest-chart}
 \end{equation}
-It is a chart on the tree slice, not a choice of independent variables on
-tree edges. Its derivative at the identity is exactly
+It is a chart on this gauge slice, not a choice of independent variables on
+tree edges. Any spanning tree rooted at the block center is allowed here, where Ba{\l}aban has the tree of his contours $\Gamma_{y,x}$ rooted at a block corner; the gauge is used here as a chart, and it is a different construction from the axial gauge of the local gauge transformations of Chapter~\ref{ch04:blocking}. The derivative of the chart at the identity is exactly
 \begin{equation}
  DU(0,0)[h,z]=\operatorname{rep}h+\iota_Fz,
  \qquad DU(0,0)[0,z]=\iota_Fz.
  \label{ch05:forest-derivative}
 \end{equation}
 Use the orthonormal coordinates of Section~\ref{ch01:gauge} for the trace metric. Thus
-$\|\iota_Fz\|_2=\|z\|_2$ in counting norms. This identifies the vertical
+$\|\iota_Fz\|_2=\|z\|_2$ in unnormalized $\ell^2$ norms. This identifies the vertical
 coordinates used by the Hessian with the arrays in the tree inequality
 below; no volume-dependent coordinate conversion occurs.
 
-\subsection{A common analytic branch for all local labels}
+\subsection{A common analytic branch for all values of the auxiliary index}
 
-The minimizing frame and block average of Chapter~\ref{ch04:blocking} are
-real analytic near the identity. For the frame this follows directly from
+The minimizing local gauge transformation and the averaging operation of Chapter~\ref{ch04:blocking} are
+real analytic near the identity. For the gauge transformation this follows directly from
 its chart equation: its quadratic objective at zero is
 $\tfrac12\operatorname{av}_{r,r'}|h_r-h_{r'}|^2$, positive definite after
-$h_0=0$ is imposed. For the block average, its Hessian in the group variable
+$h_0=0$ is imposed. For the averaging operation, its Hessian in the group variable
 is the identity. Complexify these finite-dimensional real analytic chart
 equations and apply the analytic implicit-function theorem
 \cite[Theorem 1.3.8]{LeblSCV}. The resulting critical points are the unique
@@ -964,17 +964,17 @@ on which these analytic extensions and their derivatives are bounded.
 There are finitely many directions and local tree shapes at fixed $L$;
 take their common radius and bounds. Periodic pullback to a patch has
 supremum norm at most one, so these bounds are independent of $s$.
-Decrease this radius until every loop test and minimum-cost test is
-strictly on its minimizing branch. Every local label then selects the
-same frame and block average as a function of the full fine field on the
+Decrease this radius until every loop condition and every condition on the minimum of the objective is
+strictly on its minimizing branch. Every local value of the auxiliary index $\alpha$ of Chapter~\ref{ch04:blocking} then selects the
+same local gauge transformation and averaging operation as a function of the full fine field on the
 whole common ball. Redundant uniform branch masses are constant there.
 This is equality of the local action functions before stationarity is
-imposed, not merely equality along a stationary graph. It concerns the
+imposed, not merely equality along the graph of a critical-configuration map. It concerns the
 uncut action; shrinking smooth cutoff plateaux are treated separately.
 
 Let $a$ be an infinitesimal fine field. Write $I_a(r\to r';o)$ for its
-signed sum along a coordinate path in the frame patch at $Ly$. The
-linearized minimizing-frame equation gives
+signed sum along a coordinate path in the patch of the local gauge transformation at $Ly$. The
+linearized equation for the minimizing local gauge transformation gives
 \begin{align}
  \tau_y(r)&=-\operatorname{av}_{r',o}I_a(Ly+r\to Ly+r';o),\notag\\
  H_{y,r}(a)&=\tau_y(r)-\tau_y(0),&
@@ -983,29 +983,29 @@ linearized minimizing-frame equation gives
 \end{align}
 Indeed its equation is $H_r-\operatorname{av}_{r'}H_{r'}
 =-\operatorname{av}_{r',o}I_a(r\to r';o)$, and $H_0=0$ fixes the additive
-constant. Differentiating the actual connector and then its block average
+constant. Differentiating the gauge-transformed parallel transporter and then the averaging operation applied to it
 therefore yields
 \begin{equation}
  \mathcal Q a=M a+d_{0,c}R a,
  \qquad \mathcal Q d_{0,f}\phi=d_{0,c}(\phi|_{L\Lambda_s}).
  \label{ch05:actual-Q}
 \end{equation}
-Here $M$ is exactly the straight length-$L$ average with the convolution
+Here $M$ is exactly the linear averaging operator, the straight length-$L$ average with the convolution
 weights used in \eqref{ch05:alias-recursion}. The second identity follows
-also by differentiating gauge covariance at block roots. Each route has
+also by differentiating gauge covariance at block roots. Each contour has
 length $O_j(L)$; hence $R$ has finite coarse range and absolute row sum
 at most $C_jL$. These statements include the root normalization. Dropping
 it would change $\mathcal Q$.
 
-\subsection{The tree comparison and the actual Hessian}
+\subsection{The estimates in the block axial gauge and the Hessian}
 
 For a fine edge $e$, join its endpoints to their block roots along the
-chosen trees. In the tree slice the resulting walk has transport $U_e$.
+chosen trees. In the block axial gauge the resulting contour has contour variable $U_e$.
 It lies in one or two adjacent blocks and has length at most $2L^4-1$.
-In the macro axial gauge of Section~\ref{ch04:predictor-geometry}, its
+In the axial gauge on the macro-box of Section~\ref{ch04:predictor-geometry} (the axial gauge of Chapter~\ref{ch04:blocking}, not the block axial gauge), its
 distance from the identity is bounded by this length times the sum of bond distances from the identity in the macro-box. The
-first-power frame estimate controls the two root-to-frame discrepancies;
-the block average estimate controls the coarse root-to-root transport. Thus
+estimate for the local gauge transformations, linear in the plaquette sum, controls the discrepancy at each of the two roots from its local gauge transformation;
+the estimate for the averaging operation controls the coarse root-to-root contour variable. Thus
 \begin{equation}
  \chi\bigl(U_e(\operatorname{rep}V)_e^{-1}\bigr)
  \le C_{j,L}\mathcal P_y(U)
@@ -1013,12 +1013,12 @@ the block average estimate controls the coarse root-to-root transport. Thus
                             \chi(V_{y,\mu}Q_{y,\mu}(U)^{-1}).
  \label{ch05:nonlinear-tree}
 \end{equation}
-For an internal edge the walk closes at its root and only the first term
-is needed. For a crossing edge, insert the block average between the two
-root frames and use the triangle inequality for the normalized Hilbert--Schmidt distance. The endpoint errors
+For an internal edge the contour closes at its root and only the first term
+is needed. For a crossing edge, insert the value of the averaging operation between the
+local gauge transformations at the two roots and use the triangle inequality for the normalized Hilbert--Schmidt distance. The endpoint errors
 are bounded by the sum in \eqref{ch04:frame-first-power}, so this step
-requires no pointwise frame estimate not already proved. The constant is
-allowed to depend on $L$; the stronger pre-$L$ factor in
+requires no pointwise estimate of the local gauge transformation not already proved. The constant is
+allowed to depend on $L$; the stronger factor independent of $L$ in
 \eqref{ch04:macro-comparison} is not required for this use.
 
 Apply \eqref{ch05:nonlinear-tree} to $U=\exp(\epsilon a)$ with $a$ zero
@@ -1042,23 +1042,23 @@ Both constants are uniform in the period and in the allowed trees.
 The use of periodic lifts preserves the bounded multiplicity.
 
 Let $\mathcal A_f$ be the uncut fine action, without the common inverse
-coupling or inherited loop action, and set
+coupling or the $\beta$-independent quadratic term of the path action, and set
 \begin{equation}
  f(v,\psi)=\mathcal A_f(U(v,\psi))
        +b\sum_{e\text{ coarse}}w\bigl((\exp v)_e
                                    Q_e(U(v,\psi))^{-1}\bigr).
  \label{ch05:actual-action}
 \end{equation}
-Assume its actual quadratic Taylor coefficient is
+Assume its quadratic Taylor coefficient is
 $K_f=d_{1,f}^*H_fd_{1,f}$ with $H_f\ge\varepsilon I>0$. This coefficient
-is read from the same path rows in $\mathcal A_f$: each quadratic path
-square contributes the square of its linearized curvature row, and atoms
+is read from the same path components in $\mathcal A_f$: each quadratic path
+square contributes the square of its linearized curvature component, and atoms
 of curvature degree at least three contribute nothing at second order.
 Identifying their sum with a chosen metric $H_f$ is an exact coefficient
 condition on the incoming path action.
 
 The first derivatives of both terms of \eqref{ch05:actual-action} vanish
-at the identity. Therefore the second derivative of the forest chart does
+at the identity. Therefore the second derivative of the chart of the block axial gauge does
 not enter its Hessian. By \eqref{ch05:forest-derivative}, for
 $a=\operatorname{rep}h+\iota_Fz$ and
 $a'=\operatorname{rep}h'+\iota_Fz'$, it is precisely
@@ -1068,25 +1068,25 @@ $a'=\operatorname{rep}h'+\iota_Fz'$, it is precisely
            +b\langle h-\mathcal Qa,h'-\mathcal Qa'\rangle.
  \label{ch05:actual-hessian}
 \end{equation}
-No derivative of the nonlinear block average beyond its actual first
+No derivative of the averaging operation beyond its first
 derivative is missing here: its residual vanishes at zero. In particular,
 \begin{equation}
  D_\psi^2f(0,0)\ge
        \frac{\min(\varepsilon,b)}{1+B_{j,L}+C_{j,L}}I.
  \label{ch05:actual-gap}
 \end{equation}
-This proves the vertical gap for the actual forest chart, rather than
+This proves the vertical gap for the chart of the block axial gauge, rather than
 assuming it from the flat Fourier calculation.
 
-\subsection{A smooth representative of the stationary tangent}
+\subsection{A smooth representative of the linearization of the critical configuration}
 \label{ch05:actual-tangent}
 
-Let $W_s$ denote the straight-average transport already constructed in
+Let $W_s$ denote the operator $W$ built with the linear averaging operator $M$, already constructed in
 Section~\ref{ch05:transports}. Its identities in physical coordinates are
 \[
  K_fW_s=M^*K_c,\qquad MW_s=I-b^{-1}K_c.
 \]
-These hold for the same incoming metric and penalty as
+These hold for the same incoming metric and penalty parameter as
 \eqref{ch05:actual-hessian}. Since $K_cd_{0,c}=0$, replacing $M$ by
 $\mathcal Q=M+d_{0,c}R$ does not change the right side of the first
 identity. The second identity does require a gradient correction.
@@ -1115,13 +1115,13 @@ By \eqref{ch05:actual-Q},
  \qquad d_{1,f}W_a=d_{1,f}W_s.
  \label{ch05:actual-transport-identities}
 \end{equation}
-Thus $W_a$ minimizes the actual quadratic energy and has the same reduced
+Thus $W_a$ minimizes the quadratic energy built with $\mathcal Q$ and has the same reduced
 quadratic form $K_c$. This holds also on constant modes: $E$ extends
 constants to constants, gradients have zero curl, and no inverse of a
 zero-momentum Laplacian has been introduced.
 
 The correction preserves the needed smooth interpolation bounds. The
-finite-range row $R$ has size $C_jL$ and the already proved kernel of
+finite-range operator $R$ has size $C_jL$ and the already proved kernel of
 $W_s$ has size $C_jL^{-1}$ with exponential coarse decay. Their composition
 $RW_s$ therefore has an $O_j(1)$ exponentially decaying coarse kernel.
 Applying $r+1$ fine differences to $E$ gives
@@ -1141,29 +1141,29 @@ potential is zero at every block root and makes all tree edges vanish.
 It is obtained successively along each tree. Such a gradient leaves
 $\mathcal QW_av$ unchanged by \eqref{ch05:actual-Q}, and leaves its curl
 unchanged. Write the resulting representative as $W_Fv$. Coercivity
-\eqref{ch05:actual-gap} makes it the unique minimizer in the forest slice.
-Once a stationary graph $\psi=\rho(v)$ has been constructed, differentiating
+\eqref{ch05:actual-gap} makes it the unique minimizer in the block axial gauge.
+Once a critical-configuration map $\psi=\rho(v)$ has been constructed, differentiating
 its equation and using \eqref{ch05:actual-hessian} proves
 \begin{equation}
  \operatorname{rep}v+\iota_FD\rho(0)v=W_Fv.
  \label{ch05:stationary-tangent}
 \end{equation}
-The smooth representative $W_a$ and the forest representative $W_F$ are
+The smooth representative $W_a$ and the representative $W_F$ in the block axial gauge are
 distinct. Estimate~\eqref{ch05:actual-bridge} is asserted for $W_a$, not
-for tree coordinates. Gauge-invariant quadratic insertions see the same
+for the coordinates of the block axial gauge. Gauge-invariant quadratic insertions see the same
 curl in either representative.
 
-\section{A stationary background on a uniform neighborhood}
+\section{A critical configuration on a uniform neighborhood}
 \label{ch05:stationary}
 
 We first state the quantitative implicit-function estimate needed
 for the nonlinear action. Let $x$ be the coarse coordinates and
-$y$ the free fine coordinates after gauge fixing. Both carry the
-supremum norm. Write $f(x,y)$ for the action including the block
-penalty, and $F(x,y)=D_yf(x,y)$.
+$y$ the fine coordinates on the non-tree links after gauge fixing. Both carry the
+supremum norm. Write $f(x,y)$ for the action including the
+penalty term of the block kernel, and $F(x,y)=D_yf(x,y)$.
 All norms below are operator norms induced by these supremum norms.
 
-\begin{proposition}[Uniform stationary graph]
+\begin{proposition}[Uniform critical-configuration map]
 \label{ch05:stationary-prop}
 Suppose $F$ is holomorphic on a product neighborhood
 $\|x\|_\infty<r_0$, $\|y\|_\infty<r_0$, with $F(0,0)=0$.
@@ -1201,7 +1201,7 @@ $\rho$, not holomorphy.
 In applications the operator bounds in this proposition should be
 deduced from local derivative estimates before any dimension
 dependent conversion of norms. For example, suppose each coarse or fine coordinate
-has an anchor $a_i$, the total number of coordinates anchored at any
+has a site $a_i$ attached to it, the total number of coordinates attached to any
 site is bounded uniformly in the volume, and, for $2\le q\le N$, every rooted derivative
 satisfies
 \[
@@ -1209,9 +1209,9 @@ satisfies
  \le C\exp\left(-\eta\sum_{h=1}^q d(a_{i_t},a_{i_h})\right)
  \quad\text{for every }t.
 \]
-The lattice shell sum
+The sum
 $S_\eta=\sup_v\sum_i e^{-\eta d(v,a_i)}$ is bounded uniformly in
-the torus size. Summing the second derivative gives $B\le CS_\eta$;
+the side length of the torus. Summing the second derivative gives $B\le CS_\eta$;
 summing the third gives the Hessian Lipschitz bound
 $CS_\eta^2$. A real Hessian gap together with exponential locality
 supplies the required $J$ by the previous section.
@@ -1231,7 +1231,7 @@ $D\log\det H[h]=\tr(H^{-1}DH[h])$.
 
 \subsection{Supplying the local derivative estimates}
 
-We retain the distinction from Section~\ref{ch05:actual-tangent}: $W_a$ is the smooth representative of the actual stationary tangent, whereas $W_F$ is its representative in the forest coordinates. They have the same curvature, but the fine-difference bounds apply to $W_a$.
+We retain the distinction from Section~\ref{ch05:actual-tangent}: $W_a$ is the smooth representative of the linearization $W$ of the critical configuration, whereas $W_F$ is its representative in the coordinates of the block axial gauge. They have the same curvature, but the fine-difference bounds apply to $W_a$.
 
 The derivative hypotheses have a direct origin in the
 exponentially weighted path expansion. We spell it out because
@@ -1260,7 +1260,7 @@ length $\ell$ has complex modulus at most $Ce^{Cr\ell}$.
 Choose $r$ so that $Cr<\sigma/4$. Differentiating $q$ times
 selects at most $C_q(1+\ell)^q$ positions; the same estimates
 hold on the smaller complex ball. If the differentiated
-coordinates have prescribed anchors $a_{i_1},\ldots,a_{i_q}$,
+coordinates have prescribed sites $a_{i_1},\ldots,a_{i_q}$,
 connectedness implies
 \[
  \sum_{h=1}^q d(a_{i_t},a_{i_h})\le C_R q(1+\ell)
@@ -1271,7 +1271,7 @@ maps, fixed at this block ratio. A fraction of the exponential
 weight in \eqref{ch05:path-budget} controls this distance, and a
 further fraction absorbs the polynomial $(1+\ell)^q$.
 The remaining exponential weight bounds the sum over possible
-roots of a term visiting a fixed anchor: the number of roots
+roots of a term visiting a fixed coordinate site: the number of roots
 within distance $C_R(1+\ell)$ grows only polynomially in $\ell$.
 It follows, for every fixed $N$, that
 \[
@@ -1280,17 +1280,17 @@ It follows, for every fixed $N$, that
                  \sum_h d(a_{i_t},a_{i_h})\right),
  \qquad 2\le q\le N ,
 \]
-on a common complex ball. Block penalties and
+on a common complex ball. Penalty terms of the block kernel and
 local coordinate terms add finite-range contributions satisfying
 the same estimate. Smooth cutoffs are not being analytically
 continued: the action here is the uncut action whose germ at
 zero defines the background.
 
-For the actual forest chart \eqref{ch05:forest-chart}, the deterministic
-tree comparison and the Hessian identification have already been proved
+For the chart \eqref{ch05:forest-chart} of the block axial gauge, the deterministic
+Poincar\'e-type inequality in that gauge and the Hessian identification have already been proved
 in \eqref{ch05:tree-comparison}--\eqref{ch05:actual-gap}. The chosen
-block average is analytic on a common fixed-patch ball, and all its redundant
-local labels agree there as functions of the full field.
+averaging operation is analytic on a common fixed-patch ball, and all its redundant
+local values of the index $\alpha$ select the same operation there, as a function of the full field.
 The derivative bounds above give exponential locality of that
 Hessian. Section~\ref{ch05:inverse} now supplies a supremum-norm
 bound for its inverse independent of volume; a sufficiently
@@ -1298,34 +1298,34 @@ small complex perturbation preserves this bound.
 Proposition~\ref{ch05:stationary-prop} therefore applies on a
 uniform neighborhood.
 
-This argument proves the uniform stationary construction for
+This argument proves the uniform construction of the critical configuration for
 uncut path actions satisfying \eqref{ch05:path-budget}, the
-actual incoming quadratic coefficient condition in
-\eqref{ch05:actual-hessian}. The actual block average and forest coordinates
+hypothesis on the quadratic part of the incoming action in
+\eqref{ch05:actual-hessian}. The averaging operation and the coordinates of the block axial gauge
 supply the local analytic-coordinate hypotheses and the deterministic
 comparison \eqref{ch05:tree-comparison}. It does not require
 a later matching theorem. If two local descriptions agree
 as functions on the same coordinate neighborhood, uniqueness
-makes their stationary graphs agree there.
-Equation~\eqref{ch05:stationary-tangent} identifies the tangent with
-the forest representative of the actual corrected transport $W_a$.
-The stationary chain rule and \eqref{ch05:actual-transport-identities}
-give the coarse quadratic form as the Hessian of the reduced action. Equality of actions only on a
-previously selected graph would not suffice for this argument.
+makes their critical-configuration maps agree there.
+Equation~\eqref{ch05:stationary-tangent} identifies the linearization of the critical configuration with
+the representative $W_F$, in the block axial gauge, of the corrected operator $W_a$.
+The chain rule at the critical configuration and \eqref{ch05:actual-transport-identities}
+give the coarse quadratic form as the Hessian of the reduced action. Equality of actions only on the
+graph of one previously selected critical-configuration map would not suffice for this argument.
 
 The constants are uniform in the period after the block ratio,
 smoothing order and path bound have been fixed. Uniformity in
 an arbitrary block ratio is a separate weighted-norm estimate;
 the Euclidean tree gap above is allowed to depend on $L$.
 
-\begin{proposition}[Uniform actual stationary chart]
+\begin{proposition}[Uniform chart for the critical configuration]
 \label{ch05:actual-stationary}
 Fix the group, $j,L,b$, an exponential path bound
-\eqref{ch05:path-budget}, and the actual incoming quadratic metric with
+\eqref{ch05:path-budget}, and the incoming quadratic metric with
 $H_f\ge\varepsilon I>0$. For the uncut action
 \eqref{ch05:actual-action} there are radii $r_V,r_\psi>0$ and constants
 $c,J,C_\rho>0$, independent of the allowed period and block trees, such
-that its unique stationary graph $\rho$ satisfies
+that its unique critical-configuration map $\rho$ satisfies
 \[
  \|\rho(v)\|_\infty<r_\psi/2,
  \qquad \|D\rho(v)\|_{\infty\to\infty}\le C_\rho
@@ -1333,10 +1333,10 @@ that its unique stationary graph $\rho$ satisfies
 \]
 On the corresponding smaller real product chart the vertical Hessian is
 at least $cI$ and its inverse has supremum operator norm at most $J$.
-All local tag descriptions define the same action and stationary graph
+All local descriptions by a value of the index $\alpha$ define the same action and critical-configuration map
 there. For every prescribed finite order $N$, ordinary derivatives of
-$f$ through order $N$, of $\rho$ through order $N-1$, and of the centered
-log determinant of its vertical Hessian through order $N-2$ are bounded
+$f$ through order $N$, of $\rho$ through order $N-1$, and of the
+log determinant of its vertical Hessian, with its value at $v=0$ subtracted, through order $N-2$ are bounded
 by fixed polynomials in the total coordinate number $n$. The radii and
 first-derivative bound do not acquire a factor depending on $n$.
 \end{proposition}
@@ -1347,11 +1347,11 @@ $\|H(w)-H(0)\|_{2\to2}\le C\|w\|_\infty$ by row and column sums.
 Reduce the common ball until this is at most half the gap in
 \eqref{ch05:actual-gap}. The weighted inverse argument then applies
 uniformly throughout that real ball. Proposition~\ref{ch05:stationary-prop}
-gives the graph and its volume-independent Lipschitz constant. Repeated
+gives the critical-configuration map and its volume-independent Lipschitz constant. Repeated
 implicit differentiation isolates $H D^k\rho$ at order $k$; every other
 term involves lower derivatives of $\rho$ and derivatives of $f$ of order
 at most $k+1$. Converting bounded coordinate entries to ordinary
-multilinear norms costs only a fixed power of $n$ at fixed order. Induction
+multilinear norms loses only a fixed power of $n$ at fixed order. Induction
 therefore proves the asserted polynomial bounds. The identities
 $D H^{-1}=-H^{-1}(DH)H^{-1}$ and
 $D\log\det H=\tr(H^{-1}DH)$ give the determinant assertion, with one
@@ -1365,24 +1365,24 @@ so that the stated determinant margin is retained.
 \section{Scope of the completed Gaussian construction}
 \label{ch05:pending}
 
-For each fixed smoothing order, the finite-history construction
+For each fixed smoothing order, the construction for finite sequences of blocking parameters
 now provides uniformly analytic positive curvature metrics,
-the specified one- and two-form transports, and a positive
+the specified operators $W$ and $T$, and a positive
 three-form factor for the amended curvature defect. Its
 parameter choices precede the choice of the scale sequence.
-The nonlinear stationary graph is supplied for each incoming
-path action with the explicit local bound and actual quadratic
-coefficient condition just stated; its tree comparison and block average
-branch compatibility are now proved for the chosen block kernel.
+The nonlinear critical-configuration map is supplied for each incoming
+path action with the explicit local bound and the hypothesis on the quadratic
+part just stated; its Poincar\'e-type inequality in the block axial gauge and the
+branch compatibility of the averaging operation are now proved for the chosen block kernel.
 
-For the nested selected schedule, Proposition~\ref{ch05:horizon-limit}
-now also proves fixed-scale convergence of the actual quadratic rows
-at every smaller exponential width. For the actual nonlinear
-step, the chosen path representation and block average must be
-checked against \eqref{ch05:path-budget} and the actual quadratic
-coefficient condition \eqref{ch05:actual-hessian}. The common minimizing
+For the nested selected choice of parameters, Proposition~\ref{ch05:horizon-limit}
+now also proves fixed-scale convergence of the quadratic kernels
+at every smaller exponential width. For the nonlinear
+step, the chosen path representation and averaging operation must be
+checked against \eqref{ch05:path-budget} and the hypothesis on the quadratic
+part \eqref{ch05:actual-hessian}. The common minimizing
 branch and equality of its local descriptions have been checked above. These are precise
-interface conditions, not consequences of Gaussian algebra.
+standing hypotheses, not consequences of Gaussian algebra.
 These conditions will be imposed on the admissible path action and
 retained by the nonlinear step; a Gaussian identity alone would not
 justify dropping them.
