@@ -11,7 +11,7 @@ which survive changes of the lattice size and of the blocking sequence (the list
 
 We first fix the normalization of the exact identities. We then isolate the
 additional hypotheses for uniform analytic continuation and for a
-critical configuration. The general block transformation algebra is
+critical configuration. The general algebra of renormalization transformations is
 standard; see Ba{\l}aban--Feldman--Kn\"orrer--Trubowitz
 \cite{BalabanFeldmanKnoerrerTrubowitz2016}. The construction of local
 propagators and backgrounds for lattice gauge theory originates in
@@ -81,7 +81,7 @@ A massless covariance at zero momentum is not defined by writing
 $1/\lambda(0)$. Conversely, an identity between quadratic forms can
 remain valid on a space where no normalized massless Gaussian exists.
 
-\section{The exact Gaussian block transformation}
+\section{The exact Gaussian renormalization transformation}
 \label{ch05:schur}
 
 Let $E_f,E_c$ be real finite-dimensional inner-product spaces, $Q:E_f\to
@@ -111,7 +111,7 @@ fluctuation covariance is $A^{-1}$. The Schur-complement formulas give
  \label{ch05:completion}
 \end{align}
 These are the usual finite-dimensional Gaussian identities, or the
-real quadratic specialization of the block transformation identities in
+real quadratic specialization of the identities for renormalization transformations in
 \cite{BalabanFeldmanKnoerrerTrubowitz2016}; no separate proof is needed.
 The accompanying normalization is
 \[
@@ -150,8 +150,8 @@ its penalty term is exactly the coarse quadratic action.
 
 To check the scaling factor in the covariance recursion, take
 $\Lambda_{Ls}$ as fine lattice and $\Lambda_s$ as coarse lattice, with
-odd $L\ge3$. Let $w(z)$ be a finitely supported real averaging kernel
-of total mass one, periodized on the fine lattice, and use the linear averaging operator
+odd $L\ge3$. Let $w(z)$ be a finitely supported real averaging weight
+with sum one, periodized on the fine lattice, and use the linear averaging operator
 \[
  (Ma)_\mu(y)=\sum_z w(z)\sum_{r=0}^{L-1}
                     a_\mu(Ly+z+re_\mu).
@@ -203,7 +203,7 @@ where $j$ is the integer smoothing order. Centering makes
 $\widehat w_L$ even on real and complex momenta.
 The recurrence then contains $\widehat w_L(\theta_z)^{2j}$.
 This choice fixes an auxiliary covariance. Identification with the
-quadratic form of a particular gauge-equivariant averaging operation additionally
+quadratic form of a particular gauge-covariant averaging operation additionally
 requires checking that its linearization differs from $M$ only by an
 appropriate gradient, and that the chosen treatment of zero modes agrees.
 Figure~\ref{ch05:fig-fourier-aliases} shows the centered box multiplier
@@ -728,11 +728,11 @@ $2C e^{-(\sigma-\tau)|z|_1}$, a summable sequence. If the symbols have
 a specified limit on a dense set of real momenta, any two subsequential limits of the
 symbols agree there, hence everywhere by continuity. Fourier inversion
 then identifies every coefficient. Alternatively, agreement of the matrices of the subsequential
-limits on tori of unbounded side length suffices (the \emph{periodization criterion}): for fixed $z$,
+limits on a sequence of tori with unbounded side lengths suffices (the \emph{periodization criterion}): for fixed $z$,
 the periodized entry is $\sum_h K(z+nh)$, and its terms with $h\ne0$
 tend to zero as $n\to\infty$. Either criterion proves uniqueness of
 the subsequential limit and therefore convergence of the full sequence.
-This argument identifies the infinite-lattice coefficients, not merely a
+This argument identifies the coefficients on the infinite lattice $\ZZ^4$, not merely a
 matrix on one fixed torus.
 
 \begin{proposition}[Convergence of the selected Gaussian kernels]
@@ -748,7 +748,7 @@ three-form metric in \eqref{ch05:positive-defect}, and their positive
 square roots. It also holds for a positive square root of
 $\widetilde H-cI$ whenever the fixed direct coefficient $c$ is chosen
 strictly below the uniform lower bound of $\widetilde H$.
-All limits are for the chosen infinite-lattice kernels and their
+All limits are for the chosen kernels on the infinite lattice $\ZZ^4$ and their
 periodizations. No choice of a subsequence, matrix eigenbasis or
 square-root signs is made.
 \end{proposition}
@@ -757,7 +757,7 @@ square-root signs is made.
 Let $d=N-m$ be the depth of the blocking sequence and $M_{d,m}$ its total scaling factor.
 Let $u_{d,m,\mu}(p)$ be the squared modulus of its accumulated directional
 symbol, evaluated at $p/M_{d,m}$. Thus $u_{0,m,\mu}=1$; the symbol is the
-product of the centered-box factors and the link multipliers used in
+product of the link multipliers and the centered-box factors of
 \eqref{ch05:history-filter}. Write $g_{m,\mu}(\theta)$ for the
 single-step directional symbol at scale $m$, including the link multiplier
 $r_{L_m}(\theta_\mu)$. Composition gives
@@ -825,7 +825,7 @@ Products preserve this convergence by the weighted convolution
 inequality, with the fixed finite coordinate multiplicity included.
 For uniformly bounded inverse kernels, subsequential limits satisfy the inverse
 identity on each torus; uniqueness of the finite-dimensional inverse
-and the periodization criterion identify their infinite-lattice limit.
+and the periodization criterion identify their limit on the infinite lattice $\ZZ^4$.
 The coordinate exterior preimages used in \eqref{ch05:defect-lifts} are
 also continuous after a width decrease. Each elementary operation is
 coordinate evaluation or a divided difference
@@ -856,9 +856,9 @@ the width used to sum paths. Finite products, fixed exterior operations
 and the fixed positive factorizations preserve this conclusion. The
 gradient correction introduced below for the averaging operation is a fixed finite-range
 operator at the selected scale, so its application to the convergent
-operator $W$ of Section~\ref{ch05:transports} also preserves convergence. These are statements
+operator $W=W_s$ of Section~\ref{ch05:transports} also preserves convergence. These are statements
 about the quadratic data. They do not imply cutoff continuity of the
-nonlinear activity arrays or of marked integral maps; those require
+localized terms and large-field activities of the nonlinear step, or of marked integral maps; those require
 their own stability arguments.
 
 \section{Uniform inverse bounds: the hypotheses that matter}
@@ -899,7 +899,7 @@ statement is dimension independent.
 
 In weighted Fourier spaces the weights often involve
 $|q(\operatorname{Re}p)|$ and are not holomorphic. The preceding
-argument is justified if, at every real base point $x$, the matrices
+argument is justified if, at every real point $x$, the matrices
 defining the weighted norms have holomorphic replacements in a
 fixed neighborhood of $x$, uniformly equivalent to the original
 norms, and coinciding with them on the vertical slice
@@ -965,15 +965,15 @@ There are finitely many directions and local tree shapes at fixed $L$;
 take their common radius and bounds. Periodic pullback to a patch has
 supremum norm at most one, so these bounds are independent of $s$.
 Decrease this radius until every loop condition and every condition on the minimum of the objective is
-strictly on its minimizing branch. Every local value of the auxiliary index $\alpha$ of Chapter~\ref{ch04:blocking} then selects the
+strictly on its minimizing branch. Every local value of the auxiliary index $\alpha$ of Chapter~\ref{ch04:blocking} then specifies the
 same local gauge transformation and averaging operation as a function of the full fine field on the
-whole common ball. Redundant uniform branch masses are constant there.
+whole common ball. The uniform probability weights of its redundant values are constant there.
 This is equality of the local action functions before stationarity is
 imposed, not merely equality along the graph of a critical-configuration map. It concerns the
 uncut action; shrinking smooth cutoff plateaux are treated separately.
 
 Let $a$ be an infinitesimal fine field. Write $I_a(r\to r';o)$ for its
-signed sum along a coordinate path in the patch of the local gauge transformation at $Ly$. The
+signed sum along a coordinate path in the patch of the averaging operation at $y$. The
 linearized equation for the minimizing local gauge transformation gives
 \begin{align}
  \tau_y(r)&=-\operatorname{av}_{r',o}I_a(Ly+r\to Ly+r';o),\notag\\
@@ -990,11 +990,11 @@ therefore yields
  \qquad \mathcal Q d_{0,f}\phi=d_{0,c}(\phi|_{L\Lambda_s}).
  \label{ch05:actual-Q}
 \end{equation}
-Here $M$ is exactly the linear averaging operator, the straight length-$L$ average with the convolution
+Here $M$ is exactly the linear averaging operator, the straight length-$L$ average with the averaging
 weights used in \eqref{ch05:alias-recursion}. The second identity follows
-also by differentiating gauge covariance at block roots. Each contour has
+also by differentiating gauge covariance at the coarse endpoints. Each contour has
 length $O_j(L)$; hence $R$ has finite coarse range and absolute row sum
-at most $C_jL$. These statements include the root normalization. Dropping
+at most $C_jL$. These statements include the normalization of the local gauge transformation at the patch center. Dropping
 it would change $\mathcal Q$.
 
 \subsection{The estimates in the block axial gauge and the Hessian}
@@ -1004,7 +1004,7 @@ chosen trees. In the block axial gauge the resulting contour has contour variabl
 It lies in one or two adjacent blocks and has length at most $2L^4-1$.
 In the axial gauge on the macro-box of Section~\ref{ch04:predictor-geometry} (the axial gauge of Chapter~\ref{ch04:blocking}, not the block axial gauge), its
 distance from the identity is bounded by this length times the sum of bond distances from the identity in the macro-box. The
-estimate \eqref{ch04:frame-first-power} for the local gauge transformations controls the discrepancies at the two roots;
+estimate for the local gauge transformations in the proof of Lemma~\ref{ch04:predictor-comparison}, linear in the plaquette sum, controls the discrepancies at the two roots;
 the estimate for the averaging operation controls the coarse root-to-root contour variable. Thus
 \begin{equation}
  \chi\bigl(U_e(\operatorname{rep}V)_e^{-1}\bigr)
@@ -1016,7 +1016,7 @@ the estimate for the averaging operation controls the coarse root-to-root contou
 For an internal edge the contour closes at its root and only the first term
 is needed. For a crossing edge, insert the value of the averaging operation between the
 local gauge transformations at the two roots and use the triangle inequality for the normalized Hilbert--Schmidt distance. The endpoint errors
-are bounded by the sum in \eqref{ch04:frame-first-power}, so this step
+are bounded by the sum over the patch estimated in the proof of Lemma~\ref{ch04:predictor-comparison} on either branch, so this step
 requires no pointwise estimate of the local gauge transformation not already proved. The constant is
 allowed to depend on $L$; the stronger factor independent of $L$ in
 \eqref{ch04:macro-comparison} is not required for this use.
@@ -1025,11 +1025,11 @@ Apply \eqref{ch05:nonlinear-tree} to $U=\exp(\epsilon a)$ with $a$ zero
 on tree edges, and $V=1$. Divide by $|\epsilon|$ and let $\epsilon\to0$.
 The first-order variation of the distance from the identity is the norm on $\gLie$, so
 \[
- |a_e|\le C_{j,L}\sum_{p\text{ in the macro-patch at }y}|(d_{1,f}a)_p|
+ |a_e|\le C_{j,L}\sum_{p\text{ in the macro-box at }y}|(d_{1,f}a)_p|
        +\mathbf1_{\{e\text{ crosses blocks}\}}|(\mathcal Qa)_{y,\mu}|.
 \]
-Square, use the finite macro-patch cardinality, and sum over edges. A fine
-plaquette belongs to a bounded number of macro-patches, and each coarse
+Square, use the finite cardinality of the macro-box, and sum over edges. A fine
+plaquette belongs to a bounded number of macro-boxes, and each coarse
 edge occurs for at most a fixed number of fine edges at fixed $L$.
 Consequently
 \begin{equation}
@@ -1055,7 +1055,7 @@ is read from the same path components in $\mathcal A_f$: each quadratic path
 square contributes the square of its linearized curvature component, and atoms
 of curvature degree at least three contribute nothing at second order.
 Identifying their sum with a chosen metric $H_f$ is an exact coefficient
-condition on the incoming path action, called the \emph{quadratic hypothesis} below.
+condition on the incoming path action; with $H_f\ge\varepsilon I$ it is called the \emph{quadratic hypothesis} below.
 
 The first derivatives of both terms of \eqref{ch05:actual-action} vanish
 at the identity. Therefore the second derivative of the block axial chart does
@@ -1150,7 +1150,7 @@ its equation and using \eqref{ch05:actual-hessian} proves
 \end{equation}
 The smooth representative $W_a$ and the representative $W_F$ in the block axial gauge are
 distinct. Estimate~\eqref{ch05:actual-bridge} is asserted for $W_a$, not
-for the block axial chart. Gauge-invariant quadratic insertions see the same
+for the representative $W_F$. Gauge-invariant quadratic insertions see the same
 curl in either representative.
 
 \section{A critical configuration on a uniform neighborhood}
@@ -1280,7 +1280,7 @@ It follows, for every fixed $N$, that
                  \sum_h d(a_{i_t},a_{i_h})\right),
  \qquad 2\le q\le N ,
 \]
-on a common complex ball. Penalty terms and
+on a common complex ball. Penalty terms of the block kernel and
 local coordinate terms add finite-range contributions satisfying
 the same estimate. Smooth cutoffs are not being analytically
 continued: the action here is the uncut action whose germ at
@@ -1290,7 +1290,7 @@ For the block axial chart \eqref{ch05:forest-chart}, the deterministic
 Poincar\'e-type inequality and the Hessian identification have already been proved
 in \eqref{ch05:tree-comparison}--\eqref{ch05:actual-gap}. The chosen
 averaging operation is analytic on a common fixed-patch ball, and all its redundant
-local values of the index $\alpha$ select the same operation there, as a function of the full field.
+local values of the index $\alpha$ specify the same operation there, as a function of the full field.
 The derivative bounds above give exponential locality of that
 Hessian. Section~\ref{ch05:inverse} now supplies a supremum-norm
 bound for its inverse independent of volume; a sufficiently
@@ -1299,8 +1299,8 @@ Proposition~\ref{ch05:stationary-prop} therefore applies on a
 uniform neighborhood.
 
 This argument proves the uniform construction of the critical configuration for
-uncut path actions satisfying \eqref{ch05:path-budget}, the
-quadratic hypothesis in
+uncut path actions satisfying \eqref{ch05:path-budget} and the
+quadratic hypothesis leading to
 \eqref{ch05:actual-hessian}. The averaging operation and the block axial chart
 supply the local analytic-coordinate hypotheses and the deterministic
 comparison \eqref{ch05:tree-comparison}. It does not require
@@ -1379,7 +1379,7 @@ For the nested selected choice of parameters, Proposition~\ref{ch05:horizon-limi
 now also proves fixed-scale convergence of the quadratic kernels
 at every smaller exponential width. For the nonlinear
 step, the chosen path representation and averaging operation must be
-checked against \eqref{ch05:path-budget} and the quadratic hypothesis
+checked against \eqref{ch05:path-budget} and the quadratic hypothesis leading to
 \eqref{ch05:actual-hessian}. The common minimizing
 branch and equality of its local descriptions have been checked above. These are precise
 standing hypotheses, not consequences of Gaussian algebra.
