@@ -45,12 +45,12 @@ Chapter~\ref{ch07:matching}.
 
 \subsection{Preservation of the low moments}
 
-Let $W$ be the actual stationary tangent from coarse link variables to
-fine link variables, with block ratio $L$. The first derivative of the
-nonlinear stationary substitution is this $W$; its higher derivatives
+The first derivative of the nonlinear stationary substitution, from coarse
+to fine link variables with block ratio $L$, is the forest representative
+$W_F$ of \eqref{ch05:stationary-tangent}; its higher derivatives
 cannot enter the quadratic pullback because the defect has zero first
-field derivative. Fine gauge changes of $W$ have no effect on this
-quadratic calculation by the Ward identities of $E_b$.
+field derivative. Since $W_F-W_a$ is a fine gradient, the Ward identities
+of $E_b$ allow us to compute with the smooth representative $W=W_a$.
 
 The exact stationary identity of Chapter~\ref{ch05:gaussian} implies,
 for the alias $k_l(p)=(p+2\pi l)/L$,
@@ -109,8 +109,8 @@ is a sum of terms with either one and three differences, or two and
 two differences, on its two field legs. The coefficient sum is bounded
 by $C_j\|E_b\|$ in the original weighted norm.
 
-The actual tangent may be replaced by the smooth representative $W_a$
-because the quadratic Ward identities kill its gradient correction.
+Recall that $W=W_a$ is the smooth representative; the quadratic Ward
+identities kill its gradient difference from $W_F$.
 Its fine-difference bounds are
 \[
                   \|\nabla_f^rW_a\|\le C_{j,r}L^{-1-r},

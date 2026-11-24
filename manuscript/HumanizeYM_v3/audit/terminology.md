@@ -7083,6 +7083,8 @@ Conventions. The first column gives the symbol (Latin letters, lower case before
 
 **Formula corrected on this branch** (issue 1, item 7; 23 November 2026): 11:1238 now reads `‖Au‖ ≤ H^{bd+c_d}`, `D > bd + c_d + v`; the term `bd` had been lost. It agrees with 11:1363, 1842, 1925 and with the source (`existence/actual-rank-purchases.tex:1028–1029`: "`|Au|_1 ≤ H^{bd+q_*+2}` … any fixed `D > bd+q_*+2+v`"), all read by the coordinating agent. Entries written before the correction (*target*, *column*) still describe the discrepancy.
 
+**The stationary tangent made explicit on this branch** (issue 1, item 8; 24 November 2026). 17c:48–53 now says that the derivative of the stationary substitution is the forest representative `W_F`, that `W_F − W_a` is a fine gradient, and that the computation uses `W = W_a`; 17c:112–113, 7:574 and 17m:263 are reworded to match; `𝒰_F` at 6:953 and 6:976 is written `W_F`; `blueprint/notation.md` line 242 lists the three operators. Basis: chapter 5 recomputed by an agent (identities, gradients, covariance of `R` and `E`); Lean elaborated (`YM.Precision.extracted` is `W_F`, the input of `Inputs` is `W_s`, `YM.Work.F04.tangent`; no counterpart of `W_a`). Entries written before this change (*tangent*, *stationary tangent*, *actual stationary tangent*, *response*, `𝒰_F`) still describe the earlier text.
+
 **Left for the author**, because the intended meaning is not certain:
 
 - 17t:159–160 "the order-two pullback must annihilate its affine–affine and affine–quadratic polynomial moment conditions" (earlier wording: "polynomial tests"). One satisfies conditions or annihilates polynomials; 17c:24–25 has "the affine–affine and affine–quadratic polynomial cancellations" for the same thing.
