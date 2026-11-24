@@ -6,14 +6,14 @@ We now give the local analytic implication behind the auxiliary bound.
 It is an application of Laplace's method, for which we refer to
 \cite[Chapter II]{Wong2001}, with three features that must be checked
 here: the integration dimension grows with the auxiliary period, the
-stationary Hessian depends on the coarse field, and the integration
+Hessian at the critical configuration depends on the coarse field, and the integration
 cutoff cannot be discarded before estimating its complement.
 All actions and matrices in the following argument belong to the same
-pure small-field block integral: incoming activities are omitted, the
-prescribed path and block kernel are unchanged, and the fine-field
+\emph{pure} small-field block integral, the block integral of the path action alone: incoming activities are omitted, the
+prescribed path action and block kernel are unchanged, and the fine-field
 indicator $\mathbf1_{\{\chi(U_p)\le t_f\ \text{for every fine }p\}}$
 is retained, where $t_f=t_{m+1}$. Thus its integrand is zero on the fine large-field
-complement. The other fine sectors have already been assigned to the
+complement. The other terms of the decomposition at the fine scale have already been attributed to the
 large-field expansion.
 
 Put $z=\widehat\beta_{m+1}$, $g=\beta'^{-1/2}$ and
@@ -31,12 +31,12 @@ Both follow directly by taking logarithms of
 $M=\exp((\log\log z)^2)$.
 
 Let $x$ be the coarse logarithmic coordinates, with their supremum
-norm, and $y\in\RR^n$ the free fine coordinates after tree gauge
-fixing. The actual classical action including the block penalty is
-$\phi(x,y)$; write $\rho(x)$ for its stationary branch and
+norm, and $y\in\RR^n$ the free fine coordinates after fixing the block axial
+gauge. The classical action including the penalty term of the block kernel is
+$\phi(x,y)$; write $\rho(x)$ for its critical configuration and
 $A(x)=D_y^2\phi(x,\rho(x))$ for its positive Hessian.
 The extra exponent $\psi(x,y)$ includes the fine loop term and minus
-the logarithm of the product Haar-chart Jacobian. Suppose the branch,
+the logarithm of the product Haar-chart Jacobian. Suppose the critical-configuration map $\rho$,
 action, extra exponent and relative logarithmic determinant have the
 fixed derivative orders required below on a common neighborhood,
 with bounds $z^{o(1)}$. The Hessian gap is uniform in the auxiliary
@@ -66,7 +66,7 @@ The determinant factor is essential: at $g=0$ the exact identity is
 \[
  R(0,x)=N(0,A(x)^{-1})\{\,|\xi|\le D\,\},
 \]
-which is a truncated mass, not identically one. Changing $\xi$ to
+which is the Gaussian measure of a ball, not identically one. Changing $\xi$ to
 $-\xi$ also gives the exact parity $R(-g,x)=R(g,x)$.
 
 Here are the uniform bounds needed for this elementary application
@@ -75,8 +75,8 @@ $|\xi|\le D$ costs a fixed polynomial in $D$ and the stationary
 derivative bounds. It is therefore $z^{o(1)}$ at every fixed order.
 The exponent vanishes at $(g,x)=(0,0)$, so on
 $|g|,\|x\|_\infty\le h$ it is at most one in absolute value for
-large $z$. If the reference truncated mass is at least $1/2$, then
-$e^{-1}/2\le R\le e$, and the same subpower derivative bounds hold
+large $z$. If the reference Gaussian measure of the ball is at least $1/2$, then
+$e^{-1}/2\le R\le e$, and the same derivative bounds $z^{o(1)}$ hold
 for $L$. To obtain derivatives through order $r$ and the two
 derivatives in $g$ used for parity, it suffices to retain derivatives
 of $\phi,\rho$ through order $r+4$ and of the other terms through
@@ -108,10 +108,10 @@ $K>0$,
 This includes $r=0$; the cutoff error at $g=0$ has been retained
 throughout the argument.
 
-\subsection{Identifying the retained region in the actual integral}
+\subsection{Identifying the retained region in the pure block integral}
 \label{ch09:stationary-exterior}
 
-Write $\mathcal D_x(y)$ for the actual tree-gauge configuration map.
+Write $\mathcal D_x(y)$ for the configuration map of the block axial gauge.
 Consider the region
 $\mathcal S_x=\mathcal D_x(\rho(x)+g\overline B(0,D))$.
 Let $\mathscr Z(x)$ be the pure block integral, and set
@@ -120,59 +120,59 @@ Let $\mathscr Z(x)$ be the pure block integral, and set
                          +\tfrac12\log\det A(x).
 \]
 If $N$ is the number of free fine links and $c_H$ the Haar density
-constant, its scalar normalization is
+constant, its normalization constant is
 $\Omega=\pi_{\beta'}(\sqrt{2\pi}g)^n c_H^N$;
 $\pi_{\beta'}$ is the block-kernel normalizing prefactor.
-When $\mathcal S_x$ lies in the chart, all its fine plaquettes pass
-the cutoff, and all live tag actions coincide with $\phi$, the
+When $\mathcal S_x$ lies in the chart, all its fine plaquettes satisfy
+the regularity condition $\chi(U_p)\le t_f$, and the actions for all values of the auxiliary index $\alpha$ with positive probability weight coincide with $\phi$, the
 change of variables gives exactly
 \begin{equation}
  \int_{\mathcal S_x}\text{(pure integrand)}
                   =\Omega e^{-\Phi(x)}R(g,x).
  \label{ch09:retained-identity}
 \end{equation}
-Tag probabilities sum to one, so there is no additional tag-count
-factor. The hypotheses about this region must be established before
+The probability weights of the auxiliary index $\alpha$ sum to one, so there is no additional factor counting the values of $\alpha$.
+The hypotheses about this region must be established before
 using the identity.
 
-Here is a verification using the actual geometry and Hessian gap.
-The actual tree comparison recognizes a fine
-configuration as lying in a fixed safe chart whenever its fine
-plaquettes and gauge-covariant block average mismatches are below a fixed $\delta>0$.
+Here is a verification using the geometry and the Hessian gap.
+By the estimate \eqref{ch05:nonlinear-tree} in the block axial gauge, a fine
+configuration lies in a fixed closed coordinate ball of the chart, the \emph{safe chart}, whenever its fine
+plaquettes and the deviations of the coarse links from the values of the averaging operation are below a fixed $\delta>0$.
 On that chart assume $D_y^2\phi\ge\gamma I/2$. Stationarity gives
 \[
  \phi(x,y)-\phi(x,\rho(x))
                       \ge\gamma|y-\rho(x)|^2/4.
 \]
-Thus a chart point outside $\mathcal S_x$ costs at least
-$\Delta=\gamma D^2/4$ in the exponent. A point outside the chart
-with all fine plaquettes small must have a mismatch exceeding
+Thus a chart point outside $\mathcal S_x$ adds at least
+$\Delta=\gamma D^2/4$ to the exponent. A point outside the chart
+with all fine plaquettes small must have such a deviation exceeding
 $\delta$, and contributes a fixed positive multiple of $\beta'\delta^2$.
 The possibly negative cubic, quartic and loop terms are bounded by
 the path coefficient bounds. If $W$ bounds the auxiliary coordinate and site
-counts, their total cost is at most
+counts, their total contribution to the exponent is at most
 \[
  W B_{\rm loop},\qquad
  B_{\rm loop}=\beta'C(t_f^3+t_f^4)+\Lambda t_f^2,
  \qquad 0\le\Lambda\le2M.
 \]
 All such terms and the logarithmic Haar/determinant normalization
-cost are $o(M^2)$. In particular, the normalization loss
+term are $o(M^2)$. In particular, the normalization term
 $-N\log[c_H(\sqrt{2\pi}g)^{\dim\gLie}]$ is only a polynomial
 in $\log z$. The bound on $\phi(x,\rho(x))$ on $\|x\|<h$
-also leaves the fixed large-mismatch penalty available, because
+also leaves the fixed penalty for a deviation exceeding $\delta$ available, because
 that value tends to zero and $\Delta/\beta'\to0$.
-Consequently the exterior integrand, in stationary units, is
-bounded by $e^{-\Delta+o(M^2)}$.
+Consequently the exterior integrand is bounded by
+$\Omega e^{-\Phi(x)}e^{-\Delta+o(M^2)}$.
 
-It remains to verify the fine cutoff on the retained ball. For the
-folded auxiliary configurations used here, this can be done directly
-from the curvature transport, without a lower bound from a sector
-expansion. A full coordinate cycle of a folded field traverses an
+It remains to verify the regularity condition on the fine plaquettes on the retained ball. For the
+auxiliary configurations used here, which are reflected periodic extensions, this can be done directly
+from the induced map on curvatures, without a lower bound from an
+expansion over the terms of the decomposition. A full coordinate cycle of a reflected periodic extension traverses an
 original path and then its inverse. Its holonomy is therefore exactly
 one at every transverse base point. Equivalently, choose a coordinate
 axial gauge on the original cube and pull that gauge back under the
-folding map. Plaquette filling bounds give logarithmic coordinates
+reflection map. Plaquette filling bounds give logarithmic coordinates
 with
 \[
  \|x\|_\infty\le P(B)t_c,\qquad
@@ -185,18 +185,18 @@ independent of $B$; the polynomial loss occurs only in the quadratic
 error. This argument would fail for an arbitrary small-curvature
 periodic field with nontrivial winding holonomies.
 
-Let $\mathcal U(x)=\mathcal D_x(\rho(x))$ be the physical stationary
-fine field. Its tangent is the forest-coordinate lift $W_F$ of
+Let $\mathcal U(x)=\mathcal D_x(\rho(x))$ be the critical configuration as a physical
+fine field. Its linearization is the representative $W_F$ in the block axial chart of
 Chapter~\ref{ch05:gaussian}. Its curl agrees with that of the smooth
-actual lift $W_a$. The curvature identity and the
-fine-row bound of the two-form transport give
+representative $W_a$. The curvature identity and the
+fine-row bound of the induced map $T$ on curvatures give
 \[
  d_{1,f}W_a=H_f^{-1}TH_c d_{1,c},\qquad
  \|H_f^{-1}TH_c\|_{\infty\to\infty}\le C_jL^{-2}.
 \]
 The operator norm here sums each fine-output row over coarse
 inputs; the opposite column sum has a different scaling.
-The quadratic remainder of the stationary map and the plaquette
+The quadratic remainder of the critical-configuration map and the plaquette
 product is bounded using their common second derivatives. Thus
 \begin{equation}
  \sup_p\chi(\mathcal U(x)_p)
@@ -204,7 +204,7 @@ product is bounded using their common second derivatives. Thus
  \label{ch09:stationary-cutoff-margin}
 \end{equation}
 Choose $L$ so that $C_jL^{-2}t_c\le t_f/8$, using the uniform
-bound $t_c/t_f\le2$. Then increase the inverse coupling threshold so that
+bound $t_c/t_f\le2$. Then increase the lower bound on $z$ so that
 the second term is at most $t_f/8$. These choices are in the
 required order: the constant in the first term is fixed before
 $L$, while the polynomial in the second term may depend on $L$.
@@ -212,25 +212,25 @@ $L$, while the polynomial in the second term may depend on $L$.
 Plaquette functions have a fixed Lipschitz constant $L_0$ in the
 physical fine-link supremum coordinates. Local chart maps have
 fixed-stage derivative bounds. Consequently variation of $x$ by
-$z^{-1}$ and of the stationary fine coordinates by $g\xi$,
+$z^{-1}$ and of the fine coordinates at the critical configuration by $g\xi$,
 $|\xi|\le D$, changes every plaquette distance from the identity by at most
 $C_{j,L}z^{-1}+L_0gD$, after incorporating the fixed chart norm
 conversion into $L_0$. Choose $d_0$ sufficiently small, so that
-$L_0gD\le t_f/8$, and then raise the threshold for the microscopic
-term. Every point of each retained region is now fine small-field,
-with a strict margin. The common chart and tag-coincidence radius
+$L_0gD\le t_f/8$, and then raise the lower bound on $z$ for the term
+$C_{j,L}z^{-1}$. Every point of each retained region now satisfies the regularity condition on the fine plaquettes,
+with a strict margin. The common chart and the ball on which the actions for all values of the auxiliary index $\alpha$ coincide
 contain these regions because $h+gD\to0$.
 We have therefore obtained, on a full microscopic neighborhood of
-each tested small-field coarse configuration,
+each tested coarse configuration satisfying the regularity condition,
 \begin{equation}
  0\le\mathscr Z(y)-\Omega e^{-\Phi(y)}R(g,y)
        \le\Omega e^{-\Phi(y)}e^{-c_0M^2},\qquad c_0>0.
  \label{ch09:exterior-bound}
 \end{equation}
-This deduction uses the actual stationary tangent, its second
+This deduction uses the linearization of the critical configuration (through its smooth representative $W_a$), its second
 derivatives, the compatible path bounds and the geometric
-chart-recognition estimate. The direct cutoff proof applies to the
-folded auxiliary fields and their microscopic neighborhoods, which
+estimate \eqref{ch05:nonlinear-tree}. The direct proof of the regularity condition applies to the
+auxiliary fields that are reflected periodic extensions and to their microscopic neighborhoods, which
 are precisely the configurations used for localization.
 
 \subsection{Centering the full logarithm}
@@ -239,7 +239,7 @@ are precisely the configurations used for localization.
 Put $E=\log\mathscr Z-\log\Omega+\Phi-L(g,\cdot)$.
 Since $R\ge e^{-1}/2$, \eqref{ch09:exterior-bound} gives
 $0\le E\le2e\,e^{-c_0M^2}$. To pass to derivatives, write
-the positive pure integrand at a fixed fine field and tag as
+the positive pure integrand at a fixed fine field and a fixed value of the auxiliary index $\alpha$ as
 $a(\omega)e^{p(x,\omega)}$, with $a\ge0$ independent of $x$.
 Only the coarse-link kernel is differentiated. Its exponent has
 fixed-order derivatives bounded by $C_r\beta' n_b$, where
@@ -280,8 +280,8 @@ For a function on the radius-$h$ ball write its scaled derivative
 bound through order $r$ as
 $\max_{0\le k\le r}h^k\sup\|D^kf\|$.
 Taylor's theorem, \eqref{ch09:even-gain}, and the two matching
-cancellations show that the centered expression in
-\eqref{ch09:pure-decomposition} has this bound at most
+cancellations show that the left side of
+\eqref{ch09:pure-decomposition} minus its value at zero has this bound at most
 \begin{equation}
  C_r(z)\{\beta'^{-1}h+\beta'h^5+h^3\}+z^{-K},
  \qquad C_r(z)=z^{o(1)},
@@ -292,8 +292,8 @@ finite-period error has been included in the last term.
 For $h=z^{-7/16}$ the three powers are respectively
 $z^{-23/16}$, $z^{-19/16}$ and $z^{-21/16}$.
 Their largest exponent is $-19/16<-23/20$.
-Actual small-field logarithmic coordinates and the reflected
-normalized directions are bounded by a polynomial in $B$ times
+Original small-field logarithmic coordinates and the reflected
+seminorm directions are bounded by a polynomial in $B$ times
 $t_m$, which is $o(h)$. They therefore obey the same estimate.
 This proves the auxiliary remainder needed for localization from
 the explicit stationary, matching and actual-sector inputs above.
