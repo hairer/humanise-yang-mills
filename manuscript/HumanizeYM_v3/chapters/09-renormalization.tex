@@ -72,7 +72,7 @@ logarithm is
 The dummy Gaussian integral equals one after the inactive Haar
 variables have been frozen; Fubini then permits their integration.
 The flat reference determinant uses the same forest as the
-sector. It is extracted once, not separately for every eventual
+sector; when the flat matrix annihilates the gradients of site functions vanishing at the block roots, as the restriction of the quadratic form \eqref{ch05:actual-hessian} to the fine variables does, its value does not depend on that forest (Lemma~\ref{ch09:forest-determinant}; that the flat reference determinant has this form is Assumption~\ref{ch09:forest-assumption}(a)). It is extracted once, not separately for every eventual
 connected component. The local precision correction, Haar
 logarithm, missing-coordinate factor and stationary residual
 remain among the local exponential factors.
@@ -145,7 +145,7 @@ The loop coefficient bound must grow subpolynomially at fixed ratio.
 After increasing the inverse coupling threshold these rows are bounded
 by $\mathfrak b^{-7/16}$, since a subpower factor can be bounded
 by $\mathfrak b^{1/16}$. Read-count polynomials are absorbed by
-additional exponential support decay. The first component expansion
+additional exponential support decay. The first component expansion, the average over forests of Proposition~\ref{ch09:forest-average-prop},
 and then Theorem~\ref{ch08:kp} give an absolutely convergent
 logarithm of the ordinary gas without large-field sites. Components attached to
 a prescribed large-field site set remain in the exact-cover sum.
@@ -158,7 +158,7 @@ All rearrangements can first be made for finite selections.
 Under \eqref{ch09:joint-input} and the strict cluster criterion,
 the absolute envelopes allow passage to the countable sums.
 Thus this procedure gives an identity for $\mathscr Z_{\rm blk}$,
-rather than an asymptotic expansion for its logarithm.
+rather than an asymptotic expansion for its logarithm. \input{chapters/09-forest-average}
 
 \section{Improving the regular remainder}
 \label{ch09:improvement}
@@ -231,13 +231,13 @@ Choose the scale ratio and incoming support exponent so that, after
 support compression, the outgoing weight uses at most half of the
 incoming exponential decay. The remaining decay absorbs the polynomial
 in $d$.
-There are $L^4$ fine anchors above each coarse anchor.
+There are $L^4$ fine anchors above each coarse anchor; an inherited term is anchored at the coarse site whose block contains its incoming anchor and is not divided into shares (Proposition~\ref{ch09:family-equivariance}(ii)).
 Consequently the inherited principal norm is at most
 $V_jL^{-1}\epsilon_{m+1}^{\rm reg}$, with $V_j$ fixed before
 $L$.
 
-For the comparison with the actual integral use the same forest
-and physical local coordinates on both sides. The estimates of
+For the comparison with the actual integral use, for each forest separately, the same forest
+and physical local coordinates on both sides; the resulting bounds are uniform in the forest by Assumption~\ref{ch09:forest-assumption}(c) and pass to the average \eqref{ch09:averaged-activity}. The estimates of
 Section~\ref{ch06:linear-comparison} give a covariance difference
 $O(P(B)t_f)$ and a mean difference, in Gaussian units, of order
 $P(B)g(M_f^{\rm cut})^2+P(B)M_f^{\rm cut}e^{-cB}$,
@@ -310,7 +310,7 @@ sector and stationary estimates needed to obtain this bound.
 
 The passage from auxiliary sums to local activities has an
 exact finite-dimensional explanation. Truncate the selected
-low-order formula, retaining a weighted tail
+low-order formula to the finite selected set of Assumption~\ref{ch09:forest-assumption}(e), which is mapped to itself by the lattice symmetries of Section~\ref{ch09:forest-average} and corresponds between the tori used below, retaining a weighted tail
 $\varepsilon_{\rm tr}$. Give an ordinary selected term $f_a^0$
 the shares $p_{xa}=\mathbf1_{X_a}(x)/|X_a|$, and a path term
 the share $\mathbf1_{\{o_a\}}(x)$. These shares sum to one.
@@ -328,7 +328,7 @@ $\pi_v(q)=\min(\bar q,2v-\bar q)$, where $0\le\bar q<2v$.
 Apply this map coordinatewise. Write $U_{i,z}$ for the pullback of
 the original field under $q\mapsto z+\pi_{w+i}(q)$ on $\Lambda_i$.
 Reversed links are inverted, so small plaquette distances from the identity stay small.
-Let $F_y^{(i)}$ denote the same local formula on $\Lambda_i$
+Let $F_y^{(i)}$ denote the same local formula on $\Lambda_i$, formed with the average over the forests of $\Lambda_i$ (that it is the same formula is Assumption~\ref{ch09:forest-assumption}(e) together with the remark on tori after Proposition~\ref{ch09:forest-average-prop}),
 with its flat value subtracted, and set
 \begin{align}
  \lambda_i&=\frac{(-1)^i\binom4i}{2^4\,4!},&
@@ -348,7 +348,7 @@ This dependence on $y$ is essential.
 When $N_{2\bar w}(x)$ is small-field, all these event indicators are one.
 Classify sites of $\Lambda_i$ by their distances, through $R$,
 from the reflection faces. With the recentering just specified,
-the local expression in each class is independent of $i$.
+the local expression in each class is independent of $i$ and of the branch of $\pi_{w+i}$ on which each coordinate of the site lies. The first assertion uses the covariance of the family $F^{(i)}$ under the translations of $\Lambda_i$ and the agreement between tori (Assumption~\ref{ch09:forest-assumption}(e)); the second uses its covariance under the axis reflections $q_c\mapsto-q_c$ of $\Lambda_i$, which leave $U_{i,z}$ unchanged because $\pi_{w+i}(-q)=\pi_{w+i}(q)$ (Proposition~\ref{ch09:family-equivariance}).
 The multiplicity of each class is polynomial in $i$ of
 degree at most four; only the all-interior class has degree
 four, with leading coefficient $2^4$.
@@ -359,12 +359,12 @@ This is not a pointwise assertion that $G_x=F_x-F_x(1)$.
 
 Sum \eqref{ch09:localization} over $x$ and change variables
 $x-\pi_{w+i}(y)\mapsto x$ in each finite auxiliary sum.
-Translation covariance makes $F_x(1)=F_0(1)$, giving exactly
+Covariance under translations, \eqref{ch09:share-equivariance}, makes $F_x(1)=F_0(1)$, giving exactly
 \[
  \sum_x M_x=|\Lambda|F_0(1)+
               \sum_x h_{N_{\bar w}(x)}G_x+\sum_xL_x .
 \]
-Thus $G_x$ is the small-field local activity and $L_x$ is a
+From here on $G_x$ and $L_x$ denote their averages over $H_4$ defined in Lemma~\ref{ch09:symmetric-localization}, which satisfy the same identity and form equivariant families. Thus $G_x$ is the small-field local activity and $L_x$ is a
 logarithmic correction supported where its enlarged
 neighborhood contains a large-field site.
 
@@ -395,7 +395,7 @@ of the parameter interval.
 \label{ch09:preparatory}
 
 The preceding estimates, when their concrete local inputs
-hold, give local functions $f_i$, preliminary large-field
+hold, give, under Assumption~\ref{ch09:forest-assumption} (its part (f) for the $k_i$, which is not proved), equivariant families (Definition~\ref{ch09:equivariant}; Proposition~\ref{ch09:family-equivariance} and Lemma~\ref{ch09:symmetric-localization}) of local functions $f_i$ and preliminary large-field
 activities $k_i$, and a scalar $\tau$ satisfying
 \begin{equation}
  \mathscr Z_{\rm blk}(U)=
@@ -518,12 +518,12 @@ absorbs this polynomial. Consequently the discrepancy
 series has containing-site norm at exponent $\sigma+1$
 bounded by $C_j(1+B)^{d_j}H_{\rm pre}$.
 
-By translation and hypercubic covariance,
+By Lemma~\ref{ch09:isotropy}, which uses the equivariance of the family $(f_i)$ under translations, axis reflections and coordinate permutations,
 \[
  \sum_{o_i=o}q_{f_i}(q,r)=\Delta\delta_{qr}.
 \]
-An axis reflection kills off-diagonal orientation pairs;
-permutations identify the diagonal pairs.
+Translations make the sum independent of $o$; the reflection about $o$ of an axis lying in exactly one of two distinct orientations $q,r$ changes the sign of the corresponding entry, which therefore vanishes;
+coordinate permutations without signs identify the diagonal entries.
 Absolute convergence follows from the derivative bound,
 and
 \begin{equation}
@@ -864,7 +864,7 @@ failure is included in $\mathcal W_p$ by the same formula;
 the identity remains valid because on a small-field plaquette
 the residual is $k_p-\chi_p^{\rm rel}k_p$.
 
-Use $\beta(1-c_{\rm dir})R(U_p)$ as a regular activity.
+Use $\beta(1-c_{\rm dir})R(U_p)$ as a regular activity, divided into four equal shares anchored at the vertices of $p$ so that the family is equivariant (Section~\ref{ch09:forest-average}).
 Its normalized derivatives are bounded by $C_j\beta t^5$.
 For orders at most five, the missing powers after
 differentiation are supplied by Taylor's formula; for
@@ -900,7 +900,7 @@ weighted sum is at most
 Since $\beta t^2\ge(M_N^{\rm cut})^2/2$, this fits
 $\epsilon_N^{\rm lf}$ for a sufficiently large threshold.
 The activity labels and eligibility criteria are independent of $\beta$.
-The resulting full Wilson curve is continuous, and its
+The resulting full Wilson curve is continuous, its activity families are equivariant in the sense of Definition~\ref{ch09:equivariant}, and its
 scalar normalization is zero.
 
 \section{The one-step conclusion and its input data}
@@ -916,14 +916,14 @@ normalized quadratic coefficient and exponential coefficient and
 derivative bounds of Chapters~\ref{ch04:blocking} and
 \ref{ch07:matching}. The incoming activities obey the small-field
 cancellations, large-field eligibility rules and weighted bounds of
-Chapter~\ref{ch04:blocking}, with the support reserve used above.
+Chapter~\ref{ch04:blocking}, with the support reserve used above, and both incoming activity families are equivariant under translations and signed coordinate permutations in the sense of Definition~\ref{ch09:equivariant}.
 Assume also that the represented input density is strictly positive;
 this holds at the Wilson start and is preserved by the exact block
 kernel. Smallness of signed activities alone is not a substitute
 for this condition.
-Use the same forest, path realization, clipped frozen source and
+For each forest use the same forest, path realization, clipped frozen source and
 cutoff choices throughout the local integral construction of
-Chapter~\ref{ch06:large-fields}. Construct the outgoing path by the
+Chapter~\ref{ch06:large-fields}, and average over the forests as in Section~\ref{ch09:forest-average}. Assume that this construction satisfies all six parts of Assumption~\ref{ch09:forest-assumption}. Its part (e) concerns the auxiliary tori and the selected sets of terms, and its part (f) the preliminary families. Assign anchors as in Proposition~\ref{ch09:family-equivariance}(ii). Construct the outgoing path by the
 classical and quantum matching in Chapter~\ref{ch07:matching}.
 Choose the stage constants, ratio floors, minimum
 auxiliary periods and inverse coupling thresholds in the order
@@ -936,7 +936,7 @@ the stage-dependent period floor ensures that every localization
 cube and its dependence neighborhood embeds in the actual torus.
 
 Then every admissible continuous input curve has a
-continuous output representation with fixed labels,
+continuous output representation with fixed labels and equivariant activity families,
 satisfying the regular and large-field bounds
 \eqref{ch04:activity-bounds} and the pointwise identity
 \[
@@ -952,7 +952,7 @@ scales.
 \end{theorem}
 
 \begin{proof}
-The proof consists of the convergent local expansion,
+The proof consists of the convergent local expansion, the average over forests (Proposition~\ref{ch09:forest-average-prop}), the equivariance statements of Section~\ref{ch09:forest-average},
 the three remainder estimates, the exact identities
 \eqref{ch09:subtract-identity} and
 \eqref{ch09:path-identity}, and

@@ -230,7 +230,7 @@ $u$. When $d=u$, choose a single point of that level set. In
 particular no monotonicity of the output inverse coupling is required.
 
 \begin{theorem}[Tuned finite histories]\label{ch10:finite-history}
-Fix the common numerical choices above and the compatible finite
+Assume that every block step used below satisfies Assumption~\ref{ch09:forest-assumption}, which is not proved in this monograph. Fix the common numerical choices above and the compatible finite
 quadratic and path constructions of Chapters~\ref{ch05:gaussian}
 and \ref{ch07:matching}. For every cutoff $N$ and period $R_p$ there
 is a finite history starting at a Wilson density and ending with
@@ -254,7 +254,7 @@ through a forbidden inverse coupling interval has been used.
 \end{proof}
 
 Choose one such history for each $N,p$, retaining its path arrays,
-forests, local integral choices and output representations. The
+local integral choices (made for every forest and averaged over the forests as in Section~\ref{ch09:forest-average}) and output representations. The
 choice need not be unique. The paths fixed before the period are
 kept identical when the period changes. The exact identity is
 \[
@@ -428,7 +428,7 @@ in the scale choices.
 \begin{proposition}[Quantitative comparison on the common data]
 \label{ch10:stability-assumption}
 The actual maps are defined for every prescribed narrow-band inverse coupling
-sequence and every allowed activity array of norm at most $1/8$,
+sequence and every allowed activity array of norm at most $1/8$ (here an allowed array is in particular equivariant in the sense of Definition~\ref{ch09:equivariant}, a linear condition with fixed bijections of labels; the maps are those of Theorem~\ref{ch09:step-theorem} and are therefore subject to Assumption~\ref{ch09:forest-assumption}),
 including zero terminal arrays. They preserve that ball, satisfy
 $|Q_{m,N}|\le s_m/2$, and, on the same cutoff, obey
 \begin{align}\label{ch10:lipschitz}
