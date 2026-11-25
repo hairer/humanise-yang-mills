@@ -140,7 +140,7 @@ Fix $m$ and a positive integer $h$. Replace the selected graph at
 $m+h$ by one fixed admissible graph and propagate down $h$ steps.
 The resulting graphs are Cauchy as $N\to\infty$: fixed-input
 continuity and contraction give this by finite induction. Their
-distance from the actual graphs is at most $2^{1-h}$. First let $h$
+distance from the selected graphs is at most $2^{1-h}$. First let $h$
 be large and then let both cutoffs tend to infinity. This proves the
 Cauchy assertion without an infinite product of inverse maps.
 
@@ -283,14 +283,14 @@ This is the margin in the source weights needed for the transfer with insertions
 
 Let $F_{N,m}(u)$ be the normalized integral of its full-source
 coefficient. Exact probability-kernel integration preserves that
-integral and its vacuum denominator. The fixed-base estimate gives
+integral and its denominator without insertions. The fixed-base estimate gives
 $|F_{N,m}(u)|\le C_r$ throughout the disk. The source algebra is
 nilpotent; after grouping into the finitely many total large-field activities,
 $F_{N,m}$ is a polynomial in $u$, hence holomorphic. For $S_m>2$,
 Cauchy's derivative estimate on circles of radius $S_m/2$ about points
 of $[0,1]$ gives
 $|F_{N,m}(1)-F_{N,m}(0)|\le2C_r/S_m$. These two values are the
-actual lattice correlation at the cutoff and \eqref{ch12:stopped}, respectively.
+lattice correlation at the cutoff and \eqref{ch12:stopped}, respectively.
 \end{proof}
 
 \begin{proposition}[Cauchy convergence on common lattice points]
@@ -388,7 +388,7 @@ The preceding section gives the full smooth limit on separated configurations.
 The last assertion is a Riemann-sum consequence of locally uniform
 convergence. Fixed forward, backward or centered stencils give the
 same limit: telescope each stencil as a finite average of shifted
-unit forward differences. The averaging weights sum to one and the
+unit forward differences. The weights of this average sum to one and the
 shifted points approach the same point.
 \end{proof}
 
