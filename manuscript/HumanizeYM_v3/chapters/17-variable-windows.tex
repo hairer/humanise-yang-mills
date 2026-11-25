@@ -28,8 +28,8 @@ This distinction avoids a circular ratio choice.
 
 Put $H_n=\exp((\log\log\widehat\beta_n)^2)$.
 For $b$ in a fixed compact interval of sufficiently large positive
-numbers, stop backwards from $n$ at the first crossing of
-$(b+2)\log H_n$, and then at the first crossing of another
+numbers, stop backwards from $n$ at the first scale $n'<n$ with $\log(a_{n'}/a_n)\ge$
+$(b+2)\log H_n$, and then at the first scale $n''<n'$ with $\log(a_{n''}/a_{n'})\ge$
 $10\log B_n$. Here $B_n$ is the radius of the restarted representation;
 $\log B_n=O(\log\log\widehat\beta_n)$.
 The schedule bound $L_i\le\log\widehat\beta_i$ makes each
@@ -84,7 +84,7 @@ Proposition~\ref{ch11:n-mark-comparison} with unequal ratios.
 The initial Taylor order and support margins are chosen for the
 largest $b$ and the fixed finite request. The entire incoming
 polynomial in the source variables is retained. The quadratic covariance
-and corrected free-subset polynomial are common to all subsets;
+and the polynomial $\sum_IG_Iz_I$ of free moments are common to all subsets;
 the density without insertions, and hence the partition function, is unchanged.
 Absorbing the larger source weight still uses
 $\omega=H_n^{1/(8N_*)}$ and $I=\log H_n/(16N_*)$.
@@ -119,7 +119,7 @@ in the two estimates above for the coincident-coordinate strips and the grid. Th
 strictly negative, so the harmless factors $H_n^{o(1)}$ do not change
 the conclusion. The estimates with constants independent of the number of reflected copies give the same pair bounds
 in every phase. The existing argument using separated correlation pairings then gives
-fixed derivatives and shell fluxes with these same comparison isomorphisms.
+fixed derivatives and shell fluxes with the same diagonal subsequence and the same comparison isomorphisms $U_{i,d}$.
 Thus the prescribed-radius comparison used in this chapter follows
 from the construction with insertions, including intervals of scales that cross
 changes of stage.

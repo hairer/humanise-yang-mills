@@ -95,8 +95,8 @@ include the additional lower bound on the block ratio
 For the bounded coarse polynomial trials also include
 $\mathscr L_j^{1/8}\ge8(1+C_j)Q^{\rm coarse}_{dj}$ for $d\le j$,
 where $Q^{\rm coarse}_{dj}$ is their small-field chart bound, fixed before
-the ratio. On that chart the indicator of the relaxed regularity condition is one. Its
-complementary global value is controlled by the same later
+the ratio. On that chart the indicator of the relaxed regularity condition is one. The
+value of the trial outside that chart is controlled by the same later
 square-root large-field bound condition described below.
 Here $C_j$ is the prescribed bound, not a norm recomputed after
 choosing $\mathscr L_j$. No radius at the ultraviolet cutoff enters this lower bound:
@@ -166,10 +166,10 @@ Also require, for the original support radius and its per-site
 normalization exponent, $B_{m+1}^2\le2B_m^2$ and
 $(L_m B_m^2)^4q_{m+1}^{\rm site}/\tau_{m+1}\le1/j$ at stage $j$.
 Here $q_{m+1}^{\rm site}$ is bounded by
-$C_j(1+\log\widehat\beta_{m+1})$ using the Haar-ball normalization
-argument. At a fixed stage the numerator is a fixed polynomial in
-$\log(2+\tau_m)$, so this is a finite lower bound on the starting scale. It will keep
-replication costs subpower at a nearby sparse stopping scale. For the
+$C_j(1+\log\widehat\beta_{m+1})$ by the lower bound on the partition function from the Haar measure of a small ball
+about the identity on every link, as in \eqref{ch11:replicated-bound}. At a fixed stage the numerator is a fixed polynomial in
+$\log(2+\tau_m)$, so this is a finite lower bound on the starting scale. It will make
+the per-cell normalization cost $o(\tau_k)$ at the stopping scale $k=k(m)$ of Section~\ref{ch13:sharp-section}. For the
 later grouping of finitely many local insertions, also require
 $(\sigma_{m+1}+1)h_m/\tau_m\le1/j$, where
 $h_m=16[1+L_m(B_m+B_{m+1}+1)^2]^4$ and $\sigma_{m+1}$ is the
@@ -378,8 +378,8 @@ $\sum_\gamma |c_N(\gamma)|e^{w'\ell(\gamma)}\le C$ with $w'>w$,
 then their tails at width $w$ and length greater than $r$ are bounded
 by $Ce^{-(w'-w)r}$. If only finitely many indices have
 bounded length, finite-coordinate convergence and this tail bound
-prove convergence at width $w$. For a Hilbert encoding instead, one
-must verify summability of the encoding weights on that index set;
+prove convergence at width $w$. If the coefficients are instead bounded in the weighted $\ell^2$ norm $(\sum_\gamma e^{2\delta\ell(\gamma)}|c_N(\gamma)|^2)^{1/2}$ with $\delta>w$, one
+must verify $\sum_\gamma e^{-2(\delta-w)\ell(\gamma)}<\infty$ on that index set;
 a bound on individual coefficients alone does not bound the number of
 paths of a given length.
 
@@ -623,7 +623,7 @@ At each real point, the stronger one-step remainder estimate gives
                          +O(x^{-23/20+o(1)}),\qquad
  x=\widehat\beta_m,
 \]
-where the fixed fraction $\varepsilon$ can be made as
+where the fixed fraction $\varepsilon\le1/16$ of $C_{\rm st}x^{-11/10}$ allotted to the principal regular bound (and $2\varepsilon$ to the complementary one) can be made as
 small as desired before choosing the lower bound on the reference coupling. This is the
 small remainder estimate of Chapter~\ref{ch09:renormalization}
 applied to this same collection.

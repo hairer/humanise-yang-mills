@@ -192,7 +192,7 @@ fixed by the Taylor convention, not by a choice of coupling scheme.
 
 \begin{lemma}[Removal of the kinetic coefficient]\label{ch07:unique}
 An analytic quadratic symbol from an invariant real action, with
-exchange symmetry and signed-coordinate symmetry, has
+exchange symmetry $f_{ab}^{uv}(p)=f_{ba}^{vu}(-p)$ and signed-coordinate symmetry, has
 $f-\alpha(f)b_H=O(|p|^4)$. Its coefficient $\alpha$ is independent
 of the transverse axis pair and the unit vector $u$.
 \end{lemma}
@@ -424,7 +424,7 @@ more by $\mu^2$ gives regulator sizes
 \end{equation}
 This uses $\mu^2/T^2\le1$. Product differentiation through order two
 preserves the same sizes in $\|\cdot\|_{T,2}$; the number nine is fixed.
-The four constant maps in the vector regulator that take a one-form to its components do not
+The four constant maps $J_a$ in the vector regulator $M_\mu=\sum_aJ_a^*m_\mu J_a$, where $J_a$ takes a one-form to its component in direction $a$, do not
 change these powers.
 
 The first term of \eqref{ch07:response-integrand}, differentiated twice
@@ -596,7 +596,7 @@ Thus a unit fluctuation direction has normalized $L^2$ norm over positions withi
 $O(\mu)$ and its first fine difference has normalized $L^2$ norm
 $O(\mu^2)$. Background smooth bridge legs have the same powers in
 supremum norm, by \eqref{ch05:actual-bridge}. Extending to the fixed
-padded patch of the averaging operation only changes constants: its number of residue
+padded box of radius $(j+5)L$ around the patches of the averaging operation only changes constants: its number of residue
 blocks is fixed at the given smoothing order, and its Bloch phases
 are uniformly bounded.
 
@@ -625,7 +625,7 @@ left-coordinate response, whose definition by derivatives in left increments was
 
 \paragraph{The centered local gauge transformation and the penalty term.}
 A small supremum bound alone is not enough for two fluctuation directions.
-Use normalized probability measure on the padded block and the three
+Use the uniform probability measure on the patch $Ly+\mathbb B_R$, $R=(j+3)L$, of the averaging operation and the three
 norms $L^\infty,L^2,L^1$. Background directions use the first, one fluctuation
 direction the second, and two fluctuation directions the third.
 Products are controlled by $L^2L^2\subset L^1$, and averages contract

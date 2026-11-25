@@ -74,7 +74,7 @@ variables have been frozen; Fubini then permits their integration.
 The flat reference determinant uses the same forest as the
 sector; when the flat matrix annihilates the gradients of site functions vanishing at the block roots, as the restriction of the quadratic form \eqref{ch05:actual-hessian} to the fine variables does, its value does not depend on that forest (Lemma~\ref{ch09:forest-determinant}; that the flat reference determinant has this form is Assumption~\ref{ch09:forest-assumption}(a)). It is extracted once, not separately for every eventual
 connected component. The local precision correction, Haar
-logarithm, missing-coordinate factor and residual of the mean equation
+logarithm, missing-coordinate factor $\mathfrak m^{-(N_{\rm free}-n_{\rm act})}$ and residual of the mean equation
 remain among the local exponential factors.
 Keeping them is what recovers the original Haar integral.
 
@@ -144,7 +144,7 @@ The loop coefficient bound must grow subpolynomially at fixed ratio.
 
 After increasing the lower bound on the reference coupling these rows are bounded
 by $\mathfrak b^{-7/16}$, since a subpower factor can be bounded
-by $\mathfrak b^{1/16}$. Read-count polynomials are absorbed by
+by $\mathfrak b^{1/16}$. The polynomial factors $(1+s_M)^{d_j}$ in the number of blocks read are absorbed by
 a margin in the support exponent. The Mayer expansion, the average over forests of Proposition~\ref{ch09:forest-average-prop},
 and then Theorem~\ref{ch08:kp} give an absolutely convergent
 logarithm of the polymer gas without large-field sites. Components attached to
@@ -280,8 +280,8 @@ must be clean. A window meeting a large-field component of the index triple is
 attributed to that component; a large fluctuation-field event far from the index triple has the joint
 Gaussian-tail bound of Chapter~\ref{ch06:large-fields}. Large
 remaining supports gain $e^{-cB}$ from the margin in the incoming support
-exponent. Thus no comparison between unrelated event indicators or a seeded and
-an unseeded law has been made. The interpolation estimates
+exponent. Thus no comparison has been made between unrelated event indicators, or between the Gaussian law for an index triple with nonempty $A_f$ or $A_n$ and
+the law for $A_f=A_n=\emptyset$. The interpolation estimates
 are essential; the scaling-dimension count alone would not prove
 the comparison remainder.
 
@@ -946,8 +946,8 @@ satisfying the regular and large-field bounds
 Its inverse coupling is \eqref{ch09:reset} and obeys \eqref{ch09:drift}, uniformly in
 volume, ultraviolet cutoff and curve parameter. The construction
 commutes with restriction of the parameter interval and retains all exact-cover
-cutoff conditions. That the output inverse coupling lies in its band additionally
-requires the numerical band margin in the choice of
+cutoff conditions. The theorem does not assert that the output inverse coupling lies in its band
+$[\widehat\beta_m/2,2\widehat\beta_m]$; along the tuned histories of Section~\ref{ch10:shooting} this follows from the condition \eqref{ch10:drift-floor} on the choice of
 scales.
 \end{theorem}
 

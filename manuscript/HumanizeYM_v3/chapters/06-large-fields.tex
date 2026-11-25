@@ -457,7 +457,7 @@ matrices requires a proof. Identity coordinates may be adjoined for
 inactive variables, with their trivial integrals normalized to one.
 
 The link support contains the links on which the averaging operation depends and every endpoint of a retained
-path. Its coarse radius is at most $R_*+5+r_{\rm pred}\le B/50$ for large
+path; here $r_{\rm pred}$ is the largest coarse distance at which the averaging operation reads a link. Its coarse radius is at most $R_*+5+r_{\rm pred}\le B/50$ for large
 coupling. Thus the link support of a retained component lies in the small-field region when its
 active edge is outside $A^{[10B]}$. This geometric
 observation permits local estimates at the background field $\operatorname{rep}V$; it does not by
@@ -843,7 +843,7 @@ unless
  \label{ch06:tail-event}
 \end{equation}
 for fixed $\xi>0$. Verifying this implication uses the mean $m_Y$, the
-derivative of the averaging operation, and event indicators. A covariance estimate by itself cannot
+derivative of the averaging operation, and the cutoff factors. A covariance estimate by itself cannot
 prove it.
 
 \begin{lemma}[Joint tails with bounded local multiplicity]
@@ -1015,7 +1015,7 @@ the bound on the fluctuation field then leave the fine plaquette distance from t
 and the deviation $n_e$ below $Wt_f$. The corresponding factors of the partition-of-unity weights and the
 normalized weights of the auxiliary index there are equal to one. The bond increment is bounded
 by $Ct_f$ on this event, so a sufficiently broad fixed chart cutoff is
-also one. A cutoff remainder assigned within the compulsory component region is
+also one. A cutoff remainder assigned within distance $300B$ of its component of the index triple $A$ is
 zero by definition; every other such remainder has these small-field neighborhoods.
 Replacing $\xi$ by $\xi/2$ gives strict margins on a neighborhood and
 hence the zero-germ support condition. This proves the implication
@@ -1541,7 +1541,7 @@ The estimate above for the change of variables $T_V$ supplies bounds on
 $T_V$ and its density scores; it is not permission to lose an extra
 derivative of the incoming activity.
 This export concerns a local region whose entire window neighborhoods
-are clean. It does not compare a seeded sector to an unseeded law,
+are clean. It does not compare the Gaussian law of a sector whose index triple has nonempty $A_f$ or $A_n$ with the law of the sector with $A_f=A_n=\emptyset$,
 does not replace $W_F$ by the representative in a different gauge,
 and does not identify separately chosen event indicators. Such replacements need
 their own tail or support decomposition.

@@ -16,7 +16,7 @@ Throughout, the polynomial label space and its local section are
 $V_d$ and $P_d^{\rm loc}$ from Chapter~\ref{ch02:observables}.
 All block kernels are the normalized kernels of
 Chapter~\ref{ch04:blocking}. A \emph{history} means one fixed choice of these
-kernels, inverse couplings, adjacent path pairs, and local representations.
+kernels, inverse couplings, adjacent path pairs, and local representations; the local representations are those of Chapter~\ref{ch09:renormalization}, whose activities are averaged over the forests (Section~\ref{ch09:forest-average}). Throughout this chapter we assume Assumption~\ref{ch09:forest-assumption}, which is not proved in this monograph, and, for the steps with insertions, its extension stated as Hypothesis~(H) in Section~\ref{ch11:marked-step}, which is not proved either.
 The estimates of Chapters~\ref{ch06:large-fields} and
 \ref{ch09:renormalization} are used only on that same history.
 
@@ -241,7 +241,7 @@ The numerical constant describes this choice of support enlargement;
 the essential feature is its fixed additive cost and $L^{-1}$ fine
 cover cost.
 
-In one sector and for one value of the auxiliary index, distinguish three kinds of factors:
+In one sector, which includes one forest (one rooted spanning tree in every block), and for one value of the auxiliary index, distinguish three kinds of factors:
 local corrections without insertions, incoming large-field factors, and insertion factors
 with nonempty index sets. Their dependence sets determine
 the intersection graph. The exact condition on prescribed large-field sets says that every
@@ -290,7 +290,7 @@ For a compatible connected collection $C$, therefore,
  \end{cases}
  \label{ch11:integrated-component}
 \end{align}
-Here $\nu$ is the single Gaussian/Haar law of the sector.
+Here $\nu$ is the single Gaussian/Haar law of the sector, formed with its forest; by Hypothesis~(H) below the bounds $b_j$ and the factors $t_C$ do not depend on the forest.
 If an insertion-free correction occurs, its inflated common product bound
 absorbs $t_C$, while the other factors are bounded pointwise.
 If none occurs, the condition on prescribed large-field sets removes incoming large-field
@@ -332,7 +332,7 @@ in Proposition~\ref{ch11:joint-gaussian}, since it contains neither
 an insertion-free correction nor an incoming large-field factor.
 
 Finally normalize the insertion-free local gas by the same exact
-connected expansion as in Chapter~\ref{ch09:renormalization}.
+connected expansion as in Chapter~\ref{ch09:renormalization}, that is, with its activities averaged over the forests as in Proposition~\ref{ch09:forest-average-prop}; the normalization constant does not depend on the forest (part~(i) of that proposition). Assumption~\ref{ch09:forest-assumption} concerns only the construction without insertions, so the combination of the fixed-forest computation above with this average requires the following hypothesis, which is not proved in this monograph. \emph{Hypothesis~(H) (forests with insertions).} For every forest $F$, the exact identity for the block integral of the incoming representation with insertions \eqref{ch11:local-source} has the form \eqref{ch09:fixed-forest-gas}, with the same constant $\mathscr N_F$ and function $\mathscr S$, with labels, supports $X_M$ (containing the dependence sets of the insertions carried by $M$) and prescribed large-field sets $I_M$ independent of $F$, and with activities $a_M^F(z,U)$ in $\mathcal A_{\mathcal I}$ satisfying $\sum_M\sup_U\|a_M^F(\cdot,U)\|_\omega<\infty$ and whose coefficient of $z_\varnothing$ is the activity of \eqref{ch09:fixed-forest-gas}, or zero for a label which carries an insertion factor; every coefficient $[z_S]a_M^F$ satisfies part~(b) of Assumption~\ref{ch09:forest-assumption}; the bounds of this section, in particular \eqref{ch11:integrated-component}, \eqref{ch11:marked-incidence} and the bounds $\Sigma$, $T_e\eta+a$, $k$, $\psi$, hold for every $F$ with right sides independent of $F$; and, for every $\varsigma\in\mathfrak G$, there is a bijection $M\mapsto\varsigma\cdot M$ as in part~(d) with $a^{\varsigma F}_{\varsigma\cdot M}[F_\bullet\circ\varsigma^*](z,U)=a^F_M[F_\bullet](z,\varsigma^*U)$, where $[F_\bullet]$ indicates the insertions from which the incoming representation with insertions is built. Under~(H), the proof of Proposition~\ref{ch09:forest-average-prop}(i)--(ii) applies coefficient by coefficient, because $\mathcal A_{\mathcal I}$ is commutative and the coefficients of activities with disjoint supports depend on the trees of disjoint sets of blocks: the identity holds with the averaged activities $\mathbb E_Fa_M^F$, which obey the same bounds, and its coefficient of $z_\varnothing$ is \eqref{ch09:averaged-gas}. Thus the density with insertions and the density without insertions are averaged by the same average over the forests. The estimates of this section are made for one forest and are used, through their uniformity in the forest, for the averaged activities.
 If its local normalization corrections have total site bound $k$
 at exponent $v$ after the $l$ inflation, choose an output bound
 $\psi$ with $e^\Sigma-1+k\le\psi$.
@@ -676,7 +676,7 @@ changing this exact identity.
 \subsection{Nonlinear local coordinate and cutoff estimates}
 \label{ch11:actual-reader}
 
-Fix a clean neighborhood and one choice of spanning trees of the blocks, one value of the auxiliary index, one coarse gauge and one Gaussian
+Fix a clean neighborhood and one choice of spanning trees of the blocks (a forest; the identity \eqref{ch11:conditional-curvature} holds for every forest and its right side does not depend on the forest, and the estimates below are used, by Hypothesis~(H) of Section~\ref{ch11:marked-step}, with bounds independent of the forest, so that they pass to the average over the forests), one value of the auxiliary index, one coarse gauge and one Gaussian
 sample for all coordinates read by the polynomial family.
 Section~\ref{ch06:linear-comparison} gives, against the flat model, mean error
 $O(B^a t_f^2)$ and covariance error $O(B^a t_f)$, plus exponentially
@@ -723,7 +723,7 @@ Proposition~\ref{ch11:joint-gaussian} hold with, for example,
 $\varepsilon=x^{-1/32}$ after increasing the lower bound on the reference coupling.
 The covariance error is smaller than $\varepsilon$ and cutoff loss
 smaller than $\varepsilon^2$. One joint Gaussian sample and one linear prediction of the fine
-curvature from the coarse field are used for all subsets. The normalization constant is the one
+curvature from the coarse field are used for all subsets. The normalization constant, which does not depend on the forest (Proposition~\ref{ch09:forest-average-prop}(i)), is the one
 extracted from the integral without insertions before the insertions are chosen; all
 remaining principal products are integrated against its normalized
 Gaussian/Haar probability law. Incoming large-field and correction
@@ -1046,7 +1046,7 @@ statements must be included in the selected stage requirements.
 
 For a finite cutoff, composing the invertible single-insertion coefficient
 maps from $N$ to the reference scale defines
-$\mathsf Z_{N,p,d}$. It is real and symmetry-equivariant, and the exact
+$\mathsf Z_{N,p,d}$. It is real and symmetry-equivariant (the equivariance uses that of the insertion-free representations, which rests on Assumption~\ref{ch09:forest-assumption}, and the transport part of Hypothesis~(H) of Section~\ref{ch11:marked-step}; it is not proved here without them), and the exact
 rule for the identity field gives its coefficient $a_{r(d)}^de_0$ at the reference scale.
 The normalized local insertion is therefore
 \[
@@ -1234,7 +1234,7 @@ $4H^\gamma H^{(-1+\gamma)(D+1)}\|Au\|_1
  =4H^{-D-15/16}\|Au\|_1$.
 The nonlinear coordinate error and discarded-support error
 are smaller than any required inverse power.
-For normalized target columns with
+For the solutions $u=u_{j,N,p}$ of the lift equations \eqref{ch11:simultaneous-detector-lifts} below, which satisfy
 $\|Au\|\le H^{bd+c_d}$, choose $D>bd+c_d+v$ before the stage
 orders to obtain error $H^{-v}$.
 
@@ -1282,8 +1282,8 @@ value. This bound is independent of the number of ambient
 coordinates because the polynomial coefficient norm already
 sums their coefficients.
 
-Let $\mathcal E$ denote exposure in the fixed radial polynomial
-basis, and choose $c_d$ with
+Let $\mathcal E$ send $v\in V_d$ to its polynomial, of weighted degree at most $d$, in the fixed radial jet variables.
+It is injective between finite-dimensional spaces, so one may choose $c_d\ge1$ with
 $\|v\|_1\le c_d\|\mathcal Ev\|_{\rm coeff}$.
 The extraction from $\mathscr Pu$ of the coefficients of low scaling dimension belongs to this basis:
 the original covariance is a real spatial matrix tensored with
@@ -1340,7 +1340,7 @@ Average with conjugation at the same time. This uses one
 polynomial construction for all transformed columns, rather
 than symmetrizing independently chosen lifted vectors.
 
-At a fixed comparison scale the front-column bounds give
+At a fixed comparison scale $k$ the one-step coefficient bounds in the direction of the transfer, applied successively from the reference scale to $k$, give
 $\|u\|_1\le D_k\|Au\|_1$, uniformly in $N,p$.
 The relative half-error therefore implies
 $\|u\|_1\le2D_k\|Tu\|_1$, so $T$ is injective and hence
@@ -1592,9 +1592,9 @@ the source weight nor the small initial remainder needed here.
 \paragraph{The two weighted step estimates.}
 The inflations required here depend on the inverse coupling, so the
 fixed-inflation statement alone is insufficient.
-Split the positive decay of the prescribed large-field set in
-Chapter~\ref{ch06:large-fields} into fractions kept aside and choose
-the reported bound $G(x)$ so that multiplication by $G(x)^{-2}$
+Split the decay exponent $Kh(x)^2r$ of a selected component with $r$ selected cutoff conditions, given by
+Chapter~\ref{ch06:large-fields} (Section~\ref{ch11:restart-construction}), into fractions kept aside and choose
+the reported bound $G(x)=\exp\{-a_*h(x)^2\}$ with $4a_*\le K/2$ so that multiplication by $G(x)^{-2}$
 leaves a fixed positive fraction. This choice is made before the
 thresholds. The amplitudes without prescribed large-field sites have a negative inverse coupling power
 times subpower factors; multiplying by $H^c$ for fixed $c$ retains
@@ -1931,7 +1931,7 @@ For the large-field part perform the exact change of representation at the compa
 jointly with these factors with insertions, before summing components.
 Every nonzero failed cutoff and every old large-field activity
 meets a new large-field site. Its selected site factor has size at
-most $e^{-2u}$, with $u=a_*\,\mathrm{hot}(s)^2$.
+most $e^{-2u}$, with $u=a_*h(s)^2$.
 Keep $e^{-u}=G(s)$ aside once per component.
 The remaining rooted sum is bounded by
 \[
