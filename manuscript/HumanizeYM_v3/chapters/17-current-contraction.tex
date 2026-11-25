@@ -59,7 +59,7 @@ The Ward identity on each leg, $B(d_{0,f}\phi,a')=B(a',d_{0,f}\phi)=0$, holds fo
  \label{ch17:polynomial-four}
 \end{equation}
 This condition does not depend on the center of the coordinates, since a translate of a polynomial has the same degree. Hence it holds for every fine translate of $E_b$, and so for $F=K_0E_b$, where $K_0$ is the finite combination of fine translates of the base point from Lemma~\ref{ch17:block-identities}; this $F$ is again gauge invariant with zero first field derivative, and its kernel decays exponentially because $K_0$ has range $CL$.
-Let $G=\mathcal IF$ be its composition with the critical configuration. For finitely supported coarse fields $a,a'$ the preceding paragraph gives $D^2G(0)[a,a']=B(W_Fa,W_Fa')=B(W_aa,W_aa')$, and the Ward identity applied to the bounded potentials above gives $D^2G(0)[a,a']=B(W_sa,W_sa')$. The kernel of $W_s$ is $O(L^{-1})$ with exponential coarse decay (Section~\ref{ch05:transports}).
+Let $G=\mathcal IF$ be its composition with the critical configuration. For finitely supported coarse fields $a,a'$ the preceding paragraph gives $D^2G(0)[a,a']=B(W_Fa,W_Fa')=B(W_aa,W_aa')$, where the potential of the fine gradient $W_Fa-W_aa$ is bounded because it is a sum of values of $W_aa$ along the spanning tree of one block; and the Ward identity applied to the bounded potentials above gives $D^2G(0)[a,a']=B(W_sa,W_sa')$. The kernel of $W_s$ is $O(L^{-1})$ with exponential coarse decay (Section~\ref{ch05:transports}).
 Hence the coarse Hessian kernel of $G$ decays exponentially in the distances of both legs from the coarse block of $o$, its joint symbol is analytic, and for coarse polynomial fields $P,P'$ absolute convergence gives $D^2G(0)[P,P']=B(W_sP,W_sP')$. As for $F$, \eqref{ch17:defect-four} for $G$ is equivalent to the vanishing of these values when $r+r'\le3$.
 By \eqref{ch17:polynomial-response}, whose derivation in the proof of Proposition~\ref{ch17:spatial-moments} uses only the formulas of Chapter~\ref{ch05:gaussian}, $W_s$ maps a coarse polynomial field $P$ of degree $r<j$ to a fine polynomial field of degree at most $r$; its homogeneous part of degree $r$ is $L^{-r-1}$ times that of $P$, read in fine coordinates. Here $j$ is the smoothing order of the averaging weight, and $j\ge5$, since \eqref{ch05:actual-bridge} is used below with three fine differences.
 If $r+r'\le3$, the two images therefore have degrees with sum at most three, and \eqref{ch17:polynomial-four} for $F$ gives $D^2G(0)[P,P']=0$. Thus $G$, and the pulled-back defect $L^5G$, satisfy \eqref{ch17:defect-four} on the coarse lattice.
@@ -68,23 +68,23 @@ No alias decomposition of the linearization and no projection off the fine gradi
 No bound uniform in $L$, and no inverse of a kinetic symbol at a nonzero alias, is
 needed for this exact Taylor-order statement.
 
-Consider the base-point average $K_0$, the average over translates of the base point, from
-Lemma~\ref{ch17:block-identities}, performed before composition with the critical
+The base-point average $K_0$, the average over translates of the base point, from
+Lemma~\ref{ch17:block-identities}, is performed before composition with the critical
 configuration. Its symbol has a double zero at every nonzero
 alias: at least one coordinate of $l$ is nonzero, and the factor
 $M_a^2G_a(s_a^L)$ has two factors of the average $M_a$ there.
-In a two-leg alias term the averaging multiplier is evaluated at
-$k_l(p)+k_{l'}(q)$. The quadratic pullback therefore has the
-following three kinds of terms.
+The argument above does not use this double zero. Of $K_0$ it uses only
+that it is a finite combination of fine translates of the base point; the
+behaviour of the linearization enters only through \eqref{ch17:polynomial-response}.
 
-If both aliases are zero, \eqref{ch17:defect-four} and analytic
-coefficients retain order four. If exactly one is nonzero, its
-transverse coefficient has order two and the base-point average has another
-order-two zero, giving order at least four. If both are nonzero,
-the two projected coefficients already give order four, including when
-their alias indices cancel in the multiplier of the base-point average. Every term thus
-satisfies \eqref{ch17:defect-four} on the coarse lattice. This is a
-finite alias identity and holds on the same history.
+Thus the order of vanishing is preserved by an exact computation. The
+pulled-back Hessian, evaluated on pairs of coarse polynomial fields of total degree
+at most three, equals the Hessian of $K_0\mathcal E_b$ evaluated on their images
+under $W_s$. These images are fine polynomial fields of no larger total degree,
+on which that Hessian vanishes by \eqref{ch17:polynomial-four}. No estimate,
+no limit and no bound uniform in $L$ enters. Hence $L^5\mathcal I(K_0\mathcal E_b)$
+satisfies \eqref{ch17:defect-four} on the coarse lattice. This is an
+exact identity and holds on the same history.
 
 In particular the quadratic jet is not merely close to having the
 required affine cancellations: it has them exactly, provided the
@@ -320,14 +320,14 @@ regulator criterion. Subtract fixed local reference stress and curvature
 vector fields, whose leading Taylor coefficients by scaling dimension are those used initially.
 The reference functions have finite stencils and fixed coefficient bounds.
 The lowest jets of the transferred functions agree with them exactly.
-For the stress this follows from the zero-alias coefficient of the linearization,
-$N_0(0)=L^{-1}I$, the base-point average with coefficient sum one, and the fact that
-transverse coefficients at nonzero aliases have order at least two. If exactly
-one alias is nonzero, the linear Ward identity on the other leg
-gives one further momentum at the zero alias, so this contribution has
-order at least three. Two nonzero aliases have order at least four.
-Consequently only the pair of zero aliases contributes to the quadratic
-coefficient of scaling dimension four, which is unchanged.
+For the stress this follows from the exact rescaling at the end of the proof of preservation of the order of vanishing,
+applied with $n=2$ to the Hessian $B$ of $K_aJ_{ab}$. Its values on pairs of polynomial fields with $r+r'<2$ vanish: one leg is then constant,
+a constant field is the gradient of a linear potential, and the truncation argument given there, using the exponential decay of the kernel, extends the Ward identity to such potentials. If
+$r+r'=2$, the rescaling gives $D^2\mathcal I(K_aJ_{ab})(0)[P,P']=L^{-4}B(P,P')$, which the factor $L^4$ in $J'_{ab}$ compensates.
+Moreover $K_a$ is a finite combination of fine translates with coefficient sum one, and a translate of a homogeneous polynomial
+differs from it by terms of lower degree, on which the Hessian of $J_{ab}$ vanishes; so $B(P,P')$ is the corresponding value for $J_{ab}$.
+Consequently the quadratic coefficients of scaling dimension below four remain zero, and the quadratic
+coefficient of scaling dimension four is unchanged.
 
 For the vector field one additionally uses the column sum of the linearized averaging operation.
 By \eqref{ch17:flat-current-map}, the corrected differential is exactly
