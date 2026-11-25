@@ -60,7 +60,7 @@ $A^{[5B]}$,
  &n_e\le2Wt_f\quad(e\notin A_n),
 \end{align*}
 and $A_c$ is exactly the set of coarse sites incident to plaquettes with
-$r_p^c>t_c$ in that neighborhood. Every chosen value of the auxiliary index $\alpha$ of Chapter~\ref{ch04:blocking} for a local gauge transformation must have positive
+$r_p^c>t_c$ in that neighborhood. Every chosen value of the auxiliary index of Chapter~\ref{ch04:blocking} for a local gauge transformation must have positive
 probability weight. The overlaps in the first two threshold pairs permit a partition
 with smooth cutoffs; consistency does not prescribe a unique index triple.
 
@@ -84,7 +84,7 @@ eligibility conditions without discarding any part of the original integral.
 
 A \emph{sector} is a term of this decomposition with fixed discrete data: it fixes the index triple, its assignment to connected
 components of its neighborhoods, a rooted spanning tree in every block,
-and the value of the auxiliary index $\alpha$. Tree links are set to the identity.
+and the value of the auxiliary index. Tree links are set to the identity.
 These choices fix the coordinates and supports before differentiation.
 The set $D\subset A_f\cup A_n$ consists of the plaquettes and edges whose variables $r_p^f$, $n_e$ exceed $t_{\rm hi}$.
 Let $H$ be the coarse plaquettes based at distance at most $4B/5$ from $D$. Local
@@ -169,10 +169,10 @@ $\rho^*\rho=\mathsf H_c-c_{\rm dir}I$, and realizes these very components
 by parallel-transported plaquettes. Cubic and quartic matching terms do not
 change their Hessian, while the $\beta$-independent quadratic term of the path action is not part
 of the classical metric. The step in Theorem~\ref{ch09:step-theorem}
-uses precisely this construction. At the Wilson initialization (the Wilson density at the cutoff scale $N$) the plaquette
+uses precisely this construction. At the Wilson initialization (the Wilson density at the ultraviolet cutoff) the plaquette
 and additional components have coefficients $\sqrt{c_{\rm dir}}$ and
 $\sqrt{1-c_{\rm dir}}$, so their Gram matrix is $I$; the
-fine metric at the ultraviolet cutoff $N$ is unmodified ($\zeta_f=0$). The first coarse modification
+fine metric at the ultraviolet cutoff is unmodified ($\zeta_f=0$). The first coarse modification
 and every later one obey \eqref{ch05:positive-defect}. Thus the factorization
 is an invariant of this construction, although it remains a
 necessary premise when applying the estimate to other path actions.
@@ -359,8 +359,8 @@ logarithms in a common chart, throughout radius $2B/5$, with bound
 $\delta_{\rm loc}=C_{j,L,W}B^{10}t_{\rm hi}$.
 
 The derivative of the rooted averaging operation also matches the flat
-identity. Near the identity all branches of the local gauge transformations and of the averaging operation chosen by the index $\alpha$
-are minimizing; the redundant values of $\alpha$ do not change their values. The
+identity. Near the identity all branches of the local gauge transformations and of the averaging operation chosen by the auxiliary index
+are minimizing; the redundant values of the auxiliary index do not change their values. The
 finite-patch minimizing local gauge transformation is smooth there by the same nondegenerate
 implicit equation used in Lemma~\ref{ch04:frame-lemma}. Write
 $h_{y,z}(\exp(\epsilon a))=1+\epsilon H_{y,z}(a)+O(\epsilon^2)$ and
@@ -483,7 +483,7 @@ roots along the same tree, compare the resulting contour variable with the value
 averaging operation in a common axial gauge on the macro-box, and bound the difference by the
 plaquette sum of the macro-box. Differentiating this comparison at the identity
 gives \eqref{ch06:tree-control}. The contour constants and endpoint bounds are those proved above for the
-same trees and the same index $\alpha$. No coordinate change to an unrelated tree is made.
+same trees and the same values of the auxiliary index. No coordinate change to an unrelated tree is made.
 
 The Poincar\'e-type inequality \eqref{ch05:tree-comparison} applies to these
 coordinates: the pull-back $\operatorname{rep}V$ is varied by left multiplication on non-tree bonds,
@@ -668,7 +668,7 @@ approximation. In particular $m=m_Y$ and \eqref{ch06:windows-def} do not
 remove the remaining linear or quadratic term in the exponent.
 
 In a sector integral $F$ includes the chart indicators, the Haar density
-of every active link, the probability weights $\lambda(U,\alpha)$ of the auxiliary index, incoming activities, and all
+of every active link, the probability weights of the auxiliary index, incoming activities, and all
 remaining action terms. It is extended by zero off its original chart.
 The frozen variables are subsequently integrated with probability Haar
 measure $dY$. When $\Gamma$ depends on $Y$, the resulting reference law is
@@ -843,7 +843,7 @@ unless
  \label{ch06:tail-event}
 \end{equation}
 for fixed $\xi>0$. Verifying this implication uses the mean $m_Y$, the
-derivative of the averaging operation, and cutoff factors. A covariance estimate by itself cannot
+derivative of the averaging operation, and event indicators. A covariance estimate by itself cannot
 prove it.
 
 \begin{lemma}[Joint tails with bounded local multiplicity]
@@ -917,7 +917,7 @@ or the corresponding bound after subtracting the prescribed nonzero
 linear target. If that target is within the strict plateau margin, choose
 $\xi$ so $C\xi$ is less than one third of the margin and increase the
 lower bound on the reference coupling to absorb the two errors. The two partition-of-unity weights
-and the normalized weights of the index $\alpha$ are then equal to one. The same strict
+and the normalized weights of the auxiliary index are then equal to one. The same strict
 inequalities persist on a parameter neighborhood and supply the
 zero-germ assertion used in \eqref{ch06:pointwise-jets}.
 
@@ -943,7 +943,7 @@ The row bound transfers the same estimate to the affine component at the target.
 
 \begin{proposition}[Cancellation for the affine mean]
 \label{ch06:mean-cancellation}
-Use the free quadratic forms of the two consecutive scales as in
+Use the quadratic forms of the two consecutive scales as in
 \eqref{ch06:flat-identities}, the linearization $W_F$ of their critical configuration in the block axial gauge, and the comparison term
 defined by parallel-transporting and truncating the untruncated flat maps $M_f,M_n,N$. Then
 \eqref{ch06:mean-target-needed} holds uniformly at targets farther than
@@ -1013,7 +1013,7 @@ strictly inside their respective plateau thresholds, as in the energy
 estimate. The preceding proposition, the nonlinear Taylor error, and
 the bound on the fluctuation field then leave the fine plaquette distance from the identity below $t_f/4$
 and the deviation $n_e$ below $Wt_f$. The partition-of-unity weights and the
-normalized weights of the index $\alpha$ there are equal to one. The bond increment is bounded
+normalized weights of the auxiliary index there are equal to one. The bond increment is bounded
 by $Ct_f$ on this event, so a sufficiently broad fixed chart cutoff is
 also one. A cutoff remainder assigned within the compulsory component region is
 zero by definition; every other such remainder has these small-field neighborhoods.
@@ -1401,9 +1401,9 @@ Taylor expansion gives this for the derivative at $\operatorname{rep}V$
 directly; comparing first to parallel-transported flat components adds an error of
 the same order. Hence the difference of the two half-squares is at
 most $E(2M+E)/2$. The energies $E_f$ and $E_n$ equal the squares of their
-nonlinear components minus comparison terms, plus the nonnegative difference between the term in $\chi(\cdot)^2$ and
+nonlinear components minus comparison terms, plus the nonnegative difference between the squared distance from the identity and
 the squared curvature representative. If a component is not retained, no affine square is subtracted,
-so only this nonnegative square remains.
+so only its nonnegative square remains.
 The coarse counterterm costs $O(t_f^4)$.
 The linear term of the complement component vanishes by the cancellation in
 Proposition~\ref{ch06:mean-cancellation}; its nonlinear square is
@@ -1541,7 +1541,7 @@ The estimate above for the change of variables $T_V$ supplies bounds on
 $T_V$ and its density scores; it is not permission to lose an extra
 derivative of the incoming activity.
 This export concerns a local region whose entire window neighborhoods
-are clean. It does not compare a sector with nonempty index triple to the law with empty index triple,
+are clean. It does not compare a seeded sector to an unseeded law,
 does not replace $W_F$ by the linearization in a different gauge,
 and does not identify separately chosen event indicators. Such replacements need
 their own tail or support decomposition.
