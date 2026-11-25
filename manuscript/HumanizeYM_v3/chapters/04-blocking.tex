@@ -259,15 +259,18 @@ density gives its coarse marginal.
 
 \begin{definition}[Exact block map]
 \label{ch04:block-map}
-For $\beta\ge0$, define the kernel and its action on fine densities by
+The superscript $(L)$ denotes the block ratio: on a coarse torus
+$\Lambda_s$ the fine torus is $\Lambda_{Ls}$. The period $s$, smoothing
+order $j$ and penalty $b$ are understood. For $\beta\ge0$, define the
+kernel and its action on fine densities by
 \begin{align}
- k^{(m)}_\beta(U,V)
+ k^{(L)}_\beta(U,V)
    &=\sum_\alpha\lambda(U,\alpha)
         \prod_{e\text{ coarse}}
            q_{b\beta}\bigl(V_eQ_e^{\rm pred}(U,\alpha)^{-1}\bigr),
  \label{ch04:kernel}\\
- (\mathcal B^{(m)}_\beta f)(V)
-   &=\int k^{(m)}_\beta(U,V)f(U)\,dU,
+ (\mathcal B^{(L)}_\beta f)(V)
+   &=\int k^{(L)}_\beta(U,V)f(U)\,dU,
  \label{ch04:block-operator}
 \end{align}
 where $dU$ and $dV$ denote product probability Haar measure on their
@@ -290,7 +293,7 @@ from boundedness of $q_{b\beta}$ and \eqref{ch04:tag-law}.
 \label{ch04:kernel-properties}
 The kernel is nonnegative and normalized in the coarse variable:
 \begin{equation}
- \int k^{(m)}_\beta(U,V)\,dV=1.
+ \int k^{(L)}_\beta(U,V)\,dV=1.
  \label{ch04:kernel-normalization}
 \end{equation}
 It is covariant under fine gauge transformations and the induced coarse
@@ -298,7 +301,7 @@ gauge transformations $y\mapsto g(Ly)$. It is also covariant under signed
 coordinate permutations and corresponding fine/coarse translations.
 For every integrable fine density $f$,
 \begin{equation}
- \int\mathcal B^{(m)}_\beta f\,dV=\int f\,dU.
+ \int\mathcal B^{(L)}_\beta f\,dV=\int f\,dU.
  \label{ch04:exact-integral}
 \end{equation}
 \end{proposition}
@@ -316,7 +319,7 @@ then give the stated covariance of the kernel.
 \end{proof}
 
 In particular, if $U$ has normalized density $f/\int f$, the coarse
-field has density $\mathcal B^{(m)}_\beta f/\int f$. The equality of
+field has density $\mathcal B^{(L)}_\beta f/\int f$. The equality of
 integrals \eqref{ch04:exact-integral} holds even when the coarse action
 has terms beyond the Wilson plaquette action.
 
@@ -708,7 +711,7 @@ integral; it differentiates no moving large-field boundary.
 
 The analytic task remaining is now precise. Starting with a tuple at the
 fine level, one must construct a coarse tuple whose density is exactly
-$\mathcal B^{(m)}_\beta\operatorname{dens}(\rho)$, whose coupling has the
+$\mathcal B^{(L_m)}_\beta\operatorname{dens}(\rho)$, whose coupling has the
 claimed adjustment, and whose activities obey the coarse conditions.
 A class defined as the outputs reachable from a Wilson starting density
 can only be introduced after that construction. It must not be confused
