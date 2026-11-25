@@ -2,7 +2,7 @@
 \chapter{Continuum correlations and local fields}
 \label{ch13:continuum}
 
-The ultraviolet limit leaves a theory on each fixed physical torus.
+The ultraviolet limit leaves a theory on each fixed torus.
 We now let its period grow. The construction may select a subsequence
 of volumes, but it does not select a new subsequence of ultraviolet
 cutoffs for the correlations. Local fields are then defined by their
@@ -12,7 +12,7 @@ the same responses represent the same field.
 We use the full fixed-volume limit of
 Theorem~\ref{ch12:uv-theorem}, the volume-uniform finite-difference
 bounds of Theorem~\ref{ch11:all-period-differences}, and the equation comparisons and the comparisons using separating families in Chapter~\ref{ch11:insertions}.
-Compactness gives the volume extraction; the separate equation
+Compactness gives the subsequence of volumes; the separate equation
 inclusion and rank bounds identify its local fields.
 
 \section{One subsequence of volumes}
@@ -24,12 +24,12 @@ Let $p(k)$ be any strictly increasing sequence of volume indices.
 On every compact subset of $\Conf_n$, the periodic kernels
 $M^{\rm UV}_{p(k),v}$ are eventually defined with separation bounded
 below independently of $k$. Each of their derivatives is uniformly
-bounded there. The cutoff threshold used to prove the bound may
+bounded there. The lower bound on $N$ used to prove the bound may
 depend on the fixed volume; after taking that ultraviolet limit it
 disappears from the bound.
 
-Arzel\`a--Ascoli and diagonal extraction
-\cite[Theorem~7.25]{Rudin1976} give one refinement $P(k)=p(q(k))$
+Arzel\`a--Ascoli and a diagonal argument
+\cite[Theorem~7.25]{Rudin1976} give one subsequence $P(k)=p(q(k))$
 and a multilinear family $S_n$ such that
 \begin{equation}
  M^{\rm UV}_{P(k),v}\longrightarrow S_n(v;\cdot)
@@ -49,13 +49,13 @@ needed. For each fixed separated test function $f$ the order of limits is
  \label{ch13:ordered-limit}
 \end{equation}
 The inner limit is the whole cutoff sequence, taken down each column
-of Figure~\ref{ch13:fig-ordered-limits}. Every further volume
-refinement preserves \eqref{ch13:volume-limit} and
+of Figure~\ref{ch13:fig-ordered-limits}. Every further subsequence of volumes
+preserves \eqref{ch13:volume-limit} and
 \eqref{ch13:ordered-limit}.
 
 \input{figures/ordered-limits}
 
-Permutation symmetry, conjugation, the distinguished unit and
+Permutation symmetry, conjugation, the distinguished identity field and
 hypercubic covariance pass from the finite correlations by these
 limits. Translation by an arbitrary real vector is obtained by
 approximating it on the same lattice; the uniform first-difference
@@ -78,15 +78,15 @@ It is the lattice inequality already cited from
 \cite{FrohlichIsraelLiebSimon1978}, with the constant observable in every unused cell.
 The estimate does not grow with the distances between the cells.
 
-Here is the required geometric placement. For a tiling of physical
-side $a$, the translations in one coordinate bringing one of $n$
-anchors within distance $w$ of a boundary have total length at most
+Here is the required geometric placement. For a tiling of
+side $a$ in continuum units, the translations in one coordinate bringing one of $n$
+insertion points within distance $w$ of a boundary have total length at most
 $2nw$ modulo $a$. If $2nw<a$, a translation avoids all these strips;
 a lattice translation does so for sufficiently fine cutoff. Choose
-one in each coordinate. Anchors with pairwise maximum-coordinate
+one in each coordinate. Insertion points with pairwise maximum-coordinate
 distance greater than $a$ cannot share a cell. Hence if the centered
 local bounds apply at scale $k$ with margin $3a_k$, and
-$6na_k<a_m$, anchors separated by more than $a_m$ admit distinct
+$6na_k<a_m$, insertion points separated by more than $a_m$ admit distinct
 side-$a_m$ cells with the required margins.
 
 We shall use an error family $E_{N,p}$ with the following property:
@@ -117,7 +117,7 @@ smallness at one configuration would not suffice.
 A label includes its degree space: the same formal polynomial in
 $V_d$ and $V_e$ can have different cutoff normalizations. For
 $c\in V_d$, a fixed spectator list $v$, and a separated smooth test function
-$f$, define the one-slot response
+$f$, define the correlation functional
 \[
  L_{v,f}(c)=\int f(x_0,x)S_{n+1}(c(x_0),v(x))\,dx_0\,dx.
 \]
@@ -129,18 +129,18 @@ Let
 The intersection permits every finite spectator list, of arbitrary
 degrees. Smoothness makes this equivalent to vanishing in every
 pointwise separated correlation. Permutation symmetry ensures that
-nullity has the same meaning in every slot. The quotient $F_d$ is
+nullity has the same meaning in every argument. The quotient $F_d$ is
 finite dimensional, but its dimension has not yet been identified.
 
 We use the bounded equivariant idempotents $\Pi_{d,N,p}$ of
 Section~\ref{ch11:uniform-differences}, with kernel
 $\mathsf Z_{N,p,d}P_{N,p,d}S_{t_N}R_d\mathcal I_d$.
-Choose a common ordered limit $\Pi_d$ after a coefficient refinement. More
-precisely, diagonal extraction over the countably many degrees and
+Choose a common ordered limit $\Pi_d$ after passing to a further subsequence for the coefficients. More
+precisely, a diagonal argument over the countably many degrees and
 volumes gives one increasing sequence $N=n(j)$ along which the bounded
-coefficient arrays converge at each fixed volume. A further volume
-refinement makes those limits converge as well. All coefficient
-limits below use these refined ordered tails. This auxiliary selection
+coefficient arrays converge at each fixed volume. A further subsequence of volumes
+makes those limits converge as well. All coefficient
+limits below use the ordered tails of these subsequences. This auxiliary selection
 does not change the already existing full cutoff limits of the
 correlations. Write
 $r_d=\dim\mathcal M_d^{\rm Max}$ for the dimension of the free Maxwell
@@ -156,13 +156,13 @@ $r_d\times r_d$ free matrix of correlation pairings.
 The first statement is exact rank equality, since every map defining
 the finite equation space is invertible. For the second,
 Lemma~\ref{ch11:uniform-sweep} makes its chessboard seminorms tend
-to zero; bounded rows have uniformly subpower inverse terminal
-coordinates, and \eqref{ch13:vanishing-error} supplies every spectator
+to zero; bounded vectors have uniformly subpower cutoff-scale
+coordinates, and \eqref{ch13:vanishing-error} gives every spectator
 response. For the third, Proposition~\ref{ch11:finite-detector-input}
-gives the actual finite-cutoff matrices with error tending to zero
+gives the finite-cutoff matrices with error tending to zero
 as their comparison depth increases. Include their finitely many
 bounded label columns at each of the countably many comparison depths
-in the same coefficient refinement. At each fixed depth, their
+in the same subsequence for the coefficients. At each fixed depth, their
 ordered limits preserve the matrix estimate by multilinearity and
 the uniform correlation bounds. An injective rectangular matrix of correlation pairings
 has an invertible square minor; retain those rows.
@@ -203,18 +203,18 @@ Assume $\ker\Pi=\bigcap_i\ker L_i$. If vectors $x_u$ satisfy
 \end{equation}
 there is one $z\in\operatorname{ran}\Pi$ with $L_i(z)=t_i$ for
 all $i$. To see this, put $b_u=(1+\|\Pi_ux_u\|)^{-1}$ and
-$z_u=b_u\Pi_ux_u$. A common cluster point $(b,z)$ satisfies
+$z_u=b_u\Pi_ux_u$. A common limit point $(b,z)$ satisfies
 $b+\|z\|=1$, $\Pi z=z$ and $L_i(z)=bt_i$. If $b=0$, then
 $z\in\ker\Pi\cap\operatorname{ran}\Pi$, a contradiction.
 The vector $z/b$ is the desired representative. Compactness is used
 only in one fixed finite-dimensional space; all response identities
-hold at the same cluster point because they hold along the filter.
+hold at the same limit point because they hold along the filter.
 
 In the application, the filter is generated by ordered tails:
 $p=P(k)$ with $k\ge k_0$, and $N=n(j)$ with $j\ge j_0(k)$.
 The normalized null condition is available for every admissible
 coefficient family in the sense of Section~\ref{ch11:uniform-differences}.
-Indeed, if $x_{N,p}$ has subpower inverse terminal coordinates, then
+Indeed, if $x_{N,p}$ has subpower cutoff-scale coordinates, then
 $x/(1+\|\Pi x\|)$ has the same property, whereas
 $\Pi x/(1+\|\Pi x\|)$ is bounded and therefore admissible.
 Their difference lies in the exact finite equation kernel.
@@ -233,10 +233,10 @@ difference. To check the inclusion trial, multiply the original
 cutoff observable by $a_N^e$; its local representative is
 $a_N^{e-d}$ times the degree-$d$ section, so its derivative and
 value bounds remain subpower. For a difference, the extra factor
-$a_N$ cancels the inverse step, and the fixed translated-stencil
-cost is bounded by the coupling-threshold requirements used in
+$a_N$ cancels the inverse step, and the factor contributed by the fixed translated stencil
+is controlled by the lower bounds on the reference coupling used in
 Theorem~\ref{ch11:all-period-differences}.
-Trial descent yields admissible coefficients and vanishing chessboard seminorm errors, uniformly in period. The preceding paragraph gives
+The backward comparison yields admissible coefficients and vanishing chessboard seminorm errors, uniformly in period. The preceding paragraph gives
 their normalized null estimates.
 All representatives and comparison errors are chosen before
 the spectators and test functions.
@@ -269,7 +269,7 @@ definition. The inclusions are injective and satisfy
  \iota_{e,f}\iota_{d,e}=\iota_{d,f},\qquad
  \partial_\mu\partial_\nu=\partial_\nu\partial_\mu.
 \]
-Each identity follows by testing against every spectator and using
+Each identity follows by pairing with every spectator and using
 \eqref{ch13:null}; the derivative maps also commute with inclusions.
 Conjugation and hypercubic covariance descend in the same way.
 The union of the $F_d$ is therefore a filtered space of local fields,
@@ -292,7 +292,7 @@ It also passes for joint smooth test functions supported on positive-time
 separated configurations. Indeed their lattice supports stay away
 from both reflection planes on the ordered tail. The lattice plane
 $x^4=a_N/2$ tends to zero, and the uniform separated bound controls
-the moving test functions. Taking the two limits preserves positivity of each
+the cutoff-dependent test functions. Taking the two limits preserves positivity of each
 finite matrix. Pointwise positivity follows by concentrating smooth
 bumps. This uses the finite lattice result of
 Section~\ref{ch01:reflection}; it asserts no positivity for unspecified
@@ -300,7 +300,7 @@ extensions at coincident points.
 
 For later use take the centered chessboard estimate
 $\|O\|_k\le C a_k^{-(d+1)}$, uniform on a bounded set of labels
-of degrees at most $d$ and every sufficiently fine fixed level $k$.
+of degrees at most $d$ and every sufficiently fine fixed scale $k$.
 It follows by choosing $\epsilon=1$ in
 Proposition~\ref{ch13:sharp-centered}, whose proof below uses only
 the bound for reflected tilings of Chapter~\ref{ch11:insertions} and the
@@ -364,7 +364,7 @@ $20na_k<a_m$ and $a_k\ge c_2(r/n)^4$.
 
 The expanded reflection form contains $4jn$ main insertions and two
 exterior copies. Since $s$ is a multiple of $a_m$, the main points
-have at most $2n$ residue patterns modulo the side-$a_m$ tiling,
+lie in at most $2n$ classes modulo the side-$a_m$ tiling,
 independently of $j$. The strip count therefore places all main
 points in distinct cells with margins $5a_k$, using constants
 independent of the number of repetitions.
@@ -385,15 +385,15 @@ factors. If $X$ bounds the exterior centered seminorms, the result is
 \]
 Take $B_v=\max(1,X^{2|v|})$ and use the lower bound on $a_k$.
 Every use of the lattice inequality is at fixed $j$ before taking
-the ordered limits. A cutoff threshold uniform in $j$ is unnecessary.
+the ordered limits. A lower bound on $N$ uniform in $j$ is unnecessary.
 \end{proof}
 
-This estimate is the input for bounded slab insertions in the
+This estimate is the hypothesis needed for bounded slab insertions in the
 reflection Hilbert space. Its derivation precedes that operator
 construction and does not use orthogonal covariance or a phase
-decomposition. The equation comparison, admissible trial encoding,
+decomposition. The equation comparison, the reference labels of admissible trials,
 estimates for finite separating families and centered estimates all refer to the same selected
-family. Full orthogonal covariance and products at coincident points
+family of measures. Full orthogonal covariance and products at coincident points
 remain separate constructions.
 
 \input{chapters/13-sharp-bounds}

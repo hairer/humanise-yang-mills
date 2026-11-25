@@ -9,13 +9,13 @@ needed to construct rotational Ward identities. Relativistic
 reconstruction requires additional arguments and is not a consequence
 of the Hilbert-space construction alone.
 
-Throughout, $S$ is the mixed correlation hierarchy of
+Throughout, $S$ is the undecomposed correlation hierarchy of
 Chapter~\ref{ch13:continuum}. Its finite-dimensional field spaces are
 $F_d$, with the compatible inclusions and derivative maps
-constructed there. Statements using this calculus retain the actual
-marked estimates required in that chapter. All correlations in the
+constructed there. Statements using this calculus retain the
+estimates with insertions required in that chapter. All correlations in the
 present chapter are evaluated at distinct points or against test functions
-supported away from collisions.
+supported away from coincident points.
 
 \section{Reflection spaces for the coordinate axes}
 \label{ch14:reflection}
@@ -23,7 +23,7 @@ supported away from collisions.
 Fix an axis $\mu$. A positive word $w=((x_i,A_i))_{i=1}^n$ has
 $x_i^\mu>0$ and distinct points; the empty word is allowed.
 Let $\theta_\mu w$ reflect the points across $x^\mu=0$, apply the
-signed coordinate reflection to the labels, conjugate them, and
+signed coordinate reflection to the fields, conjugate them, and
 reverse their order. On formal finite linear combinations set
 \[
  \langle v,w\rangle_\mu=S(\theta_\mu v\,w).
@@ -73,11 +73,11 @@ $[0,\infty)\times\RR^3$:
  E_\mu(t)U_\mu(y)
      =\int e^{-tE+ip\cdot y}\,dP_\mu(E,p).
 \end{equation}
-This is a coordinate half-space spectrum. No cone bound
+This is a joint spectral measure supported in a half-space. No cone bound
 $E\ge|p|$ has been proved or used.
 For $\operatorname{Re}z>0$, the same spectral integral defines the
 holomorphic contraction $e^{-zH_\mu}$; its derivatives are bounded
-on every smaller right half-plane. This elementary heat analyticity
+on every smaller right half-plane. This elementary analyticity of the translation semigroup
 will be used before any rotation action is constructed.
 
 \section{Bounded insertions in a slab}
@@ -95,10 +95,10 @@ This identity is on formal word sums; neither boundedness nor
 preservation of null vectors is assumed yet.
 
 \begin{proposition}[Slab norm bound]\label{ch14:slab-bound}
-For labels of bounded degree and norm, a word of length $n\ge1$,
-with pairwise separation and slab margins at least $r$, $0<r\le1$,
+For fields of bounded degree and norm, a word of length $n\ge1$,
+with buffer $r$, $0<r\le1$,
 defines a bounded operator $B_h(w)$ on $\mathcal H_\mu^{\rm OS}$.
-There are constants depending only on the label bounds such that
+There are constants depending only on the bounds on the fields such that
 \[
  B_h(w)[v]_\mu=[w\tau_hv]_\mu,
  \qquad \|B_h(w)\|\le C^n(n/r)^{\kappa n}.
@@ -144,7 +144,7 @@ point fields acting on an arbitrary Hilbert vector.
 \label{ch14:slab-smooth}
 On the open configuration space inside a fixed slab, $B_h(w)$ is
 smooth in operator norm. A position derivative replaces the
-corresponding field label by its derivative in $F_{d+1}$.
+corresponding field by its derivative in $F_{d+1}$.
 \end{proposition}
 
 \begin{proof}
@@ -162,54 +162,54 @@ all orders. This argument explains why weak differentiability alone
 would have been insufficient.
 \end{proof}
 
-\section{Comparing the mixed fields with free fields}
+\section{Comparing the fields of the undecomposed hierarchy with free fields}
 \label{ch14:comparison}
 
-The comparison is a statement about the actual marked construction,
+The comparison is a statement about the construction with insertions,
 stronger than equality of dimensions of field spaces. We record its
 quantitative form and then derive it from the finite-cutoff comparison. For fixed arity and degree bounds,
 let $M_k\to\infty$, $r_k\to0$ and $\epsilon_k\to0$. Suppose the
-same coefficient lifts in every slot give rescaled kernels $S_k$,
-with, on a compact separated window,
+same coefficient lifts in every argument give rescaled kernels $S_k$,
+with, on a compact set of separated configurations,
 \begin{equation}\label{ch14:grid-input}
  |S_k|\le A_k^n,\quad
  |\nabla S_k|\le C_n V_k^n/\delta_k,
  \quad |S_k-S^0|\le\epsilon_k\quad\hbox{on its grid}.
 \end{equation}
-The gradient bound is required outside coordinate-equality strips
+The gradient bound is required outside the coincident-coordinate strips
 of width $4\delta_k$; the grid has spacing $s_k$, and $S^0$ is the
 free correlation. The necessary small errors are
 \begin{equation}\label{ch14:grid-cost}
  A_k^n\delta_k\to0,\qquad V_k^n s_k/\delta_k\to0,
  \qquad s_k=o(\delta_k).
 \end{equation}
-For example the source construction uses
+For example the construction below uses
 $r_k=a_kM_k^{\alpha_0}$, $s_k=M_k^{-\alpha_0}$,
 $A_k=CM_k^{(\alpha_0-\alpha_1)D}$,
 $V_k=CM_k^{(\alpha_0-\alpha_2)D}$ and $\delta_k=M_k^c$,
 with strictly negative exponents in \eqref{ch14:grid-cost}.
-The marked coefficient inverse, Gaussian comparison and displacement
-estimates must all concern these same lifts. The following construction verifies this compatibility.
+The coefficient inverse, Gaussian comparison and displacement
+estimates with insertions must all concern these same lifts. The following construction verifies this compatibility.
 
 \input{chapters/14-lattice-comparison}
 
-The coordinate-equality strips have volume $O(\delta_k)$ on a fixed
-window. Their contribution to any test function of supremum norm at most one
+The coincident-coordinate strips have volume $O(\delta_k)$ on a fixed
+compact set. Their contribution to any test function of supremum norm at most one
 is $O((A_k^n+1)\delta_k)$. Outside them, rounding to the grid and
-\eqref{ch14:grid-input} cost
+\eqref{ch14:grid-input} contribute
 $O(V_k^ns_k/\delta_k)$ plus the free modulus of continuity.
 It follows that
 \begin{equation}\label{ch14:uniform-tests}
  \sup_{\|f\|_\infty\le1,\ \operatorname{supp}f\subset K}
  \left|\int f(x)(S_k(x)-S^0(x))\,dx\right|\longrightarrow0.
 \end{equation}
-This is local $L^1$ convergence; it includes coordinate ties which
-are not collisions. Testing against each fixed $f$ separately would
+This is local $L^1$ convergence; it includes coincident coordinates which
+are not coincident points. Testing against each fixed $f$ separately would
 be weaker than the displayed assertion.
 
 The lifts can be made exactly compatible with inclusions. Write
 $i_d:F_d^0\to F_{d+1}^0$ for the free inclusion,
-$j_d$ for the physical inclusion and $L_d$ for a real,
+$j_d$ for the interacting inclusion and $L_d$ for a real,
 hypercubic-equivariant left inverse of $i_d$. From provisional maps
 $U_{k,d}$ define recursively
 \[
@@ -217,13 +217,13 @@ $U_{k,d}$ define recursively
  =j_d\widetilde U_{k,d}L_d+U_{k,d+1}(I-i_dL_d).
 \]
 Exact inclusion identities of correlations preserve
-\eqref{ch14:uniform-tests} in every slot. The unit is fixed at degree
-zero. Free finite detecting families from Chapter~\ref{ch03:maxwell}
+\eqref{ch14:uniform-tests} in every argument. The identity field is fixed at degree
+zero. Finite free separating families from Chapter~\ref{ch03:maxwell}
 make these maps eventually injective; equality of dimensions in
 Chapter~\ref{ch13:continuum} makes them isomorphisms. For each finite
 request the tail is chosen once, before the test function. A single
-sequence for all requests is obtained only by explicitly diagonalizing
-arity, degree, compact windows and errors; the numerical comparison
+sequence for all requests is obtained only by explicitly taking a diagonal subsequence over
+arity, degree, compact sets and errors; the numerical comparison
 level must be chosen after those finite requests.
 
 \begin{proposition}[Derivative transport and smooth comparison]
@@ -234,12 +234,12 @@ For the comparison maps just described,
                    \longrightarrow\partial_a^0
 \]
 in finite-dimensional operator norm. Rescaled correlations converge
-in $C^j$ on every compact separated window, for every fixed $j$,
-also for convergent moving labels.
+in $C^j$ on every compact set of separated configurations, for every fixed $j$,
+also for convergent sequences of free fields.
 \end{proposition}
 
 \begin{proof}
-Choose free tested correlations giving an injective map
+Choose free correlation functionals whose values give an injective map
 $L:F_{d+1}^0\to\CC^q$. Their corresponding maps $L_k$
 converge to $L$ by \eqref{ch14:uniform-tests}; hence
 $\|L_kv\|\ge c\|v\|$ eventually. Integration by parts in the
@@ -247,20 +247,20 @@ insertion position gives
 $L_k D_{k,d,a}v\to L\partial_a^0v$. No bound on
 $D_{k,d,a}$ was assumed: subtracting the limiting derivative and
 using the lower bound supplies it and its convergence.
-Moving labels are handled by expansion in fixed finite bases.
+Convergent sequences of free fields are handled by expansion in fixed finite bases.
 Every fixed derivative of the correlation error consequently tends
-to zero locally in $L^1$. Multiply by a smooth cutoff supported
-away from collisions. Integration by parts gives a Fourier bound
+to zero locally in $L^1$. Multiply by a smooth cutoff function supported
+away from coincident points. Integration by parts gives a Fourier bound
 by $(1+|p|)^{-M}$ times the sum of its $L^1$ derivative norms
 through order $M$. Choose $M>4n+j$ and apply Fourier inversion.
 \end{proof}
 
-\section{The conserved stress line}
+\section{The line of conserved stress tensors}
 \label{ch14:stress-line}
 
-Let $\mathcal K^0$ and $\mathcal K$ be the real spaces of centered,
+Let $\mathcal K^0$ and $\mathcal K$ be the real spaces of zero-mean,
 real, symmetric, hypercubic-covariant degree-four tensor arrays in
-the free and mixed field spaces. Centered means that each component
+the free and undecomposed field spaces. Zero-mean means that each component
 has zero expectation. Let $\mathcal V^0,\mathcal V$ be the degree-five
 covariant vector spaces. The free divergence calculation of Chapter~\ref{ch03:maxwell}
 has rank two. To check that its target is the full covariant vector
@@ -278,17 +278,17 @@ The two independent rows of correlation pairings in \eqref{ch03:divergence-matri
 show that these vectors are independent and in the divergence image.
 Thus free divergence is onto, with kernel spanned by $T^0$.
 
-Center the componentwise map $U_{k,4}$ after transport. It gives an
-isomorphism $C_k:\mathcal K^0\to\mathcal K$: its inverse transports
-back and centers there, and preservation of the unit makes the two
-scalar corrections cancel. Let $V_k$ be the corresponding vector
+Apply the componentwise map $U_{k,4}$ and subtract expectations. This gives an
+isomorphism $C_k:\mathcal K^0\to\mathcal K$: its inverse applies the inverse map
+and subtracts expectations there, and preservation of the identity field makes the two
+subtracted constants cancel. Let $V_k$ be the corresponding vector
 isomorphism. The derivative comparison gives
 \[
        V_k^{-1}r_k\operatorname{div}C_k
                           \longrightarrow\operatorname{div}^0.
 \]
 Compose with a fixed right inverse of free divergence. The result
-tends to the identity and is invertible for large $k$, so physical
+tends to the identity and is invertible for large $k$, so the interacting
 divergence is onto. Rank--nullity therefore gives
 \begin{equation}\label{ch14:conserved-line}
                      \dim\ker(\operatorname{div}|_{\mathcal K})=1.
@@ -299,17 +299,17 @@ existence of a free conserved tensor.
 Choose a nonzero $J$ on this line. Normalize its pulled-back arrays
 $r_k^4 U_{k,4}^{-1}J$ to have the norm of $T^0$ and take a convergent
 subsequence on that finite-dimensional sphere. Smooth comparison
-at arity one ensures that its limit is centered. Derivative transport
+at arity one ensures that its limit is zero-mean. Derivative transport
 ensures conservation. It must therefore be $T^0$ or $-T^0$.
 Changing the sign of $J$ once gives positive numbers $c_k$ with
 \begin{equation}\label{ch14:balanced-stress}
             U_{k,4}^{-1}(c_k^{-1}r_k^4J)\longrightarrow T^0.
 \end{equation}
-This fixes an orientation of the physical line. It does not yet fix
+This fixes the sign of the chosen tensor on the line. It does not yet fix
 its Ward normalization, and no positive lower bound for $c_k$ has
 been asserted.
 
-\section{Shrinking shells and local charge fields}
+\section{Shrinking shells and the local generators}
 \label{ch14:shells}
 
 Choose $\chi\in C_c^\infty(\RR^4)$ equal to one near an insertion
@@ -321,15 +321,15 @@ $v(y)$, either constant or $K(y-x_0)$ with $K^{\mathsf T}=-K$, set
               S(J_{\mu\nu}(y),A(x_0),\boldsymbol B)\,dy.
 \end{equation}
 Repeated indices are summed. Conservation and symmetry of $J$ show
-that the value is independent of the cutoff as long as it separates
+that the value is independent of the cutoff function as long as it separates
 the same distinguished insertion from the spectators. Indeed the
-difference is the integral of a total divergence in a collision-free
-region, and $(\partial_\mu v_\nu)J_{\mu\nu}=0$. In particular one
-can shrink a radial cutoff as in Figure~\ref{ch14:fig-ward-shell}.
+difference is the integral of a total divergence in a
+region without coincident points, and $(\partial_\mu v_\nu)J_{\mu\nu}=0$. In particular one
+can shrink a radial cutoff function as in Figure~\ref{ch14:fig-ward-shell}.
 
 \input{figures/ward-shell}
 
-The actual two-mark estimate needed here has the following form.
+The estimate with two insertions needed here has the following form.
 If $A\in F_d$, let $\varkappa=0$ for constant $v$ and
 $\varkappa=1$ for linear $v$. Put $D=d+1-\varkappa$.
 For a finite family of separated spectator correlation functionals $\ell_i$ on
@@ -344,15 +344,15 @@ there must be $\rho_m\downarrow0$ such that
 Here the same correction coefficient at the distinguished insertion
 must work for every spectator in the finite family.
 The power $3+\varkappa$ is the four-dimensional volume minus one
-cutoff derivative plus the degree of the Killing field.
+derivative of the cutoff function plus the degree of the Killing field.
 
-The mixed local replacement estimate of
-Proposition~\ref{ch18:mixed-bound} supplies this assertion directly,
+The local replacement estimate for the undecomposed hierarchy,
+Proposition~\ref{ch18:mixed-bound}, supplies this assertion directly,
 without using phase decomposition or rotational Ward identities.
 Apply it to the two-field cluster $(J_{\mu\nu},A)$, of total degree
 $d+4$, and truncate at $D=d+1-\varkappa$. Its replacement field
 $C_D(\rho,z)\in F_D$ is chosen by fixed probes before the exterior
-spectator. For every spectator in the finite family the residual is
+spectator. For every spectator in the finite family the replacement error is
 bounded uniformly on $1/4\le|z|\le2$ by
 $C\rho^{D+1-(d+4)-\epsilon}$. The same coefficients therefore cancel
 under $\sum_i g_i\ell_i=0$. After multiplying by the shell factor,
@@ -366,7 +366,7 @@ This proves \eqref{ch14:annular-input} for every sufficiently small
 radius, and hence along any sequence $\rho_m\downarrow0$.
 The full compact annulus is allowed because the local replacement
 proof already removed its lattice-grid restriction by derivative
-bounds. Only point collisions are excluded; coordinate ties cause
+bounds. Only coincident points are excluded; coincident coordinates cause
 no additional restriction. This use of local replacement precedes
 its phase-uniform operator-product formulation.
 
@@ -392,8 +392,8 @@ Continuity extends the identity from generic grid configurations to
 every separated configuration. Linearity follows from uniqueness.
 \end{proof}
 
-Differentiating the shell identity with the distinguished insertion,
-using conservation to move the cutoff and symmetry to remove the
+Differentiating the flux identity with the distinguished insertion,
+using conservation to move the cutoff function and symmetry to remove the
 Killing derivative, gives
 \begin{equation}\label{ch14:charge-commute}
  Y_{d+1}(K)\partial_bA
@@ -405,13 +405,13 @@ shell with $x_0$; the derivative of $K(y-x_0)$ supplies the displayed
 constant flux term. Faithfulness of separated spectator correlation functionals turns
 these response identities into field identities. The same argument
 shows compatibility with inclusions, reality and signed coordinate
-symmetries; both charges annihilate the unit.
+symmetries; both generators annihilate the identity field.
 
-\section{Coordinate spectral measures and the angular boundary}
+\section{Joint spectral measures and the boundary term at infinity}
 \label{ch14:spectral}
 
 We recall that $P_\mu$ in \eqref{ch14:coordinate-spectrum} is the
-joint measure of nonnegative heat energy and transverse momentum.
+joint measure of nonnegative energy and transverse momentum.
 For a point field, translate its insertion by $ue_\mu$, $u>0$,
 into the positive half-space and define the undamped measure
 \[
@@ -419,9 +419,9 @@ into the positive half-space and define the undamped measure
        d\langle[A(ue_\mu)],P_\mu(E,p)[A(ue_\mu)]\rangle.
 \]
 The semigroup law makes this independent of $u$. It is finite on
-$E\le M$; it need not have finite total mass. Word measures are
+$E\le M$; it need not have finite total mass. Spectral measures of words are
 defined after translating the entire word beyond its extreme point.
-Polarization defines mixed measures. For integrable nonnegative
+Polarization defines complex measures for pairs. For integrable nonnegative
 $g_1,g_2$ and $|f|^2\le g_1g_2$, spectral Cauchy--Schwarz gives
 \begin{equation}\label{ch14:spectral-CS}
  \left|\int f\,d\nu_\mu^{AB}\right|^2
@@ -432,7 +432,7 @@ polynomial transverse moments. One direct justification takes
 centered differences of the reflected two-point function: their
 spectral multiplier is $(2\sin(tp_j/2)/t)^{2r}$. Fatou's lemma
 and the integral remainder for finite differences give the moment
-bound as $t\to0$. Further heat damping gives energy moments.
+bound as $t\to0$. Further damping by the translation semigroup gives energy moments.
 For point fields, integration over small damping times against a
 sufficiently high power of time also gives
 \begin{equation}\label{ch14:polynomial-moments}
@@ -445,14 +445,14 @@ for some $D$ depending on $A,r$.
 If a field or word combination $A$ has reflection signs
 $\varepsilon_i=\pm1$ in axes in a set $I$, its two-point kernel
 has, in time direction $i$, the spectral sign $\varepsilon_i$.
-For an even frequency profile $f$ use
+For an even \emph{frequency profile} $f$, a one-variable factor of a product test function in momentum space, use
 \[
  \mathcal Lf(E)=\int e^{-E|t|}\left(\int e^{ipt}f(p)\,dp\right)dt
        =2E\int\frac{f(p)}{p^2+E^2}\,dp.
 \]
 At $E=0$ the limiting value is $2\pi f(0)$.
 To compare representations in different axes without an arbitrary
-collision extension, subtract the low moments of the profiles.
+extension to coincident points, subtract the low moments of the profiles.
 Choose even $\sigma\ge0$ of integral one supported in
 $1\le|v|\le2$, and the Lagrange polynomials $L_j$ for the nodes
 $(j+2)^2$, $0\le j<m$. Define the annular correction by
@@ -461,8 +461,8 @@ $(j+2)^2$, $0\le j<m$. Define the annular correction by
  =\int\sigma(v)f(p)\sum_{j<m}L_j((p/(\rho v))^2)
                            g(\rho v(j+2))\,dp\,dv.
 \]
-Then $f-\mathcal C_{m,\rho}f$ has its first $2m$ moments zero.
-Interpolation of $(p^2+E^2)^{-1}$ gives its exact response
+Then the \emph{residual profile} $f-\mathcal C_{m,\rho}f$ has its first $2m$ moments zero.
+Interpolation of $(p^2+E^2)^{-1}$ gives its exact Laplace transform
 \begin{equation}\label{ch14:positive-residual}
  \mathcal R_{m,\rho}f(E)
  =2E\int\frac{f(p)}{p^2+E^2}\int\sigma(v)
@@ -497,7 +497,7 @@ so the integrated moment bound \eqref{ch14:polynomial-moments} holds
 in each. They will be relaxed for the line axis below.
 For even nonnegative fixed profiles $f_j\in C_c^\infty(\RR)$ write
 $f_{j,v}(p)=v^{-1}f_j(p/v)$; in particular the normalization preserves
-its integral, while its supremum costs $v^{-1}$. For a product of profiles
+its integral, while its supremum is multiplied by $v^{-1}$. For a product of profiles
 $g=(g_k)_{k\in I}$ define
 \[
  \operatorname{Resp}_i(g)
@@ -507,7 +507,7 @@ $g=(g_k)_{k\in I}$ define
 The same even product test function of the unreflected pair kernel has spectral
 values $\varepsilon_i\operatorname{Resp}_i(g)$ in every axis $i$.
 First require sufficiently many vanishing moments in two axes, so the
-test function vanishes to the required order at the collision. This makes the
+test function vanishes to the required order at coincident points. This makes the
 comparison an equality of convergent integrals of the original kernel.
 If $I$ omits axes, insert in each omitted frequency coordinate a profile
 $h(p/T)$ with $h=1$ near zero, and let $T\to\infty$; the damped moment
@@ -527,8 +527,8 @@ both $i$ and $j$. Expanding it gives
 \end{align}
 Here the semicolon leaves every unmentioned profile unchanged.
 The omitted term is
-$-\operatorname{Resp}_j(g_j-a_j;g_{\ne j})\le0$, because its temporal
-residual response and all its transverse profiles are nonnegative.
+$-\operatorname{Resp}_j(g_j-a_j;g_{\ne j})\le0$, because the Laplace transform of its temporal
+residual profile and all its transverse profiles are nonnegative.
 The corrections $a_i,a_j$ themselves can have signs. They occur only
 as transverse profiles on the right, so replacing them by nonnegative
 majorants gives an upper bound. This explains precisely where positivity
@@ -543,7 +543,7 @@ $q<0$, $\beta_j\le0$, and every $\delta>0$,
                          =O_\delta(\lambda^\delta).
 \end{equation}
 The following induction proves the claim while keeping the order of
-parameter choices explicit. Choose a walk $i_0,\ldots,i_N$ through $I$
+parameter choices explicit. Choose a sequence $i_0,\ldots,i_N$ through $I$
 with opposite signs at consecutive entries, starting at $i_0=i$, with
 every axis visited before its final entry. Put
 $V_s=\{i_0,\ldots,i_{s-1}\}$. Fix $K\ge0$ bounding the magnitudes of
@@ -586,7 +586,7 @@ step, with the previously current axis now having nonnegative width
 exponent. The correction in $j$ is bounded by
 $C_r\lambda^{-2r\alpha}|p_j|^{2r}$ on its annulus; its coefficients
 are bounded because $\omega_j<\alpha$. The remaining narrow suprema
-cost at most $\lambda^{p_*}$. The first term is consequently at most
+contribute at most the factor $\lambda^{p_*}$. The first term is consequently at most
 \[
  C\lambda^{p_*-2r\alpha+
                     \max(-\omega_i,\eta D)}
@@ -611,18 +611,18 @@ Let $K_{ab,cd}(x)=S(J_{ab}(x),J_{cd}(0))$ for $x\ne0$, and choose
 an integer $D$ above the collision orders of these kernels and their
 first derivatives. For one-dimensional Schwartz test functions let $\Pi_D$
 retain Taylor orders less than $D$, multiplied by a fixed even
-cutoff. On product test functions define
+cutoff function. On product test functions define
 \[
  R_{ab,cd}(h)=\int K_{ab,cd}(x)
        \left(\prod_i h_i(x_i)-\prod_i\Pi_Dh_i(x_i)\right)dx.
 \]
 Each term of the telescoping product difference has a factor
-$O(|x_i|^D)$, ensuring integrability. Using the same cutoff in every
+$O(|x_i|^D)$, ensuring integrability. Using the same cutoff function in every
 axis preserves signed tensor symmetries and exchange of the index
 pairs. Conservation makes its divergence a distribution supported at
 zero with finitely many derivatives. Inversion removes its even orders.
 Here is an explicit subtraction of the possible linear orders. Put
-$\chi_0(x)=\prod_j\chi(x_j)$, using the even Taylor cutoff above, and set
+$\chi_0(x)=\prod_j\chi(x_j)$, using the even Taylor cutoff function above, and set
 \[
  q_{ab,cd}=\sum_i R_{ib,cd}\bigl(\partial_i(x_a\chi_0)\bigr),
  \qquad R'_{ab,cd}=R_{ab,cd}-q_{ab,cd}\delta_0.
@@ -651,11 +651,11 @@ Conservation on the two index pairs gives
 $Q_1=p_\mu^2Q_0+D_1$ and $Q_2=p_\mu^2Q_1+D_2$, where the
 polynomials $D_1,D_2$ start in degrees four and six. Sufficiently
 many temporal moment subtractions annihilate them exactly.
-On a fixed temporal annulus the transverse responses of $Q_0,Q_1,Q_2$
+On a fixed temporal annulus the values of $Q_0,Q_1,Q_2$ on the transverse profiles
 are bounded by $O_\delta(\lambda^\delta)$ times respectively
 $1,W^2,W^4$, if the transverse widths are at most $W$. For a diagonal
 entry, divide its annular temporal profile by $p_\mu$ and put that
-derivative on the label; the resulting vector has mixed signs.
+derivative on the field; the resulting vector has both signs.
 Odd profiles are corrected by
 $p^{-1}\mathcal C_{m,\rho}(pf)$, and their residual Laplace absolute
 value is bounded by $C(E+w)^{-1}(1+E)^{-2m}$.
@@ -669,7 +669,7 @@ $g_{v,r}(p)=v^{-1}(p/v)^{-2r}\sigma(p/v)$, so
 $p^2g_{v,r+1}=v^2g_{v,r}$. Compare the widths $W$ and $2W$ and
 subtract their fixed annular corrections. Write $c_r(t)=W^{-2r}\operatorname{Re}Q_r(g_{tW,r})$, with the
 transverse profiles fixed, and let $d_r$ be the same normalized real
-response to $(I-\mathcal C_{m,8})(g_{W,r}-g_{2W,r})$.
+value at $(I-\mathcal C_{m,8})(g_{W,r}-g_{2W,r})$.
 Conservation gives $c_{r+1}(t)=t^2c_r(t)+O_\delta(\lambda^\delta W^2)$
 for $t=1,2$. The correction has zero constant moment and higher even
 moments $O(W^2)$, so
@@ -678,14 +678,14 @@ $c_0(1),c_0(2)$ from these three relations gives
 \[
                   4d_0=5d_1-d_2+O_\delta(\lambda^\delta W^2).
 \]
-The corrected dyadic profile is signed, so its positivity needs
+The corrected dyadic profile is not of definite sign, so its positivity needs
 one further observation. For fixed correction nodes
 $A_j=(8v(j+2))^2$, the function
 \[
  R_E(z)=\frac1{z+E^2}\prod_{j<m}\frac{A_j-z}{A_j+E^2}
 \]
 is positive and decreasing for $0\le z\le16$, since $|v|\ge1$
-and $A_j\ge256$. The dyadic response is the integral of
+and $A_j\ge256$. The Laplace transform of the dyadic profile is the integral of
 $2E[R_E(W^2p^2)-R_E(4W^2p^2)]$ against the nonnegative
 annular profile $p^{-2r}\sigma(p)$ and the correction profile.
 For $W\le1$ it is therefore nonnegative. On $E\le1$ the
@@ -694,8 +694,8 @@ difference of the two resolvents gives the lower bound
 $cEW^2/(E+W)^4$ for $r=0$.
 Conservation with the sufficiently many zero moments now gives
 $d_0\ge0$, $d_1\le0$, $d_2\ge0$: each temporal multiplier
-$p_\mu^2$ becomes $-E^2$ in the Laplace response, with the
-contact terms killed exactly. Therefore, for
+$p_\mu^2$ becomes $-E^2$ in the Laplace transform, with the
+contact terms annihilated exactly. Therefore, for
 a nonnegative transverse product profile $\mathcal K_\lambda$,
 \begin{equation}\label{ch14:diagonal-mass}
  \int_{E\le1}\frac{EW^4}{(E+W)^4}\mathcal K_\lambda(p)
@@ -722,22 +722,22 @@ with fixed even nonnegative $\psi=1$ near zero, and put
 Project the spectator word to odd parity in $a,b$ and even parity
 in the other axes, calling the result $B$. For a reflected line
 axis this is a finite combination of words on the same line.
-The mixed-sign estimate gives
+The estimate with both signs gives
 \[
  I_\mu(B;-3000)=O(\lambda^{\gamma_\mu}),\quad
  I_\mu(J_{\mu b};\omega_\mu)=O_\delta(\lambda^\delta)\quad(\mu\ne b),
  \quad\gamma_l=1,\quad\gamma_\mu\le150.
 \]
-For the line time axis this requires a genuine temporal gap.
+For the line time axis this requires a genuine time separation.
 Choose a nonnegative real even smooth profile $\sigma_0$, let
 $c=\sigma_0*\sigma_0$, and normalize
 $\Phi=\widehat c=(\widehat\sigma_0)^2$ so $\Phi(0)=1$.
 Thus $\Phi\ge0$. If translating the word by $u$ puts it in the
-positive half-space, choose an even cutoff $\zeta=1$ on
+positive half-space, choose an even cutoff function $\zeta=1$ on
 $[-2u-1,2u+1]$, supported in $[-2u-2,2u+2]$.
 Remove from $c_w$ the profile with Fourier transform
 $\zeta(t)\Phi(wt)$. Its inverse-Fourier supremum is bounded
-uniformly in $w$, whereas the residual has positive response
+uniformly in $w$, whereas the residual has positive Laplace transform
 \[
  \int e^{-E|t|}(1-\zeta(t))\Phi(wt)\,dt
                           \ge c_u/(E+w)\quad(0\le E\le1).
@@ -747,18 +747,18 @@ $R<t<R+\gamma/(E+w)$, with $R=2u+2$, $wR\le\gamma$ and
 $\Phi\ge1/2$ on $[-3\gamma,3\gamma]$.
 Apply the sign-transfer inequality using this residual and an
 opposite-sign transverse axis. Its correction term is bounded by
-the three-axis mixed-sign estimate and the uniform supremum above;
+the three-axis estimate with both signs and the uniform supremum above;
 its other term is bounded using a sufficiently high transverse moment,
 now with fixed damping $e^{-2uE}$. The parity pattern has both signs
 among the transverse axes and a sign opposite to the line axis,
 so this proves any positive exponent, in particular $\gamma_l=1$.
 For a different time axis use the three transverse-to-line axes
 and bound the omitted line profile by its supremum. With width
-$\lambda^{1+\omega_l}$ this costs exponent
+$\lambda^{1+\omega_l}$ this adds to the exponent
 $-(1+\omega_l)+1=-\omega_l\le150$.
 These arguments keep the word measures fixed and include their
 zero-energy mass; an arbitrary frequency bump would not have the
-positive temporal-gap response used here. The diagonal estimate is
+positive Laplace transform at a time separation used here. The diagonal estimate is
 \eqref{ch14:diagonal-mass} with $W=\lambda^{-99}$.
 The crude bound $I_\mu(J_{\mu\mu};0)=O(\lambda^{900})$ follows
 from finite mass on $E\le1$ and the profile suprema. Outside
@@ -773,8 +773,8 @@ put $\ell(t)=t\eta(t)$, and define
  \qquad V_b=f_{ab},\quad V_a=-f_{ba}.
 \]
 The other components of $V$ vanish. Near all insertions $V(y)=Ky$.
-Conservation and the local shell identities express the total raw
-angular response as $-\int\partial_\mu V_c S(J_{\mu c},\boldsymbol A)$.
+Conservation and the local flux identities express the left side of
+\eqref{ch14:line-ward} as $-\int\partial_\mu V_c S(J_{\mu c},\boldsymbol A)$.
 The terms $\partial_af_{ab}J_{ab}$ and
 $\partial_bf_{ba}J_{ba}$ cancel exactly. In the remaining terms,
 reflection projects the spectators to $B$. Fourier scaling supplies
@@ -793,7 +793,7 @@ including the prefactor $\lambda^{100}$, are
 \end{array}
 \]
 The exchanged column has the same bounds. Every term tends to zero,
-whereas the total shell response is independent of $\lambda$.
+whereas the left side of \eqref{ch14:line-ward} is independent of $\lambda$.
 Consequently
 \begin{equation}\label{ch14:line-ward}
  \sum_i\left\{S(\ldots,Y(K)A_i,\ldots)
@@ -817,12 +817,12 @@ The finite vector correlation functionals of Theorem~\ref{ch03:vector-tests} hav
 one-dimensional common kernel in the free vector-map space, spanned
 by $\partial^0$. Adjoin a linear functional nonzero on that vector;
 the matrix of correlation pairings becomes injective. Smooth comparison transports
-this injectivity to the mixed finite-dimensional vector-map space.
+this injectivity to the undecomposed finite-dimensional vector-map space.
 Thus its Ward kernel has dimension at most one. It contains both
 $p$ and $\partial$, so $p=c_d\partial$ at every sufficiently large
 degree. Inclusions and nonzero free differentiation identify these
 constants across degrees and extend the identity to the lower ones.
-Call the common constant $c_*$. Changing variables in the shell
+Call the common constant $c_*$. Changing variables in the flux
 integrals and using \eqref{ch14:balanced-stress} gives
 \begin{equation}\label{ch14:charge-limits}
  \frac{r_k}{c_k}U_{k,d+1}^{-1}p_bU_{k,d}\to\partial_b^0,
@@ -839,7 +839,7 @@ Put $L_d(K)=c_*^{-1}Y_d(K)$. Then
  L_{d+1}(K)\partial_b=\partial_bL_d(K)+\sum_cK_{cb}\partial_c.
 \end{equation}
 Every positional derivative of the normalized angular Ward sum is
-therefore another such sum with a differentiated label.
+therefore another such sum with a differentiated field.
 
 \subsection{Analyticity supplied by a positive Gram kernel}
 
@@ -852,21 +852,21 @@ $\Psi_{\partial_b A}(x+te_b)$, which is continuous by translation
 continuity. Integrating this continuous vector curve and using the
 dense word span proves strong differentiability. Iterate for higher
 orders. In the normal direction the curve is analytic away from the
-reflection plane, since it is a positive-time heat orbit.
+reflection plane, since it is a positive-time orbit of the translation semigroup.
 
 Let $F_{A,B}(x)=S(A(x),B(0))$. Its restriction to $ue_a$, $u>0$,
-is analytic by that heat argument. In the plane $(a,b)$ with
+is analytic by that semigroup argument. In the plane $(a,b)$ with
 $Ke_a=e_b$, $Ke_b=-e_a$, define
 \[
  Q_{A,B}(u,z)=F_{e^{-\theta L(K)}A,e^{-\theta L(K)}B}(\rho e_a),
  \quad \rho=(u^2+z^2)^{1/2},\quad\theta=\arctan(z/u).
 \]
-This is analytic for $u>0$: the label spaces are finite-dimensional
+This is analytic for $u>0$: the field spaces are finite-dimensional
 and the radial functions are analytic. It solves the angular
 identity because
-$(u\partial_z-z\partial_u)\theta=1$ and the same operator kills
-$\rho$. It agrees with the actual $F$ at $z=0$.
-All transverse jets of the actual angular expression vanish there,
+$(u\partial_z-z\partial_u)\theta=1$ and the same operator annihilates
+$\rho$. It agrees with the function $F$ at $z=0$.
+All transverse jets of the angular expression of that function vanish there,
 by \eqref{ch14:line-ward} and
 \eqref{ch14:derivative-commutator}. For $H=F-Q$, differentiating
 the angular expression $n$ times in $z$ gives at $z=0$
@@ -876,7 +876,7 @@ the angular expression $n$ times in $z$ gives at $z=0$
                         +n\partial_u\partial_z^{n-1}H_{A,B}.
 \]
 The last term is omitted at $n=0$. Induction proves equality of all
-transverse jets of $F$ and $Q$, simultaneously for all labels.
+transverse jets of $F$ and $Q$, simultaneously for all fields.
 
 Equality of jets has not yet proved equality of functions. The
 positive Gram identity supplies the decisive bound. If a smooth
@@ -900,7 +900,7 @@ is a matrix element of this analytic single-insertion curve against a
 fixed word vector. Strict minima are handled by the existing signed
 reflection. Hence the Ward sum is analytic along any coordinate
 segment on which the moving point stays a strict extremum in some
-coordinate. This uses no integration of the spin operators into a
+coordinate. This uses no integration of the infinitesimal rotation operators into a
 rotation group.
 
 \subsection{A finite path through separated configurations}
@@ -931,7 +931,7 @@ argument would leave a gap.
 Commuting two identities \eqref{ch14:global-ward} shows that the
 internal defect
 $[L(K),L(M)]-L([K,M])$ has zero correlation sums. It is real,
-alternating, filtration preserving, kills the unit, and has the
+alternating, filtration preserving, annihilates the identity field, and has the
 signed covariance of a pair of rotation generators. The finite
 internal-defect correlation functionals of Theorem~\ref{ch03:internal-tests} are
 injective on this defect space. Their injectivity transfers under
@@ -943,7 +943,7 @@ lower ones.
 One must still exclude a representation only of the universal cover
 of $SO(4)$. Here the free comparison gives an exact intertwiner.
 Choose the six plane generators and, at one degree, write their free
-matrices as $C_i$ and their transported mixed matrices as $B_{k,i}$.
+matrices as $C_i$ and the conjugates of their undecomposed matrices by the comparison maps as $B_{k,i}$.
 By \eqref{ch14:charge-limits} these converge to $C_i$. On the matrix
 space put
 \[
@@ -968,16 +968,16 @@ This finite-dimensional argument also fixes the periodicity of
 plane rotations, rather than assuming it from Lie brackets.
 
 \begin{theorem}[Euclidean rotations]\label{ch14:rotations}
-Under the actual marked comparison and annular estimates used above,
+Under the comparison with insertions and the annular estimates used above,
 there are continuous complex-linear representations $R_d$ of $O(4)$
 on $F_d$, extending the signed coordinate symmetries,
-preserving reality and the unit, and compatible with inclusions.
+preserving reality and the identity field, and compatible with inclusions.
 Their infinitesimal generators are $L_d$, their derivatives transform
 as vectors, and
 \[
  S(R_{d_i}(g)A_i;gx)=S(\boldsymbol A;x),\qquad g\in O(4).
 \]
-They are isomorphic in each degree to the free label representations.
+They are isomorphic in each degree to the representations on the free field spaces.
 \end{theorem}
 
 \begin{proof}
@@ -988,7 +988,7 @@ The preceding construction supplies the representations. The function
 has zero derivative by \eqref{ch14:global-ward}. Plane rotations and
 signed reflections
 generate $O(4)$. Covariance, the fact that inserting the identity leaves correlations unchanged,
-and the exact derivative and inclusion identities show that the corresponding label identities
+and the exact derivative and inclusion identities show that the corresponding field identities
 have zero responses against every spectator. Faithfulness of the
 field quotient proves their equality. Thus the independently chosen
 finite-degree intertwiners need not themselves commute with inclusions;
@@ -1001,7 +1001,7 @@ Let $J_0=c_*^{-1}J$. With probability Haar measure on $O(4)$ set
 \end{equation}
 \begin{proposition}[Normalized stress tensor]
 \label{ch14:normalized-stress}
-The tensor $T$ is real, centered, symmetric, conserved and nonzero.
+The tensor $T$ is real, zero-mean, symmetric, conserved and nonzero.
 It transforms as a tensor under $R_4$. Its constant and linear local
 fluxes are respectively the positional derivative and $L_d(K)$.
 Along the same comparison sequence,
@@ -1013,16 +1013,16 @@ Haar invariance gives the tensor law. All other linear properties
 pass through the integral, conservation using vector covariance of
 derivatives. In a transformed shell change variables by $g$ and use
 correlation covariance; its actions are $\partial_b$ and $L_d(K)$.
-Averaging preserves these normalized actions. If $T=0$, all tested
+Averaging preserves these normalized actions. If $T=0$, the values of the correlation functionals on all
 positional derivatives would vanish, contradicting smooth comparison
 with a free differentiated quadratic field. Finally $T$ belongs to
-the same centered conserved line as $J$. Its translation action
+the same line of zero-mean conserved tensors as $J$. Its translation action
 forces $J=c_*T$, and \eqref{ch14:balanced-stress} with
 $c_k\to c_*$ proves the comparison limit.
 \end{proof}
 
 The complexified finite-dimensional rotation representations also
-specify the label representations for the later continuation to
+specify the representations on the field spaces for the later continuation to
 Lorentz transformations. No Lorentz action on a physical Hilbert
-space, uniqueness of the vacuum, or positive extension of collision
+space, uniqueness of the vacuum, or positive extension to coincident points of the
 kernels has been constructed in this chapter.
