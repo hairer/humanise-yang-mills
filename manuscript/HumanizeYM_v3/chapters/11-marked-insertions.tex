@@ -1322,8 +1322,8 @@ $\chi=1$ and is assigned to the original prescribed large-field set.
 The distant regular sum and original large-field terms were
 retained throughout. Substituting this identity into the finite
 squarefree exponential preserves every higher source variable coefficient.
-Thus the density, polynomial $\mathscr P$, coefficient
-extraction $T$, and normalized lifts all refer to the same
+Thus the density, polynomial $\mathscr P$, common
+localization map $T$, and normalized lifts all refer to the same
 terminal insertion.
 
 
@@ -1473,7 +1473,7 @@ between the two insertions within one cell.
 Suppose the old large-field site bound is $\eta_-$ at
 $(\omega_-,e+2)$, where $\eta_-$ decays faster than every inverse
 power of $H$. Suppose each cell has at most $2^n$ additional
-large-field factors, supported in $Y_c$, whose coefficient
+failed-cutoff factors, supported in $Y_c$, whose coefficient
 bounds before source variable weighting are at most $C_*=H^{o(1)}$ and whose
 support bounds at exponent $e+1$ are at most $R_{e+1}=H^{o(1)}$.
 Every nonzero such factor must meet an old large-field activity.
@@ -1484,7 +1484,7 @@ Then their exact connected regrouping has site bound at most
 at $(\omega,e)$, for all sufficiently large $H$.
 \end{lemma}
 \begin{proof}
-A large-field factor of nonconstant source monomial $I$ occurs in the exact
+A failed-cutoff factor of nonconstant source monomial $I$ occurs in the exact
 identity
 \[
  \exp_*(\chi W-R)
@@ -1497,7 +1497,7 @@ covered by an original prescribed large-field set. Thus every surviving
 connected component contains an old large-field activity.
 This is a pointwise identity of the full density with insertions.
 
-Put $F=\log H$. A new large-field factor has bound
+Put $F=\log H$. A new failed-cutoff factor has bound
 $p_f\le H^{1/8}C_*R_{e+1}$ and assign it auxiliary bound
 $w_f=e^{-F}p_f$. Assign an old activity $o$ the auxiliary bound
 \[
@@ -1520,7 +1520,7 @@ $e^g=\delta/(2H^{Un+2^n}\eta_-)\ge1$.
 The new factors have auxiliary site sum at most
 $2^nC_*R_{e+1}H^{-7/8}$, so the total auxiliary sum
 $\Gamma$ is at most $\delta$ eventually.
-Assign each large-field factor to an old activity it meets.
+Assign each failed-cutoff factor to an old activity it meets.
 At most $2^nt(X_o)$ factors are assigned to $o$.
 In each nonzero connected component, their discarded
 $e^F$ factors are thus bounded by the $e^{2^nFt(X_o)}$
@@ -1728,7 +1728,7 @@ uniformly in all periods.
 
 For the installed curvature response $\Psi_i$, one also
 needs to move differences through the curvature response, not merely bound
-its differentiated row. The box-filter identities in the alias
+its differentiated row. The box-multiplier identities in the alias
 formula give
 \[
  \Delta_w\Psi_i=Q_{i,w}\Delta_w,\qquad
@@ -1929,7 +1929,7 @@ at most $H^{-q-2}$. Together with
 regular remainder $H^{-q}$ at exponent $e_*$.
 For the large-field part perform the exact change of representation at the comparison scale
 jointly with these factors with insertions, before summing components.
-Every nonzero large-field factor and every old large-field activity
+Every nonzero failed cutoff and every old large-field activity
 meets a new large-field site. Its selected site factor has size at
 most $e^{-2u}$, with $u=a_*\,\mathrm{hot}(s)^2$.
 Keep $e^{-u}=G(s)$ aside once per component.
@@ -2075,7 +2075,7 @@ chessboard bound on the corresponding comparison cell is
  \|R_I\|_{\rm root}\le H^{-1/(16n)}
 \end{equation}
 at all sufficiently large cutoffs, uniformly in period and
-in the stated compact configuration window.
+in the stated compact configuration set.
 The cell side can be chosen at most $a_kH^{b_j+5}$.
 The estimate requires a positive distance between the points, but no
 positive lower bound on individual coordinate differences.
@@ -2089,7 +2089,7 @@ depends on the choice of middle or output scale.
 Choose the Taylor order and derivative margins for the
 largest of the finitely many requests. Restart once on the
 longest required window. Restriction of that history gives
-the shorter windows, with unchanged top map and density at the comparison scale.
+the shorter windows, with unchanged localization map and density at the comparison scale.
 There is no new normalization for individual spectator subsets.
 
 Work throughout in the full $n$-source squarefree algebra.
@@ -2146,7 +2146,7 @@ $L H^{b_j+2}$ and the lower ratio at most $L C^{10}$.
 The lower bounds on the starting scales give $L^2C^{10}\le H^3$, so the total
 cell side in continuum units is at most $a_kH^{b_j+5}$.
 All covariance estimates depend only on the full displacement
-between distinct points. On the compact window its minimum
+between distinct points. On the compact configuration set its minimum
 length is positive, also after rounding at sufficiently large
 $H$. The opening-support estimate uses the same positive
 maximum-coordinate distance. Neither argument divides by a
@@ -2304,7 +2304,7 @@ at least $r_0$ in continuum units.
 Start with a bounded local polynomial coefficient and a difference word $l$.
 The exact physical difference identity and the translated local
 section bound make this a trial at degree $e=d+|l|$ satisfying the hypotheses of \eqref{ch11:trial-error}.
-The factor $a_N^{|l|}$ in its normalization index cancels all inverse mesh
+The factor $a_N^{|l|}$ in the normalization at its filtration index cancels all inverse mesh
 powers. Its link support uses at most $2^{|l|}$ fixed translates;
 its derivative bound grows by at most
 $(1+2^{\varpi_Nq_N})^{|l|}$, a subpower quantity under the stage
