@@ -255,14 +255,14 @@ intersection alone.
 Let $\delta$ be the containing-site bound for insertion-free correction
 amplitudes. Suppose the incoming large-field amplitudes, already
 weighted by $e^{\sigma_f c_{B_f}}$, have site bound $\eta$.
-Let $a$ bound the insertion incidence sum at a fixed insertion after
+Let $a$ bound the insertion incidence sum at a fixed insertion point after
 \eqref{ch11:cover-transfer}, at exponent $v+2$.
 If at most $g$ insertion points project to a coarse site, set
 \[
  {\cal W}(B)=(33B)^4\sum_{j\ge0}(j+1)^4e^{-j},\qquad
  \Sigma=\delta+{\cal W}(B_c)L^4T_e\eta+{\cal W}(B_c)g a.
 \]
-The insertion and background incidence bound at a specified insertion is
+The insertion and background incidence bound at a specified insertion point is
 $T_e\eta+a$; no $L^4$ occurs there. The site bound is $\Sigma$ at
 exponent $v+1$. To see the latter conversion, root a support at one of
 its fine sites or insertion points. Its covering number is at least
@@ -342,7 +342,7 @@ The corrections with empty index set contribute zero to that incidence.
 In particular output incidence at most one follows from
 $T_e\eta+a\le1$; it is not an extra independence or finite-arity
 assumption. The estimates hold for every finite index set with
-the stated bound $g$ on the number of insertions per coarse site, uniformly in the number of replica cells.
+the stated bound $g$ on the number of insertion points per coarse site, uniformly in the number of replica cells.
 
 \subsection{The one-insertion graph estimates}
 \label{ch11:one-graph}
@@ -379,7 +379,7 @@ polynomial growth of a radial jet. Thus the leading map is $TS_L$.
 Let $G$ be an incoming linear graph of regular vanishing-jet and
 large-field remainders, with norm at most $s_f$ per coefficient. As in the graph transform for invariant manifolds, the step with insertions maps coefficient graphs at the fine scale to graphs at the coarse scale and halves the distance between two of them.
 The step with insertions gives a linear coefficient map $M_G$ and a
-raw remainder map $R_G$. For a common error bound $\epsilon$ above $C_d/L+o_x(1)$, the bound valid before $L$ and the lower bound on the reference coupling are chosen ($\epsilon$ may be taken to be $L^{-2/5}$ after those choices), it satisfies
+raw remainder map $R_G$. For a common error bound $\epsilon$ above the bound $C_d/L+o_x(1)$, which is valid before $L$ and the lower bound on the reference coupling are chosen ($\epsilon$ may be taken to be $L^{-2/5}$ after those choices), it satisfies
 \begin{align}
  |M_Gx-TS_Lx|&\le\epsilon(|x^\circ|+\|Gx\|_{\rm rem}),\notag\\
  \|R_Gx\|_{\rm rem}&\le C_d|S_Lx^\circ|
@@ -731,10 +731,10 @@ factors belong to the other components already bounded in
 \eqref{ch11:integrated-component}, and are not absorbed into a
 subset-dependent probability measure.
 
-\section{Restarting below a comparison level}
+\section{Restarting below a comparison scale}
 
 A useful auxiliary history, the \emph{restarted history}, keeps the inverse coupling constant below a
-comparison level while retaining the paths, adjacent quadratic identities,
+comparison scale while retaining the paths, adjacent quadratic identities,
 and block geometry. Proposition~\ref{ch11:mass} preserves all original
 normalized coefficient integrals along this history. The construction
 below provides its local representations and estimates on that same
@@ -893,7 +893,7 @@ The inhomogeneous graph estimate controls local trials as well.
 Put $s_i=L_i^{1/8}$, $e_i=s_i^{-3}$ and $A_i=32(1+C_i)^2$.
 Choose $100000K_i^6(1+C_{i+1})^2\le s_i$, so the raw error is
 at most $e_i$. Subtract one normalized local insertion density from the trial at the ultraviolet cutoff,
-choosing its reference coefficient so the residual coefficient at the lowest scale
+choosing its reference coefficient so the residual coefficient at the coarsest scale
 is zero. Invertibility permits this choice; exact linearity propagates
 the same subtraction through every step.
 Let $x_i$ be the residual coefficient and $c_i$ its full remainder norm bound, including the subtracted graph of normalized local insertions. With
@@ -906,7 +906,7 @@ If $A_i|x_i|\le c_i$, substitution gives
 $y_i\le4K_ie_ic_{i+1}$. The ratio choice ensures
 $4K_iA_{i+1}e_i\le1$ and $(4K_i^2+1)s_ie_i\le1$.
 Hence $A_{i+1}|x_{i+1}|\le c_{i+1}$ and $s_ic_i\le c_{i+1}$.
-The induction starts at the lowest scale with zero coefficient.
+The induction starts at the coarsest scale with zero coefficient.
 If the trial at the ultraviolet cutoff has coefficient plus remainder cost at most $w$,
 the bound on the graph of normalized local insertions gives $c_N\le w+C_N(w+|x_N|)$.
 Absorb $|x_N|\le c_N/A_N$ to obtain $c_N\le2(1+C_N)w$.
@@ -1056,7 +1056,7 @@ The normalized local insertion is therefore
 with the factor-degree scaling $S_t$ of the local section.
 Uniform column estimates follow by multiplying the displayed
 one-step inverse bounds; their subpower growth requires the
-corresponding inequalities on the sequence of scales.
+corresponding inequalities on the schedule.
 
 There remains a distinct local calibration issue before claiming the
 all-period finite-difference theorem. A translated finite difference
@@ -1146,7 +1146,7 @@ independently of the polynomial that is integrated.
 Here is the construction from the single-insertion representation.
 Fix a polynomial degree $D\ge d$, to be increased below, before the
 stage derivative order; require $D+1$ derivatives.
-At comparison depth $k$ put
+At the comparison scale $k$ put
 \[
  s=\widehat\beta_k,\quad H=e^{(\log\log s)^2},\quad
  M=\lceil(\log s)^2\rceil,\quad B=M^2,\quad b=8B,
