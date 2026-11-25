@@ -80,7 +80,7 @@ orders and spatial exponents of stage $j$, and let $q_d$ bound their
 union stencil with $P_d^{\rm loc}$. These constants depend only on
 fixed cover paths, finite polynomials and the stage orders;
 Proposition~\ref{ch02:section-bounds} makes them independent of
-the block ratio, period and cutoff. Fix the stage coefficient-map bound
+the block ratio, period and cutoff. Fix the stage column bound
 $C_j$, support exponent $\sigma_j$, and finite symmetry norm
 $\mathcal O_d$ before choosing the ratio. With
 \[
@@ -106,7 +106,7 @@ reference coupling and hence the available localization radius.
 The remaining value norms at the ultraviolet cutoff contain inverse powers of the
 small-field threshold. The lower bounds on the starting scales require their product with the
 square root of the large-field bound at the cutoff to be at most one,
-as well as the fixed-stencil support conditions and the conditions on the number of insertions per coarse site.
+as well as the fixed-stencil support conditions and the conditions on the number of insertion points per coarse site.
 They are absorbed by choosing sufficiently large lower bounds on the reference coupling,
 not included in $Q_{dj}$. Those lower bounds on the starting scales also impose
 $\widehat\beta_N\ge a_{d,J(N)}$ and all reserve inequalities at the cutoff
@@ -120,7 +120,7 @@ Section~\ref{ch11:equation-calibration}.
 
 We construct explicitly the \emph{schedule}: the stage and the block ratio at every scale, including the initial scales.
 Let $b_j,c_j$ be nonnegative integers specifying respectively the
-minimum starting scale and a prescribed length for a \emph{stage plateau}, a maximal interval of scales on which the stage is constant.
+minimum starting scale and a requested length for a \emph{stage plateau}, a maximal interval of scales on which the stage is constant.
 If $\jmath_j$ is the largest smoothing order used in stage $j$ or a
 permitted stage pair, include
 $b_j\log3\ge2\log(\jmath_j+7)$ for $j>1$. This ensures that
@@ -163,7 +163,7 @@ $\widehat\beta_m\ge d_j$. We may simultaneously require
  \quad J(m+1)=j>1,
 \end{equation}
 Also require, for the original support radius and its per-site
-normalization cost, $B_{m+1}^2\le2B_m^2$ and
+normalization exponent, $B_{m+1}^2\le2B_m^2$ and
 $(L_m B_m^2)^4q_{m+1}^{\rm site}/\tau_{m+1}\le1/j$ at stage $j$.
 Here $q_{m+1}^{\rm site}$ is bounded by
 $C_j(1+\log\widehat\beta_{m+1})$ using the Haar-ball normalization
@@ -419,8 +419,8 @@ Write the step maps at cutoff $N$ as
  \beta_m-\beta_{m+1}-\alpha_{N,m}=q_m.
 \]
 Here $x_m$ is the activity array, the family of localized terms and large-field activities, and $q_m$ is the coupling constant
-renormalization of the step. It is not the vacuum normalization. The explicit
-coupling increment $\alpha_{N,m}$ is the one already used in the exact step.
+renormalization of the step. It is not the vacuum energy renormalization. The coefficient
+$\alpha_{N,m}$ fixed by the matching is the one already used in the exact step.
 
 The following strengthens the continuous finite-step statement of
 Theorem~\ref{ch09:step-theorem}. Its proof uses the additional numerical reserves already allowed
@@ -527,8 +527,8 @@ reference inverse coupling $\beta_0$ so that
  \qquad 1\le a-6R|c|\le a+6R|c|\le1+\delta.
 \]
 All these real inverse couplings remain in the reserved band. A compensating
-rescaling keeps each fine field read fixed: the fluctuation field is rescaled
-by $\ell(t)$ while its coefficient is divided by
+rescaling keeps each fine field read fixed: the Gaussian coordinate is rescaled
+by $\ell(t)$ while its fluctuation coefficient is divided by
 $\ell(t)$. The indicators of large fluctuation-field events and measurable incoming values
 are consequently not differentiated in this parameter.
 
@@ -567,7 +567,7 @@ ratio in $D$ local real coordinates yields
 \]
 Only coordinates read by the local term enter $D$.
 
-Small large-field correction terms in the exponent require a different estimate. Their
+The large-field corrections, which are small, require a different estimate. Their
 parameter dependence is polynomial of degree at most two; real
 values and derivatives of their exponential minus one have bound
 $v d^i$ at $-1,0,1$. For $v\le1/2$, taking the real logarithm at
@@ -772,8 +772,8 @@ finite integrals. This proves convergence in the output norm.
 The coupling constant renormalization is a finite linear functional of the same
 converging local derivatives and therefore also converges. Local
 subtraction preserves this conclusion by linearity; the exact regrouping preserves
-it by its convergent product expansion with a strict attachment
-margin. The finite auxiliary projection uses the same fields and
+it by its convergent product expansion with a strict margin in the
+site-norm bound. The finite auxiliary projection uses the same fields and
 periods at both cutoffs. Thus this comparison concerns the
 returned arrays and $Q_{m,N}$, not some other representation of their
 densities.
@@ -852,7 +852,7 @@ common coarse endpoint, gives
  b_m(\lambda_m)-b_m(\lambda'_m)
                  =-\sum_{i<m}(q_i-q'_i).
 \end{equation}
-The limits of the common explicit coupling increments $\alpha_{N,i}$ cancel.
+The limits of the common coefficients $\alpha_{N,i}$ fixed by the matching cancel.
 There is no infinite sum or ultraviolet boundary term.
 
 The estimates \eqref{ch10:lipschitz} pass to the two limits. To

@@ -3,7 +3,7 @@
 \label{ch09:renormalization}
 
 A step acts on the density, not on its chosen list
-of local terms. Our task is to express its exact output by the
+of local terms. Our task is to express its exact output in terms of the
 representation data of Chapter~\ref{ch04:blocking}, while improving the
 bounds enough to repeat the operation. The organization by local
 interactions and large-field regions follows the constructive
@@ -78,8 +78,8 @@ logarithm, missing-coordinate factor and residual of the mean equation
 remain among the local exponential factors.
 Keeping them is what recovers the original Haar integral.
 
-Expand exponentials as $e^V=1+(e^V-1)$ and retain all sector
-allocation weights. A full dependence set contains
+Expand exponentials as $e^V=1+(e^V-1)$ and retain all the
+weights defining the sectors. A full dependence set contains
 every Haar coordinate, auxiliary index and Gaussian covariance
 neighborhood read by its factor. If two such supports are disjoint,
 the Haar coordinates and auxiliary indices are independent; the Gaussian
@@ -91,7 +91,7 @@ the polymer activities of the Mayer expansion.
 This factorization concerns dependence sets. It does not
 assert that large-field activities with disjoint exclusion
 supports $Y_i$ have disjoint full dependence sets.
-The large-field indicators in their additional conditions can read outside $Y_i$.
+The large-field indicators in their eligibility conditions can read outside $Y_i$.
 Those conditions remain in every exact-cover expression.
 
 The required simultaneous estimate for a connected product is
@@ -429,7 +429,7 @@ the ratio $\epsilon_{m+1}^{\rm reg}/\epsilon_m^{\rm reg}$ is bounded
 on the permitted neighboring reference-coupling bands.
 Then choose the lower bound on the reference coupling for the inherited
 comparison, \eqref{ch09:degree-gain},
-\eqref{ch09:aux-input}, and the small large-field corrections.
+\eqref{ch09:aux-input}, and the smallness of the large-field corrections.
 Choose the truncation accuracy after its polynomial
 localization factors have been specified.
 Allocate distinct positive fractions of the exponent in
@@ -745,7 +745,7 @@ Proposition~\ref{ch07:slope}, then
 No estimate of $\Delta$ was used to define its local
 projection or prove the exact algebra.
 
-There is a second, intrinsic way to identify the coupling constant renormalization $\Delta$.
+There is a second, intrinsic way to identify the coefficient $\Delta$.
 On an even-sided torus choose direction-one links alternately
 equal to $u$ and $1$ on even and odd second-coordinate
 slices, with $\chi(u)=rt$ for sufficiently small fixed $r>0$.
@@ -890,7 +890,7 @@ Every residual term is attributed exactly once; its relaxed regularity condition
 The only nonzero exact-cover family is the set
 of these components of the configuration, so the density identity is exact.
 
-A connected prescribed large-field set of $r$ sites is bounded in number
+The number of connected prescribed large-field sets of $r$ sites is bounded
 by a rooted spanning-walk count. The containing-site
 weighted sum is at most
 \[
