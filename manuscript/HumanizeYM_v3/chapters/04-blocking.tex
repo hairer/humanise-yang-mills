@@ -111,8 +111,10 @@ Lie algebra. Hence on a sufficiently small convex ball about $1$,
 This is the mean-value estimate for $D\pi-\Pi_{\gLie}$, not a new
 projection theorem.
 
-Make one origin-based axial gauge change. On the tested branch all its
-route matrices $W_{xy;o}$ obey $\|W_{xy;o}-1\|_{\mathrm F}\le d$, where
+Fix $o_0\in S_4$ and use the axial gauge rooted at the origin with this
+coordinate order. In this gauge the transport from $x$ to $y$ in order
+$o$ is $\mathcal T_{xy;o}^{o_0}$. On the minimizing branch the loop test
+gives $\|\mathcal T_{xy;o}^{o_0}-1\|_{\mathrm F}\le d$, where
 $d$ can be chosen arbitrarily small by reducing $\delta_{\rm fr}$.
 Reversing a route gives its inverse and permutes the coordinate orders.
 A minimizer exists by compactness. Common left multiplication leaves the
@@ -129,7 +131,7 @@ so that $1$ is nearest to their centroid $\bar h=\operatorname{av}_x h_x$.
 Then $\|\bar h-1\|_{\mathrm F}\le2d$. Coordinatewise minimization shows
 that $h_x$ is nearest to
 \[
- F_x(h)=\operatorname{av}_{y,o}h_yW_{xy;o}^{-1}.
+ F_x(h)=\operatorname{av}_{y,o}h_y(\mathcal T_{xy;o}^{o_0})^{-1}.
 \]
 Including the diagonal term $y=x$ does not invalidate this assertion:
 it adds a term whose maximum is attained at the old coordinate $h_x$.
