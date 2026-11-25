@@ -5,9 +5,10 @@
 A translation-invariant correlation family can be a mixture of states
 with different long-distance behavior. We separate this mixture using
 operators on the zero-energy subspace of its reflection Hilbert space.
-A phase will be a character of a commutative operator algebra, not a
-set of gauge configurations. Its correlations are obtained by evaluating
-compressed whole words.
+A phase is described by a character $\xi$ of a commutative operator
+algebra. For each word $w$, compress its slab operator to the zero-energy
+subspace and denote the resulting operator by $M(w)$. The correlation
+of the insertions in $w$ in this phase is $\xi(M(w))$.
 
 The inputs are the common field spaces $F_d$ and separated correlation
 family of Chapter~\ref{ch13:continuum}, bounded slab operators with
@@ -56,7 +57,7 @@ bounded insertion operator and define
  M(w)=P_0B_h(w)|_{\mathcal H_0}.
 \]
 Increasing the width appends a heat operator, and shifting the word in
-time inserts one on the other side. Both disappear after compression.
+time inserts one on the other side. Since $E(t)P_0=P_0E(t)=P_0$, both operations give the same compression.
 Spatial placement disappears by \eqref{ch15:spatial-ground}. Thus
 $M(w)$ is defined for any distinct-point word independently of its
 slab placement, with
@@ -133,7 +134,8 @@ scalar phase expectations, that will give phase reflection positivity.
 \section{Characters and the representing measure}
 \label{ch15:characters}
 
-Let $\Xi$ be the space of unital star characters of $\mathfrak A$.
+Let $\Xi$ be the space of characters of $\mathfrak A$, that is,
+unital $*$-homomorphisms $\xi:\mathfrak A\to\CC$.
 The commutative Gelfand representation identifies
 $\mathfrak A\simeq C(\Xi)$ isometrically; see the original
 \cite[Section~2, Lemma~1]{GelfandNaimark1943}. The compact space $\Xi$
@@ -257,8 +259,8 @@ finitely many bounded lifts of the separating family at this fixed $k$, on a
 refinement of the already selected correlation limits.
 For every fixed integer $j$, put $2j$ copies of a corrected word
 and its adjoint at widely separated translations. The chessboard
-bound is $B_k^{2j}$: the two-mark estimate is used with arbitrary
-replica census, not rerun with arity $2j$. Its constant is chosen
+bound is $B_k^{2j}$ because there are still only two insertions per cell,
+however many copies are used. Its constant is chosen
 before $j$; only the cutoff and translation thresholds depend on
 that fixed number. The repeated-word identity and the cluster
 limit \eqref{ch15:cluster} identify the limiting product with

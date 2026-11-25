@@ -41,14 +41,16 @@ lists, derivative lists, and compact exhaustions of the configuration
 spaces. Multilinearity extends its conclusions to all labels.
 Integration by parts identifies the extracted derivative limits with
 the derivatives of $S_n$. No diagonalization over all smooth test functions is
-needed. For each fixed separated test function $f$ the order of limits is
+needed. For $v=(v_1,\ldots,v_n)$ and $f\in C_c^\infty(\Conf_n)$ the order of limits is
 \begin{equation}
  \lim_{k\to\infty}\lim_{N\to\infty}
  a_N^{4n}\sum_y f(a_Ny)M_{N,P(k)}(v;y)
                    =\int f(x)S_n(v;x)\,dx.
  \label{ch13:ordered-limit}
 \end{equation}
-The inner limit is the whole cutoff sequence, taken down each column
+The sum ranges over ordered $n$-tuples of lattice sites in the period
+$R_{P(k)}$ for which $a_Ny$ lies in the support of $f$, and $dx$ denotes
+Lebesgue measure on $(\RR^4)^n$. The inner limit is the whole cutoff sequence, taken down each column
 of Figure~\ref{ch13:fig-ordered-limits}. Every further volume
 refinement preserves \eqref{ch13:volume-limit} and
 \eqref{ch13:ordered-limit}.
@@ -185,7 +187,7 @@ free matrix of correlation pairings have rank $r_d$. Hence $\dim F_d\ge r_d$.
 Equality of dimensions and the kernel inclusion prove the result.
 \end{proof}
 
-\subsection{Representatives chosen before the spectators}
+\subsection{Representatives independent of the other insertions}
 
 Approximate inclusion and derivative labels need not stay bounded.
 The following finite-dimensional observation explains the normalized

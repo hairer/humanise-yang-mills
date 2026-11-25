@@ -152,8 +152,10 @@ removed by $h_0=1$. Only averages occur in the contraction, which explains
 why its constants do not grow with the patch.
 
 For the axial alternatives, apply the usual plaquette telescoping
-argument to a rectangular slice with $r$ varying coordinates. Choose a
-layer perpendicular to the last coordinate whose internal plaquette sum
+argument to a rectangular slice $X$ with $r$ varying coordinates. Write
+$\Sigma_{\rm link}(X,U)$ and $\Sigma_{\rm plaq}(X,U)$ for the sums of
+$\chi$ over its internal positive links and plaquettes, respectively. Choose a
+layer $X_0$ perpendicular to the last coordinate whose internal plaquette sum
 is no greater than the average over layers. Use the axial construction on
 that layer, then extend it along the last coordinate, setting those links
 to one. Every remaining link differs from its transported link on the
@@ -179,8 +181,9 @@ this lemma alone.
 \label{ch04:kernel-section}
 
 Translate the preceding frame construction to every patch
-$Ly+\mathbb B_R$ centered at a coarse site $y$. Write $h_{y,z}$ for its
-normalized frame at offset $z$. For a coarse edge $e=(y,\mu)$ define
+$Ly+\mathbb B_R$ centered at the fine site $Ly$ corresponding to the coarse site $y$.
+For $z\in\mathbb B_R$, let $h_{y,z}$ be the gauge matrix at $Ly+z$,
+normalized by $h_{y,0}=1$. For a coarse edge $e=(y,\mu)$ define
 \begin{equation}
  Y_{e,z}=h_{y,z}
        \left(\prod_{r=0}^{L-1}U(Ly+z+re_\mu,\mu)\right)
@@ -195,7 +198,7 @@ $g(Ly)Y_{e,z}g(Ly+Le_\mu)^{-1}$.
 Let $w^{\rm av}$ be the $j$-fold convolution of the uniform probability
 on $\mathbb B_{(L-1)/2}$. It is nonnegative, has sum one, is invariant under
 $H_4$, and is supported in $\mathbb B_{j(L-1)/2}\subset\mathbb B_R$.
-Put $\bar Y_e=\sum_z w_z^{\rm av}Y_{e,z}$. The gauge-covariant block average, obtained by projecting the weighted
+Put $\bar Y_e=\sum_{z\in\mathbb B_R} w_z^{\rm av}Y_{e,z}$. The gauge-covariant block average, obtained by projecting the weighted
 connector average to the group, minimizes
 \begin{equation}
  \mathcal P_e(u)=\sum_z w_z^{\rm av}w(Y_{e,z}u^{-1}),\qquad u\in G.
@@ -208,9 +211,10 @@ Since all matrices $Y_{e,z}$ and $u$ are unitary,
                          +\|\bar Y_e-u\|_{\mathrm F}^2.
 \]
 Thus the minimizers are precisely the nearest group points to $\bar Y_e$.
-If the minimum is less than $\varepsilon_{\rm pred}$, its distance to $G$
-is less than $\sqrt{2n_G\varepsilon_{\rm pred}}$. Choose the cutoff so that
-this lies within the tubular neighborhood used in
+If $\min_{u\in G}\mathcal P_e(u)<\varepsilon_{\rm pred}$, the identity
+above gives $\operatorname{dist}_{\mathrm F}(\bar Y_e,G)
+<\sqrt{2n_G\varepsilon_{\rm pred}}$. Choose $\varepsilon_{\rm pred}$ small
+enough that $\bar Y_e$ then lies in the tubular neighborhood used in
 Lemma~\ref{ch04:frame-lemma}. The block average is then unique, independently
 of the number of connectors or the weights.
 
@@ -281,8 +285,7 @@ For every integrable fine density $f$,
 For normalization, integrate each coarse-link factor using right invariance
 of Haar measure, then sum \eqref{ch04:tag-law}. Fubini gives
 \eqref{ch04:exact-integral}, with absolute integrability following from
-the same computation applied to $|f|$. These are elementary applications
-of Haar invariance, rather than estimates on the renormalization group.
+the same computation applied to $|f|$.
 For covariance, gauge transformations conjugate rooted loop tests and
 transform the endpoints of \eqref{ch04:connector}; signed lattice
 isometries permute roots, orders and offsets and invert reversed links.
@@ -291,8 +294,9 @@ on the minimizing branches, and reindexing of the finite alternatives,
 then give the stated covariance of the kernel.
 \end{proof}
 
-Probabilistically, if $U$ has density $f/\int f$ with $f\ge0$, one first
-draws $\alpha$, and then draws independent $R_e$ of density $q_{b\beta}$
+Probabilistically, if $U$ has density $f/\int f$ with $f\ge0$ and $0<\int f<\infty$,
+one draws $\alpha$ with conditional probability $\lambda(U,\alpha)$.
+Given $U$ and $\alpha$, one draws independent $R_e$ of density $q_{b\beta}$
 and sets $V_e=R_eQ_e^{\rm pred}$. The resulting coarse density is
 $\mathcal B^{(m)}_\beta f/\int f$. This description includes all branches.
 Exactness means preservation of this integral and law; it does not mean
@@ -307,7 +311,8 @@ including configurations far from the identity. Let $\mathcal P_y(U)$ be
 the sum of fine plaquette distances from the identity in the lifted macro-box of radius
 $(j+7)L$ centered at $Ly$. Write
 $\mathcal P_y(U)=\sum_qm_y(q)\chi(U_q)$, counting periodic lifts with their
-multiplicities. For a coarse plaquette $p$ based near $y$, we shall prove
+multiplicities. For a coarse plaquette $p$ based near $y$, fix the block choices $\alpha$
+and abbreviate $Q_e^{\rm pred}(U,\alpha)$ to $Q_e(U)$. We shall prove
 \begin{equation}
  \chi(V_p)\le\sum_{e\in\partial p}\chi(V_eQ_e(U)^{-1})
                          +C_jL^{-2}\mathcal P_y(U),
@@ -321,8 +326,7 @@ squared-energy comparison would not give the factor needed here.
 \begin{lemma}[First-power block average comparison]
 \label{ch04:predictor-comparison}
 Fix the smoothing order $j$ and frame eligibility constants. For the
-block average of \eqref{ch04:predictor-cost}, every choice of positive-mass
-frame and block average tags satisfies \eqref{ch04:macro-comparison}, with
+block average of \eqref{ch04:predictor-cost}, every set of choices $\alpha$ with $\lambda(U,\alpha)>0$ satisfies \eqref{ch04:macro-comparison}, with
 $C_j,K_j$ independent of $L$ and the period, whenever the coarse period is at least $100(j+8)$.
 \end{lemma}
 \begin{proof}
@@ -357,15 +361,19 @@ $\chi\le2\le C_G b_i$. Averaging proves
 \eqref{ch04:frame-first-power}. If $b$ is not small, the same conclusion
 follows from $\chi\le2$ after enlarging $C_G$.
 
-For a coordinate-path gauge on a box of side $q$ and $N=q^4$ points,
-path counting gives
+Fix a box $X$ of side $q$ with $N=q^4$ sites and a coordinate order.
+Write $U_{x\to y}$ for transport along the corresponding path from $x$ to $y$. Then
 \[
- \sum_{x,y}\chi(U_{x\to y})\le4Nq\sum_{e\text{ in box}}\chi(U_e).
+ \sum_{x,y\in X}\chi(U_{x\to y})\le4Nq\sum_{e\text{ in box}}\chi(U_e).
 \]
-Indeed, in each coordinate segment the mixed coordinates of its
-endpoints are uniformly distributed; summing the coordinate line first
-bounds its mean by $q/N$ times the bond sum. Summing the at most four
-segments gives the formula. Apply \eqref{ch04:frame-first-power} after
+Indeed, choose $x$ and $y$ independently and uniformly in $X$.
+During the segment in direction $\mu$, the other three coordinates are
+uniform on the $q^3$ transverse sites: each is taken from either $x$ or
+$y$ according to the fixed order. The triangle inequality bounds the
+distance for this segment by the sum of link distances on its entire
+coordinate line. Its expectation is thus at most $q^{-3}=q/N$ times
+the sum of link distances in the box. Sum over the four directions and
+multiply by $N^2$ to recover the displayed bound. Apply \eqref{ch04:frame-first-power} after
 any comparison gauge $H$. For a minimizing frame $f$, this gives a
 constant rotation $c$ such that
 $\sum_i\chi(c^{-1}f_iH_i^{-1})\le C_Gq E(H\cdot U)$,
@@ -378,9 +386,11 @@ branches obey the same bound with this additional term.
 Choose an axial gauge $H$ on the macro-box of radius $(j+7)L$. The
 axial estimate in Lemma~\ref{ch04:frame-lemma} gives
 $E(H\cdot U)\le C_jL\mathcal P_y(U)$. On each translated frame patch,
-whose side is $O_j(L)$, the preceding bound gives rotations $c_z$ with
+centred at $Lz$, let $h_{z,i}$ be the patch gauge at offset $i$ as in
+Section~\ref{ch04:kernel-section}. Its side is $O_j(L)$, so the preceding
+bound gives a constant $c_z\in G$ with
 \[
- \sum_i\chi(c_z^{-1}f_{z,i}H_{Lz+i}^{-1})
+ \sum_{i\in\mathbb B_R}\chi(c_z^{-1}h_{z,i}H_{Lz+i}^{-1})
                                   \le C_jL^2\mathcal P_y(U).
 \]
 The convolution weights obey $w_i^{\rm av}\le L^{-4}$: condition on
@@ -391,7 +401,9 @@ For the middle straight path, each of its $L$ translations is injective,
 so its unweighted sum is at most $L E(H\cdot U)$. Its weighted sum has
 the same bound $C_jL^{-2}\mathcal P_y(U)$.
 
-For any $u_*\in G$ the selected group-valued block average satisfies
+Fix a coarse edge $e=(z,\mu)$ and write $Q=Q_e(U)$ and $Y_i=Y_{e,i}$
+for its selected block average and its connector at offset $i$. For every
+$u_*\in G$,
 \[
  \chi(Qu_*^{-1})\le
  2\max\{1,\varepsilon_{\rm pred}^{-1}\}
@@ -404,8 +416,8 @@ $u_*$ is at most the displayed weighted first moment, and $\chi\le2$.
 This holds for every selected fallback connector, however small its
 probability. Use $u_*=c_zc_{z+e_\mu}^{-1}$. The four rotations cancel
 around a coarse plaquette, proving its block average curvature bound.
-Replacing its four block average links by $V$ adds precisely their four
-mismatch distances from the identity. Finally, a fixed fine plaquette belongs to only
+The triangle inequality bounds the resulting change in plaquette distance
+by the sum of the four link distances $\chi(V_eQ_e(U)^{-1})$. Finally, a fixed fine plaquette belongs to only
 $O_j(1)$ macro-boxes centered at points of $L\ZZ^4$; count its periodic
 lifts with multiplicity. This proves the second bound in
 \eqref{ch04:macro-comparison} as well.
@@ -547,8 +559,6 @@ does not differentiate the threshold or its indicator.
 \section{The exact-cover representation and its norms}
 \label{ch04:density-norms}
 
-The activity labels and their exclusion supports are those of Definition~\ref{ch04:activities}. Their full dependence regions also contain the links needed for every test; the two sorts of support must remain distinct in the sums below.
-
 Recall that $Y_i$ is an exclusion support and $I_i^{\rm bad}$ its prescribed
 set of large-field sites, as in Definition~\ref{ch04:activities}. Let
 $\mathfrak F_m(U)$ be the finite subsets $\mathfrak a$ of large-field
@@ -588,7 +598,8 @@ For a regular activity anchored at $o_i$, use the seminorm
         |D_{A_1}^L\cdots D_{A_k}^L E_i^{\rm reg}(U)|,
  \label{ch04:local-seminorm}
 \end{equation}
-where $U$ is small-field on $X_i$ and
+where $U$ ranges over configurations that are small-field on $X_i$.
+Each $A_r$ is a Lie algebra valued link field satisfying, on each link $e$ with initial site $e^-$,
 $|(A_r)_e|_{\gLie}\le t_m(1+\operatorname{dist}(e^-,o_i))^\varpi$.
 The left derivatives are those of Section~\ref{ch02:bounds}. Required
 regularity includes existence and uniform bounds at the boundary of the

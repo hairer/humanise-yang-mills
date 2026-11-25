@@ -11,7 +11,9 @@ function through the probability block kernels.
 We record the precise marked estimate used in this construction. It is
 the local-trial comparison for reflected tilings, with every term involving at least two insertions
 retained, not only its one-column coefficient estimate. At a coarse
-level $h$, write $C_h$ for its prescribed coefficient-column bound,
+level $h$, let $J_h$ map the coefficients of a trial in the chosen basis
+to the coefficients of its selected level-$h$ polynomial. Write $C_h$
+for the prescribed coefficient-column bound,
 $Q_h$ for the ordinary norm bound of a normalized local trial, and
 $E_h$ for its complete bound, including the complementary large-field
 part. For the selected trajectory these bounds and all fixed coefficient
@@ -26,9 +28,7 @@ and chessboard seminorm estimate for the residual required here are
  \label{ch13:coarse-residual}
 \end{align}
 Here $k,m$ are fixed before $h$; $\mathcal C_k$ is the centered
-cell tiling at level $k$ from Section~\ref{ch13:cells}, and $J_h$
-maps trial basis coordinates to their selected level-$h$ polynomial
-coordinates. Both estimates must concern the history restricted from
+cell tiling at level $k$ from Section~\ref{ch13:cells}. Both estimates must concern the history restricted from
 the actual cutoff $N$, uniformly in $N\ge h$ and the physical period.
 
 The first inequality is the endpoint comparison used in
@@ -111,7 +111,7 @@ $c_i+|x_i|\le E_h/G(h,i)$. Since the ratio of
 $a_i^{-d}/G(h,i)$ at successive levels is $L_i^{d+1/8}$,
 \eqref{ch13:residual-height} gives
 \begin{equation}
- \omega_i^{\rm res} a_i^{-d}\{c_i+|x_i|\}
+ \omega_i^{\rm res} a_i^{-d}\bigl(c_i+|x_i|\bigr)
        \le \omega_i^{\rm res} a_i^{-d}E_h/G(h,i)\le\zeta_i/2
                   \quad(m\le i\le h).
  \label{ch13:residual-height-bound}
@@ -170,9 +170,9 @@ regular and large-field comparisons have bounds at most one by the
 choice of $\zeta_i$. Descend this whole polynomial to $m$. Its regular terms linear in the sources have bound at most two, and the
 large-field terms linear in the sources have bound at most one, and its two incidence bounds for terms involving at least two insertions are at most one.
 
-For completeness, if $\mathcal I$ is the cell census and $U_v$ the
-negative terminal normalized local insertion without its minus sign, its full coefficient
-at $h$ is
+Let $\mathcal I$ index the cells of the reflected tiling and let $-U_v$
+denote the terminal insertion used for cell $v$. In the product above
+the coefficient of $\prod_{v\in\mathcal I}z_v$ at level $h$ is
 \[
  \sum_{A\subseteq\mathcal I}
  \mathsf P_{h,N}\left(\rho_N\prod_{v\notin A}(-U_v)\right)
@@ -186,8 +186,8 @@ No product of separately pushed densities for single insertions has replaced it.
 Equation~\eqref{ch11:root-bound} now yields
 \[
  \|\mathcal P_{N,h}F-U\|_{\mathcal C_k}
- \le w^{-1}\exp\{(a_k/a_m)^4q_m+5\}
- =\frac{2e^{(a_k/a_m)^4q_m+5}}{\zeta_ma_m^d}
+ \le w^{-1}\exp\bigl((a_k/a_m)^4q_m^{\rm site}+5\bigr)
+ =\frac{2e^{(a_k/a_m)^4q_m^{\rm site}+5}}{\zeta_ma_m^d}
        E_h e^{-(\tau_h-\tau_m)/8}.
 \]
 The prefactor depends only on the fixed stopping data. This proves
@@ -197,7 +197,7 @@ below. All identities and estimates use the original selected history.
 
 \begin{proposition}[Coarse bounded approximation]
 \label{ch13:bounded-singleton}
-Use the selected histories with the stage requirements above. Fix a degree, a real reference coefficient $c$, a
+Use the selected histories with the stage requirements above. Fix a scaling-dimension bound $d$, a real reference coefficient $c$, a
 sufficiently fine centered tiling $k$, and $\delta>0$. There are real
 observables $\mathcal B_{N,p}(c,y)$ with a finite bound independent of
 $N,p,y$, such that

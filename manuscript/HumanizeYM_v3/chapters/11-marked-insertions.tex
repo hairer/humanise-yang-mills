@@ -38,8 +38,8 @@ Let $\mathcal I$ be a finite set of insertion labels and define
 \]
 The variables commute; a monomial with a repeated label is zero.
 Every element has the unique form $\sum_{S\subseteq\mathcal I}a_Sz_S$.
-Its positive-degree ideal is nilpotent of order $|\mathcal I|+1$,
-so exponential and logarithm series on this ideal are finite.
+If $u$ has zero constant coefficient, then $u^{|\mathcal I|+1}=0$,
+so the series for $\exp u$ and $\log(1+u)$ terminate.
 For positive weights $\omega_i$, put
 \[
  \|a\|_{\omega}=\sum_{S\subseteq\mathcal I}
@@ -48,14 +48,16 @@ For positive weights $\omega_i$, put
 This norm is submultiplicative by the disjoint-subset convolution
 formula. The weights rescale source variables; they are not probabilities.
 
-For an element $M$ with $M_\varnothing=1$,
+Write $[z_S]M=M_S$ for the coefficient of $z_S$ in $M$. If
+$M_\varnothing=1$ and $S\ne\varnothing$,
 \begin{equation}
  [z_S]\log M
  =\sum_{\pi\in\mathcal P(S)}
     (-1)^{|\pi|-1}(|\pi|-1)!\prod_{I\in\pi}M_I .
  \label{ch11:cumulants}
 \end{equation}
-Here $\mathcal P(S)$ denotes the set of partitions into nonempty blocks.
+Here $\mathcal P(S)$ denotes the partitions of $S$ into nonempty blocks,
+and $|\pi|$ is the number of blocks of $\pi$.
 This is the standard moment--cumulant identity; we use the classical
 cumulant calculus of Leonov and Shiryaev~\cite{LeonovShiryaev1959},
 rather than develop a second connected-expansion formalism.
@@ -228,7 +230,7 @@ put $v=e+5$, and let $B_f\le2B_c$ be the adjacent support radii.
 For the prescribed enlargement $X^\uparrow$ of a fine support, the
 covering argument of Section~\ref{ch06:primitive-bounds} gives
 \[
- Lc_{B_c}(X^\uparrow)\le15^4\{L+10c_{B_f}(X)\}.
+ Lc_{B_c}(X^\uparrow)\le15^4\bigl(L+10c_{B_f}(X)\bigr).
 \]
 Consequently, if $10\cdot15^4(e+7)\le L\sigma_f$,
 \begin{equation}
@@ -244,9 +246,8 @@ cover cost.
 In one sector and tag, distinguish three kinds of factors: unmarked
 local corrections, incoming large-field factors, and insertion factors
 with nonempty sets of labels. Their full dependence regions determine
-the intersection graph. The exact prescribed set of large-field sites condition says that every
-selected incoming prescribed large-field set is supplied by the unmarked
-local correction factors in its component. In particular a component
+the intersection graph. The exact-cover condition requires the unmarked local corrections in each
+component to supply every site prescribed by its incoming large-field factors. In particular a component
 with no unmarked correction has no incoming large-field factor.
 This is a condition on the exact cover decomposition, retained when
 marked factors are attached, rather than a consequence of spatial
@@ -509,7 +510,7 @@ unmarked site criterion of Section~\ref{ch11:marked-step}, root each
 component at an existing factor involving at least two insertions or at a factor linear in a source
 in a new join. The common integral and rooted-tree estimates give
 \begin{equation}
- H_c\le C_e\{e^{-B/64}H_f+\zeta\}.
+ H_c\le C_e\bigl(e^{-B/64}H_f+\zeta\bigr).
  \label{ch11:higher-induction}
 \end{equation}
 The constant includes fixed support conversion and the finite degree
@@ -803,11 +804,13 @@ $V[b_{\rm act}+\beta b_{\rm loc}(\rho)]$, positivity gives
  Z\ge e^{v_0-V[b_{\rm act}+\beta b_{\rm loc}(\rho)
                          +4D_G\log(16/\rho)]}.
 \]
-Signed regular costs are included in $b_{\rm act}$. Division yields
+Signed regular costs are included in $b_{\rm act}$. Write $q$ for the full source density at the stopping level, as in
+\eqref{ch11:source-density}, and $q^{\rm site}$ for the resulting
+per-site cost. Dividing by the lower bound on $Z$ gives
 \begin{align}
  \left|Z^{-1}\int[z_{\mathcal I}]q\,d\lambda\right|
- &\le\frac{e^{Vq+n(x+y+2)}}{\prod_i\omega_i},\notag\\
- q&=2b_{\rm act}+\kappa+\beta b_{\rm loc}(\rho)
+ &\le\frac{e^{Vq^{\rm site}+n(x+y+2)}}{\prod_i\omega_i},\notag\\
+ q^{\rm site}&=2b_{\rm act}+\kappa+\beta b_{\rm loc}(\rho)
                   +4D_G\log(16/\rho).
  \label{ch11:replicated-bound}
 \end{align}
@@ -816,10 +819,11 @@ coefficient integrals with the original ones. A reflected tiling at
 scale $a_m$, stopped at $a_k$, has $(a_m/a_k)^4$ sites per cell.
 Taking the number-of-cells root, with common weight $\omega_k$, gives
 \begin{equation}
- {\cal R}_m(F)\le\omega_k^{-1}e^{(a_m/a_k)^4q_k+x+y+2}.
+ {\cal R}_m(F)\le\omega_k^{-1}e^{(a_m/a_k)^4q_k^{\rm site}+x+y+2}.
  \label{ch11:root-bound}
 \end{equation}
-Here ${\cal R}_m$ denotes that chessboard seminorm.
+Here ${\cal R}_m$ denotes the chessboard seminorm of $F$ and
+$q_k^{\rm site}$ the per-site cost at level $k$.
 Multiplying an admissible residual weight by $c$ divides the bound
 by $c$, uniformly in the period when the local bounds are uniform.
 
@@ -899,7 +903,7 @@ the same subtraction through every step.
 Let $x_i$ be the residual coefficient and $c_i$ its complete remainder norm bound, including the subtracted graph of normalized local insertions. With
 $y_i=|S_{L_i}x_{i+1}|$, the raw inequalities give
 \[
- y_i\le K_i\{|x_i|+e_i(y_i+c_{i+1})\},\qquad
+ y_i\le K_i\bigl(|x_i|+e_i(y_i+c_{i+1})\bigr),\qquad
  c_i\le K_iy_i+e_ic_{i+1},\qquad |x_{i+1}|\le y_i.
 \]
 If $A_i|x_i|\le c_i$, substitution gives
@@ -946,7 +950,7 @@ Descent and the product-moment estimate now give, at every fixed stopping
 pair $(m,k)$, a reference label $v_{N,p}$ with inverse terminal
 coordinates bounded by $2E_{N,p}$ and
 \begin{equation}
- \mathcal R_m\{F-O_{N,p}(e,v_{N,p})\}
+ \mathcal R_m\bigl(F-O_{N,p}(e,v_{N,p})\bigr)
        \le C_{e,m,k}E_{N,p}e^{-\tau_N/8}.
  \label{ch11:trial-error}
 \end{equation}
@@ -1014,13 +1018,14 @@ Thus the argument does not presuppose a uniform bound for the raw
 difference coefficient $x_i$.
 
 There is also an exact way to test finite differences using bounded
-separated observations. For a lattice spacing $a$ and integer $h\ge1$,
+separated observations. For a lattice spacing $a$, a coordinate unit vector $e$, and an integer
+$h\ge1$,
 \[
  \frac1h\sum_{j=0}^{h-1}
  \frac{F(x+(j+1)ae)-F(x+jae)}a
  =\frac{F(x+hae)-F(x)}{ha}.
 \]
-Taking $h=\lceil b/a\rceil$ bounds the right side by
+For a fixed physical distance $b>0$, taking $h=\lceil b/a\rceil$ bounds the right side by
 $2\sup|F|/b$. To replace averaged correlation evaluation positions by the desired
 positions, however, one needs a positional modulus established
 independently of the normalized difference estimate being proved.
@@ -1295,8 +1300,8 @@ Using $\alpha=1/(4(D+2))$, the preceding coefficient bounds,
 linear substitution, and the Wick estimate give
 \[
  \|Au-Tu\|_1
- \le c_d\{H^{-1}+D2^DH^{-1+\alpha(D+2)}
-                  +w_DH^{-1+\alpha(D+1)}\}\|Au\|_1
+ \le c_d\bigl(H^{-1}+D2^DH^{-1+\alpha(D+2)}
+                  +w_DH^{-1+\alpha(D+1)}\bigr)\|Au\|_1
  \le\tfrac12\|Au\|_1
 \]
 eventually. Constants and conjugation are preserved at every
@@ -1392,7 +1397,7 @@ radius-$AB$ ball around its cell's finitely many insertion points, with $A$
 chosen before the inverse coupling. A connected grid of radius-$B$ cubes
 covers it with at most $C(1+A)^4$ cubes. Thus its support bound
 at exponent $f$ is bounded by
-$R_f=\exp\{fC(1+A)^4\}$, independent of $B$ and the period.
+$R_f=\exp\bigl(fC(1+A)^4\bigr)$, independent of $B$ and the period.
 At successive stages these are finite pre-threshold constants.
 The stage choices of sufficiently large starting scales impose a common bound $H^{\epsilon_j}$
 on $R_{e+2}$, $C_*$, $L^4T_{e+2}$, and the fixed incidence
@@ -1579,7 +1584,7 @@ are at most one. On a torus with $q_0$ sites and $nq_0$ marks,
 the scalar majorant of the marked exponential gives
 \begin{equation}\label{ch11:weighted-output-envelope}
  \omega^{q_0|I|}|[z_I^{\rm all}]\rho_{\rm marked}(U)|
- \le\exp\{\text{unmarked exponent}(U)+q_0(1+n)\}.
+ \le\exp\bigl(\text{unmarked exponent}(U)+q_0(1+n)\bigr).
 \end{equation}
 Every cell carries the source monomial $I$ in the coefficient on the left.
 The unmarked integral is still the original partition function
@@ -1649,7 +1654,7 @@ bound at most $z\,a_{\rm low}(y)$, where
 $0\le a_{\rm low}(y)\le1$. The outgoing incidence is at most
 \[
  T_ez(1+a_{\rm low}(y))
- \le2T_ez\le\tfrac12\{\alpha z+H^{1/2}z^2\}.
+ \le2T_ez\le\tfrac12\bigl(\alpha z+H^{1/2}z^2\bigr).
 \]
 The site conditions hold for $H^{-q}\le z\le H^{-1/2}$
 by the same estimates, and the large-field output is at most $G(y)$.
@@ -1684,7 +1689,7 @@ bounds. Put $q_\mu(p)=e^{ip_\mu}-1$, let $X$ be exterior
 multiplication by $q$ from one-forms, and let $U$ be exterior
 multiplication from scalars. The actual curvature covariance is
 \[
- P(p)=X(p)\{X(p)^*H(p)X(p)+U(p)U(p)^*\}^{-1}X(p)^*,
+ P(p)=X(p)\bigl(X(p)^*H(p)X(p)+U(p)U(p)^*\bigr)^{-1}X(p)^*,
  \qquad P(0)=0.
 \]
 Indeed the completed inverse differs from the original potential
@@ -1936,7 +1941,7 @@ Reserve $e^{-u}=G(s)$ once per component.
 The remaining rooted sum is bounded by
 \[
  H^{-q-8}
- +\mathcal W(B)\{O(H^{-8})+O(H^{-q-8})\}
+ +\mathcal W(B)\bigl(O(H^{-8})+O(H^{-q-8})\bigr)
  +H^{o(1)}\sqrt{e^{-H^{1/5}}}
  +(8B+1)^4e^{-u+O(e_*)},
 \]
@@ -2009,7 +2014,7 @@ It follows that the normalized coefficient with weight $z$
 obeys
 \[
  z|\mathbb E F|
- \le \exp\{VC_{\rm stage}-4\dim(\gLie)\log g\}.
+ \le \exp\bigl(VC_{\rm stage}-4\dim(\gLie)\log g\bigr).
 \]
 The scalar $\sigma$ cancels. A genuine additive value error
 $\delta$ contributes $2V\delta$, one copy in numerator and

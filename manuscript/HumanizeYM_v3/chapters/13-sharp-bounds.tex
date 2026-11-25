@@ -52,7 +52,8 @@ schedule; no new schedule is chosen after fixing a correlation.
 
 \subsection{A normalized local insertion}
 
-For degree $d$ and coefficients in a fixed bounded ball, set
+Fix a scaling-dimension bound $d$ and a ball of radius $R$ in the
+coefficient space of $V_d$. Set
 \[
  E_k=C_{d,R}^{\rm sec} C_{J(k)}\prod_{i<k}C_{J(i+1)},\qquad
  \omega_k=a_k^d\widehat\beta_k^{-w_d}E_k^{-1}.
@@ -78,7 +79,7 @@ $x=3,y=1$, gives
 \begin{equation}
  \|O_{N,p}^{(d)}(c)\|_{\mathrm{cell}(m)}
  \le \omega_k^{-1}
-           \exp\{(a_m/a_k)^4q_k^{\rm site}+6\}.
+           \exp\bigl((a_m/a_k)^4q_k^{\rm site}+6\bigr).
  \label{ch13:sharp-root}
 \end{equation}
 It holds on a full cutoff tail uniformly in period and in the coefficient
@@ -120,7 +121,7 @@ Combining this with \eqref{ch13:sharp-root} and
 
 \begin{proposition}[Sharp centered bound]
 \label{ch13:sharp-centered}
-For every degree $d$, coefficient radius $R$ and $\epsilon>0$, there
+For every scaling-dimension bound $d$, coefficient radius $R$ and $\epsilon>0$, there
 is $C_{d,R,\epsilon}$, fixed before the cell scale $m$, such that
 \[
  \|O_{N,p}^{(d)}(c,y)\|_{\mathrm{cell}(m,y)}

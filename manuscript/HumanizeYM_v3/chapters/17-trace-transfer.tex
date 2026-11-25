@@ -14,7 +14,10 @@ continuum action.
 Let $L$ be a block ratio and $s_a$ a unit fine translation. Write
 $\delta_a=s_a-1$, $\delta_a^{\rm c}=s_a^L-1$, and let
 $\nabla_a=\sum_{j=1}^4c_j(s_a^j-s_a^{-j})$ be the eighth-order
-centered difference used above. Its coefficients satisfy
+centered difference of Section~\ref{ch17:current}. Write
+$\nabla_a^{\rm c}=\sum_{j=1}^4c_j(s_a^{Lj}-s_a^{-Lj})$ for the
+corresponding coarse difference, acting on the fine lattice.
+The coefficients satisfy
 $2\sum_jjc_j=1$. Define finite Laurent polynomials
 \begin{align*}
  M_a&=L^{-1}\sum_{v=0}^{L-1}s_a^v,&
@@ -96,8 +99,8 @@ To see this directly, retain the actual vector and ghost first and second
 background insertions $b,c$ and replace only their denominators by the
 scalar-mass denominators. In each channel the logarithmic Hessian is
 \[
- \operatorname{tr}\{a_\mu(k)^{-1}c(-p,p;k)
- -a_\mu(k)^{-1}b(-p;k+p)a_\mu(k+p)^{-1}b(p;k)\}.
+ \operatorname{tr}\bigl(a_\mu(k)^{-1}c(-p,p;k)
+ -a_\mu(k)^{-1}b(-p;k+p)a_\mu(k+p)^{-1}b(p;k)\bigr).
 \]
 The scalar mass has no background insertion. The actual local Taylor
 expansion and vertex estimates of Chapter~\ref{ch07:matching} therefore

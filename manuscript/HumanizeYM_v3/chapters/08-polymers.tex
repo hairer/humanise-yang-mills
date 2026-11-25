@@ -30,15 +30,15 @@ derivative or local Taylor coefficient; they are not identified solely by
 their supports.
 
 A symmetric, reflexive relation $\gamma\not\sim\eta$ specifies
-\emph{incompatibility}. Reflexivity means that a compatible collection
-contains a label at most once. We assume
+\emph{incompatibility}. Reflexivity means $\gamma\not\sim\gamma$: two occurrences of the same
+label are incompatible. We assume
 \begin{equation}\label{ch08:overlap}
  \gamma\not\sim\eta\quad\Longrightarrow\quad
  X_\gamma\cap X_\eta\ne\varnothing.
 \end{equation}
-For the hard-core gas the implication is an equivalence. Some estimates
-below need only the displayed implication; the formula for deleting all
-polymers meeting a set will be stated for the hard-core case.
+When incompatibility is defined by overlap of supports, the implication
+is an equivalence. We use this particular rule for the constrained gas
+in Section~\ref{ch08:forced}.
 
 The polymer partition function is
 \begin{equation}\label{ch08:gas}
@@ -106,6 +106,7 @@ Suppose $A_\gamma\ge0$ and
        |z_\eta|e^{A_\eta}\le A_\gamma,
  \qquad \sum_\gamma |z_\gamma|e^{A_\gamma}<\infty.
 \end{equation}
+Here the first inequality is required for each $\gamma\in\mathcal P$.
 Then the cluster series
 \begin{equation}\label{ch08:log}
  \mathcal L(z)=\sum_{n\ge1}\frac1{n!}
@@ -124,7 +125,7 @@ For a fixed label $\gamma_1$, its absolute rooted series satisfies
 
 \begin{proof}
 This is the hard-core specialization of the cited convergence theorem:
-the pair interaction is $-1$ on incompatible pairs and zero otherwise.
+the Mayer function is $-1$ on incompatible pairs and zero otherwise.
 There is no need to assume $Z_{\rm pol}>0$ before taking the logarithm.
 The series defines the branch continued from zero activity. For real
 activities it is real, and the exponential identity then gives
@@ -147,8 +148,8 @@ $\gamma_0>0$,
  \|z\|_{\alpha+\delta}\le\gamma_0,
  \qquad 0<q<1,\qquad h\gamma_0\le q\delta.
 \end{equation}
-The parameter $\delta$ is the additional exponential support decay; it will
-be spent to sum polymers that meet one another. The parameter $q$ measures
+The additional decay $e^{-\delta c(X)}$ controls the sum over polymers
+whose supports meet $X$. The parameter $q$ measures
 smallness and controls the number of occurrences in a cluster.
 
 Write $X(\boldsymbol\gamma)=\bigcup_i X_{\gamma_i}$. A direct
@@ -166,8 +167,8 @@ This form is slightly stronger than the bound with an additional
 $(1-q)^{-1}$ obtained by separately summing estimates at each occurrence
 number. Either form is sufficient for the applications.
 
-Here is the hypothesis matching for this standard adaptation. Apply the
-rooted theorem to the inflated activities
+To prove \eqref{ch08:weighted-tail}, apply the rooted bound
+\eqref{ch08:root} to the rescaled activities
 $\widetilde z_\gamma=q^{-1}|z_\gamma|e^{\alpha c(X_\gamma)}$
 and take $A_\gamma=\delta c(X_\gamma)$. By
 \eqref{ch08:overlap} and \eqref{ch08:cover-properties}, the left side of
@@ -193,8 +194,9 @@ This is useful when a cluster has to meet a prescribed insertion.
 An insertion selected in this way is a distinguished occurrence in the
 combinatorial expansion, not yet a renormalized quantum field.
 
-The support norm is independent of $|\Lambda|$. Summing the $k=1$
-estimate over $x$ bounds $|\mathcal L(z)|$ by
+For a family satisfying \eqref{ch08:reserve} with the same constants in
+every volume, the right-hand side of \eqref{ch08:weighted-tail} is uniform
+in $|\Lambda|$. Summing the $k=1$ estimate over $x$ bounds $|\mathcal L(z)|$ by
 $|\Lambda|\gamma_0$. Thus extensive free-energy bounds coexist with
 volume-independent estimates on connected terms meeting a fixed site.
 It is the latter estimates that preserve locality in a renormalization
@@ -212,8 +214,9 @@ otherwise. Under \eqref{ch08:reserve}, both cluster series converge and
  \frac{Z_{\rm pol}(z^Y)}{Z_{\rm pol}(z)}
   =e^{-\mathcal L_Y(z)},\qquad
  \mathcal L_Y(z)=\sum_{n\ge1}\frac1{n!}
- \sum_{X(\boldsymbol\gamma)\cap Y\ne\varnothing}
- \varphi^T(\boldsymbol\gamma)\prod_i z_{\gamma_i}.
+ \sum_{\substack{\boldsymbol\gamma\in\mathcal P^n\\
+ X(\boldsymbol\gamma)\cap Y\ne\varnothing}}
+ \varphi^T(\boldsymbol\gamma)\prod_{i=1}^n z_{\gamma_i}.
 \end{equation}
 This is simply subtraction of two absolutely convergent logarithms.
 Its local bound is

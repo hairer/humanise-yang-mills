@@ -53,8 +53,8 @@ Haar measure. Chapter~\ref{ch06:large-fields} gives the exact
 Gaussian identity, including the difference between the chosen
 finite-range covariance and the inverse precision.
 
-Here is the scalar bookkeeping in a form useful for checking
-reassembly. Suppose there are $N_{\rm free}$ free tree-gauge
+To compute the field-independent factor in this change of variables,
+suppose there are $N_{\rm free}$ free tree-gauge
 bonds, of which $n_{\rm act}$ use Lie algebra coordinates, and
 let $D$ be the dimension after dummy Gaussian coordinates have
 been added. Set $g=(\beta')^{-1/2}$, $q=\dim\gLie$, and
@@ -102,7 +102,8 @@ The required simultaneous estimate for a connected product is
        \prod_{a\in M}u_a .
  \label{ch09:joint-input}
 \end{equation}
-Here $\nu$ is the one sector Gaussian/Haar law,
+Here $M$ indexes the factors in the connected product, and $\nu$ is their
+common Gaussian and Haar integration measure in the chosen sector.
 $G_M$ majorizes the product and its prescribed ordered
 derivatives, $s_M$ counts the full dependence region in
 radius-$B$ blocks, and $A_M$ is its selected large-field condition set.
@@ -246,8 +247,8 @@ $\mathfrak b^{-1/2+o(1)}$. To see where the gain occurs, for
 a covariance interpolation $C_s$ with fixed positive lower bound,
 the logarithmic density derivative is
 \[
- \frac12\left\{z^*C_s^{-1}\dot C_s C_s^{-1}z
-                      -\tr(C_s^{-1}\dot C_s)\right\}.
+ \frac12\left(z^*C_s^{-1}\dot C_s C_s^{-1}z
+                      -\tr(C_s^{-1}\dot C_s)\right).
 \]
 A varying mean adds its linear Gaussian score. Every coefficient
 contains a covariance or normalized-mean difference. Its fixed
@@ -294,8 +295,8 @@ use a formal cumulant remainder, we retain a finite stationary
 region and estimate its complement. The resulting centered
 auxiliary bound, with $h=\mathfrak b^{-7/16}$, is
 \begin{equation}
- P_j(\mathfrak b)\left\{
- \mathfrak b^{-1}h+\mathfrak b h^5+h^3\right\}
+ P_j(\mathfrak b)\left(
+ \mathfrak b^{-1}h+\mathfrak b h^5+h^3\right)
                          +\mathfrak b^{-K},
  \label{ch09:aux-input}
 \end{equation}
@@ -357,7 +358,8 @@ $\sum_i\lambda_i\sum_y F_y^{(i)}(U_{i,x-\pi_{w+i}(y)})
 =F_x(U)-F_x(1)$, and $L_x=0$.
 This is not a pointwise assertion that $G_x=F_x-F_x(1)$.
 
-Sum \eqref{ch09:localization} over $x$ and change variables
+Sum \eqref{ch09:localization} over all sites $x$ of the original torus
+$\Lambda$ and change variables
 $x-\pi_{w+i}(y)\mapsto x$ in each finite auxiliary sum.
 Translation covariance makes $F_x(1)=F_0(1)$, giving exactly
 \[
@@ -484,7 +486,7 @@ Section~\ref{ch07:kernels} in finite coordinates.
 Set
 \[
  R_f=f-f(1)-Q_f,\qquad
- \zeta_f=(1-h_Z)\{f(1)+h_{\{o\}}Q_f-h_Xf\}.
+ \zeta_f=(1-h_Z)\bigl(f(1)+h_{\{o\}}Q_f-h_Xf\bigr).
 \]
 An exact two-case identity is
 \begin{equation}
@@ -550,8 +552,8 @@ On the small-field set of $Y_d$, $L_d=a_dP_d$.
 Define
 \[
  F_d=\Delta a_d(Q_d-P_d),\qquad
- J_d=(1-h_{Y_d})\{(\alpha+\Delta)L_d
-                              -\Delta a_dh_{\{o_d\}}Q_d\}.
+ J_d=(1-h_{Y_d})\bigl((\alpha+\Delta)L_d
+                              -\Delta a_dh_{\{o_d\}}Q_d\bigr).
 \]
 Then
 \begin{equation}
@@ -597,11 +599,11 @@ Weighted path sums and additional exponential decay in path length give constant
 $C_{\rm reset},L_0,L_1,L_h$ such that
 \begin{align}
  \mathcal E_m(E)&\le C_{\rm reset}H_{\rm pre}
-     +C_j\{H_{\rm pre}L_0+
-                  (|\alpha|t^3+H_{\rm pre})L_1\},\\
+     +C_j\bigl(H_{\rm pre}L_0+
+                  (|\alpha|t^3+H_{\rm pre})L_1\bigr),\\
  \|\zeta+J\|_{\sigma+1,{\rm site}}
  &\le C_j(1+B)^{d_j}H_{\rm pre}
-   +C_j\{t|\alpha|+H_{\rm pre}/t+H_{\rm pre}\}L_h .
+   +C_j\bigl(t|\alpha|+H_{\rm pre}/t+H_{\rm pre}\bigr)L_h .
  \label{ch09:reset-cost}
 \end{align}
 Here the site norm sums supremum majorants of logarithmic

@@ -7,7 +7,8 @@ extends to the radius windows just described. We give the estimates
 because requiring every window to lie inside a plateau would leave
 gaps in radius coverage.
 
-Fix a finite degree, arity and derivative request. In this paragraph
+Fix the maximum scaling dimension of the insertions, their number, and
+the orders of the derivatives to be estimated. In this paragraph
 $C_j$ includes the linear marked-column constants, the curvature-response
 row constants and the finite polynomial-source propagation constants
 for this request, all fixed \emph{before} the block ratio of stage $j$.
@@ -22,15 +23,14 @@ Constants depending on the already selected ratio, such as nonlinear
 stationary-jet bounds, are not included here. They enter the local
 small errors and endpoint constants, and are handled by sufficiently large coupling thresholds.
 These local errors are summed after propagation; their post-ratio
-constants are never multiplied once per step. Only a bounded number
+constants are never multiplied once per step. Put $H_n=\exp((\log\log\widehat\beta_n)^2)$. Only a bounded number
 of endpoint factors is multiplied, giving $H_n^{o(1)}$.
 This distinction avoids a circular ratio choice.
 
-Put $H_n=\exp((\log\log\widehat\beta_n)^2)$.
 For $b$ in a fixed compact interval of sufficiently large positive
-numbers, stop backwards from $n$ at the first crossing of
-$(b+2)\log H_n$, and then at the first crossing of another
-$10\log B_n$. Here $B_n$ is the radius of the restarted representation;
+numbers, move backwards from level $n$, adding $\log L_i$ at each step.
+Stop when this sum first reaches $(b+2)\log H_n$. Starting from that
+level, continue until the additional sum first reaches $10\log B_n$. Here $B_n$ is the radius of the restarted representation;
 $\log B_n=O(\log\log\widehat\beta_n)$.
 The schedule bound $L_i\le\log\widehat\beta_i$ makes each
 overshoot $O(\log\log\widehat\beta_n)=o(\log H_n)$.
@@ -72,10 +72,10 @@ is uniform in the actual free history. Its stage-dependent constants,
 protected-path errors, fixed-ratio jet errors and finite incidence
 costs are made smaller than the requested powers of $H_n$ by choosing
 sufficiently large coupling thresholds. Sums over $O(\log H_n)$ steps lose only $H_n^{o(1)}$.
-At each step nonlinear propagation is the stated pre-ratio linear
-map plus an coupling-threshold-controlled small error. Thus the post-ratio constants
-in the nonlinear comparison occur additively in those local errors,
-not in the repeated linear amplification. The regular and large-field source recurrences therefore retain their
+At each step the linear map has its norm bound fixed before the block
+ratio is chosen. The remaining nonlinear term is small once the coupling
+threshold is sufficiently large. Constants depending on the chosen ratio
+therefore enter the sum of local errors. The regular and large-field source recurrences therefore retain their
 strict negative powers after the amplification
 \eqref{ch17:window-product}.
 

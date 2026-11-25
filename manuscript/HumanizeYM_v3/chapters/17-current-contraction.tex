@@ -20,9 +20,10 @@ quadratic defect has order at least four when
                               \quad\hbox{near }(0,0).
  \label{ch17:defect-four}
 \end{equation}
-This refers to spatial momentum degree, not the field degree of the
-Hessian. It includes the affine--affine and affine--quadratic polynomial
-cancellations needed in the current estimate.
+Equivalently, every Taylor coefficient of $E_b$ of total degree less
+than four in $(p,q)$ vanishes. This order of vanishing in momentum
+implies the cancellations for pairs of affine fields and for an affine
+field paired with a quadratic field that are used in the current estimate.
 
 For the initial Wilson current, \eqref{ch17:defect-four} follows from
 the leading continuum identity. Its linearized curvature is $dA$;
@@ -32,15 +33,15 @@ coefficient of
 $\sum_a\nabla_aJ_{ab}-DS[Y_b]$ therefore has leading spatial
 momentum degree three. At that degree it is exactly
 \[
- \partial_a\left(\tfrac14\delta_{ab}\sum_{c,d}\|F_{cd}\|_{\gLie}^2
+ \sum_a\partial_a\left(\tfrac14\delta_{ab}\sum_{c,d}\|F_{cd}\|_{\gLie}^2
                          -\sum_c \langle F_{ac},F_{bc}\rangle_{\gLie}\right)
-       +\sum_c \langle F_{bc},\partial_aF_{ac}\rangle_{\gLie}=0.
+       +\sum_{a,c} \langle F_{bc},\partial_aF_{ac}\rangle_{\gLie}=0.
 \]
 The identity uses the linear Bianchi equation. Lower spatial degrees vanish because each curvature
 contains a difference and the action variation contains one more.
 All remaining lattice Taylor terms have degree at least four.
 The same reasoning applies to any initial path action with the
-normalized weight-four Taylor polynomial already established in
+normalized Taylor polynomial of scaling dimension four already established in
 Chapter~\ref{ch07:matching}.
 
 \subsection{Preservation of the low moments}
@@ -327,7 +328,7 @@ one alias is nonprincipal, the linear Ward identity on the other leg
 supplies one further principal momentum, so this contribution has
 order at least three. Two nonprincipal aliases have order at least four.
 Consequently only the principal pair contributes to the quadratic
-weight-four coefficient, which is unchanged.
+coefficient of scaling dimension four, which is unchanged.
 
 For the displacement one additionally uses the column sum of the gauge-covariant block average.
 By \eqref{ch17:flat-current-map}, the corrected differential is exactly
@@ -340,7 +341,8 @@ root-gradient term. Since the leading fine curvature of $W_a$ is $L^{-2}$ times
 the coarse curvature, the factors in the current update multiply to
 $L^5L^{-3}L^{-2}=1$. This preserves the linear curvature jet of $Y$.
 Gauge covariance then fixes its accompanying quadratic commutator term:
-its leading covariant weight-two polynomial is that same curvature.
+the covariant polynomial of scaling dimension two in the transferred
+displacement is again the curvature.
 
 The stress remainder's quadratic symbol now has order at least three.
 Two-leg curl division leaves one extra difference, so its diagonal

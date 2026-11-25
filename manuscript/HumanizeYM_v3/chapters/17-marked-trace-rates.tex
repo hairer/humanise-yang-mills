@@ -17,8 +17,9 @@ For every fixed order $r$, compactness and smoothness of $w$ give
 \begin{equation}\label{ch17:kernel-score}
  |D^r q_\gamma(u)|\le C_r(1+\gamma)^r q_\gamma(u).
 \end{equation}
-Indeed successive left derivatives give a polynomial in derivatives
-of $w$, with at most $r$ factors of $\gamma$. The normalization is
+Here $D^r$ denotes $r$ successive left derivatives in unit Lie algebra
+directions. Dividing by $q_\gamma$, the result is a polynomial in
+derivatives of $w$ with at most $r$ factors of $\gamma$. The normalization is
 independent of $u$. For a product of link kernels the corresponding
 bound has an additional polynomial in the number of differentiated
 links. No lower bound on $q_\gamma$ is used.
@@ -169,8 +170,8 @@ projection losses. The regular error satisfies
        =\widehat\beta_k^{-1/10}H^{-2}.
 \]
 A directional derivative along $Y$ has the same bound up to the fixed
-current norm: the derivative costs $t^{-1}$ while $Y=O(t)$ on the
-small-field chart. The previously proved logarithmic current bounds
+current norm, since the derivative bound contributes a factor $t^{-1}$
+and $Y=O(t)$ on the small-field chart. The previously proved logarithmic current bounds
 and fixed localization losses are absorbed by increasing the coupling threshold.
 
 For the marked remainder one must first cancel the whole classical
@@ -215,8 +216,8 @@ $\sigma=\chi^{-1}x^*\operatorname{diag}(B_a^{-1})$, so that
 $\pi=s^{-1}\sigma$ in those formulas. For a nonprincipal alias define
 \[
  g_{l,a}=\overline{m_l}
- \left\{\frac{\tr D_l}{s\alpha}
-       -\frac{(D_l)_{aa}|r_L(\theta_{l,a})|^2}{B_a}\right\}.
+ \left(\frac{\tr D_l}{s\alpha}
+       -\frac{(D_l)_{aa}|r_L(\theta_{l,a})|^2}{B_a}\right).
 \]
 Substitution into the straight transport gives the regular formula
 \[
@@ -284,7 +285,7 @@ $p(z)\ge1$ is a polynomial envelope for the finite Gaussian coordinates,
 the difference between actual and deterministic evaluation in
 each requested derivative are bounded by
 \[
- C_j N_k P(B)\{t+g/t+e^{-c_jB}\}\,p(z)^{C_j},
+ C_j N_k P(B)\bigl(t+g/t+e^{-c_jB}\bigr)\,p(z)^{C_j},
 \]
 with an appropriate enlargement of the crop radius in the last term.
 Here $N_k$ is the norm of the already $t^{-2}$-normalized regular
@@ -333,7 +334,7 @@ $N_{\rm per}/[10(2B_k+1)]-1$. Retaining two units of the exponential support exp
 additional error
 \[
  C_j\widehat\beta_k^{C_j}H^{C_j}
-       \exp\{-N_{\rm per}/[5(2B_k+1)]+2\}.
+       \exp\bigl(-N_{\rm per}/[5(2B_k+1)]+2\bigr).
 \]
 It vanishes in the ordered period limit at fixed $k$.
 
@@ -416,13 +417,10 @@ For spectator configurations separated by a fixed positive multiple of $a_n$, th
 distance in level-$k(n)$ units is at least $c\exp(T_n)$. This tail
 is therefore smaller than $e^{-T_n/100}$ after all fixed losses.
 Every spectator subset uses the same empty density.
-Match its full coefficient and remainder backwards from
-$k(n)$ to $n$, where
-\[
- T_n=(\log\widehat\beta_n)^{48},\qquad
- \tau_{k(n)}-\tau_n\ge T_n
-\]
-is the first crossing. Equation~\eqref{ch11:descent-error} gives
+Write $\tau_j=\log(1/a_j)$ and
+$T_n=(\log\widehat\beta_n)^{48}$. Choose $k(n)$ to be the smallest
+integer $k\ge n$ for which $\tau_k-\tau_n\ge T_n$. Match the full
+coefficient and remainder backwards from $k(n)$ to $n$. Equation~\eqref{ch11:descent-error} gives
 $e^{-T_n/8}$ before multiplication by the terminal norm bounds. Fixed projection and
 threshold costs have logarithm $O(\log\widehat\beta_n)$; accumulated
 pre-ratio column costs are $o(T_n)$. Here it is only the latter
@@ -449,7 +447,7 @@ Finite separating matrices of free two-point correlation pairings have uniformly
 inverses. For every fixed $p$ the image therefore satisfies
 \[
  b_i^p\|s_i(v_i^{\rm eq})\|
- \le C b_i^p\exp\{5(\log\log\widehat\beta_{n_i})^3-T_{n_i}/100\}
+ \le C b_i^p\exp\bigl(5(\log\log\widehat\beta_{n_i})^3-T_{n_i}/100\bigr)
  \longrightarrow0.
 \]
 This proves the quantitative kernel hypothesis in the stability lemma.

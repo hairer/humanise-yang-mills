@@ -86,7 +86,10 @@ An allocation sector fixes the selection, its assignment to connected
 components of its neighborhoods, a rooted spanning tree in every block,
 and all frame and block average tags. Tree links are set to the identity.
 These choices fix the coordinates and supports before differentiation.
-The set $D\subset A_f\cup A_n$ consists of tests exceeding $t_{\rm hi}$.
+Let
+\[
+ D=\{p\in A_f:r_p^f>t_{\rm hi}\}\cup\{e\in A_n:n_e>t_{\rm hi}\}.
+\]
 Let $H$ be the output anchors at distance at most $4B/5$ from $D$. Local
 counting gives
 \begin{equation}
@@ -129,9 +132,10 @@ complement maps $M_f,M_n,N$ satisfy
  \qquad M_f^*X_f^{\rm lin}+M_n^*Z^{\rm lin}=X_c^{\rm lin}.
  \label{ch06:flat-identities}
 \end{equation}
-The superscript denotes linearized curvature and
-$Z^{\rm lin}=\sqrt b(v-Qa)$, with the linear block average appropriate to the
-chosen fine/coarse pair. For the selected quadratic data these identities follow from the
+The superscript $\mathrm{lin}$ denotes linearization at the flat field.
+Here $a$ and $v$ are the fine and coarse link variations, respectively,
+and $Z^{\rm lin}=\sqrt b(v-\mathcal Q a)$ is their discrepancy under the
+linearized block average $\mathcal Q$ of \eqref{ch05:actual-Q}. For the selected quadratic data these identities follow from the
 transport and positive-defect identities of Chapter~\ref{ch05:gaussian}.
 Here is their row realization, including the exact alignment premise.
 Let $C_\nu$ map curvature to the direct and path rows actually used at
@@ -141,7 +145,8 @@ modified curvature metric. This is the quadratic coefficient condition
 of \eqref{ch05:actual-hessian}; it is not a conclusion for an arbitrary
 path action. Put $\mathsf B_\nu=\mathsf H_\nu^{-1}$ and
 $P_c=C_c\mathsf B_cC_c^*$. The positive direct row makes $C_c$
-injective, so $P_c$ is an orthogonal projection. Equation
+injective. Thus $P_c=C_c(C_c^*C_c)^{-1}C_c^*$ is the orthogonal
+projection in the coarse row space onto the range of $C_c$. Equation
 \eqref{ch05:positive-defect} supplies an exponentially local row $K$
 with
 \[
@@ -442,8 +447,10 @@ at least $at_f^2|A|/2$.
 Fix the sector and the frozen free links $Y$. Tree links are not integration
 variables. Active coordinates are logarithms of the remaining free links
 outside the selected $10B$-neighborhood. Linearize the retained square
-terms at the actual replicated coarse field, including their actual
-block average and fixed cutoffs. Write their affine stack as
+terms at the replicated coarse field, using the chosen block average
+and keeping the cutoffs fixed. Collect the resulting affine expressions
+in a single vector $\mathsf D u+b_Y$, where $u$ contains the active
+coordinates and $b_Y$ is the value at $u=0$. Their quadratic energy is
 \begin{equation}
  Q_Y(u)=\tfrac12|\mathsf D u+b_Y|^2,\qquad
  \mathsf A=\mathsf D^*\mathsf D,\qquad f_Y=\mathsf D^*b_Y.
@@ -507,15 +514,11 @@ from the active coordinates, hence annihilates their zero extension.
 For $C_L\varepsilon^2\le1/2$ and positive lower direct and penalty
 coefficients, this proves
 $\mathsf D^*\mathsf D\ge c_LI$. The other rows add nonnegative squares.
-The gauge may depend on the edge at which the local inequality is applied,
-but it is fixed during differentiation; invariance of the norm on $\gLie$
-permits the subsequent sum.
-
-This provides the precise route from a local tree comparison to the
-actual matrix gap. It leaves no need to compare whole determinants of
-actual and flat matrices. The identification here is local and preserves the original forest; row selection only removes terms annihilating the zero extension.
-Their constants may depend on the fixed ratio $L$, unlike the excess constant
-in \eqref{ch06:macro-comparison}, which is needed before $L$ is chosen.
+The gauge may depend on the edge at which the local inequality is applied.
+It is fixed during differentiation, and invariance of the norm on $\gLie$
+permits the subsequent sum. The resulting lower bound $c_L$ may depend
+on $L$. The constant in the block comparison
+\eqref{ch06:macro-comparison} must already be fixed when $L$ is chosen.
 
 \subsection{Local inverse columns}
 
@@ -536,8 +539,11 @@ integral and define
  \qquad \Gamma=\tfrac12(P+P^*),\qquad m_Y=-P^*f_Y.
  \label{ch06:windows-def}
 \end{equation}
-The matrix $\Gamma$ is finite range. Symmetry alone does not make it a
-covariance; positivity follows from the following comparison.
+Here $\mathsf A[\Omega_i,\Omega_i]$ denotes the principal submatrix on
+$\Omega_i$: to obtain column $i$ of $P$, solve the restricted system with
+right-hand side the $i$th coordinate vector and extend the solution by
+zero. The comparison below shows that the finite-range symmetric matrix
+$\Gamma$ is positive definite and hence defines a Gaussian covariance.
 
 \begin{proposition}[Window estimates from actual matrix bounds]
 \label{ch06:windows}
@@ -650,13 +656,14 @@ The radius need not be uniform in arbitrary unnormalized coordinates.
 
 \subsection{The exact integral and its normalization}
 
-Let $n$ be the real dimension of the active coordinate space. For any
-$m\in\RR^n$, positive covariance $\Gamma$, and integrable factor $F$,
-the ordinary Gaussian change of variables $u=m+gz$ gives
+Let $n$ be the real dimension of the active coordinate space. Write $g=\beta^{-1/2}$, and let $\gamma_\Gamma$ denote the centered
+Gaussian measure on $\RR^n$ with positive definite covariance $\Gamma$.
+For any $m\in\RR^n$ and any $F$ integrable against the weight on the left,
+the change of variables $u=m+gz$ gives
 \begin{align}
  \int_{\RR^n}e^{-\beta Q_Y(u)}F(u)\,du
  &=\mathcal C_Y\int F(m+gz)
-       \exp\{\eta\cdot z+\tfrac12 z^*(\Gamma^{-1}-\mathsf A)z\}
+       \exp\bigl(\eta\cdot z+\tfrac12 z^*(\Gamma^{-1}-\mathsf A)z\bigr)
                                       \,d\gamma_\Gamma(z),\notag\\
  \mathcal C_Y&=(2\pi g^2)^{n/2}(\det\Gamma)^{1/2}e^{-\beta Q_Y(m)},\notag\\
  \eta&=-g^{-1}(\mathsf Am+f_Y).
@@ -707,7 +714,7 @@ $\chi$ equal to one on $|u|\le d_*$ and zero on $|u|\ge2d_*$. For a
 group element $M$ sufficiently near the identity put
 \[
  F_M(u)=u+\psi(M,u),\qquad
- \psi(M,u)=\chi(u)\{\log(\exp(u)M)-u\}.
+ \psi(M,u)=\chi(u)\bigl(\log(\exp(u)M)-u\bigr).
 \]
 The logarithm is used only on the support of $\chi$. At $M=1$,
 $\psi=0$ and $D_u\psi=0$. Compactness of that support permits one common
@@ -725,7 +732,7 @@ arguments.
 Apply this map separately on each active bond with
 $M_e(V)=(\operatorname{rep}V_0)_e(\operatorname{rep}V)_e^{-1}$, and set
 \[
- T_Vz=g^{-1}\{F_{M(V)}(m_Y(V_0)+gz)-m_Y(V)\}.
+ T_Vz=g^{-1}\bigl(F_{M(V)}(m_Y(V_0)+gz)-m_Y(V)\bigr).
 \]
 The without the event indicator extension of $m_Y$ described above is used off the valid
 sector. The map is globally smooth and invertible, and its Jacobian is
@@ -865,7 +872,7 @@ signs $\sigma_i$, the variance of $\sum_{i\in J}\sigma_i z_i$ is at most
 $M|J|$. Therefore
 \[
  \mathbb P\{|z_i|\ge T\ (i\in J)\}
-            \le2^{|J|}\exp\{(M/2-T)|J|\}.
+            \le2^{|J|}\exp\bigl((M/2-T)|J|\bigr).
 \]
 Assign one witness to each event label. There are at most $N^r$ assignments.
 For the distinct coordinates in an assignment, $|J|\ge r/Q$ and
@@ -931,8 +938,9 @@ Put $E=\mathsf AP-I$. Then, with inactive identity coordinates included,
  m_Y-v=E^*v-P^*(\mathsf Av+f_Y),\qquad
  \mathsf Av+f_Y=\mathsf D^*(\mathsf Dv+b_Y)+\Pi_{\rm inactive}v.
 \]
-These are exact identities. A target more than $30B$ from the selected
-set has all its windows in the clean ball. The inactive term vanishes
+These are exact identities. For a target at distance greater than $30B$ from the selected
+set, all the windows in this identity lie in the $8B$ ball about the target,
+which contains no selected plaquette, mismatch edge or coarse site. The inactive term vanishes
 there, since all non-tree coordinates are active and $v$ is zero on
 the tree. Hence
 \[
@@ -1097,7 +1105,7 @@ local factors has, after up to $k$ allowed derivatives, a majorant of the
 form
 \begin{equation}
  C_k(\widehat\beta_f)(1+s)^d\,P_k(z)
-       \exp\{\eta\cdot z+\tfrac12z^*Kz\}
+       \exp\bigl(\eta\cdot z+\tfrac12z^*Kz\bigr)
        \prod_i a_i\prod_w M_w\mathbf1_{\mathcal E_w},
  \label{ch06:majorant-form}
 \end{equation}
@@ -1142,8 +1150,8 @@ $\widetilde K=\Gamma^{1/2}K\Gamma^{1/2}$, is
 \[
  \mathbb E_\Gamma e^{\eta\cdot z+z^*Kz/2}
  =\det(I-\widetilde K)^{-1/2}
-   \exp\left\{\tfrac12\eta^*\Gamma^{1/2}
-           (I-\widetilde K)^{-1}\Gamma^{1/2}\eta\right\}.
+   \exp\left(\tfrac12\eta^*\Gamma^{1/2}
+           (I-\widetilde K)^{-1}\Gamma^{1/2}\eta\right).
 \]
 Use it also with doubled exponent to control the square of the majorant.
 The strict norm inequality in \eqref{ch06:quadratic-control} bounds the tilted
@@ -1169,14 +1177,14 @@ We now retain the individual correction labels, including repeated paths,
 instead of estimating only their sum as an operator. Fix a derivative
 order $k$, a support exponent $\alpha>0$, and a halo multiplier $h$
 large enough to contain every window and protected variation used above.
-For a support $S$, write $c_B(S)$ for its connected covering number by
-$B$-balls. A family of nonnegative amplitudes $a_\lambda$ has
-containing-site bound $\epsilon$ if
+For a support $S$, let $c_B(S)$ be the least number of radius-$B$
+balls whose union is connected and contains $S$. For each factor
+$\lambda$, let $S_\lambda$ contain all sites on which it depends.
+We bound its nonnegative amplitude $a_\lambda$ by requiring
 \[
  \sup_x\sum_{\lambda:x\in S_\lambda}
                e^{\alpha c_B(S_\lambda)}a_\lambda\le\epsilon.
 \]
-These are full dependence regions, not only exclusion supports.
 The statement concerns the positive derivative orders available in the
 incoming path bounds. Additional fixed polynomial costs in $B$ or
 $M_f^{\rm cut}$ are subpower in $x=\widehat\beta_f$.
@@ -1207,7 +1215,7 @@ convergent real logarithm series agrees with its positive determinant.
 Each word is indexed by its ordered sequence of bonds, with the intermediate Lie algebra indices contracted in each matrix product. For each fixed derivative order $k$,
 the corresponding derivative of the amplitude is bounded by
 \[
- C_k(B)e^{-cB}\{C_k(B)e^{-cB}\}^n,
+ C_k(B)e^{-cB}\bigl(C_k(B)e^{-cB}\bigr)^n,
 \]
 with possibly a smaller positive $c$. The endpoint cutoffs in a quadratic
 word bound each Gaussian endpoint and its normalized derivatives by
@@ -1228,8 +1236,8 @@ Absorb these polynomials by $C_k2^{(k+4)n}$. The containing-site sum
 is consequently bounded by
 \[
  C_k(B)e^{-cB}\sum_{n\ge0}
- \{C_k(B)e^{-cB}2^{k+4}
-                e^{\alpha s_h}K\}^{n}.
+ \bigl(C_k(B)e^{-cB}2^{k+4}
+                e^{\alpha s_h}K\bigr)^{n}.
 \]
 Its ratio is at most $1/2$ eventually. The sum is smaller than
 $x^{-A}$ for every prescribed $A>0$. This proves smallness of the
@@ -1329,8 +1337,9 @@ positive affine square from being lost in this estimate.
 Let $O$ be a selected component with $n$ tests. Its assigned action
 rows have anchors within $200B$ of $O$; their core consists of the
 rows within $2B$. The remaining rows form an annulus $Q$.
-Define the ownership components by repeatedly merging selected sets
-whose closed $500B$ neighborhoods intersect. Distinct owners then have
+Form a graph on the selected sets by joining two sets whenever their
+closed $500B$ neighborhoods intersect. Group the sets by the connected
+components of this graph. Distinct components then have
 disjoint $500B$ neighborhoods (separation greater than $1000B$ suffices),
 so their $200B$ action and $304B$ Haar assignments cannot overlap.
 The enlarged finite-range adjacency changes only the fixed polynomial
@@ -1425,9 +1434,9 @@ defined. Thus each orientation probability is counted exactly once. The energy a
 after Gaussian extraction is exactly
 \begin{equation}
  \mathcal E_O^{\rm rem}
- =\operatorname{Av}_{\sigma}\{
+ =\operatorname{Av}_{\sigma}\bigl(
        \mathcal E_{\sigma O}+W(Q_\sigma)
-       -X_{H_\sigma}(\widetilde u_\sigma)+C_\sigma(m_Y)\},
+       -X_{H_\sigma}(\widetilde u_\sigma)+C_\sigma(m_Y)\bigr),
  \qquad C_\sigma(m_Y)\ge0 .
  \label{ch06:component-extracted-energy}
 \end{equation}
@@ -1450,7 +1459,7 @@ The remaining local normalization, Haar, tag, and frozen-coordinate
 costs are bounded by $C B^a(1+\log x)^a n=o(\beta t_f^2)n$.
 The component amplitude consequently satisfies
 \[
- a_{\rm comp}\le\exp\{-\kappa'\beta t_f^2n\}
+ a_{\rm comp}\le\exp\bigl(-\kappa'\beta t_f^2n\bigr)
 \]
 for a fixed positive $\kappa'$ smaller than the retained energy
 coefficient. Fixed derivatives of its smooth extension on a fully
@@ -1460,7 +1469,7 @@ indicator is held fixed. This assertion is where the retained cutoff factors are
 under the precise core/annulus allocation just specified; where a
 compulsory cutoff factor vanishes the full component factor is zero.
 Connected selections with prescribed root have at most
-$\{C(1+B)^a\}^{n}$ possibilities: list them by a rooted spanning tree,
+$\bigl(C(1+B)^a\bigr)^{n}$ possibilities: list them by a rooted spanning tree,
 using their finite-range adjacency. This entropy and
 $e^{\alpha c_B(S)}\le e^{C\alpha n}$ are absorbed by the same
 remaining positive energy bound. A component's physical Borel indicator is held fixed;
@@ -1540,8 +1549,8 @@ unavailable $(k+1)$st derivative and is not justified here.
 The physical-map estimate above supplies bounds on the compensating
 map and its density scores; it is not permission to lose an extra
 derivative of the incoming activity.
-This export concerns a local region whose entire window neighborhoods
-are clean. It does not compare a seeded sector to an unseeded law,
+This comparison applies on a local region where all the windows lie in
+the small-field region. It does not compare a seeded sector to an unseeded law,
 does not replace the tree response by a different gauge response,
 and does not identify separately chosen event indicators. Such replacements need
 their own tail or support decomposition.

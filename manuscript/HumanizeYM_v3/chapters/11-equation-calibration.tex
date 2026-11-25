@@ -2,7 +2,7 @@
 \section{Calibrating the microscopic equations on the same history}
 \label{ch11:equation-calibration}
 
-Fix a degree $d$. The section $\mathcal V_d$ and automorphism $R_d$
+Fix a scaling-dimension bound $d$ for the labels in $V_d$. The section $\mathcal V_d$ and automorphism $R_d$
 are those of Theorem~\ref{ch02:equation-adapted}; neither is chosen
 again when the cutoff or period changes. The physical section remains
 $P_d^{\rm loc}$. We compare the two on the history already used to
@@ -64,15 +64,14 @@ $P_{N,p,d}:V_d\to V_d$ such that
 \]
 For each fixed stopping pair $(m,k)$,
 \begin{equation}
- \mathcal R_m\!\left\{
+ \mathcal R_m\!\left(
  O^{\mathcal V}_{N,p}(v)
-   -O_{N,p}(d,\mathsf Z_{N,p,d}P_{N,p,d}v;0)\right\}
+   -O_{N,p}(d,\mathsf Z_{N,p,d}P_{N,p,d}v;0)\right)
  \le C_{d,m,k}\|v\|_1 E_N e^{-\tau_N/8},
  \label{ch11:equation-root-error}
 \end{equation}
 where $E_N$ is subpower in $a_N^{-1}$, uniformly in $p$.
-The same map works for every spectator; it is constructed before
-any spectator is specified.
+The map $P_{N,p,d}$ is independent of the other insertions in the correlation.
 \end{proposition}
 \begin{proof}
 For each basis vector, the exact terminal decomposition used in
