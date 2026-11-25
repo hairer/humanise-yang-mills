@@ -1,5 +1,5 @@
 % !TEX root = ../monograph.tex
-\section{From the current identity to marked coefficient estimates}
+\section{From the current identity to coefficient estimates with insertions}
 \label{ch17:marked-rates}
 
 The integration by parts needed here is performed before the
@@ -10,7 +10,7 @@ expansion as an ordinary bounded function.
 \subsection{A differentiated block kernel}
 
 Use the exact block kernel of \eqref{ch04:kernel}. Conditional on its
-fine field and frame variables, its dependence on a coarse link is
+fine field and the variables of the local gauge transformations, its dependence on a coarse link is
 $q_{b\beta}(V_e Q_e^{-1})$, where
 $q_\gamma(u)=Z_\gamma^{-1}\exp[-\gamma w(u)]$.
 For every fixed order $r$, compactness and smoothness of $w$ give
@@ -24,14 +24,14 @@ bound has an additional polynomial in the number of differentiated
 links. No lower bound on $q_\gamma$ is used.
 
 First truncate the exponentially local current and its stationary
-kernels on a finite neighborhood. For the displacement use a finite
-covariant completion of its controlled jets through field order four,
+kernels on a finite neighborhood. For the vector field use a finite
+gauge-covariant extension of its controlled jets through field order four,
 not the uncontrolled higher derivatives of a deep transferred current.
-Use the coefficientwise covariant path completion: replace each
+Use the coefficientwise gauge-covariant extension: replace each
 fixed-order curvature or covariant-difference monomial by its plaquette
-and transported-path representative, and correct its lower jets
+and contour-variable representative, and correct its lower jets
 triangularly through order four. Each fixed number of link derivatives
-adds only a fixed power of the path length. The completion therefore
+adds only a fixed power of the path length. The extension therefore
 has a bounded weighted norm at a strictly narrower exponential width;
 it is not an arbitrary jet section on a space of growing dimension.
 Complete in that weighted norm first and then truncate. All additional
@@ -42,19 +42,19 @@ supported strictly inside the logarithmic chart, equal to one on the
 smaller chart used for Taylor extraction, and then average over the
 compact local gauge group. Equivalently extend its finite covariant
 holonomy jets. This preserves the required jets and covariance.
-The finite derivative costs are inverse powers of the chart width and
+The finite derivative factors are inverse powers of the chart width and
 polynomials in the support size. They are allowed in the bounds below.
 Only after this extension do we integrate by parts. For an exponentially
 local current do this first for finite support truncations. Fixed powers
-of the support length are absorbed by a strict reserve in the
+of the support length are absorbed by a strict margin in the
 exponential coefficient width. The derivative bounds and tail errors
 are consequently summable, so the finite-period identity passes to
 the weighted tail limit.
 
 Let $k(U,V)$ be that exact kernel, let $f(U)$ be the entire incoming
 density, and put $F(V)=\int k(U,V)f(U)\,dU$. All original fine large-field indicators
-and compatibility conditions are part of $f$ or of the frame integral;
-none is differentiated. For a smooth coarse displacement $Y$, define
+and compatibility conditions are part of $f$ or of the integral over the local gauge transformations;
+none is differentiated. For a smooth coarse vector field $Y$, define
 \[
  \mathcal D_Y k=(\operatorname{div}_{\rm Haar}Y)k+D_Vk[Y].
 \]
@@ -65,31 +65,31 @@ Dominated differentiation, using \eqref{ch17:kernel-score}, gives the
        =\int\mathcal D_Y k(U,V)f(U)\,dU.
 \end{equation}
 Consequently its integral against every spectator independent of the
-varied coarse links is zero. This is an identity for the full source,
+varied coarse links is zero. This is an identity for the full insertion,
 including its nonpolynomial remainder, not an assertion that a finite
-Taylor polynomial alone has zero exterior moments.
+Taylor polynomial alone has zero exterior moments, that is, zero integral against every spectator independent of the varied links.
 
-The right hand side is an admissible marked conditional integral.
+The right hand side is an admissible conditional integral with insertions.
 Its extra factor is a finite sum of smooth local kernel scores times
-$Y$ or its derivative. On a protected dependence region the incoming
+$Y$ or its derivative. On a protected dependence set the incoming
 measurable product remains fixed under the change of variables in
 Chapter~\ref{ch06:large-fields}. Additional coarse derivatives act
 on the score and the common density ratio only. The bounded pointwise-jet estimate
 \eqref{ch06:actual-jet-integral} therefore applies with a fixed
-polynomial loss in $\beta$, support size and current derivative bounds.
+polynomial factor in $\beta$, support size and current derivative bounds.
 Rooting the connected expansion at this extra factor gives the same
-marked expansion as in Chapter~\ref{ch11:insertions}. In particular
-large-field terms retain their original prescribed sets of sites.
+expansion with insertions as in Chapter~\ref{ch11:insertions}. In particular
+large-field terms retain their original prescribed large-field sets.
 This argument does not differentiate the event indicators introduced when that
-marked integral is subsequently decomposed.
+integral with insertions is subsequently decomposed.
 
-The ordinary contribution needs a sharper identity than the absolute
-score bound. Fix the full dependence region of a rooted connected component and use one
-additional coarse derivative beyond those requested for the extracted
+The small-field contribution needs a sharper identity than the absolute
+score bound. Fix the full dependence set of a rooted connected component and use one
+additional coarse derivative beyond those prescribed for the extracted
 coefficient. On its smaller small-field chart, make exactly the conditional
-Gaussian change of variables used to construct the ordinary expansion.
+Gaussian change of variables used to construct the small-field expansion.
 Write its normalized conditional integrand as $p(V,z)$ and its integral
-as $Z_{\rm ord}(V)$. For finite ordinary selections, differentiation
+as $Z_{\rm ord}(V)$. For finite small-field subfamilies, differentiation
 under this integral gives
 \[
  D_VZ_{\rm ord}[Y]=\int D_Vp[Y]\,dz,
@@ -99,8 +99,8 @@ under this integral gives
 \]
 Every Jacobian, relative determinant and conditional normalization is
 included in $p$; thus this is not the derivative of an unnormalized
-Gaussian moment. The absolutely convergent ordinary logarithm, with
-one derivative reserve, passes this identity to the countable expansion.
+Gaussian moment. The absolutely convergent small-field logarithm, with
+one additional derivative, passes this identity to the countable expansion.
 By its definition in Chapter~\ref{ch09:renormalization},
 \[
  Z_{\rm ord}=\mathcal C
@@ -109,50 +109,50 @@ By its definition in Chapter~\ref{ch09:renormalization},
 \]
 If an intermediate local normalization depends on $V$, it is included
 in $\mathcal L+E_{\rm reg}$, not in $\mathcal C$. Consequently the
-ordinary score is \emph{exactly}
+small-field score is \emph{exactly}
 $-\beta DS[Y]-D\mathcal L[Y]-DE_{\rm reg}[Y]$.
 The regular term is estimated using its already proved differentiated
 regular norm. We do not estimate it by the polynomial-in-$\beta$
 absolute score bound.
 
 This argument uses the full rooted component, not just the score
-stencil. In the rooted connected expansion, ordinary factors in
-components disjoint from the marked component cancel
-between the differentiated numerator and its normalization. Every term with a failure anywhere in the marked connected
-component, including a distant failure joined to the score, is kept in the complementary marked
-sum. The smooth cutoffs used above are constant on the smaller small-field
+stencil. In the rooted connected expansion, small-field factors in
+components disjoint from the component of the insertion cancel
+between the differentiated numerator and its normalization. Every term with a violation of a regularity condition anywhere in the connected
+component of the insertion, including a distant violation joined to the score, is kept in the large-field
+sum with insertions. The smooth cutoffs used above are constant on the smaller small-field
 chart; their derivatives are supported where at least one enlarged
-chart condition fails. Attach this condition to its actual dependence support. The same
+chart condition fails. Attach this condition to its dependence set. The same
 Gaussian or energy estimate for the nested cutoffs bounds this new
-failure, while all incoming prescribed large-field sets are retained.
-The absolute score bound is used only for these complementary terms,
-where the exponential failure probability absorbs its polynomial
-$\beta$ cost. No derivative of a hard indicator is taken. This proves
-the ordinary cancellation and the complementary large-field estimate
+violation, while all incoming prescribed large-field sets are retained.
+The absolute score bound is used only for these large-field terms,
+where the exponentially small probability of the violation absorbs its polynomial
+$\beta$ factor. No derivative of a hard indicator is taken. This proves
+the small-field cancellation and the large-field estimate
 separately, which is essential to preserve the regular power gain.
 
 \subsection{The finite degree-five coefficient}
 
-At the comparison level $k$ write
+At the comparison scale $k$ write
 \[
  h=(\log\log\widehat\beta_k)^2,\qquad H=e^h,
  \qquad t=\widehat\beta_k^{-1/2}H.
 \]
 All constants in this paragraph are for a fixed stage and the fixed
-finite derivative and degree request; they are fixed before its coupling
-threshold. Let $\mathcal P_5$ denote radial Taylor extraction through
-degree five and let $f$ be the curvature-factor count on a homogeneous
+finite derivative orders and degrees; they are fixed before its lower bound on the
+reference coupling. Let $\mathcal P_5$ denote radial Taylor extraction through
+degree five and let $f$ be the number of curvature factors of a homogeneous
 coefficient. Set $\mathcal P_{5,t}=t^{f-2}\mathcal P_5$, followed by
 real signed-permutation averaging. There are no invariant linear forms on $\gLie$. Thus the nonzero vector coefficients under consideration
 have $f\ge2$, and this normalization does not introduce a negative
 power of $t$ beyond the displayed $t^{-2}$.
 
-Apply the exact marked step to \eqref{ch17:kernel-divergence}, retaining
+Apply the exact step with insertions to \eqref{ch17:kernel-divergence}, retaining
 its entire remainder, and use the current identity through order four.
 Let $j_k$ be the radial coefficient of the current divergence, in the
 same threshold coordinates. The classical term $-\beta DS[Y]$ is
 $-\beta j_k$ up to the contracting current defect. Thus the coefficient
-of the full zero-exterior-moment source is $\Sigma_k-\beta j_k$;
+of the full insertion with zero exterior moments is $\Sigma_k-\beta j_k$;
 $\Sigma_k$ alone is not asserted to have zero exterior moments. Its
 remaining degree-five scalar-vector coefficient can be written
 \begin{equation}\label{ch17:finite-sigma}
@@ -163,26 +163,26 @@ remaining degree-five scalar-vector coefficient can be written
 Here stationary and loop kernels are truncated at
 $C_j(\log\widehat\beta_k)^2$. Their common exponential decay makes
 $E_{\rm stat}$ and $E_{\rm tail}$ at most $H^{-1}$ after finite
-projection losses. The regular error satisfies
+projection factors. The regular error satisfies
 \[
  t^{-2}\epsilon_k^{\rm reg}
        =\widehat\beta_k^{-1/10}H^{-2}.
 \]
 A directional derivative along $Y$ has the same bound up to the fixed
-current norm: the derivative costs $t^{-1}$ while $Y=O(t)$ on the
+current norm: the derivative contributes $t^{-1}$ while $Y=O(t)$ on the
 small-field chart. The previously proved logarithmic current bounds
-and fixed localization losses are absorbed by increasing the coupling threshold.
+and fixed localization factors are absorbed by increasing the lower bound on the reference coupling.
 
-For the marked remainder one must first cancel the whole classical
+For the remainder with insertions one must first cancel the whole classical
 current divergence, not merely use the absolute kernel-score bound.
 The current identity agrees through field order four. The finite
-covariant completion just chosen has controlled higher derivatives,
-so the remaining classical error starts at order five and costs
+gauge-covariant extension just chosen has controlled higher derivatives,
+so the remaining classical error starts at order five and contributes
 \[
  t^{-2}\beta t^5=O(\widehat\beta_k^{-1/2}H^3).
 \]
 Fixed current and localization factors preserve a bound of the form
-$C_j\widehat\beta_k^{-1/10}H^{C_j}$ after increasing the coupling threshold. The ordinary loop
+$C_j\widehat\beta_k^{-1/10}H^{C_j}$ after increasing the lower bound on the reference coupling. The small-field loop
 and Jacobian Taylor remainders have no leading factor $\beta$ and
 gain an additional small-field factor. This controls the high-field-order remainder. It does not control a
 low-field-order term with many spatial differences: vanishing Taylor coefficients through the specified scaling dimension alone give no additional small-field factor. The remaining low-field-order spatial terms are controlled by exact
@@ -190,16 +190,16 @@ polynomial preservation, rather than by an extra power of the field.
 
 \begin{proposition}[Low-moment estimate for spatial remainders]
 \label{ch17:spatial-moments}
-For the actual response and the regular local sources just constructed,
+For the linearization of the critical configuration and the regular local insertions just constructed,
 a remainder whose radial Taylor coefficients through scaling dimension five vanish
 has extracted degree-five coefficient $O(H^{-1/2})$. The estimate is
 uniform in period and in the finite current truncations, after the
 stage orders and thresholds have been chosen with one extra derivative
-reserve. It applies to both the nonclassical coefficient and the
+order. It applies to both the nonclassical coefficient and the
 normalized current divergence.
 \end{proposition}
 \begin{proof}
-First identify the polynomial response. Recall the notation of
+First identify the linearization of the critical configuration on polynomials. Recall the notation of
 Chapter~\ref{ch05:gaussian}: $D_l,D$ are the rescaled fine and coarse
 covariance symbols, $x_l,x$ their gradient columns, and
 $\alpha=\sum_l|m_l|^2\tr D_l$.
@@ -210,33 +210,33 @@ regularized diagonal covariance factors. The scalar correction
  \chi=\frac{x^*\operatorname{diag}(B_a^{-1})x}{s}
 \]
 is analytic and nonzero at zero, as in the pole cancellation for the
-transport formulas. Put
+formulas for the linearization. Put
 $\sigma=\chi^{-1}x^*\operatorname{diag}(B_a^{-1})$, so that
-$\pi=s^{-1}\sigma$ in those formulas. For a nonprincipal alias define
+$\pi=s^{-1}\sigma$ in those formulas. For a nonzero alias define
 \[
  g_{l,a}=\overline{m_l}
  \left\{\frac{\tr D_l}{s\alpha}
        -\frac{(D_l)_{aa}|r_L(\theta_{l,a})|^2}{B_a}\right\}.
 \]
-Substitution into the straight transport gives the regular formula
+Substitution into the linearization built with the linear averaging operator gives the regular formula
 \[
  \mathcal A_l=\mathcal B_l+
           \operatorname{diag}(g_{l,a})x_l\sigma,
  \qquad \mathcal B_l=D_lF_{1,l}^*D^{-1}.
 \]
-Here $D_l$ is regular at a nonprincipal alias, and $s\alpha$ and
+Here $D_l$ is regular at a nonzero alias, and $s\alpha$ and
 $B_a$ are analytic and nonzero at zero. Thus no uncancelled factor
 $s^{-1}$ remains. Both terms contain $\overline{m_l}$, with
 $m_l=w_L(\theta_l)^j$ and $w_L(\theta_l(0))=0$.
 Every derivative of $\mathcal A_l$ of order less than $j$ therefore
-vanishes at zero. The principal column has value $I$. This is stronger
+vanishes at zero. The column at the zero alias has value $I$. This is stronger
 than the order-two transverse estimate sufficient for the current
 contraction. Stars and conjugates in these symbols mean analytic
 transpose at the opposite momentum, as in Chapter~\ref{ch05:gaussian}.
 
 Let $A_x^{ab}(z)$ be the physical row from coarse direction $b$ at
 $\lfloor x/L\rfloor+z$ to fine direction $a$ at $x$.
-Differentiating the Fourier reconstruction through order less than $j$
+Differentiating the Fourier inversion formula through order less than $j$
 therefore gives, for every vector polynomial $p$ of degree less than $j$,
 \begin{equation}\label{ch17:polynomial-response}
  (W_sp)(x)_a=\sum_{b,z}A_0^{ab}(z)p_b(x/L+z),
@@ -246,23 +246,23 @@ The exponential row bound justifies the derivatives and the sum.
 Polarization gives mixed polynomial moments. In particular the output
 is a global polynomial of no larger degree, not a polynomial separately
 on each block. Its homogeneous degree-$r$ leading term is
-$L^{-r-1}p(x)$; lower coefficients obey the same pre-ratio row bounds.
+$L^{-r-1}p(x)$; lower coefficients obey the same ratio-independent row bounds.
 
-Choose $j$ above the fixed probe order. In a polarized coefficient
+Choose $j$ above the order of the coefficient evaluations. In a polarized coefficient
 evaluation take only tuples of potential polynomials whose summed scaling
 dimension is at most five. Equation~\eqref{ch17:polynomial-response}
 preserves or lowers each polynomial degree, so every resulting tuple
-remains within that same finite jet menu. The polynomial-moment
+remains within that same finite list. The polynomial-moment
 cancellation of Section~\ref{ch11:one-graph} makes its deterministic
 coefficient evaluation exactly zero. This is not a claim of vanishing on arbitrary
-polynomial inputs of degree less than $j$. Cropping the coarse field at radius
+polynomial inputs of degree less than $j$. Truncating the coarse field to the ball of radius
 $C_j(\log\widehat\beta_k)^2$ changes this coefficient evaluation only by the
 exponential row tail, times fixed polynomial directional and support
-costs. That tail is smaller than every prescribed power of $H^{-1}$.
+factors. That tail is smaller than every prescribed power of $H^{-1}$.
 
-The smooth representative of the actual tangent is
+The smooth representative of the linearization of the critical configuration is
 $W_a=W_s-d_fERW_s$. Its difference from $W_s$ is a fine gradient.
-The coefficient source is a spacetime vector with trivial adjoint action on its values,
+The insertion coefficient is a spacetime vector with trivial adjoint action on its values,
 invariant under local fine gauge transformations. Indeed gauge
 equivariance of $Y$ and invariance of Haar volume imply invariance of
 $\operatorname{div}_{\rm Haar}Y$; the action and loop variations
@@ -270,55 +270,55 @@ are invariant for the same reason. Apply the corresponding fine gauge
 transformation before evaluating its local jet. The Baker--Campbell--Hausdorff formula with the same local gauge choice compares the two exponential
 representatives with an error $C_jP(B)t^2$ in the link logarithms,
 where $P$ is a fixed polynomial. Dividing by the fine threshold gives
-$C_jP(B)t$. This argument uses the exact correction to the gauge-covariant block average, not an
-unmatched straight average.
+$C_jP(B)t$. This argument uses the exact correction to the averaging operation, not an
+unmatched linear averaging operator.
 
-It remains to compare the actual conditional insertion to this
+It remains to compare the conditional insertion itself to this
 polynomial coefficient evaluation. Normalize the input link logarithms by $t$.
-The stationary nonlinear response, the same local gauge coordinate change,
-and the deterministic crop contribute $C_jP(B)t$ and the exponential
+The nonlinear critical configuration, the same local gauge coordinate change,
+and the deterministic truncation contribute $C_jP(B)t$ and the exponential
 tail just described. Gaussian fluctuations contribute
 $C_jP(B)g/t$, where $g=\beta^{-1/2}$, by the fundamental theorem of
-calculus and the one additional derivative reserve. Explicitly, if
-$p(z)\ge1$ is a polynomial envelope for the finite Gaussian coordinates,
-the difference between actual and deterministic evaluation in
-each requested derivative is bounded by
+calculus and the one additional derivative. Explicitly, if
+$p(z)\ge1$ is a polynomial majorant for the finite Gaussian coordinates,
+the difference between the conditional and the deterministic evaluation in
+each prescribed derivative is bounded by
 \[
  C_j N_k P(B)\{t+g/t+e^{-c_jB}\}\,p(z)^{C_j},
 \]
-with an appropriate enlargement of the crop radius in the last term.
+with an appropriate enlargement of the truncation radius in the last term.
 Here $N_k$ is the norm of the already $t^{-2}$-normalized regular
-source and its derivatives in normalized link logarithms, including
-its current and loop coefficients. The factor-count extraction has
+insertion and its derivatives in normalized link logarithms, including
+its current and loop coefficients. The extraction normalized by the number of curvature factors has
 already been performed; no further $t^{-2}$ is applied to this bound. For this bound subtract the deterministic coefficient evaluation
-inside the same actual normalized conditional integral. Its derivative
+inside the same normalized conditional integral. Its derivative
 through the prescribed scaling dimension is zero. Use the joint
 polynomial moments and differentiated density scores of that one
 conditional law to estimate the evaluation difference; no small
 total-variation distance between the nonlinear law and a Gaussian
 is asserted. The pointwise jet and moment estimates are those of \eqref{ch06:actual-jet-integral};
 no differentiation of incoming large-field factors is involved.
-The complement is estimated by the already retained large-field bound. Finite coefficient recovery has a fixed stage cost.
+The complement is estimated by the already retained large-field bound. Finite coefficient recovery adds a factor depending only on the stage.
 
-There are no invariant terms that are constant spacetime vectors or linear in the $\gLie$-valued field. Hence these regular sources start at field order two. Their
+There are no invariant terms that are constant spacetime vectors or linear in the $\gLie$-valued field. Hence these regular insertions start at field order two. Their
 values and normalized-link derivatives on the threshold ball contain
 a factor $t^2$; the explicit $t^{-2}$ removes exactly this factor.
 The classical part has already been cancelled and its order-five
-remainder treated separately above. Thus for the present sources
+remainder treated separately above. Thus for the present insertions
 $N_k\le H^{\theta_j+o(1)}$, with
 $\theta_j\to0$: current norms are logarithmic and the retained loop
-norm has this bound. Since $B$ and all crop radii are fixed powers
+norm has this bound. Since $B$ and all truncation radii are fixed powers
 of $\log\widehat\beta_k$, their polynomial factors are $H^{o(1)}$.
-The actual coupling band gives $g/t\le C H^{-1}$, whereas $t$ and
-the crop tail decay faster than every fixed inverse power of $H$.
+The inverse coupling band gives $g/t\le C H^{-1}$, whereas $t$ and
+the truncation tail decay faster than every fixed inverse power of $H$.
 The resulting coefficient error is $H^{-1+\theta_j+o(1)}$, hence
-at most $CH^{-1/2}$ after increasing the coupling threshold. Large supports are first truncated
+at most $CH^{-1/2}$ after increasing the lower bound on the reference coupling. Large supports are first truncated
 using the spare exponential support weight; its tail obeys the same
 bound. This proves the proposition for the full local sum.
 \end{proof}
 
 The differentiated-kernel
-bound \eqref{ch17:kernel-score} applies to the complementary part.
+bound \eqref{ch17:kernel-score} applies to the large-field part.
 The common large-field estimate retains the square-root bound
 $\exp(-H^{1/5}/2)$. Combining Proposition~\ref{ch17:spatial-moments} with the high-field
 remainder, the nonwrapping contributions are bounded by
@@ -328,7 +328,7 @@ remainder, the nonwrapping contributions are bounded by
 \end{equation}
 The fixed-order score has changed the polynomial constants, not the
 large-field event or its exponential gain. If $N_{\rm per}$ is the
-period in level-$k$ units, a wrapping term has covering number at least
+period in scale-$k$ units, a wrapping term has covering number at least
 $N_{\rm per}/[10(2B_k+1)]-1$. Retaining two units of the exponential support exponent gives the
 additional error
 \[
@@ -343,26 +343,26 @@ order of limits explicitly, put $x=\log\log\widehat\beta_k$.
 The logarithm of the first bound multiplied by $H$ is at most
 $C_j+(C_j+1)x^2-e^x/10$; that of the second is at most
 $C_j+C_je^x+(C_j+1)x^2-e^{x^2/5}/2$.
-Both tend to minus infinity at each fixed stage. Increasing its coupling
-threshold makes the bounds uniform on that stage.
+Both tend to minus infinity at each fixed stage. Increasing its lower bound on the
+reference coupling makes the bounds uniform on that stage.
 
 The loop coefficient has zero $\rho$ by its two moment cancellations:
-its quadratic kernel kills both constant and affine links, whereas
+its quadratic kernel annihilates both constant and affine links, whereas
 the cubic momentum coefficient functional pairs a constant with a quadratic link or two
-affine links. This uses the actual loop kernel of Chapter~\ref{ch07:matching},
+affine links. This uses the loop kernel of Chapter~\ref{ch07:matching},
 not only gauge invariance.
-The regulator calculation identifies the remaining coefficient as
+The calculation with mass regularization identifies the remaining coefficient as
 $\mathfrak h(Y)/12$. One can check the factor directly in the three
-raw vector coordinates of \eqref{ch17:rho}: the cubic momentum
+vector coordinates of \eqref{ch17:rho}, before the quotient by the equation of motion: the cubic momentum
 functional takes values $-24,-96,0$, while $\rho$ takes values
 $-2,-8,0$. The lattice correction is the matching lower-order
 Taylor correction in $\mathfrak h$.
 
-Choose the current depth and then the period at each fixed $k$ so
-that the regulator error and the finite momentum approximation are
+Choose the number of transfers and then the period at each fixed $k$ so
+that the error of the mass regularization and the finite momentum approximation are
 smaller than $\widehat\beta_k^{-30}$. The retained loop bound is
 $2H^{\theta_j}$, with $\theta_j\to0$, and current derivative norms
-are logarithmic. Sufficiently large coupling thresholds therefore give joint ordered limit
+are logarithmic. Sufficiently large lower bounds on the reference coupling therefore give joint ordered limit
 coefficients satisfying
 \begin{equation}\label{ch17:sigma-bound}
  \|\Sigma_k\|\le C H^{1/6},\qquad
@@ -372,13 +372,13 @@ All coefficient maps and the underlying correlations are retained
 in the same joint limit. Compactness is used only after the uniform
 finite-cutoff estimates have been established.
 
-\subsection{The equation direction and the necessary rates}
+\subsection{The kernel vector and the necessary rates}
 
-Let $j_k$ be the degree-five coefficient of the transported current's
+Let $j_k$ be the degree-five coefficient of the transferred current's
 divergence, in the same threshold coordinates. Its local Taylor
 coefficient has zero $\rho$: the trace is a forward difference of a
-degree-three primitive, whose invariant projection is a unit.
-The same localization and marked error bounds compare the transported
+degree-three primitive, whose invariant projection is a multiple of the identity field.
+The same localization and error bounds with insertions compare the transferred
 coefficient with this Taylor coefficient within $CH^{-1/4}$.
 Consequently, in the notation of the stability argument,
 \[
@@ -388,16 +388,16 @@ Consequently, in the notation of the stability argument,
 With $e_i=H_i^{1/5}$ this gives $e_i\rho(v_i^{\rm eq})\to0$.
 
 There is also a stronger, independent bound on the image of this
-vector. The source is carried as a density-valued kernel insertion, without
+vector. The insertion is carried as a differentiated kernel, without
 dividing it by $F$ or claiming that the resulting quotient is local.
-More directly, for every incoming marked coefficient $f_A(U)$,
+More directly, for every incoming coefficient $f_A(U)$ with insertions,
 including all the original fine spectator factors,
 \[
  \int \mathcal D_Y k(U,V)\,dV=0
  \quad\hbox{for each }U,\qquad
  \int \mathcal D_Y k(U,V)f_A(U)\,dU\,dV=0.
 \]
-The same score source is used for every $A$, so the joint rooted
+The same differentiated kernel is used for every $A$, so the joint rooted
 expansion retains all pushed spectator cross-modes and this exact
 zero-moment statement. There is no smoothness requirement on $f_A$.
 For a smooth local coarse spectator $A(V)$ one also has
@@ -406,16 +406,16 @@ For a smooth local coarse spectator $A(V)$ one also has
  =-\int D_VA[Y]\!\int k(U,V)f(U)\,dU\,dV.
 \]
 It is zero when the spectator does not read the varied links. For an
-actual exponentially local spectator, first truncate its dependence region
+exponentially local spectator that need not have finite range, first truncate its dependence set
 and use this identity on disjoint terms. Retain the remaining terms
-in the same joint marked expansion. A connected term reaching from
-the source to a spectator at distance $R$ has covering number at least
+in the same joint expansion with insertions. A connected term reaching from
+the insertion to a spectator at distance $R$ has covering number at least
 $R/(2B_k+1)-1$. Retaining two units of the exponential support exponent bounds these terms by
 $C\exp[-2R/(2B_k+1)]$, with their normalized large-field majorants as well.
 For spectator configurations separated by a fixed positive multiple of $a_n$, their
-distance in level-$k(n)$ units is at least $c\exp(T_n)$. This tail
-is therefore smaller than $e^{-T_n/100}$ after all fixed losses.
-Every spectator subset uses the same empty density.
+distance in scale-$k(n)$ units is at least $c\exp(T_n)$. This tail
+is therefore smaller than $e^{-T_n/100}$ after all fixed factors.
+Every spectator subset uses the same density without insertions.
 Match its full coefficient and remainder backwards from
 $k(n)$ to $n$, where
 \[
@@ -423,27 +423,27 @@ $k(n)$ to $n$, where
  \tau_{k(n)}-\tau_n\ge T_n
 \]
 is the first crossing. Equation~\eqref{ch11:descent-error} gives
-$e^{-T_n/8}$ before multiplication by the terminal norm bounds. Fixed projection and
-threshold costs have logarithm $O(\log\widehat\beta_n)$; accumulated
-pre-ratio column costs are $o(T_n)$. Here it is only the latter
-constants that are multiplied along the window. Fixed-ratio nonlinear
-jet constants have already been absorbed into the errors controlled by the stage coupling thresholds.
+$e^{-T_n/8}$ before multiplication by its constants. Fixed projection and
+threshold factors have logarithm $O(\log\widehat\beta_n)$; accumulated
+ratio-independent coefficient-map factors are $o(T_n)$. Here it is only the latter
+constants that are multiplied along the interval of scales. Ratio-dependent nonlinear
+jet constants have already been absorbed into the errors controlled by the lower bounds on the reference coupling of the stages.
 
-Replicate at the first backward crossing of $B_n^2$, so
-$B_n^2\le a_m/a_n\le L_*B_n^2$. The actual positive-density estimate
-in \eqref{ch11:replicated-bound} costs at most
+Place a copy in each reflected cell at the first backward crossing of $B_n^2$, so
+$B_n^2\le a_m/a_n\le L_*B_n^2$. The lower bound on the partition function
+in \eqref{ch11:replicated-bound} contributes at most
 \[
  L_*^4B_n^8q_n+6=O((\log\widehat\beta_n)^{22})=o(T_n),
 \]
 using $L_*\le\log\widehat\beta_n$, $B_n=O((\log\widehat\beta_n)^2)$
-and the vacuum bound $q_n=O((\log\widehat\beta_n)^2)$.
-Inverse source-weight bounds have logarithm $O(\log\widehat\beta_n)$.
-The physical mark normalization cancels the factor $a_n^{-5}$.
-Thus the normalized exterior discrepancy is at most $e^{-T_n/100}$.
-This argument uses the full zero-moment source; its Taylor remainder
-is carried by the descending graph, not discarded.
+and the per-site normalization exponent $q_n=O((\log\widehat\beta_n)^2)$.
+The inverse source weights in \eqref{ch11:replicated-bound} have logarithm $O(\log\widehat\beta_n)$.
+The normalization of the insertion in continuum units cancels the factor $a_n^{-5}$.
+Thus the normalized residual of \eqref{ch11:descent-error} is at most $e^{-T_n/100}$.
+This argument uses the full insertion with zero exterior moments; its Taylor remainder
+is carried by the graph of the backward comparison, not discarded.
 
-In the diagonal radius selection require
+In the choice of radii along the diagonal subsequence require
 $r_i/a_{n_i}\le\exp((\log\log\widehat\beta_{n_i})^3)$.
 Finite separating matrices of free two-point correlation pairings have uniformly bounded left
 inverses. For every fixed $p$ the image therefore satisfies
@@ -456,9 +456,9 @@ This proves the quantitative kernel hypothesis in the stability lemma.
 Its bounded right inverses give bounded $\lambda_i$, with
 $e_i\|\lambda_i s_i-\rho\|\to0$.
 
-The same source identity gives
+The same identity for the insertion gives
 $\beta_iK_iB_i^L-s_i\Sigma_{k_i}\to0$.
-For $Z=X,D$, ordinary trial descent gives
+For $Z=X,D$, the ordinary backward comparison gives
 $K_iB_i^Z-s_i\operatorname{div}_{\rm raw}Z=o(b_i^{-p})$ for every
 fixed $p$. Apply the bounded functional and use
 $H_i^{1/6}/e_i\to0$ in \eqref{ch17:sigma-bound}.
@@ -466,15 +466,15 @@ This proves the first two lines of \eqref{ch17:transfer}.
 
 Finally the trace of $X$ is identically zero, while the transferred
 trace of $L$ is an exact forward difference. Match its degree-three
-primitive at a fixed late stopping pair. Trial descent gives endpoint
+primitive at a fixed late pair of cell scale and stopping scale. The backward comparison gives endpoint
 error $C e^{-(\tau_k-\tau_{k_0})/8}$, uniformly near the configurations used in the finite separating
 correlation pairings. Subexponential coefficient conversions and support truncation
 make this $O(a_k^\eta)$ for any fixed $0<\eta<1/8$.
 Average over $m=\lfloor a_k^{-1+\eta/2}\rfloor$ consecutive differences.
-The unit endpoints cancel, leaving at most
+The identity-field parts of the two endpoint values are equal and cancel, leaving at most
 $2Ca_k^\eta/(ma_k)=O(a_k^{\eta/2})$.
-The physical averaging window $ma_k$ tends to zero, so the finite matrix of
+The averaging length $ma_k$ in continuum units tends to zero, so the finite matrix of
 correlation pairings converges to its original invertible matrix. This proves the
 last rate in \eqref{ch17:transfer}, including multiplication by every
-fixed power of $b_i$. Ordinary Taylor matching supplies its remaining
+fixed power of $b_i$. Ordinary Taylor matching gives its remaining
 convergence $A_iB_i^Z\to Z$.

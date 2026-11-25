@@ -1,14 +1,14 @@
 % !TEX root = ../monograph.tex
-\subsection{Comparison windows crossing changes of stage}
+\subsection{Intervals of scales crossing changes of stage}
 \label{ch17:variable-windows}
 
 The finite comparison in Proposition~\ref{ch11:n-mark-comparison}
-extends to the radius windows just described. We give the estimates
-because requiring every window to lie inside a plateau would leave
+extends to the intervals of radii just described. We give the estimates
+because requiring every interval of scales to lie inside a stage plateau would leave
 gaps in radius coverage.
 
 Fix a finite degree, arity and derivative request. In this paragraph
-$C_j$ includes the linear marked-column constants, the curvature-response
+$C_j$ includes the linear column constants with insertions, the curvature-response
 row constants and the finite polynomial-source propagation constants
 for this request, all fixed \emph{before} the block ratio of stage $j$.
 Write $\mathscr L_j$ for the ratio chosen at stage $j$, so
@@ -19,9 +19,9 @@ of Chapter~\ref{ch10:trajectory}. The ratio choices may require
 \]
 For example one may impose $\varepsilon_j\le j^{-2}$.
 Constants depending on the already selected ratio, such as nonlinear
-stationary-jet bounds, are not included here. They enter the local
-small errors and endpoint constants, and are handled by sufficiently large coupling thresholds.
-These local errors are summed after propagation; their post-ratio
+jet bounds of the critical configuration, are not included here. They enter the local
+small errors and endpoint constants, and are handled by sufficiently large lower bounds on the reference coupling.
+These local errors are summed after transfer; their ratio-dependent
 constants are never multiplied once per step. Only a bounded number
 of endpoint factors is multiplied, giving $H_n^{o(1)}$.
 This distinction avoids a circular ratio choice.
@@ -32,21 +32,21 @@ numbers, stop backwards from $n$ at the first crossing of
 $(b+2)\log H_n$, and then at the first crossing of another
 $10\log B_n$. Here $B_n$ is the radius of the restarted representation;
 $\log B_n=O(\log\log\widehat\beta_n)$.
-The schedule bound $L_i\le\log\widehat\beta_i$ makes each
-overshoot $O(\log\log\widehat\beta_n)=o(\log H_n)$.
-The entire logarithmic window has length $O(\log H_n)$, and the
+The bound $L_i\le\log\widehat\beta_i$ of the sequence of scales makes each
+excess over the target $O(\log\log\widehat\beta_n)=o(\log H_n)$.
+The entire interval of scales has logarithmic length $O(\log H_n)$, and the
 number of steps is $O(\log H_n)$ since every $L_i\ge3$.
 It is therefore shorter than $(\log\log\widehat\beta_n)^4$,
 as required by Proposition~\ref{ch11:restart-family}.
-All its levels tend to infinity. The actual increment estimate is a
-constant times the logarithmic block length plus the coupling-threshold-controlled
-local drift error. Summing it over this window gives
+All its scale indices tend to infinity. The increment estimate is a
+constant times the logarithmic block length plus the
+local drift error controlled by the lower bound on the reference coupling. Summing it over this interval gives
 \[
  \max_i|\beta_i/\beta_n-1|
  \le \frac{H_n^{o(1)}(1+\log H_n)}{\widehat\beta_n}.
 \]
 In particular coupling changes are smaller than every fixed inverse
-power of $H_n$, not just qualitatively $o(1)$. A window may cross any number of stages; no bound by two
+power of $H_n$, not just qualitatively $o(1)$. An interval of scales may cross any number of stages; no bound by two
 stages is needed.
 
 For the linear propagation constants the exact bound is
@@ -56,70 +56,70 @@ For the linear propagation constants the exact bound is
                 \sum_{i\text{ in window}}\log L_i
  =o(\log H_n).
 \end{equation}
-Thus their total cost is $H_n^{o(1)}$. In particular the differentiated
-response estimate in Chapter~\ref{ch11:insertions} becomes
+Thus they contribute a total factor $H_n^{o(1)}$. In particular the differentiated
+curvature-response estimate in Chapter~\ref{ch11:insertions} becomes
 \[
  S^{r+2}\sum_y|\Delta^r(\Psi_{n-1}\cdots\Psi_\ell)(x,y)|
  \le 2^d\prod_{i=\ell}^{n-1}R_{J_i}=H_n^{o(1)},
  \qquad S=a_\ell/a_n.
 \]
-The actual covariance decomposition telescopes for these unequal
-responses just as it does for equal ratios: each conditional covariance
-is transported by the product of the subsequent actual responses.
+The covariance decomposition telescopes for these unequal
+curvature responses just as it does for equal ratios: each conditional covariance
+is conjugated by the product of the subsequent curvature responses.
 It uses no replacement by a common stage's quadratic form.
 The finite-cutoff covariance estimate \eqref{ch11:finite-covariance}
-is uniform in the actual free history. Its stage-dependent constants,
-protected-path errors, fixed-ratio jet errors and finite incidence
+is uniform in the free history. Its stage-dependent constants,
+protected-path errors, ratio-dependent jet errors and finite incidence
 costs are made smaller than the requested powers of $H_n$ by choosing
-sufficiently large coupling thresholds. Sums over $O(\log H_n)$ steps lose only $H_n^{o(1)}$.
-At each step nonlinear propagation is the stated pre-ratio linear
-map plus a coupling-threshold-controlled small error. Thus the post-ratio constants
+sufficiently large lower bounds on the reference coupling. Sums over $O(\log H_n)$ steps lose only a factor $H_n^{o(1)}$.
+At each step nonlinear transfer is the stated ratio-independent linear
+map plus a small error controlled by the lower bound on the reference coupling. Thus the ratio-dependent constants
 in the nonlinear comparison occur additively in those local errors,
-not in the repeated linear amplification. The regular and large-field source recurrences therefore retain their
-strict negative powers after the amplification
+not in the growth factor of the repeated linear maps. The step estimates \eqref{ch11:lower-weighted-step} in the regular and large-field norms therefore retain their
+strict negative powers after multiplication by the growth factor
 \eqref{ch17:window-product}.
 
 One can now repeat the proof of
 Proposition~\ref{ch11:n-mark-comparison} with unequal ratios.
-The initial Taylor order and support reserves are chosen for the
+The initial Taylor order and support margins are chosen for the
 largest $b$ and the fixed finite request. The entire incoming
-squarefree polynomial is retained. The actual quadratic covariance
+polynomial in the source variables is retained. The quadratic covariance
 and corrected free-subset polynomial are common to all subsets;
-the empty coefficient, and hence the denominator, is unchanged.
-Weight restoration still uses
+the density without insertions, and hence the partition function, is unchanged.
+Absorbing the larger source weight still uses
 $\omega=H_n^{1/(8N_*)}$ and $I=\log H_n/(16N_*)$.
-Every additional propagation loss is $H_n^{o(1)}$; the margins in the
+Every additional factor lost in transfer is $H_n^{o(1)}$; the margins in the
 $H_n^{-3/2}$ moment error, $H_n^{-31/32}$ connected error and
-$H_n^{-1}$ regular-restoration bounds absorb it. The root estimate is
+$H_n^{-1}$ bounds of Lemma~\ref{ch11:restore-regular} absorb it. The chessboard bound \eqref{ch11:n-mark-root} is
 therefore at most $H_n^{-c_*}$ for a fixed $c_*>0$ depending only on
-the finite arity, for example $c_*=1/(32N_*)$ after increasing the coupling threshold.
+the finite arity, for example $c_*=1/(32N_*)$ after increasing the lower bound on the reference coupling.
 Its cell side is at most $a_nH_n^{b+5}$.
-The positive partition estimate is imposed at the actual bottom stage,
+The positive partition estimate is imposed at the stage of the lowest scale of the interval of scales,
 with its constant at most $I$; it is not multiplied once per step.
 
-The top polynomial extraction $T$ depends only on the actual insertion
+The common localization map $T$ depends only on the insertion
 and its original self covariance. It is independent of the middle
-and output stopping levels. Restart on the longest window and restrict
-that history for the shorter ones. This supplies the same $T$ for all
+and output stopping scales. Restart on the longest interval of scales and restrict
+that restarted history to the shorter ones. This gives the same $T$ for all
 $b$ in the compact interval. The finite number of coefficient bounds
 above is uniform in $b$: changing $b$ only changes stopping integers
 and the scaling dilation $W_{H_n^b}$, whose exponents lie in a
-fixed compact interval. All upper bounds used the longest window and
-the largest dilation cost. No compactness over arbitrary incoming
+fixed compact interval. All upper bounds used the longest interval of scales and
+the largest dilation factor. No compactness over arbitrary incoming
 activity arrays is invoked.
 
 Apply this construction to
 $b=\alpha_j+u-\alpha_0$, $j=0,1,2$, and
 $u\in[\alpha_0,\alpha_0+1]$.
 At its own normalization a single insertion has bounded chessboard seminorm.
-Changing from $\alpha_j$ to $\alpha_0$ costs at most
+Changing from $\alpha_j$ to $\alpha_0$ contributes a factor at most
 $CH_n^{(\alpha_0-\alpha_j)D}$ by the exact scaling dilation on
-the common top extraction. These are precisely the size bounds used
-in the two strip and mesh estimates above. Their exponents are
-strictly negative, so the harmless $H_n^{o(1)}$ losses do not change
-the conclusion. The full-copy estimates give the same pair bounds
+the common localization map. These are precisely the size bounds used
+in the two estimates above for the coincident-coordinate strips and the grid. Their exponents are
+strictly negative, so the harmless factors $H_n^{o(1)}$ do not change
+the conclusion. The estimates uniform in the number of reflected copies give the same pair bounds
 in every phase. The existing argument using separated correlation pairings then gives
-fixed derivatives and shell fluxes with these same frames.
+fixed derivatives and shell fluxes with these same comparison isomorphisms.
 Thus the prescribed-radius comparison used in this chapter follows
-from the actual marked construction, including windows that cross
+from the construction with insertions, including intervals of scales that cross
 changes of stage.
