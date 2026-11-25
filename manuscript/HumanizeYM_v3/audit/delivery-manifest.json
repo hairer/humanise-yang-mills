@@ -1,7 +1,7 @@
 {
   "pages": 280,
   "cited_references": 41,
-  "pdf_sha256": "d5ea8f57260c073b8b5cc2913f7c4ac39a837b1240c2c0a39bcdf1fbd67101e3",
+  "pdf_sha256": "af5b146f4f86f3f87e725968b460e392e885cf6e41f858381d76017424a67fd8",
   "sources": {
     "monograph.tex": "6ecd01f82c6803e265a69a3000295e000545ea5398195e28f26a2cbb1bddd31a",
     "preamble.tex": "f7209a56016068a42eac177da8bc2509b0dcee939083d2e24214f5633837e393",
@@ -12,7 +12,7 @@
     "chapters/02-equation-section.tex": "c230f1bf42b9be9dc5a8bf3c7e854f7b3ad532c21d428e9250ce8fae69de1047",
     "chapters/02-observables.tex": "4d3511dd67f54bdbf2760acd7382ade896cfef3f190e8666b26df5339ac2bd7d",
     "chapters/03-maxwell.tex": "719eeb9a285240ae677303ab0dd9540175b6808a388f92ab0b4a948a0821efd8",
-    "chapters/04-blocking.tex": "bcddff9a3c86a428b09ebd0793a6640167d671540cfdf71eca30cfdf348b51c7",
+    "chapters/04-blocking.tex": "46bc8d608ca360cd015b131ac1f68ac12c13ddb4b2af70b04bbd801a626ab5df",
     "chapters/05-gaussian.tex": "8d72409f596ff2735ff847a8b926bb303b047f0641149aed874d3973e50c9e9e",
     "chapters/06-large-fields.tex": "865806c669df4d563134171b39c5b7c80f796cc5c3cbb684208d68e3b9ee9418",
     "chapters/07-matching.tex": "d01f2258507adc374fba8751b778525f8c959f545b6e43c8e2adb1828ceb28cc",

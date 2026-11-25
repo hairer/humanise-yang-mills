@@ -242,6 +242,21 @@ Fix the block penalty $b>0$. For $\gamma\ge0$, let
 \]
 This is a probability density on $G$ with respect to Haar measure.
 
+For a fixed fine field $U$ and choice $\alpha$, the block average
+$Q_e=Q_e^{\rm pred}(U,\alpha)$ represents transport across the coarse
+edge $e$. We impose agreement of $V_e$ with $Q_e$ by a soft constraint.
+By unitarity and \eqref{ch01:chord}, its energy is
+\[
+ b\beta w(V_eQ_e^{-1})=\frac{b\beta}{2n_G}\|V_e-Q_e\|_{\mathrm F}^2.
+\]
+This penalizes the discrepancy in a gauge-invariant way, since $V_e$
+and $Q_e$ transform by the same matrices at their endpoints. At large
+$b\beta$ the conditional law thus concentrates near the block average.
+Given $U$ and $\alpha$, we sample the coarse links independently with
+these normalized densities. Averaging their product over $\alpha$ gives
+the conditional density of $V$ given $U$; integrating against the fine
+density gives its coarse marginal.
+
 \begin{definition}[Exact block map]
 \label{ch04:block-map}
 For $\beta\ge0$, define the kernel and its action on fine densities by
@@ -300,14 +315,10 @@ on the minimizing branches, and reindexing of the finite alternatives,
 then give the stated covariance of the kernel.
 \end{proof}
 
-Probabilistically, if $U$ has density $f/\int f$ with $f\ge0$ and $0<\int f<\infty$,
-one draws $\alpha$ with conditional probability $\lambda(U,\alpha)$.
-Given $U$ and $\alpha$, one draws independent $R_e$ of density $q_{b\beta}$
-and sets $V_e=R_eQ_e^{\rm pred}$. The resulting coarse density is
-$\mathcal B^{(m)}_\beta f/\int f$. This description includes all branches.
-Exactness means preservation of this integral and law; it does not mean
-that the coarse density remains of Wilson form.
-
+In particular, if $U$ has normalized density $f/\int f$, the coarse
+field has density $\mathcal B^{(m)}_\beta f/\int f$. The equality of
+integrals \eqref{ch04:exact-integral} holds even when the coarse action
+has terms beyond the Wilson plaquette action.
 
 \section{A first-power bound for the actual block average}
 \label{ch04:predictor-geometry}
