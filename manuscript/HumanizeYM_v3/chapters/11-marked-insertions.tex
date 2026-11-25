@@ -195,7 +195,7 @@ $t(S)$ be the number of replica cells represented in $S$.
 Suppose at most $n$ indices occur per cell. Increase the common source
 weight from $\omega_-$ to $\omega=H^U\omega_-$.
 For components within one cell the factor is at most $H^{Un}$.
-For components meeting several cells, retain an additional exponent in the support weight
+For components meeting several cells, retain an additional margin in the support exponent
 $\sigma>0$. If
 \begin{equation}
  \sigma c_B(X)\ge Un\,t(S)\log H,
@@ -348,7 +348,7 @@ the stated bound $g$ on the number of insertion points per coarse site, uniforml
 \label{ch11:one-graph}
 
 Fix a degree $d$ with coarse derivative order at least
-$\max(2,d+1)$, fine spatial weight at least $d$, fine kernel order
+$\max(2,d+1)$, fine spatial exponent at least $d$, fine kernel order
 at least $d+2$, and coarse kernel order at least $d+3$ for the
 simultaneous calculation for normalized local insertions and the regular and large-field remainders.
 Assume the period is at least $100(1+B_c)$.
@@ -690,7 +690,7 @@ polynomial then permits its physical evaluation with a different local
 gauge transformation without changing its value.
 
 Here is an explicit scale choice that makes the nonlinear error small.
-Put $R=x^{-3/8}$ and $g=\beta^{-1/2}$ on the inverse coupling band.
+Put $R=x^{-3/8}$ and $g=\beta^{-1/2}$ on the coupling band.
 The coarse logarithm on the required patch has size
 $x^{-1/2+o(1)}=o(R)$.
 Restrict the finitely many Gaussian read coordinates so the physical
@@ -740,7 +740,7 @@ normalized coefficient integrals along this history. The construction
 below provides its local representations and estimates on that same
 restarted history.
 
-Two changes of representation are involved. For a large reference inverse coupling parameter
+Two changes of representation are involved. For a large reference coupling parameter
 $s$, define
 \[
  H_s=e^{(\log\log s)^2},\qquad h_s=e^{(\log\log s)^{3/2}},\qquad
@@ -1443,7 +1443,7 @@ $H^{-1}$ for all sufficiently large $H$.
 \begin{proof}
 Separate activities meeting one cell from those meeting at least
 two. The first class gains at most $H^{Un}$ on changing weight.
-For the second class retain one additional unit in the exponent of the support weight and use
+For the second class retain one additional unit of the support exponent and use
 \[
  H^{U|I|}e^{-c_B(X)}
  \le H^{Unt(I)}e^{-\lambda t(I)}\le1
@@ -2173,7 +2173,7 @@ We can now state the finite-cutoff comparison given by these estimates.
 
 \begin{proposition}[Comparison of the separating correlations at finite cutoff]
 \label{ch11:finite-detector-input}
-On the selected trajectory with the stage orders, lower bounds on the block ratio and
+On the common trajectory with the stage orders, lower bounds on the block ratio and
 choices of sufficiently large starting scales specified above, for each $e$ there is an injective free measurement matrix
 $G:\CC^r\to\CC^s$ and the following finite-cutoff approximations.
 For arbitrarily small $\eta>0$ one can choose a fixed comparison
@@ -2291,7 +2291,7 @@ bound on the differentiated field.
 
 \begin{theorem}[Uniform bounds for finite differences]
 \label{ch11:all-period-differences}
-For the selected trajectory with the trial estimates of
+For the common trajectory with the trial estimates of
 Section~\ref{ch11:trial-descent} and the stage requirements already
 specified for their uniformity, every fixed finite list of
 fields, every finite difference word applied separately to its

@@ -450,7 +450,7 @@ averaging operation and fixed cutoffs. Write their affine approximation as $u\ma
  \label{ch06:actual-matrix}
 \end{equation}
 If hypercubic orientations are averaged, this affine map uses the square roots
-of their weights. A component is retained when its \emph{link support}, the fixed set of links from which its expression is built (the support of the expression, in the words of Chapter~\ref{ch04:blocking}), meets an active
+of their weights. A component is retained when its \emph{link support}, the fixed set of links from which its expression is built, meets an active
 edge. This rule differs from retaining components whose base points are a specified
 distance from the location of $A$. A comparison between the corresponding
 matrices requires a proof. Identity coordinates may be adjoined for
@@ -1071,7 +1071,7 @@ Since $N\le CB^4s$, all remaining costs are polynomial in $s$ and
 subpower in $x$, proving \eqref{ch06:actual-jet-integral}.
 
 For its application, \eqref{ch06:pointwise-jets} must be verified for the
-factors of the expansion, with their complete dependence sets. Ordinary
+factors of the expansion, with their full dependence sets. Ordinary
 exponentiated correction terms satisfy it once their logarithmic
 derivatives have small amplitude: the partition formula for derivatives
 of $e^h-1$ gives a fixed multiple of that amplitude when $|h|\le1$.
@@ -1167,7 +1167,7 @@ volume-dependent normalization.
 
 We now retain the individual correction terms, including repeated paths,
 instead of estimating only their sum as an operator. Fix a derivative
-order $k$, a decay rate $\alpha>0$ of the support weight, and a multiplier $h$ such that the $hB$-neighborhoods are
+order $k$, a support exponent $\alpha>0$, and a multiplier $h$ such that the $hB$-neighborhoods are
 large enough to contain every window and protected variation used above.
 For a support $S$, write $c_B(S)$ for its connected covering number by
 $B$-balls. A family of nonnegative amplitudes $a_\lambda$ has
@@ -1472,7 +1472,7 @@ $e^{f_\lambda}-1$. For $|f_\lambda|\le1$, the exponential partition
 formula preserves its amplitude up to a constant depending on $k$.
 The previous bounds furnish the pointwise product jets
 \eqref{ch06:pointwise-jets}; derivative costs polynomial in the total
-support size are absorbed by a small further decrease of the decay rate $\alpha$.
+support size are absorbed by a small further decrease of the support exponent $\alpha$.
 Cutoff remainders carry the joint-event factors proved above.
 Equation~\eqref{ch06:actual-jet-integral} then gives a product majorant
 under the one conditional Gaussian law, followed by the frozen
@@ -1553,8 +1553,8 @@ inhomogeneous term, cancellation of the comparison terms under the factorization
 bounds above. Its hypotheses are the compatible untruncated
 quadratic identities of the two consecutive scales, the rooted averaging operation, exponential path bounds
 through the prescribed derivative order, and the incoming activity bounds
-with a strictly larger decay rate of the support weight than the one used in the conclusion. These are incoming data, not estimates
-that can be created by choosing a sequence of scales. All matrices,
+with a strictly larger support exponent than the one used in the conclusion. These are incoming data, not estimates
+that can be created by choosing the schedule of Chapter~\ref{ch10:trajectory}. All matrices,
 comparison terms, spanning trees, values of the auxiliary index, and frozen inhomogeneous terms in the argument belong to
 that same pair of scales.
 

@@ -2,8 +2,8 @@
 \chapter[Common trajectories and stability]{A common trajectory and fixed-scale stability}
 \label{ch10:trajectory}
 
-The step must be used with a single sequence of
-scales and a consistent choice of coefficient arrays. There are two
+The step must be used with a single schedule (Section~\ref{ch10:schedule})
+and a consistent choice of coefficient arrays. There are two
 separate problems. First one must tune each finite Wilson theory to the
 same coarse inverse coupling. Then one must compare theories with different
 ultraviolet cutoffs. Continuity of a finite step solves the first
@@ -34,7 +34,7 @@ The order of choices is important. Fix the quadratic metric bounds,
 path widths and classical bounds first. Choose the odd block ratio
 large enough for the bound
 \eqref{ch07:classical-budget}, the bound
-\eqref{ch07:inherited}, and the support reserves in the local integral.
+\eqref{ch07:inherited}, and the margins in the support exponent for the local integral.
 Only afterwards choose the lower bounds on the reference coupling and minimum auxiliary
 periods. Enlarging such a lower bound does not change the block
 kernel or the coefficient construction. The Wilson initialization can
@@ -76,7 +76,7 @@ One particular later requirement can already be made explicit.
 Fix the equation-adapted sections of
 Theorem~\ref{ch02:equation-adapted} once and for all.
 For $d\le j$, let $a_{dj}$ be their derivative constants at the
-orders and spatial weights of stage $j$, and let $q_d$ bound their
+orders and spatial exponents of stage $j$, and let $q_d$ bound their
 union stencil with $P_d^{\rm loc}$. These constants depend only on
 fixed cover paths, finite polynomials and the stage orders;
 Proposition~\ref{ch02:section-bounds} makes them independent of
@@ -504,7 +504,7 @@ local expansion established in the next step.
 Here is the parameter estimate for the local factors. It uses
 the protected change of variables and real Gaussian majorants of
 Chapter~\ref{ch06:large-fields}, retaining their fixed derivative
-order and support reserves. The incoming array is affine along the
+order and margins in the support exponent. The incoming array is affine along the
 parameter line. The path, event indicators, held fine reads and coefficient
 projection are fixed. In particular the finite low-order collection in
 Chapter~\ref{ch09:renormalization} is chosen on the compact inverse coupling
@@ -591,7 +591,7 @@ $\eta>0$ and sufficiently large $y$,
 \[
  (1+\delta)^{C_L(1+B)^4C_B(S)}\le e^{\eta C_B(S)}.
 \]
-This is absorbed by a support-exponent reserve, independently of the
+This is absorbed by a margin in the support exponent, independently of the
 volume. The joint probability of large fluctuation-field events and Gaussian score moments
 are those already used for the common majorant; Cauchy--Schwarz
 retains their gain from these events without assuming that they are independent.
@@ -600,8 +600,8 @@ We can therefore run the connected expansions of
 Chapter~\ref{ch08:chapter} in this coefficient norm. A derivative
 of order at most $j$ of a product with $k$ factors contributes a factor at most
 $k^j\le2^{jk}$, absorbed by enlarging each vertex bound by $2^j$.
-Polynomial support moments are absorbed by another fixed support
-reserve. The first connected expansion has bound $y^{-2/5+o(1)}$;
+Polynomial support moments are absorbed by another fixed margin in the
+support exponent. The first connected expansion has bound $y^{-2/5+o(1)}$;
 the logarithmic expansion and spatial derivative weights consequently
 have bound $y^{-3/8}$ at radius $R/2$, after increasing the lower bound on the starting scale. The low-order projection uses finitely many auxiliary
 volumes of side $O(B)$ and supports coverable by a fixed number of
@@ -757,7 +757,7 @@ preserves the resulting supremum bound.
 Next remove the finite-index restriction. Long paths have uniformly
 small tails by the strict exponential width margin. Large connected
 supports and high cluster multiplicities have uniformly small tails
-by the support and attachment reserves of the polymer estimates.
+by the margins in the support exponent and the attachment reserves of the polymer estimates.
 Remaining multiplicities inherited from the input arrays are treated
 by the Cauchy tail argument at the end of this chapter: a fixed late
 array has a summable value tail, and the activity-norm discrepancy
@@ -809,12 +809,12 @@ Recall the schedule from Section~\ref{ch10:schedule}: $J(m)$ is the stage at sca
 
 \begin{theorem}[Fixed-scale convergence]
 \label{ch10:convergence}
-Use the common construction above with its strengthened comparison
+Use the common trajectory above with its strengthened comparison
 reserves and fixed coefficient functionals. If the coarse endpoints
 converge to $b$, then for every fixed
 $m,p$ their inverse couplings and activity arrays converge along the entire
 cutoff sequence. Their coupling constant renormalizations $q_m$ converge as well.
-The limits depend on $b$ and the fixed common construction, and not
+The limits depend on $b$ and the fixed common trajectory, and not
 on the choices made in tuning the bare coupling. No convergence of additive vacuum
 normalizations is asserted.
 \end{theorem}
@@ -910,7 +910,7 @@ small value tails: compare with one late fixed member, truncate that
 member's summable tail, and use
 $b_f(i)\le b_{f-g}(i)+b_g(i)$. This does not assert density of finite
 arrays in every derivative norm. Output derivative tails require the
-stronger support reserve in the connected expansion. The local
+larger margin in the support exponent in the connected expansion. The local
 projection is finite and the sum of the exact regrouping has a strict convergence
 margin, so these estimates, when proved on the common inputs, survive
 both operations.

@@ -79,7 +79,7 @@ remain among the local exponential factors.
 Keeping them is what recovers the original Haar integral.
 
 Expand exponentials as $e^V=1+(e^V-1)$ and retain all sector
-allocation weights. A complete dependence set contains
+allocation weights. A full dependence set contains
 every Haar coordinate, auxiliary index and Gaussian covariance
 neighborhood read by its factor. If two such supports are disjoint,
 the Haar coordinates and auxiliary indices are independent; the Gaussian
@@ -145,7 +145,7 @@ The loop coefficient bound must grow subpolynomially at fixed ratio.
 After increasing the lower bound on the reference coupling these rows are bounded
 by $\mathfrak b^{-7/16}$, since a subpower factor can be bounded
 by $\mathfrak b^{1/16}$. Read-count polynomials are absorbed by
-a margin in the decay rate of the support weight. The Mayer expansion, the average over forests of Proposition~\ref{ch09:forest-average-prop},
+a margin in the support exponent. The Mayer expansion, the average over forests of Proposition~\ref{ch09:forest-average-prop},
 and then Theorem~\ref{ch08:kp} give an absolutely convergent
 logarithm of the polymer gas without large-field sites. Components attached to
 a prescribed large-field set remain in the exact-cover sum.
@@ -227,7 +227,7 @@ are bounded by
  \begin{cases}L^{-5},&d^3<L,\\1,&d^3\ge L.\end{cases}
 \]
 The full chain rule adds a fixed polynomial in $d$.
-Choose the scale ratio and the incoming decay rate of the support weight so that, after
+Choose the scale ratio and the incoming support exponent so that, after
 passing to the coarse image of the support, the outgoing weight uses at most half of the
 incoming exponential decay. The remaining decay absorbs the polynomial
 in $d$.
@@ -264,7 +264,7 @@ remaining factor products, marking one changed factor. The
 nonquadratic local factors contribute a gain of order $g$ up to
 subpower factors; a second incoming localized term contributes
 $O((\epsilon_{m+1}^{\rm reg})^2)$ instead. Joint Gaussian moments
-and the margin in the decay rate of the support weight sum the resulting polynomial factors.
+and the margin in the support exponent sum the resulting polynomial factors.
 Together with the principal estimate this proves
 \[
  \mathcal E_{\sigma+3}(\text{inherited term})
@@ -279,8 +279,8 @@ For this comparison the local windows and their dependence sets
 must be clean. A window meeting a large-field component of the index triple is
 attributed to that component; a large fluctuation-field event far from the index triple has the joint
 Gaussian-tail bound of Chapter~\ref{ch06:large-fields}. Large
-remaining supports gain $e^{-cB}$ from the margin in the decay rate of the incoming support
-weight. Thus no comparison between unrelated event indicators or a seeded and
+remaining supports gain $e^{-cB}$ from the margin in the incoming support
+exponent. Thus no comparison between unrelated event indicators or a seeded and
 an unseeded law has been made. The interpolation estimates
 are essential; the scaling-dimension count alone would not prove
 the comparison remainder.
@@ -383,7 +383,7 @@ large-field activities by the exact operation below.
 The selected low-order terms contain no incoming localized term or
 large-field activity. Their coefficients depend only on the
 prescribed path action, the inverse coupling and fixed labels. Their
-weighted continuity on the compact inverse coupling band therefore
+weighted continuity on the compact coupling band therefore
 permits one truncation for all inputs with those data.
 Terms involving incoming activities have already been
 estimated separately. More generally compactness along a
@@ -426,7 +426,7 @@ To obtain these bounds choose $L$ first so that
 $V_jL^{-1}\epsilon_{m+1}^{\rm reg}$ is at most the desired fraction of
 $H_{\rm pre}$. This is a condition on the fixed stage constants:
 the ratio $\epsilon_{m+1}^{\rm reg}/\epsilon_m^{\rm reg}$ is bounded
-on the permitted neighboring reference-inverse-coupling bands.
+on the permitted neighboring reference-coupling bands.
 Then choose the lower bound on the reference coupling for the inherited
 comparison, \eqref{ch09:degree-gain},
 \eqref{ch09:aux-input}, and the small large-field corrections.
@@ -435,7 +435,7 @@ localization factors have been specified.
 Allocate distinct positive fractions of the exponent in
 \eqref{ch09:joint-input} to sector multiplicities, local
 normalization factors, and the final large-field bound.
-Polynomial support factors use margins in the decay rate of the support weight.
+Polynomial support factors use margins in the support exponent.
 An unexplained extensive normalization cannot be absorbed into
 a single large-field condition of the index triple.
 
@@ -507,13 +507,13 @@ $F^{\rm cl}$ is $O_j(t)$ on its small-field domain, so
  \label{ch09:subtraction-bound}
 \end{equation}
 In the supremum term, $f$ and $Q_f$ occur only under their
-own small-field conditions. Enlarging $X$ to $Z$ adds a bounded
+own regularity conditions. Enlarging $X$ to $Z$ adds a bounded
 number of covering balls.
 
 The conversion of anchored bounds to containing-site bounds
 is explicit. If $x\in Z$ and $c(Z)=n$, its base point lies
 within distance $CBn$ of $x$. There are at most
-$C(1+B)^4(1+n)^4$ choices. An additional exponent in the support weight
+$C(1+B)^4(1+n)^4$ choices. An additional margin in the support exponent
 absorbs this polynomial. Consequently the series of the indicator corrections $\zeta_f$
 has containing-site norm at exponent $\sigma+1$
 bounded by $C_j(1+B)^{d_j}H_{\rm pre}$.
@@ -684,7 +684,7 @@ For the bound retain $e^{-\kappa}$ from one large-field
 label per component, and bound the others by $v_i$.
 Subadditivity of $c$ on connected unions and the rooted
 tree bound underlying Theorem~\ref{ch08:kp} sum the
-connected families through a fixed site. One additional unit of the decay rate of the support weight bounds the number of attachments, since a support has at most
+connected families through a fixed site. One additional unit of the support exponent bounds the number of attachments, since a support has at most
 $(2B+1)^4c(Z)$ sites. Their sum is bounded by
 $\gamma$, hence by $e^\gamma-1$.
 The resulting absolute majorant justifies the countable
@@ -890,7 +890,7 @@ Every residual term is attributed exactly once; its relaxed regularity condition
 The only nonzero exact-cover family is the set
 of these components of the configuration, so the density identity is exact.
 
-A connected prescribed set of $r$ large-field sites is bounded in number
+A connected prescribed large-field set of $r$ sites is bounded in number
 by a rooted spanning-walk count. The containing-site
 weighted sum is at most
 \[
@@ -916,7 +916,7 @@ normalized quadratic coefficient and exponential coefficient and
 derivative bounds of Chapters~\ref{ch04:blocking} and
 \ref{ch07:matching}. The incoming activities obey the small-field
 cancellations, large-field eligibility conditions and weighted bounds of
-Chapter~\ref{ch04:blocking}, with the margin in the decay rate of the support weight used above, and both incoming activity families are equivariant under translations and signed coordinate permutations in the sense of Definition~\ref{ch09:equivariant}.
+Chapter~\ref{ch04:blocking}, with the margin in the support exponent used above, and both incoming activity families are equivariant under translations and signed coordinate permutations in the sense of Definition~\ref{ch09:equivariant}.
 Assume also that the represented input density is strictly positive;
 this holds at the Wilson start and is preserved by the exact block
 kernel. Smallness of signed activities alone is not a substitute
