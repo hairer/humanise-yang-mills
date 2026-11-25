@@ -279,7 +279,7 @@ and averaging operation. Its quantitative form is recorded explicitly.
 \label{ch06:signed-input}
 Assume \eqref{ch06:flat-identities}, the stated row and column
 bounds for the parallel-transported maps, and a common positive exponential bound for the uncut path
-kernels, with their quadratic coefficients satisfying the factorization hypothesis for the curvature components used
+kernels, with their coefficients satisfying the factorization hypothesis for the curvature components used
 in those identities. Then, on every consistent sector for the averaging operation
 of Chapter~\ref{ch04:blocking}, there are $C,K$ fixed before $L,W$ and
 $Z=Z_{j,L,W}$ such that
@@ -424,7 +424,7 @@ eventually, the middle range of \eqref{ch06:coarse-bound} contributes
 $4at_f^2$ per plaquette and therefore $at_f^2$ per assigned site. The
 exceptional plaquettes with distance from the identity above $\delta$ number at most $K|D|$;
 their negative energies cancel the positive term in
-\eqref{ch06:affected}. Their missing site contributions cost at most
+\eqref{ch06:affected}. Their missing site contributions amount to at most
 $4aKt_f^2|D|$. Also $E_N\ge0$. The total remaining losses are bounded by
 \[
  (4aK+ZB^4)t_f^2|D|+Ct_c^4KB^4|A|+\frac a4t_f^2|A|.
@@ -627,7 +627,7 @@ For clarity, the corresponding derivative assertion has a different
 scale. For any fixed allowed order $k$, use dimensionless variation
 parameters whose coarse link increments and clipped frozen displacements
 have derivatives bounded by $C_k t_f$. Keep the choice of retained components, the spanning trees, and
-windows fixed. Differentiating a contour variable costs a fixed power of its
+windows fixed. Differentiating a contour variable contributes a fixed power of its
 length. The exponential path bound absorbs that power after decreasing
 its decay rate. A derivative with base point $o$ can occur only on a contour variable
 whose dependence set contains $o$; its distance to the component is bounded
@@ -769,7 +769,7 @@ Higher fixed derivatives are polynomials in the coordinates, with
 coefficients controlled by the window estimates and the coordinate
 change. Ordinary Gaussian moment formulas, in particular
 Isserlis' formula~\cite{Isserlis1918}, then give polynomial bounds in $|I|$
-for fixed derivative order. The trace costs a factor proportional to
+for fixed derivative order. The trace contributes a factor proportional to
 $|I|$; it is not uniformly bounded independently of the dependence set.
 For local factors with $s$ base points one typically has $|I|\le CB^4s$.
 
@@ -810,7 +810,7 @@ At the base point $T_{V_0}z=z$ and the ratio is one. Its differentiated
 logarithm is a polynomial of degree at most two in $z$ and the
 derivatives of $T_Vz$, and repeated exponential differentiation gives
 a fixed-degree polynomial bound. Matrix products are estimated in row
-and column norms; a trace costs $|I|$. Therefore, if $s$ counts the
+and column norms; a trace contributes a factor $|I|$. Therefore, if $s$ counts the
 base points of the factors and $|I|\le C B^4s$, there are fixed integers $r_k,m_k$
 such that
 \begin{equation}
@@ -916,7 +916,7 @@ It remains to bound the affine component at the mean, not just the mean:
 or the corresponding bound after subtracting the prescribed nonzero
 linear target. If that target is within the strict plateau margin, choose
 $\xi$ so $C\xi$ is less than one third of the margin and increase the
-lower bound on the reference coupling to absorb the two errors. The two partition-of-unity weights
+lower bound on the reference coupling to absorb the two errors. The local factors of the two partition-of-unity weights
 and the normalized weights of the auxiliary index are then equal to one. The same strict
 inequalities persist on a parameter neighborhood and supply the
 zero-germ assertion used in \eqref{ch06:pointwise-jets}.
@@ -944,13 +944,13 @@ The row bound transfers the same estimate to the affine component at the target.
 \begin{proposition}[Cancellation for the affine mean]
 \label{ch06:mean-cancellation}
 Use the quadratic forms of the two consecutive scales as in
-\eqref{ch06:flat-identities}, the linearization $W_F$ of their critical configuration in the block axial gauge, and the comparison term
+\eqref{ch06:flat-identities}, the representative $W_F$, in the block axial gauge, of the linearization of their critical configuration, and the comparison term
 defined by parallel-transporting and truncating the untruncated flat maps $M_f,M_n,N$. Then
 \eqref{ch06:mean-target-needed} holds uniformly at targets farther than
 $30B$ from the location of $A$. The constants may depend on the fixed step.
 \end{proposition}
 \begin{proof}
-Let $a=W_F h$ be the linearized critical configuration, with $W_F$ as in \eqref{ch05:stationary-tangent}, for a coarse
+Let $a=W_F h$ be the fine field that the linearization of the critical configuration, in its representative $W_F$ of \eqref{ch05:stationary-tangent}, assigns to a coarse
 logarithmic field $h$, and set $w=X_c^{\rm lin}(h)$ and
 $p=(X_f^{\rm lin}(a),Z^{\rm lin}(a,h))$. Write
 $T w=(M_fw,M_nw)$. Quadratic Gaussian matching gives
@@ -982,7 +982,7 @@ branch of the averaging operation bounds the nonlinear remainder of the componen
 For a path term, differentiating its products adds powers of the
 length, summable against the exponential path bound.
 Parallel transports change by at most their length times
-$C\|h\|_\infty$; multiplying by an input of the component costs a further
+$C\|h\|_\infty$; multiplying by an input of the component contributes a further
 $O(\|h\|_\infty)$. The same estimates apply to the comparison term, since
 the comparison term uses exactly the parallel-transported untruncated maps appearing in $T$.
 Its clipping is inactive on this clean link support.
@@ -993,7 +993,7 @@ Finally the derivative in the fluctuation field is evaluated at $\operatorname{r
 whereas the parallel-transported flat derivative is evaluated at zero before
 parallel transport. Their difference has row norm at most
 $C B^a t_f$, by the same second-derivative and parallel-transport estimates.
-Applied to $v$, it costs $C B^{2a}t_f^2$. No equality of these two
+Applied to $v$, it contributes $C B^{2a}t_f^2$. No equality of these two
 matrices is used. The frozen part of the inhomogeneous term is absent on the clean inner ball:
 all its non-tree coordinates are active. The exact linear cancellation
 therefore gives
@@ -1012,7 +1012,7 @@ Choose $L$ and the plateau width $W$ for the deviations $n_e$ so these bounds li
 strictly inside their respective plateau thresholds, as in the energy
 estimate. The preceding proposition, the nonlinear Taylor error, and
 the bound on the fluctuation field then leave the fine plaquette distance from the identity below $t_f/4$
-and the deviation $n_e$ below $Wt_f$. The partition-of-unity weights and the
+and the deviation $n_e$ below $Wt_f$. The corresponding factors of the partition-of-unity weights and the
 normalized weights of the auxiliary index there are equal to one. The bond increment is bounded
 by $Ct_f$ on this event, so a sufficiently broad fixed chart cutoff is
 also one. A cutoff remainder assigned within the compulsory component region is
@@ -1067,7 +1067,7 @@ This uses no independence. Apply Leibniz' rule,
 Cauchy--Schwarz gives
 $\mathbb E[\mathbf1_{\mathcal E}F_I^q]
  \le\mathbb P(\mathcal E)^{1/2}(\mathbb E F_I^{2q})^{1/2}$.
-Since $N\le CB^4s$, all remaining costs are polynomial in $s$ and
+Since $N\le CB^4s$, all remaining factors are polynomial in $s$ and
 subpower in $x$, proving \eqref{ch06:actual-jet-integral}.
 
 For its application, \eqref{ch06:pointwise-jets} must be verified for the
@@ -1178,7 +1178,7 @@ containing-site bound $\epsilon$ if
 \]
 These are full dependence sets, not only exclusion supports.
 The statement concerns the positive derivative orders available in the
-incoming path bounds. Additional fixed polynomial costs in $B$ or
+incoming path bounds. Additional fixed polynomial factors in $B$ or
 $M_f^{\rm cut}$ are subpower in $x=\widehat\beta_f$.
 
 \subsection{Gaussian correction series}
@@ -1223,7 +1223,7 @@ A term of length $n+u$, for fixed $u$, has support cover at most
 $(n+u+1)s_h$, where $s_h$ depends only on the multiplier $h$.
 If that support contains a prescribed site, its starting bond has
 at most $C_L(1+B)^4(n+u+1)^4$ possible locations.
-Fixed derivatives cost an additional polynomial in $n+u$.
+Fixed derivatives contribute an additional polynomial factor in $n+u$.
 Absorb these polynomials by $C_k2^{(k+4)n}$. The containing-site sum
 is consequently bounded by
 \[
@@ -1275,13 +1275,13 @@ reducing the decay exponent if necessary.
 
 The first two lines use the affine square with the exact
 derivative at the background field. Taylor's remainder is quadratic in the displacement;
-multiplying by the affine component at the base point, of size $O(t_f)$ on the protected
+multiplying by the base affine component, of size $O(t_f)$ on the protected
 chart, gives $O(t_f^3)$. The square of the remainder is smaller.
 The extracted mean square is $O(B^a t_f^4)$ by
 Proposition~\ref{ch06:mean-cancellation}. For derivatives the directions
 are the directions of size $O(t_f)$ used above; applying the
 same finite Taylor formula with parameter derivatives gives the same
-powers, with their fixed path-bound costs. No derivative of a large-field indicator is taken.
+powers, with the fixed factors from the path bounds. No derivative of a large-field indicator is taken.
 
 For the third line, compare non-flat and flat matrices in the common
 small gauge on the local window. Their difference is $O(B^a t_f)$.
@@ -1310,8 +1310,8 @@ polynomial multiplicities provided
 \[
  \alpha\,10P_h/L+4\epsilon<\sigma
 \]
-for some fixed $\epsilon>0$. Counting possible base points costs
-$C_L B^4(1+d)^4$; derivative factors cost another fixed power of
+for some fixed $\epsilon>0$. Counting possible base points contributes
+$C_L B^4(1+d)^4$; derivative factors contribute another fixed power of
 $1+d$, absorbed by $e^{\epsilon d}$. Summation of the remaining
 geometric series proves the inherited site bounds.
 For path terms the analogous cost is their true length, including
@@ -1371,7 +1371,7 @@ Suppress $\sigma$ temporarily and set
 The orientation probability is not included in this half-square; it
 will appear once in the average below. The coefficients of the components and
 the frozen part of the displacement field $\widetilde u$ are included once: equivalently apply the all-coordinate derivative to
-the full displacement field and add its value at $\operatorname{rep}V$. The \emph{displacement field} $\widetilde u$
+the full displacement field and add the value of the components at $\operatorname{rep}V$. The \emph{displacement field} $\widetilde u$
 is the active increment, the clipped frozen logarithm on frozen
 non-tree bonds, and zero on tree bonds. Where the retained cutoff factors are nonzero
 it reconstructs the original fine field on every retained link support.
@@ -1404,7 +1404,7 @@ most $E(2M+E)/2$. The energies $E_f$ and $E_n$ equal the squares of their
 nonlinear components minus comparison terms, plus the nonnegative difference between the squared distance from the identity and
 the squared curvature representative. If a component is not retained, no affine square is subtracted,
 so only its nonnegative square remains.
-The coarse counterterm costs $O(t_f^4)$.
+The coarse counterterm contributes $O(t_f^4)$.
 The linear term of the complement component vanishes by the cancellation in
 Proposition~\ref{ch06:mean-cancellation}; its nonlinear square is
 $O(B^a t_f^4)$. The two signed mismatch terms are a comparison term of size
@@ -1447,14 +1447,14 @@ at large coupling. This is the needed bound on the extracted energy.
 Dropping $X_H$ before proving the annular estimate would be invalid.
 
 The remaining local normalization, Haar, auxiliary-index, and frozen-coordinate
-costs are bounded by $C B^a(1+\log x)^a n=o(\beta t_f^2)n$.
+contributions are bounded by $C B^a(1+\log x)^a n=o(\beta t_f^2)n$.
 The component amplitude consequently satisfies
 \[
  a_{\rm comp}\le\exp\{-\kappa'\beta t_f^2n\}
 \]
 for a fixed positive $\kappa'$ smaller than the retained energy
 coefficient. Fixed derivatives of its smooth extension on a fully
-small-field coarse neighborhood add polynomial costs per component
+small-field coarse neighborhood add polynomial factors per component
 and are absorbed by a further decrease of $\kappa'$. The physical Borel
 indicator is held fixed. This assertion is where the retained cutoff factors are nonzero,
 under the precise core/annulus assignment just specified; where a
@@ -1471,7 +1471,7 @@ Finally replace each small logarithm $f_\lambda$ by
 $e^{f_\lambda}-1$. For $|f_\lambda|\le1$, the exponential partition
 formula preserves its amplitude up to a constant depending on $k$.
 The previous bounds furnish the pointwise product jets
-\eqref{ch06:pointwise-jets}; derivative costs polynomial in the total
+\eqref{ch06:pointwise-jets}; derivative factors polynomial in the total
 support size are absorbed by a small further decrease of the support exponent $\alpha$.
 Cutoff remainders carry the joint-event factors proved above.
 Equation~\eqref{ch06:actual-jet-integral} then gives a product majorant
@@ -1501,7 +1501,7 @@ The second estimate is the comparison for the mean proved above; the first
 is valid in weighted row norms, or with a harmless local polynomial
 factor in an unweighted matrix norm. Both have fixed-order versions
 under the same available path derivative bounds. In particular the
-mean shift in Gaussian units costs
+mean shift in Gaussian units satisfies
 \[
  g^{-1}|m_Y-v|_\infty
        \le C B^a g(M_f^{\rm cut})^2+
@@ -1542,7 +1542,7 @@ $T_V$ and its density scores; it is not permission to lose an extra
 derivative of the incoming activity.
 This export concerns a local region whose entire window neighborhoods
 are clean. It does not compare a seeded sector to an unseeded law,
-does not replace $W_F$ by the linearization in a different gauge,
+does not replace $W_F$ by the representative in a different gauge,
 and does not identify separately chosen event indicators. Such replacements need
 their own tail or support decomposition.
 
