@@ -1208,7 +1208,7 @@ Convert links to linear sums of based plaquette curvatures in the
 axial gauge on this same patch. Let $W_u$ be the resulting raw
 polynomial in curvature divided by $g=\beta_{N,p,k}^{-1/2}$.
 Each axial row has coefficient sum at most $4bg/\theta$.
-The inverse coupling band gives
+The coupling band gives
 $g/\theta\le\sqrt{8/7}\,H^{-1}$, so this row sum is eventually
 at most one. Thus $\deg W_u\le D$ and
 $\|W_u\|_{\rm coeff}\le H\|Au\|_1$, after the finite increases of the starting scale.
@@ -1340,7 +1340,7 @@ Average with conjugation at the same time. This uses one
 polynomial construction for all transformed columns, rather
 than symmetrizing independently chosen lifted vectors.
 
-At a fixed comparison depth the front-column bounds give
+At a fixed comparison scale the front-column bounds give
 $\|u\|_1\le D_k\|Au\|_1$, uniformly in $N,p$.
 The relative half-error therefore implies
 $\|u\|_1\le2D_k\|Tu\|_1$, so $T$ is injective and hence
@@ -1352,13 +1352,13 @@ $\rho=H^b$ solve all the equations
  S_{g/\theta}T u_{j,N,p}=W_\rho v_j.
 \end{equation}
 They have unique real solutions using the same $T$.
-The inverse coupling band gives $\theta/g\le2H$, and therefore
+The coupling band gives $\theta/g\le2H$, and therefore
 \[
  \|u_{j,N,p}\|_1
  \le2D_k\|S_{2H}W_\rho v_j\|_1.
 \]
 Their sum is a finite bound $B_k$ independent of cutoff and
-period. No bound uniform in comparison depth is needed.
+period. No bound uniform in the comparison scale is needed.
 Moreover $\|Au_j\|\le2\|Tu_j\|$ is bounded by a fixed
 power $H^{bd+c_d}$, where the additional exponent $c_d$
 depends on factor counts and the finite target list, not on
@@ -1398,7 +1398,7 @@ The stage choices of sufficiently large starting scales impose a common bound $H
 on $R_{e+2}$, $C_*$, $L^4T_{e+2}$, and the fixed incidence
 constants, with $\epsilon_j\downarrow0$.
 Consequently every finite product of these constants is
-$H^{o(1)}$ along the selected comparison levels.
+$H^{o(1)}$ along the selected comparison scales.
 This uniform lower bound on the starting scale, rather than treating a changing stage
 constant as an absolute constant, justifies the exponent
 comparisons below.
@@ -1407,7 +1407,7 @@ It is not an assertion that the separated opening sites
 at distance $H^b$ fit in one radius-$AB$ ball.
 The supports of their terms of source degree at least two are instead estimated by
 \eqref{ch11:opening-higher-weight}.
-At an earlier step of the \emph{upper interval}, from the top scale to the middle scale, a nonzero connected principal component
+At an earlier step of the \emph{upper interval}, from the comparison scale to the middle scale, a nonzero connected principal component
 has radius at most $(6n+3)B$ around each of its own insertion points;
 a term of source degree two with more widely separated insertion points is absent.
 Only these nonzero components enter the principal support bound.
@@ -1927,7 +1927,7 @@ $H^{f+bd+c_d}e^{-\theta_0 C}$. Increase $D$ to make both
 at most $H^{-q-2}$. Together with
 \eqref{ch11:opening-higher-weight} these give the initial
 regular remainder $H^{-q}$ at exponent $e_*$.
-For the large-field part perform the exact change of representation at the top scale
+For the large-field part perform the exact change of representation at the comparison scale
 jointly with these factors with insertions, before summing components.
 Every nonzero large-field factor and every old large-field activity
 meets a new large-field site. Its selected site factor has size at
@@ -2029,10 +2029,10 @@ Applying the preceding estimate to
  \le e^{-I_k},\qquad \varnothing\ne I\subseteq\{1,2\}.
 \]
 This is the desired corrected pair estimate on the original
-partition denominator. At each fixed deep comparison level its
+partition denominator. At each fixed deep comparison scale its
 simultaneously normalized columns are uniformly bounded in $N,p$.
 Undoing the finite connected subtractions and then taking a
-sufficiently deep comparison level establishes
+sufficiently deep comparison scale establishes
 Proposition~\ref{ch11:finite-detector-input}, using the small value and joint product bounds of
 Proposition~\ref{ch11:restart-family}. The estimates hold before any subsequence is chosen and their
 thresholds are independent of the period.
@@ -2061,7 +2061,7 @@ At scale $\rho_j=H^{b_j}$ use the exact simultaneous lifts
  S_{g/\theta}T_{k,N,p,d}u=W_{\rho_j}v.
 \]
 They are real and equivariant, and bounded in $N,p$ for each
-fixed comparison depth. Set $G_\varnothing=1$ and let $G_I$
+fixed comparison scale. Set $G_\varnothing=1$ and let $G_I$
 be the free moment of the chosen labels at the rescaled
 configurations. Define the corrected coefficients by
 \[
@@ -2082,14 +2082,14 @@ positive lower bound on individual coordinate differences.
 \end{proposition}
 \begin{proof}
 Make all finite requests before choosing the stage orders,
-ratios and starting scales. Construct $T$ at the top scale $k$ from
+ratios and starting scales. Construct $T$ at the comparison scale $k$ from
 the insertion and its original same-insertion covariance.
 Neither its near-support Taylor construction nor that covariance
 depends on the choice of middle or output scale.
 Choose the Taylor order and derivative margins for the
 largest of the finitely many requests. Restart once on the
 longest required window. Restriction of that history gives
-the shorter windows, with unchanged top map and density at the top scale.
+the shorter windows, with unchanged top map and density at the comparison scale.
 There is no new normalization for individual spectator subsets.
 
 Work throughout in the full $n$-source squarefree algebra.
@@ -2177,7 +2177,7 @@ On the selected trajectory with the stage orders, lower bounds on the block rati
 choices of sufficiently large starting scales specified above, for each $e$ there is an injective free measurement matrix
 $G:\CC^r\to\CC^s$ and the following finite-cutoff approximations.
 For arbitrarily small $\eta>0$ one can choose a fixed comparison
-depth $k$, bounded real local polynomial coefficient families
+scale $k$, bounded real local polynomial coefficient families
 $u_{1,i},\ldots,u_{r,i}$ with $\|u_{j,i}\|_1\le B_k$, and finitely
 many bounded families of normalized local spectator insertions, all on the selected
 history, such that their point-correlation matrix $Q_i^0$
@@ -2206,7 +2206,7 @@ many free subset moments. These moments remain bounded as the
 rounded, rescaled configurations approach their fixed separated
 limit configurations. Thus choose one sufficiently deep $k$ to obtain the
 requested $\eta$. The exact lift equations give a fixed bound
-$B_k$ for all cutoffs and periods at that depth.
+$B_k$ for all cutoffs and periods at that scale.
 The product-moment estimate gives the chessboard bounds for normalized local insertions.
 No convergence or choice of a limiting equation subspace is used.
 \end{proof}
