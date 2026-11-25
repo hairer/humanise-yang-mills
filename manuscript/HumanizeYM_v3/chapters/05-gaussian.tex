@@ -17,7 +17,7 @@ standard; see Ba{\l}aban--Feldman--Kn\"orrer--Trubowitz
 propagators and backgrounds for lattice gauge theory originates in
 Ba{\l}aban's work \cite{Balaban1984Propagators,Balaban1985Variational}.
 Those references explain the method. Their results cannot be applied to a
-different averaging operation without checking its hypotheses. Moreover, Ba{\l}aban's background field is a minimum of the action at fixed averages (his ``minimal configuration''), for several steps at once; the critical configuration constructed in Section~\ref{ch05:stationary} is a stationary point of the fine action plus the penalty term of the block kernel, for one step.
+different averaging operation without checking its hypotheses. Moreover, Ba{\l}aban's background field is a minimum of the action at fixed averages (his ``minimal configuration''~\cite{Balaban1985Variational}), for several steps at once; the critical configuration constructed in Section~\ref{ch05:stationary} is a stationary point of the fine action plus the penalty term of the block kernel, for one step.
 
 \section{Lattice differential forms and zero modes}
 \label{ch05:forms}
@@ -578,8 +578,8 @@ diagonal term in $\mathcal A_0$ leaves the regular factor
 \]
 For nonzero aliases the denominators have the lower bounds
 used in Proposition~\ref{ch05:history-prop}.
-These formulas give bounded principal columns and bounds
-$C\Gamma(l)^{-j}$ for both nonprincipal columns on a smaller cube.
+These formulas give bounded columns at the zero alias and bounds
+$C\Gamma(l)^{-j}$ for both columns at each nonzero alias on a smaller cube.
 Adjoints in these analytic formulas mean transpose at opposite
 momentum, with $l$ replaced by $-l$.
 
@@ -596,7 +596,7 @@ permutation under $p\mapsto p+2\pi n$ gives periodicity.
 When a fine difference crosses a block boundary, its coarse
 argument is shifted by one block; this is included by the phase
 $e^{i\theta_l\cdot r}$ and must not be dropped.
-At zero momentum the principal columns are $I$ and the other
+At zero momentum the columns at the zero alias are $I$ and the other
 columns vanish, so the identities extend there without choosing
 a massless Gaussian normalization.
 
@@ -858,7 +858,7 @@ gradient correction introduced below for the averaging operation is a fixed fini
 operator at the selected scale, so its application to the convergent
 operator $W=W_s$ of Section~\ref{ch05:transports} also preserves convergence. These are statements
 about the quadratic data. They do not imply cutoff continuity of the
-localized terms and large-field activities of the nonlinear step, or of marked integral maps; those require
+localized terms and large-field activities of the nonlinear step, or of the integral maps of a step with insertions; those require
 their own stability arguments.
 
 \section{Uniform inverse bounds: the hypotheses that matter}
@@ -934,7 +934,7 @@ is one on every tree edge. The \emph{block axial chart}, the chart of the block 
  \label{ch05:forest-chart}
 \end{equation}
 It is a chart on this gauge slice, not a choice of independent variables on
-tree edges. Any spanning tree rooted at the block center is allowed here, where Ba{\l}aban has the tree of his contours $\Gamma_{y,x}$ rooted at a block corner; the gauge is used here as a chart, and it is a different construction from the axial gauge of the local gauge transformations of Chapter~\ref{ch04:blocking}. The derivative of the chart at the identity is exactly
+tree edges. Any spanning tree rooted at the block center is allowed here, where Ba{\l}aban has the tree of his contours $\Gamma_{y,x}$~\cite{Balaban1984Propagators} rooted at a block corner; the gauge is used here as a chart, and it is a different construction from the axial gauge of the local gauge transformations of Chapter~\ref{ch04:blocking}. The derivative of the chart at the identity is exactly
 \begin{equation}
  DU(0,0)[h,z]=\operatorname{rep}h+\iota_Fz,
  \qquad DU(0,0)[0,z]=\iota_Fz.
@@ -983,7 +983,7 @@ linearized equation for the minimizing local gauge transformation gives
 \end{align}
 Indeed its equation is $H_r-\operatorname{av}_{r'}H_{r'}
 =-\operatorname{av}_{r',o}I_a(r\to r';o)$, and $H_0=0$ fixes the additive
-constant. Differentiating the gauge-transformed parallel transporter and then the averaging operation applied to it
+constant. Differentiating the transporter of Chapter~\ref{ch04:blocking} and then the averaging operation applied to it
 therefore yields
 \begin{equation}
  \mathcal Q a=M a+d_{0,c}R a,
