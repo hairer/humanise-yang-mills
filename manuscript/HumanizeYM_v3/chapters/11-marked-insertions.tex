@@ -348,8 +348,8 @@ the stated bound $g$ on the number of insertion points per coarse site, uniforml
 \label{ch11:one-graph}
 
 Fix a degree $d$ with coarse derivative order at least
-$\max(2,d+1)$, fine spatial exponent at least $d$, fine kernel order
-at least $d+2$, and coarse kernel order at least $d+3$ for the
+$\max(2,d+1)$, fine spatial exponent at least $d$, fine smoothing order
+at least $d+2$, and coarse smoothing order at least $d+3$ for the
 simultaneous calculation for normalized local insertions and the regular and large-field remainders.
 Assume the period is at least $100(1+B_c)$.
 The fixed normalized local insertion is tested with one additional
@@ -1473,7 +1473,7 @@ between the two insertions within one cell.
 Suppose the old large-field site bound is $\eta_-$ at
 $(\omega_-,e+2)$, where $\eta_-$ decays faster than every inverse
 power of $H$. Suppose each cell has at most $2^n$ additional
-failed-cutoff factors, supported in $Y_c$, whose coefficient
+\emph{failed-cutoff factors} (the terms $-(1-\chi)Rz_I$ of the factors $1-(1-\chi)Rz_I$ in the proof below, which vanish where the cutoff $\chi$ equals one), supported in $Y_c$, whose coefficient
 bounds before source variable weighting are at most $C_*=H^{o(1)}$ and whose
 support bounds at exponent $e+1$ are at most $R_{e+1}=H^{o(1)}$.
 Every nonzero such factor must meet an old large-field activity.
@@ -1667,7 +1667,7 @@ The restarted representation keeps the original path and clipping coefficients a
 
 The parameter $H=e^{(\log\log s)^2}$ measures the slowly growing
 comparison scale, not a covariance or a Hilbert space.
-The Gaussian fluctuation scale at the coupling $\beta$ is $g=\beta^{-1/2}$.
+The Gaussian fluctuation scale at the inverse coupling $\beta$ is $g=\beta^{-1/2}$.
 The density $q_k$ with insertions remains the full transferred polynomial of
 \eqref{ch11:source-density}, including its higher coefficients;
 it is unrelated to the fixed exponent $q$ of the initial remainder bound.
@@ -2063,7 +2063,7 @@ At scale $\rho_j=H^{b_j}$ use the exact simultaneous lifts
 They are real and equivariant, and bounded in $N,p$ for each
 fixed comparison scale. Set $G_\varnothing=1$ and let $G_I$
 be the free moment of the chosen labels at the rescaled
-configurations. Define the corrected coefficients by
+configurations. Define the corrected coefficients, the Wick products of the $F_i$ with respect to the free field, by the recursion
 \[
  R_\varnothing=1,\qquad
  R_I=\prod_{i\in I}F_i-
