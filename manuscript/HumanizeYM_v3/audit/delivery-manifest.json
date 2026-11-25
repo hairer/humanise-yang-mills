@@ -1,7 +1,7 @@
 {
   "pages": 279,
   "cited_references": 41,
-  "pdf_sha256": "2620c5940215c658c3cf35a841109fdc81b2ceab1954c5296919689d43192238",
+  "pdf_sha256": "38957436707f50e625713d51bde4c3bb6c4f475414109416d5a6cdd8eabf5a4f",
   "sources": {
     "monograph.tex": "6ecd01f82c6803e265a69a3000295e000545ea5398195e28f26a2cbb1bddd31a",
     "preamble.tex": "f7209a56016068a42eac177da8bc2509b0dcee939083d2e24214f5633837e393",
@@ -12,7 +12,7 @@
     "chapters/02-equation-section.tex": "c230f1bf42b9be9dc5a8bf3c7e854f7b3ad532c21d428e9250ce8fae69de1047",
     "chapters/02-observables.tex": "4d3511dd67f54bdbf2760acd7382ade896cfef3f190e8666b26df5339ac2bd7d",
     "chapters/03-maxwell.tex": "719eeb9a285240ae677303ab0dd9540175b6808a388f92ab0b4a948a0821efd8",
-    "chapters/04-blocking.tex": "0dc57aa53d9abf1ae0729e9cb26a23cc15dbc907527ea83438d86d04348e80a6",
+    "chapters/04-blocking.tex": "8b7d928762db6046012e0c781665913482099fa684eb343362d071a7815818ce",
     "chapters/05-gaussian.tex": "235f13988f10c15ff339e519e0b27b9bd319eaeb4b2a4402cdd6a2fe82c6e263",
     "chapters/06-large-fields.tex": "cafc4ba5f55007ac137fb6c861a18b374ba3d88659bbf20c1132122dcb306ff3",
     "chapters/07-matching.tex": "9c76cab51d803476fe004d50a4b2fcdb7849d3b8027078010aad848db0fa1726",
@@ -55,5 +55,5 @@
     "figures/transported-curvatures.tex": "e0bdd23410ab04a4f99b7fcebaed52680359c3174dc149a20b012053f9efb5a8",
     "figures/ward-shell.tex": "f15c44005db75ae93c1629899787bdc71615006a1c22b918d98ba4bbbf88d1e2"
   },
-  "review": "Built the illustrated manuscript including the revised Corollary 3.2. Verified eleven list-of-figures entries and all explicit cross-references."
+  "review": "Rebuilt the illustrated manuscript after clarifying the patch gauge in Section 4.1. Verified all explicit cross-references."
 }
