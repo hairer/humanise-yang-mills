@@ -23,8 +23,11 @@ will require the later estimates.
 \section{Local gauges and a symmetric frame choice}
 \label{ch04:frames}
 
-To average fine transports, their endpoints must first be expressed in
-common gauge frames. A deterministic axial gauge is convenient for bounds
+A choice of gauge on a patch assigns a frame to each site. Relative to
+the original frames, this choice is specified by a family of matrices
+$h_x\in G$: a transport $U_{xy}$ then has matrix $h_xU_{xy}h_y^{-1}$.
+We choose $h_0=1$, so that $h_x$ expresses vectors at $x$ in the frame
+at the patch centre. This lets us compare fine transports before averaging. A deterministic axial gauge is convenient for bounds
 but singles out coordinate directions. We combine a symmetric minimizing
 choice near the flat field with a finite randomized choice elsewhere.
 The use of gauge-covariant averages in a block transformation belongs to
@@ -54,7 +57,8 @@ patch center by
    =g_x^{0,o_0}T_U(x\to y;o)(g_y^{0,o_0})^{-1}.
 \]
 Its normalized Hilbert--Schmidt distance from the identity is gauge invariant. Fix a small constant $\delta_{\rm fr}>0$.
-When all these distances from the identity are strictly below $\delta_{\rm fr}$, use the
+If $\chi(\mathcal T_{xy;o}^{o_0})<\delta_{\rm fr}$ for every
+$x,y\in\mathbb B_R$ and every $o,o_0\in S_4$, use the
 normalized minimizer, with $h_0=1$, of
 \begin{equation}
  \mathcal E_U(h)=\frac1{24|\mathbb B_R|^2}
@@ -73,7 +77,11 @@ $(z,o)$ eligible when
       \sum_{\square\text{ internal to }\mathbb B_R}\chi(U_\square).
  \label{ch04:axial-eligible}
 \end{equation}
-Choose uniformly among eligible pairs. On the minimizing branch give all
+Choose one pair $(z,o)\in\mathbb B_R\times S_4$ uniformly among all
+eligible pairs. Use this same root and order throughout the patch:
+the gauge at each $x\in\mathbb B_R$ is given by $h_x^{z,o}$ in
+\eqref{ch04:axial-frame}. The coordinate paths from $z$ form a spanning
+tree, and in this gauge every link of that tree is the identity. On the minimizing branch give all
 pairs the same uniform mass, but let each pair specify the same minimizing
 frame. The redundant labels allow both branches to be described by one
 finite sum.
