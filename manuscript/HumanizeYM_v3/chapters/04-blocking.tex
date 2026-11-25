@@ -123,15 +123,14 @@ an unconstrained minimizer after allowing that common multiplier.
 Comparison with the constant frame,
 and the squared triangle inequality, give
 \[
- \operatorname{av}_{x,y}\|h_x-h_y\|_{\mathrm F}^2\le4d^2.
+ \frac{1}{|\mathbb B_R|^2}\sum_{x,y\in\mathbb B_R}\|h_x-h_y\|_{\mathrm F}^2\le4d^2.
 \]
-Here and below $\operatorname{av}$ denotes the uniform average over the
-indicated finite set. Multiply all $h_x$ on the left by one group element
-so that $1$ is nearest to their centroid $\bar h=\operatorname{av}_x h_x$.
-Then $\|\bar h-1\|_{\mathrm F}\le2d$. Coordinatewise minimization shows
+Multiply all $h_x$ on the left by one group element
+so that $1$ is nearest to their centroid $\bar h=|\mathbb B_R|^{-1}\sum_{x\in\mathbb B_R} h_x$.
+Then $\|\bar h-1\|_{\mathrm F}\le2d$. For each fixed $x$, coordinatewise minimization shows
 that $h_x$ is nearest to
 \[
- F_x(h)=\operatorname{av}_{y,o}h_y(\mathcal T_{xy;o}^{o_0})^{-1}.
+ F_x(h)=\frac{1}{24|\mathbb B_R|}\sum_{y\in\mathbb B_R}\sum_{o\in S_4}h_y(\mathcal T_{xy;o}^{o_0})^{-1}.
 \]
 Including the diagonal term $y=x$ does not invalidate this assertion:
 it adds a term whose maximum is attained at the old coordinate $h_x$.
@@ -329,7 +328,9 @@ $C_j,K_j$ independent of $L$ and the period, whenever the coarse period is at le
 \begin{proof}
 We first record the estimate for a minimizing frame on a finite set of
 $N$ points. Write $W_{ij\alpha}$ for its path transports, with reverse
-paths paired among the labels $\alpha$, and put
+paths paired among the labels $\alpha$. In what follows $\operatorname{av}$
+denotes the uniform average over its subscripts: each point index ranges
+over the $N$ points and $\alpha$ over the path labels. Put
 $b_i=\operatorname{av}_{j,\alpha}\chi(W_{ij\alpha})$ and
 $b=\operatorname{av}_i b_i$. If $h$ minimizes the averaged
 squared-distance energy, then some $c\in G$ satisfies
