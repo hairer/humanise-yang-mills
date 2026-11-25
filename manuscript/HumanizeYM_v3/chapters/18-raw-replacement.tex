@@ -2,13 +2,13 @@
 \begin{proof}[Proof of Proposition~\ref{ch18:replacement-input}]
 \label{ch18:raw-replacement}
 The lattice estimate in Proposition~\ref{ch18:lattice-replacement}
-was proved before phase decomposition. We use its uniformity in
-replica number to obtain the algebra-valued statement for the
+was proved before phase decomposition. We use the independence of its constants from the
+number of reflected copies to obtain the algebra-valued statement for the
 reconstructions $H_D$ fixed above.
 
 Let $F$ be an interior lattice difference with chessboard seminorm
 at most $B$, and let its exterior factors have interior seminorms
-at most $B_1,\ldots,B_q$. Put copies of the complete difference
+at most $B_1,\ldots,B_q$. Put copies of the full difference
 and exterior factors in separated cells before taking limits.
 The repeated-word identity and chessboard inequality give, for its
 compressed limit $Z$ and each integer $n\ge1$,
@@ -16,9 +16,9 @@ compressed limit $Z$ and each integer $n\ge1$,
  \int_\Xi|\xi(Z)|^{2n}\,d\nu(\xi)
                    \le(B\prod_{l=1}^qB_l)^{2n}.
 \]
-The constants on the right precede $n$; only the cutoff and large
-translation thresholds depend on each fixed number of copies.
-This uses the complete signed density, with every term involving at least two insertions,
+The constants on the right precede $n$; only the lower bounds on the cutoff and on the
+translations depend on each fixed number of copies.
+This uses the full signed density, with every term of source degree at least two,
 from the proof of \eqref{ch18:lattice-estimate}.
 Equation~\eqref{ch15:moment-norm} then gives
 $\|Z\|\le B\prod_lB_l$. Positivity here belongs to the limiting
@@ -30,11 +30,11 @@ of Proposition~\ref{ch18:mixed-bound}. On grid configurations its
 replacement error has norm with exponent
 $Z_0-(t+1/16)(\theta-\theta_-)$, where
 $Z_0=W\theta_++4n_{\rm cl}(\theta_+-\theta)$.
-Fixed exterior factors cost a bounded factor. The graded quotient
+Fixed exterior factors contribute a bounded factor. The graded quotient
 bound gives exponent $Z_0-i\theta$ for a degree-$i$ component of
 $A_t$; all the finitely many fields used in its reconstruction
-have uniformly bounded compressed exterior words. Testing the
-same error against the fixed probes gives the probe coordinate
+have uniformly bounded compressed exterior words. Pairing the
+same error with the fixed probes gives the probe coordinate
 errors. With $t$ chosen as in that proof, the omitted degrees
 and the low-coordinate errors therefore give
 \[
@@ -45,12 +45,12 @@ There is no spectator-dependent choice of $H_D$: the only
 geometry-dependent auxiliary field has disappeared from this
 inequality.
 
-The derivative descent of Proposition~\ref{ch18:mixed-bound}
+The downward induction over derivatives of Proposition~\ref{ch18:mixed-bound}
 works in this norm. Equivalently, apply it to every character,
 using the same sharp chessboard seminorm bounds, and take their supremum.
-The crude and grid constants are uniform in the character.
-A positional derivative changes its input degree by one; a finite
-descending induction removes the grid restriction, also for any
+The constants of the crude estimate and of the estimate on the grid are uniform in the character.
+A derivative in the positions changes its input degree by one; a finite
+downward induction removes the grid restriction, also for any
 fixed list of differentiated fields. Letting the two resolution
 heights tend to one yields
 \[
@@ -67,7 +67,7 @@ $r$ so all these probes remain separated from the cluster.
 Finally apply the vacuum state to $(Z_D^*Z_D)^n$. Its norm is
 at most $\|Z_D\|^{2n}$, giving
 \eqref{ch18:replacement-moments} with the same $C$ and the same
-small-$r$ threshold for every $n$. Thus the order of quantifiers
+upper bound on $r$ for every $n$. Thus the order of quantifiers
 is obtained from the norm estimate, rather than from an
 uncontrolled sequence of separate moment constants.
 \end{proof}
