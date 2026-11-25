@@ -242,34 +242,58 @@ Fix the block penalty $b>0$. For $\gamma\ge0$, let
 \]
 This is a probability density on $G$ with respect to Haar measure.
 
+For a fixed fine field $U$ and choice $\alpha$, the block average
+$Q_e=Q_e^{\rm pred}(U,\alpha)$ represents transport across the coarse
+edge $e$. We impose agreement of $V_e$ with $Q_e$ by a soft constraint.
+By unitarity and \eqref{ch01:chord}, its energy is
+\[
+ b\beta w(V_eQ_e^{-1})=\frac{b\beta}{2n_G}\|V_e-Q_e\|_{\mathrm F}^2.
+\]
+This penalizes the discrepancy in a gauge-invariant way, since $V_e$
+and $Q_e$ transform by the same matrices at their endpoints. At large
+$b\beta$ the conditional law thus concentrates near the block average.
+Given $U$ and $\alpha$, we sample the coarse links independently with
+these normalized densities. Averaging their product over $\alpha$ gives
+the conditional density of $V$ given $U$; integrating against the fine
+density gives its coarse marginal.
+
 \begin{definition}[Exact block map]
 \label{ch04:block-map}
-For $\beta\ge0$, define the kernel and its action on fine densities by
+The superscript $(L)$ denotes the block ratio: on a coarse torus
+$\Lambda_s$ the fine torus is $\Lambda_{Ls}$. The period $s$, smoothing
+order $j$ and penalty $b$ are understood. For $\beta\ge0$, define the
+kernel and its action on fine densities by
 \begin{align}
- k^{(m)}_\beta(U,V)
+ k^{(L)}_\beta(U,V)
    &=\sum_\alpha\lambda(U,\alpha)
         \prod_{e\text{ coarse}}
            q_{b\beta}\bigl(V_eQ_e^{\rm pred}(U,\alpha)^{-1}\bigr),
  \label{ch04:kernel}\\
- (\mathcal B^{(m)}_\beta f)(V)
-   &=\int k^{(m)}_\beta(U,V)f(U)\,dU,
+ (\mathcal B^{(L)}_\beta f)(V)
+   &=\int k^{(L)}_\beta(U,V)f(U)\,dU,
  \label{ch04:block-operator}
 \end{align}
 where $dU$ and $dV$ denote product probability Haar measure on their
 respective link spaces.
 \end{definition}
 
-For fixed $\beta$ this is a bounded Borel kernel. The tests are Borel,
-unique minimizers depend continuously on their data within the uniqueness
-domain, and all other choices involve finitely many continuous path
-products and Borel eligibility tests. At a branch boundary continuity is
-not asserted.
+For fixed $\beta$ this is a bounded Borel kernel. Indeed, the loop
+inequalities of Section~\ref{ch04:frames} and the axial eligibility
+inequality \eqref{ch04:axial-eligible} compare continuous functions of
+the fine links. Once the frames are chosen, the condition for using the
+minimizing block average on edge $e$ is
+$\min_{u\in G}\mathcal P_e(u)<\varepsilon_{\rm pred}$. This minimum is
+continuous in the connector matrices $(Y_{e,z})_z$ by compactness of $G$.
+On each minimizing branch the unique minimizer depends continuously on
+its data. Thus the choices and their probabilities in the finite sum
+\eqref{ch04:kernel} are Borel functions of $U$. Boundedness follows
+from boundedness of $q_{b\beta}$ and \eqref{ch04:tag-law}.
 
 \begin{proposition}[Normalization and covariance]
 \label{ch04:kernel-properties}
 The kernel is nonnegative and normalized in the coarse variable:
 \begin{equation}
- \int k^{(m)}_\beta(U,V)\,dV=1.
+ \int k^{(L)}_\beta(U,V)\,dV=1.
  \label{ch04:kernel-normalization}
 \end{equation}
 It is covariant under fine gauge transformations and the induced coarse
@@ -277,7 +301,7 @@ gauge transformations $y\mapsto g(Ly)$. It is also covariant under signed
 coordinate permutations and corresponding fine/coarse translations.
 For every integrable fine density $f$,
 \begin{equation}
- \int\mathcal B^{(m)}_\beta f\,dV=\int f\,dU.
+ \int\mathcal B^{(L)}_\beta f\,dV=\int f\,dU.
  \label{ch04:exact-integral}
 \end{equation}
 \end{proposition}
@@ -294,14 +318,10 @@ on the minimizing branches, and reindexing of the finite alternatives,
 then give the stated covariance of the kernel.
 \end{proof}
 
-Probabilistically, if $U$ has density $f/\int f$ with $f\ge0$ and $0<\int f<\infty$,
-one draws $\alpha$ with conditional probability $\lambda(U,\alpha)$.
-Given $U$ and $\alpha$, one draws independent $R_e$ of density $q_{b\beta}$
-and sets $V_e=R_eQ_e^{\rm pred}$. The resulting coarse density is
-$\mathcal B^{(m)}_\beta f/\int f$. This description includes all branches.
-Exactness means preservation of this integral and law; it does not mean
-that the coarse density remains of Wilson form.
-
+In particular, if $U$ has normalized density $f/\int f$, the coarse
+field has density $\mathcal B^{(L)}_\beta f/\int f$. The equality of
+integrals \eqref{ch04:exact-integral} holds even when the coarse action
+has terms beyond the Wilson plaquette action.
 
 \section{A first-power bound for the actual block average}
 \label{ch04:predictor-geometry}
@@ -691,7 +711,7 @@ integral; it differentiates no moving large-field boundary.
 
 The analytic task remaining is now precise. Starting with a tuple at the
 fine level, one must construct a coarse tuple whose density is exactly
-$\mathcal B^{(m)}_\beta\operatorname{dens}(\rho)$, whose coupling has the
+$\mathcal B^{(L_m)}_\beta\operatorname{dens}(\rho)$, whose coupling has the
 claimed adjustment, and whose activities obey the coarse conditions.
 A class defined as the outputs reachable from a Wilson starting density
 can only be introduced after that construction. It must not be confused
