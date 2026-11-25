@@ -65,11 +65,11 @@ Dominated differentiation, using \eqref{ch17:kernel-score}, gives the
        =\int\mathcal D_Y k(U,V)f(U)\,dU.
 \end{equation}
 Consequently its integral against every spectator independent of the
-varied coarse links is zero. This is an identity for the full insertion,
+varied coarse links is zero. This is an identity for the full differentiated kernel,
 including its nonpolynomial remainder, not an assertion that a finite
 Taylor polynomial alone has zero exterior moments, that is, zero integral against every spectator independent of the varied links.
 
-The right hand side is an admissible conditional integral with insertions.
+The right hand side is an admissible conditional integral with the differentiated kernel inserted.
 Its extra factor is a finite sum of smooth local kernel scores times
 $Y$ or its derivative. On a protected dependence set the incoming
 measurable product remains fixed under the change of variables in
@@ -81,10 +81,10 @@ Rooting the connected expansion at this extra factor gives the same
 expansion with insertions as in Chapter~\ref{ch11:insertions}. In particular
 large-field terms retain their original prescribed large-field sets.
 This argument does not differentiate the event indicators introduced when that
-integral with insertions is subsequently decomposed.
+conditional integral is subsequently decomposed.
 
 The small-field contribution needs a sharper identity than the absolute
-score bound. Fix the dependence set of a rooted connected component and use one
+score bound. Fix the full dependence set of a rooted connected component and use one
 additional coarse derivative beyond those prescribed for the extracted
 coefficient. On its smaller small-field chart, make exactly the conditional
 Gaussian change of variables used to construct the small-field expansion.
@@ -117,18 +117,18 @@ absolute score bound.
 
 This argument uses the full rooted component, not just the score
 stencil. In the rooted connected expansion, small-field factors in
-components disjoint from the component of the insertion cancel
-between the differentiated numerator and its normalization. Every term with a violation of a regularity condition anywhere in the connected
-component of the insertion, including a distant violation joined to the score, is kept in the large-field
-sum with insertions. The smooth cutoffs used above are constant on the smaller small-field
+components disjoint from the component of the differentiated kernel cancel
+between the differentiated numerator and its normalization. Every term with a failure anywhere in the connected
+component of the differentiated kernel, including a distant failure joined to the score, is kept in the complementary
+sum. The smooth cutoffs used above are constant on the smaller small-field
 chart; their derivatives are supported where at least one enlarged
 chart condition fails. Attach this condition to its dependence set. The same
 Gaussian or energy estimate for the nested cutoffs bounds this new
-violation, while all incoming prescribed large-field sets are retained.
-The absolute score bound is used only for these large-field terms,
-where the exponentially small probability of the violation absorbs its polynomial
+failure, while all incoming prescribed large-field sets are retained.
+The absolute score bound is used only for these complementary terms,
+where the exponentially small failure probability absorbs its polynomial
 $\beta$ factor. No derivative of a hard indicator is taken. This proves
-the small-field cancellation and the large-field estimate
+the small-field cancellation and the complementary large-field estimate
 separately, which is essential to preserve the regular power gain.
 
 \subsection{The finite degree-five coefficient}
@@ -152,7 +152,7 @@ its entire remainder, and use the current identity through order four.
 Let $j_k$ be the radial coefficient of the current divergence, in the
 same threshold coordinates. The classical term $-\beta DS[Y]$ is
 $-\beta j_k$ up to the contracting current defect. Thus the coefficient
-of the full insertion with zero exterior moments is $\Sigma_k-\beta j_k$;
+of the full differentiated kernel, with zero exterior moments, is $\Sigma_k-\beta j_k$;
 $\Sigma_k$ alone is not asserted to have zero exterior moments. Its
 remaining degree-five scalar-vector coefficient can be written
 \begin{equation}\label{ch17:finite-sigma}
@@ -318,7 +318,7 @@ bound. This proves the proposition for the full local sum.
 \end{proof}
 
 The differentiated-kernel
-bound \eqref{ch17:kernel-score} applies to the large-field part.
+bound \eqref{ch17:kernel-score} applies to the complementary part.
 The common large-field estimate retains the square-root bound
 $\exp(-H^{1/5}/2)$. Combining Proposition~\ref{ch17:spatial-moments} with the high-field
 remainder, the nonwrapping contributions are bounded by
@@ -388,7 +388,7 @@ Consequently, in the notation of the stability argument,
 With $e_i=H_i^{1/5}$ this gives $e_i\rho(v_i^{\rm eq})\to0$.
 
 There is also a stronger, independent bound on the image of this
-vector. The insertion is carried as a differentiated kernel, without
+vector. The differentiated kernel is carried as a density-valued factor, without
 dividing it by $F$ or claiming that the resulting quotient is local.
 More directly, for every incoming coefficient $f_A(U)$ with insertions,
 including all the original fine spectator factors,
@@ -409,7 +409,7 @@ It is zero when the spectator does not read the varied links. For an
 exponentially local spectator that need not have finite range, first truncate its dependence set
 and use this identity on disjoint terms. Retain the remaining terms
 in the same joint expansion with insertions. A connected term reaching from
-the insertion to a spectator at distance $R$ has covering number at least
+the differentiated kernel to a spectator at distance $R$ has covering number at least
 $R/(2B_k+1)-1$. Retaining two units of the support exponent bounds these terms by
 $C\exp[-2R/(2B_k+1)]$, with their normalized large-field majorants as well.
 For spectator configurations separated by a fixed positive multiple of $a_n$, their
@@ -438,9 +438,9 @@ in \eqref{ch11:replicated-bound} contributes at most
 using $L_*\le\log\widehat\beta_n$, $B_n=O((\log\widehat\beta_n)^2)$
 and the per-site normalization exponent $q_n=O((\log\widehat\beta_n)^2)$.
 The inverse source weights in \eqref{ch11:replicated-bound} have logarithm $O(\log\widehat\beta_n)$.
-The normalization of the insertion in continuum units cancels the factor $a_n^{-5}$.
+The dimensionful normalization of the insertion cancels the factor $a_n^{-5}$.
 Thus the normalized residual of \eqref{ch11:descent-error} is at most $e^{-T_n/100}$.
-This argument uses the full insertion with zero exterior moments; its Taylor remainder
+This argument uses the full differentiated kernel with zero exterior moments; its Taylor remainder
 is carried by the graph of the backward comparison, not discarded.
 
 In the choice of radii along the diagonal subsequence require
@@ -456,7 +456,7 @@ This proves the quantitative kernel hypothesis in the stability lemma.
 Its bounded right inverses give bounded $\lambda_i$, with
 $e_i\|\lambda_i s_i-\rho\|\to0$.
 
-The same identity for the insertion gives
+The same identity for the differentiated kernel gives
 $\beta_iK_iB_i^L-s_i\Sigma_{k_i}\to0$.
 For $Z=X,D$, the ordinary backward comparison gives
 $K_iB_i^Z-s_i\operatorname{div}_{\rm raw}Z=o(b_i^{-p})$ for every
