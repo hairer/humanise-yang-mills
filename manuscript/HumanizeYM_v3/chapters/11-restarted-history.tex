@@ -22,7 +22,7 @@ and block-kernel branches are the original ones. In particular,
 ``retaining the clip'' means retaining its coefficients and formula,
 not asserting equality of two different threshold functions.
 
-\paragraph{The recording scale.}
+\paragraph{Choice of reference parameter for the cutoff.}
 There is a unique sufficiently large $r(x)$ satisfying
 \[
  r(x)^{-1/2}H(r(x))=\vartheta(x).
@@ -30,8 +30,9 @@ There is a unique sufficiently large $r(x)$ satisfying
 Indeed the function on the left is eventually strictly decreasing;
 its values at $x$ and $x^2$ bracket the right side. Thus
 $x\le r(x)\le x^2$, and taking logarithms gives
-$r(x)=x^{1+o(1)}$. This is a recording parameter for the local
-calculation, not the actual inverse coupling. In particular
+$r(x)=x^{1+o(1)}$. With this choice the original threshold formula evaluated at $r(x)$
+gives the new threshold at $x$. The inverse coupling in the block
+integral still lies in the band determined by $x$. In particular
 \[
  b(x)\le b(r(x))\le4b(x),\qquad
  25b(r(x))+30\le B_i\le b(r(x))^2
@@ -41,8 +42,8 @@ $x_{i+1}=x_i+\kappa_G\log L_i$ implies
 $B_{i+1}\le2B_i$ and
 $\vartheta(x_{i+1})/\vartheta(x_i)\to1$.
 The local chart, clipped source, Gaussian precision and tail events
-are those of Chapter~\ref{ch06:large-fields} with this recording
-scale and these actual thresholds. Its elementary scale inequalities
+are those of Chapter~\ref{ch06:large-fields} with reference parameter $r(x_i)$
+and threshold $\vartheta(x_i)$. Its elementary scale inequalities
 continue to hold: the radii are logarithmic powers and the thresholds
 are $x^{-1/2+o(1)}$. The actual inverse coupling band remains expressed in
 $x_i$, not in $r(x_i)$. In particular one must not invoke a lower
@@ -73,7 +74,7 @@ $\vartheta(x_k)$, the original path coefficients, clip coefficients,
 inverse coupling and scalar, regular bound no larger than its original
 bound, and large-field site bound
 \[
- G(x_k)=\exp\{-a_*h(x_k)^2\}.
+ G(x_k)=\exp\bigl(-a_*h(x_k)^2\bigr).
 \]
 Here $a_*>0$ is chosen sufficiently small at each fixed stage before
 its threshold for the starting scale. The construction retains the old large-field
@@ -124,9 +125,9 @@ and loop event indicator differences, and the regular event indicator difference
 Each term vanishes on a new-small-field full dependence region.
 At a fixed larger support exponent $a+2$ its site bound is
 \begin{equation}
- \epsilon_s\le C B^C\{
+ \epsilon_s\le C B^C\bigl(
  \beta C_{\rm path}^2e^{-\sigma B/4}
- +\Gamma_s t^2+\beta C_{\rm path}(t^3+t^4)+s^{-11/10}\}
+ +\Gamma_s t^2+\beta C_{\rm path}(t^3+t^4)+s^{-11/10}\bigr)
                   =s^{-1/2+o(1)}.
  \label{ch11:restart-endpoint-error}
 \end{equation}
@@ -260,7 +261,7 @@ additive factors are handled by the local multipliers just defined.
 
 We spell out the quantitative margins on this actual expansion.
 The primitive exponent decomposition in
-Section~\ref{ch06:primitive-bounds}, with recording parameter
+Section~\ref{ch06:primitive-bounds}, with reference parameter
 $y=r(x_i)$, gives an unselected local exponent of site size
 $t_y$ with $2t_y\le y^{-1/48}$ after enlargement of its threshold.
 Indeed the corresponding exterior row, determinant and Haar

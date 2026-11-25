@@ -53,7 +53,9 @@ where fields in lower degrees are included in $F_d$ when necessary.
 All these identities hold simultaneously at every finite degree.
 Here is the useful linear-algebra construction. Suppose the choices
 through $d$ have been made and let $R:F_d\to F_{d+1}$ be inclusion.
-The old probes give a map $B:F_{d+1}\to F_d$ with $BR=1$.
+The probes already chosen give the map
+$B:F_{d+1}\to F_d$, $B(A)=\sum_{|\alpha|\le d} b_\alpha(A)u_\alpha$.
+By \eqref{ch18:dual}, $BR$ is the identity on $F_d$.
 For any section $S_0$ of the quotient map
 $q:F_{d+1}\to F_{d+1}/RF_d$, replace it by
 $S_0-RBS_0$. The corrected section is killed by every old probe.
@@ -69,8 +71,7 @@ For a cluster word $w$, define the unsymmetrized field reconstruction
  H_d(w)=\sum_{|\alpha|\le d}b_\alpha(w)u_\alpha,
 \]
 where $b_\alpha(w)$ means replacing the distinguished field in its
-probe correlations by the entire cluster. The mixed table is always
-used for this measurement. Thus the coefficients have no dependence
+probe correlations by the entire cluster. Each probe correlation is evaluated in the mixed hierarchy $S$. Thus the coefficients have no dependence
 on a phase or on spectators later placed outside the cluster.
 At a center $o$, apply this definition to $\tau_{-o}w$.
 For each finite collection of probes there is a positive clearance:
@@ -82,7 +83,7 @@ Write $R_d(K)$ for the orthogonal action on $F_d$, with normalized
 Haar measure on $O(4)$. Symmetrize the reconstruction by
 \[
  A_dw=\int_{O(4)}R_d(K)H_d(K^{-1}w)\,dK,
- \qquad B_dw=\tfrac12\{A_dw+\overline{A_d\bar w}\}.
+ \qquad B_dw=\tfrac12\bigl(A_dw+\overline{A_d\bar w}\bigr).
 \]
 Both maps fix every single field of degree at most $d$ inserted at zero.
 They are smooth on the clear configuration region, since finitely many
@@ -91,7 +92,8 @@ They preserve reality and intertwine rotations. Translation covariance
 is implemented by translating the center as above.
 
 Averaging must be followed by a compatible removal of lower degrees.
-Let $I_qA=A(0)$, put $L_{i,q}=B_iI_q$, and define
+Let $I_q$ send $A\in F_q$ to the single insertion $A(0)$ and put
+$L_{i,q}=B_iI_q:F_q\to F_i$. Define on $F_j$
 \begin{equation}
  Q_0=1,\qquad
  Q_j=1-\sum_{i<j}\iota_{i,j}Q_iL_{i,j},\qquad
@@ -147,13 +149,14 @@ a requested error exponent, but not on positions, phases or $r$.
 \label{ch18:replacement-input}
 For every finite degree $D$ and every $\epsilon>0$, on the geometry
 just specified and for all sufficiently small $r$, the unsymmetrized reconstruction
-coefficients obey
+coefficients $b_\alpha(w;o)=b_\alpha(\tau_{-o}w)$, $|\alpha|\le D$, obey
 \[
  |b_\alpha(w;o)|\le C r^{|\alpha|-w_0-\epsilon}.
 \]
-For each spectator word $v$, set
+Let $A=H_D(\tau_{-o}w)\in F_D$ be the reconstructed field. For
+each spectator word $v$, define the difference of compressed operators
 \[
- Z_D=M(wv)-M((H_D(\tau_{-o}w))(o)\,v).
+ Z_D=M(wv)-M(A(o)v).
 \]
 The actual lattice marked replacement, with its signed residual and
 all original terms involving at least two insertions retained, gives the bound uniform in the number of reflected copies
@@ -218,7 +221,7 @@ is uniform by compactness of $O(4)$. Hence
  |B_j(\tau_{-o}w)-L_{j,H}h|
                          \le C r^{H+1-w_0-\epsilon}.
 \]
-This identity uses covariance of the mixed correlations to rotate the
+This estimate uses covariance of the mixed correlations to rotate the
 probes, as well as the cluster; rotating labels alone would not suffice.
 
 Apply $Q_j$. In the expansion of $h$, every field of degree below $j$
@@ -361,7 +364,7 @@ single radial approach is assumed.
 
 On the transition region $s\le\rho\le2s$, all separations are bounded
 below by $s$, and the finite Taylor polynomials are bounded by the same
-seminorm of the test function. Outside this region the integrand uses $f$ itself. If $f$ is supported
+seminorm of the test function. For $\rho\ge 2s$ the integrand uses $f$ itself. If $f$ is supported
 in a compact $K$, a nonzero subtracted jet requires $\pi_hx\in K$ and
 $|z_h|\le C_ns$. Thus the integrand is supported in one fixed compact
 enlargement $K'$ of $K$. We obtain

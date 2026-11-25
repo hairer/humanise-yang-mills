@@ -57,11 +57,11 @@ additional assumptions in the following assembly statement.
 \label{ch19:conditional}
 The chosen Wilson family has the following
 properties. For every prescribed increasing volume sequence there is
-one refinement with a hierarchy $S$ of smooth separated Euclidean
+one subsequence along which the cutoff limits converge to a hierarchy $S$ of smooth separated Euclidean
 correlations and compatible finite-dimensional field spaces $F_d$.
 Their dimensions and orthogonal representations agree with those of
-the invariant free Maxwell comparison spaces. The fields have units,
-injective inclusions and commuting positional derivatives.
+the invariant free Maxwell comparison spaces. The filtration $(F_d)$ contains the unit field. Its inclusion maps are
+injective, and its four coordinate derivatives commute.
 
 There is a compact metrizable phase space $\Xi$, a full-support
 probability measure $\nu$, and phase hierarchies $S^\xi$ with
@@ -85,10 +85,11 @@ finite-order distributions across collision diagonals, compatibly
 with the field inclusions, translations, rotations and permutations.
 \end{theorem}
 \begin{proof}
-The dependency chain uses the estimates established above. Chapter~\ref{ch12:ultraviolet} takes the full cutoff
-limit at each fixed period. The common diagonal extraction and two
-rank bounds in Chapter~\ref{ch13:continuum} give the fields and their
-differential calculus. That chapter also proves the repeated-word bound,
+Chapter~\ref{ch12:ultraviolet} takes the full cutoff
+limit at each fixed period. The diagonal subsequence in the volume index works for every fixed
+number of insertions and every scaling dimension. The two rank bounds
+in Chapter~\ref{ch13:continuum} identify the dimensions of the resulting
+field spaces, and its derivative maps give their differential calculus. That chapter also proves the repeated-word bound,
 so bounded slab insertions in Chapter~\ref{ch14:ward} do not depend on
 later reconstruction or operator products.
 
@@ -114,7 +115,10 @@ family and the already selected correlation limits.
 
 \begin{corollary}[The trace law]
 \label{ch19:conditional-trace}
-In the retained phase $\xi_*$,
+In the phase $\xi_*$ of Section~\ref{ch15:selection}, let
+$\Theta=\sum_aT_{aa}-S^{\xi_*}(\sum_aT_{aa})1$ be the centered trace and
+$G_\Theta(r)=S_2^{\xi_*}(\Theta,\Theta;re_4,0)$ its two-point function.
+Then
 \[
  \lim_{r\downarrow0}r^8\log^2(1/r)G_\Theta(r)
                     =\frac{3\dim_\RR\gLie}{\pi^4}.

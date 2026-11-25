@@ -30,6 +30,10 @@ $d_0>0$. We shall use the following two distinct facts:
 Both follow directly by taking logarithms of
 $M=\exp((\log\log z)^2)$.
 
+Here and below $z^{o(1)}$ in an upper bound means that for every
+$\epsilon>0$ the quantity is $O_\epsilon(z^\epsilon)$ as $z\to\infty$
+at fixed stage and block ratio.
+
 Let $x$ be the coarse logarithmic coordinates, with their supremum
 norm, and $y\in\RR^n$ the free fine coordinates after tree gauge
 fixing. The actual classical action including the block penalty is
@@ -44,8 +48,9 @@ volume at the fixed block ratio. These are the stationary and path
 estimates of Chapters~\ref{ch05:gaussian}--\ref{ch07:matching}; no
 different flat covariance is substituted here.
 
-Set $s(x)=\tfrac12\log\det A(x)$ and define the smooth divided
-difference
+For a fine-coordinate displacement $g\xi$, with $\xi\in\RR^n$, set
+$s(x)=\tfrac12\log\det A(x)$ and define the second-order Taylor remainder
+divided by $g^2$ through its integral formula
 \[
  V(g,x,\xi)=\int_0^1(1-t)
  D_y^2\phi(x,\rho(x)+tg\xi)[\xi,\xi]\,dt.
@@ -85,7 +90,7 @@ order $r+2$. These are finite-stage requirements.
 If $A(x)^{-1}\le cI$ and $n$ is at most a fixed polynomial in
 $\log z$, a coordinate Gaussian tail bound gives
 \[
- 1-R(0,x)\le 2n\exp\{-D^2/(2cn)\}.
+ 1-R(0,x)\le 2n\exp\bigl(-D^2/(2cn)\bigr).
 \]
 This is smaller than every fixed inverse power of $z$.
 The same conclusion for its fixed derivatives follows either by
@@ -283,7 +288,7 @@ Taylor's theorem, \eqref{ch09:even-gain}, and the two matching
 cancellations show that the centered expression in
 \eqref{ch09:pure-decomposition} has this bound at most
 \begin{equation}
- C_r(z)\{\beta'^{-1}h+\beta'h^5+h^3\}+z^{-K},
+ C_r(z)\bigl(\beta'^{-1}h+\beta'h^5+h^3\bigr)+z^{-K},
  \qquad C_r(z)=z^{o(1)},
  \label{ch09:pure-small-bound}
 \end{equation}

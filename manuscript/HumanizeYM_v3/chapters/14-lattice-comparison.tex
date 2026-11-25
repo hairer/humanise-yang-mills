@@ -3,7 +3,7 @@
 \label{ch14:lattice-comparison}
 
 Here are the scale choices behind \eqref{ch14:grid-input}. Fix the
-arity bound $n$, maximum degree $D$ and a compact configuration window
+upper bound $n$ on the number of insertions, maximum scaling dimension $D$ and a compact set of configurations
 $K$ with positive point separation. Enlarge the finite label list to
 include its signed coordinate images and conjugates. All constants and
 all three exponents below are chosen for this one finite request.
@@ -43,15 +43,17 @@ Their real, unit and signed symmetry identities are exact. No separate
 choice is made for different spectator words.
 
 For clarity, the finite-arity use of the corrected-source estimate is
-as follows. For a subset $J$ of the slots write $G_J$ for its free
-moment at the rescaled positions, and define
+as follows. Write $I_i$ for the lattice insertion in slot $i$. For a subset
+$J$ of the insertion indices, let $G_J$ be the free correlation of the
+corresponding fields at the rescaled positions. Define recursively
 \[
  R_\varnothing=1,\qquad
  R_I=\prod_{i\in I}I_i-
           \sum_{\varnothing\ne J\subseteq I}G_JR_{I\setminus J}.
 \]
-These are precisely the coefficients of the actual squarefree source
-polynomial divided by the free moment polynomial. The latter has
+Equivalently, introduce commuting variables $s_i$ with $s_i^2=0$ and write
+$s_J=\prod_{i\in J}s_i$. Then $R_I$ is the coefficient of $s_I$ in
+$\prod_i(1+s_i I_i)/(1+\sum_{J\ne\varnothing}G_Js_J)$. The denominator has
 constant coefficient one and hence an exact inverse in the finite
 squarefree algebra. For the limiting Gaussian variables every
 nonempty coefficient has expectation zero. The extraction of coefficients of source monomials,

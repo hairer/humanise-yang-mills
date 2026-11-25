@@ -85,8 +85,8 @@ remain valid on a space where no normalized massless Gaussian exists.
 \label{ch05:schur}
 
 Let $E_f,E_c$ be real finite-dimensional inner-product spaces, $Q:E_f\to
-E_c$ a linear block map, and $b>0$ the block penalty. Suppose initially
-that $K_f>0$ on $E_f$. Define
+E_c$ a linear block map, and $b>0$ the block penalty. Let $K_f$ be the fine kinetic operator on $E_f$ and suppose initially
+that it is positive definite. Define
 \begin{equation}
  A=K_f+bQ^*Q,\qquad
  W=A^{-1}bQ^*,\qquad
@@ -148,8 +148,8 @@ its block penalty is exactly the coarse quadratic action.
 \section{Averaging and the Fourier alias formula}
 \label{ch05:alias}
 
-To check the scaling factor in the covariance recursion, take
-$\Lambda_{Ls}$ as fine lattice and $\Lambda_s$ as coarse lattice, with
+To check the scaling factor in the covariance recursion, take the fine torus
+$\Lambda_{Ls}=(\ZZ/Ls\ZZ)^4$ and the coarse torus $\Lambda_s=(\ZZ/s\ZZ)^4$, with
 odd $L\ge3$. Let $w(z)$ be a finitely supported real averaging kernel
 of total mass one, periodized on the fine lattice, and use
 \[
@@ -163,9 +163,9 @@ Define the symbols
  \qquad r_L(t)=L^{-1}\sum_{r=0}^{L-1}e^{irt}.
 \]
 The sign in $\widehat w$ is chosen for this formula for $M$.
-The aliases of a coarse momentum $p$ are
-$\theta_z=(p+2\pi z)/L$, with one representative for each
-$z\in(\ZZ/L\ZZ)^4$.
+For fixed coarse momentum $p$, its \emph{aliases} are the fine momenta
+$\theta$ satisfying $L\theta=p$ modulo $2\pi$ in each coordinate.
+They are $\theta_z=(p+2\pi z)/L$, one for each $z\in(\ZZ/L\ZZ)^4$.
 
 Suppose an auxiliary, translation-invariant Gaussian one-form has
 diagonal covariance symbol $\operatorname{diag}(c_\mu(\theta))$ in
@@ -459,8 +459,8 @@ We describe the algebra at one real nonzero coarse momentum.
 This also specifies which transport must be estimated. The use
 of aliases and block-periodic Fourier coordinates is standard;
 see \cite{BalabanFeldmanKnoerrerTrubowitzBloch2016}.
-Write $\theta_l=(p+2\pi l)/L$,
-$\delta_r=Ld_r(\theta_l)$ for the rescaled fine exterior derivative,
+In the following sums, $l$ runs over $(\ZZ/L\ZZ)^4$, indexing the $L^4$ fine momenta
+$\theta_l=(p+2\pi l)/L$ above the fixed coarse momentum $p$. Write $\delta_r=Ld_r(\theta_l)$ for the rescaled fine exterior derivative,
 and $d_r=d_r(p)$ for the coarse one.
 Let
 \[
@@ -883,9 +883,12 @@ exponentially weighted row and column sums, after reducing the
 exponent once more if necessary. This is the usual weighted
 resolvent estimate behind exponentially local lattice propagators;
 compare \cite{Balaban1984Propagators}.
-It follows by conjugating with
-$e^{\eta d(a_i,a_{i_0})}$ and applying the resolvent identity to the
-resulting small perturbation. In particular
+For each fixed column $i_0$, conjugate $H$ by the diagonal matrix
+with entries $e^{\eta d(a_i,a_{i_0})}$. The weighted kernel bound makes
+the conjugated matrix a small operator-norm perturbation of $H$ for small
+$\eta$, so its inverse is bounded. The $i_0$th column then gives
+$|(H^{-1})_{ii_0}|\le C'e^{-\eta d(a_i,a_{i_0})}$. Summing with a
+smaller weight gives the claimed row and column bounds. In particular
 $\|H^{-1}\|_{\infty\to\infty}$ is bounded independently of volume.
 
 For analytic momentum-dependent matrices, an analogous perturbation
@@ -916,8 +919,9 @@ We now identify the nonlinear coordinates behind the Gaussian calculation.
 Fix $j,L$, a coarse period $s\ge100(j+8)$, and in each centered block
 $Ly+\mathbb B_{(L-1)/2}$ a spanning tree rooted at $Ly$. Trees contain
 only internal block edges. Denote by $\iota_F$ extension from free-edge
-coordinates to all fine edges, with value zero on tree edges. For coarse
-links $V$, their replica is
+coordinates to all fine edges, with value zero on tree edges. For a fine site $x$, let $\operatorname{parent}(x)$ be the coarse site
+whose block contains $x$. If $e_-,e_+$ are the initial and final sites
+of a fine edge $e$, the replica of a coarse link field $V$ is
 \[
  (\operatorname{rep}V)_e=
  \begin{cases}1,&\operatorname{parent}(e_-)=\operatorname{parent}(e_+),\\
@@ -949,9 +953,12 @@ below; no volume-dependent coordinate conversion occurs.
 
 The minimizing frame and block average of Chapter~\ref{ch04:blocking} are
 real analytic near the identity. For the frame this follows directly from
-its chart equation: its quadratic objective at zero is
-$\tfrac12\operatorname{av}_{r,r'}|h_r-h_{r'}|^2$, positive definite after
-$h_0=0$ is imposed. For the block average, its Hessian in the group variable
+the quadratic part of the frame energy in Lie algebra coordinates $h_r$
+at the flat field. With $R=(j+3)L$, this is
+\[
+ \frac{1}{2|\mathbb B_R|^2}\sum_{r,r'\in\mathbb B_R}|h_r-h_{r'}|^2 .
+\]
+It is positive definite on the subspace $h_0=0$. For the block average, its Hessian in the group variable
 is the identity. Complexify these finite-dimensional real analytic chart
 equations and apply the analytic implicit-function theorem
 \cite[Theorem 1.3.8]{LeblSCV}. The resulting critical points are the unique
@@ -972,17 +979,20 @@ This is equality of the local action functions before stationarity is
 imposed, not merely equality along a stationary graph. It concerns the
 uncut action; shrinking smooth cutoff plateaux are treated separately.
 
-Let $a$ be an infinitesimal fine field. Write $I_a(r\to r';o)$ for its
-signed sum along a coordinate path in the frame patch at $Ly$. The
-linearized minimizing-frame equation gives
+Let $a$ be an infinitesimal fine field. For sites $x,x'$ in the patch
+at $Ly$, write $I_a(x\to x';o)$ for the signed sum of $a$ along the
+coordinate path from $x$ to $x'$ in order $o$. Let $H_{y,r}(a)$ be the
+linearized frame at offset $r$. Linearizing the frame equation and
+averaging over the endpoint and coordinate order gives
 \begin{align}
- \tau_y(r)&=-\operatorname{av}_{r',o}I_a(Ly+r\to Ly+r';o),\notag\\
+ \tau_y(r)&=-\frac1{24|\mathbb B_R|}\sum_{r'\in\mathbb B_R}\sum_{o\in S_4}
+ I_a(Ly+r\to Ly+r';o),\notag\\
  H_{y,r}(a)&=\tau_y(r)-\tau_y(0),&
  R a(y)&=-\sum_rw_r^{\rm av}H_{y,r}(a).
  \label{ch05:frame-linearization}
 \end{align}
-Indeed its equation is $H_r-\operatorname{av}_{r'}H_{r'}
-=-\operatorname{av}_{r',o}I_a(r\to r';o)$, and $H_0=0$ fixes the additive
+Indeed $H_{y,r}(a)-|\mathbb B_R|^{-1}\sum_{r'\in\mathbb B_R}H_{y,r'}(a)
+=\tau_y(r)$, and the normalization $H_{y,0}(a)=0$ fixes the additive
 constant. Differentiating the actual connector and then its block average
 therefore yields
 \begin{equation}
@@ -1049,9 +1059,9 @@ coupling or inherited loop action, and set
                                    Q_e(U(v,\psi))^{-1}\bigr).
  \label{ch05:actual-action}
 \end{equation}
-Assume its actual quadratic Taylor coefficient is
-$K_f=d_{1,f}^*H_fd_{1,f}$ with $H_f\ge\varepsilon I>0$. This coefficient
-is read from the same path rows in $\mathcal A_f$: each quadratic path
+Assume that the Hessian of the fine action $\mathcal A_f$ at the flat
+field is $K_f=d_{1,f}^*H_fd_{1,f}$ with $H_f\ge\varepsilon I>0$.
+This condition can be checked directly on the terms of $\mathcal A_f$: each quadratic path
 square contributes the square of its linearized curvature row, and atoms
 of curvature degree at least three contribute nothing at second order.
 Identifying their sum with a chosen metric $H_f$ is an exact coefficient
@@ -1160,7 +1170,9 @@ We first state the quantitative implicit-function estimate needed
 for the nonlinear action. Let $x$ be the coarse coordinates and
 $y$ the free fine coordinates after gauge fixing. Both carry the
 supremum norm. Write $f(x,y)$ for the action including the block
-penalty, and $F(x,y)=D_yf(x,y)$.
+penalty. In counting coordinates let $F(x,y)$ be the vector of
+partial derivatives of $f$ with respect to the fine coordinates $y$.
+Thus stationarity for fixed $x$ is the equation $F(x,y)=0$.
 All norms below are operator norms induced by these supremum norms.
 
 \begin{proposition}[Uniform stationary graph]

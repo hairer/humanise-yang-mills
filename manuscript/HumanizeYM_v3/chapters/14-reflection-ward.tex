@@ -45,8 +45,10 @@ $T_tc=[\tau_tc]_\mu$, $t\ge0$. Translation invariance implies
 Every fixed orbit $T_tc$ is bounded: the two reflected word halves
 have a fixed positive separation and the separated-correlation
 bound of Chapter~\ref{ch13:continuum} is uniform as they move apart.
-If $M=\sup_{t\ge0}\|T_tc\|$, Cauchy--Schwarz in
-\eqref{ch14:heat-pairing} gives $M^2\le\|T_0c\|M$.
+Put $M=\sup_{t\ge0}\|T_tc\|$. With $s=t$ and $d=c$,
+\eqref{ch14:heat-pairing} gives
+$\|T_tc\|^2=\langle T_0c,T_{2t}c\rangle_\mu\le\|T_0c\|M$.
+Taking the supremum over $t$ gives $M^2\le\|T_0c\|M$.
 Thus $\|T_tc\|\le\|T_0c\|$, including when $c$ is null.
 The operators descend and extend to self-adjoint contractions
 $E_\mu(t)$. Their semigroup law holds on the dense word span and
@@ -73,8 +75,9 @@ $[0,\infty)\times\RR^3$:
  E_\mu(t)U_\mu(y)
      =\int e^{-tE+ip\cdot y}\,dP_\mu(E,p).
 \end{equation}
-This is a coordinate half-space spectrum. No cone bound
-$E\ge|p|$ has been proved or used.
+This representation uses only the positivity of $H_\mu$ and commutation with
+transverse translations. A bound relating $E$ to $|p|$ will require
+Lorentz covariance.
 For $\operatorname{Re}z>0$, the same spectral integral defines the
 holomorphic contraction $e^{-zH_\mu}$; its derivatives are bounded
 on every smaller right half-plane. This elementary heat analyticity
@@ -83,10 +86,11 @@ will be used before any rotation action is constructed.
 \section{Bounded insertions in a slab}
 \label{ch14:slabs}
 
-A word $w$ lies in a slab of width $h$ if $0<x_i^\mu<h$ for each
+For the fixed axis $\mu$, a word $w$ lies in the slab of width $h$ if $0<x_i^\mu<h$ for each
 of its points. Its reflected slab word is
 $w^\sharp=\tau_h\theta_\mu w$. Formally define
-$I_wv=w\tau_hv$. Reflection and translation give
+$I_wv=w\tau_hv$: translate the positive-time word $v$ by $he_\mu$
+and concatenate it with $w$. Reflection and translation give
 \begin{equation}\label{ch14:formal-adjoint}
  \langle[I_wc]_\mu,[d]_\mu\rangle
        =\langle[c]_\mu,[I_{w^\sharp}d]_\mu\rangle.
@@ -168,7 +172,7 @@ would have been insufficient.
 The comparison is a statement about the actual marked construction,
 stronger than equality of dimensions of field spaces. We record its
 quantitative form and then derive it from the finite-cutoff comparison. For fixed arity and degree bounds,
-let $M_k\to\infty$, $r_k\to0$ and $\epsilon_k\to0$. Suppose the
+let $H_k\to\infty$, $r_k\to0$ and $\epsilon_k\to0$. Suppose the
 same coefficient lifts in every slot give rescaled kernels $S_k$,
 with, on a compact separated window,
 \begin{equation}\label{ch14:grid-input}
@@ -176,17 +180,18 @@ with, on a compact separated window,
  |\nabla S_k|\le C_n V_k^n/\delta_k,
  \quad |S_k-S^0|\le\epsilon_k\quad\hbox{on its grid}.
 \end{equation}
-The gradient bound is required outside coordinate-equality strips
-of width $4\delta_k$; the grid has spacing $s_k$, and $S^0$ is the
-free correlation. The necessary small errors are
+Here $S^0$ is the free correlation, and the grid has spacing $s_k$.
+The gradient estimate holds outside strips of width $4\delta_k$ about
+the hyperplanes $x_i^a=x_j^a$ for $i\ne j$, $1\le a\le4$. The necessary small errors are
 \begin{equation}\label{ch14:grid-cost}
  A_k^n\delta_k\to0,\qquad V_k^n s_k/\delta_k\to0,
  \qquad s_k=o(\delta_k).
 \end{equation}
-For example the source construction uses
-$r_k=a_kM_k^{\alpha_0}$, $s_k=M_k^{-\alpha_0}$,
-$A_k=CM_k^{(\alpha_0-\alpha_1)D}$,
-$V_k=CM_k^{(\alpha_0-\alpha_2)D}$ and $\delta_k=M_k^c$,
+In the lattice construction below, $a_k$ is the spacing at level $k$,
+$D$ bounds the scaling dimensions of the insertions, and
+$r_k=a_kH_k^{\alpha_0}$, $s_k=H_k^{-\alpha_0}$,
+$A_k=CH_k^{(\alpha_0-\alpha_1)D}$,
+$V_k=CH_k^{(\alpha_0-\alpha_2)D}$ and $\delta_k=H_k^c$,
 with strictly negative exponents in \eqref{ch14:grid-cost}.
 The marked coefficient inverse, Gaussian comparison and displacement
 estimates must all concern these same lifts. The following construction verifies this compatibility.
@@ -496,9 +501,9 @@ arbitrarily small positive placements in any of the chosen time axes,
 so the integrated moment bound \eqref{ch14:polynomial-moments} holds
 in each. They will be relaxed for the line axis below.
 For even nonnegative fixed profiles $f_j\in C_c^\infty(\RR)$ write
-$f_{j,v}(p)=v^{-1}f_j(p/v)$; in particular the normalization preserves
-its integral, while its supremum costs $v^{-1}$. For a product of profiles
-$g=(g_k)_{k\in I}$ define
+$f_{j,v}(p)=v^{-1}f_j(p/v)$ for $v>0$. Its integral is independent
+of $v$, and $\|f_{j,v}\|_\infty=v^{-1}\|f_j\|_\infty$. For a
+tuple of profiles $g=(g_k)_{k\in I}$ define
 \[
  \operatorname{Resp}_i(g)
    =\int\mathcal Lg_i(E)\prod_{k\in I\setminus\{i\}}g_k(p_k)
@@ -796,8 +801,8 @@ The exchanged column has the same bounds. Every term tends to zero,
 whereas the total shell response is independent of $\lambda$.
 Consequently
 \begin{equation}\label{ch14:line-ward}
- \sum_i\left\{S(\ldots,Y(K)A_i,\ldots)
-       +(Kx_i)_bS(\ldots,p_bA_i,\ldots)\right\}=0
+ \sum_i\left(S(\ldots,Y(K)A_i,\ldots)
+       +(Kx_i)_bS(\ldots,p_bA_i,\ldots)\right)=0
 \end{equation}
 for every separated configuration on a coordinate line.
 This argument used coordinate positivity and conservation, not a
@@ -919,8 +924,8 @@ Reverse the path: the one-variable identity theorem on each segment
 propagates the identity and its derivative identities. Continuity
 then gives, on every separated configuration,
 \begin{equation}\label{ch14:global-ward}
- \sum_i\left\{S(\ldots,L(K)A_i,\ldots;x)
-                  +(Kx_i)_b\partial_{x_i^b}S(\boldsymbol A;x)\right\}=0.
+ \sum_i\left(S(\ldots,L(K)A_i,\ldots;x)
+                  +(Kx_i)_b\partial_{x_i^b}S(\boldsymbol A;x)\right)=0.
 \end{equation}
 This is why replacing analyticity by smoothness in the propagation
 argument would leave a gap.

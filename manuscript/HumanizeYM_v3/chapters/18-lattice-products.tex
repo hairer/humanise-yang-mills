@@ -23,9 +23,9 @@ first cross $\sqrt T$.
 
 \subsection{Signed local transport}
 
-A local degree-$t$ marked density consists of a column coefficient
-$x_l$ and a remainder with vanishing extracted coefficient of norm $r_l$. Its dimensionless
-normalization obeys
+Extracting the polynomial part of a local degree-$t$ marked density
+gives a coefficient vector $x_l$. Write $r_l$ for the norm of the
+remaining density, whose extracted polynomial part vanishes. The dimensionless density obeys
 $H_l=L_l^t\mathcal B_l H_{l+1}$; the physical source density has
 no additional factor. These conventions are those of
 Section~\ref{ch11:one-graph}. Keep the full prescribed large-field set and
@@ -40,8 +40,8 @@ the large-field term retains half the suppression of its original
 prescribed set of large-field sites. Subtracting its output column restores the vanishing extracted coefficient and
 costs at most $(1+2C_l)L_l^{-2/5}q$. The block floor makes this at
 most $L_l^{-3/8}q$. This recentering is an equality of marked
-densities, including the prescribed set of large-field sites terms, and uses linearity rather
-than division by an activity.
+densities, including terms with prescribed large-field sites. It follows by
+linearity, so it applies also when an activity vanishes.
 
 Add a free column parameter at the fine end and choose it so that
 the transported residual coefficient vanishes at $k_*$. Invertibility
@@ -154,7 +154,7 @@ All their logarithms, as well as $\log\Xi_l$, are $o(\tau_l)$.
 For a fixed exterior reflection cell at level $k$, let
 \[
  k_* =\min\{l\ge k:B_l^2\le a_k/a_l\},\qquad
- N_k=\exp\{(a_k/a_{k_*})^4q_{k_*}^{\rm site}+5\}.
+ N_k=\exp\bigl((a_k/a_{k_*})^4q_{k_*}^{\rm site}+5\bigr).
 \]
 The sparse-stopping argument of
 \eqref{ch13:sharp-schedule} gives $\tau_{k_*}/\tau_k\to1$
@@ -248,7 +248,7 @@ estimate gives $\omega=e^{-ZT+o(T)}$ at $m+1$, and therefore
 $E_m=e^{(Z-t\theta)T+o(T)}$.
 Set
 \[
- \varpi=\exp\{[(t+1/16)(\theta-\theta_-)-Z]T\}.
+ \varpi=\exp\bigl([(t+1/16)(\theta-\theta_-)-Z]T\bigr).
 \]
 In the first inequality of \eqref{ch18:residual-weights}, the
 left exponent is $-Z-15(\theta-\theta_-)/16$, strictly smaller

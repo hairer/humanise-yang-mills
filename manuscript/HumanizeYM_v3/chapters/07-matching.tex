@@ -44,8 +44,9 @@ $|\operatorname{Im}p_i^a|<\sigma$. There are only finitely many direction
 and Lie algebra components in the basis of Section~\ref{ch01:gauge} at fixed $n$. Reducing the strip gives an
 exponentially weighted sum of Fourier coefficients, with a constant
 depending on $n,\sigma,G$. Thus common strip bounds imply locality
-uniformly in the period. An order-$r$ zero means that all momentum Taylor
-coefficients of total degree below $r$ vanish.
+uniformly in the period. We say a symbol has a zero of order at least $r$
+if all its Taylor coefficients of total degree below $r$ vanish at zero
+external momenta.
 
 Let $q_a(p)=e^{ip_a}-1$ and $d_1(p)v=q(p)\wedge v$ be the lattice
 curl. Suppose an analytic gauge-invariant difference $E$ has vanishing
@@ -90,15 +91,17 @@ The elementary division is
 \[
  D_af(p)=\frac{f(p)-f(p|_{p_a=0})}{e^{ip_a}-1}.
 \]
-It is holomorphic at the apparent zeros. On a Fourier monomial the
-quotient is a geometric sum with $|z_a|$ terms and no frequency larger
+The expression $p|_{p_a=0}$ means that only the $a$th coordinate is set
+to zero. Periodicity removes the apparent singularities at $p_a\in2\pi\ZZ$.
+For the Fourier monomial $e^{iz\cdot p}$ the quotient is a finite
+geometric sum with $|z_a|$ terms and no frequency larger
 than $|z_a|$. A smaller strip absorbs this polynomial factor into the
 exponential Fourier decay. Hence $D_a$ is bounded from a fixed strip to
 a smaller one and loses at most one Taylor order.
 
 For a cycle $\delta f=0$ in one exterior factor, write
-$f=e_a\wedge u+v$, with $u,v$ containing no $e_a$. Then
-$\delta'v=-q_au$, and direct substitution gives
+$f=e_a\wedge u+v$, with $u,v$ containing no $e_a$. Write $\delta'$ for contraction with $q$ with its $a$th component omitted.
+Then $\delta'v=-q_au$, and direct substitution gives
 \[
  f=\delta(e_a\wedge D_av)+v|_{p_a=0}.
 \]
@@ -181,11 +184,13 @@ entry, define
 \begin{equation}\label{ch07:alpha}
  \alpha(f)=2\operatorname{Re}[t^2]f_{22}^{uu}(te_1),
 \end{equation}
-where $u$ is any unit vector in $\gLie$, inserted in both Lie algebra arguments. The kinetic symbol $b_H$ of
-$J$ has quadratic homogeneous term
+where $[t^2]$ extracts the coefficient of $t^2$ at $t=0$, and the
+superscript $uu$ means that the same unit vector $u\in\gLie$ is inserted in
+both arguments. The quadratic homogeneous term of the kinetic symbol $b_H$
+of $J$, evaluated on $v,w\in\gLie$, is
 \[
- (b_H)_{ab}^{uv,[2]}(p)=\tfrac12
- (|p|^2\delta_{ab}-p_ap_b)\delta_{uv},
+ (b_H)_{ab}^{vw,[2]}(p)=\tfrac12
+ (|p|^2\delta_{ab}-p_ap_b)\langle v,w\rangle_{\gLie},
 \]
 so $\alpha(b_H)=1$. The factor two in \eqref{ch07:alpha} is therefore
 fixed by the Taylor convention, not by a choice of coupling scheme.
@@ -292,8 +297,10 @@ for the lattice application. Recall that $\alpha$ includes the factor
 two converting a normalized quadratic Taylor coefficient into the
 coefficient of $\frac12\langle d_1v,d_1v\rangle$.
 
-For external momentum $te_1$, polarization $e_2$, and unit vector $u\in\gLie$,
-the leading ghost vertex is $-2ik_2\operatorname{ad}u$. The vector
+Let $k$ denote the loop momentum and $E_{ab}$ the matrix unit on
+spacetime indices. For external momentum $te_1$, polarization $e_2$,
+and unit vector $u\in\gLie$, the leading ghost vertex is
+$-2ik_2\operatorname{ad}u$. The vector
 vertex has four copies of this orbital term and the spin term
 $2it(E_{21}-E_{12})\operatorname{ad}u$. The orbital--spin trace is zero.
 With vector and ghost bubble weights $-1/4$ and $+1/2$, respectively,
@@ -334,8 +341,8 @@ insertion. These are actual derivatives of the same operator; the
 internal momentum of $b(p;k)$ changes from $k$ to $k+p$.
 Their contribution to the logarithmic Hessian is
 \begin{equation}\label{ch07:response-integrand}
- \tr\{a(k)^{-1}c(-p,p;k)
-       -a(k)^{-1}b(-p;k+p)a(k+p)^{-1}b(p;k)\}.
+ \tr\bigl(a(k)^{-1}c(-p,p;k)
+       -a(k)^{-1}b(-p;k+p)a(k+p)^{-1}b(p;k)\bigr).
 \end{equation}
 Take half the vector expression minus the ghost expression and apply
 the normalized external coefficient functional. This defines $I_\mu$.
@@ -481,8 +488,9 @@ kinetic Hessians leaves
  &\hspace{12mm}-P_f^*M_\mu P_f.\notag
 \end{align}
 The first two terms factor through spaces of dimensions at most
-$4\dim\gLie$ and $\dim\gLie$ per coarse momentum. Thus
-$\|VW\|_1\le r\|V\|\|W\|$ with $r$ independent of $L$.
+$4\dim\gLie$ and $\dim\gLie$ per coarse momentum. If $W$ maps into such an intermediate space of dimension $r$ and $V$
+maps out of it, $VW$ has at most $r$ nonzero singular values. Thus its
+trace norm satisfies $\|VW\|_1\le r\|V\|\|W\|$, uniformly in $L$.
 Derivatives preserve the intermediate spaces.
 
 For the regulator, at zero background the alias eigenvalues of $P_\mu$
@@ -707,7 +715,8 @@ $A_h=\sum_{l\ne0}h_l^2|u_l|^2$. The fine metric floor gives control
 of $A_h$, since $|q(k_l)|\ge c\mu$ for $l\ne0$.
 The principal coefficient of $M$ has least singular value $c_j\mu$:
 its connector sum is of order $L$ and the unitary block Fourier
-coefficient is $L^{-2}$. For its upper bound, each fixed-position averaged read has coefficients
+coefficient is $L^{-2}$. For the upper bound on $M$, fix one of the $L$
+steps of the connector. Averaging the link at that step over the offsets gives coefficients
 $O_j(L^{-4})$ on $O_j(L^4)$ sites, hence Euclidean row norm
 $O_j(L^{-2})$. Summing its $L$ connector positions and converting
 a weighted unit vector with $h_l\ge L^{-1}$ gives a fixed bound.
@@ -944,7 +953,10 @@ If $E(v)$ is the stationary value, implicit differentiation now gives
    &\quad-\sum_{\{ij\}\{kl\}}
           B(u_i,u_j)\mathscr C^{-1}B(u_k,u_l),\notag
 \end{align}
-where the sum is over the three partitions into two unordered pairs.
+where the sum is over the three partitions of $\{1,2,3,4\}$ into pairs.
+Each summand evaluates the covector $B(u_i,u_j)$ on the vector
+$\mathscr C^{-1}B(u_k,u_l)$, using the counting inner product to
+identify the latter covector with a vector before applying the inverse.
 These formulas follow by differentiating stationarity; the higher
 branch derivatives multiply its first derivative or
 \eqref{ch07:tangent-orthogonal}. On the diagonal the last sum is
@@ -1036,7 +1048,7 @@ internal leg to the two external legs by momentum conservation. In a
 coordinate this uses
 \[
  q(-p_1-p_2)=-e^{-i(p_1+p_2)}
-                \{q(p_1)+e^{ip_1}q(p_2)\}.
+                \bigl(q(p_1)+e^{ip_1}q(p_2)\bigr).
 \]
 It is a discrete integration by parts, with bounded translation factors;
 it leaves at most two differences on any external leg. The actual
@@ -1080,13 +1092,12 @@ Taylor degree here counts field factors. It is distinct from scaling dimension, 
 \label{ch07:inherited-proof}
 
 Let $\Lambda_{m+1}^{\rm loop}$ denote the incoming weighted loop sum.
-We prove the estimate
+The transport estimates of Chapter~\ref{ch05:gaussian} give
 \begin{equation}\label{ch07:inherited}
  \|\mathcal L_{m+1}\hbox{ pulled back}\|_{w'}
  \le C L^{-2}\Lambda_{m+1}^{\rm loop}.
 \end{equation}
-from the transports of Chapter~\ref{ch05:gaussian}.
-Group incoming quadratic curvature terms by their relative displacement
+To prove this bound, group incoming quadratic curvature terms by their relative displacement
 $z$. Their coefficient matrix $r(z)$ has exponential sum bounded by
 $\Lambda_{m+1}^{\rm loop}$ and zero zeroth and first moments. Thus the
 fine link symbol
@@ -1094,8 +1105,9 @@ fine link symbol
  S(p)=d_1(-p)^{\mathsf T}\widehat r(p)d_1(p)
 \]
 has order four, satisfies $S d_0=d_0^*S=0$, and has strip bound
-$C\Lambda_{m+1}^{\rm loop}$. Symmetrization and Lie algebra indices in the basis of Section~\ref{ch01:gauge} are
-understood; they cost fixed constants.
+$C\Lambda_{m+1}^{\rm loop}$. This bound holds componentwise in the
+Lie algebra and hence also for the symmetrized bilinear form, with a
+constant depending on $\dim\gLie$.
 
 An analytic periodic function with an order-four zero is a sum of
 products of four coordinate differences $q_a(p)$ times analytic periodic

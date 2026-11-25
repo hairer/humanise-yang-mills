@@ -45,12 +45,16 @@ placed at its center. The phase version of the slab bound gives
 where $u\ge0$ in the padding identity. Linearity and compatibility under
 $F_d\hookrightarrow F_{d+1}$ follow by testing against all exterior words.
 
-For $z_j=t_j+iy_j$ with $y_1<\cdots<y_n$, set
+Write $x_j\in\RR^3$ for the spatial position and $z_j=t_j+iy_j$ for
+the complex time of insertion $j$, with $y_1<\cdots<y_n$.
+For a time difference $z$ with $\operatorname{Im}z>2\varepsilon$ and
+a spatial displacement $x\in\RR^3$, set
 \[
  G_\varepsilon^\xi(z,x)
        =E_\xi(-iz-2\varepsilon)U_\xi(x).
 \]
-For $4\varepsilon<\min_j(y_{j+1}-y_j)$ define
+Choose $\varepsilon>0$ with $4\varepsilon<y_{j+1}-y_j$ for each $1\le j<n$
+and define
 \begin{equation}
  \mathsf F_n^\xi(\boldsymbol A;z,\boldsymbol x)
   =\left\langle\Omega_\xi^{\rm OS},
@@ -205,7 +209,8 @@ to $Y-c_Yp/|p|$.
 Choose a smooth cutoff $\chi$ equal to one on the distance-one neighborhood
 of $K_n$, supported in its distance-three neighborhood, with all derivatives
 bounded. Convolution of the distance-two neighborhood's indicator with
-a bump of radius $1/2$ is one such choice. Then
+a nonnegative smooth function of integral one supported in the ball
+of radius $1/2$ gives such a cutoff. Then
 \begin{equation}
  \mathcal W_n^\xi(\boldsymbol A;Z)
    =(2\pi)^{-4n}\widehat W_n^\xi
@@ -291,8 +296,9 @@ been assumed.
 A letter is a pair $(A,f)$ with $A\in F$ and $f\in\mathscr S(\RR^4)$.
 The star of a word reverses its order and replaces every letter by
 $(A^*,\overline f)$. Let $\mathcal P$ be their algebraic span, including
-the empty word $1$. The distributions $W_n^\xi$ define a functional
-$w_\xi$ on $\mathcal P$ by evaluation on product test functions.
+the empty word $1$. For a word $b=(A_1,f_1)\cdots(A_n,f_n)$ set
+$w_\xi(b)=W_n^\xi(A_1,\ldots,A_n)(f_1\otimes\cdots\otimes f_n)$,
+with $w_\xi(1)=1$, and extend linearly to $\mathcal P$.
 
 The essential positivity statement follows inside the phase reflection
 space. Give a word strictly increasing positive imaginary heights,
@@ -377,7 +383,7 @@ there, force this label to be zero in $F$.
 \label{ch16:vacuum-section}
 
 The phase measure has full support, and the zero-energy space is a line
-for almost every phase by \ref{ch15:ae-ground}. To remove the exceptional
+for almost every phase by \eqref{ch15:ae-ground}. To remove the exceptional
 set requires a bound uniform in $\xi$. We prove it from locality and the
 spectral cone. This argument controls energies near zero, not a positive
 mass gap.

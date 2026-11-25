@@ -42,13 +42,13 @@ be made smaller than any prescribed fixed fraction of its activity
 bounds by this enlargement, as follows from the estimates in
 Section~\ref{ch09:wilson}.
 
+Let $J(m+1)$ denote the stage of the step from scale $m+1$ to scale $m$.
 Let $C_j^{\rm drift}$ be a stage bound for the error in the downward inverse coupling step:
 \begin{equation}\label{ch10:step-drift}
  \left|\beta_{m+1}-\beta_m-\kappa_G\log L_m\right|
        \le C^{\rm drift}_{J(m+1)}.
 \end{equation}
-Here $J(m+1)$ is the stage used for this step and
-$\kappa_G=11C_{\gLie}/(24\pi^2)>0$. The normalization of the field-independent term is included in $C_j^{\rm drift}$.
+Here $\kappa_G=11C_{\gLie}/(24\pi^2)>0$. The normalization of the field-independent term is included in $C_j^{\rm drift}$.
 Chapter~\ref{ch07:matching} fixes this coefficient with the same
 normalization of the Lie algebra metric as the block integral.
 Its error constant is fixed before the block ratio. Choose
@@ -120,7 +120,8 @@ Section~\ref{ch11:equation-calibration}.
 
 We give an explicit construction, including the initial scales.
 Let $b_j,c_j$ be nonnegative integers specifying respectively the
-minimum starting scale and a requested length for a stage plateau.
+minimum starting scale and a requested number of consecutive scales at
+stage $j$. We call the interval on which the stage is constant a plateau.
 If $\jmath_j$ is the largest smoothing order used in stage $j$ or a
 permitted adjacent pair, include
 $b_j\log3\ge2\log(\jmath_j+7)$ for $j>1$. This ensures that
@@ -156,11 +157,13 @@ Choose a coarse target $\bar\beta>0$ and reference inverse couplings
 \end{equation}
 The first-stage threshold is satisfied by $\bar\beta$. Every subsequent
 stage threshold $d_j$ is satisfied by increasing its starting scale until
-$\widehat\beta_m\ge d_j$. We may simultaneously require
+$\widehat\beta_m\ge d_j$. Let $V_j(s)$ bound the required lattice side at stage $j$ when the
+logarithm of the inverse mesh is $s$. For a fixed polynomial $V_j$ we may
+simultaneously require
 \begin{equation}\label{ch10:late-entry}
  \log\mathscr L_j\le\tau_m/j,\qquad
  V_j(\tau_m)\le e^{\tau_m},
- \quad J(m+1)=j>1,
+ \quad J(m+1)=j>1.
 \end{equation}
 Also require, for the original support radius and its per-site
 normalization cost, $B_{m+1}^2\le2B_m^2$ and
@@ -176,8 +179,8 @@ $h_m=16[1+L_m(B_m+B_{m+1}+1)^2]^4$ and $\sigma_{m+1}$ is the
 prescribed support exponent. This is again a fixed polynomial in
 $\log(2+\tau_m)$ at each stage. It ensures that moving a finite
 number of source anchors has only a subpower cost.
-In \eqref{ch10:late-entry}, $V_j$ is any prescribed fixed polynomial bound for the required
-lattice side. The same argument works for a subexponential $V_j$.
+The bound on $V_j$ in \eqref{ch10:late-entry} also holds eventually
+for any fixed subexponential $V_j$.
 Choose $b_j$ so these inequalities hold whenever
 $\tau_m\ge b_j\log3$. They then hold at every step of stage $j$,
 not just at its first occurrence.
@@ -537,7 +540,7 @@ $|f|_R=\sum_{n\ge0}|f_n|R^n$. Its product estimate is the ordinary
 Cauchy-product inequality. A real local energy factor, including its
 coordinate prefactor, has the form
 \[
- J(t,U)=A(U)\ell(t)^n\exp\{(1-\ell(t)^2)\Gamma(U)\}.
+ J(t,U)=A(U)\ell(t)^n\exp\bigl((1-\ell(t)^2)\Gamma(U)\bigr).
 \]
 The energy $\Gamma$ can have either sign. It cannot be replaced by
 its absolute value before estimating the exponential.
@@ -635,8 +638,8 @@ at radius $v\ge q$ at most
 $(1+U_{k,q})(q/v)^{k+1}M_q$. Applying the pointwise bound to the
 first part and \eqref{ch10:broad-test} to the second yields
 \[
- M_q\{U_{k,q}\sup_t\mathcal N(H(t))
-             +(1+U_{k,q})(2q/R)^{k+1}y^{-1/4}\}.
+ M_q\bigl(U_{k,q}\sup_t\mathcal N(H(t))
+             +(1+U_{k,q})(2q/R)^{k+1}y^{-1/4}\bigr).
 \]
 Take $k=300$. The last power is $y^{-365/256}$, strictly smaller
 than $y^{-23/20}$. First choose $\varepsilon$ to absorb the fixed

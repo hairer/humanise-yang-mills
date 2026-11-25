@@ -20,10 +20,10 @@ insertions under one fixed transformation.
 \label{ch12:inputs}
 
 Fix finitely many labels $v_i\in V_{d_i}$ and distinct physical origins.
-At a fixed level $m$ above their reference levels, use one dictionary
-of local supports and large-field inventories for all cutoffs $N>m$.
-All small-field event indicators and eligibility criteria in this dictionary are
-fixed at level $m$. A large-field profile is the sum of activities
+At a fixed level $m$ above their reference levels, index the activities
+by the same local supports and prescribed sets of large-field sites for
+every cutoff $N>m$. The small-field indicators and eligibility criteria
+are also fixed at level $m$. A large-field profile is the sum of activities
 having one particular support and prescribed set of large-field sites; the original activity
 list can be infinite even though the number of such profiles on a
 fixed finite torus is finite.
@@ -46,7 +46,7 @@ comparisons enter this argument.
 Here is a useful way to obtain the required path convergence. For
 canonical path indices $a$ of length $\ell(a)$, suppose the coefficients
 $c_{N,a}$ converge individually and obey a common bound at width
-$w>v$. Then
+$w>v$. Writing $c_a=\lim_{N\to\infty}c_{N,a}$ and $C$ for the common bound, we have
 \[
  |c_{N,a}-c_a|e^{v\ell(a)}\le 2C e^{-(w-v)\ell(a)}.
 \]
@@ -86,9 +86,10 @@ by the finite-degree construction. Set
  d_m(G,H)=\sup_{x\ne0}
        \frac{\|(G-H)x\|_{\mathcal R_m}}{s_m\|x\|_1}.
 \]
-Thus any two admissible graphs have distance at most two. Write
-$I_G$ for the coefficient map of one marked step and $J_G$ for its
-unreparametrized remainder map. Its output graph is
+Thus any two admissible graphs have distance at most two. A marked step
+from $m+1$ to $m$ sends the input $(x,Gx)$ to $(I_Gx,J_Gx)$, where
+$I_Gx$ is the new polynomial coefficient and $J_Gx$ the new remainder.
+Using the new coefficient as independent variable gives the output graph
 $\Phi G=J_GI_G^{-1}$.
 
 \begin{lemma}[Graph contraction]
@@ -128,7 +129,7 @@ continuity in Section~\ref{ch11:one-graph}, together with
 Theorem~\ref{ch10:convergence}, give the fixed-input cutoff
 continuity as well.
 
-\begin{proposition}[Forgetting the terminal graph]
+\begin{proposition}[Independence of the terminal graph in the cutoff limit]
 \label{ch12:forgetting}
 For the selected trajectory, the graph contraction and fixed-input
 cutoff continuity just verified imply that the selected
@@ -240,11 +241,11 @@ It retains all inventories and insertion origins. Moreover, after transfer
 to the fixed base level, normalized coefficient extraction is bounded
 by
 \begin{equation}
- C_r=\frac{\exp\{|\Lambda_{r,p}|q_r+n(x_r+y_r+2)\}}
+ C_r=\frac{\exp\bigl(|\Lambda_{r,p}|q_r^{\rm site}+n(x_r+y_r+2)\bigr)}
                  {\prod_i w_i}.
  \label{ch12:root-bound}
 \end{equation}
-Here $q_r$ is the vacuum normalization bound; $w_i>0$ are fixed source weights; $x_r$ bounds the weighted regular sizes of the terms linear in the sources; and $y_r$
+Here $q_r^{\rm site}$ is the per-site normalization cost in \eqref{ch11:replicated-bound}; $w_i>0$ are fixed source weights; $x_r$ bounds the weighted regular sizes of the terms linear in the sources; and $y_r$
 bounds their weighted large-field profile sums. Such weights can be
 chosen uniformly on the cutoff tail: the fixed-level coefficients linear in the sources are bounded, so scale each weight down to its positive
 allowed size. Crucially all four quantities in \eqref{ch12:root-bound}
@@ -318,7 +319,8 @@ functions on $a_N\ZZ^D$. Write
 \[
  \Delta_{N,j}F_N(x)=a_N^{-1}(F_N(x+a_Ne_j)-F_N(x)).
 \]
-Assume every fixed iterated difference is bounded on each compact
+At a point $x\in U$, a rounded value means evaluation at a lattice point
+within one mesh step in each coordinate, chosen by a fixed rule. Assume every fixed iterated difference is bounded on each compact
 subset of $U$, eventually in $N$, and the rounded values are Cauchy
 on a dense subset. Then there is $F\in C^\infty(U)$ such that all
 rounded iterated differences converge locally uniformly to the
