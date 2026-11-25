@@ -7,9 +7,9 @@ with different long-distance behavior. We separate this mixture using
 operators on the zero-energy subspace of its reflection Hilbert space.
 A phase will be a character of a commutative operator algebra, not a
 set of gauge configurations. Its correlations are obtained by evaluating
-compressed whole words.
+compressions of concatenated words.
 
-The inputs are the common field spaces $F_d$ and separated correlation
+The hypotheses are the common field spaces $F_d$ and separated correlation
 family of Chapter~\ref{ch13:continuum}, bounded slab operators with
 their adjoint and concatenation laws, and orthogonal covariance of that
 same family. The latter is stronger than the original lattice
@@ -21,15 +21,15 @@ for an abstract state alone does not establish them.
 \section{The zero-energy subspace}
 \label{ch15:ground}
 
-Use time coordinate four. Write $\mathcal H^{\rm OS}$ for the mixed
+Use time coordinate four. Write $\mathcal H^{\rm OS}$ for the undecomposed
 reflection Hilbert space, $\Omega$ for its unit vacuum,
-$E(t)=e^{-tH}$ for the heat semigroup, and $U(y)$ for spatial
+$E(t)=e^{-tH}$ for the translation semigroup, and $U(y)$ for spatial
 translations. Let $P_0$ be the projection onto
 $\mathcal H_0=\ker H$. The spectral theorem gives
 $E(t)\to P_0$ strongly as $t\to\infty$.
 
 Every spatial translation acts trivially on $\mathcal H_0$.
-Here the orthogonal covariance input is essential. For two separated
+Here the orthogonal covariance hypothesis is essential. For two separated
 clusters put $F_{v,w}(x)=S(v\,\tau_xw)$. At sufficiently large time
 separation this is a matrix element of $U(\vec x)E(x^4-c)$ between
 fixed vectors. Hence a fixed temporal displacement changes it by a
@@ -39,12 +39,12 @@ Then $(Ke_4)^4=b^4/|b|>0$. Rotate the clusters and apply the temporal
 statement along $tKe_4$. This proves
 $F_{v,w}(te_4+b)-F_{v,w}(te_4)\to0$.
 For spatial $y$ use $b=y+e_4$ and remove the extra unit time shift.
-Taking strong heat limits and using the density of word vectors gives
+Taking strong limits of the semigroup and using the density of word vectors gives
 \begin{equation}
                               U(y)P_0=P_0.
  \label{ch15:spatial-ground}
 \end{equation}
-This conclusion concerns the ground space of the mixture; it does not
+This conclusion concerns the zero-energy subspace of the mixture; it does not
 say that this space is one dimensional.
 
 \section{Compression and separation of clusters}
@@ -55,7 +55,7 @@ bounded insertion operator and define
 \[
  M(w)=P_0B_h(w)|_{\mathcal H_0}.
 \]
-Increasing the width appends a heat operator, and shifting the word in
+Increasing the width appends an operator of the semigroup, and shifting the word in
 time inserts one on the other side. Both disappear after compression.
 Spatial placement disappears by \eqref{ch15:spatial-ground}. Thus
 $M(w)$ is defined for any distinct-point word independently of its
@@ -73,7 +73,7 @@ and concatenation laws give
  \label{ch15:whole-gram}
 \end{equation}
 
-If successive time gaps between translated words tend to infinity,
+If successive time separations between translated words tend to infinity,
 their correlation tends to the corresponding ordered product of
 compressed operators:
 \begin{equation}
@@ -84,8 +84,8 @@ compressed operators:
 \end{equation}
 The spatial parts of the displacements can be arbitrary. Indeed,
 if $\psi_j\to\psi$ and $t_j\to\infty$, then
-$U(y_j)E(t_j)\psi_j\to P_0\psi$ by contraction, strong heat
-convergence and \eqref{ch15:spatial-ground}. Iterating this fact through
+$U(y_j)E(t_j)\psi_j\to P_0\psi$ by contraction, strong
+convergence of the semigroup and \eqref{ch15:spatial-ground}. Iterating this fact through
 the bounded slab operators proves \eqref{ch15:cluster}.
 
 \begin{proposition}[The compression algebra]
@@ -106,17 +106,17 @@ Covariance and \eqref{ch15:cluster} therefore exchange
 the two middle operators, initially with that orthogonal map applied
 to all four words. Apply the same cluster limit to four words placed
 on the ray $j(e_4+e_1)$, which the exchange fixes. This removes the
-common transformation of the labels and internal positions. Thus
+common transformation of the fields and internal positions. Thus
 \[
  \langle\Omega,M(w_1)[M(w_2),M(w_3)]M(w_4)\Omega\rangle=0.
 \]
 \input{figures/cluster-exchange}
 The vectors $M(v)\Omega=P_0[v]$ span a dense subspace of $\mathcal H_0$;
-reflected words give the adjoints in the left slot. The bounded
+reflected words give the adjoints in the left argument. The bounded
 commutator is therefore zero. Density proves cyclicity. If
 $A\Omega=0$ for $A\in\mathfrak A$, commutativity gives $AB\Omega=0$
 for all $B\in\mathfrak A$, hence $A=0$. Norm continuity of slab
-operators, finite-dimensional label spaces, and countable dense
+operators, finite-dimensional field spaces, and countable dense
 position sets give a countable generating family, hence separability.
 \end{proof}
 
@@ -126,7 +126,7 @@ Compression is not multiplication of finite-separation words. In fact
  \label{ch15:compression-defect}
 \end{equation}
 The right side usually survives at finite separation. It is the
-whole-word identity \eqref{ch15:whole-gram}, rather than a product of
+identity \eqref{ch15:whole-gram} for concatenated words, rather than a product of
 scalar phase expectations, that will give phase reflection positivity.
 
 \FloatBarrier
@@ -152,7 +152,7 @@ Define
  \label{ch15:mixture}
 \end{equation}
 Every fixed separated value is continuous in $\xi$. This is a
-representation of the mixed correlations by characters of the ground
+representation of the undecomposed correlations by characters of the compression
 algebra. Vacuum uniqueness in these phases will be proved separately.
 
 We shall repeatedly use the following consequence of full support.
@@ -164,7 +164,7 @@ $\langle\Omega,(A^*A)^j\Omega\rangle\le C^{2j}$ for all $j$, then
 \end{equation}
 This is the usual limit of $L^{2j}$ norms on a probability space,
 combined with full support for a continuous function. In applications,
-the moment bound comes by taking widely separated copies of the same
+the bound on these vacuum expectations comes by taking widely separated copies of the same
 lattice expression, applying the chessboard bound at fixed copy number,
 and then taking the ordered limits and the cluster limit.
 The order of these operations matters.
@@ -175,13 +175,13 @@ The order of these operations matters.
 Symmetry of a mixture need not imply symmetry of every component.
 Here an additional lattice variance estimate gives the required
 operator identity. Write $\vartheta$ for linear time reflection on
-positions and labels, without conjugation. For a generic real grid word $w$ (distinct projections in each
+positions and fields, without conjugation. For a generic real grid word $w$ (distinct projections in each
 coordinate),
 set $Z=M(w)-M(\vartheta w)$. The adjoint law gives $Z^*=-Z$, so
 \[
  a:=\langle\Omega,Z^2\Omega\rangle=-\|Z\Omega\|^2\le0.
 \]
-Corollary~\ref{ch13:bounded-word}, using the complete residual
+Corollary~\ref{ch13:bounded-word}, using the full residual
 estimate of Lemma~\ref{ch13:coarse-residual-supplier}, gives the
 following bounded real approximation. For widely translated lattice copies $f_i$ of
 $w-\vartheta w$, and every $\varepsilon>0$, there are real $g_i$
@@ -204,13 +204,13 @@ then send their separation to infinity. Equation~\eqref{ch15:cluster}
 gives $0\le(q+1)[R_\varepsilon^2+q(a+\varepsilon)]$.
 Send $q\to\infty$ and then $\varepsilon\downarrow0$.
 Thus $a=0$, and separation of $\Omega$ gives $Z=0$.
-The cofinal grids are chosen after the degree and lower-level request.
+The arbitrarily fine grids are chosen after the degree and the lower-scale request.
 Generic configurations are dense in the full separated configuration
 space. Norm continuity and multilinearity
 extend the identity to every word.
 
 Orthogonal covariance of the mixture induces simultaneous invariance
-of compressed product moments whenever a cluster-separating ray has
+of the vacuum expectations of products of compressions whenever a cluster-separating ray has
 positive time before and after rotation. Such a ray exists unless
 time is reversed; compose with $\vartheta$ in that case. On the dense
 vectors $M(w)\Omega$ this gives a unitary orthogonal action, under
@@ -240,30 +240,30 @@ see \cite[Section~2.6]{Landsman1998}. Hence each phase is reflection
 positive, with a Gram form that need not have rank one.
 Norm-smooth slab dependence gives smooth phase correlations and their
 uniform separated bounds. Field inclusion, derivative and stress
-identities pass to phases when written as operator identities, tested
-against all exterior words before character evaluation. For a stress
-shell the weights avoid collisions, so the norm-continuous operator
+identities pass to phases when written as operator identities, paired
+with all exterior words before character evaluation. For a stress
+flux the weights avoid coincident points, so the norm-continuous operator
 integral is defined. The expectation identity alone would not suffice.
 
-A mixed null field has zero slab operator, by testing against the dense
+A null field of the undecomposed correlations has zero slab operator, by pairing with the dense
 word vectors. It is therefore null in every phase:
 $N_d(S)\subset N_d(S^\xi)$. The reverse inclusion uses the quantitative separating families from the
 same lattice family. Apply Proposition~\ref{ch11:n-mark-comparison}
-with two marks per comparison cell. At a fixed sufficiently deep
+with two insertion points per comparison cell. At a fixed sufficiently deep
 comparison level $k$, its corrected coefficients for one and two insertions
 have chessboard seminorm at most $B_k=H_k^{-1/32}$, uniformly in
 cutoff and period. Choose a simultaneous coefficient limit for the
 finitely many bounded lifts of the separating family at this fixed $k$, on a
-refinement of the already selected correlation limits.
+further subsequence of the one already selected for the correlation limits.
 For every fixed integer $j$, put $2j$ copies of a corrected word
 and its adjoint at widely separated translations. The chessboard
-bound is $B_k^{2j}$: the two-mark estimate is used with arbitrary
-replica census, not rerun with arity $2j$. Its constant is chosen
-before $j$; only the cutoff and translation thresholds depend on
+bound is $B_k^{2j}$: the two-insertion estimate is used for an arbitrary
+finite set of reflected copies, not rerun with arity $2j$. Its constant is chosen
+before $j$; only the lower bounds on the cutoff and on the translations depend on
 that fixed number. The repeated-word identity and the cluster
 limit \eqref{ch15:cluster} identify the limiting product with
 $\langle\Omega,(\Delta^*\Delta)^j\Omega\rangle$.
-Taking successive deeper levels $k=k_\ell$ therefore supplies
+Taking successive deeper levels $k=k_\ell$ therefore gives
 compressed errors for one and two insertions $\Delta$ with
 \begin{equation}
  \langle\Omega,(\Delta^*\Delta)^j\Omega\rangle
@@ -272,12 +272,12 @@ compressed errors for one and two insertions $\Delta$ with
  \label{ch15:detector-moments}
 \end{equation}
 Here one may take $\gamma_\ell=B_{k_\ell}$, enlarging it by
-a fixed finite row constant if necessary. The free row moments are
-bounded, so $\gamma_\ell\to0$. These are estimates uniform in the number of reflected copies,
-stronger than a bound on the mixed mean.
-The finite reference rows use fixed free labels and convergent
-noncollision configurations; their one-point means are uniformly bounded.
-To make the pair correction explicit, if the reference one-point means are $s,s'$ and the reference connected pair is $c$, use
+a fixed constant depending on the finitely many free tests, if necessary. The free moments of each test are
+bounded, so $\gamma_\ell\to0$. These are estimates with a constant independent of the number of reflected copies,
+stronger than a bound on the undecomposed mean.
+The finitely many free tests use fixed free labels and convergent
+configurations without coincident points; their one-point means are uniformly bounded.
+To make the pair correction explicit, if the free one-point means are $s,s'$ and the free connected pair is $c$, use
 \[
  \Delta_1=M(u)-s1,\quad \Delta'_1=M(v)-s'1,\quad
  \Delta_2=M(uv)-sM(v)-s'M(u)+(ss'-c)1.
@@ -298,12 +298,12 @@ Proposition~\ref{ch13:rank}. Consequently
 All phases have the same field filtration. Neither abstract character
 decomposition nor positivity alone proves this equality.
 
-\section{Selecting a phase with a unique ground vector}
+\section{Selecting a phase with a unique vacuum}
 \label{ch15:selection}
 
-Construct the reflection Hilbert space and heat semigroup of each
-phase using its separated hierarchy. Let $P_{0,\xi}$ denote its ground
-projection. For a positive word $w$, the nonnegative heat matrix
+Construct the reflection Hilbert space and translation semigroup of each
+phase using its separated hierarchy. Let $P_{0,\xi}$ denote its zero-energy
+projection. For a positive word $w$, the nonnegative semigroup matrix
 elements decrease to $\|P_{0,\xi}[w]_\xi\|^2$ and are dominated by
 the continuous zero-time Gram value. Dominated convergence and
 \eqref{ch15:mixture} yield
@@ -313,7 +313,7 @@ the continuous zero-time Gram value. Dominated convergence and
 \]
 Their difference is
 $\|P_{0,\xi}[w]_\xi-S^\xi(w)\Omega_\xi\|^2$. It vanishes almost
-everywhere. Rational positive configurations with basis labels form
+everywhere. Rational positive configurations with basis fields form
 one countable family dense in every phase reflection space, by Gram
 continuity. Intersect its full-measure sets. Outside the resulting
 null set,
@@ -321,13 +321,13 @@ null set,
                        \ker H_\xi=\CC\Omega_\xi.
  \label{ch15:ae-ground}
 \end{equation}
-Choose and retain one $\xi_*$ in this full-measure set. At this stage
-we have not eliminated exceptional phases or shown that $\nu$ is a
+Choose and retain one $\xi_*$ in this full-measure set. At this point
+we have not eliminated the exceptional phases, a null set on which uniqueness of the vacuum is not yet known, or shown that $\nu$ is a
 point mass.
 
 The slab bounds are uniform in all phases, including exceptional
-ones. For the formal iterates $v_j=(A_{w^\dagger}A_w)^jv$, the mixed
-maps satisfy
+ones. For the formal iterates $v_j=(A_{w^\dagger}A_w)^jv$, the maps of the
+undecomposed family satisfy
 $Y_{v_j}=(B_h(w)^*B_h(w))^jY_v$. Thus
 \[
  \|[v_j]_\xi\|^2=\xi(Y_{v_j}^*Y_{v_j})
@@ -335,7 +335,7 @@ $Y_{v_j}=(B_h(w)^*B_h(w))^jY_v$. Thus
 \]
 The repeated-power argument gives bounded phase slab operators with
 $\|B_h^\xi(w)\|\le\|B_h(w)\|$, and their identities and derivatives
-follow on the dense word span. These uniform bounds are the input for
+follow on the dense word span. These uniform bounds are the hypotheses for
 relativistic reconstruction and for the later removal of exceptional
 phases. No spectral gap has been obtained here.
 
