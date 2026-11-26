@@ -328,7 +328,9 @@ For a cyclic coordinate $q$ of period $2v$, define
 $\pi_v(q)=\min(\bar q,2v-\bar q)$, where $0\le\bar q<2v$.
 Apply this map coordinatewise. Write $U_{i,z}$ for the pullback of
 the original field under $q\mapsto z+\pi_{w+i}(q)$ on $\Lambda_i$.
-Reversed links are inverted, so small plaquette distances from the identity stay small.
+Folding may reverse plaquette orientation. In the matrix norm
+\eqref{ch01:matrix-norm}, conjugation and inversion preserve
+$\|U_p-1\|_G$, so the folded field satisfies the same small-field bound.
 Let $F_y^{(i)}$ denote the same local formula on $\Lambda_i$
 with its flat value subtracted, and set
 \begin{align}
@@ -750,8 +752,8 @@ projection or prove the exact algebra.
 There is a second, intrinsic way to identify the reset.
 On an even-sided torus choose direction-one links alternately
 equal to $u$ and $1$ on even and odd second-coordinate
-slices, with $\chi(u)=rt$ for sufficiently small fixed $r>0$.
-Every nontrivial plaquette has this distance from the identity. The direct
+slices, with $\|u-1\|_G=rt$ for sufficiently small fixed $r>0$.
+Thus $\|U_p-1\|_G=rt$ for each nontrivial plaquette. The direct
 positive plaquette term dominates the cubic and quartic
 terms when $r$ is small, so this small-field configuration
 $U_*$ satisfies $\mathcal K(U_*)\ge c_*|\Lambda|t^2$.
@@ -822,16 +824,16 @@ subinterval retains the construction and all its labels.
 
 The finest-scale representation can be constructed directly
 from the Wilson action \cite{Wilson1974}, without a limiting
-argument. Write $W(u)=1-\operatorname{Re}\tr(u)/n_G$ for the Wilson
-plaquette energy and $F(u)=\operatorname{proj}_{\gLie}(u-u^{-1})/2$.
+argument. Recall from \eqref{ch01:wilson-energy} that the Wilson plaquette energy
+is $\tfrac12\|u-1\|_G^2$. Write $F(u)=\operatorname{proj}_{\gLie}(u-u^{-1})/2$.
 The map $X\mapsto F(e^X)$ has derivative $I$ at zero and a
 local inverse $\psi$. The map and its inverse are odd, and
-$W(u^{-1})=W(u)$, so $W(e^{\psi(Y)})$ is even.
+$\|u^{-1}-1\|_G=\|u-1\|_G$, so the plaquette energy at $e^{\psi(Y)}$ is even in $Y$.
 Let $T_4$ be the degree-four Taylor
 term of the Wilson plaquette energy evaluated at
 $e^{\psi(Y)}$. Then
 \[
- R(u)=W(u)-\tfrac12|F(u)|^2-T_4(F(u))
+ R(u)=\tfrac12\|u-1\|_G^2-\tfrac12|F(u)|^2-T_4(F(u))
 \]
 vanishes through degree four at the identity.
 Choose the finest row
@@ -845,19 +847,19 @@ Define the residual energy
 \[
  \mathcal W_p=
  \begin{cases}
- W(U_p)-c_{\rm lin}t\chi(U_p),&\chi(U_p)>t,\\
- h_pk_p+(1-h_p)(1-c_{\rm dir})W(U_p)
-                   -\chi_p^{\rm rel}k_p,&\chi(U_p)\le t.
+ \tfrac12\|U_p-1\|_G^2-c_{\rm lin}t\|U_p-1\|_G,&\|U_p-1\|_G>t,\\
+ h_pk_p+\tfrac12(1-h_p)(1-c_{\rm dir})\|U_p-1\|_G^2
+                   -\chi_p^{\rm rel}k_p,&\|U_p-1\|_G\le t.
  \end{cases}
 \]
-Since $|F(u)|\le\chi(u)$ and $W(u)=\chi(u)^2/2$,
-this is nonnegative; when $\chi(U_p)>t$ it is at least
+Since $|F(u)|\le\|u-1\|_G$,
+this is nonnegative; when $\|U_p-1\|_G>t$ it is at least
 $t^2/4$. The relaxed small-field condition implies that the plaquette
 itself is small, and the condition can also fail because of a nearby bad
 plaquette. Direct substitution
 gives
 \[
- W(U_p)=L_p+(1-c_{\rm dir})h_pT_4(F(U_p))
+ \tfrac12\|U_p-1\|_G^2=L_p+(1-c_{\rm dir})h_pT_4(F(U_p))
            +(1-c_{\rm dir})h_pR(U_p)+\mathcal W_p ,
 \]
 where $L_p$ is the actual clipped quadratic channel.

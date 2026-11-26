@@ -18,9 +18,20 @@ itself give convergence along every ultraviolet cutoff.
 \label{ch01:gauge}
 
 Fix a closed subgroup $G\subset U(n_G)$ in a specified faithful unitary
-representation. Its real Lie algebra $\gLie$ consists of skew-Hermitian
-matrices, and we assume that $\gLie$ is simple and nonabelian. The group itself
-need not be connected. We use the invariant inner product
+representation. For any complex $n_G\times n_G$ matrix $A$, set
+\begin{equation}
+ \|A\|_G^2=\frac{1}{n_G}\sum_{i,j=1}^{n_G}|A_{ij}|^2
+          =\frac{1}{n_G}\tr(A^*A).
+ \label{ch01:matrix-norm}
+\end{equation}
+The normalization gives $\|u\|_G=1$ for every $u\in G$, since $u^*u=1$.
+Left and right multiplication by unitary matrices preserve this norm.
+In particular, $\|uv^{-1}-1\|_G=\|u-v\|_G$ for $u,v\in G$.
+
+The real Lie algebra $\gLie$ of $G$ consists of skew-Hermitian matrices.
+We assume that $\gLie$ is simple and nonabelian. The group itself need
+not be connected. On $\gLie$ the norm \eqref{ch01:matrix-norm} is induced
+by the invariant inner product
 \begin{equation}
  \langle X,Y\rangle_{\gLie}=-\frac1{n_G}\operatorname{Re}\tr(XY),
  \qquad X,Y\in\gLie.
@@ -87,23 +98,21 @@ with $\mu<\nu$, has holonomy
                  U(y+e_\nu,\mu)^{-1}U(y,\nu)^{-1}.
  \label{ch01:plaquette}
 \end{equation}
-Define the plaquette energy and the normalized Hilbert--Schmidt distance from the identity by
-\begin{equation}
- w(u)=1-\frac1{n_G}\operatorname{Re}\tr u,
- \qquad
- \chi(u)=\frac{\|u-1\|_{\mathrm F}}{\sqrt{n_G}},
- \qquad \chi(u)^2=2w(u).
- \label{ch01:chord}
-\end{equation}
-Both functions are invariant under conjugation and inversion; they vanish
-at the identity. The last identity follows directly from $u^*u=1$.
+The Wilson energy of a single plaquette with holonomy $u$ is half its
+squared distance from the identity. Expanding the square in
+\eqref{ch01:matrix-norm} and using $u^*u=1$ gives the usual trace formula
+\[
+ \tfrac12\|u-1\|_G^2=1-\frac1{n_G}\operatorname{Re}\tr u .
+\]
+This energy is invariant under conjugation and inversion.
 
 \begin{definition}[Wilson measure]
 \label{ch01:wilson}
 Let $dh$ be probability Haar measure on $G$. The Wilson energy and measure
 on $\Lambda_s$ are
 \begin{align}
- E_s^{\mathrm W}(U)&=\sum_{y\in\Lambda_s}\sum_{\mu<\nu}w(U_{y;\mu\nu}),
+ E_s^{\mathrm W}(U)&=\frac12\sum_{y\in\Lambda_s}\sum_{\mu<\nu}
+                                  \|U_{y;\mu\nu}-1\|_G^2,
  \label{ch01:wilson-energy}\\
  d\mu_{s,\beta}(U)&=Z_{s,\beta}^{-1}e^{-\beta E_s^{\mathrm W}(U)}
                      \prod_{e\in E_s}dh(U_e),
@@ -111,8 +120,7 @@ on $\Lambda_s$ are
  \label{ch01:wilson-law}
 \end{align}
 \end{definition}
-Every unoriented coordinate square is counted once, through $\mu<\nu$.
-There is no additional factor of $1/2$ in \eqref{ch01:wilson-energy}.
+The sum over $\mu<\nu$ counts every unoriented coordinate square once.
 The configuration space is compact and the integrand defining $Z_{s,\beta}$
 is continuous and strictly positive, so $0<Z_{s,\beta}<\infty$ for every
 real $\beta$. The reflection-positivity arguments below require
@@ -146,8 +154,7 @@ Gauge transformations also explain why small fields must be defined
 through plaquettes rather than individual links. The pure-gauge
 configuration $U(y,\mu)=g(y)g(y+e_\mu)^{-1}$ can have links far from the
 identity while every plaquette holonomy is the identity. Later,
-small-field regions will be specified by bounds on the gauge-invariant
-quantity $\chi(U_{y;\mu\nu})$ from \eqref{ch01:chord}.
+small-field regions will be specified by bounds on $\|U_{y;\mu\nu}-1\|_G$.
 
 The connection with classical curvature is most cleanly stated using exact
 parallel transport. For a smooth $\gLie$-valued connection $A$, let the
@@ -163,7 +170,8 @@ The plaquette product then has the expansion
  \label{ch01:classical-curvature}
 \end{equation}
 Consequently
-$w(U_{x;\mu\nu})=\frac12a^4|F_{\mu\nu}(x)|_{\gLie}^2+O(a^5)$.
+$\tfrac12\|U_{x;\mu\nu}-1\|_G^2
+=\tfrac12 a^4|F_{\mu\nu}(x)|_{\gLie}^2+O(a^5)$.
 This familiar classical expansion motivates the action. It is not a
 regularity assertion about typical lattice configurations, nor about an
 eventual continuum random connection.

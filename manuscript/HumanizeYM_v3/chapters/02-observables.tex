@@ -162,9 +162,10 @@ on a typical rough configuration.
 \label{ch02:sections}
 
 The construction uses lattice curvature transported to a common point.
-Extend the metric \eqref{ch01:metric} to the ambient real matrix space as
-$\operatorname{Re}\tr(X^*Y)/n_G$, and let $\Pi_{\gLie}$ be orthogonal
-projection onto $\gLie$. For a plaquette based at $z$, set
+On complex matrices the real inner product associated with
+\eqref{ch01:matrix-norm} is $\operatorname{Re}\tr(X^*Y)/n_G$.
+Let $\Pi_{\gLie}$ denote orthogonal projection onto $\gLie$ for this
+inner product. For a plaquette based at $z$, set
 \[
  F_\square(U)=\Pi_{\gLie}\frac{U_\square-U_\square^{-1}}2.
 \]
@@ -308,9 +309,9 @@ continuum correlations.
 Recall that $V_d$ is the polynomial label space of scaling dimension at most $d$ from Definition~\ref{ch02:labels}; factor count counts curvature-jet factors instead of their scaling dimensions.
 
 We now use the factor-count property of
-Theorem~\ref{ch02:local-sections}. Recall from \eqref{ch01:chord} that
-$\chi(u)=\|u-1\|_{\mathrm F}/\sqrt{n_G}$ measures the size of a plaquette.
-On a fixed local stencil, a bound $\chi(U_\square)\le t$ gives a factor
+Theorem~\ref{ch02:local-sections}. With the normalized matrix norm of
+\eqref{ch01:matrix-norm}, a bound $\|U_\square-1\|_G\le t$ on every
+plaquette in the stencil gives a factor
 $t$ for each transported curvature in \eqref{ch02:transported-curvature}.
 The same factor is retained under suitably scaled derivatives.
 
@@ -336,7 +337,7 @@ orders and spatial exponents they retain.
 \label{ch02:section-bounds}
 For every $d,q,p_0$ there are finite constants $C_{d,q,p_0}$ and $C_d$,
 independent of $s$, $y$ and $0<t\le1$, with the following properties.
-If every plaquette used by the translated section has distance from the identity at most $t$,
+If $\|U_\square-1\|_G\le t$ for every plaquette used by the translated section,
 then for every list of permitted directions of length $k\le q$,
 \begin{equation}
  \left|D_{A_1}^L\cdots D_{A_k}^L
@@ -355,8 +356,8 @@ The same constants apply when the stencil wraps around the torus.
 Projection is contractive and $U^{-1}=U^*$, so
 \[
  |F_\square(U)|_{\gLie}
- \le\frac{\|U_\square-U_\square^*\|_{\mathrm F}}{2\sqrt{n_G}}
- \le\chi(U_\square).
+ \le\tfrac12\|U_\square-U_\square^*\|_G
+ \le\|U_\square-1\|_G .
 \]
 Transport by a unitary matrix preserves the metric. An undifferentiated
 curvature measurement is therefore bounded by $t$ on the stated domain.
@@ -408,11 +409,12 @@ For the curvature-square polynomial $c_{F^2}$ in
 \eqref{ch02:curvature-square}, a useful classical representative is the
 clover average
 \begin{equation}
- P^{\mathrm{cl}}(y;U)=\frac14\sum_{\square\ni y}w(U_\square),
+ P^{\mathrm{cl}}(y;U)=\frac18\sum_{\square\ni y}\|U_\square-1\|_G^2,
  \label{ch02:clover}
 \end{equation}
 where the sum has four corner plaquettes in each of the six coordinate
-planes, hence $24$ terms. Orientation does not matter because $w(u^{-1})=w(u)$.
+planes, hence $24$ terms. Reversing orientation preserves each term
+since $\|u^{-1}-1\|_G=\|u-1\|_G$.
 For a smooth test connection the expansion
 \eqref{ch01:classical-curvature} yields
 \[
@@ -420,9 +422,10 @@ For a smooth test connection the expansion
      =h^4 c_{F^2}(J)+O(h^5)
 \]
 at the origin, and thus $\operatorname{Tay}_4P^{\mathrm{cl}}=c_{F^2}$.
-The factors are consistent: each plaquette contributes
-$\frac12h^4|F_{\mu\nu}|_{\gLie}^2$, four copies occur per plane, and the
-prefactor is $1/4$. This example fixes the normalization, but the general
+Each squared distance has leading term $h^4|F_{\mu\nu}|_{\gLie}^2$.
+The four plaquettes per plane and the prefactor $1/8$ thus give
+$\tfrac12 h^4\sum_{\mu<\nu}|F_{\mu\nu}|_{\gLie}^2$.
+This example fixes the normalization, but the general
 construction is free to use a different section satisfying the same
 Taylor identity.
 

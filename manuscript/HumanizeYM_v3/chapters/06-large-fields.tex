@@ -43,10 +43,10 @@ independent of that period.
 For a configuration pair $(U,V)$ and the block average $Q(U)$ of
 Chapter~\ref{ch04:blocking}, put
 \[
- r_p^f=\chi(U_p),\qquad r_p^c=\chi(V_p),\qquad
- n_e=\chi(V_eQ_e(U)^{-1}).
+ r_p^f=\|U_p-1\|_G,\qquad r_p^c=\|V_p-1\|_G,\qquad
+ n_e=\|V_e-Q_e(U)\|_G.
 \]
-Here $\chi$ is the normalized Hilbert--Schmidt distance from the identity. A selection
+Here $\|\cdot\|_G$ is the matrix norm of \eqref{ch01:matrix-norm}. A selection
 $A=(A_f,A_n,A_c)$ consists of fine plaquettes, coarse mismatch edges, and
 coarse sites. Its size is the sum of the three cardinalities. Its location
 contains the projected corners of its plaquettes, the endpoints of its
@@ -241,8 +241,7 @@ longer part of a square. Such a row based at $p$ has a witness $q$ with
 For a fixed witness the number of possible bases is at most
 $C(1+R^{\rm rel}\log(r_q^f/t_f))^4\le C r_q^f/t_f$.
 All witnesses lie within $B/50$ for sufficiently large reference coupling.
-They belong to the selected set by consistency. Split path endpoints
-into those with distance from the identity at most $t_f$ and the rest. The row bound handles
+They belong to the selected set by consistency. Split the endpoint plaquettes $q$ according as $r_q^f\le t_f$ or $r_q^f>t_f$. The row bound handles
 the former, and the column bound handles the latter, giving
 \[
  \sum_{\text{omitted rows }p}|L_{f,R_*}(U,p)|\le C R_f.
@@ -264,9 +263,9 @@ The mismatch square similarly gives, for sufficiently large $W$ after $L$,
 The coarse path contribution cancels exactly in $E_c$. The direct part is
 $c_{\rm dir,c}(\alpha_p-\alpha_p^2/2)|F(V_p)|^2
 -\operatorname{clip}_{t_c}(r_p^c)$.
-The squared normal displacement from the tangent space is $O(\chi(g)^4)$,
-so $|F(g)|^2\ge\chi(g)^2-C\chi(g)^4$ near the identity. Choose fixed
-$\delta>0$ so that also $|F(g)|^2\ge3\chi(g)^2/4$ below $\delta$.
+The squared normal displacement from the tangent space is $O(\|g-1\|_G^4)$,
+so $|F(g)|^2\ge\|g-1\|_G^2-C\|g-1\|_G^4$ near the identity. Choose fixed
+$\delta>0$ so that also $|F(g)|^2\ge3\|g-1\|_G^2/4$ whenever $\|g-1\|_G\le\delta$.
 The clip coefficients satisfy $c_{\rm dir,c}>16c_{\rm lin,c}$, and hence
 \begin{equation}
  E_c(p)\ge
@@ -305,21 +304,19 @@ is at most $K|D|$. Here
 \end{proposition}
 
 \begin{proof}
-In a lifted patch
-of radius $(j+7)L$, let $\mathcal P_y(U)=\sum_qm_y(q)r_q^f$ be the sum of
-fine plaquette distances from the identity with the actual route multiplicities. The required comparison
-is
+For a coarse plaquette $p$ based at $y$, let $m_y(q)$ count the lifts
+of a fine plaquette $q$ with all four vertices in the fine box $M_y$ of
+Section~\ref{ch04:predictor-geometry}. Thus
+$\mathcal P_y(U)=\sum_qm_y(q)r_q^f$. For either choice of block average,
+Lemma~\ref{ch04:predictor-comparison} gives
 \begin{equation}
  r_p^c\le\sum_{e\in\partial p}n_e+C_jL^{-2}\mathcal P_y(U),
- \qquad \sup_q\sum_y m_y(q)\le K_j.
+ \qquad \sup_q\sum_ym_y(q)\le(2j+15)^4 .
  \label{ch06:macro-comparison}
 \end{equation}
-This estimate does hold for the precise branches of
-Chapter~\ref{ch04:blocking}, as the following argument shows. It is a
-first-power bound; comparison of squared frame energies alone would give
-an inadequate square-root bound.
-
-The first-power block average estimate is Lemma~\ref{ch04:predictor-comparison}; its comparison uses the same macro-frame and rooted paths as here.
+Here the sum over $y$ runs over the coarse torus. The linear dependence
+on $r_q^f$ allows the factor $L^{-2}$ to be retained when summing the
+fine plaquette contributions over coarse sites.
 
 The same bound localizes coarse plaquettes with $r_p^c>\delta$.
 If every fine or mismatch test in their fixed macro-patch is at most
@@ -337,22 +334,23 @@ Applying the transported row and column bounds then gives
 its upper bound into the enlarged loss constants. It is not a new
 positivity assertion for $E_L$.
 
-Outside $H$, all fine plaquette distances from the identity and block average mismatches in the
+Outside $H$, all fine plaquette deviations $r_q^f$ and block average mismatches $n_e$ in the
 surrounding fixed macro-patches are at most $t_{\rm hi}$. The unselected
 tests obey this too, since $2Wt_f\le t_{\rm hi}$ eventually. The verified
-macro-comparison bounds coarse plaquette distances from the identity there by
+macro-comparison bounds $r_p^c$ there by
 $C_{j,L,W}t_{\rm hi}$. Choose a coarse axial gauge on a box of radius
-$B/2$. Its sum of bond distances from the identity is bounded by $C_{j,L,W}B^5t_{\rm hi}$.
+$B/2$. In that gauge the sum of $\|V_e-1\|_G$ over its internal bonds is at most $C_{j,L,W}B^5t_{\rm hi}$.
 To compare a fine link with the replicated coarse link, join its two
 endpoints to their block roots along the actual tree. All tree transports
 are the identity. The resulting walk lies in two neighboring blocks.
-In a macro axial gauge its distance from the identity is bounded by the route length times
-the sum of bond distances from the identity in the macro-box. Comparing a crossing walk with the block average
-adds the two endpoint frame errors already bounded in
-Lemma~\ref{ch04:predictor-comparison}, and then the mismatch $n_e$.
+In a macro axial gauge the distance of the transport from $1$ is at most
+the length of the walk times the sum of $\|U_b-1\|_G$ over bonds $b$
+in the macro-box in that gauge. Comparing a crossing walk with the block average
+adds the two endpoint frame errors bounded by
+\eqref{ch04:patch-frame-sum}, and then the mismatch $n_e$.
 Consequently, with a constant depending on the fixed tree family and $L$,
 \[
- \chi\bigl(U_e(\operatorname{rep}V)_e^{-1}\bigr)
+ \|U_e-(\operatorname{rep}V)_e\|_G
        \le C_{j,L}\mathcal P_y(U)+n_{e_c}
 \]
 for crossing edges; omit the mismatch for internal edges. Any tree in a
@@ -423,11 +421,10 @@ in $D$, and enough linear excess to absorb
 $Ct_f(L^{-2}R_f+R_n)$. The choices are in that order: increase $L$ for
 the fine excess, and $W$ for the mismatch excess.
 
-Assign each coarse large-field site to one incident plaquette with distance from the identity above
-$t_c$. A plaquette has at most four such sites. Since $t_f\le2t_c$
+Assign each coarse large-field site to one incident plaquette $p$ with $r_p^c>t_c$. A plaquette has at most four such sites. Since $t_f\le2t_c$
 eventually, the middle range of \eqref{ch06:coarse-bound} contributes
 $4at_f^2$ per plaquette and therefore $at_f^2$ per assigned site. The
-exceptional plaquettes with distance from the identity above $\delta$ number at most $K|D|$;
+exceptional plaquettes with $r_p^c>\delta$ number at most $K|D|$;
 their negative energies cancel the positive term in
 \eqref{ch06:affected}. Their missing site contributions cost at most
 $4aKt_f^2|D|$. Also $E_N\ge0$. The total remaining losses are bounded by
@@ -709,14 +706,14 @@ chart define
 Then $\exp(u_V(e))(\operatorname{rep}V)_e=U_e$ exactly. The following
 extension makes this a legitimate change on the whole Gaussian space.
 
-Choose a fixed logarithm radius $d_*>0$ and a smooth radial function
-$\chi$ equal to one on $|u|\le d_*$ and zero on $|u|\ge2d_*$. For a
+Choose a fixed logarithm radius $d_*>0$ and a smooth radial cutoff
+$\vartheta\colon\gLie\to[0,1]$ equal to one on $|u|\le d_*$ and zero on $|u|\ge2d_*$. For a
 group element $M$ sufficiently near the identity put
 \[
  F_M(u)=u+\psi(M,u),\qquad
- \psi(M,u)=\chi(u)\bigl(\log(\exp(u)M)-u\bigr).
+ \psi(M,u)=\vartheta(u)\bigl(\log(\exp(u)M)-u\bigr).
 \]
-The logarithm is used only on the support of $\chi$. At $M=1$,
+The logarithm is used only on the support of $\vartheta$. At $M=1$,
 $\psi=0$ and $D_u\psi=0$. Compactness of that support permits one common
 neighborhood of $1$ on which
 $|\psi|<d_*/2$ and $\|D_u\psi\|<1/2$.
@@ -1019,9 +1016,9 @@ $C L^{-2}t_f$, and the block average comparison term at most $C t_f$.
 Choose $L$ and the block average plateau width $W$ so these bounds lie
 strictly inside their respective plateau thresholds, as in the energy
 estimate. The preceding proposition, the nonlinear Taylor error, and
-the noise estimate then leave the fine plaquette distance from the identity below $t_f/4$
-and the block average discrepancy below $Wt_f$. All corresponding
-likelihood factors are on their plateaux. The bond increment is bounded
+the noise estimate then give $\|U_p-1\|_G<t_f/4$ on each tested fine
+plaquette and $\|V_e-Q_e(U)\|_G<Wt_f$ on each tested coarse link.
+The associated likelihood factors are on their plateaux. The bond increment is bounded
 by $Ct_f$ on this event, so a sufficiently broad fixed chart cutoff is
 also one. A cutoff-failure indicator assigned within the compulsory component region is
 zero by definition; every other such indicator has these small-field neighborhoods.
@@ -1347,8 +1344,8 @@ counting constants. This geometric disjointness does not assert
 probabilistic independence.
 
 For this component estimate impose the allocation's weak test conditions
-through distance $300B$: every unselected fine plaquette has distance from the identity at
-most $t_f/2$, every unselected block average discrepancy is at most $2Wt_f$,
+through distance $300B$: every unselected fine plaquette satisfies
+$\|U_p-1\|_G\le t_f/2$, every unselected block average discrepancy is at most $2Wt_f$,
 the stored coarse large-field indicators equal the actual coarse large-field indicators, and no coarse
 large-field site occurs away from the selected coarse sites. Retained frame tags
 have positive likelihood. These are conditions on the actual factor;
@@ -1424,7 +1421,7 @@ There are at most $C B^4n$ such rows, proving
 The clean annular fields are below the fine threshold, so the fine
 clip is its quadratic branch. The retained path tests also equal
 one: within their nontrivial range the patch is clean, and beyond
-that range their permitted bound exceeds the uniform bound on the distance from the identity in the group. This checks the actual row formula used in the argument.
+that range their permitted bound exceeds the uniform bound $\|u-1\|_G\le 2$ for $u\in G$. This checks the actual row formula used in the argument.
 
 For precision, let $\sigma$ range over the signed lattice orientations
 with their probability weights $\omega_\sigma$, transforming the field,

@@ -11,7 +11,7 @@ cutoff cannot be discarded before estimating its complement.
 All actions and matrices in the following argument belong to the same
 pure small-field block integral: incoming activities are omitted, the
 prescribed path and block kernel are unchanged, and the fine-field
-indicator $\mathbf1_{\{\chi(U_p)\le t_f\ \text{for every fine }p\}}$
+indicator $\mathbf1_{\{\|U_p-1\|_G\le t_f\ \text{for every fine }p\}}$
 is retained, where $t_f=t_{m+1}$. Thus its integrand is zero on the fine large-field
 complement. The other fine sectors have already been assigned to the
 large-field expansion.
@@ -204,7 +204,7 @@ inputs; the opposite column sum has a different scaling.
 The quadratic remainder of the stationary map and the plaquette
 product is bounded using their common second derivatives. Thus
 \begin{equation}
- \sup_p\chi(\mathcal U(x)_p)
+ \sup_p\|\mathcal U(x)_p-1\|_G
        \le C_jL^{-2}t_c+P_{j,L}(B)t_c^2.
  \label{ch09:stationary-cutoff-margin}
 \end{equation}
@@ -218,7 +218,7 @@ Plaquette functions have a fixed Lipschitz constant $L_0$ in the
 physical fine-link supremum coordinates. Local chart maps have
 fixed-stage derivative bounds. Consequently variation of $x$ by
 $z^{-1}$ and of the stationary fine coordinates by $g\xi$,
-$|\xi|\le D$, changes every plaquette distance from the identity by at most
+$|\xi|\le D$, changes each $\|U_p-1\|_G$ by at most
 $C_{j,L}z^{-1}+L_0gD$, after incorporating the fixed chart norm
 conversion into $L_0$. Choose $d_0$ sufficiently small, so that
 $L_0gD\le t_f/8$, and then raise the threshold for the microscopic

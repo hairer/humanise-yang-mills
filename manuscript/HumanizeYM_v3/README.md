@@ -33,4 +33,4 @@ python3 tools/collect_references.py
 latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build monograph.tex
 ```
 
-The most recently reviewed draft PDF is copied to `monograph.pdf`; build logs and rendered review images stay in `build/`. The current source covers all nineteen planned chapters, including the current-transfer and arbitrary-radius estimates. The illustrated PDF is 280 pages. Its linked list of figures is on page x. Pages i–ii state the main theorem and point to the proofs of its parts. Consult `PROGRESS.md` for the final review record and the scope of the claims.
+The most recently reviewed draft PDF is copied to `monograph.pdf`; build logs and rendered review images stay in `build/`. The current source covers all nineteen planned chapters, including the current-transfer and arbitrary-radius estimates. The illustrated PDF is 281 pages. Its linked list of figures is on page x. Pages i–ii state the main theorem and point to the proofs of its parts. Consult `PROGRESS.md` for the final review record and the scope of the claims.
