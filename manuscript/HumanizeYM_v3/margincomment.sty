@@ -1,0 +1,127 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{margincomment}
+\RequirePackage{color}
+\RequirePackage{tcolorbox}
+%
+%	comments.sty v1.3 by Martin Hairer
+%	This is a modification of an implementation by David Carlisle.
+%
+%	Overrides the \marginpar command and provides the command \comm[color]{Text} 
+%	which uses the new \marginpar to write a small note in the specified color. The
+%	main advantage over the usual \marginpar is that it works inside equations.
+%
+%	This works by patching the \@oddfoot and \@evenfoot macros, so if there happen 
+%	to be weird incompatibilities with other packages that alter page layout, this
+%	is where to look for.
+%
+
+\definecolor{darkred}{rgb}{0.9,0.1,0.1}
+
+
+\newcommand{\margincomment}[2][darkred]{\marginpar{\tikzexternaldisable\begin{tcolorbox}[colback=#1!10,colframe=#1,size=fbox,arc=0mm]\scriptsize{\textcolor{#1}{#2}}\end{tcolorbox}}}
+
+
+
+\newbox\@mpbox
+\global\setbox\@mpbox\vbox{}
+
+
+\def\savedpos#1#2#3#4{%
+\begingroup
+\let\@positions\relax
+\expandafter\xdef\csname sp@#1-#2\endcsname{%
+\expandafter\ifx\csname sp@#1-#2\endcsname\relax
+\else
+\csname sp@#1-#2\endcsname
+\fi
+  \@positions{#3}{#4}}%
+\endgroup}
+
+\def\marginpar#1{%
+  \saveposition{mpar}%
+  \global\setbox\@mpbox\vbox{\unvbox\@mpbox\hbox{%
+  \hbox{\parbox{\marginparwidth}{\@marginparreset\raggedright#1}}%
+  \hbox{\parbox{\marginparwidth}{\@marginparreset\raggedleft#1}}%
+}\break}}
+
+
+
+\def\saveposition#1{%
+\pdfsavepos\write\@auxout{%
+  \noexpand\savedpos
+    {#1}{\the\c@page}{\the\pdflastxpos}{\the\pdflastypos}}}
+
+
+
+\def\MH@@oddfoot{%
+ \hss\rlap{\hskip\marginparsep\mcolumn}}
+\def\MH@@evenfoot{%
+ \llap{\mcolumn\hskip\marginparsep}\hss\saveposition{foot}}
+
+
+\AtBeginDocument{%
+	\let\@MH@oddfoot\@oddfoot
+	\let\@MH@evenfoot\@evenfoot
+	\def\@oddfoot{\@MH@oddfoot\MH@@oddfoot}
+	\def\@evenfoot{\@MH@evenfoot\MH@@evenfoot}
+}
+%
+% The following is kind of a hack, not completely sure why this even works...
+%
+\def\ps@plain{%
+	\renewcommand{\@oddhead}{}
+	\renewcommand{\@evenhead}{}
+}
+\def\ps@empty{%
+	\renewcommand{\@oddhead}{}
+	\renewcommand{\@evenhead}{}
+}
+
+\def\mcolumn{%
+\saveposition{foot}%
+\expandafter\ifx\csname sp@foot-\the\c@page\endcsname\relax
+\else
+\let\@positions\origin@positions
+\csname sp@foot-\the\c@page\endcsname
+\smash{\raise\footskip\vbox to \textheight{\hsize\marginparwidth
+\hrule\@height\z@
+\let\@positions\mp@positions
+\csname sp@mpar-\the\c@page\endcsname
+\vskip\z@\@plus\textheight
+\hrule\@height\z@}}%
+\fi}
+
+\def\origin@positions#1#2{%
+\@tempdima\z@
+\dimen@\textheight
+\advance\dimen@\headsep
+\advance\dimen@ #2sp
+}
+\def\mp@positions#1#2{%
+\setbox\tw@=\vsplit\@mpbox to \maxdimen
+\setbox\tw@\vbox{%
+\unvbox\tw@
+\setbox\tw@\lastbox
+\setbox\tw@\hbox{%
+\unhbox\tw@
+\ifodd\c@page
+\global\setbox1\lastbox
+\fi
+\global\setbox1\lastbox
+}}%
+\@tempdimb\dimen@
+\advance\@tempdimb-#2sp
+\ifdim\@tempdimb<0\p@ % This controls vertical spacing between boxes...
+\@tempdimb0\p@
+\fi
+\vskip\@tempdimb\@minus\@tempdimb
+\advance\dimen@-\@tempdimb
+\advance\dimen@-\ht\@ne
+\advance\dimen@-\dp\@ne
+\hrule\@height\z@
+\box\@ne
+\hrule\@height\z@
+}
+
+\showboxdepth=2
+\showboxbreadth=50
