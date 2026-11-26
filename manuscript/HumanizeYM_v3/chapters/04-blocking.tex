@@ -25,7 +25,7 @@ will require the later estimates.
 
 A choice of gauge on a patch assigns a frame to each site. Relative to
 the original frames, this choice is specified by a family of matrices
-$h_x\in G$: a transport $U_{xy}$ then has matrix $h_xU_{xy}h_y^{-1}$.
+$h_x\in G$: a contour variable $U_{xy}$ then has matrix $h_xU_{xy}h_y^{-1}$.
 We choose $h_0=1$, so that $h_x$ expresses vectors at $x$ in the frame
 at the patch centre. This lets us compare contour variables of the fine field before averaging. A deterministic axial gauge is convenient for bounds
 but singles out coordinate directions. We combine a symmetric minimizing
@@ -112,7 +112,7 @@ This is the mean-value estimate for $D\pi-\Pi_{\gLie}$, not a new
 projection theorem.
 
 Fix $o_0\in S_4$ and use the axial gauge with initial point at the origin, with this
-coordinate order. In this gauge the transport from $x$ to $y$ in order
+coordinate order. In this gauge the contour variable from $x$ to $y$ in order
 $o$ is $\mathcal T_{xy;o}^{o_0}$. On the minimizing branch the loop condition
 gives $\|\mathcal T_{xy;o}^{o_0}-1\|_{\mathrm F}\le d$, where
 $d$ can be chosen arbitrarily small by reducing $\delta_{\rm fr}$.
@@ -383,7 +383,7 @@ $\chi\le2\le C_G b_i$. Averaging proves
 follows from $\chi\le2$ after enlarging $C_G$.
 
 Fix a box $X$ of side $q$ with $N=q^4$ sites and a coordinate order.
-Write $U_{x\to y}$ for transport along the corresponding path from $x$ to $y$. Then
+Write $U_{x\to y}$ for the contour variable along the corresponding path from $x$ to $y$. Then
 \[
  \sum_{x,y\in X}\chi(U_{x\to y})\le4Nq\sum_{e\text{ in box}}\chi(U_e).
 \]
@@ -407,7 +407,7 @@ branches of the local gauge transformation obey the same bound with this additio
 Choose an axial gauge transformation $H$ on the macro-box of radius $(j+7)L$. The
 axial estimate in Lemma~\ref{ch04:frame-lemma} gives
 $E(H\cdot U)\le C_jL\mathcal P_y(U)$. On each translated patch of the averaging operation,
-centred at $Lz$, let $h_{z,i}$ be the patch gauge at offset $i$ as in
+centred at $Lz$, let $h_{z,i}$ be the local gauge transformation at offset $i$ as in
 Section~\ref{ch04:kernel-section}. Its side is $O_j(L)$, so the preceding
 bound gives a constant $c_z\in G$ with
 \[
