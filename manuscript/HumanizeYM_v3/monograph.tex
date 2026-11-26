@@ -1,9 +1,83 @@
 \documentclass[11pt,oneside,openany]{book}
-\input{preamble}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,inner=30mm,outer=27mm,top=27mm,bottom=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{booktabs,longtable,array,enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{placeins}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,urlcolor=MidnightBlue]{hyperref}
+\usepackage{bookmark}
+\usepackage{margincomment}
+\usepackage[figure]{hypcap}
+
+\marginparsep0.05in
+\marginparwidth1in
+
+
+\definecolor{ymInk}{HTML}{24465C}
+\definecolor{ymAccent}{HTML}{A15A18}
+\definecolor{ymGrid}{HTML}{CCD2D5}
+
+
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.markings,external}
+
+
+\numberwithin{equation}{chapter}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\gLie}{\mathfrak g}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\Conf}{\operatorname{Conf}}
+\setcounter{tocdepth}{1}
+\setlist{itemsep=3pt,topsep=5pt}
+\emergencystretch=2em
+\hypersetup{pdftitle={Four-dimensional Yang--Mills theory: A constructive approach},pdfauthor={Working exposition from the supplied manuscripts}}
+
+
+
+\definecolor{darkgreen}{rgb}{0.0, 0.55, 0.0}
+\definecolor{darkred}{rgb}{0.7, 0.0, 0.0}
+\definecolor{darkblue}{rgb}{0, 0.0, 0.7}
+\definecolor{orange}{rgb}{0.8, 0.3, 0.0}
+\definecolor{purple}{rgb}{0.7, 0.0, 0.7}
+
+\newcommand{\bjoern}[1]{\margincomment[blue]{BB: #1}}
+\newcommand{\sky}[1]{\margincomment[purple]{SC: #1}}
+\newcommand{\wenhao}[1]{\margincomment[darkgreen]{WZ: #1}}
+\newcommand{\martin}[1]{\margincomment[orange]{MH: #1}}
+
+
+
+
+
 \title{Four-dimensional Yang--Mills theory\\[6pt]
  \large A constructive approach}
 \author{Working exposition from the supplied manuscripts}
 \date{Draft of 22 November 2026}
+
+
+
+
+
+
 \begin{document}
 \frontmatter
 \hypersetup{pageanchor=false}
