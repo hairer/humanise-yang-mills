@@ -92,7 +92,7 @@ This factorization concerns dependence sets. It does not
 assert that large-field activities with disjoint exclusion
 supports $Y_i$ have disjoint full dependence sets.
 The large-field indicators in their eligibility conditions can read outside $Y_i$.
-Those conditions remain in every exact-cover expression.
+Those conditions remain in every sum over disjoint covering families.
 
 The required simultaneous estimate for a connected product is
 \begin{equation}
@@ -110,8 +110,8 @@ radius-$B$ blocks, and $A_M$ is the part of the index triple belonging to $M$.
 The function $P_j$ has subpower growth:
 $\log P_j(\mathfrak b)/\log\mathfrak b\to0$ at fixed stage and
 ratio. Distinct event labels each contribute their
-own factor to the product. The bounded-jet estimate
-\eqref{ch06:actual-jet-integral}, applied to the primitive factors
+own factor to the product. The estimate
+\eqref{ch06:actual-jet-integral} for derivatives of products of local factors, applied to the elementary local factors
 constructed in Chapter~\ref{ch06:large-fields}, proves this
 bound under their joint law. The alternative hypothesis on tilted Gaussians
 in Proposition~\ref{ch06:common-majorant} is not required here.
@@ -149,7 +149,7 @@ by $\mathfrak b^{1/16}$. The polynomial factors $(1+s_M)^{d_j}$ in the number of
 a margin in the support exponent. The Mayer expansion, the average over forests of Proposition~\ref{ch09:forest-average-prop},
 and then Theorem~\ref{ch08:kp} give an absolutely convergent
 logarithm of the polymer gas without large-field sites. Components attached to
-a prescribed large-field set remain in the exact-cover sum.
+a prescribed large-field set remain in the sum over disjoint covering families.
 The deletion identity \eqref{ch08:deletion-identity} accounts
 for small-field polymers excluded by a chosen large-field region.
 Repeated polymer labels in the logarithm are counted at every
@@ -406,7 +406,7 @@ activities $k_i$, and a constant $\tau$ satisfying
                          \mathcal F^0(U).
  \label{ch09:early}
 \end{equation}
-Here $\mathcal F^0$ is the exact-cover sum of the $k_i$,
+Here $\mathcal F^0$ is the sum over disjoint covering families of the $k_i$,
 and $\mathcal Q$ is the quadratic part, restricted by its event indicators, of the
 prescribed path action. The coefficient $\alpha$ is
 the determinant coefficient fixed by the matching, not an adjustable
@@ -592,7 +592,7 @@ Combining \eqref{ch09:early},
  \qquad E=\sum_i h_{Z_i}R_{f_i}+F .
  \label{ch09:before-fusion}
 \end{equation}
-No division by the exact-cover gas was used, so this equality
+No division by the sum over disjoint covering families was used, so this equality
 also holds where that gas vanishes or is signed.
 
 Weighted path sums and additional exponential decay in path length give constants
@@ -652,7 +652,7 @@ with the conjunction of all inherited additional conditions.
 
 \begin{proposition}[Exact regrouping]
 \label{ch09:fusion-prop}
-Suppose $\sum_a\sup|\ell_a|<\infty$. The exact-cover sum of
+Suppose $\sum_a\sup|\ell_a|<\infty$. The sum over disjoint covering families of
 the $K_P$ equals $\mathcal F^0 e^{\sum_a\ell_a}$.
 If nonnegative majorants satisfy
 \[
@@ -671,12 +671,12 @@ large-field supports, then
 \begin{proof}
 Expand $e^{\sum_a\ell_a}=\prod_a[1+(e^{\ell_a}-1)]$.
 In a nonzero term each chosen correction label contains
-a large-field site. Exact coverage attributes that site to a preliminary
+a large-field site. The disjoint covering attributes that site to a preliminary
 prescribed large-field set, so its connected component contains
 a large-field label. Taking components gives disjoint union
 supports and the displayed new prescribed-site equality.
 Conversely flattening a compatible family of new labels
-recovers the old exact cover and the chosen correction labels.
+recovers the old disjoint covering family and the chosen correction labels.
 No constituent label is repeated because its support is
 nonempty. All additional conditions are retained. This is a bijection
 of finite terms and does not require independence of their
@@ -801,7 +801,7 @@ subsequence. Every potentially nonconvergent sequence
 would have such a convergent further subsequence, a
 contradiction.
 
-At fixed volume, the exact-cover sums obey the elementary
+At fixed volume, the sums over disjoint covering families obey the elementary
 telescoping estimate
 \[
  |\mathcal F_u(U)-\mathcal F_{u_0}(U)|
@@ -889,7 +889,7 @@ the signed average. Each large-field site meets a large-field plaquette,
 and a plaquette has at most four vertices, so
 $d_I\ge c\,t^2|I|$ for a fixed $c>0$.
 Every residual term is attributed exactly once; its relaxed regularity condition has a witnessing large-field site within distance $B$.
-The only nonzero exact-cover family is the set
+The only nonzero disjoint covering family is the set
 of these components of the configuration, so the density identity is exact.
 
 The number of connected prescribed large-field sets of $r$ sites is bounded
@@ -947,8 +947,7 @@ satisfying the regular and large-field bounds
 \]
 Its inverse coupling is \eqref{ch09:reset} and obeys \eqref{ch09:drift}, uniformly in
 volume, ultraviolet cutoff and curve parameter. The construction
-commutes with restriction of the parameter interval and retains all exact-cover
-cutoff conditions. The theorem does not assert that the output inverse coupling lies in its band
+commutes with restriction of the parameter interval and retains all cutoff conditions of the sums over disjoint covering families. The theorem does not assert that the output inverse coupling lies in its band
 $[\widehat\beta_m/2,2\widehat\beta_m]$; along the tuned histories of Theorem~\ref{ch10:finite-history} it does, by the barrier inequalities of Section~\ref{ch10:shooting}, which rest on \eqref{ch10:step-drift} and the condition \eqref{ch10:drift-floor} on the choice of
 scales.
 \end{theorem}

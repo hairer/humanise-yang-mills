@@ -503,7 +503,7 @@ plaquettes meeting that site, whose links can extend beyond $Y_i$. The
 \emph{dependence set} includes those links as well as the internal
 links and any links read by other conditions. Two disjoint exclusion supports
 can have overlapping dependence sets. A connected expansion based
-on dependence must use the latter, whereas the exact-cover sum below uses
+on dependence must use the latter, whereas the sum over disjoint covering families below uses
 the former. Disjoint exclusion supports do not imply probabilistic
 independence.
 
@@ -577,7 +577,7 @@ refer to the local expressions on the domains where the regularity condition hol
 held fixed. In particular, a derivative with respect to the inverse coupling $\beta$
 does not differentiate the threshold or its indicator.
 
-\section{The exact-cover representation and its norms}
+\section{Representations by disjoint large-field families, and their norms}
 \label{ch04:density-norms}
 
 Recall that $Y_i$ is an exclusion support and $I_i^{\rm bad}$ its prescribed large-field
@@ -586,7 +586,7 @@ $\mathfrak F_m(U)$ be the finite subsets $\mathfrak a$ of large-field
 activity indices such that the $Y_i$, $i\in\mathfrak a$, are pairwise
 disjoint and
 $\bigcup_{i\in\mathfrak a}I_i^{\rm bad}=\operatorname{Bad}_m(U)$.
-These are exact covers of the large-field sites. They do not select a
+We call them the \emph{disjoint covering families} of the large-field sites (in combinatorics, exact covers). They do not select a
 preferred partition into connected components.
 
 \emph{Representation data} $\rho$ consist of $\beta$, a real constant
@@ -603,7 +603,7 @@ activities, with the fixed action \eqref{ch04:path-action}. Define
  \label{ch04:effective-density}
 \end{align}
 The empty product is one. Because each $I_i^{\rm bad}$ is nonempty, if
-there are no large-field sites the only exact cover is empty and the sum
+there are no large-field sites the only disjoint covering family is empty and the sum
 is one. Otherwise a single support may cover two regions, or two disjoint
 supports may cover them separately; both alternatives belong in the sum.
 Representation data satisfying the definitions alone need not give a positive density.
@@ -658,7 +658,7 @@ well-defined at fixed volume. Indeed
 \]
 and the absolute sum over all finite subfamilies is at most
 $\prod_i(1+k_i)\le\exp(|\Lambda|\mathcal K_m)$.
-Restricting to disjoint exact covers only lowers this bound. The estimate
+Restricting to disjoint covering families only lowers this bound. The estimate
 is a finite-volume convergence statement, not a uniform bound on the
 entire partition function.
 

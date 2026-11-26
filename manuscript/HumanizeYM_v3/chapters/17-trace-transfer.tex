@@ -1,6 +1,6 @@
 % !TEX root = ../monograph.tex
 % Fragment for Chapter17. Root owns integration and section numbering.
-\section{Exact current transfer and the scalar regulator}
+\section{Exact current transfer and the regulator mass}
 \label{ch17:current-suppliers}
 
 Several ingredients of the trace transfer can be established before its
@@ -82,14 +82,14 @@ In particular symmetry may fail pointwise after blocking, but its failure
 and the trace remain exact differences. This conclusion is independent
 of estimates on the current's Taylor coefficients.
 
-\subsection{What scalar mass regularization changes}
+\subsection{What the regulator mass changes}
 
 Consider the same admissible path action used in Chapter~\ref{ch07:matching},
 with its left Hessian $H$ and infinitesimal gauge action $d$.
 At the zero field the gauge-fixed vector operator is
 $H+dd^*=|k|^2I+O(|k|^3)$, and the ghost operator is
 $d^*d=|k|^2I+O(|k|^4)$, with the global lattice ellipticity stated there.
-Define $\Gamma_\mu$ with the scalar mass $\mu^2I$ as above.
+Define $\Gamma_\mu$ with the regulator mass $\mu^2I$ as above.
 The normalized quadratic response of $\Gamma_\mu$ has the same logarithmic
 coefficient as the regulated response in Chapter~\ref{ch07:matching}.
 This fact concerns its coefficient integral, before any relation to the
@@ -97,12 +97,12 @@ Haar divergence of a current.
 
 To see this directly, retain the vector and ghost first and second
 background derivatives $b,c$ and replace only their inverse propagators by the
-scalar-mass inverse propagators. In each channel the logarithmic Hessian is
+inverse propagators with the regulator mass. In each channel the logarithmic Hessian is
 \[
  \operatorname{tr}\bigl(a_\mu(k)^{-1}c(-p,p;k)
  -a_\mu(k)^{-1}b(-p;k+p)a_\mu(k+p)^{-1}b(p;k)\bigr).
 \]
-The scalar mass has no background derivative. The local Taylor
+The regulator mass has no background derivative. The local Taylor
 expansion and vertex estimates of Chapter~\ref{ch07:matching} therefore
 apply without the regulator-vertex terms. With $T=|k|+\mu$, the
 inverse and its $r$ momentum derivatives are bounded by $CT^{-2-r}$, for every
@@ -115,7 +115,7 @@ vertices by the resolvent identity is bounded by
  C\bigl(|k|^{-3}+\mu^2|k|^{-6}\bigr).
 \]
 The first term is the lattice Taylor remainder, and the second
-is the change of the inverse propagator by the scalar mass. Both have bounded integrals
+is the change of the inverse propagator by the regulator mass. Both have bounded integrals
 in four dimensions, uniformly in $\mu$. The region $|k|<\mu$ also
 has bounded integral, since its volume is $O(\mu^4)$ and its integrand
 is $O(\mu^{-4})$. Away from zero the integral is uniformly bounded.
@@ -175,7 +175,7 @@ The group-coordinate identity needed for this comparison is proved next.
 Its proof is independent of the contraction of the current
 sequence, established in Section~\ref{ch17:quadratic-current}.
 
-\subsection{The group-coordinate contact identity}
+\subsection{An integration-by-parts identity in group coordinates}
 \label{ch17:contact-section}
 
 Fix a finite lattice and a background field $U$ in the product of link groups.
@@ -286,7 +286,7 @@ identifies their sum with $DS[Z]$ from \eqref{ch17:contact-Z}.
 This proves \eqref{ch17:contact}.
 \end{proof}
 
-\subsection{Cancellation of the action-gradient terms}
+\subsection{Cancellation of the derivatives of the actions}
 
 The functional $\mathsf l$ above extracts the coefficient of $z^2t$
 from the diagonal polarization pair at momenta
@@ -332,7 +332,7 @@ Higher momentum orders cannot contribute to the coefficient of degree
 three. Gauge covariance of \eqref{ch17:contact-Z} follows by transforming
 its chart tensors, inverse operators and contracted indices together.
 The mass $\mu^2I$ is unchanged by these orthogonal local gauge transformations.
-The calculation therefore applies to both action-gradient terms of the
+The calculation therefore applies to both derivatives of the actions in the
 exact contact identity. It is a finite-momentum cancellation, not a
 statement that the corresponding functions vanish pointwise.
 
@@ -402,7 +402,7 @@ $u\in\gLie$, set
 The quadratic variation $DF[Z]$ in the preceding calculation starts at
 momentum degree three. Thus $\mathsf c(DF[Z])=0$, in addition to
 \eqref{ch17:gradient-cancellation}. Both functionals therefore annihilate
-the action-gradient terms of \eqref{ch17:contact}.
+the derivatives of the actions in \eqref{ch17:contact}.
 
 Suppose now that the current sequence has the following
 properties at a fixed scale: uniform exponentially weighted
@@ -473,7 +473,7 @@ determinants. Thus, with the lattice correction fully retained,
                   +\mu^2\mathsf h(\mathrm{Rem})+o(1).
  \label{ch17:corrected-regulated-ward}
 \end{equation}
-The action-gradient term $DS[Z_b']$ is annihilated by both parts of
+The derivative of the action $DS[Z_b']$ is annihilated by both parts of
 $\mathsf h$ as proved above.
 
 The $\mathsf l$ remainder was bounded by $C\mu$ after multiplication
@@ -496,7 +496,7 @@ $\mu$, this proves
 \[
                          \mathfrak h(Y)\longrightarrow-12\kappa_G.
 \]
-The group-coordinate contact identity, coefficient cancellation and
+The integration-by-parts identity in group coordinates, the coefficient cancellation and the
 regulator estimate are now established. Their application still requires
 the transferred current sequence to satisfy the weighted bounds
 and matched-jet convergence stated at the start of this subsection;

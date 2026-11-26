@@ -7,7 +7,7 @@ $N$ tend to infinity. The scale $m$ has spacing $a_m=D_m^{-1}$;
 blocking proceeds from $m+1$ to $m$. The purpose of this chapter is to
 compare different cutoffs on one fixed configuration space. Compactness
 by itself would give only a subsequence. The additional ingredient is an
-estimate for stopping the evolution with insertions at an intermediate scale,
+estimate for deleting the terms of higher source degree at an intermediate scale,
 with a constant independent of that scale.
 
 The common trajectory of Chapter~\ref{ch10:trajectory} and the
@@ -178,7 +178,7 @@ of the action data makes $\widetilde\rho_{N,m}$ uniformly Cauchy. Indeed,
 curvatures are bounded on the compact group, so weighted path
 convergence implies uniform action convergence. Summing the norms of
 \eqref{ch04:weighted-sums} over the finitely many sites gives uniform convergence
-of the regular sum and every total large-field activity. The exact-cover gas
+of the regular sum and every total large-field activity. The sum over disjoint covering families
 is a finite polynomial in the latter activities and the fixed indicators of the
 eligibility conditions. Its product with the exponential of the regular action
 therefore converges uniformly.
@@ -186,7 +186,7 @@ therefore converges uniformly.
 The limit of $Z^0_{N,m}$ is strictly positive. Choose a fixed link ball
 $\mathcal U_m$ about the identity small enough that every inspected
 plaquette satisfies the regularity condition at scale $m$. On this set there are no
-large-field sites, so the exact-cover sum is one. The action and the
+large-field sites, so the sum over disjoint covering families is one. The action and the
 regular sum are bounded above by a constant $A_{m,p}$ uniformly for
 all sufficiently large $N$. Since Haar measure assigns positive mass to every
 nonempty open link ball,
@@ -223,7 +223,7 @@ the positive limit in \eqref{ch12:positive-partition}. The same constant term
 has been removed from both. In particular, deleting terms of source degree at least two does
 not mean deleting the total large-field activities of source degree one.
 
-\section{A stopping estimate uniform in the stopping scale}
+\section{An estimate uniform in the scale at which higher source degrees are deleted}
 \label{ch12:stopping}
 
 Recall that $B_m$ is the support radius from \eqref{ch04:thresholds}
@@ -249,7 +249,7 @@ Here $q_r^{\rm site}$ is the per-site normalization exponent of \eqref{ch11:repl
 bounds their weighted sums of total large-field activities. Such weights can be
 chosen uniformly for all sufficiently large $N$: the fixed-scale coefficients of source degree one are bounded, so scale each weight down to its positive
 allowed size. Crucially all four quantities in \eqref{ch12:root-bound}
-are evaluated at $r$, not at the later stopping scale $m$.
+are evaluated at $r$, not at the later scale $m$ at which the terms of higher source degree are deleted.
 These statements concern the full transfer with insertions.
 They follow from the estimate for terms of source degree at least two
 \eqref{ch11:higher-induction} and the normalized chessboard bound
@@ -300,9 +300,9 @@ For the common trajectory of Chapter~\ref{ch10:trajectory}, the correlations con
 configuration of distinct points belonging to one common lattice.
 \end{proposition}
 \begin{proof}
-Given an error tolerance, first choose $m$ so that the two stopping
+Given an error tolerance, first choose $m$ so that the two
 errors in Lemma~\ref{ch12:omission} are small. Keep $m$ fixed. The
-stopped expression \eqref{ch12:stopped} is Cauchy as both cutoffs tend
+expression \eqref{ch12:stopped} is Cauchy as both cutoffs tend
 to infinity. The triangle inequality proves the assertion. No new
 subsequence is chosen.
 \end{proof}

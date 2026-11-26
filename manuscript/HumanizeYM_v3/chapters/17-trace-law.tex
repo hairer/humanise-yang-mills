@@ -28,7 +28,7 @@ Put $\tau=\sum_{a=1}^4T_{aa}$, $e_{\rm tr}=S^{\xi_*}(\tau)$ and
              \Theta=\tau-e_{\rm tr}1,\qquad
              G_\Theta(r)=S_2^{\xi_*}(\Theta,\Theta;re_4,0).
 \]
-The real number $e_{\rm tr}$ is the expectation in the selected phase,
+The real number $e_{\rm tr}$ is the expectation in the fixed phase,
 which need not equal the expectation of the undecomposed hierarchy. The identity field is retained
 through the common filtration. The fact that inserting the identity field leaves correlations unchanged extends to
 the boundary correlations, so, on the common invariant word domain,
@@ -107,7 +107,7 @@ allow
  r(n,u)=a_nM_n^u,\quad \alpha_0\le u\le\alpha_0+1,\qquad
  k(n)=\min\{m>n:\log(a_n/a_m)\ge(\log\widehat\beta_n)^{48}\}.
 \]
-At fixed degree bound $D$ and arity bound $N_*$, choose comparison
+At fixed degree bound $D$ and bound $N_*$ on the number of insertions, choose comparison
 exponents with
 \begin{gather*}
  c<0,\quad\alpha_0-\alpha_1>6,\quad
@@ -136,8 +136,8 @@ Since $M_n$ increases and $L_n\le M_{n+1}$ eventually,
 $r(n,\alpha_0)\le r(n+1,\alpha_0+1)$. The intervals therefore
 cover every sufficiently small radius, as illustrated on a logarithmic
 scale in Figure~\ref{ch17:fig-radius-windows}. For a prescribed small radius, the first $n$ with $r(n,\alpha_0)$ at most that radius, together with continuity of $r(n,u)$ in $u$, places
-that radius in one of them. Take a diagonal subsequence over finite degree, arity,
-compact-set and derivative requests, which gives $n_i$, $k_i=k(n_i)$ and the maps $U_{i,d}$, requiring
+that radius in one of them. Take a diagonal subsequence over finite requests of degree, number of insertions,
+compact set and derivatives, which gives $n_i$, $k_i=k(n_i)$ and the maps $U_{i,d}$, requiring
 $(\alpha_0+1)\log M_{n_i}\le(\log\widehat\beta_{n_i})^{48}$.
 The excess over the target in $k(n)$ is negligible compared with
 $\widehat\beta_n$, as is the logarithm of the radius multiplier.
@@ -350,7 +350,7 @@ $e_{\rm tr}\beta_i r_i^4 1\to0$ by \eqref{ch17:running-radius}.
 
 \begin{theorem}[The all-radius trace law]
 \label{ch17:all-radii}
-The zero-mean trace in the selected phase satisfies
+The zero-mean trace in the fixed phase satisfies
 \begin{equation}
  \lim_{r\downarrow0}r^8\log^2(1/r)G_\Theta(r)
               =\mathcal A_G:=\frac{3\dim_\RR\gLie}{\pi^4}>0.
@@ -384,7 +384,7 @@ sequence has a subsequence with limit $\mathcal A_G$, which proves
 \eqref{ch17:trace-law} by the subsequence criterion.
 \end{proof}
 
-\paragraph{The dilation current at short separation.}
+\paragraph{The dilation current at short distance.}
 Let $v$ be a continuously differentiable vector field on $\RR^4$ with
 $\partial_av_b+\partial_bv_a=2\varphi\,\delta_{ab}$ for a real function
 $\varphi$. For $x_0\neq x_1$ put
@@ -409,7 +409,7 @@ For the dilation field $v(z)=z$ one has $\varphi=1$, so for a pair at
 distance $r$ the divergence of $j$ is $G_\Theta(r)$, and
 Theorem~\ref{ch17:all-radii} gives
 $r^8\log^2(1/r)\,G_\Theta(r)\to\mathcal A_G>0$. Thus, against the zero-mean
-trace, the dilation current is not divergence free at short separation, although the classical
+trace, the dilation current is not divergence free at short distance, although the classical
 Yang--Mills action is scale invariant. In fact $G_\Theta(r)>0$ for every
 $r>0$: in \eqref{ch17:laplace} the measure $\rho_\Theta$ is positive, and
 nonzero since the limit is positive. For translations and rotations
