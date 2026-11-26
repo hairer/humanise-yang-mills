@@ -7,7 +7,8 @@ extends to the intervals of radii just described. We give the estimates
 because requiring every interval of scales to lie inside a stage plateau would leave
 gaps in radius coverage.
 
-Fix a finite degree, arity and derivative request. In this paragraph
+Fix the maximum scaling dimension of the insertions, their number, and
+the orders of the derivatives to be estimated. In this paragraph
 $C_j$ includes the linear column constants with insertions, the curvature-response
 row constants and the finite polynomial-source propagation constants
 for this request, all fixed \emph{before} the block ratio of stage $j$.
@@ -22,15 +23,14 @@ Constants depending on the already selected ratio, such as nonlinear
 jet bounds of the critical configuration, are not included here. They enter the local
 small errors and endpoint constants, and are handled by sufficiently large lower bounds on the reference coupling.
 These local errors are summed after transfer; their ratio-dependent
-constants are never multiplied once per step. Only a bounded number
+constants are never multiplied once per step. Put $H_n=\exp((\log\log\widehat\beta_n)^2)$. Only a bounded number
 of endpoint factors is multiplied, giving $H_n^{o(1)}$.
 This distinction avoids a circular ratio choice.
 
-Put $H_n=\exp((\log\log\widehat\beta_n)^2)$.
 For $b$ in a fixed compact interval of sufficiently large positive
-numbers, stop backwards from $n$ at the first scale $n'<n$ with $\log(a_{n'}/a_n)\ge$
-$(b+2)\log H_n$, and then at the first scale $n''<n'$ with $\log(a_{n''}/a_{n'})\ge$
-$10\log B_n$. Here $B_n$ is the radius of the restarted representation;
+numbers, move backwards from scale $n$, adding $\log L_i$ at each step.
+Stop when this sum first reaches $(b+2)\log H_n$. Starting from that
+scale, continue until the additional sum first reaches $10\log B_n$. Here $B_n$ is the radius of the restarted representation;
 $\log B_n=O(\log\log\widehat\beta_n)$.
 The schedule bound $L_i\le\log\widehat\beta_i$ makes each
 excess over the target $O(\log\log\widehat\beta_n)=o(\log H_n)$.
@@ -72,10 +72,10 @@ is uniform in the kernel history. Its stage-dependent constants,
 protected-path errors, ratio-dependent jet errors and finite incidence
 costs are made smaller than the requested powers of $H_n$ by choosing
 sufficiently large lower bounds on the reference coupling. Sums over $O(\log H_n)$ steps lose only a factor $H_n^{o(1)}$.
-At each step nonlinear transfer is the stated ratio-independent linear
-map plus a small error controlled by the lower bound on the reference coupling. Thus the ratio-dependent constants
-in the nonlinear comparison occur additively in those local errors,
-not in the growth factor of the repeated linear maps. The regular and large-field source recurrences therefore retain their
+At each step the linear map has its norm bound fixed before the block
+ratio is chosen. The remaining nonlinear term is small once the lower bound
+on the reference coupling is sufficiently large. Constants depending on the chosen ratio
+therefore enter the sum of local errors. The regular and large-field source recurrences therefore retain their
 strict negative powers after multiplication by the growth factor
 \eqref{ch17:window-product}.
 

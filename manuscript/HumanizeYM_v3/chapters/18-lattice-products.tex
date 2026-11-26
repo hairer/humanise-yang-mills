@@ -23,10 +23,10 @@ first cross $\sqrt T$.
 
 \subsection{Signed local transfer}
 
-A local degree-$t$ density with insertions consists of a column coefficient
-$x_l$ and a remainder of norm at most $r_l$ whose extracted coefficient vanishes. Its dimensionless
-normalization obeys
-$H_l=L_l^t\mathcal B_l H_{l+1}$; the dimensionful density with insertions has
+Extracting the polynomial part of a local degree-$t$ density with insertions
+gives a coefficient vector $x_l$. Write $r_l$ for the norm of the
+remaining density, whose extracted polynomial part vanishes. The dimensionless density obeys
+$H_l=L_l^t\mathcal B^{(L_l)}_\beta H_{l+1}$, with $\beta$ the inverse coupling used for the step $l+1\to l$ in \eqref{ch04:block-operator}. The dimensionful density with insertions has
 no additional factor. These conventions are those of
 Section~\ref{ch11:one-graph}. Keep the full prescribed large-field set and
 its normalization by the square root of the large-field bound in this remainder norm.
@@ -40,8 +40,8 @@ the large-field term retains half the suppression of its original
 prescribed large-field set. Subtracting its output column restores the vanishing extracted coefficient and
 adds at most $(1+2C_l)L_l^{-2/5}q$. The lower bound on the block ratio makes this at
 most $L_l^{-3/8}q$. This recentering is an equality of
-densities with insertions, including the terms with prescribed large-field sets, and uses linearity rather
-than division by an activity.
+densities with insertions, including terms with prescribed large-field sets. It follows by
+linearity, so it applies also when an activity vanishes.
 
 Add a free column parameter at the finest scale of the interval and choose it so that
 the transferred residual coefficient vanishes at $k_*$. Invertibility
@@ -154,7 +154,7 @@ All their logarithms, as well as $\log\Xi_l$, are $o(\tau_l)$.
 For a fixed exterior reflected cell at scale $k$, let
 \[
  k_* =\min\{l\ge k:B_l^2\le a_k/a_l\},\qquad
- N_k=\exp\{(a_k/a_{k_*})^4q_{k_*}^{\rm site}+5\}.
+ N_k=\exp\bigl((a_k/a_{k_*})^4q_{k_*}^{\rm site}+5\bigr).
 \]
 The stopping-scale argument of
 \eqref{ch13:sharp-schedule} gives $\tau_{k_*}/\tau_k\to1$
@@ -248,7 +248,7 @@ estimate gives $\omega=e^{-ZT+o(T)}$ at $m+1$, and therefore
 $E_m=e^{(Z-t\theta)T+o(T)}$.
 Set
 \[
- \varpi=\exp\{[(t+1/16)(\theta-\theta_-)-Z]T\}.
+ \varpi=\exp\bigl([(t+1/16)(\theta-\theta_-)-Z]T\bigr).
 \]
 In the first inequality of \eqref{ch18:residual-weights}, the
 left exponent is $-Z-15(\theta-\theta_-)/16$, strictly smaller

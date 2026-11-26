@@ -11,7 +11,9 @@ function through the probability block kernels.
 We record the precise estimate with insertions used in this construction. It is
 the local-trial comparison for reflected tilings, with every term of source degree at least two
 retained, not only its one-column coefficient estimate. At a coarse
-scale $h$, write $C_h$ for its prescribed coefficient-column bound,
+scale $h$, let $J_h$ map the coefficients of a trial in the chosen basis
+to the coefficients of its selected scale-$h$ polynomial. Write $C_h$
+for the prescribed coefficient-column bound,
 $Q_h$ for the small-field norm bound of a normalized local trial, and
 $E_h$ for its full bound, including the large-field
 part. For the common trajectory of Chapter~\ref{ch10:trajectory} these bounds and all fixed coefficient
@@ -26,9 +28,7 @@ and chessboard seminorm estimate for the residual required here are
  \label{ch13:coarse-residual}
 \end{align}
 Here $k,m$ are fixed before $h$; $\mathcal C_k$ is the centered
-cell tiling at scale $k$ from Section~\ref{ch13:cells}, and $J_h$
-maps trial basis coordinates to their selected scale-$h$ polynomial
-coordinates. Both estimates must concern the history restricted from
+cell tiling at scale $k$ from Section~\ref{ch13:cells}. Both estimates must concern the history restricted from
 the cutoff $N$, uniformly in $N\ge h$ and the period.
 
 The first inequality is the endpoint comparison used in
@@ -111,7 +111,7 @@ $c_i+|x_i|\le E_h/G(h,i)$. Since the ratio of
 $a_i^{-d}/G(h,i)$ at successive scales is $L_i^{d+1/8}$,
 \eqref{ch13:residual-height} gives
 \begin{equation}
- \omega_i^{\rm res} a_i^{-d}\{c_i+|x_i|\}
+ \omega_i^{\rm res} a_i^{-d}\bigl(c_i+|x_i|\bigr)
        \le \omega_i^{\rm res} a_i^{-d}E_h/G(h,i)\le\zeta_i/2
                   \quad(m\le i\le h).
  \label{ch13:residual-height-bound}
@@ -170,9 +170,12 @@ regular and large-field comparisons have bounds at most one by the
 choice of $\zeta_i$. Transfer this whole polynomial down to $m$. Its regular terms of source degree one have bound at most two, and the
 large-field terms of source degree one have bound at most one, and its two incidence bounds for terms of source degree at least two are at most one.
 
-For completeness, if $\mathcal I$ is the set of cells and $U_v$ the
-negative terminal normalized local insertion without its minus sign, its full coefficient
-at $h$ is
+Let $\mathsf P_{h,N}$ push densities from scale $N$ to scale $h$ by
+successive applications of \eqref{ch04:block-operator} along the chosen
+history. Its adjoint $\mathcal P_{N,h}$ pulls observables back from $h$ to $N$.
+Let $\mathcal I$ index the cells of the reflected tiling and let $-U_v$
+denote the terminal insertion used for cell $v$. In the product above
+the coefficient of $\prod_{v\in\mathcal I}z_v$ at scale $h$ is
 \[
  \sum_{A\subseteq\mathcal I}
  \mathsf P_{h,N}\left(\rho_N\prod_{v\notin A}(-U_v)\right)
@@ -186,8 +189,8 @@ No product of separately transferred densities for single insertions has replace
 Equation~\eqref{ch11:root-bound} now yields
 \[
  \|\mathcal P_{N,h}F-U\|_{\mathcal C_k}
- \le w^{-1}\exp\{(a_k/a_m)^4q_m+5\}
- =\frac{2e^{(a_k/a_m)^4q_m+5}}{\zeta_ma_m^d}
+ \le w^{-1}\exp\bigl((a_k/a_m)^4q_m^{\rm site}+5\bigr)
+ =\frac{2e^{(a_k/a_m)^4q_m^{\rm site}+5}}{\zeta_ma_m^d}
        E_h e^{-(\tau_h-\tau_m)/8}.
 \]
 The prefactor depends only on the fixed stopping data. This proves
@@ -197,7 +200,7 @@ below. All identities and estimates use the original selected history.
 
 \begin{proposition}[Coarse bounded approximation]
 \label{ch13:bounded-singleton}
-Use the selected histories with the stage requirements above. Fix a degree, a real reference coefficient $c$, a
+Use the selected histories with the stage requirements above. Fix a scaling-dimension bound $d$, a real reference coefficient $c$, a
 sufficiently fine centered tiling $k$, and $\delta>0$. There are real
 observables $\mathcal B_{N,p}(c,y)$ with a finite bound independent of
 $N,p,y$, such that
@@ -222,8 +225,9 @@ a bounded measurable function, with bound uniform in the outer cutoff
 and period: its coefficient range and allowed couplings are compact,
 and its section is a fixed polynomial in compact group variables.
 
-Let $\mathcal K_{N,h}(U,dV)$ be the forward probability kernel from
-fine links to scale $h$, and set
+Let $\mathcal K_{N,h}(U,dV)$ be the composition of the one-step probability kernels
+$k^{(L_i)}_\beta(U,V)\,dV$ of \eqref{ch04:kernel}, in order from
+$i=N-1$ down to $h$ and with the coupling of each step, and set
 $\mathcal P_{N,h}F(U)=\int F(V)\mathcal K_{N,h}(U,dV)$.
 It preserves real values and contracts the supremum norm. Locality here
 must include every random variable used to choose a gauge-covariant averaging operation or local gauge
