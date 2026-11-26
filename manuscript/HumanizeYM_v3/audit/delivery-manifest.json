@@ -1,7 +1,7 @@
 {
   "pages": 280,
   "cited_references": 41,
-  "pdf_sha256": "eb3fc539a5dba33f88bb363bca252c1a0f6720be99a16a28d112be74d713cab4",
+  "pdf_sha256": "475a477a31ac15041e90781f21fa872836f8d072914a19f4190e5dddec5e5773",
   "sources": {
     "monograph.tex": "6ecd01f82c6803e265a69a3000295e000545ea5398195e28f26a2cbb1bddd31a",
     "preamble.tex": "f7209a56016068a42eac177da8bc2509b0dcee939083d2e24214f5633837e393",
@@ -17,14 +17,14 @@
     "chapters/06-large-fields.tex": "865806c669df4d563134171b39c5b7c80f796cc5c3cbb684208d68e3b9ee9418",
     "chapters/07-matching.tex": "d01f2258507adc374fba8751b778525f8c959f545b6e43c8e2adb1828ceb28cc",
     "chapters/08-polymers.tex": "2f0c8ccac0f52ea8c8e630316f7dad50e9edba4a7ad67eb1e8c982d08b9f025c",
-    "chapters/09-renormalization.tex": "16e2956d0d96745f28813a829e32222fd16b1d4ce1276db88aebe73a825c6547",
+    "chapters/09-renormalization.tex": "8a1b11ecd6390c76ff704f117cac6b4028dff2fc34758ab522ac46554784246a",
     "chapters/09-stationary-remainder.tex": "f0d2ec1eee58b13c5fa880736709e4dcaf8f6d8e222380c0d1ed75753444de1c",
-    "chapters/10-common-trajectory.tex": "fef300f0ae8e0671f348c09d0e798c9a6bebd2e153af4bf38995c41fe3047a29",
+    "chapters/10-common-trajectory.tex": "915b5784bfd396cd75f9ca069fec360d510bd2b6f940fd709872d4c9fcd5a7d9",
     "chapters/11-equation-calibration.tex": "7bddab63e5346abc7cb7526921c078f71a509f781e4b5df4a5b527cdee2a7230",
-    "chapters/11-marked-insertions.tex": "9674845bb296432476c401f8b00bf3da7b2f52986dd18ec71702792880155dae",
-    "chapters/11-restarted-history.tex": "8e31ad0a77d848c77fc98d90b687592494bb2adeae77ba504157684c591c8e70",
+    "chapters/11-marked-insertions.tex": "dc4f233e4ea6046194ca6b0c979a93777cd6e8f4289f762ca9dd395c356ecf10",
+    "chapters/11-restarted-history.tex": "7823b8adf0058a3e6dae2ac0b82735b029b7fa810f72d0d924ec9ff212c7de52",
     "chapters/12-ultraviolet-limit.tex": "b835e6845eb96906b4b2e5eee3227c4ed793b591b6e2ca138d9815434ab69f9c",
-    "chapters/13-bounded-approximations.tex": "774d75aae1ad6b5f5d79cbcb62f0c3d0dfb8878a50f709a71343e91e9e75055b",
+    "chapters/13-bounded-approximations.tex": "6ded769b3f742ca9d4ad33fbd2eb003848c8c00503bac194119a9bc513f8dce6",
     "chapters/13-continuum-fields.tex": "46e6e26a85790b250fef857ccb0f8fd07c8eaaf10d0f1d46379e2908612d0e21",
     "chapters/13-sharp-bounds.tex": "c15ae9d7f8daba80b1a9f5d5020bb1c7748fddeceb71e76f0a3b8d462bed4211",
     "chapters/14-lattice-comparison.tex": "394f3623dba4288fd250c83c0a18723f6b1fc9d6b2e283f1f6e657c5a3847ae4",
@@ -33,12 +33,12 @@
     "chapters/15-sharp-phase-bounds.tex": "42cfcc8f26269bd0a7093fc5722699b8c22b11c52bcb76b5f6cbab4c8ec9fd73",
     "chapters/16-reconstruction.tex": "7d1d8fcb345919df1cb0df34b275be43cf0b56feb2e2d873c4f9199a4b3baabe",
     "chapters/17-current-contraction.tex": "44ac1a448dacfd7e31e32e25387b48b129ed14fb679f869a7ccb33eaf29c4629",
-    "chapters/17-marked-trace-rates.tex": "171b6fa00c7325f3d6b489ea426afdea0b8cff5de7614210c269adbd1834d1cc",
+    "chapters/17-marked-trace-rates.tex": "23b2d68b0c1068064c5fa911171f5001799069c413d381d71fb5a98a72a15196",
     "chapters/17-trace-law.tex": "6afc196cfadc20b1e5e91ab89d4dea75ec7a387b7cfde824e7ca1ae637702e9d",
     "chapters/17-trace-transfer.tex": "0f10d3a7c5263389d5e10315e55c29a21e651dbd792bc66c9e9fc2668d135519",
     "chapters/17-variable-windows.tex": "f65cf7caef5242f1821bba2ca2d9277221f5f23a4fa3d14a0dbea033e4f618b1",
     "chapters/18-graded-quotient.tex": "9be181ad56a1ed8d6430e2208eb3ab3869bc7529a1ea9a129154a698108ea407",
-    "chapters/18-lattice-products.tex": "68d10ae3e03226917b14722141eaeedcd774ceac254714b1450e143a8b7fb2b8",
+    "chapters/18-lattice-products.tex": "86fcf075798fa12d1f561fd15d03cb31b8d4692a4febc0e8c9cfccc7c338d573",
     "chapters/18-operator-products.tex": "7001b0b99f7618815334c6adc1cbfb44f3adaf7f8fcbd59d04487dce3dbca493",
     "chapters/18-raw-replacement.tex": "39877dde4da77e35e53953d8fbe237f704288335c7ba549c64cee900f1575ca8",
     "chapters/19-assembly.tex": "c2269e1f04018d6d85067f7f02a182940b0ffe9e51cba74768405823d93d8ac2",
@@ -55,5 +55,5 @@
     "figures/transported-curvatures.tex": "e0bdd23410ab04a4f99b7fcebaed52680359c3174dc149a20b012053f9efb5a8",
     "figures/ward-shell.tex": "f15c44005db75ae93c1629899787bdc71615006a1c22b918d98ba4bbbf88d1e2"
   },
-  "review": "Rebuilt the manuscript after clarifying measurability of the block kernel and verified all explicit cross-references."
+  "review": "Checked later uses of the exact block operator, rebuilt the PDF, and verified explicit cross-references."
 }
