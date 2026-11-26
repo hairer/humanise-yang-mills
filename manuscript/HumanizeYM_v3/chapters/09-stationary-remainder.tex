@@ -264,7 +264,7 @@ Let $a_c=\mathcal K$ be the coarse classical action and
 $d_c=\mathcal L+\alpha\mathcal Q$ the prescribed coarse quantum contribution:
 the inherited loop action of the coarse path action and its quadratic part
 multiplied by the coefficient $\alpha$ fixed by the matching, as in
-\eqref{ch09:early}.\mgubi{Identified from the Lean definition YM.\allowbreak Precision.\allowbreak draft ($\alpha$ times the quadratic term plus the loop term), existence/\allowbreak stationary-output-construction.\allowbreak tex and v2 D-section; no $\Delta$ and no constant per site. Open: Lean uses the expressions without event indicators, while \eqref{ch09:early} restricts $\mathcal Q$ by its event indicators.} Define
+\eqref{ch09:early}.\mgubi{Identified from the Lean definition YM.\allowbreak Precision.\allowbreak draft ($\alpha$ times the quadratic term plus the loop term), existence/\allowbreak stationary-output-construction.\allowbreak tex and v2 D-section; no $\Delta$ and no constant per site. Open: Lean uses $\mathcal K$, $\mathcal L$, $\mathcal Q$ without event indicators, while v3 defines them with indicators; they coincide on the small-field ball.} Define
 \[
  C=a_c-\phi(\cdot,\rho),\qquad
  W=d_c-\psi(\cdot,\rho)-\tfrac12\log\det A.
@@ -301,8 +301,8 @@ For $h=z^{-7/16}$ the three powers are respectively
 $z^{-23/16}$, $z^{-19/16}$ and $z^{-21/16}$.
 Their largest exponent is $-19/16<-23/20$.
 Original small-field logarithmic coordinates and the directions admitted by the activity
-seminorm \eqref{ch04:local-seminorm}, restricted to the cube $N_{\bar w}$ about the localization site and carried to the reflected periodic extension (both defined in Section~\ref{ch09:local-density} below), are bounded by a polynomial in $B$ times
-$t_m$, which is $o(h)$.\mgubi{All directions of the seminorm are meant, not only the affine ones (v2, D-section). v2 adds that the reflected torus must admit the charts and derivative bounds used here, and that this ``remains under verification''; v3 does not prove it either.} They therefore obey the same estimate.
+seminorm \eqref{ch04:local-seminorm}, restricted to the cube $N_{\bar w}$ about the localization site and carried to the reflected periodic extension ($\bar w$ and the reflected extension are those of Section~\ref{ch09:local-density} below; the cube $N_r(x)$ is used there without a definition), are bounded by a polynomial in $B$ times
+$t_m$, which is $o(h)$.\mgubi{All directions of the seminorm are meant, not only the affine ones (v2, D-section). v2 adds that the reflected torus must admit the charts and derivative bounds used here, and says that this and the finite-period comparison on a common analytic strip ``remain under verification''; v3 does not prove it either.} They therefore obey the same estimate.
 This proves the auxiliary remainder needed for localization from
 the explicit stationary, matching and actual-sector inputs above.
 It does not require a formal expansion of an untruncated
