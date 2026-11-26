@@ -11,7 +11,7 @@ Updated 25 November 2026. The requested blueprint and a full first draft of the 
 
 ## Final mathematical integration
 
-Chapters 4–9 develop the actual predictor, Gaussian/Hessian estimates, large-field bounds, local matching and nonlinear step. Chapter10 chooses one common schedule and proves fixed-scale convergence. Chapter11 supplies equation calibration, restarted histories, common polynomial extraction, arbitrary fixed-arity comparisons, replicated estimates and uniform differences.
+Chapters 4–9 develop the actual predictor, Gaussian/Hessian estimates, large-field bounds, local matching and nonlinear step. Chapter10 chooses one common schedule and proves fixed-scale convergence. Chapter11 supplies equation calibration, restarted histories, common polynomial extraction, comparisons for an arbitrary fixed number of insertions, replicated estimates and uniform differences.
 
 Chapters 12–16 develop the fixed-volume limit, continuum quotient, bounded real approximations, local cluster replacement, Ward identities, rotations, phases and reconstruction. The grouped lattice product argument is placed in Chapter13 so the annular estimate in Chapter14 has no dependency on later phasewise OPE. Chapter18 converts that result to finite-order phase-uniform operator products and separately constructs a conservative contact extension.
 

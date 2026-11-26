@@ -8,7 +8,7 @@ Date: 18 November 2026. This is a targeted editorial/dependency audit, not a ful
 2. The repeated reflected-word bound is listed with OPE (Outline VII.4), but depends on lattice reflection/chessboard estimates and is needed long before the OPE. Put its proof in C2, then slabs in C3. This avoids an apparent circular dependence.
 3. Ward/spectral analysis uses an elementary two-point contact extension before the final contact theorem. `Martin/existence/physical-ward-stress-cone.tex:19–87` constructs it by Taylor subtraction, arranges tensor symmetries and cancels low divergence jets. It does not assume collision positivity. State this local auxiliary construction in C3; do not forward-reference the final OPE contact prescription.
 4. The kernels have full mesh convergence at fixed volume, then only subsequential volume convergence. Coefficient projections may be extracted along additional cutoff subsequences without changing the full-mesh kernel theorem. Keep these two sorts of extraction distinct.
-5. The main observable limit is the mixture. The trace law is in a selected phase. Every phase is reconstructed with a unique vacuum, but the mixture need not have one. Polynomial heat decay does not imply a mass gap.
+5. The main observable limit is the mixture. The trace law is in a fixed phase. Every phase is reconstructed with a unique vacuum, but the mixture need not have one. Polynomial heat decay does not imply a mass gap.
 
 ## Audit register
 
