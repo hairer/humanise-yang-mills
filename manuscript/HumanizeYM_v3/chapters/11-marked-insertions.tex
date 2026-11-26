@@ -351,7 +351,7 @@ the stated bound $g$ on the number of insertion points per coarse site, uniforml
 Fix a degree $d$ with coarse derivative order at least
 $\max(2,d+1)$, fine spatial exponent at least $d$, fine smoothing order
 at least $d+2$, and coarse smoothing order at least $d+3$ for the
-simultaneous calculation for normalized local insertions (the observables $O_{N,p}(d,c;x)$ defined in Section~\ref{ch11:collected}) and the regular and large-field remainders.
+simultaneous calculation for normalized local insertions (at the ultraviolet cutoff these are the observables $O_{N,p}(d,c;x)$ of Section~\ref{ch11:collected}) and the regular and large-field remainders.
 Assume the period is at least $100(1+B_c)$.
 The fixed normalized local insertion is tested with one additional
 derivative beyond each requested derivative used in a coefficient evaluation; this requirement
@@ -1347,7 +1347,7 @@ Average with conjugation at the same time. This uses one
 polynomial construction for all transformed columns, rather
 than symmetrizing independently chosen lifted vectors.
 
-At a fixed comparison scale $k$ the one-step bounds for the coefficient of one transferred insertion (its $\ell^1$ norm at scale $m$ is at most $C_{J(m+1)}L_m^d$ times that at scale $m+1$, with the stage column bound $C_j$ of Section~\ref{ch10:choices}), applied successively from the reference scale to $k$, give
+At a fixed comparison scale $k$ the one-step bounds for the coefficient of one transferred insertion (its $\ell^1$ norm at scale $m$ is at most $C_{J(m+1)}L_m^d$ times that at scale $m+1$, with the stage column bound $C_j$ of Section~\ref{ch10:choices}), applied successively from the reference scale to $k$, give\mgubi{This one-step bound is stated nowhere in v3: Section~\ref{ch10:choices} fixes $C_j$ without saying what it bounds, and Lean has the bound as a hypothesis (YM.\allowbreak Source.\allowbreak TransferData.\allowbreak Based.\allowbreak front). $D_k$ is not defined; in existence/ it is $a_k^d\prod_{u<k}C_{u+1}L_u^d$. The $C_k$ earlier in this subsection is another constant.}
 $\|u\|_1\le D_k\|Au\|_1$, uniformly in $N,p$.
 The relative half-error therefore implies
 $\|u\|_1\le2D_k\|Tu\|_1$, so $T$ is injective and hence

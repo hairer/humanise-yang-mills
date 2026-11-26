@@ -31,13 +31,13 @@ The current Chapter17 includes a proved comparison over windows crossing arbitra
 | 1 | Lattice gauge theory and the continuum problem | 18 | [Foundations, Chapter 1](blueprint/foundations-chapters.md) |
 | 2 | Local gauge-invariant observables | 16 | [Foundations, Chapter 2](blueprint/foundations-chapters.md) |
 | 3 | The free Maxwell comparison theory | 20 | [Continuum C1](blueprint/continuum-chapters.md) |
-| 4 | Exact blocking and effective densities | 18 | [UV U2](blueprint/uv-chapters.md) |
+| 4 | The renormalization transformation and the effective density | 18 | [UV U2](blueprint/uv-chapters.md) |
 | 5 | Gaussian kernels and stationary backgrounds | 26 | [UV U3](blueprint/uv-chapters.md) |
 | 6 | Large fields and local Gaussian integration | 24 | [UV U4](blueprint/uv-chapters.md) |
 | 7 | Local matching and the running coupling coefficient | 26 | [UV U5](blueprint/uv-chapters.md) |
 | 8 | Polymer expansions and connected correlations | 18 | [UV cluster tools, split from U6](blueprint/uv-chapters.md) |
 | 9 | The nonlinear renormalization step | 30 | [UV U6](blueprint/uv-chapters.md) |
-| 10 | A common trajectory and fixed-scale stability | 24 | [UV U7](blueprint/uv-chapters.md) |
+| 10 | A common trajectory and convergence at fixed scales | 24 | [UV U7](blueprint/uv-chapters.md) |
 | 11 | Renormalized insertions and uniform difference estimates | 30 | [UV U8](blueprint/uv-chapters.md) |
 | 12 | The full ultraviolet limit at fixed volume | 24 | [UV U9](blueprint/uv-chapters.md) |
 | 13 | Continuum correlations and local fields | 20 | [Continuum C2](blueprint/continuum-chapters.md) |
