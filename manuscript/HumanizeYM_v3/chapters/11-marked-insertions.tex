@@ -1347,8 +1347,8 @@ Average with conjugation at the same time. This uses one
 polynomial construction for all transformed columns, rather
 than symmetrizing independently chosen lifted vectors.
 
-At a fixed comparison scale $k$ the one-step bounds for the coefficient of one transferred insertion (its $\ell^1$ norm at scale $m$ is at most $C_{J(m+1)}L_m^d$ times that at scale $m+1$, with the stage column bound $C_j$ of Section~\ref{ch10:choices}), applied successively from the reference scale to $k$, give\mgubi{This one-step bound is stated nowhere in v3: Section~\ref{ch10:choices} fixes $C_j$ without saying what it bounds, and Lean has the bound as a hypothesis (YM.\allowbreak Source.\allowbreak TransferData.\allowbreak Based.\allowbreak front). $D_k$ is not defined; in existence/ it is $a_k^d\prod_{u<k}C_{u+1}L_u^d$. The $C_k$ earlier in this subsection is another constant.}
-$\|u\|_1\le D_k\|Au\|_1$, uniformly in $N,p$.
+At a fixed comparison scale $k$ the one-step bounds for the coefficient of one transferred insertion (its $\ell^1$ norm at scale $m$ is at most $C_{J(m+1)}L_m^d$ times that at scale $m+1$, with the stage column bound $C_j$ of Section~\ref{ch10:choices}), applied successively from the reference scale $r(d)$ to $k$, give\mgubi{The one-step bound is not stated in v3. It is proved in v2 (E-one-mark, Lemma ``One marked step'') and in Lean (YM.\allowbreak Work.\allowbreak G08.\allowbreak cone\_step, proof read by an agent); existence/ assumes it. It follows from \eqref{ch11:graph-estimates} if $C_j$ dominates the bound on the localization map and $s_f$, which Section~\ref{ch10:choices} does not yet require. The $C_k$ earlier in this subsection is the same constant, $C_{J(k)}$.}
+$\|u\|_1\le D_k\|Au\|_1$, uniformly in $N,p$, with $D_k=a_k^d\prod_{m=r(d)}^{k-1}C_{J(m+1)}L_m^d$; the factor $a_k^d$ undoes the dimensionful normalization of $Au$.
 The relative half-error therefore implies
 $\|u\|_1\le2D_k\|Tu\|_1$, so $T$ is injective and hence
 invertible. Let $v_1,\ldots,v_r$ be real representatives of the
@@ -1703,8 +1703,7 @@ $c|q|^2$. Taylor expansion at zero, with differentiated bounds, yields
  D^j(P(p)-P_0(p))=O(|p|^{1-j}),
  \quad P_0=X_0|p|^{-2}X_0^*,\quad X_0=ip\wedge.
 \]
-All constants are uniform in the kernel history within the
-already fixed quadratic bounds.
+All constants depend only on the bounds on $H$ just stated, which at fixed final smoothing order and penalty parameter are uniform over the blocking sequence (Section~\ref{ch05:histories}; Proposition~\ref{ch05:history-prop}). In particular they do not depend on the number of blocking steps or on the block ratios.
 
 Use a smooth compact frequency partition whose $2\pi\ZZ^4$
 translates sum to one, equal to one near zero. This leaves the
