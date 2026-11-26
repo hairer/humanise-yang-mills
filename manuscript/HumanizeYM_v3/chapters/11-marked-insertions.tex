@@ -23,10 +23,10 @@ The estimates of Chapters~\ref{ch06:large-fields} and
 The argument has four parts. First the squarefree source algebra
 and support estimates retain every joint insertion term. Next the
 single-insertion estimates and the joint Gaussian comparison construct
-the restarted history and the normalized product-moment bounds.
+the restarted history (an auxiliary history that keeps the inverse coupling constant below a comparison scale) and the normalized product-moment bounds.
 Backward comparison then relates local trials to the
 renormalized fields and microscopic equations. Finally a common
-localization map onto the polynomial label space and a larger source weight give the bound from a finite separating family, from which uniform finite-difference bounds follow.
+localization map onto the polynomial label space and a larger source weight (the weight $\omega$ of the source variables in place of $\omega_-$, Section~\ref{ch11:weight-restoration}) give the bound from a finite separating family, from which uniform finite-difference bounds follow.
 
 \section{An algebra for finitely many insertions}
 
@@ -91,7 +91,7 @@ insertion. In particular the reference-scale coefficient of the dimensionful
 identity field in a degree-$d$ convention is $a_{r(d)}^d e_0$, not the coefficient
 obtained from the individual scaling dimension of $e_0$.
 
-\begin{proposition}[Changing the block history]
+\begin{proposition}[Changing the block kernels]
 \label{ch11:mass}
 Replace any kernels below a fixed scale index $k$ by other normalized positive
 block kernels. Transfer the full polynomial $q_k$ through them.
@@ -351,7 +351,7 @@ the stated bound $g$ on the number of insertion points per coarse site, uniforml
 Fix a degree $d$ with coarse derivative order at least
 $\max(2,d+1)$, fine spatial exponent at least $d$, fine smoothing order
 at least $d+2$, and coarse smoothing order at least $d+3$ for the
-simultaneous calculation for normalized local insertions and the regular and large-field remainders.
+simultaneous calculation for normalized local insertions (the observables $O_{N,p}(d,c;x)$ defined in Section~\ref{ch11:collected}) and the regular and large-field remainders.
 Assume the period is at least $100(1+B_c)$.
 The fixed normalized local insertion is tested with one additional
 derivative beyond each requested derivative used in a coefficient evaluation; this requirement
@@ -961,7 +961,7 @@ seminorm. The same estimate applies to finite differences formed from
 translates, using the derivative bounds on the translated link supports.
 It bounds cutoff-scale coordinates, not the raw reference labels.
 
-\section{Finite-dimensional detection before taking limits}
+\section{Uniform separating bounds at finite cutoff}
 \label{ch11:detectors}
 
 A useful part of the later difference argument is entirely finite
@@ -1037,6 +1037,7 @@ consideration. An identity obtained only after an ordered limit
 would not justify the absorption lemma's uniform hypothesis.
 
 \section{Collected estimates and local calibration}
+\label{ch11:collected}
 
 The chapter now gives the quantitative single-insertion raw-map estimates
 \eqref{ch11:graph-estimates}--\eqref{ch11:graph-difference},
@@ -1346,7 +1347,7 @@ Average with conjugation at the same time. This uses one
 polynomial construction for all transformed columns, rather
 than symmetrizing independently chosen lifted vectors.
 
-At a fixed comparison scale $k$ the one-step coefficient bounds in the direction of the transfer, applied successively from the reference scale to $k$, give
+At a fixed comparison scale $k$ the one-step bounds for the coefficient of one transferred insertion (its $\ell^1$ norm at scale $m$ is at most $C_{J(m+1)}L_m^d$ times that at scale $m+1$, with the stage column bound $C_j$ of Section~\ref{ch10:choices}), applied successively from the reference scale to $k$, give
 $\|u\|_1\le D_k\|Au\|_1$, uniformly in $N,p$.
 The relative half-error therefore implies
 $\|u\|_1\le2D_k\|Tu\|_1$, so $T$ is injective and hence
@@ -2028,7 +2029,7 @@ $2\dim(\gLie)\log\beta/q_0\le1$ eventually.
 Choose the later lower bound on the starting scale with
 $C_{\rm stage}+1\le I_k=\log H/32$.
 Applying the preceding estimate to
-\eqref{ch11:weighted-output-envelope} gives
+\eqref{ch11:weighted-output-envelope} gives, for the corrected coefficients (the Wick products of the insertions with respect to the free field; the recursion defining them is written for any number of insertions in Proposition~\ref{ch11:n-mark-comparison}),
 \[
  \|\hbox{corrected coefficient }I\|_{\rm root}
  \le e^{I_k}\omega^{-|I|}

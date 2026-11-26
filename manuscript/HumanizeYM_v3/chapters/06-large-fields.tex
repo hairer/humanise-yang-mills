@@ -5,14 +5,14 @@
 A step integrates every configuration. The usefulness of
 small-field coordinates therefore depends on a bound for their complement.
 This chapter separates two mechanisms. Large plaquette fields and
-large deviations of coarse links from their averages, both indexed by a large-field index triple, retain a deterministic positive energy.
+large deviations of coarse links from their averages, both indexed by a large-field index triple (a set of fine plaquettes, a set of coarse edges and a set of coarse sites, defined below), retain a deterministic positive energy.
 Large fluctuation-field events, the failures of smooth local cutoffs in the remaining coordinates, are controlled
 by simultaneous Gaussian tail estimates. These mechanisms use different
 estimates and must be combined under the same integral. Ba{\l}aban makes the same split, into large plaquette fields and large fluctuation fields~\cite{Balaban1988Expansions}; he adds the location of a large fluctuation field to the large-field region, whereas here the large-field set is not enlarged and these events are bounded by a joint Gaussian tail estimate.
 
 We work at two consecutive scales, the fine scale $m+1$ and the coarse scale $m$. The algebraic decompositions below
 are exact. The energy and differentiated integral estimates use
-uniform bounds for the chosen path components and for the non-flat matrices of a sector.
+uniform bounds for the chosen path components and for the non-flat matrices of a sector (a term of the decomposition below with fixed discrete data).
 We construct these bounds for the same local integral below; the flat
 Gaussian identities alone would not supply them.
 
@@ -698,8 +698,7 @@ it as a function of its fine links would be unjustified. A local change
 of variables instead keeps those physical fine links fixed.
 
 Write an active physical link as $U_e=\exp(u_e)(\operatorname{rep}V)_e$.
-At a base field $V_0$, set $u=m_Y(V_0)+gz$. Within a protected logarithmic
-chart define
+At a base field $V_0$, set $u=m_Y(V_0)+gz$. Within the logarithmic chart of the active links, where these logarithms are defined (its radius $d_*$ is fixed below), define
 \begin{align}
  u_V(e)&=\log\!\left(\exp(u_e)(\operatorname{rep}V_0)_e
                                   (\operatorname{rep}V)_e^{-1}\right),\notag\\
@@ -836,7 +835,7 @@ row bounds are used, a polynomial factor in $|I|$ suffices and is
 already allowed in \eqref{ch06:base-scores}. No assertion about
 independence of the coordinates is involved.
 
-\section{Simultaneous tail estimates}
+\section{Simultaneous estimates for large fluctuation-field events}
 
 A cutoff remainder, a cutoff factor minus one, is bounded but need not be pointwise small. Its
 smallness comes from a large fluctuation-field event. An event label specifies one
@@ -923,7 +922,7 @@ It remains to bound the affine component at the mean, not just the mean:
 or the corresponding bound after subtracting the prescribed nonzero
 linear target. If that target is within the strict plateau margin, choose
 $\xi$ so $C\xi$ is less than one third of the margin and increase the
-lower bound on the reference coupling to absorb the two errors. The local factors of the two partition-of-unity weights
+lower bound on the reference coupling to absorb the two errors. The local factors of the two partition-of-unity weights (the weights given to the sets $A_f$ and $A_n$ by the global partition of unity of the first section, with local factors $\vartheta_f(r_p^f)$ or $1-\vartheta_f(r_p^f)$ and $\vartheta_n(n_e)$ or $1-\vartheta_n(n_e)$)
 and the normalized weights of the auxiliary index are then equal to one. The same strict
 inequalities persist on a parameter neighborhood and supply the
 zero-germ assertion used in \eqref{ch06:pointwise-jets}.

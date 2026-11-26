@@ -1,5 +1,5 @@
 % !TEX root = ../monograph.tex
-\section{From the current identity to coefficient estimates with insertions}
+\section{From the current identity to coefficient estimates}
 \label{ch17:marked-rates}
 
 The integration by parts needed here is performed before the
@@ -24,8 +24,7 @@ independent of $u$. For a product of link kernels the corresponding
 bound has an additional polynomial in the number of differentiated
 links. No lower bound on $q_\gamma$ is used.
 
-First truncate the exponentially local current and its stationary
-kernels on a finite neighborhood. For the vector field use a finite
+First truncate the exponentially local current and the kernels of the critical-configuration map (the coefficients of its Taylor expansion in the coarse field) on a finite neighborhood. For the vector field use a finite
 gauge-covariant extension of its controlled jets through field order four,
 not the uncontrolled higher derivatives of a deep transferred current.
 Use the coefficientwise gauge-covariant extension: replace each
@@ -161,7 +160,7 @@ remaining degree-five scalar-vector coefficient can be written
        (\operatorname{div}_{\rm Haar}Y-D\mathcal L[Y])
        +E_{\rm stat}+E_{\rm tail}+E_{\rm reg}+E_{\rm mark}.
 \end{equation}
-Here stationary and loop kernels are truncated at
+Here the kernels of the critical-configuration map and the loop kernels are truncated at
 $C_j(\log\widehat\beta_k)^2$. Their common exponential decay makes
 $E_{\rm stat}$ and $E_{\rm tail}$ at most $H^{-1}$ after finite
 projection factors. The regular error satisfies
@@ -320,7 +319,7 @@ bound. This proves the proposition for the full local sum.
 
 The differentiated-kernel
 bound \eqref{ch17:kernel-score} applies to the complementary part.
-The common large-field estimate retains the square-root bound
+The bound \eqref{ch04:activity-bounds} on the large-field activities retains the square-root bound
 $\exp(-H^{1/5}/2)$. Combining Proposition~\ref{ch17:spatial-moments} with the high-field
 remainder, the nonwrapping contributions are bounded by
 \begin{equation}\label{ch17:sigma-error}
@@ -328,7 +327,7 @@ remainder, the nonwrapping contributions are bounded by
        +C_j\widehat\beta_k^{C_j}H^{C_j}e^{-H^{1/5}/2}.
 \end{equation}
 The fixed-order score has changed the polynomial constants, not the
-large-field event or its exponential gain. If $N_{\rm per}$ is the
+eligibility event \eqref{ch04:eligibility} of a large-field activity or its exponential gain. If $N_{\rm per}$ is the
 period in scale-$k$ units, a wrapping term has covering number at least
 $N_{\rm per}/[10(2B_k+1)]-1$. Retaining two units of the support exponent gives the
 additional error
