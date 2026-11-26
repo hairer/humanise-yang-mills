@@ -513,6 +513,7 @@ We verify the assertion about the contact correction to the determinant, defined
 block integral. Let $\zeta(x)$ be the representative of its critical configuration in centered
 coordinates (in which the local gauge transformation is normalized in the mean, Section~\ref{ch07:weighted}), with $\zeta(0)=0$ and tangent $(Wx,r_x)$, where $r_x$ is its
 coarse scalar component after recentering.
+\maxg{Issue 10: which $W$? Both $W_a$ (then $r_x=-RW_ax$) and $W_F$ are possible. Independence of the choice needs invariance of $f$ under fine gauge transformations; only constant ones are stated.}%
 For each scalar determinant function $f(x,z)$, constant gauge transformations
 act orthogonally on its matrices and leave $f$ invariant. Every invariant
 linear functional on the simple Lie algebra vanishes, since it annihilates
@@ -534,7 +535,7 @@ with respect to that increment of the averaging operation, and set
  S_x(a)_{ij}=\langle a,D_v^2w_x(0)[e_i,e_j]\rangle,
  \qquad Z(x)=S_x(r(x)),\qquad A(x)=M_{\rm core}(x).
 \]
-The Hessian chain rule gives $M_{\rm act}=A+Z$, with $r(0)=Z(0)=0$; we call $Z$ the \emph{contact term} of the averaging operation, and the difference in \eqref{ch07:contact-exact} below the \emph{contact correction}.
+The Hessian chain rule gives $M_{\rm act}=A+Z$, with $r(0)=Z(0)=0$; we call $Z$ the \emph{contact term} of the averaging operation, and the difference in \eqref{ch07:contact-exact} below the \emph{contact correction}.\maxg{Issue 10: $M_{\rm act}$, $M_{\rm core}$ are not defined. From the Lean definitions: $M_{\rm act}$ is $C=J+F^*F$ at the critical configuration; in $M_{\rm core}$ the penalty Hessian is replaced by $H^*BH$ (probably $C_0$ up to the change of coordinates; not verified).}
 The change of fluctuation coordinates from rooted to centered is triangular with determinant one,
 so it does not change the determinant. Define $Y(x)$ by
 $\langle a,Y(x)\rangle=\tr(A(x)^{-1}S_x(a))$.
@@ -819,7 +820,7 @@ the preceding order argument.
 Folding the fine symbol into coarse momentum also preserves $\alpha$.
 The auxiliary determinant is gauge invariant, so its quadratic symbol
 annihilates longitudinal legs. For a nonzero alias the equation
-$K_f(k_l)N_l=A_lK_c(p)$ and the positive transverse fine inverse give
+$K_f(k_l)N_l=A_lK_c(p)$ and the positive transverse fine inverse give\maxg{Issue 10: $N_l$ is introduced only in the alias paragraph near the end of the chapter, and $A_l$ nowhere ($\mathcal A_l$ of Chapter~\ref{ch05:gaussian} is another object). Say that the alias amplitudes are those of $W_s$.}
 $N_l^\perp=O(|p|^2)$, since $K_c(p)=O(|p|^2)$. Thus nonzero
 aliases contribute order four even when their longitudinal Fourier coefficients
 do not vanish. The zero alias has factors $L^4$ from
