@@ -170,6 +170,9 @@ regular and large-field comparisons have bounds at most one by the
 choice of $\zeta_i$. Descend this whole polynomial to $m$. Its regular terms linear in the sources have bound at most two, and the
 large-field terms linear in the sources have bound at most one, and its two incidence bounds for terms involving at least two insertions are at most one.
 
+Let $\mathsf P_{h,N}$ push densities from level $N$ to level $h$ by
+successive applications of \eqref{ch04:block-operator} along the chosen
+history. Its adjoint $\mathcal P_{N,h}$ pulls observables back from $h$ to $N$.
 Let $\mathcal I$ index the cells of the reflected tiling and let $-U_v$
 denote the terminal insertion used for cell $v$. In the product above
 the coefficient of $\prod_{v\in\mathcal I}z_v$ at level $h$ is
@@ -222,8 +225,9 @@ a bounded measurable function, with bound uniform in the outer cutoff
 and period: its coefficient range and allowed couplings are compact,
 and its section is a fixed polynomial in compact group variables.
 
-Let $\mathcal K_{N,h}(U,dV)$ be the forward probability kernel from
-fine links to level $h$, and set
+Let $\mathcal K_{N,h}(U,dV)$ be the composition of the one-step probability kernels
+$k^{(L_i)}_\beta(U,V)\,dV$ of \eqref{ch04:kernel}, in order from
+$i=N-1$ down to $h$ and with the coupling of each step, and set
 $\mathcal P_{N,h}F(U)=\int F(V)\mathcal K_{N,h}(U,dV)$.
 It preserves real values and contracts the supremum norm. Locality here
 must include every random variable used to choose a gauge-covariant block average or gauge

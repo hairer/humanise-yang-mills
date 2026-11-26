@@ -75,15 +75,15 @@ probability measure. For physical insertions $F_i$, assume every
 $\rho_N\prod_{i\in S}F_i$ is integrable and set
 \begin{equation}
  q_N(z,U)=\rho_N(U)\prod_{i\in\mathcal I}(1+z_iF_i(U)),
- \qquad q_m=\mathcal B_m q_{m+1}.
+ \qquad q_m=\mathcal B^{(L_m)}_\beta q_{m+1}.
  \label{ch11:source-density}
 \end{equation}
-The block map acts coefficientwise. Consequently
+Here $\beta$ is the inverse coupling used for the step $m+1\to m$ on the chosen history. The block map of \eqref{ch04:block-operator} acts coefficientwise. Consequently
 $Z_N^{-1}\int[z_S]q_m\,d\lambda_m$ is the original cutoff moment
 of the insertions indexed by $S$.
 
 If one instead uses the dimensionless one-insertion density of degree
-$d$, its recursion is $H_m=L_m^d\mathcal B_mH_{m+1}$.
+$d$, its recursion is $H_m=L_m^d\mathcal B^{(L_m)}_\beta H_{m+1}$.
 The scalar rescaling belongs to this convention; it is absent from
 \eqref{ch11:source-density}, where the physical normalization is
 already in $F_i$. Mixing these two conventions changes the unit
