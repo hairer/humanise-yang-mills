@@ -245,7 +245,7 @@ local fields, for the fixed requests.
 Start with Proposition~\ref{ch11:restart-endpoint}.
 The coupling band gives $x_i/2\le\beta\le2x_i$ on every step.
 Only the inverse coupling is held constant; the reference couplings, original path pairs,
-metric floors, linearizations of the averaging operation and block axial charts (for every forest; the local integrals are formed for each forest and averaged over the forests as in Section~\ref{ch09:forest-average}, under the analogues for these restarted steps of Assumption~\ref{ch09:forest-assumption} and of Hypothesis~(H) of Section~\ref{ch11:marked-step}, which are stated for the original steps and are not proved)\maxg{Issue 4: these analogues are not stated. The restarted steps do not satisfy the hypotheses of Theorem~\ref{ch09:step-theorem} (other radius, threshold, reference parameter; constant inverse coupling; regular family reinserted as local factors). v2 says the restart is not established; Lean takes the restarted trajectory as a hypothesis.} keep their
+metric floors, linearizations of the averaging operation and block axial charts (for every forest; the local integrals are formed for each forest and averaged over the forests as in Section~\ref{ch09:forest-average}, under the analogues for these restarted steps of Assumption~\ref{ch09:forest-assumption} and of Hypothesis~(H) of Section~\ref{ch11:marked-step}, which are stated for the original steps and are not proved)\mgubi{Issue 4: these analogues are not stated. The restarted steps do not satisfy the hypotheses of Theorem~\ref{ch09:step-theorem} (other radius, threshold, reference parameter; constant inverse coupling; regular family reinserted as local factors). v2 says the restart is not established; Lean takes the restarted trajectory as a hypothesis.} keep their
 original adjacent values. The inequalities for the reference parameter above
 verify the radii and threshold comparisons in the local integral.
 The fine path and piecewise quadratic--linear function in that integral are exactly the ones in the
@@ -357,7 +357,7 @@ $e^{-\beta B_i^{\rm ref}}e^{-\ell_i}
 $B_i^{\rm ref}$ here is the base action, not the radius.
 
 At the sliced-integrand level the event indicators retain the finite factor counting the values of the
-auxiliary index\maxg{Issue 10: this count and the ``normalized weight'' are not defined (Chapter~\ref{ch04:blocking} defines only the weights).}; it cancels the denominator of the normalized average over that index
+auxiliary index\mgubi{Issue 10: this count and the ``normalized weight'' are not defined (Chapter~\ref{ch04:blocking} defines only the weights).}; it cancels the denominator of the normalized average over that index
 when the slices are summed. Signed orientations retain their original
 probability weights. Neither averaging introduces a second determinant
 or a second extracted normalization constant.
@@ -373,7 +373,7 @@ the available $H(s)^{-1/8}$ margin. The inflated connected bound
 gives outgoing large-field bound at most $m^{-1}\le G(x_i)^2$,
 hence at most $G(x_i)$. No residual path correction is left outside
 the regular family. Averaging the regular pieces over the finite
-signed motion group retains their anchored bound and invariant sum.\maxg{Issue 4: invariance of the sum is asserted, as in existence/. It should follow from covariance of the exact restarted densities (a reviewer's inference, not written anywhere).}
+signed motion group retains their anchored bound and invariant sum.\mgubi{Issue 4: invariance of the sum is asserted, as in existence/. It should follow from covariance of the exact restarted densities (a reviewer's inference, not written anywhere).}
 The exact factorization and reassembly thus give
 $D_i=\mathcal B^{(L_i)}_\beta D_{i+1}$ on every coarse configuration,
 including configurations on which the regularity condition fails. There is no division
