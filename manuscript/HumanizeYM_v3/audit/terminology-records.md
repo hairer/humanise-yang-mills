@@ -1551,7 +1551,7 @@ The author's decisions behind the text changes of commits `c5bd232d`, `d869e433`
 - **49.** "Local charges" kept in the theorem; 14:408 says that the local generators `p_b`, `Y_d(K)` are those charges. [*local charge*; *local generators*]
 - **50.** The "failures" of 17m:121–129 are large fluctuation-field events. [*failure*; *complementary*]
 - **51.** 17m:193, 265, 291, 303, 307 say "regular terms of the differentiated kernel". [*differentiated kernel*; *regular terms of the differentiated kernel*]
-- **52.** "Coupling constant renormalization" is the operation; `q_m` is "the coefficient `Δ` of the coupling constant renormalization" (10:421, 816). Not adapted: 10:446, 651, 772, 842–843, 902; 13sb:26. [*coupling constant renormalization*; *reset*]
+- **52.** "Coupling constant renormalization" is the operation; `q_m` is "the coefficient `Δ` of the coupling constant renormalization" (10:421, 816). Applied to 10:446, 651, 772, 842–843, 902 and 13sb:26 on 26 November 2026. [*coupling constant renormalization*; *reset*]
 - **15c.** The record appendices (H, J, K, L) were moved to this file.
 - **15d.** No upstream pull request yet.
 
