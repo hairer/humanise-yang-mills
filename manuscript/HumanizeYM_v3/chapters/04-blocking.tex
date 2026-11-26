@@ -366,21 +366,22 @@ write $Q_e(U)=Q_e^{\rm pred}(U,\alpha)$. Then
 The constant $C_j$ is independent of $L$ and $s$.
 \end{lemma}
 
-The proof uses a bound for a minimizing frame. On a finite lattice
-box $X$, let $h$ minimize the frame energy \eqref{ch04:frame-energy}
-with $X$ in place of $\mathbb B_R$. Write $\operatorname{av}$ for the
-uniform average over its subscripts, with $x,z\in X$ and $o\in S_4$, and put
-\[
- d_x=\operatorname{av}_{z,o}\|T_U(x\to z;o)-1\|_G,\qquad
- \bar d=\operatorname{av}_x d_x .
-\]
-There is a constant frame $c\in G$ such that
+\begin{lemma}[Mean distance from a constant frame]
+\label{ch04:minimizing-frame-bound}
+Let $U$ be a link field on a finite lattice box $X$, and let $h$ minimize
+the frame energy \eqref{ch04:frame-energy} on $X$. Take uniform averages
+over the indicated sites $x,z\in X$ and coordinate orders $o\in S_4$.
+There exists $c\in G$ such that
 \begin{equation}
- \operatorname{av}_x\|h_x-c\|_G\le C_G\bar d .
+ \operatorname{av}_x\|h_x-c\|_G
+ \le C_G\operatorname{av}_{x,z,o}\|T_U(x\to z;o)-1\|_G ,
  \label{ch04:frame-first-power}
 \end{equation}
-\begin{proof}[Proof of \eqref{ch04:frame-first-power}]
-The constant frame has energy at most $\bar d$, since each path distance
+where $C_G$ depends only on $G$.
+\end{lemma}
+\begin{proof}
+Put $d_x=\operatorname{av}_{z,o}\|T_U(x\to z;o)-1\|_G$ and
+$\bar d=\operatorname{av}_x d_x$. The constant frame has energy at most $\bar d$, since each path distance
 is at most two. Minimality and the squared triangle inequality give
 $\operatorname{av}_{x,z}\|h_x-h_z\|_G^2\le8\bar d$.
 Let $m=\operatorname{av}_z h_z$ and
@@ -401,7 +402,7 @@ both $m$ and $m_x$ lie in this ball, so $\|h_x-c\|_G\le C_Gd_x$.
 At the remaining sites use $\|h_x-c\|_G\le2\le2d_x/\varepsilon$.
 Averaging gives \eqref{ch04:frame-first-power}. For
 $8\bar d\ge\varepsilon^2$ the bound follows from $\|h_x-c\|_G\le2$.
-The constant depends only on $G$. The same proof applies on any finite
+The same proof applies on any finite
 set for a uniformly averaged family of paths paired under reversal
 with identity transports on the diagonal.
 \end{proof}
@@ -430,7 +431,7 @@ Let $H$ be any gauge on $X$. If $f$ is the minimizing frame for $U$,
 then $h_x=f_xH_x^{-1}$ minimizes the frame energy for $H\cdot U$,
 since substituting $h$ gives the same energy term by term. A common
 left multiplication can restore the normalization at the centre.
-Applying \eqref{ch04:frame-first-power} and the path bound gives
+Applying Lemma~\ref{ch04:minimizing-frame-bound} and the path bound gives
 \[
  \sum_{x\in X}\|f_x-cH_x\|_G\le C_G\ell E_X(H\cdot U)
 \]
