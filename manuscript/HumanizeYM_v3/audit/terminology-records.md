@@ -21,14 +21,14 @@ Points the agents could not decide from the text, by letter range. They were wri
 
 - **Open. actual free history** (17w:71, now "uniform in the kernel history", the words of 11:1699): the object is that of 11:1699, read as the sequence of quadratic kernels; whether the blocking sequence is meant instead is open (see *history*).
 - **Open. admissible** without stated conditions at 18lp:103 ("a finite admissible request") and 17m:72 ("an admissible conditional integral with the differentiated kernel inserted"). 13:394 now has "the admissible reference labels of the trials", which is sense 1 (11:1074–1075).
-- **Open. admissible periods**: MT:14–15, 19 and 19:20–21 still use the adjective; 1:202 and 10:193–197 give conditions without it.
+- **Open. admissible periods**: MT:14–15, 19 and 19:20–21 still use the adjective; 1:202 and 10:193–197 give conditions without it. Since 25 November 2026 MT:14–15 reads "admissible periods in continuum units" (decision 36), as 19:20–21; "admissible" is still not defined for periods.
 - **Open. affine** and **reflected** in "normalized affine directions" (9:35, 502) and "the reflected seminorm directions" (9s:295–296).
 - **Open. block length at 11:1873**: block ratio `L` (probable) or number of steps `m`.
 - **Open. amplitude** in the sense "bound on a local factor" (6:1076, 1173, 1208, 1451; 11:256, 276, 280): read from use only.
 - **Open. annular estimates** (19:51, 95): which results are meant.
 - **Open. anchored marked support bound** (18:174): which result is meant (see Appendix G).
 - **Open. block root** (5:1002, 1140; 6:342; 9:75; 11:633; 17c:165): no gloss recorded.
-- **Open. defect Ward identity** (17c:66): which identity for the current defect is meant.
+- **Settled. defect Ward identity** (17c:66): the sentence was removed on 25 November 2026 with the alias argument; the Ward identity is now written on each leg at 17c:56.
 - **Open. bridge legs** (7:597): `W_a` is inferred from the label `ch05:actual-bridge`.
 - **Settled. admissible** at 12:80 ("majorant admitted in the infimum"), 13sb:36 (now "satisfy the bounds (ch04:activity-bounds)") and 14lc:23 (now "a comparison scale `k` whose comparison window lies in a single stage").
 - **Settled. alphabet** (11:1911): now "for each term of the original expansion with insertions".
@@ -39,17 +39,17 @@ Points the agents could not decide from the text, by letter range. They were wri
 - **Settled. adjacent pairs** at 10:30: now "permitted stage pairs (the stages of the two scales of one step)".
 - **Settled. exterior discrepancy** (17m:426–442): the phrase is gone; 17m:442 now reads "the normalized residual of (ch11:descent-error)". Whether that identification is right was not checked.
 - **No longer applicable. bottom stage** (17w:97): now "the stage of the coarsest scale of the interval of scales".
-- **No longer applicable. direction selectors** (7:427): now "the four constant maps in the vector regulator that take a one-form to its components".
+- **No longer applicable. direction selectors** (7:427): now "The four constant maps `J_a` in the vector regulator `M_μ=Σ_aJ_a^*m_μJ_a`, where `J_a` takes a one-form to its component in direction `a`" (since 25 November 2026 with the symbol and formula).
 
 ### Letters C
 
-- **Open.** `cross-modes` (17m:401, "all pushed spectator cross-modes") and "front-column" (11:1343): the text does not determine the meaning.
-- **Open.** `compulsory component region` (6:1018): unchanged. `compulsory cutoff factor` (6:1461) is settled: "a cutoff factor kept inside the component".
+- **Open.** `cross-modes` (17m:401, "all pushed spectator cross-modes"): the text does not determine the meaning. "Front-column" (11:1343) was replaced on 25 November 2026 by "the one-step coefficient bounds in the direction of the transfer" (whether this renders the source is open, review).
+- **Settled.** `compulsory component region` (6:1018): since 25 November 2026 "within distance `300B` of its component of the index triple `A`". `compulsory cutoff factor` (6:1461) is settled: "a cutoff factor kept inside the component".
 - **Open.** `centered` at 9:294; settled at 9s:283–284 (see Appendix G).
 - **Open.** `comparison level` in chapter 17: 17m:136 now "the comparison scale `k`"; that it is the insertion scale `k_i` is still inferred.
-- **Open.** `completed fine kinetic matrix` (17c:64) and `C_0` ("the blocked completed matrix `C_0`", 7:773): gauge or block completion not determined.
+- **Open.** `C_0` ("the blocked completed matrix `C_0`", 7:773): gauge or block completion not determined in the text (the trace of 25 November 2026, `decisions-2026-11-25/contact-matrices-trace.md`, identifies it with Martin's `M_core` by role). The `completed fine kinetic matrix` (17c:64) was removed on 25 November 2026.
 - **Open.** `contact identity` (17t:175): the reason for the name is not given.
-- **Open.** `corrected coefficients R_I` = Wick ordering with respect to the free moments: general knowledge, needs a mathematician.
+- **Decided** (25 November 2026, decision 5). `corrected coefficients R_I`: the text calls them the Wick products with respect to the free field (11:2066; 14lc:53) and keeps the recursion; the identification rests on general knowledge, not on a source, and was not checked by a mathematician.
 - **Open.** `chessboard seminorm`: that `‖O‖_k` (13:302) and `‖·‖_𝒯` (13:74) are `𝓡_m` is inferred.
 - **Open.** `cover paths` (10:81): assignment to the covering-lattice sense is inferred.
 - **Open.** `cost` in chapters 17–19: now one use (17w:73); not classified.
@@ -65,17 +65,17 @@ Points the agents could not decide from the text, by letter range. They were wri
 ### Letters E–H
 
 - **Open. exterior identity** (7:408, 686; 11:1692): never displayed; 5:839 uses the phrase for another identity.
-- **Open. finite momentum approximation** (17m:362), **front-column** (11:1343), **Hilbert encoding** (10:381–382): no gloss.
-- **Open. forgetting the terminal graph** (12:131): which graph is "terminal".
+- **Open. finite momentum approximation** (17m:362): no gloss. **front-column** (11:1343) and **Hilbert encoding** (10:381–382) were replaced on 25 November 2026 (the one-step coefficient bounds; the weighted `ℓ²` norm and the summability condition written out).
+- **Settled in the text, open for the author. forgetting the terminal graph** (12:131): the title is "Independence of the graph at the ultraviolet cutoff" since 25 November 2026; the review thinks it claims too much and suggests "Forgetting the graph at the ultraviolet cutoff".
 - **Open. history**: whether senses 2 and 3 should be counted as one; what "kernel history" (11:1699; 17w:71) means; the title "Changing the block history" (11:92), which replaces the block kernels.
 - **Open. equation calibration floor**: 19:29–31 now reads "such as the lower bound (ch11:calibration-floor) on the block ratio"; whether it also covers the condition on `β̂_N` is not said.
-- **Open. equation direction**: `v_eom` (17m:385–386) is not introduced.
-- **Open. gauge completion**: "completed fine kinetic matrix" (17c:64).
+- **Settled. equation direction**: `v_eom` was replaced by `v`, introduced at 17m:383 (25 November 2026).
+- **Settled. gauge completion**: "completed fine kinetic matrix" (17c:64) was removed on 25 November 2026.
 - **Open. group-coordinate contact identity** (17t:175): why "contact".
-- **Open. frame** at 17w:122: now "these same comparison isomorphisms"; the noun occurs only there and has no antecedent in 17w.
+- **Settled. frame** at 17w:122: since 25 November 2026 "the same diagonal subsequence and the same comparison isomorphisms `U_{i,d}`", the maps being named at 17:139–140.
 - **Open. `E_stat`, `E_tail`, `E_mark`** (17m:161–176): only bounds are given.
-- **Open. forest prescription** (18:419): known only through `notation.md`.
-- **Open. failure** (17m:121–131): "failure" and "complementary" are restored (17m:121–131, 321), after a period as "violation of a regularity condition" and "large-field terms"; the failures are attached to the supports of the derivatives of smooth chart cutoffs ("their derivatives are supported where at least one enlarged chart condition fails", 17m:124–125). Whether they are all large fluctuation-field events of chapter 6 or also include incoming large-field sites is not said.
+- **Open. forest prescription** (18:419): known only through `notation.md`; since 25 November 2026 18:419 says it "is formalized but not used in the main result" (decision 9).
+- **Open. failure** (17m:121–131): "failure" and "complementary" are restored (17m:121–131, 321), after a period as "violation of a regularity condition" and "large-field terms"; the failures are attached to the supports of the derivatives of smooth chart cutoffs ("their derivatives are supported where at least one enlarged chart condition fails", 17m:124–125). Whether they are all large fluctuation-field events of chapter 6 or also include incoming large-field sites was not said. **Decided** on 25 November 2026 (decision 50): they are large fluctuation-field events, and 17m:121, 122, 127, 129 now say so.
 - **Settled. extraction** at 11:2037: now "The estimates hold before any subsequence is chosen".
 - **Settled. endpoint** at 11:877: now "the integrated inequalities for the normalized products".
 - **Settled. exterior row** (11R:266): now "the bounds for the corresponding action terms far from the large-field set". **finite decorations** (11R:304): now "the finitely many label choices of each selected component".
@@ -92,11 +92,11 @@ Points the agents could not decide from the text, by letter range. They were wri
 - **Open. inverse terminal coordinates**: the phrase is gone, but whether the `X_i` of 11:1101–1102 is the terminal map `𝖹_{N,p,d}` of 11:1047–1049 is still not said.
 - **Open. label** between polynomial and field at 13:282–285, 18lp:295, 14lc:7, 13sb:176, 19:36 and in chapter 18 (18:140, 141, 205, 222; 18r:61, 64).
 - **Open. infinitesimal gauge insertion**: the phrase no longer occurs; whether `ℛ` (chapter 7) and `d` (chapter 17) are one operator was not rechecked.
-- **Open. macro-box** against **padded block** (7:628): see letters N–Q.
+- **Settled. macro-box** against **padded block** (7:628): since 25 November 2026 7:628 names the patch `Ly+𝔹_R`, `R=(j+3)L`; see letters N–Q.
 - **Open. level**: whether `k_i = k(n_i)`; 17:139–141 still does not write it.
 - **Open. left frame** (17t:194–195): unchanged.
 - **Open. middle and output stopping scales** (17w:101–102): identification with `ℓ`, `w` of chapter 11 inferred.
-- **Open.** **missing-coordinate factor** (9:77); **numerical band margin** (9:950); **support moments** (10:603; at 18lp:177 now "polynomial factors in the support size"); **inhomogeneous graph estimate** (11:892); **"polynomial logarithmic factors"** (9:712): no gloss found.
+- **Open.** **support moments** (10:603; at 18lp:177 now "polynomial factors in the support size"); **inhomogeneous graph estimate** (11:892); **"polynomial logarithmic factors"** (9:712): no gloss found. **missing-coordinate factor** (9:77) and **numerical band margin** (9:950) were settled on 25 November 2026 (formula at 9:77; the sentence at 9:949–951 rewritten).
 - **Settled. moving comparison fields** (3:576): now "quantitative convergence of the rescaled interacting fields to free fields".
 - **Settled. likelihood tests** (6:920): now "the local factors of the two partition-of-unity weights and the normalized weights of the auxiliary index" (6:919–920).
 - **Settled. leading**, sense 3 (11:1551, 1886): now "corrected principal coefficients".
@@ -112,12 +112,12 @@ Points the agents could not decide from the text, by letter range. They were wri
 ### Letters N–Q
 
 - **Open. protected** (sense 2) and **protected-path errors** (17w:72); **protected local representative** (11:1063): no definition.
-- **Open. padded block** (7:628): patch of radius `(j+3)L` or macro-box of radius `(j+7)L`. 7:599 is settled ("padded patch of the averaging operation").
+- **Settled. padded block** (7:628): the patch of radius `(j+3)L`, which 7:628 names since 25 November 2026; 7:599 now says "padded box of radius `(j+5)L` around the patches of the averaging operation".
 - **Open. normalized local insertion**: whether the one-step uses (11:353–355, 438) and `O_{N,p}(d,c)` are one notion.
 - **Open. opening**: no definition (11:1406, 1889 "opening scale", 1919, 1949, 2151, 2200).
 - **Open. one-step integral identity** (7:859): three candidates.
-- **Open. positive partition estimate** at 17w:97: identification with (ch11:replicated-bound) inferred; 17m:433–434 now cites that equation for "the lower bound on the partition function".
-- **Open, undetermined in every part:** *normalized large-field majorants* (17m:414); *numerical band margin* (9:950); "affine" and "reflected" in *normalized directions* (9:35; 9s:296); *polynomial-source propagation constants* (17w:12); *powered-curvature-factor estimate* (11E:14); *principal* sense 5; *physical* sense 9; `r_pred` (6:460); the criterion for *nonwrapping*; formulas for `a_c`, `d_c` (9s:258–259). Settled among them: *preselection* (gone from 11:382) and "path-placement" (10:314–315, see letters C).
+- **Settled. positive partition estimate** at 17w:97: now "the lower bound on the partition function" (25 November 2026, decision 45), as at 17m:433–434, which cites (ch11:replicated-bound); 17w:97 still cites nothing.
+- **Open, undetermined in every part:** *normalized large-field majorants* (17m:414); "affine" in *normalized directions* (9:35; 9s:295, where it now stands for the admitted directions of the seminorm); *polynomial-source propagation constants* (17w:12); *powered-curvature-factor estimate* (11E:14); *principal* sense 5; *physical* sense 9; the criterion for *nonwrapping*; formulas for `a_c`, `d_c` (9s:258–259; not added on 25 November 2026, the source has none). Settled among them: *preselection* (gone from 11:382), "path-placement" (10:314–315, see letters C), and on 25 November 2026 *numerical band margin* (9:950), "reflected" (9s:296) and `r_pred` (defined at 6:460).
 - **Open. physical support-weighted mass** (11:423), in *normalized mass*: unchanged.
 - **Settled (in part). protected** (sense 1): 6:733 now defines "Call a factor protected when it is cut off inside this logarithmic chart", the cutoff reading. 9:258 ("protected coordinate change"), 10:720–721 ("The protected change of variables") and 17m:74 ("a protected dependence set") still apply the word to other things.
 - **Settled. probe** at 17m:251: now "the order of the coefficient evaluations".
@@ -133,7 +133,7 @@ Points the agents could not decide from the text, by letter range. They were wri
 - **Open. protected local representative** (11:1063): object identified, word not explained.
 - **Open. `𝒫_D` and `H_d`**: that the reconstruction of 18lp:266–279 and the field reconstruction of chapter 18 are one map is the note's reading (not rechecked).
 - **Open. raised hole correction / regular logarithms with holes** (11R:365–369): unchanged; "hole" still does not occur in chapter 8.
-- **Open. read-count polynomials** (9:147): unchanged.
+- **Settled. read-count polynomials** (9:147): now "the polynomial factors `(1+s_M)^{d_j}` in the number of blocks read" (25 November 2026).
 - **Open. residual**: the sense list was not rechecked.
 - **Open. reflected seminorm directions** (9s:296): "reflected" is not explained.
 - **Open. reflection cubes, faces** (9:325, 350): unchanged.
@@ -148,7 +148,7 @@ Points the agents could not decide from the text, by letter range. They were wri
 
 ### Letters S
 
-- **Open. seeded sector / unseeded law** (6:1544; 9:283–284): unchanged.
+- **Settled. seeded sector / unseeded law** (6:1544; 9:283–284): replaced by the index triple on 25 November 2026 (the review notes that the source's seeds also include coarse sites).
 - **Open. "source"** at 17w:12 ("polynomial-source propagation constants") and 18:411 ("the source prescription"): not classified.
 - **Open. "sparse"** in "sparse stopping scale" (10:172): inferred reading only. (18lp:159 no longer has the word.)
 - **Open. selected** at 13:395 ("the same selected family of measures") and at 13ba:30 ("their selected scale-`h` polynomial").
@@ -165,11 +165,11 @@ Points the agents could not decide from the text, by letter range. They were wri
 
 ### Letters T–Z
 
-- **Open. terminal**: whether "the terminal graph" in the title at 12:131 is the graph at the cutoff `N` or the graph replaced at scale `m+h`.
+- **Settled in the text. terminal**: the title at 12:131 no longer says "terminal graph" (25 November 2026; now "Independence of the graph at the ultraviolet cutoff").
 - **Open. threshold**: 17m:197 "stage orders and thresholds" is not assigned to a sense.
-- **Open. target**: "normalized target columns" (11:1237) and "the finite target list" (11:1364) are not identified.
-- **Open. weight**: "encoding weights" (10:382).
-- **Open. `v_eom`**: never introduced (17m:385–386).
+- **Open. target**: "the finite target list" (11:1364) is not identified. "Normalized target columns" (11:1237) was replaced on 25 November 2026 by "the solutions `u=u_{j,N,p}` of the lift equations".
+- **Settled. weight**: "encoding weights" (10:382) was replaced on 25 November 2026 by the condition `Σ_γ e^{−2(δ−w)ℓ(γ)}<∞`.
+- **Settled. `v_eom`**: replaced by `v` (17m:383–386, 25 November 2026).
 - **Open. with these same comparison isomorphisms** (17w:122): the noun has no antecedent in 17w; `U_{i,d}` is a guess.
 - **Open. unreparametrized remainder map** (12:91): the reading "before composing with `I_G⁻¹`" is inferred.
 - **Settled. tangent**: 17c:48–53 says the derivative is `W_F` and the computation uses `W=W_a`.
@@ -182,10 +182,10 @@ Points the agents could not decide from the text, by letter range. They were wri
 
 ### Concepts with several names
 
-- **Open.** Whether the padded block (7:628) is the patch of radius `(j+3)L`; 7:599 now says "padded patch of the averaging operation".
+- **Settled.** The padded block (7:628) is the patch of radius `(j+3)L`; 7:628 says so since 25 November 2026.
 - **Open.** Whether the site norm, containing-site norm, support norm and activity norm are one norm (8:69; 9:513–518; 8:196; 10:445).
 - **Open.** Whether `‖O‖_k` (13:302) and `‖·‖_𝒯` (13:74) are the chessboard seminorm `𝓡_m`.
-- **Open.** `corrected coefficients R_I` = Wick ordering with respect to the free moments: general knowledge only.
+- **Decided** (25 November 2026, decision 5). `corrected coefficients R_I`: called Wick products with respect to the free field in the text (11:2066; 14lc:53); general knowledge only.
 - **Open.** "Comparison scale" in 17w and 17m against ch. 11: which scale is meant (I).
 - **Settled.** "Warning" (6:1476; 11:319–320): now "cutoff remainders".
 - **Settled.** "Likelihood tests" at 6:920: now both weights are named (6:919–920).
@@ -196,13 +196,17 @@ Points the agents could not decide from the text, by letter range. They were wri
 
 ### Symbols
 
-- **Open.** `r_pred` (6:460), `a_*` (6:733–736), `λ_i` (6:1112, 1132), `π o_X` (6:1301), `E_stat` / `E_tail` / `E_mark` (17m:161–176): no definition in the text.
+- **Open.** `a_*` (6:733–736), `λ_i` (6:1112, 1132), `π o_X` (6:1301), `E_stat` / `E_tail` / `E_mark` (17m:161–176): no definition in the text. `r_pred` (6:460) is defined there since 25 November 2026.
 - **Open.** `K_ax` (4:364) = `a_ax` (4:68–72, 90): inferred.
 - **Open.** The meanings of `u`, `X`, `c`, `p`, `V`, `ν`, `δ`, `μ` in ch. 17–18 that Part VI counts but does not cite (not rechecked).
 - **Open.** About 30 entries of Part III's table without a line reference (e.g. "partition functions", "`H_4`", "bounds `B_H`, `B_loop`") were not located (not rechecked).
 - **Open.** Whether `‖O‖_k` (13:302) and `‖·‖_𝒯` (13:74) denote the chessboard seminorm.
 - **Settled.** `q_r` (12:247) = `q^site` (13sb:24): 12:247 now says that `q_r` is the per-site normalization exponent of (ch11:replicated-bound).
 - **No longer applicable.** `𝒰_F` (6:953, 976) and `𝒰_F` = `W` or `W_F`: the symbol is gone; both lines write `W_F`.
+- **Open** (trace of `M_core`, `M_act`, 25 November 2026, `decisions-2026-11-25/contact-matrices-trace.md`). In chapter 7: `Z` is the "coarse-frame projection" at 7:477 and the contact term at 7:527; `r_x` is the coarse scalar component at 7:506, `r` the scalar coordinate at 7:695, `r(x)` the penalty gradient at 7:523 (Martin writes `b(x)`, Scott `d`); `A` is the fine kinetic Hessian at 7:275 and `M_core` at 7:527. The centered tangent is `(Wx, r_x)` with possibly nonzero `r_x` in v3 (7:506, 580–582), `(Wx, 0)` in both sources (Martin `thermal-contact-cancellation.tex:94`; Scott `B-section.tex:645`). The trace's proposed wording for 7:521, 523, 524 was not applied.
+- **Open.** `C_st` and the "principal" and "complementary regular bound" (10:622–626): defined nowhere in v3; 10:626 has used them since the repair of 25 November 2026 (review of the repairs).
+- **Open.** The transport clause of Hypothesis (H) (11:335): `F_i∘ς^*` needs an action of `ς` on the cutoff lattice, which is not defined (chapter 9 defines it one scale finer), and the clause refers to cutoff insertions inside a one-step hypothesis (review of the chapter 11 adaptation, 25 November 2026). Also open from that review: the wording of 11R:192 (what needs the averaged activities is the symmetry of the incoming representation at the comparison scale); the status paragraph of `chapters/09-forest-average.tex`:963–967, which still says chapter 11 is not adapted.
+- **Open.** "Reference coupling" for `β̂`: decision 33 of 25 November 2026 calls it the defined short name of `β̂`, but no defining sentence was found by grep (4:408 has "the reference values"; 9:17 and 17:86 "reference value").
 
 
 
@@ -771,7 +775,7 @@ Commands run: `grep`/`sed`/`awk` on terminology.md, the v3 chapters, `manuscript
 - How it is proved and used. `provided` (`Result.lean:65–69`) derives `MultipleLight Z M` from `M.rotation = Z.sector.turns` and `H : OPE.Services C F S`, the `distribution` field by `global_charge` (`Venue.lean:62–63`, which calls `glues_total`, `Skies.lean`). `celestial` (`Result.lean:78–79`) states the existence of a family with `MultipleLight`, a real basis and thresholds. `YM.Nonperturbative.contacts_on` (`YM/Nonperturbative/Continuum.lean:14–24`) builds the devices `M` from the OPE reader `Q` (`M.basis = Q.port`) and applies `provided` to the same `OPE.Services` that the operator product expansion uses. `YangMills.contactDistribution` (`ContactBridge.lean:14–45`; statement and proof text read) applies `distribution` with `g` = all slots, `o = 0`, `B = min 1 (M.clearance(Σ d_i))`, `s = B/4` (Scott's `r_* = min(1, δ_W^pres)`, `s_* = r_*/4`) and shows that the resulting continuous functional equals `∫ f · S` on test functions supported in the separated configurations; this is `YangMills.Hierarchy.Contacts` (`ContactSpec.lean:12–14`), one of the clauses of `YangMills.constructed` (`Construction.lean:16–41`).
 - Does the main result depend on it. The comparator statement `YangMills.JointExistence` (`ChallengeSpec.lean`, end of file) asks for `WilsonRegularity` and `Hierarchy.Properties` = convergence, reconstruction, operator product expansion, trace test; it has no contact clause. `Solution.lean` proves it from `YangMills.constructed` and discards the contact clause (`obtain ⟨q,S,F,L,Q,M,X,core,_⟩`). The modules under `YM/Contacts` and `YM/MultipleContact` are imported, outside those two directories, only by `ContactBridge.lean`, `YM/Nonperturbative/HeadlineSpec.lean` and `YM/Nonperturbative/Continuum.lean` (grep on `^import`); `YM/Independent/Core.lean`, which carries reconstruction, trace and OPE, imports none of them. So the four conclusions of the main theorem do not use the forest prescription; the proof term of `jointExistence` passes through `constructed`, which also proves the contact clause, but nothing in the four conclusions is derived from it. In the other direction, the contact theorem depends on the OPE hypotheses (`OPE.Services`).
 - Not established. No `#print axioms` was run (the file `Result.lean` ends with `#print axioms YM.Contacts.Solstice.celestial`, whose output I did not see); a text search finds no `sorry` and no `axiom` line under `YM/Contacts`, `YM/MultipleContact`, which says nothing about their imports. The proofs of `glues_total`, `patch_need`, `any_power`, `summers`, `collars` were not read. `M.row` (hence the identification of `insertRow` with Scott's `P_{=q}^ct`), `readExpr`, `spectator`, `insertField`, `Normal.under`'s helper `action` beyond its formula, and the hypotheses `Run`, `Given`, `Authority`, `Eligible` were not opened. Whether Scott's hypotheses of Lemma `lem:J2.2` and the Lean hypotheses coincide in detail was not compared. So: Lean contains the forest recursion as a definition and a theorem about it that is used to prove a public clause; that this theorem is free of unproved assumptions is unverified here.
-- Consequence for v3. The sentences 18:418–421 ("A one-shell estimate alone does not verify that stronger forest prescription. We have therefore used the fully specified pair-weighted subtraction") describe the v3 text correctly, and the v3 main theorem, like the Lean `JointExistence`, does not need the contact extension. The statement in `notation.md:206` that the source prescription is "unverified" does not describe the formal source.
+- Consequence for v3. The sentences 18:418–421 ("A one-shell estimate alone does not verify that stronger forest prescription. We have therefore used the fully specified pair-weighted subtraction"; since 25 November 2026 "It is formalized but not used in the main result: we use the fully specified pair-weighted subtraction") describe the v3 text correctly, and the v3 main theorem, like the Lean `JointExistence`, does not need the contact extension. The statement in `notation.md:206` that the source prescription is "unverified" does not describe the formal source.
 
 **Point 3, the "source recurrence" of 17w:78.** It is (11.lower-weighted-step), 11:1566, together with the leading recurrence 11:1541–1544 (proved at 11:1643), not (11.higher-induction), 11:513. Evidence: Scott I:98 cites (`eq:E-source-step`), whose form `S_i ≤ K S_{i+1} + 𝓜^{1/2} S_{i+1}²` is that of 11:1566 with `𝓜 = H`; 11:513 has neither the quadratic term nor a power of `H`. Entered under *regular*. The candidate "11:1643" of the first round is the sentence that closes the proof of the upper recurrence; the display itself is at 11:1541–1544.
 
@@ -1527,6 +1531,29 @@ Decisions where parts disagreed or an audit correction was applied; "read" = cha
 - Rows added that are not in the note's tables: `d`, `p`, `s`, `Y`, `Γ`, `Δ`, `π`, `φ`, and separate rows for `u`, `X`, `I`, `G`, `U`, `V`, `η`, `δ`, `ν`, `μ` that the note had only inside its two "each has at least three uses" rows (note 1957, 3098).
 - Additions reported by the audits and not entered, because I did not confirm them at a line: `d` "trial correction" (9:756); `d_I`, `d_c`; `A_M`, `A_d`; `V` as "volume" beyond the form of 11:809; `p_o`; `k` "level" compounds; the Part VI list "three or more meanings across 17–18" for `c`, `h`, `u`, `p`, `N`, `G`, `V`, `E`, `I`, `J`, `λ`, `ν`, `δ`, `η`, `μ`, `ω`, `α`, `θ` (no lines in the note; only the lines shown in the rows were found).
 - Rows of the note merged: all 109 rows of `M9-SYM.tsv` are cited in a "Note" entry (the two collective rows 1957 and 3098 are cited in each row they contribute to). No owned row was dropped.
+
+### Decisions of 25 November 2026
+
+The author's decisions behind the text changes of commits `c5bd232d`, `d869e433` and `080d934e` (issue 1 of the fork; issue 2 for decision 27). Reports in `decisions-2026-11-25/`. The dictionary entries named in brackets were updated on the same day.
+
+- **5.** `R_I` is called a Wick product with respect to the free field, and the recursion stays (11:2066; 14lc:47, 53). [*corrected*; *Wick product*]
+- **9.** The forest prescription (18:398–421) is described as "formalized but not used in the main result" (18:419). [*forest prescription*]
+- **11, 12, 34.** The remaining sentence repairs of Appendix D applied, with formulas from the sources (`repairs-apply.md`; corrected by `repairs-review.md`). [Appendix D]
+- **24.** 17c:55–68 rewritten along the route of the formal proof (`W_s` and polynomial fields); label `ch17:current-alias` replaced by `ch17:polynomial-four`; the alias argument removed there and, after review, at 17c:71–87, 323–330 and 17m:232–234 (`ch17c-polynomial-route.md`, `ch17c-polynomial-review.md`). [*polynomial field*; *alias*; *base-point average*]
+- **27.** Assumption `ch09:forest-assumption` kept as a stated hypothesis; chapter 11 adapted, with a new unproved Hypothesis (H) at 11:335; issue 2 of the fork (`ch11-forest-adaptation.md`, `ch11-forest-review.md`). [*Hypothesis (H)*; *average over the forests*; *forest*]
+- **28.** `M_core`, `M_act`, rooted and centered coordinates traced; report only, text not changed (`contact-matrices-trace.md`). [*`M_core`, `M_act`*; *rooted coordinates*; *centered coordinates*]
+- **33.** "Inverse coupling" for `β` (4:407, 418, 533; 11:1670); "reference coupling" stays as the short name of `β̂`; "bare coupling" stays. [*inverse coupling*]
+- **36.** "Admissible periods in continuum units" in the main theorem (MT:14–15). [*admissible periods*; *physical*]
+- **42.** "Common trajectory" confirmed. [no change]
+- **45.** "Smoothing order" (11:351–352, was "kernel order"); "activity arrays" (10:6, was "coefficient arrays"); "lower bound on the partition function" (17w:97, was "positive partition estimate"). [*smoothing order*; *array*; *lower bound on the partition function*]
+- **47.** "Failed-cutoff factor" kept and defined at 11:1476. [*failed-cutoff factor*; *cutoff failure*]
+- **48.** "Requirement on the starting scale" / "conditions on the starting scales" (13ba:258, 261, was "coupling-threshold"). [*requirement on the starting scale*; *coupling threshold*; *threshold*]
+- **49.** "Local charges" kept in the theorem; 14:408 says that the local generators `p_b`, `Y_d(K)` are those charges. [*local charge*; *local generators*]
+- **50.** The "failures" of 17m:121–129 are large fluctuation-field events. [*failure*; *complementary*]
+- **51.** 17m:193, 265, 291, 303, 307 say "regular terms of the differentiated kernel". [*differentiated kernel*; *regular terms of the differentiated kernel*]
+- **52.** "Coupling constant renormalization" is the operation; `q_m` is "the coefficient `Δ` of the coupling constant renormalization" (10:421, 816). Not adapted: 10:446, 651, 772, 842–843, 902; 13sb:26. [*coupling constant renormalization*; *reset*]
+- **15c.** The record appendices (H, J, K, L) were moved to this file.
+- **15d.** No upstream pull request yet.
 
 ---
 
