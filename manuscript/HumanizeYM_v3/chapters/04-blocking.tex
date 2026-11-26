@@ -78,7 +78,7 @@ $(z,o)$ eligible when
  \label{ch04:axial-eligible}
 \end{equation}
 Choose one pair $(z,o)\in\mathbb B_R\times S_4$ uniformly among all
-eligible pairs. Use this same root and order throughout the patch:
+eligible pairs. Use this same initial point and order throughout the patch:
 the gauge at each $x\in\mathbb B_R$ is given by $h_x^{z,o}$ in
 \eqref{ch04:axial-frame}. The coordinate paths from $z$ form a spanning
 tree, and in this gauge every link of that tree is the identity. On the minimizing branch give all
@@ -111,7 +111,7 @@ Lie algebra. Hence on a sufficiently small convex ball about $1$,
 This is the mean-value estimate for $D\pi-\Pi_{\gLie}$, not a new
 projection theorem.
 
-Fix $o_0\in S_4$ and use the axial gauge rooted at the origin with this
+Fix $o_0\in S_4$ and use the axial gauge with initial point at the origin, with this
 coordinate order. In this gauge the transport from $x$ to $y$ in order
 $o$ is $\mathcal T_{xy;o}^{o_0}$. On the minimizing branch the loop condition
 gives $\|\mathcal T_{xy;o}^{o_0}-1\|_{\mathrm F}\le d$, where
@@ -243,7 +243,7 @@ taken as $b=1$. It controls the soft conditioning used here.} The renormalizatio
 \]
 This is a probability density on $G$ with respect to Haar measure.
 
-For a fixed fine field $U$ and choice $\alpha$, the block average
+For a fixed fine field $U$ and choice $\alpha$, the value of the averaging operation
 $Q_e=Q_e^{\rm pred}(U,\alpha)$ represents transport across the coarse
 edge $e$. We impose agreement of $V_e$ with $Q_e$ by a soft constraint.
 By unitarity and \eqref{ch01:chord}, its energy is
@@ -252,7 +252,7 @@ By unitarity and \eqref{ch01:chord}, its energy is
 \]
 This penalizes the discrepancy in a gauge-invariant way, since $V_e$
 and $Q_e$ transform by the same matrices at their endpoints. At large
-$b\beta$ the conditional law thus concentrates near the block average.
+$b\beta$ the conditional law thus concentrates near the value of the averaging operation.
 Given $U$ and $\alpha$, we sample the coarse links independently with
 these normalized densities. Averaging their product over $\alpha$ gives
 the conditional density of $V$ given $U$; integrating against the fine
@@ -281,10 +281,10 @@ respective link spaces.
 For fixed $\beta$ this is a bounded Borel kernel. Indeed, the loop
 inequalities of Section~\ref{ch04:frames} and the axial eligibility
 inequality \eqref{ch04:axial-eligible} compare continuous functions of
-the fine links. Once the frames are chosen, the condition for using the
-minimizing block average on edge $e$ is
+the fine links. Once the local gauge transformations are chosen, the condition for using the
+minimizing branch of the averaging operation on edge $e$ is
 $\min_{u\in G}\mathcal P_e(u)<\varepsilon_{\rm pred}$. This minimum is
-continuous in the connector matrices $(Y_{e,z})_z$ by compactness of $G$.
+continuous in the transporters $(Y_{e,z})_z$ by compactness of $G$.
 On each minimizing branch the unique minimizer depends continuously on
 its data. Thus the choices and their probabilities in the finite sum
 \eqref{ch04:kernel} are Borel functions of $U$. Boundedness follows
