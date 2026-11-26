@@ -1012,28 +1012,30 @@ it would change $\mathcal Q$.
 For a fine edge $e$, join its endpoints to their block roots along the
 chosen trees. In the tree slice the resulting walk has transport $U_e$.
 It lies in one or two adjacent blocks and has length at most $2L^4-1$.
-In the macro axial gauge of Section~\ref{ch04:predictor-geometry}, its
-distance from the identity is bounded by this length times the sum of bond distances from the identity in the macro-box. The
+In the axial gauge of Section~\ref{ch04:predictor-geometry}, the
+distance of this transport from $1$, measured in the matrix norm
+\eqref{ch01:matrix-norm}, is at most the length of the walk times
+$\sum_b\|U_b-1\|_G$, summed over bonds in the macro-box in that gauge. The
 first-power frame estimate controls the two root-to-frame discrepancies;
 the block average estimate controls the coarse root-to-root transport. Thus
 \begin{equation}
- \chi\bigl(U_e(\operatorname{rep}V)_e^{-1}\bigr)
+ \|U_e-(\operatorname{rep}V)_e\|_G
  \le C_{j,L}\mathcal P_y(U)
        +\mathbf1_{\{e\text{ crosses blocks}\}}
-                            \chi(V_{y,\mu}Q_{y,\mu}(U)^{-1}).
+                            \|V_{y,\mu}-Q_{y,\mu}(U)\|_G.
  \label{ch05:nonlinear-tree}
 \end{equation}
 For an internal edge the walk closes at its root and only the first term
 is needed. For a crossing edge, insert the block average between the two
-root frames and use the triangle inequality for the normalized Hilbert--Schmidt distance. The endpoint errors
-are bounded by the sum in \eqref{ch04:frame-first-power}, so this step
+root frames and use the triangle inequality for $\|\cdot\|_G$. The endpoint errors
+are bounded by the sum over the corresponding frame patch in \eqref{ch04:patch-frame-sum}, so this step
 requires no pointwise frame estimate not already proved. The constant is
 allowed to depend on $L$; the stronger pre-$L$ factor in
 \eqref{ch04:macro-comparison} is not required for this use.
 
 Apply \eqref{ch05:nonlinear-tree} to $U=\exp(\epsilon a)$ with $a$ zero
 on tree edges, and $V=1$. Divide by $|\epsilon|$ and let $\epsilon\to0$.
-The first-order variation of the distance from the identity is the norm on $\gLie$, so
+Since $\|e^{\epsilon X}-1\|_G/|\epsilon|\to |X|$ for $X\in\gLie$, we obtain
 \[
  |a_e|\le C_{j,L}\sum_{p\text{ in the macro-patch at }y}|(d_{1,f}a)_p|
        +\mathbf1_{\{e\text{ crosses blocks}\}}|(\mathcal Qa)_{y,\mu}|.
@@ -1055,8 +1057,8 @@ Let $\mathcal A_f$ be the uncut fine action, without the common inverse
 coupling or inherited loop action, and set
 \begin{equation}
  f(v,\psi)=\mathcal A_f(U(v,\psi))
-       +b\sum_{e\text{ coarse}}w\bigl((\exp v)_e
-                                   Q_e(U(v,\psi))^{-1}\bigr).
+       +\frac b2\sum_{e\text{ coarse}}\bigl\|(\exp v)_e
+                                   -Q_e(U(v,\psi))\bigr\|_G^2.
  \label{ch05:actual-action}
 \end{equation}
 Assume that the Hessian of the fine action $\mathcal A_f$ at the flat

@@ -353,8 +353,8 @@ of homogeneous degree-$j$ Maxwell curvature solutions. Write a member as
  P_{ab;i_1\cdots i_j}v_{i_1}\cdots v_{i_j}.
 \]
 The coefficients $P_{ab;i_1\cdots i_j}\in\gLie$ are symmetric in the
-derivative indices. Their Frobenius inner product $\langle P,Q\rangle_F$
-is the sum of the Lie algebra inner products of corresponding coefficients
+derivative indices. For $P,Q\in\mathcal S_j$, define $\langle P,Q\rangle_j$
+as the sum of the Lie algebra inner products of corresponding coefficients
 over all ordered tuples $(a,b,i_1,\ldots,i_j)$. Both orders of the
 antisymmetric pair $(a,b)$ are included, with no factor $1/2$.
 The constant-coefficient differential operator $\ell_P$ acts on a
@@ -364,10 +364,10 @@ two-form $F$ by
  \big\langle P_{ab;i_1\cdots i_j},
        \partial_{i_1}\cdots\partial_{i_j}F_{ab}\big\rangle_{\gLie}.
 \end{equation}
-With this normalization, $\ell_P(Q)(0)=\langle P,Q\rangle_F$ for
+With this normalization, $\ell_P(Q)(0)=\langle P,Q\rangle_j$ for
 $P,Q\in\mathcal S_j$. Indeed, symmetry of the derivative indices gives
 $\partial_{i_1}\cdots\partial_{i_j}Q_{ab}(0)=j!\,Q_{ab;i_1\cdots i_j}$.
-Thus the Frobenius inner product identifies each linear functional on
+Thus this coefficient inner product identifies each linear functional on
 the order-$j$ solution jets with a unique $P\in\mathcal S_j$.
 
 Put $I(z)=z/|z|^2$ and
@@ -454,16 +454,16 @@ For $Q\in\mathcal S_k$, differentiation in the second insertion gives
  B_z(\Sigma_zP,Q)
  =(-1)^k\big\langle R_z\cdot Q,
        \operatorname{Taylor}_k[\mathcal R(\Sigma_zP)](z)
-                 \big\rangle_F.
+                 \big\rangle_k.
 \]
 It follows that this expression vanishes if $k<j$, and at $k=j$ equals
-$(-1)^jc_j|z|^{-2j-4}\langle P,Q\rangle_F$.
+$(-1)^jc_j|z|^{-2j-4}\langle P,Q\rangle_j$.
 Transforming the second argument introduces only lower orders in addition
 to its unchanged top order. Symmetry therefore gives, on the full tower,
 \begin{equation}\label{ch03:diagonal-gram}
  B_z(\Sigma_zP,\Sigma_zQ)
  =\sum_{j<m}\frac{(j+1)(j+2)2^j}{\pi^2|z|^{2j+4}}
-                  \langle P_j,Q_j\rangle_F.
+                  \langle P_j,Q_j\rangle_j.
 \end{equation}
 Every coefficient is positive. Finally $\Sigma_z$ is invertible:
 it is the identity plus a strictly degree-lowering map, hence its inverse

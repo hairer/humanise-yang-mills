@@ -23,6 +23,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 | Symbol | Definition/type | First definition; source |
 |---|---|---|
 | G, n_G, g | Fixed closed subgroup of U(n_G), matrix dimension, real Lie algebra | Ch. 1; `part1/02-definitions.tex`, def:D01 |
+| \(\lVert A\rVert_G\) | Normalized matrix norm, \(\lVert A\rVert_G^2=n_G^{-1}\sum_{i,j}\lvert A_{ij}\rvert^2\). All unitary matrices have norm one. | Ch. 1, `ch01:matrix-norm` |
 | `<X,Y>_g` | `−Re tr(XY)/n_G` on g | same |
 | d_g, C_g | `dim_R g`; adjoint Casimir in that metric | same; C_g=2n² for defining SU(n) |
 | b₀, κ_G | `11C_g/(48π²)`, `11C_g/(24π²)` | same; coefficient's RG role later |
@@ -32,7 +33,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 | r_s(y), hat y | Centered representative; physical point a_N r_s(y) | Ch. 1; eq:I12-physical-placement |
 | dist_s(x,y) | Periodic sup distance in lattice units | Ch. 1; Outline I.1.1 |
 | U_e, U_{y;μν}, U_γ | Link variable, plaquette product, ordered path transport | Ch. 1; def:D02 |
-| w(u), χ(u) | `1−Re tr(u)/n_G`, normalized Hilbert–Schmidt distance from the identity | Ch. 1; eq:I12-price-chord; Scott pr/ch renamed |
+| \(\lVert u-v\rVert_G\) | Distance between group elements, invariant under left and right translations. A plaquette of holonomy \(u\) has Wilson energy \(\tfrac12\lVert u-1\rVert_G^2=1-n_G^{-1}\operatorname{Re}\operatorname{tr}u\). | Ch. 1, `ch01:matrix-norm` and `ch01:wilson-energy`; source `eq:I12-price-chord` |
 | E_s^W, Z_{s,β}, μ_{s,β} | Wilson energy, partition function, law | Ch. 1; def:D02 |
 | D_m, a_m, τ_m | Cumulative denominator, D_m⁻¹, log D_m | Ch. 1; eq:I12-levels |
 | L_m, R_p, s_{m,p} | Odd ratio; physical period; R_pD_m sites per side | Ch. 1; eq:I12-levels; Outline I.1.3 |
@@ -82,9 +83,9 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 | β_{N,p,m}, β_{N,p} | Trajectory coupling at m; bare value at N | prop:MT |
 | Y_{e,z}, Q_e^pred, w_z^av | Framed connector; gauge-covariant block average; normalized averaging weights | eq:I12-framed-connector, eq:I12-predictor |
 | α_tag, λ^tag(U,α_tag) | Auxiliary discrete branch choice and probability | eq:I12-tag-mass |
-| q_γ(u) | Haar-normalized density proportional to exp[−γw(u)] | def:D04 |
+| q_γ(u) | Haar-normalized density proportional to \(\exp[-\tfrac{\gamma}{2}\lVert u-1\rVert_G^2]\) | def:D04 |
 | k^{(m)}_β, B^{(m)}_β | Normalized block kernel, exact density integration map m+1→m | def:D04 |
-| Bad_m(U) | Sites incident to a plaquette with χ>t_m | sec:density; Scott Flag |
+| Bad_m(U) | Sites incident to a plaquette with \(\lVert U_\square-1\rVert_G>t_m\) | sec:density; Scott Flag |
 | E_i^reg, K_i^lf | Small-field local correction; large-field polymer activity | eq:I12-forced-eligibility |
 | I_i^bad | Exactly prescribed nonempty set Bad_m(U)∩Y_i | same; not a field insertion |
 | mathfrak F_m(U) | Disjoint polymer families exactly covering Bad_m(U) | def:D06 |
@@ -114,6 +115,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 | j_{d,e}, ∂_μ | Field inclusion and field derivative, proved from correlations | prop:FC; not naïve polynomial inclusion |
 | 1_d, F_tag | Class [u_d]; disjoint union of degree-tagged quotient spaces | sec:field-spaces |
 | M_d^Max, S^Max, Γ | Free Maxwell quotient fields, correlations, covariance | def:D11 |
+| \(\mathcal S_j,\langle P,Q\rangle_j\) | Homogeneous degree-\(j\) Maxwell solution jets. Sum the Lie algebra inner products of corresponding coefficients over all ordered indices, including both orders of the antisymmetric index pair. | Ch. 3, `ch03:shell` and `ch03:strict` |
 | mathscr U_{k,d}, r_k | Short-distance comparison maps and scale sequence | def:D12 |
 | T^Max_{μν}, T_{μν} | Free Maxwell stress tensor; Ward-normalized interacting tensor | prop:ST |
 | P_ν^J, Y_K^J, χ_shell | Translation flux, angular flux, smooth annular cutoff | def:D13; J here tensor, not jet space |

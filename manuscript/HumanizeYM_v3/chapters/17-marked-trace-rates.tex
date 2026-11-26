@@ -10,16 +10,23 @@ expansion as an ordinary bounded function.
 \subsection{A differentiated block kernel}
 
 In the exact kernel $k^{(L)}_\beta$ of \eqref{ch04:kernel}, condition
-on the fine field $U$ and all auxiliary choices $\alpha$. The conditional density of $V_e$ is
-$q_{b\beta}(V_e Q_e^{-1})$, where
-$q_\gamma(u)=Z_\gamma^{-1}\exp[-\gamma w(u)]$.
-For every fixed order $r$, compactness and smoothness of $w$ give
+on the fine field $U$ and all auxiliary choices $\alpha$. Write
+$Q_e=Q_e^{\rm pred}(U,\alpha)$ for the resulting block average. By
+unitary invariance of the matrix norm \eqref{ch01:matrix-norm}, the
+conditional Haar density of $V_e$ is
+\[
+ q_{b\beta}(V_eQ_e^{-1})
+    =Z_{b\beta}^{-1}\exp\bigl(-\tfrac{b\beta}{2}\|V_e-Q_e\|_G^2\bigr).
+\]
+For every fixed order $r$, compactness of $G$ and smoothness of the
+squared norm give
 \begin{equation}\label{ch17:kernel-score}
  |D^r q_\gamma(u)|\le C_r(1+\gamma)^r q_\gamma(u).
 \end{equation}
 Here $D^r$ denotes $r$ successive left derivatives in unit Lie algebra
 directions. Dividing by $q_\gamma$, the result is a polynomial in
-derivatives of $w$ with at most $r$ factors of $\gamma$. The normalization is
+derivatives of $u\mapsto\tfrac12\|u-1\|_G^2$ with at most $r$ factors
+of $\gamma$. The normalization is
 independent of $u$. For a product of link kernels the corresponding
 bound has an additional polynomial in the number of differentiated
 links. No lower bound on $q_\gamma$ is used.

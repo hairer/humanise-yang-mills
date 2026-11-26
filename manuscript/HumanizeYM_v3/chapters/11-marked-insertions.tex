@@ -793,12 +793,13 @@ $1+t\le e^t$ for the eligible activity product and retains every
 coefficient involving several insertions. The two unit bounds on the terms involving at least two insertions come from
 \eqref{ch11:higher-induction}.
 
-Choose $0<\rho\le1$ below the small-field threshold. A maximal
-packing in the ambient real matrix space of dimension $D_G$, with
-Haar invariance, gives $\mu_G\{\chi(U)\le r\}\ge(r/4)^{D_G}$.
-Restrict every forward link to normalized Hilbert--Schmidt distance from the identity at most $\rho/4$; the event has
-probability at least $(\rho/16)^{4D_GV}$ and all plaquettes have
-normalized Hilbert--Schmidt distance from the identity at most $\rho$. If the exact action there is bounded by
+Choose $0<\rho\le1$ below the small-field threshold. With the matrix
+norm \eqref{ch01:matrix-norm}, a maximal packing in the ambient real
+space of dimension $D_G$ and Haar invariance give
+$\mu_G\{U\in G:\|U-1\|_G\le r\}\ge(r/4)^{D_G}$ for $0<r\le1$.
+Restrict every forward link $U_e$ to $\|U_e-1\|_G\le\rho/4$.
+This event has probability at least $(\rho/16)^{4D_GV}$, and
+$\|U_p-1\|_G\le\rho$ on every plaquette. If the exact action there is bounded by
 $V[b_{\rm act}+\beta b_{\rm loc}(\rho)]$, positivity gives
 \[
  Z\ge e^{v_0-V[b_{\rm act}+\beta b_{\rm loc}(\rho)
@@ -1978,8 +1979,9 @@ representation, now give the weighted output envelope
 \eqref{ch11:weighted-output-envelope}.
 To normalize it one must retain the Gaussian power in the
 partition function. Tree gauge fixing leaves $3V+1$ free links
-on a four-dimensional torus of $V$ sites. Restrict them to a
-ball for the normalized Hilbert--Schmidt distance of radius $g/4$ to obtain
+on a four-dimensional torus of $V$ sites. Restrict each free link $U_e$
+to the ball $\|U_e-1\|_G\le g/4$ in the matrix norm
+\eqref{ch01:matrix-norm} to obtain
 \[
  Z\ge e^{\sigma-Vc_1}(c_-g^{\dim\gLie})^{3V+1}.
 \]
@@ -2008,7 +2010,7 @@ All other plaquette factors are at most one and may be discarded.
 This proves the stated $3V-3$ integrations, including the
 wrapping links except for the four explicitly retained ones.
 The Haar estimate
-$\int_Ge^{-\chi(u)/(g/c)}du\le c_+(g/c)^{\dim\gLie}$
+$\int_Ge^{-c\|u-1\|_G/g}\,dh(u)\le c_+(g/c)^{\dim\gLie}$
 then gives the corresponding upper bound.
 It follows that the normalized coefficient with weight $z$
 obeys
