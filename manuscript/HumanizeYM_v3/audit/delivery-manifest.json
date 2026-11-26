@@ -1,7 +1,7 @@
 {
   "pages": 281,
   "cited_references": 41,
-  "pdf_sha256": "4a867beb0a54bceef3d5e53a0eb337ed7b0f814700ef7ff4b2507d2d00e29ea9",
+  "pdf_sha256": "326403d861931cdbd47a5b5b7a017ff90957132e2ce22d4e312ce68739d321f2",
   "sources": {
     "monograph.tex": "491aa0cc8ead1ec0159f5558461dc9eae1ac62cf2ff16a3eebbc0cbd66e310b0",
     "preamble.tex": "f7209a56016068a42eac177da8bc2509b0dcee939083d2e24214f5633837e393",
@@ -12,7 +12,7 @@
     "chapters/02-equation-section.tex": "c230f1bf42b9be9dc5a8bf3c7e854f7b3ad532c21d428e9250ce8fae69de1047",
     "chapters/02-observables.tex": "a2aa0a10277c1aa85dea4081ef336b93aeacdc4d41d505a5f979e640de22f960",
     "chapters/03-maxwell.tex": "44270b61245a7f93914752b276b6fd6e5af49178d9494d664c2a0f1555462ce6",
-    "chapters/04-blocking.tex": "3d58dcd670e6ba221b9936ac3d468081578bbc580fb0b30326ee2bb64debae7f",
+    "chapters/04-blocking.tex": "568256893794d78547db7ed1773c245f7de3561b3bfd23984e4bf4cfaba4a0a3",
     "chapters/05-gaussian.tex": "1021837a76919e6358fb6cea78f76e0e7ca8ceb14ed25b4cfa058aeddcf45cec",
     "chapters/06-large-fields.tex": "629366a83cb8b5590f38f3391e896b1f73eb1d6513a6360d5c2ef97e68487d07",
     "chapters/07-matching.tex": "d01f2258507adc374fba8751b778525f8c959f545b6e43c8e2adb1828ceb28cc",
@@ -56,5 +56,5 @@
     "figures/ward-shell.tex": "f15c44005db75ae93c1629899787bdc71615006a1c22b918d98ba4bbbf88d1e2",
     "margincomment.sty": "8daa3f93c547e4843ab6bb4e721593eeff89d21bc0f2c181628cb055ab912555"
   },
-  "review": "Checked the matrix-norm convention throughout the manuscript. Verified the periodic lift count, the frame and path estimates in Section 4.3, and their uses in Chapters 5 and 6. All explicit cross-references resolve. Inspected the typeset formulas and the separate proof of (4.13)."
+  "review": "Verified all explicit cross-references and inspected Lemma 4.5, equation (4.13), and its proof on page 39 of the rebuilt PDF."
 }
