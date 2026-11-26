@@ -1,7 +1,7 @@
 {
   "pages": 280,
   "cited_references": 41,
-  "pdf_sha256": "f8d907b8d020d252451c13a49465c956acf520c45018434414e7a90526beb6cb",
+  "pdf_sha256": "bdbb8a145dfae524379855d02b5ebcc90d2041ffa49bb34155acaa6807e455f7",
   "sources": {
     "monograph.tex": "491aa0cc8ead1ec0159f5558461dc9eae1ac62cf2ff16a3eebbc0cbd66e310b0",
     "preamble.tex": "f7209a56016068a42eac177da8bc2509b0dcee939083d2e24214f5633837e393",
@@ -12,7 +12,7 @@
     "chapters/02-equation-section.tex": "c230f1bf42b9be9dc5a8bf3c7e854f7b3ad532c21d428e9250ce8fae69de1047",
     "chapters/02-observables.tex": "4d3511dd67f54bdbf2760acd7382ade896cfef3f190e8666b26df5339ac2bd7d",
     "chapters/03-maxwell.tex": "719eeb9a285240ae677303ab0dd9540175b6808a388f92ab0b4a948a0821efd8",
-    "chapters/04-blocking.tex": "3c07845cc72c3c5490990162b231d4a8c401c5b3c5d9b878697e47692049625b",
+    "chapters/04-blocking.tex": "5ee47f8bb1009ef5e7da01915eb6f54f5eae1419172b00276678fe9c6e97f276",
     "chapters/05-gaussian.tex": "8d72409f596ff2735ff847a8b926bb303b047f0641149aed874d3973e50c9e9e",
     "chapters/06-large-fields.tex": "865806c669df4d563134171b39c5b7c80f796cc5c3cbb684208d68e3b9ee9418",
     "chapters/07-matching.tex": "d01f2258507adc374fba8751b778525f8c959f545b6e43c8e2adb1828ceb28cc",
@@ -56,5 +56,5 @@
     "figures/ward-shell.tex": "f15c44005db75ae93c1629899787bdc71615006a1c22b918d98ba4bbbf88d1e2",
     "margincomment.sty": "8daa3f93c547e4843ab6bb4e721593eeff89d21bc0f2c181628cb055ab912555"
   },
-  "review": "Rebuilt with the local margincomment package, verified explicit cross-references, and checked the rendered comment on page 37."
+  "review": "Rebuilt the manuscript after clarifying the opening of Section 4.3 and verified all explicit cross-references."
 }
