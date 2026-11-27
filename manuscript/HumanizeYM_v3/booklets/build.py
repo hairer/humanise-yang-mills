@@ -13,21 +13,21 @@ VOLUMES = [
     ("I", 1, 5, "Lattice fields and Gaussian blocking",
      "How does the Wilson measure encode a local field? "
      "The lattice observables and their free Maxwell counterparts fix the comparison. "
-     "The exact block transformation then identifies the Gaussian fluctuations "
-     "and the stationary background for the interacting integral."),
+     "The renormalization transformation then identifies the Gaussian fluctuations "
+     "and the critical configuration for the interacting integral."),
     ("II", 6, 9, "The nonlinear renormalization step",
      "At one pair of scales, large fields carry an action cost while small fields "
      "admit a local Gaussian expansion. Determinant matching and connected polymer "
      "estimates put the result back into a form that can be iterated."),
     ("III", 10, 13, "From a common trajectory to continuum fields",
-     "A single choice of scales and couplings carries marked observables through "
-     "successive block steps. First the lattice spacing tends to zero at fixed "
+     "A single choice of scales and couplings carries observables with insertions through "
+     "successive steps. First the lattice spacing tends to zero at fixed "
      "volume. A subsequence of growing volumes then yields the continuum "
      "correlations used to define local fields."),
     ("IV", 14, 19, "Reconstruction, the trace law and operator products",
      "Reflection positivity and Ward identities lead from Euclidean fields to "
      "relativistic reconstruction in each phase. The final chapters derive the "
-     "short-distance trace law in a selected phase, construct finite-order "
+     "short-distance trace law in a fixed phase, construct finite-order "
      "operator products and collect the conclusions of the manuscript."),
 ]
 STEMS = [f"HumanizeYM-v3-{roman}" for roman, *_ in VOLUMES]
@@ -39,6 +39,9 @@ def write_sources(work):
     numbers = [int(Path(p).name.split("-")[0]) for p in chapters]
     if numbers != list(range(1, VOLUMES[-1][2] + 1)):
         raise ValueError("Check the booklet boundaries against the current chapter list.")
+    # The preamble now lives in monograph.tex (upstream removed the use of preamble.tex).
+    start = master.index("\n", master.index(r"\documentclass")) + 1
+    (work / "booklet-preamble.tex").write_text(master[start:master.index(r"\begin{document}")])
     about = master[master.index(r"\chapter*{About this draft}"):master.index(r"\input{reading-guide}")]
     (work / "booklet-about.tex").write_text(about)
     theorem = (ROOT / "main-theorem.tex").read_text().replace(
