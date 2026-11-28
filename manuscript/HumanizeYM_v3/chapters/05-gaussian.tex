@@ -1012,28 +1012,30 @@ it would change $\mathcal Q$.
 For a fine edge $e$, join its endpoints to their block roots along the
 chosen trees. In the block axial gauge the resulting contour has contour variable $U_e$.
 It lies in one or two adjacent blocks and has length at most $2L^4-1$.
-In the axial gauge on the macro-box of Section~\ref{ch04:predictor-geometry} (the axial gauge of Chapter~\ref{ch04:blocking}, not the block axial gauge), its
-distance from the identity is bounded by this length times the sum of bond distances from the identity in the macro-box. The
+In the axial gauge on the macro-box of Section~\ref{ch04:predictor-geometry} (the axial gauge of Chapter~\ref{ch04:blocking}, not the block axial gauge), the
+distance of this contour variable from $1$, measured in the matrix norm
+\eqref{ch01:matrix-norm}, is at most the length of the contour times
+$\sum_b\|U_b-1\|_G$, summed over bonds in the macro-box in that gauge. The
 estimate for the local gauge transformations in the proof of Lemma~\ref{ch04:predictor-comparison}, linear in the plaquette sum, controls the discrepancies at the two roots;
 the estimate for the averaging operation controls the coarse root-to-root contour variable. Thus
 \begin{equation}
- \chi\bigl(U_e(\operatorname{rep}V)_e^{-1}\bigr)
+ \|U_e-(\operatorname{rep}V)_e\|_G
  \le C_{j,L}\mathcal P_y(U)
        +\mathbf1_{\{e\text{ crosses blocks}\}}
-                            \chi(V_{y,\mu}Q_{y,\mu}(U)^{-1}).
+                            \|V_{y,\mu}-Q_{y,\mu}(U)\|_G.
  \label{ch05:nonlinear-tree}
 \end{equation}
 For an internal edge the contour closes at its root and only the first term
 is needed. For a crossing edge, insert the value of the averaging operation between the
-local gauge transformations at the two roots and use the triangle inequality for the normalized Hilbert--Schmidt distance. The endpoint errors
-are bounded by the sum over the patch estimated in the proof of Lemma~\ref{ch04:predictor-comparison} on either branch, so this step
+local gauge transformations at the two roots and use the triangle inequality for $\|\cdot\|_G$. The endpoint errors
+are bounded by the sum over the corresponding patch of the averaging operation in \eqref{ch04:patch-frame-sum}, so this step
 requires no pointwise estimate of the local gauge transformation not already proved. The constant is
 allowed to depend on $L$; the stronger factor independent of $L$ in
 \eqref{ch04:macro-comparison} is not required for this use.
 
 Apply \eqref{ch05:nonlinear-tree} to $U=\exp(\epsilon a)$ with $a$ zero
 on tree edges, and $V=1$. Divide by $|\epsilon|$ and let $\epsilon\to0$.
-The first-order variation of the distance from the identity is the norm on $\gLie$, so
+Since $\|e^{\epsilon X}-1\|_G/|\epsilon|\to |X|$ for $X\in\gLie$, we obtain
 \[
  |a_e|\le C_{j,L}\sum_{p\text{ in the macro-box at }y}|(d_{1,f}a)_p|
        +\mathbf1_{\{e\text{ crosses blocks}\}}|(\mathcal Qa)_{y,\mu}|.
@@ -1055,8 +1057,8 @@ Let $\mathcal A_f$ be the uncut fine action, without the common inverse
 coupling or the $\beta$-independent quadratic term of the path action, and set
 \begin{equation}
  f(v,\psi)=\mathcal A_f(U(v,\psi))
-       +b\sum_{e\text{ coarse}}w\bigl((\exp v)_e
-                                   Q_e(U(v,\psi))^{-1}\bigr).
+       +\frac b2\sum_{e\text{ coarse}}\bigl\|(\exp v)_e
+                                   -Q_e(U(v,\psi))\bigr\|_G^2.
  \label{ch05:actual-action}
 \end{equation}
 Assume that the Hessian of the fine action $\mathcal A_f$ at the flat
