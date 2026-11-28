@@ -5,46 +5,46 @@
 \label{ch18:lattice-products}
 
 We prove a local replacement estimate before using any phase decomposition.
-It will also apply to mixed correlations with a fixed exterior word.
+It will also apply to the undecomposed correlations, before any decomposition into phases, with a fixed exterior word.
 Observable source variables and local polynomial extraction are standard
 renormalization-group tools; see, for example,
 \cite{BauerschmidtBrydgesSlade2015}. The quantitative estimates below concern
-the actual block kernels, activity norms and quotient fields constructed
-here; that reference does not supply these particular estimates.
+the block kernels, activity norms and quotient fields constructed
+here; that reference does not give these particular estimates.
 
 For $T\to\infty$, write $f\preccurlyeq e^{cT}$ if, for every
 $\varepsilon>0$, eventually $|f|\le e^{(c+\varepsilon)T}$ on an ordered
 cutoff and volume tail, uniformly on the specified bounded label sets
 and geometries. A factor $e^{o(T)}$ is called subpower in this paragraph.
-Choose levels $l=l(T)$ with $\tau_l/T\to\theta$, where
+Choose scales $l=l(T)$ with $\tau_l/T\to\theta$, where
 $\tau_l=\log(1/a_l)$. The schedule has $\log L_l=o(\tau_l)$, so
-first-crossing levels supply any positive $\theta$. For $\theta=0$ one may
+first-crossing scales give any positive $\theta$. For $\theta=0$ one may
 first cross $\sqrt T$.
 
-\subsection{Signed local transport}
+\subsection{Signed local transfer}
 
-Extracting the polynomial part of a local degree-$t$ marked density
+Extracting the polynomial part of a local degree-$t$ density with insertions
 gives a coefficient vector $x_l$. Write $r_l$ for the norm of the
 remaining density, whose extracted polynomial part vanishes. The dimensionless density obeys
-$H_l=L_l^t\mathcal B^{(L_l)}_\beta H_{l+1}$, with $\beta$ the inverse coupling used for the step $l+1\to l$ in \eqref{ch04:block-operator}. The physical source density has
+$H_l=L_l^t\mathcal B^{(L_l)}_\beta H_{l+1}$, with $\beta$ the inverse coupling used for the step $l+1\to l$ in \eqref{ch04:block-operator}. The dimensionful density with insertions has
 no additional factor. These conventions are those of
 Section~\ref{ch11:one-graph}. Keep the full prescribed large-field set and
 its normalization by the square root of the large-field bound in this remainder norm.
 
-The local-trial argument of Section~\ref{ch11:trial-descent} applies
+The backward comparison of Section~\ref{ch11:trial-descent} applies
 on any sufficiently late interval $[k_*,m]$, not only from the original
-microscopic level. In detail a remainder with vanishing extracted coefficient of size $q$ has
+cutoff scale. In detail, a remainder of norm at most $q$ with vanishing extracted coefficient has
 output coefficient and remainder at most $L_l^{-2/5}q$.
 The regular term uses its zero radial Taylor polynomial through $t$;
 the large-field term retains half the suppression of its original
-prescribed set of large-field sites. Subtracting its output column restores the vanishing extracted coefficient and
-costs at most $(1+2C_l)L_l^{-2/5}q$. The block floor makes this at
-most $L_l^{-3/8}q$. This recentering is an equality of marked
-densities, including terms with prescribed large-field sites. It follows by
+prescribed large-field set. Subtracting its output column restores the vanishing extracted coefficient and
+adds at most $(1+2C_l)L_l^{-2/5}q$. The lower bound on the block ratio makes this at
+most $L_l^{-3/8}q$. This recentering is an equality of
+densities with insertions, including terms with prescribed large-field sets. It follows by
 linearity, so it applies also when an activity vanishes.
 
-Add a free column parameter at the fine end and choose it so that
-the transported residual coefficient vanishes at $k_*$. Invertibility
+Add a free column parameter at the finest scale of the interval and choose it so that
+the transferred residual coefficient vanishes at $k_*$. Invertibility
 of the column map permits this on the same history. The cone calculation
 in Section~\ref{ch11:trial-descent} then gives
 \begin{equation}
@@ -53,44 +53,44 @@ in Section~\ref{ch11:trial-descent} then gives
  \label{ch18:signed-transport}
 \end{equation}
 Here $q_{\rm fin}$ is the combined original coefficient and remainder
-cost, before the affine column subtraction. To recall the numerical
+bound, before the affine column subtraction. To recall the numerical
 point, with $Y=|\mathsf d_lx_{l+1}|_1$, $U=|x_l|_1$ and
 $\epsilon_l=L_l^{-3/8}$ the two inequalities are
 $Y\le K_l[U+\epsilon_l(Y+r_{l+1})]$ and
 $r_l\le K_lY+\epsilon_lr_{l+1}$.
 The cone $32(1+C_l)^2U\le r_l$ gives
 $Y\le4K_l\epsilon_lr_{l+1}$ and $L_l^{1/8}r_l\le r_{l+1}$.
-It starts with $x_{k_*}=0$. At the fine end absorb the subtracted
-column cost to obtain the second inequality, and iterate for the first.
+It starts with $x_{k_*}=0$. At the finest scale absorb the subtracted
+column bound to obtain the second inequality, and iterate for the first.
 The sign of the local difference has been retained throughout.
 
-\subsection{Grouping marks and retaining their supports}
+\subsection{Grouping insertion points and retaining their supports}
 
 Use the square-zero source algebra of Chapter~\ref{ch11:insertions}.
 The total number of copies may be arbitrary, but a reflected cell
-contains a fixed number $n$ of insertion marks. A group is a set of
-these marks with a common representative. Grouping is bookkeeping for
-supports and source weights: original variables and every joint mode
+contains a fixed number $n$ of insertion points. A group is a set of
+these insertion points with a common representative. Grouping is bookkeeping for
+supports and source weights: original variables and the coefficient of every source monomial
 remain in the expansion. In particular partial modes of a group are
 not discarded, and grouping is not asserted to be an algebra
 homomorphism replacing their product by a new variable.
 
-Recall that $c_B(X)$ counts the radius-$B$ balls in a smallest connected cover of $X$, and $\sigma$ is its exponential support weight.
-If a marked support $X$ has to contain new representatives joined
-by at most $h$ cover balls per mark, then
+Recall that $c_B(X)$ counts the radius-$B$ balls in a smallest connected covering of $X$, and $\sigma$ is the support exponent.
+If the support $X$ of a term with insertions has to contain new representatives joined
+by at most $h$ covering balls per insertion point, then
 \[
  c_B(X\cup\{y_i:i\in I\})\le c_B(X)+h|I|.
 \]
 Shrinking each affected weight by $\eta e^{-\sigma h}$ absorbs this
-support enlargement. The incidence norm has a second cost: a new
-incidence can be assigned to an old mark on its joining path.
-If at most $\mathfrak N$ representatives occupy a cover ball, there
+support enlargement. The incidence norm contributes a second factor: a new
+incidence can be attributed to an old insertion point on its joining path.
+If at most $\mathfrak N$ representatives occupy a covering ball, there
 are at most $(1+\mathfrak N)n$ assignments per representative.
-Take $\eta\le[(1+\mathfrak N)n]^{-1}$. Unmarked supports are
-unchanged. This is a termwise estimate on the complete marked
-series, hence is uniform in its number of replica cells.
+Take $\eta\le[(1+\mathfrak N)n]^{-1}$. Supports without insertions are
+unchanged. This is a termwise estimate on the full
+series with insertions, hence is uniform in its number of reflected cells.
 
-At each level retain a maximal $B_l^2$-separated set of representatives,
+At each scale retain a maximal $B_l^2$-separated set of representatives,
 keeping the representative of the center, and join each discarded
 representative to a retained neighbor. A merger decreases the number
 of groups; there are at most $n-1$ mergers within a cell.
@@ -98,7 +98,7 @@ A deliberately generous joining bound is
 \[
  h_l=16[1+L_l(B_l+B_{l+1}+1)^2]^4.
 \]
-Impose $(\sigma_{l+1}+1)h_l=o(\tau_l)$ by choosing the stage coupling thresholds.
+Impose $(\sigma_{l+1}+1)h_l=o(\tau_l)$ by choosing the lower bounds on the reference coupling at each stage.
 At fixed stage $h_l$ is a polynomial in $\log\widehat\beta_l$
 with fixed ratio, so this is a finite admissible request.
 The occupancy factors have the same property. The minimum
@@ -107,33 +107,33 @@ therefore has $-\log\alpha_j=o(\tau_j)$: split the maximum
 cost into a fixed initial segment and a tail bounded by
 $\varepsilon\tau_j$, and then let $\varepsilon\downarrow0$.
 
-Between mergers a single live group costs at most $6L_l$ in
+Between mergers a single group loses at most the factor $6L_l$ in
 its weight. Here the incoming regular contribution is carried
-\emph{without} Taylor subtraction. Its full support conversion
-cost is $T_l\le L_l$, as in \eqref{ch11:cover-transfer}; it
+\emph{without} Taylor subtraction. Its full factor for the change of cover radius
+is $T_l\le L_l$, as in \eqref{ch11:cover-transfer}; it
 must not be assigned the contraction factor for a vanishing extracted coefficient.
 If its incoming mass is $\mathfrak m$, the other local terms with vanishing extracted coefficient have total mass $p_l$ with $2p_l\le\mathfrak m$
-after increasing the coupling threshold, and the large-field terms have normalized mass
+after increasing the lower bound on the reference coupling, and the large-field terms have normalized mass
 $f_l\le\mathfrak m$. These are the termwise local bounds used
 above, retaining the original events. Resolving real and imaginary
-parts costs at most two, so
+parts contributes at most a factor two, so
 \[
  2(p_l+T_l\mathfrak m)+f_l
              \le(2L_l+2)\mathfrak m\le6L_l\mathfrak m
              \le L_l^4\mathfrak m.
 \]
 The last inequality holds for $L_l\ge3$. It applies in the
-submultiplicative marked norm to a whole incoming joint factor;
-it does not multiply separate bounds for correlated marks.
-With $g$ groups left, their available product weight is consequently
+submultiplicative norm in the source variables to a whole incoming joint factor;
+it does not multiply separate bounds for correlated insertions.
+With $g$ groups left, the product of their remaining source weights is consequently
 at least
 \begin{equation}
  (a_j/a_l)^{4n}(\alpha_j/8)^{n(n-g)}\prod_iw_i.
  \label{ch18:group-weight}
 \end{equation}
-Each step loses at most $L_l^{-4n}$, and a merger uses at most
+Each step loses at most the factor $L_l^{-4n}$, and a merger uses at most
 $n$ of the weight-reduction factors for support enlargement. This proves the formula by
-induction, including all support and prescribed set of large-field sites data.
+induction, including all data on supports and prescribed large-field sets.
 
 \subsection{Extraction with a freely chosen residual weight}
 
@@ -145,45 +145,45 @@ Put
  y_{t,l}=\widehat\beta_l^{-\nu_t}.
 \]
 Choose the fixed integer $\nu_t$ to absorb the finite polynomial and
-source-attachment losses at degree $t$. The stage coupling thresholds ensure
+attachment losses of the insertions at degree $t$. The stage lower bounds on the reference coupling ensure
 $y_{t,l}C_l\le1$ and
 $\phi_l L_l^{t+1}y_{t,l}\le y_{t,l+1}$.
-These are finite threshold requests after the ratio is fixed.
+These are finite requests on the lower bound on the reference coupling after the ratio is fixed.
 All their logarithms, as well as $\log\Xi_l$, are $o(\tau_l)$.
 
-For a fixed exterior reflection cell at level $k$, let
+For a fixed exterior reflected cell at scale $k$, let
 \[
  k_* =\min\{l\ge k:B_l^2\le a_k/a_l\},\qquad
  N_k=\exp\bigl((a_k/a_{k_*})^4q_{k_*}^{\rm site}+5\bigr).
 \]
-The sparse-stopping argument of
+The stopping-scale argument of
 \eqref{ch13:sharp-schedule} gives $\tau_{k_*}/\tau_k\to1$
 and $\log N_k=o(\tau_{k_*})$. Indeed if $k_*=l+1>k$,
 minimality gives $a_k/a_{k_*}\le L_lB_l^2$; the last condition
-of that equation bounds both the normalization cost and
+of that equation bounds both the normalization exponent and
 $\tau_{k_*}-\tau_k$ by $o(\tau_{k_*})$.
 When $\tau_k=o(T)$ the same proof gives $\log N_k=o(T)$.
 
-Suppose the cluster has become one group at level $m+1$, with
-available weight $\omega$. Set
+Suppose the cluster has become one group at scale $m+1$, with
+product $\omega$ of its remaining source weights. Set
 \[
  q_m^{\rm ext}=4\Xi_ma_{m+1}^t/\omega,\qquad
                     E_m=8(1+C_m)q_m^{\rm ext}.
 \]
 Taylor extraction through radial degree $t$ gives coefficient and
 complement each bounded by $q_m^{\rm ext}$. To verify this, divide
-by the available weight, apply the integral Taylor formula in the
+by this product of weights, apply the integral Taylor formula in the
 local derivative norm, and sum the finite coefficient conversions
-and support moments with their positive exponent reserve. Their
-costs are fixed stage constants and powers of logarithmic radii
+and the polynomial factors in the support size with their positive margin in the exponent. Their
+bounds are fixed stage constants and powers of logarithmic radii
 and inverse thresholds, hence eventually at most $\Xi_m$.
-The factor $a_{m+1}^t$ converts the physical source to the
+The factor $a_{m+1}^t$ converts the dimensionful density with insertions to the
 normalized degree-$t$ density. Large-field terms keep their
 original normalized majorants. Extraction of the coefficient of
-all marks in a group is a linear operation on the exact density;
+all insertions in a group is a linear operation on the exact density;
 products of partial modes are retained before taking it. Each
-term is assigned the union of its supports and original prescribed set of large-field sites,
-so this operation never divides by the unmarked gas.
+term is assigned the union of its supports and original prescribed large-field set,
+so this operation never divides by the sum over disjoint covering families of the density without insertions.
 
 Choose a residual weight $\varpi>0$ at $k_*$ and thereafter
 $\varpi_{l+1}=\phi_l\varpi_l$. The two sufficient inequalities are
@@ -194,39 +194,39 @@ $\varpi_{l+1}=\phi_l\varpi_l$. The two sufficient inequalities are
         &\le y_{t,k_*}/2.
  \label{ch18:residual-weights}
 \end{align}
-The first absorbs the local polynomial coefficient bound and the second the bound for its signed transport.
+The first absorbs the local polynomial coefficient bound and the second the bound for its signed transfer.
 Indeed the recursion for these bounds gives
 $\varpi_l\le\varpi(a_l/a_{k_*})^{t+1}y_{t,l}/y_{t,k_*}$.
-Combining this with \eqref{ch18:signed-transport} and the physical
+Combining this with \eqref{ch18:signed-transport} and the dimensionful
 factor $a_l^{-t}$, the ratio of required to allowed weight at
-level $l$ is at most its value at $k_*$ times
-$(a_l/a_{k_*})^{7/8}\le1$. Thus no intermediate level has been
+scale $l$ is at most its value at $k_*$ times
+$(a_l/a_{k_*})^{7/8}\le1$. Thus no intermediate scale has been
 left unchecked.
 
-The extracted matched field has coefficient norm at level $m$
+The extracted matched field has coefficient norm at scale $m$
 at most $2E_m$. The interior residual has chessboard seminorm
 at most $2N_k/\varpi$. To see the latter on arbitrarily many
 copies, put one residual in every reflected cell before integrating.
-Taking the coefficient of the required source monomial in the marked sum costs $\varpi^{-1}$ per
+Taking the coefficient of the required source monomial in the sum with insertions contributes the factor $\varpi^{-1}$ per
 cell; the normalized integral bound \eqref{ch11:root-bound}
-costs $N_k$ per cell. Apply this separately to the original local
+contributes the factor $N_k$ per cell. Apply this separately to the original local
 difference and its compensating column, and use the chessboard
 triangle inequality. The rooted component estimates and bounds
-used in this calculation depend on marks per cell, not on the
-number of cells. All the terms involving at least two insertions generated during transport
+used in this calculation depend on the number of insertions per cell, not on the
+number of cells. All the terms involving at least two insertions generated during transfer
 are included in these sums. The estimate is therefore stronger
-than a bound on one tested mean.
+than a bound on one response.
 
 \begin{proposition}[Lattice cluster replacement]
 \label{ch18:lattice-replacement}
 Let a cluster contain $n$ fields of total degree $W$. Choose
-$0\le\theta_-<\theta<\theta_+$ and levels $k,m,j$ with
-$\tau_k/T\to\theta_-$, $\tau_m/T\to\theta$, and $\tau_j/T\to\theta_+$. The cluster lies inside the centered level-$(m+1)$ block,
-its points lie on the level-$j$ grid with separation at least
-$B_j^2a_j$, and its full dependence supports fit inside the level-$k$
+$0\le\theta_-<\theta<\theta_+$ and scales $k,m,j$ with
+$\tau_k/T\to\theta_-$, $\tau_m/T\to\theta$, and $\tau_j/T\to\theta_+$. The cluster lies inside the centered block of scale $m+1$,
+its points lie on the scale-$j$ grid with separation at least
+$B_j^2a_j$, and its dependence sets lie inside the scale-$k$
 cell. Put $Z=W\theta_++4n(\theta_+-\theta)$.
 For each fixed auxiliary degree $t$ there are output labels
-$v_{N,p}^{\rm out}\in V_t$, on the actual histories, satisfying
+$v_{N,p}^{\rm out}\in V_t$, on the constructed histories, satisfying
 \begin{align}
  |x_m(v_{N,p}^{\rm out})|_1
        &\preccurlyeq e^{(Z-t\theta)T},\notag\\
@@ -242,8 +242,8 @@ of this fixed local cluster.
 \begin{proof}
 The weights of normalized local insertions in
 \eqref{ch13:weight-size} give $\prod_iw_i=e^{-W\theta_+T+o(T)}$.
-Keep all incoming modes above $j$; separation permits their marked
-bounds but does not assert statistical independence. The grouping
+Keep the coefficients of all incoming source monomials above $j$; separation permits their
+bounds as terms with insertions but does not assert statistical independence. The grouping
 estimate gives $\omega=e^{-ZT+o(T)}$ at $m+1$, and therefore
 $E_m=e^{(Z-t\theta)T+o(T)}$.
 Set
@@ -260,7 +260,7 @@ claim. All support shifts take place within the specified cell;
 reflections and conjugations retain the same bounds.
 \end{proof}
 
-\subsection{A mixed-correlation consequence without phases}
+\subsection{A consequence for undecomposed correlations without phases}
 \label{ch18:mixed-replacement}
 
 Fix finite correlation reconstruction maps onto the filtered spaces $F_D$.
@@ -279,7 +279,7 @@ low-degree component in this fixed biorthogonal system. Denote the resulting rec
 $\mathcal P_Dw$. It depends on the cluster, not on its later spectator.
 No rotation average or phase measure is used here.
 
-\begin{proposition}[Mixed local replacement]
+\begin{proposition}[Local replacement for undecomposed correlations]
 \label{ch18:mixed-bound}
 Let $x_i=o+r z_i$, with the $z_i$ in a fixed compact separated
 configuration set, and let $W$ be the total cluster degree.
@@ -293,21 +293,21 @@ For any fixed separated exterior word $v$, any $D$ and $\varepsilon>0$,
 Here $b_\alpha$, $|\alpha|\le D$, are the fixed probe coordinates. The same field
 $\mathcal P_D(\tau_{-o}w)$ works for every exterior word. The
 estimates are uniform on fixed bounded label sets and separated
-geometries, and hold with any fixed finite positional derivatives,
+geometries, and hold with any fixed finite derivatives in the positions,
 with their increased scaling dimensions.
 \end{proposition}
 \begin{proof}
-First use generic level-$j$ grid points. Put $T=\log(1/r)$ and
+First use generic points of the scale-$j$ grid. Put $T=\log(1/r)$ and
 choose $0<\theta_-<\theta<1<\theta_+$. The cluster then fits
 the block and separation conditions for large $T$.
 For each fixed geometry, the output labels in
 \eqref{ch18:lattice-estimate} are bounded at fixed $m$ and hence
-at the reference level by the inverse-column bound. Take a
-coefficient-convergent refinement and call its field $A_t$.
-The chessboard inequality bounds its residual tested against any
+at the reference scale by the inverse-column bound. Take a
+subsequence along which the coefficients converge, and call its field $A_t$.
+The chessboard inequality bounds its residual paired with any
 fixed exterior word by exponent
-$Z-(t+1/16)(\theta-\theta_-)$. The same refinement works for all
-spectators, since the coefficient limit was taken before testing.
+$Z-(t+1/16)(\theta-\theta_-)$. The same subsequence works for all
+spectators, since the coefficient limit was taken before pairing.
 
 The graded quotient estimate \eqref{ch18:graded-distance} shows
 that a degree-$i$ coordinate of $A_t$ has exponent $Z-i\theta$.
@@ -317,8 +317,8 @@ Choose $t$ so large that
 $(t+1/16)(\theta-\theta_-)\ge(D+1)\theta$.
 This also bounds every raw coordinate being evaluated, whose degree is
 at most $D$. We do not require the residual to bound all coordinates
-through the auxiliary degree $t$. Testing the residual
-against the fixed probes bounds the coordinate errors. Reconstruct
+through the auxiliary degree $t$. Pairing the residual
+with the fixed probes bounds the coordinate errors. Reconstruct
 $A_t$ and omit degrees $i>D$. Each omitted coordinate has exponent
 at most $Z-(D+1)\theta$, and its fixed exterior correlations are
 bounded. This gives that exponent for the raw replacement error,
@@ -327,11 +327,11 @@ and $Z-i\theta$ for each raw coordinate.
 For completeness the grid restriction can be removed without
 assuming differentiability of the selected coefficients of $A_t$.
 Use the fixed correlation reconstruction instead. Its coefficients and
-its tested residual are smooth functions of the cluster positions.
+the pairings of its residual are smooth functions of the cluster positions.
 Their derivatives replace an input by a field of degree one higher.
 The sharp separated bounds, using fixed cells for exterior probes
 and shrinking cells only for cluster factors, give a crude exponent
-$W+1$: choose total excess one. Thus one can take $c_0=1$.
+$W+1$: choose total loss one in the exponent. Thus one can take $c_0=1$.
 The grid exponent is $\theta_+W+c_1$, where
 $c_1=4n(\theta_+-\theta)-(D+1)\theta$ for the residual, and
 $c_1=4n(\theta_+-\theta)-i\theta$ for a degree-$i$ coordinate.
@@ -339,14 +339,14 @@ These numbers are independent of $W$ with $n,D,i$ fixed.
 Multiplicative constants may depend on each of the finitely many
 higher derivative orders used in the following induction. For all sufficiently large total
 degrees the crude estimate implies the grid target, because
-$\theta_+>1$. Descend in total degree. Moving to a generic grid
-configuration costs $O(a_j)=e^{-\theta_+T+o(T)}$; the derivative
+$\theta_+>1$. Use downward induction on the total degree. Moving to a generic grid
+configuration contributes the factor $O(a_j)=e^{-\theta_+T+o(T)}$; the derivative
 bound at degree $W+1$ gives precisely the target exponent at
 $W$. The connecting paths remain separated. Only finitely many
 higher derivatives are needed for each starting degree, so their
 constants and thresholds can be chosen together. Finally let
 $\theta\uparrow1$ and $\theta_+\downarrow1$ and absorb the
 remaining loss into the prescribed $\varepsilon$.
-This proves the mixed estimate using neither phase symmetry nor
+This proves the estimate for undecomposed correlations using neither phase symmetry nor
 an operator-product theorem.
 \end{proof}

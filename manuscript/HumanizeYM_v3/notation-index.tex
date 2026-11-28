@@ -3,7 +3,7 @@
 This index lists the main symbols used in the written chapters.
 Auxiliary symbols are defined where used. The chapter and equation
 references give the precise conventions; in particular, lattice distances
-and physical distances must not be interchanged.
+and distances in continuum units must not be interchanged.
 
 {\small
 \begin{longtable}{@{}p{.22\textwidth}p{.73\textwidth}@{}}
@@ -22,9 +22,9 @@ $\Lambda_s,E_s$ & Periodic lattice with $s$ sites per direction and its positive
 $U_e,U_{y;\mu\nu}$ & Link variable and oriented plaquette holonomy; \eqref{ch01:plaquette}.\\[2pt]
 $E_s^{\mathrm W}$ & Wilson energy, the sum of $\tfrac12\|U_{y;\mu\nu}-1\|_G^2$ over plaquettes; \eqref{ch01:wilson-energy}.\\[2pt]
 $Z_{s,\beta},\mu_{s,\beta}$ & Partition function and Wilson probability measure; Definition~\ref{ch01:wilson}.\\[2pt]
-$R_p,L_m$ & Physical period and odd block ratio, respectively; Definition~\ref{ch01:scales}.\\[2pt]
+$R_p,L_m$ & Period in continuum units and odd block ratio, respectively; Definition~\ref{ch01:scales}.\\[2pt]
 $D_m,a_m,\tau_m$ & Cumulative lattice denominator, spacing $D_m^{-1}$ and logarithmic scale $\log D_m$; \eqref{ch01:scale-sequence}.\\[2pt]
-$N,m,p$ & Ultraviolet cutoff, renormalization level and physical-volume index; Section~\ref{ch01:scales-section}.\\[2pt]
+$N,m,p$ & Ultraviolet cutoff, scale index and volume index; Section~\ref{ch01:scales-section}.\\[2pt]
 $\Conf_n$ & Configurations of $n$ distinct points in $\RR^4$; Definition~\ref{ch01:separated-test}.\\[2pt]
 $V_d$ & Invariant radial-jet polynomials of scaling dimension at most $d$; \eqref{ch02:label-space}.\\[2pt]
 $N_{\rm fac}$ & Polynomial factor-count operator, distinct from scaling dimension; \eqref{ch02:factor-scaling}.\\[2pt]
@@ -32,25 +32,25 @@ $P_d^{\rm loc}$ & Finite-stencil representative of a local polynomial; Theorem~\
 $S_n^{\rm Max}$ & Wick correlations in the free Maxwell comparison theory; Section~\ref{ch03:wick}.\\[2pt]
 $\mathcal S_j,\langle\cdot,\cdot\rangle_j$ & Homogeneous degree-$j$ Maxwell solution jets (Section~\ref{ch03:shell}) and their coefficient inner product (Section~\ref{ch03:strict}).\\[2pt]
 $\omega_d$ & Restriction from radial-potential labels to free solution jets; Section~\ref{ch03:shell}.\\[2pt]
-$b$ & Positive penalty in the soft block constraint, distinct from inverse coupling $\beta$; Section~\ref{ch04:kernel-section}.\\[2pt]
+$b$ & Penalty parameter of the block kernel, distinct from the inverse coupling $\beta$; Section~\ref{ch04:kernel-section}.\\[2pt]
 $\mathcal B^{(L)}_\beta$ & Exact block transformation from $\Lambda_{Ls}$ to $\Lambda_s$ at ratio $L$; \eqref{ch04:block-operator}.\\[2pt]
 $\widehat\beta_m,\mathfrak B_m$ & Reference inverse coupling and the permitted interval around it; Section~\ref{ch04:density-coordinates}.\\[2pt]
 $M_m^{\rm cut},t_m,B_m$ & Cutoff amplitude, plaquette threshold and radius used in support weights; \eqref{ch04:thresholds}.\\[2pt]
-$E_i,X_i,o_i$ & Regular activity, its support and anchor; Section~\ref{ch04:activities}.\\[2pt]
-$K_i,Y_i,I_i$ & Large-field activity, exclusion support and prescribed set of large-field sites; Section~\ref{ch04:activities}. The full link-dependence region can be larger than $Y_i$.\\[2pt]
-$\mathcal E_m,\mathcal K_m$ & Weighted regular and large-field activity sums; \eqref{ch04:weighted-sums}.\\[2pt]
+$E_i,X_i,o_i$ & Localized term, its localization domain and base point; Section~\ref{ch04:activities}.\\[2pt]
+$K_i,Y_i,I_i$ & Large-field activity, exclusion support and prescribed large-field set; Section~\ref{ch04:activities}. The dependence set can be larger than $Y_i$.\\[2pt]
+$\mathcal E_m,\mathcal K_m$ & Weighted sums of the localized terms and of the large-field activities; \eqref{ch04:weighted-sums}.\\[2pt]
 $\Omega^r,d_r$ & Lattice $r$-forms and forward exterior derivative; Section~\ref{ch05:forms}.\\[2pt]
 $H,K$ & Curvature metric and kinetic operator $d_1^*Hd_1$; \eqref{ch05:kinetic}. These are operators, not polymer activities.\\[2pt]
-$Q,A^{-1},W$ & Linear map from fine to coarse fields, covariance of the normalized fine fluctuations, and map from a coarse field to its minimizing fine field; \eqref{ch05:schur-data}.\\[2pt]
-$T$ & Two-form transport associated with $W$; \eqref{ch05:physical-transports}.\\
-$\mathcal Q,W_a,W_F$ & Linearized gauge-covariant block average and two representatives of the minimizing fine field, respectively in the smooth gauge and in the forest coordinates; Section~\ref{ch05:actual-tangent}.\\[2pt]
+$Q,A^{-1},W$ & Linear map from fine to coarse fields, covariance of the normalized fine fluctuations, and linearization of the critical configuration of the quadratic problem; \eqref{ch05:schur-data}.\\[2pt]
+$T$ & Induced map on curvatures associated with $W$; \eqref{ch05:physical-transports}.\\
+$\mathcal Q,W_a,W_F$ & Linearized averaging operation and two representatives of the linearization of the critical configuration, the smooth one and the one in the block axial gauge; Section~\ref{ch05:actual-tangent}.\\[2pt]
 $\mathscr Z_{\rm blk}$ & Exact blocked density before its local reorganization; Section~\ref{ch09:integral}.\\[2pt]
-$J(m),\mathscr L_j$ & Stage at level $m$ and odd block ratio selected for stage $j$; Section~\ref{ch10:schedule}.\\[2pt]
-$\bar\beta,\beta_{N,p,m}$ & Prescribed coarse coupling and actual coupling along the finite history; Theorem~\ref{ch10:finite-history}.\\[2pt]
+$J(m),\mathscr L_j$ & Stage at scale $m$ and odd block ratio chosen for stage $j$; Section~\ref{ch10:schedule}.\\[2pt]
+$\bar\beta,\beta_{N,p,m}$ & Prescribed inverse coupling at scale $0$ and inverse coupling along the finite history; Theorem~\ref{ch10:finite-history}.\\[2pt]
 $z_i,\mathcal A_{\mathcal I}$ & Commuting nilpotent source variables and their finite coefficient algebra; Chapter~\ref{ch11:insertions}.\\[2pt]
-$q_m$ & Density with coefficients indexed by subsets of insertions in Chapter~\ref{ch11:insertions}; \eqref{ch11:source-density}. In Chapter~\ref{ch10:trajectory}, $q_m$ instead denotes the local scalar coupling correction.\\[2pt]
+$q_m$ & Density with coefficients indexed by subsets of insertions in Chapter~\ref{ch11:insertions}; \eqref{ch11:source-density}. In Chapter~\ref{ch10:trajectory}, $q_m$ instead denotes the coefficient of the coupling constant renormalization.\\[2pt]
 $M^{\rm UV}_{p,v}$ & Smooth fixed-volume correlation after the full ultraviolet limit; Theorem~\ref{ch12:uv-theorem}.\\[2pt]
-$S_n(v;x)$ & Infinite-volume separated correlation along the selected volume subsequence; \eqref{ch13:volume-limit}.\\[2pt]
+$S_n(v;x)$ & Infinite-volume separated correlation along the chosen subsequence of volumes; \eqref{ch13:volume-limit}.\\[2pt]
 $N_d(S),F_d$ & Polynomials that vanish in every separated correlation, and the quotient by this null space; \eqref{ch13:null}.\\[2pt]
 $\Pi_d$ & Limiting corrected coefficient projection; Proposition~\ref{ch13:rank}.\\[2pt]
 $\iota_{d,e},\partial_\mu$ & Inclusions of filtered field spaces and derivatives with respect to an insertion point; Section~\ref{ch13:calculus}.\\[2pt]

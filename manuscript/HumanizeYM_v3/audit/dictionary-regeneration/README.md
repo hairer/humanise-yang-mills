@@ -1,0 +1,9 @@
+# Regeneration of the dictionary against the converted text (25 November 2026)
+
+`../terminology.md` was written for the manuscript at commit `4f462ac5`. After the vocabulary conversion (which kept every line count) it was brought up to date with the text at commit `53796d75`.
+
+- **Method.** The alphabetical section was split into six parts. For each entry a script listed the cited lines whose wording had changed (as they were and as they are) and raw occurrence counts of the headword and its variants before and now. Six agents (Claude Opus, one per part) compared each entry with the current text, added the *Now* line, replaced quotations by the current wording, corrected *Where* lists and remarks, and renamed *Proposed* to *Adopted* where the proposal is in the text. A seventh agent updated Appendices A–H. A script then re-keyed the entries and rebuilt the alphabetical order.
+- **Reports.** `part1-report.md` … `part6-report.md` are the agents' reports as handed back to the coordinating agent, which wrote them to these files (the agents could not write report files themselves). Each lists counts, conversions that look wrong (leads for the third review of the chapters), objects that still have two names, and what was not checked. The report of the appendix agent is summarised in Appendix I of the dictionary and in issue 1 of the fork.
+- **Checks run by the agents.** Headword lines unchanged against the previous version; one *Now* line per entry; every `chapter:line` reference inside its file. Part 4 also checked its quotations against the cited lines by script.
+- **Not done.** No independent check of the regenerated entries. *Source* and *Literature* fields, long ranges, and most counts were not rechecked. The generated pointer entries were not read one by one.
+- **Agent assistance.** Claude Code (Claude Fable 5.2 coordinating, Claude Opus subagents).

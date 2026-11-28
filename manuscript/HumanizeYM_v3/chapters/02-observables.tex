@@ -7,8 +7,8 @@ classical limit. Integration over fluctuations can mix it with other
 observables, including the constant. We therefore separate two tasks. This
 chapter constructs finite-dimensional spaces of classical polynomial labels
 and local lattice representatives of those labels. Later, the
-renormalization group will supply the cutoff-dependent linear maps that
-normalize the representatives at a fixed physical scale.
+renormalization group will give the cutoff-dependent linear maps that
+normalize the representatives at a fixed scale in continuum units.
 
 The classical connections used below are test configurations. Their jets
 provide a precise way to say which local polynomial a lattice observable
@@ -47,8 +47,8 @@ retaining only $k+2\le d$. It is the zero space for $d<2$.
 Only finitely many jet coordinates enter any polynomial below. A coordinate
 of $A_k$ has classical scaling dimension $k+2$ and polynomial degree one.
 The scaling dimension of a monomial is the sum of those of its factors.
-For a homogeneous polynomial in jet coordinates, we also call its scaling
-dimension its \emph{weight}.
+For a homogeneous polynomial in jet coordinates, its scaling
+dimension is the common scaling dimension of its monomials.
 The ordinary polynomial degree counts factors of jet coordinates; to
 distinguish it from scaling dimension we call it the \emph{factor count}.
 Constant gauge transformations act on every coefficient by $\Ad(G)$.
@@ -76,8 +76,8 @@ Define the factor-count operator by
 The spaces are finite-dimensional: only $A_k$ with $k+2\le d$ can occur,
 and every nonconstant coordinate has scaling dimension at least two. The invariant
 subspace decomposes according to scaling dimension and factor count, so the stated bases can be chosen once and for all. The
-constant has bidegree $(0,0)$; the zero-factor subspace is precisely
-$\CC\mathbf1$.
+constant has bidegree $(0,0)$, the \emph{bidegree} of a basis element being the pair $(w_i,f_i)$; the zero-factor subspace is precisely
+$\CC\mathbf1$, spanned by the constant polynomial $\mathbf1$, which we call the \emph{identity field}.
 
 The curvature at the origin is
 $F_{\mu\nu}=\partial_\mu A_{0,\nu}-\partial_\nu A_{0,\mu}$: the
@@ -93,14 +93,14 @@ used in a complex polynomial, not sesquilinearly.
 
 There are three distinct integers in this notation. A basis element has
 scaling dimension $w_i$ and factor count $f_i$; it also belongs to a chosen space
-$V_d$ with $w_i\le d$. We shall retain that last choice as part of the
-observable label, writing $v=(d,c)$ with $c\in V_d$. The same polynomial
-$c$ can occur at different tags $d$. Its eventual normalization depends on
-the tag, so the resulting insertions must not be identified without a
+$V_d$ with $w_i\le d$, whose index $d$ we call the \emph{filtration index}. We shall retain that last choice as part of the
+observable label, the pair $v=(d,c)$ with $c\in V_d$. The same polynomial
+$c$ can occur with different filtration indices $d$. Its eventual normalization depends on
+the filtration index, so the resulting insertions must not be identified without a
 comparison theorem. None of these integers is being asserted to be the
 exact scaling dimension of the interacting quantum field.
 
-\section{Test holonomies and Taylor normalization}
+\section{Test link variables and Taylor normalization}
 \label{ch02:taylor-section}
 
 A label is a polynomial of a jet. A lattice observable is a function of
@@ -115,7 +115,7 @@ $(y,\mu)$ of $\ZZ^4$ and a real parameter $h$, define
  u'(t)=u(t)h A^{\le d}_\mu(h(y+te_\mu)),\quad u(0)=1.
  \label{ch02:test-holonomy}
 \end{equation}
-The solution remains in $G$. Standard dependence of solutions of analytic
+The solution remains in $G$; we call the matrices $U(h,J)(y,\mu)$ the \emph{test link variables} of the jet $J$. Standard dependence of solutions of analytic
 ordinary differential equations on parameters gives analytic dependence on
 the finitely many jet coordinates near zero; see
 \cite{Teschl2012}. Reversed links have inverse transport, in the convention
@@ -147,7 +147,7 @@ The term section simply means a right inverse of the Taylor map. The
 polynomial condition is global in the link matrices; it is stronger than
 analyticity near the identity. For a gauge-invariant observable the Taylor
 polynomial is $\Ad(G)$-invariant, since constant gauge transformations
-conjugate the test holonomies.
+conjugate the test link variables.
 
 Equivalently, the section identity requires, for every $J$ and $0\le q\le d$,
 \begin{equation}
@@ -169,7 +169,7 @@ inner product. For a plaquette based at $z$, set
 \[
  F_\square(U)=\Pi_{\gLie}\frac{U_\square-U_\square^{-1}}2.
 \]
-If $\gamma$ is a lattice path from the origin to $z$, its transported
+If $\gamma$ is a contour (Section~\ref{ch01:wilson-section}) from the origin to $z$, its transported
 curvature is
 \begin{equation}
  \sigma_{\gamma,\square}(U)=\Ad(U_\gamma)F_\square(U).
@@ -186,11 +186,11 @@ the origin.
 
 \begin{theorem}[Local polynomial representatives]
 \label{ch02:local-sections}
-For each $d$ there is a finite centered stencil $\Sigma_d\subset\ZZ^4$,
+For each $d$ there is a finite stencil $\Sigma_d\subset\ZZ^4$ centered at the origin,
 invariant under the signed permutation group $H_4$, and a local polynomial
 section $P_d^{\mathrm{loc}}$ with the following properties.
 Its values are gauge invariant and local on $\Sigma_d$. It preserves the
-unit and complex conjugation, and satisfies
+identity field and complex conjugation, and satisfies
 \begin{equation}
  P_d^{\mathrm{loc}}[c](h^*U)=P_d^{\mathrm{loc}}[h\cdot c](U),
  \qquad h\in H_4.
@@ -214,7 +214,7 @@ First consider the maps $J\mapsto\sigma_{\gamma,\square}(U(1,J))$.
 Their linearizations at the zero jet separate $\mathcal J_{\le d}$.
 Indeed, differentiating transport at the identity gives the line integral
 of the connection along the link. The derivative of a plaquette curvature
-is therefore its circulation. The derivative of the conjugating transport
+is therefore its circulation. The derivative of the conjugating contour variable
 in \eqref{ch02:transported-curvature} contributes nothing, since the
 curvature itself vanishes at the identity.
 
@@ -234,8 +234,8 @@ The radial identity and Euler's identity give
  \sum_\mu x^\mu
   (\partial_\mu A_{k,\nu}-\partial_\nu A_{k,\mu})=(k+2)A_{k,\nu}.
 \]
-It follows that $A_k=0$, a contradiction. Descending through the degree
-indices proves separation. Since $\mathcal J_{\le d}$ is finite-dimensional,
+It follows that $A_k=0$, a contradiction. Downward induction on the degree
+index proves separation. Since $\mathcal J_{\le d}$ is finite-dimensional,
 a finite collection of measurements already has injective joint derivative.
 
 Fix such a collection and write
@@ -257,8 +257,8 @@ Equivariance follows from uniqueness of the inverse as a germ.
 Let $T_df$ be the ordinary Taylor polynomial of $f$ through degree $d$.
 It has no constant term and is equivariant. For each real basis polynomial
 $b_{d,i}$ define $Q_i(z)=b_{d,i}(T_df(z))$. Then $Q_i$ is invariant, is real
-on real arguments, and has no monomial of degree below $f_i$. The unit
-column is one. Consequently
+on real arguments, and has no monomial of degree below $f_i$. The column of the
+identity field is one. Consequently
 \[
  \Psi_c(U)=\sum_i c_iQ_i(\sigma_1(U),\ldots,\sigma_M(U))
  \quad\text{for }c=\sum_i c_i b_{d,i}
@@ -279,21 +279,21 @@ Finally average over the finite lattice symmetry group:
 Uniqueness of the parallel-transport equation gives
 $h^*U(h_0,J)=U(h_0,h^{-1}\cdot J)$ for a scale parameter $h_0$.
 Thus every summand still has Taylor map $c$. Reindexing the finite sum
-proves \eqref{ch02:section-covariance}. Reality and the unit are preserved.
+proves \eqref{ch02:section-covariance}. Reality and the identity field are preserved.
 A signed image of a transported curvature is another such curvature,
 possibly with a minus sign from orientation reversal. The group action
 preserves factor count, so the lower bound on monomial degree survives
-averaging. Enclosing all paths and plaquettes in a centered box produces
+averaging. Enclosing all contours and plaquettes in a box centered at the origin produces
 the finite stencil $\Sigma_d$.
 For $d<2$ there are only constants and the construction reduces to the
 constant section.
 \end{proof}
 
-All choices in this theorem are made on the covering lattice $\ZZ^4$,
-before selecting a torus period. For a site $y\in\Lambda_s$, write
+All choices in this theorem are made on the infinite lattice $\ZZ^4$,
+before choosing the side length of the torus (its period). For a site $y\in\Lambda_s$, write
 $P_d^{\mathrm{loc}}[c](y;U)$ for evaluation after translating the stencil
 to $y$ and reducing its links modulo $s$. The construction remains
-well-defined if different covering links become the same torus link.
+well-defined if different links of $\ZZ^4$ become the same torus link.
 Gauge invariance, covariance and the polynomial identities survive that
 identification.
 
@@ -364,8 +364,8 @@ curvature measurement is therefore bounded by $t$ on the stated domain.
 
 On the fixed stencil the right side of \eqref{ch02:direction} is bounded
 by a constant times $t$, uniformly in the period: periodic distance is
-no larger than distance to a chosen covering-space representative.
-Differentiating a fixed path product $k$ times gives a finite sum of
+no larger than distance to a chosen representative in $\ZZ^4$.
+Differentiating a fixed contour variable $k$ times gives a finite sum of
 products with exactly $k$ direction matrices and otherwise unitary
 factors. Its derivatives are bounded by a constant times $t^k$.
 The same conclusion holds for each transported curvature. For a positive
@@ -379,8 +379,8 @@ $t$. Summing the finitely many resulting terms proves
 \eqref{ch02:section-small-bound}. Matrix entries of a unitary matrix have
 modulus at most one, so the polynomial cylinder formula gives
 \eqref{ch02:section-global-bound}.
-If covering links coincide on the torus, one first differentiates the
-covering expression and assigns the same direction to identified links.
+If links of $\ZZ^4$ coincide on the torus, one first differentiates the
+expression on $\ZZ^4$ and assigns the same direction to identified links.
 The number of terms and their bounds do not increase with the period.
 \end{proof}
 
@@ -390,7 +390,7 @@ permitted derivatives of $P_d^{\mathrm{loc}}[t^{-N_{\mathrm{fac}}}c]$
 are bounded by $C_{d,q,p_0}\sum_i|c_i|$ on the small-field domain. The
 powers $t^{f_i}$ cancel column by column. Outside that domain the global
 bound instead gives $C_d\sum_i|c_i|t^{-f_i}$. The missing small-field gain
-must later be supplied by the probability cost of a large-field region;
+must later come from the probability cost of a large-field region;
 it cannot be obtained by extrapolating \eqref{ch02:section-small-bound}.
 
 \input{chapters/02-equation-section}
@@ -398,9 +398,9 @@ it cannot be obtained by extrapolating \eqref{ch02:section-small-bound}.
 \section{Examples and the remaining normalization problem}
 \label{ch02:normalization}
 
-The unit illustrates the simplest section: $P_d^{\mathrm{loc}}[\mathbf1]=1$
-for every $d$. Its eventual physical normalization still depends on the
-normalization index. There will be a reference scale for each $d$, and a choice of
+The identity field illustrates the simplest section: $P_d^{\mathrm{loc}}[\mathbf1]=1$
+for every $d$. Its eventual dimensionful normalization still depends on the
+filtration index $d$. There will be a reference scale for each $d$, and a choice of
 coefficient making the renormalized insertion exactly one. This does not
 follow by putting a universal factor $a_N^{-d}$ in front of the raw
 constant section.
@@ -436,7 +436,7 @@ and an additive constant, with coefficients depending on the cutoff and
 volume. More generally, a label in $V_d$ can mix with other labels in the
 same finite-dimensional space. The correct normalization is consequently
 an invertible linear map on $V_d$, whose existence and estimates must be
-proved along the chosen renormalization trajectory.
+proved along the chosen renormalization-group trajectory.
 
 There is also a distinction between polynomial relations and vanishing
 fields. Some polynomial combinations represent free Maxwell equations of

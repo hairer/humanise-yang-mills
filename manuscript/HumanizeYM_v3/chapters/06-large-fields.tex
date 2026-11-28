@@ -2,25 +2,25 @@
 \chapter{Large fields and local Gaussian integration}
 \label{ch06:large-fields}
 
-A block transformation integrates every configuration. The usefulness of
+A step integrates every configuration. The usefulness of
 small-field coordinates therefore depends on a bound for their complement.
-This chapter separates two mechanisms. Selected large plaquette fields and
-large block average discrepancies retain a deterministic positive energy.
-Failures of smooth local cutoffs in the remaining coordinates are controlled
+This chapter separates two mechanisms. Large plaquette fields and
+large deviations of coarse links from their averages, both indexed by a large-field index triple (a set of fine plaquettes, a set of coarse edges and a set of coarse sites, defined below), retain a deterministic positive energy.
+Large fluctuation-field events, the failures of smooth local cutoffs in the remaining coordinates, are controlled
 by simultaneous Gaussian tail estimates. These mechanisms use different
-estimates and must be combined under the same integral.
+estimates and must be combined under the same integral. Ba{\l}aban makes the same split, into large plaquette fields and large fluctuation fields~\cite{Balaban1988Expansions}; he adds the location of a large fluctuation field to the large-field region, whereas here the large-field set is not enlarged and these events are bounded by a joint Gaussian tail estimate.
 
-We work at one adjacent pair of scales. The algebraic decompositions below
+We work at two consecutive scales, the fine scale $m+1$ and the coarse scale $m$. The algebraic decompositions below
 are exact. The energy and differentiated integral estimates use
-uniform bounds for the chosen path rows and actual sector matrices.
+uniform bounds for the chosen path components and for the non-flat matrices of a sector (a term of the decomposition below with fixed discrete data).
 We construct these bounds for the same local integral below; the flat
 Gaussian identities alone would not supply them.
 
-\section{Selected tests and the local energy}
+\section{Large-field index triples and the local energy}
 
-Fix a stage, a block ratio $L$, the penalty $b>0$, and the fine and coarse
+Fix a stage, a block ratio $L$, the penalty parameter $b>0$, and the fine and coarse
 path data of \eqref{ch04:path-action}. Throughout this chapter distances
-are coarse lattice distances, except that path cutoffs use true fine
+are coarse lattice distances, except that path-length truncations use true fine
 length. Write
 \[
  t_f=t_{m+1},\qquad t_c=t_m,\qquad B=B_m,\qquad
@@ -40,18 +40,18 @@ $B_m=\lceil(\log\widehat\beta_m)^2\rceil$ were defined in
 The coarse torus period is at least $100(B+1)$. All constants below are
 independent of that period.
 
-For a configuration pair $(U,V)$ and the block average $Q(U)$ of
+For a configuration pair $(U,V)$ and the value $Q(U)$ of the averaging operation of
 Chapter~\ref{ch04:blocking}, put
 \[
  r_p^f=\|U_p-1\|_G,\qquad r_p^c=\|V_p-1\|_G,\qquad
  n_e=\|V_e-Q_e(U)\|_G.
 \]
-Here $\|\cdot\|_G$ is the matrix norm of \eqref{ch01:matrix-norm}. A selection
-$A=(A_f,A_n,A_c)$ consists of fine plaquettes, coarse mismatch edges, and
+Here $\|\cdot\|_G$ is the matrix norm of \eqref{ch01:matrix-norm}, and $n_e$ is called the \emph{deviation} of the coarse link $V_e$ from its average $Q_e(U)$. A \emph{large-field index triple}, for short an \emph{index triple},
+$A=(A_f,A_n,A_c)$ consists of fine plaquettes, coarse edges, and
 coarse sites. Its size is the sum of the three cardinalities. Its location
 contains the projected corners of its plaquettes, the endpoints of its
 edges, and its sites. Write $A^{[r]}$ for the coarse $r$-neighborhood of
-that location. Fix $W>0$. A selection is consistent if, on all tests meeting
+that location. Fix $W>0$. An index triple is consistent if, at all plaquettes and edges meeting
 $A^{[5B]}$,
 \begin{align*}
  &r_p^f\ge t_f/4\quad(p\in A_f),&
@@ -60,37 +60,37 @@ $A^{[5B]}$,
  &n_e\le2Wt_f\quad(e\notin A_n),
 \end{align*}
 and $A_c$ is exactly the set of coarse sites incident to plaquettes with
-$r_p^c>t_c$ in that neighborhood. Every chosen frame tag must have positive
-mass. The overlaps in the first two threshold pairs permit a partition
-with smooth cutoffs; consistency does not prescribe a unique selection.
+$r_p^c>t_c$ in that neighborhood. Every chosen value of the auxiliary index of Chapter~\ref{ch04:blocking} for a local gauge transformation must have positive
+probability weight. The overlaps in the first two threshold pairs permit a partition
+with smooth cutoffs; consistency does not prescribe a unique index triple.
 
-For the exact integral use a global allocation before forming components.
+For the exact integral use a global partition of unity before forming components.
 Choose a smooth function $\vartheta_f$ equal to zero below $t_f/4$
 and to one above $t_f/2$, with values in $[0,1]$, and an analogous
-$\vartheta_n$ for the thresholds $Wt_f,2Wt_f$. Give a fine selection
+$\vartheta_n$ for the thresholds $Wt_f,2Wt_f$. Give a set $A_f$ of fine plaquettes
 the weight
 \[
  \prod_{p\in A_f}\vartheta_f(r_p^f)
  \prod_{p\notin A_f}(1-\vartheta_f(r_p^f)),
 \]
-and use the analogous product for mismatch edges. Summing over all
-selections gives one at every configuration. Take $A_c$ to be the
-actual coarse large-field set. Each nonzero global allocation obeys
-the consistency inequalities on every test, not merely within $5B$.
-The weaker local definition above suffices for the core energy estimate;
-later component factors retain the global allocation's restrictions
-on their larger dependence regions. This refinement adds local
-eligibility tests without discarding any part of the original integral.
+and use the analogous product for the sets $A_n$ of coarse edges. Summing over all
+pairs $(A_f,A_n)$ gives one at every configuration. Take $A_c$ to be the
+coarse large-field set of the configuration. Each index triple of nonzero weight obeys
+the consistency inequalities at every plaquette and edge, not merely within $5B$.
+The weaker local definition above suffices for the bound on the local energy $\mathcal E_A$ defined below;
+later component factors retain the restrictions of the global partition of unity
+on their larger dependence sets. This refinement adds local
+eligibility conditions without discarding any part of the original integral.
 
-An allocation sector fixes the selection, its assignment to connected
+A \emph{sector} is a term of this decomposition with fixed discrete data: it fixes the index triple, its assignment to connected
 components of its neighborhoods, a rooted spanning tree in every block,
-and all frame and block average tags. Tree links are set to the identity.
+and the value of the auxiliary index. Tree links are set to the identity.
 These choices fix the coordinates and supports before differentiation.
 Let
 \[
  D=\{p\in A_f:r_p^f>t_{\rm hi}\}\cup\{e\in A_n:n_e>t_{\rm hi}\}.
 \]
-Let $H$ be the output anchors at distance at most $4B/5$ from $D$. Local
+Let $H$ be the coarse plaquettes based at distance at most $4B/5$ from $D$. Local
 counting gives
 \begin{equation}
  |H|\le K B^4|D|,\qquad |A^{[2B]}|\le K B^4|A|.
@@ -101,16 +101,16 @@ The constants may depend on the fixed stage and ratio.
 \subsection{An exact completion of squares}
 
 Let $F(g)=P_{\gLie}(g-g^{-1})/2$, with the orthogonal projection taken in
-the fixed trace metric. Direct and path curvature rows are grouped as
+the fixed trace metric. The plaquette and path components of the curvature are grouped as
 \[
  X_f(p)=\bigl(\sqrt{c_{\rm dir,f}}F(U_p),L_{f,R_*}(U,p)\bigr),
  \quad
  X_c(p)=\bigl(\sqrt{c_{\rm dir,c}}F(V_p),L_{c,R_*}(V,p)\bigr).
 \]
 The $L_{*,R_*}$ are the path sums of \eqref{ch04:path-action}, truncated
-at true fine length $R_*$. Let $\chi_p^{\rm rel}$ denote the relaxed
-small-field test of \eqref{ch04:relaxed-test}. Define capped coarse rows
-and local kinetic energies by
+at true fine length $R_*$. Let $\chi_p^{\rm rel}$ denote the indicator of the relaxed
+regularity condition \eqref{ch04:relaxed-test}. Define coarse components, whose plaquette part carries the factor $\alpha_p$,
+and local action densities by
 \begin{align*}
  v_c(p)&=\bigl(\alpha_p\sqrt{c_{\rm dir,c}}F(V_p),
                    \chi_p^{\rm rel}(V)L_{c,R_*}(V,p)\bigr),
@@ -120,13 +120,13 @@ and local kinetic energies by
  K_c(p)&=\operatorname{clip}_{t_c}(r_p^c)
                   +\tfrac12\chi_p^{\rm rel}(V)|L_{c,R_*}(V,p)|^2.
 \end{align*}
-Set $\alpha_p=1$ when $r_p^c=0$. The clip is the Borel quadratic/linear
+Set $\alpha_p=1$ when $r_p^c=0$. Here $\operatorname{clip}_t$ is the Borel quadratic/linear
 function in \eqref{ch04:clip}, with its respective scale coefficients.
 In particular $|v_c(p)|\le Ct_f$.
 
 For clarity the square-completion input can be stated without choosing a
-particular row factorization. Suppose the flat fine, penalty, and
-complement maps $M_f,M_n,N$ satisfy
+particular factorization of the metrics. Suppose flat maps for the fine curvature, the penalty term, and the
+complement, $M_f,M_n,N$, satisfy
 \begin{equation}
  M_f^*M_f+M_n^*M_n+N^*N=I,
  \qquad M_f^*X_f^{\rm lin}+M_n^*Z^{\rm lin}=X_c^{\rm lin}.
@@ -135,19 +135,19 @@ complement maps $M_f,M_n,N$ satisfy
 The superscript $\mathrm{lin}$ denotes linearization at the flat field.
 Here $a$ and $v$ are the fine and coarse link variations, respectively,
 and $Z^{\rm lin}=\sqrt b(v-\mathcal Q a)$ is their discrepancy under the
-linearized block average $\mathcal Q$ of \eqref{ch05:actual-Q}. For the selected quadratic data these identities follow from the
-transport and positive-defect identities of Chapter~\ref{ch05:gaussian}.
-Here is their row realization, including the exact alignment premise.
-Let $C_\nu$ map curvature to the direct and path rows actually used at
+linearized averaging operator $\mathcal Q$ of \eqref{ch05:actual-Q}. For the fixed quadratic data these identities follow from the
+identities \eqref{ch05:physical-transports} and \eqref{ch05:positive-defect} of Chapter~\ref{ch05:gaussian}.
+Here is their realization through a factorization of the metrics, including the exact factorization hypothesis.
+Let $C_\nu$ map curvature to the plaquette and path components used at
 scale $\nu\in\{f,c\}$, and require
 $C_\nu^*C_\nu=\mathsf H_\nu$, where $\mathsf H_\nu$ is the chosen
 modified curvature metric. This is the quadratic coefficient condition
 of \eqref{ch05:actual-hessian}; it is not a conclusion for an arbitrary
 path action. Put $\mathsf B_\nu=\mathsf H_\nu^{-1}$ and
-$P_c=C_c\mathsf B_cC_c^*$. The positive direct row makes $C_c$
+$P_c=C_c\mathsf B_cC_c^*$. The positive plaquette component makes $C_c$
 injective. Thus $P_c=C_c(C_c^*C_c)^{-1}C_c^*$ is the orthogonal
-projection in the coarse row space onto the range of $C_c$. Equation
-\eqref{ch05:positive-defect} supplies an exponentially local row $K$
+projection onto the range of $C_c$. Equation
+\eqref{ch05:positive-defect} supplies an exponentially local operator $K$
 with
 \[
  K^*K=\mathsf B_c-T^*\mathsf B_fT-b^{-1}d_{1,c}d_{1,c}^*.
@@ -163,36 +163,36 @@ Direct multiplication gives the first identity in
 $X_f^{\rm lin}=C_fd_{1,f}a$,
 $X_c^{\rm lin}=C_cd_{1,c}v$, and
 $T^*d_{1,f}=d_{1,c}\mathcal Q$. The last identity is
-\eqref{ch05:physical-transports} with the actual block average of
+\eqref{ch05:physical-transports} with the linearization $\mathcal Q$ of the averaging operation in
 \eqref{ch05:actual-Q}: its extra coarse gradient has zero curl.
 The metric modification does not change these identities on curls.
-Thus both row identities hold for the same aligned action rows and
-actual block average. The selected path construction imposes this alignment:
+Thus both identities \eqref{ch06:flat-identities} hold for the same action components satisfying the factorization hypothesis and
+the same linearization $\mathcal Q$. The path construction used here imposes this factorization:
 in Section~\ref{ch07:classical} it chooses
 $C_c=(\sqrt{c_{\rm dir}}I,\rho)^T$ with
-$\rho^*\rho=\mathsf H_c-c_{\rm dir}I$, and realizes these very rows
-by transported plaquettes. Cubic and quartic matching terms do not
-change their Hessian, while the separate loop correction is not part
-of the classical metric. The update in Theorem~\ref{ch09:step-theorem}
-uses precisely this construction. At Wilson initialization the direct
-and additional rows have coefficients $\sqrt{c_{\rm dir}}$ and
-$\sqrt{1-c_{\rm dir}}$, so their Gram matrix is $I$; the terminal
-fine metric is unmodified ($\zeta_f=0$). The first coarse modification
-and every later one obey \eqref{ch05:positive-defect}. Thus alignment
-is an invariant of the selected construction, although it remains a
+$\rho^*\rho=\mathsf H_c-c_{\rm dir}I$, and realizes these very components
+by parallel-transported plaquettes. Cubic and quartic matching terms do not
+change their Hessian, while the $\beta$-independent quadratic term of the path action is not part
+of the classical metric. The step in Theorem~\ref{ch09:step-theorem}
+uses precisely this construction. At the Wilson initialization (the Wilson density at the ultraviolet cutoff) the plaquette
+and additional components have coefficients $\sqrt{c_{\rm dir}}$ and
+$\sqrt{1-c_{\rm dir}}$, so their Gram matrix is $I$; the
+fine metric at the ultraviolet cutoff is unmodified ($\zeta_f=0$). The first coarse modification
+and every later one obey \eqref{ch05:positive-defect}. Thus the factorization
+is an invariant of this construction, although it remains a
 necessary premise when applying the estimate to other path actions.
-Transport coefficients
-along their fixed coordinate routes using the replicated coarse field,
-and discard routes of fine length greater than $R_*$. Denote the resulting
+Parallel-transport the coefficients
+along their fixed coordinate contours using the pull-back $\operatorname{rep}V$ of the coarse field,
+and discard contours of fine length greater than $R_*$. Denote the resulting
 maps by $\Phi,\Phi_n,\mathcal N$ and put
-$Z(e)=\sqrt b F(V_eQ_e^{-1})$. Their adjoints below are the actual
-transported adjoints.
+$Z(e)=\sqrt b F(V_eQ_e^{-1})$. Their adjoints below are the adjoints of the
+parallel-transported maps.
 
-The rows $\Phi v_c$ and $\Phi_n v_c$ are the transported linear
+The vectors $\Phi v_c$ and $\Phi_n v_c$ are the parallel-transported linear
 comparison terms. Throughout this chapter, a comparison term means one
-of these specified rows, not an independently chosen approximation.
+of these specified vectors, not an independently chosen approximation.
 
-Define six anchored quantities:
+Define six local terms:
 \begin{align}
  E_f&=K_f+\tfrac12|\Phi v_c|^2-\langle\Phi v_c,X_f\rangle,\notag\\
  E_n&=\tfrac b2 n_e^2+\tfrac12|\Phi_n v_c|^2
@@ -205,7 +205,7 @@ Define six anchored quantities:
  \label{ch06:six-terms}
 \end{align}
 Every expression is evaluated at its corresponding plaquette, edge, or
-complement-row anchor. On summing over the whole torus, the cross terms
+complement-component base point. On summing over the whole torus, the cross terms
 and squares cancel exactly:
 \begin{equation}
  \sum(E_f+E_n+E_c+E_N+E_L+E_D)
@@ -213,13 +213,13 @@ and squares cancel exactly:
  \label{ch06:global-energy}
 \end{equation}
 This equality is algebraic and does not assume flatness. The local energy
-$\mathcal E_A$ is instead the sum of the six terms at anchors in
-$A^{[2B]}$. Cancellation across its boundary is unavailable. The two
-signed defects $E_L,E_D$ must therefore be estimated locally.
+$\mathcal E_A$ is instead the sum of the six terms at base points in
+$A^{[2B]}$. Cancellation across its boundary is unavailable. The two terms $E_L,E_D$, which are not of definite sign,
+must therefore be estimated locally.
 
 \subsection{Direct bounds and the signed comparison}
 
-Assume the transported maps have absolute row and column sums bounded by
+Assume the parallel-transported maps have absolute row and column sums bounded by
 $CL^{-2}$ and $CL^2$ for $\Phi$, respectively, and by $C$ for
 $\Phi_n,\mathcal N$. Bounds involving $L^{-2}$ below require $C$ fixed
 before choosing $L$. Put
@@ -227,24 +227,24 @@ before choosing $L$. Put
  R_f=\sum_{p\in A_f:r_p^f>t_f}r_p^f,
  \qquad R_n=\sum_{e\in A_n}n_e.
 \]
-The direct fine term, when $r_p^f\le t_f$, is at least
+The fine plaquette term, when $r_p^f\le t_f$, is at least
 $\tfrac12(\sqrt{c_{\rm dir,f}}r_p^f-|\Phi v_c(p,0)|)^2$.
-Since $|\Phi v_c|\le CL^{-2}t_f$, a selected plaquette in this range
+Since $|\Phi v_c|\le CL^{-2}t_f$, a plaquette of $A_f$ in this range
 contributes at least $c_{\rm dir,f}t_f^2/128$ for large $L$.
 Above $t_f$ the linear clip retains a multiple of $t_fr_p^f$.
 
-There is one additional loss: a path row whose relaxed test fails is no
-longer part of a square. Such a row based at $p$ has a witness $q$ with
+There is one additional loss: a path component whose relaxed regularity condition fails is no
+longer part of a square. Such a component based at $p$ has a witness $q$ with
 \[
  r_q^f>t_f\exp(\operatorname{dist}(p,q)/R^{\rm rel}).
 \]
 For a fixed witness the number of possible bases is at most
 $C(1+R^{\rm rel}\log(r_q^f/t_f))^4\le C r_q^f/t_f$.
 All witnesses lie within $B/50$ for sufficiently large reference coupling.
-They belong to the selected set by consistency. Split the endpoint plaquettes $q$ according as $r_q^f\le t_f$ or $r_q^f>t_f$. The row bound handles
+They belong to $A_f$ by consistency. Split the endpoint plaquettes $q$ according as $r_q^f\le t_f$ or $r_q^f>t_f$. The row bound handles
 the former, and the column bound handles the latter, giving
 \[
- \sum_{\text{omitted rows }p}|L_{f,R_*}(U,p)|\le C R_f.
+ \sum_{\text{omitted components }p}|L_{f,R_*}(U,p)|\le C R_f.
 \]
 Multiplication by $|\Phi v_c|\le CL^{-2}t_f$ absorbs this loss into the
 linear clip after increasing $L$. Consequently
@@ -254,13 +254,13 @@ linear clip after increasing $L$. Consequently
                          |\{p\in A_f:r_p^f\le t_f\}|.
  \label{ch06:fine-bound}
 \end{equation}
-The mismatch square similarly gives, for sufficiently large $W$ after $L$,
+The square of the deviation similarly gives, for sufficiently large $W$ after $L$,
 \begin{equation}
  \sum E_n\ge\frac b8\sum_{e\in A_n}n_e^2.
  \label{ch06:mismatch-bound}
 \end{equation}
 
-The coarse path contribution cancels exactly in $E_c$. The direct part is
+The coarse path contribution cancels exactly in $E_c$. The plaquette part is
 $c_{\rm dir,c}(\alpha_p-\alpha_p^2/2)|F(V_p)|^2
 -\operatorname{clip}_{t_c}(r_p^c)$.
 The squared normal displacement from the tangent space is $O(\|g-1\|_G^4)$,
@@ -278,13 +278,13 @@ The clip coefficients satisfy $c_{\rm dir,c}>16c_{\rm lin,c}$, and hence
 \end{equation}
 
 The remaining ingredient is genuinely about the chosen nonabelian paths
-and block average. Its quantitative form is recorded explicitly.
-\begin{proposition}[Local signed comparison from compatible rows]
+and averaging operation. Its quantitative form is recorded explicitly.
+\begin{proposition}[Local signed comparison from compatible components]
 \label{ch06:signed-input}
-Assume \eqref{ch06:flat-identities}, the stated transported row and column
-bounds, and a common positive exponential bound for the uncut path
-kernels, with their coefficients aligned with the curvature rows used
-in those identities. Then, on every consistent sector for the block average
+Assume \eqref{ch06:flat-identities}, the stated row and column
+bounds for the parallel-transported maps, and a common positive exponential bound for the uncut path
+kernels, with their coefficients satisfying the factorization hypothesis for the curvature components used
+in those identities. Then, on every consistent sector for the averaging operation
 of Chapter~\ref{ch04:blocking}, there are $C,K$ fixed before $L,W$ and
 $Z=Z_{j,L,W}$ such that
 \begin{align}
@@ -307,7 +307,7 @@ is at most $K|D|$. Here
 For a coarse plaquette $p$ based at $y$, let $m_y(q)$ count the lifts
 of a fine plaquette $q$ with all four vertices in the fine box $M_y$ of
 Section~\ref{ch04:predictor-geometry}. Thus
-$\mathcal P_y(U)=\sum_qm_y(q)r_q^f$. For either choice of block average,
+$\mathcal P_y(U)=\sum_qm_y(q)r_q^f$. For either branch of the averaging operation,
 Lemma~\ref{ch04:predictor-comparison} gives
 \begin{equation}
  r_p^c\le\sum_{e\in\partial p}n_e+C_jL^{-2}\mathcal P_y(U),
@@ -319,56 +319,56 @@ on $r_q^f$ allows the factor $L^{-2}$ to be retained when summing the
 fine plaquette contributions over coarse sites.
 
 The same bound localizes coarse plaquettes with $r_p^c>\delta$.
-If every fine or mismatch test in their fixed macro-patch is at most
+If every variable $r_q^f$ or $n_e$ in the box $M_y$ of such a plaquette is at most
 $t_{\rm hi}$, \eqref{ch06:macro-comparison} bounds $r_p^c$ by
-$C_{j,L}t_{\rm hi}<\delta$ after increasing the coupling threshold.
-Thus each such plaquette has a test in $D$ in that patch. The fixed
-patch fits inside the $B$-neighborhood used to define $H$, and bounded
-macro-patch multiplicity gives the asserted count $K|D|$.
-Separating the small-distance contribution from the selected excess gives
+$C_{j,L}t_{\rm hi}<\delta$ after increasing the lower bound on the reference coupling.
+Thus each such plaquette has a plaquette or edge of $D$ in that box. The box
+$M_y$ fits inside the $B$-neighborhood used to define $H$, and bounded
+multiplicity of the boxes $M_y$ gives the asserted count $K|D|$.
+Separating the small-distance contribution from the large-field contribution $\Delta_p$ gives
 $r_p^c\le C_{j,L,W}t_f+\Delta_p$ with
 $\sum_p\Delta_p\le C(L^{-2}R_f+R_n)$.
-The constant multiplying the excess must remain independent of $L,W$.
-Applying the transported row and column bounds then gives
+The constant $C$ in the last bound must remain independent of $L,W$.
+Applying the row and column bounds for the parallel-transported maps then gives
 \eqref{ch06:affected}; the positive displayed term is obtained by absorbing
 its upper bound into the enlarged loss constants. It is not a new
 positivity assertion for $E_L$.
 
-Outside $H$, all fine plaquette deviations $r_q^f$ and block average mismatches $n_e$ in the
-surrounding fixed macro-patches are at most $t_{\rm hi}$. The unselected
-tests obey this too, since $2Wt_f\le t_{\rm hi}$ eventually. The verified
-macro-comparison bounds $r_p^c$ there by
+Outside $H$, all fine plaquette distances $r_q^f$ from the identity and deviations $n_e$ in the
+surrounding boxes $M_y$ are at most $t_{\rm hi}$. The variables at
+plaquettes and edges outside $A_f$, $A_n$ obey this too, since $2Wt_f\le t_{\rm hi}$ eventually. The
+comparison \eqref{ch06:macro-comparison} bounds $r_p^c$ there by
 $C_{j,L,W}t_{\rm hi}$. Choose a coarse axial gauge on a box of radius
 $B/2$. In that gauge the sum of $\|V_e-1\|_G$ over its internal bonds is at most $C_{j,L,W}B^5t_{\rm hi}$.
-To compare a fine link with the replicated coarse link, join its two
-endpoints to their block roots along the actual tree. All tree transports
-are the identity. The resulting walk lies in two neighboring blocks.
-In a macro axial gauge the distance of the transport from $1$ is at most
-the length of the walk times the sum of $\|U_b-1\|_G$ over bonds $b$
-in the macro-box in that gauge. Comparing a crossing walk with the block average
-adds the two endpoint frame errors bounded by
-\eqref{ch04:patch-frame-sum}, and then the mismatch $n_e$.
+To compare a fine link with the corresponding link of $\operatorname{rep}V$, join its two
+endpoints to their block roots along the tree. All contour variables along the tree
+are the identity. The resulting contour lies in two neighboring blocks.
+In an axial gauge on the box $M_y$ the distance of the contour variable from $1$ is at most
+the length of the contour times the sum of $\|U_b-1\|_G$ over bonds $b$
+in $M_y$ in that gauge. Comparing a crossing contour with the value of the averaging operation
+adds the errors of the local gauge transformations at the two endpoints, bounded by
+\eqref{ch04:patch-frame-sum}, and then the deviation $n_e$.
 Consequently, with a constant depending on the fixed tree family and $L$,
 \[
  \|U_e-(\operatorname{rep}V)_e\|_G
        \le C_{j,L}\mathcal P_y(U)+n_{e_c}
 \]
-for crossing edges; omit the mismatch for internal edges. Any tree in a
+for crossing edges; omit the deviation for internal edges. Any tree in a
 fixed block has uniformly bounded path length (at most $L^4-1$), which
-suffices here because this constant is chosen after $L$. This is not a
-pre-$L$ excess estimate. The parent lift of the coarse gauge preserves
+suffices here because this constant may depend on $L$. This is not a
+bound on $\Delta_p$ with a constant independent of $L$. The parent lift of the coarse gauge preserves
 these distances between corresponding links. It therefore places both fine and coarse
 logarithms in a common chart, throughout radius $2B/5$, with bound
 $\delta_{\rm loc}=C_{j,L,W}B^{10}t_{\rm hi}$.
 
-The derivative of the actual rooted block average also matches the flat
-identity. Near the identity all selected frame and block average branches
-are minimizing; the redundant tags do not change their values. The
-finite-patch minimizing frame is smooth there by the same nondegenerate
+The derivative of the rooted averaging operation also matches the flat
+identity. Near the identity all branches of the local gauge transformations and of the averaging operation chosen by the auxiliary index
+are minimizing; the redundant values of the auxiliary index do not change their values. The
+finite-patch minimizing local gauge transformation is smooth there by the same nondegenerate
 implicit equation used in Lemma~\ref{ch04:frame-lemma}. Write
 $h_{y,z}(\exp(\epsilon a))=1+\epsilon H_{y,z}(a)+O(\epsilon^2)$ and
 $\overline H_y=\sum_z w_z^{\rm av}H_{y,z}$. Differentiating
-\eqref{ch04:connector}, and then its nearest-point block average, gives
+the transporter \eqref{ch04:connector}, and then the averaging operation applied to it, gives
 \[
  (\mathcal Qa)_{y,\mu}
     =(\mathcal Aa)_{y,\mu}+\overline H_y(a)
@@ -376,13 +376,13 @@ $\overline H_y=\sum_z w_z^{\rm av}H_{y,z}$. Differentiating
 \]
 where $\mathcal A$ averages the straight length-$L$ link sums with the
 same weights. Thus $\mathcal Q-\mathcal A$ is a coarse gradient. Its curl
-vanishes exactly. This verifies the block average identification needed in
-\eqref{ch06:flat-identities}. Their aligned row realization was derived
+vanishes exactly. This verifies the identification of the linearized averaging operation needed in
+\eqref{ch06:flat-identities}. Their realization through the factorization of the metrics was derived
 above from \eqref{ch05:physical-transports} and
 \eqref{ch05:positive-defect}; the incoming path action must still satisfy
 the exact quadratic coefficient condition in
 \eqref{ch05:actual-hessian}. Second-order
-Taylor bounds are uniform in the period because each block average reads a
+Taylor bounds are uniform in the period because each value of the averaging operation reads a
 fixed finite patch at fixed $j,L$.
 
 Set
@@ -395,11 +395,11 @@ bounds
  |(I-\Phi^*\Phi-\Phi_n^*\Phi_n-\mathcal N^*\mathcal N)v_c|
                                     &\le Ct_f\varepsilon_{\rm loc}.
 \end{align*}
-Indeed a transport of length $s$ differs from its flat value by at most
+Indeed the contour variable of a contour of length $s$ differs from its flat value by at most
 $Cs\delta_{\rm loc}$; the omitted tails have size $Ce^{-\tau R_*}$.
 The count \eqref{ch06:counts} and the limits \eqref{ch06:scales} yield
 \eqref{ch06:unaffected}. This completes the verification of Proposition~\ref{ch06:signed-input}.
-It uses the aligned flat identities for the chosen path family, not merely
+It uses the flat identities, with their factorization, for the chosen path family, not merely
 a decay estimate for a flat Fourier kernel.
 \end{proof}
 
@@ -411,40 +411,40 @@ coupling sufficiently large. Uniformly in the period and consistent sector,
 \[
  \mathcal E_A(U,V)\ge\kappa t_f^2|A|,\qquad \kappa=a/2>0.
 \]
-The threshold may depend on $j,L,W$; $a$ is fixed by the direct and linear
-clip coefficients and $b$.
+The lower bound on the reference coupling may depend on $j,L,W$; $a$ is fixed by the coefficients $c_{\rm dir}$, $c_{\rm lin}$ of the
+clip functions and by $b$.
 \end{proposition}
 \begin{proof}
 The bounds \eqref{ch06:fine-bound} and \eqref{ch06:mismatch-bound} leave
-$a t_f^2$ per selected fine or mismatch test, $a t_ft_{\rm hi}$ per test
-in $D$, and enough linear excess to absorb
+$a t_f^2$ per plaquette of $A_f$ or edge of $A_n$, $a t_ft_{\rm hi}$ per element
+of $D$, and enough linear surplus to absorb
 $Ct_f(L^{-2}R_f+R_n)$. The choices are in that order: increase $L$ for
-the fine excess, and $W$ for the mismatch excess.
+the term $L^{-2}R_f$, and $W$ for the term $R_n$.
 
 Assign each coarse large-field site to one incident plaquette $p$ with $r_p^c>t_c$. A plaquette has at most four such sites. Since $t_f\le2t_c$
 eventually, the middle range of \eqref{ch06:coarse-bound} contributes
 $4at_f^2$ per plaquette and therefore $at_f^2$ per assigned site. The
 exceptional plaquettes with $r_p^c>\delta$ number at most $K|D|$;
 their negative energies cancel the positive term in
-\eqref{ch06:affected}. Their missing site contributions cost at most
+\eqref{ch06:affected}. Their missing site contributions amount to at most
 $4aKt_f^2|D|$. Also $E_N\ge0$. The total remaining losses are bounded by
 \[
  (4aK+ZB^4)t_f^2|D|+Ct_c^4KB^4|A|+\frac a4t_f^2|A|.
 \]
-Increase the coupling threshold until
+Increase the lower bound on the reference coupling until
 $(4aK+ZB^4)t_f^2\le at_ft_{\rm hi}$ and
 $Ct_c^4KB^4\le at_f^2/4$. Equation~\eqref{ch06:scales} justifies both
 choices. The first loss is absorbed by the positive energy contribution retained for $D$, leaving
 at least $at_f^2|A|/2$.
 \end{proof}
 
-\section{The actual sector Gaussian}
+\section{The Gaussian of a sector at a non-flat background}
 \label{ch06:sector}
 
-Fix the sector and the frozen free links $Y$. Tree links are not integration
-variables. Active coordinates are logarithms of the remaining free links
-outside the selected $10B$-neighborhood. Linearize the retained square
-terms at the replicated coarse field, using the chosen block average
+Fix the sector and the conditioning variables $Y$: the non-tree links that are held fixed in the Gaussian integral and integrated afterwards, called \emph{frozen} below. (The word conditioning is Ba{\l}aban's~\cite{Balaban1988Cluster}; in~\cite{Balaban1988Expansions} the integrations over such variables are left to later steps, whereas here they are carried out in the same step.) Tree links are not integration
+variables. \emph{Active} coordinates, the integration variables, are logarithms (Lie-algebra coordinates) of the remaining non-tree links
+outside $A^{[10B]}$. Linearize the retained square
+terms at the pull-back $\operatorname{rep}V$ of the coarse field, using the chosen averaging operation
 and keeping the cutoffs fixed. Collect the resulting affine expressions
 in a single vector $\mathsf D u+b_Y$, where $u$ contains the active
 coordinates and $b_Y$ is the value at $u=0$. Their quadratic energy is
@@ -453,71 +453,71 @@ coordinates and $b_Y$ is the value at $u=0$. Their quadratic energy is
  \mathsf A=\mathsf D^*\mathsf D,\qquad f_Y=\mathsf D^*b_Y.
  \label{ch06:actual-matrix}
 \end{equation}
-If hypercubic orientations are averaged, the stack uses the square roots
-of their weights. A row is retained when its fixed stencil meets an active
-edge. This rule differs from retaining rows whose anchors are a specified
-distance from the selected set. A comparison between the corresponding
+If hypercubic orientations are averaged, this affine map uses the square roots
+of their weights. A component is retained when its \emph{link support}, the fixed set of links from which its expression is built, meets an active
+edge. This rule differs from retaining components whose base points are a specified
+distance from the location of $A$. A comparison between the corresponding
 matrices requires a proof. Identity coordinates may be adjoined for
 inactive variables, with their trivial integrals normalized to one.
 
-The stencil contains the block average patch and every endpoint of a retained
-path. Its coarse radius is at most $R_*+5+r_{\rm pred}\le B/50$ for large
-coupling. Thus a retained stencil lies in the small-field region when its
-active edge is outside the selected $10B$-neighborhood. This geometric
-observation permits local estimates at the actual field; it does not by
+The link support contains the links on which the averaging operation depends and every endpoint of a retained
+path; here $r_{\rm pred}$ is the largest coarse distance at which the averaging operation reads a link. Its coarse radius is at most $R_*+5+r_{\rm pred}\le B/50$ for large
+coupling. Thus the link support of a retained component lies in the small-field region when its
+active edge is outside $A^{[10B]}$. This geometric
+observation permits local estimates at the background field $\operatorname{rep}V$; it does not by
 itself prove a lower bound on $\mathsf A$.
 
-\subsection{Transferring a local tree estimate to the actual rows}
+\subsection{Transferring a local estimate in the block axial gauge to the non-flat components}
 
-The gap needed below can be obtained without identifying actual and flat
-matrices. The geometric comparison just proved implies a local inequality on the
-specified block-tree slice:
+The gap needed below can be obtained without identifying non-flat and flat
+matrices. The geometric comparison just proved implies a local inequality in the
+specified block axial gauge:
 \begin{equation}
  |a_e|\le C_L\sum_{p\in\mathcal P_e}|(d_fa)_p|
                     +|\mathcal Q a(e_c)|.
  \label{ch06:tree-control}
 \end{equation}
-Here $\mathcal P_e$ is a fixed macro-patch of fine plaquettes,
+Here $\mathcal P_e$ is the set of fine plaquettes of a fixed box $M_y$,
 $e_c$ is the coarse edge in the direction of $e$, and $\mathcal Q$ is
-the derivative of the actual block average at the identity. The inequality
+the derivative of the averaging operation at the identity. The inequality
 is for arrays vanishing on the chosen tree, extended by zero on frozen
 edges. For internal edges the last term may be omitted. Its nonlinear
 origin is worth specifying: join the endpoints of $e$ to their block
-roots along the same tree, compare the resulting transport with the
-block average in a common macro-frame, and bound the discrepancy by the
-macro-patch plaquette sum. Differentiating this comparison at the identity
-gives \eqref{ch06:tree-control}. The route constants and endpoint bounds are those proved above for the
-same trees and tags. No coordinate change to an unrelated tree is made.
+roots along the same tree, compare the resulting contour variable with the value of the
+averaging operation in a common axial gauge on that box, and bound the difference by the
+plaquette sum of that box. Differentiating this comparison at the identity
+gives \eqref{ch06:tree-control}. The contour constants and endpoint bounds are those proved above for the
+same trees and the same values of the auxiliary index. No coordinate change to an unrelated tree is made.
 
-The tree comparison \eqref{ch05:tree-comparison} applies to these
-coordinates: the replica is varied by left multiplication on free bonds,
-tree coordinates are zero, and the block average is the actual rooted
-block average of \eqref{ch05:actual-Q}. Thus the selected direct and block average
-rows are exactly its derivatives, multiplied by their fixed positive
+The Poincar\'e-type inequality \eqref{ch05:tree-comparison} applies to these
+coordinates: the pull-back $\operatorname{rep}V$ is varied by left multiplication on non-tree bonds,
+tree coordinates are zero, and the averaging operation is the rooted one, with the linearization $\mathcal Q$
+of \eqref{ch05:actual-Q}. Thus the retained plaquette components and the retained components containing the averaging operation, for short \emph{averaging components},
+are exactly its derivatives, multiplied by their fixed positive
 square weights. Each such derivative differs, in one common gauge on its
-macro-patch, from its flat derivative by at most $\varepsilon$ times the
-sum of input norms on its fixed stencil. This follows from continuity of
+box $M_y$, from its flat derivative by at most $\varepsilon$ times the
+sum of input norms on its fixed link support. This follows from continuity of
 the finite-patch derivative on the minimizing branch once clearance and
 small coarse plaquettes put that entire patch in a small common gauge.
 Insert the comparison in \eqref{ch06:tree-control}, square, and sum over
-active edges. Fixed stencil multiplicities give
+active edges. Fixed multiplicities of the link supports give
 \[
  \|a\|_2^2\le C_L\sum_p|D_p a|^2+C_L\sum_e|D_e^{\rm pred}a|^2
                          +C_L\varepsilon^2\|a\|_2^2.
 \]
-All norms here are counting norms, without division by volume. The row
-selector introduces no error: an omitted row has a stencil disjoint
+All norms here are unnormalized $\ell^2$ norms, without division by volume. The choice of retained
+components introduces no error: an omitted component has a link support disjoint
 from the active coordinates, hence annihilates their zero extension.
-For $C_L\varepsilon^2\le1/2$ and positive lower direct and penalty
+For $C_L\varepsilon^2\le1/2$ and positive lower plaquette and penalty
 coefficients, this proves
-$\mathsf D^*\mathsf D\ge c_LI$. The other rows add nonnegative squares.
+$\mathsf D^*\mathsf D\ge c_LI$. The other components add nonnegative squares.
 The gauge may depend on the edge at which the local inequality is applied.
 It is fixed during differentiation, and invariance of the norm on $\gLie$
 permits the subsequent sum. The resulting lower bound $c_L$ may depend
 on $L$. The constant in the block comparison
 \eqref{ch06:macro-comparison} must already be fixed when $L$ is chosen.
 
-\subsection{Local inverse columns}
+\subsection{A localized approximate inverse}
 
 For an edge coordinate $i$, let $E_i$ be its two projected endpoints.
 Two useful symmetric windows are
@@ -542,7 +542,7 @@ right-hand side the $i$th coordinate vector and extend the solution by
 zero. The comparison below shows that the finite-range symmetric matrix
 $\Gamma$ is positive definite and hence defines a Gaussian covariance.
 
-\begin{proposition}[Window estimates from actual matrix bounds]
+\begin{proposition}[Window estimates from bounds on the non-flat matrix]
 \label{ch06:windows}
 Assume $cI\le\mathsf A\le CI$ and an exponentially weighted Schur bound
 $\sup_i\sum_{i'}e^{\tau d(i,i')}|\mathsf A_{ii'}|\le C$, with the analogous
@@ -556,8 +556,8 @@ principal compression,
 \end{equation}
 Here $\|\cdot\|_\eta$ is the maximum of the exponentially weighted row and
 column sums. For sufficiently large $B$, $c_1I\le\Gamma\le C_1I$.
-Fixed-order derivatives obey corresponding bounds if the actual matrix
-has them, with all windows and selected coordinate sets held fixed.
+Fixed-order derivatives obey corresponding bounds if the matrix $\mathsf A$
+has them, with all windows and retained coordinate sets held fixed.
 \end{proposition}
 \begin{proof}
 The weighted conjugation argument of Section~\ref{ch05:inverse} gives
@@ -581,32 +581,32 @@ $1+d(o,i')\le(1+d(o,i))(1+d(i,i'))$ and absorbed by a smaller exponential
 rate. These operations leave the factor $e^{-c'B}$ at any fixed order.
 \end{proof}
 
-\subsection{The source and derivatives on a fixed sector}
+\subsection{The inhomogeneous term and derivatives on a fixed sector}
 
-The source in \eqref{ch06:actual-matrix} uses a bounded extension of the
+The inhomogeneous term $b_Y$ in \eqref{ch06:actual-matrix} uses a bounded extension of the
 frozen logarithms. This detail is essential. Let $v_Y$ be the patched,
 smoothly clipped frozen displacement, extended by zero off the frozen
 coordinates, with $|v_Y|_\infty\le2d$ and $d\le r t_f$, for fixed $r$.
-If $b(V)$ is the row value at the replicated field and
-$\mathsf D_{\rm all}(V)$ is its derivative on all free coordinates,
-including the frozen ones, the source is
+If $b(V)$ is the value of the components at $\operatorname{rep}V$ and
+$\mathsf D_{\rm all}(V)$ is its derivative on all non-tree coordinates,
+including the frozen ones, the inhomogeneous term is
 \begin{equation}
  b_Y=b(V)+\mathsf D_{\rm all}(V)v_Y,\qquad
  f_Y=\mathsf D^*b_Y .
  \label{ch06:clipped-source}
 \end{equation}
-The row weights are included in both terms. The original integrand is
+The weights of the components are included in both terms. The original integrand is
 preserved by putting the difference from this affine square into the
 local correction factors. No estimate below replaces an arbitrary
 frozen Haar logarithm by a small logarithm.
 
-Here is why the source is uniformly small. A retained row has an active
-coordinate outside the $10B$ neighborhood of the selected set. Its whole
-stencil has radius at most $B/50$; hence its anchor, endpoints, and fixed
-macro-patches have more than $9B$ clearance for large $B$. All coarse
-tests used by the row are therefore small. In the common local gauge,
+Here is why the inhomogeneous term is uniformly small. A retained component has an active
+coordinate outside $A^{[10B]}$. Its whole
+link support has radius at most $B/50$; hence its base point, endpoints, and fixed
+boxes $M_y$ have more than $9B$ clearance for large $B$. All coarse
+variables $r_p^c$, $n_e$ used by the component are therefore small. In the common local gauge,
 the four-link curvature formula, the absolute path-coefficient bounds,
-and the smooth block average branch give
+and the smooth branch of the averaging operation give
 \[
  |b(V)|_\infty\le C_b t_f,\qquad
  \|\mathsf D_{\rm all}(V)\|_{\infty\to\infty}\le C_a.
@@ -629,26 +629,26 @@ up to fixed constants grows slower than $e^{\epsilon B}$.
 For clarity, the corresponding derivative assertion has a different
 scale. For any fixed allowed order $k$, use dimensionless variation
 parameters whose coarse link increments and clipped frozen displacements
-have derivatives bounded by $C_k t_f$. Keep the selector, forest, and
-windows fixed. Differentiating a path word costs a fixed power of its
+have derivatives bounded by $C_k t_f$. Keep the choice of retained components, the spanning trees, and
+windows fixed. Differentiating a contour variable contributes a fixed power of its
 length. The exponential path bound absorbs that power after decreasing
-its decay rate. A derivative with anchor $o$ can occur only on a word
-whose dependence region contains $o$; its distance to the row is bounded
-by the word length plus the fixed block average radius. Consequently the
+its decay rate. A derivative with base point $o$ can occur only on a contour variable
+whose dependence set contains $o$; its distance to the component is bounded
+by the length of the contour plus the fixed radius of the averaging operation. Consequently the
 same argument bounds the derivatives of $\mathsf D$ in exponentially
 weighted row and column norms, uniformly in volume. Products give the
 bounds for $\mathsf A=\mathsf D^*\mathsf D$. All fixed positive-order
-derivatives of $b_Y,f_Y,m_Y$ are $O(t_f)$ in these normalized directions,
-and the residual derivatives retain the factor $e^{-c_kB}$.
+derivatives of $b_Y,f_Y,m_Y$ are $O(t_f)$ in these directions of size $O(t_f)$,
+and the derivatives of the residual $\mathsf Am_Y+f_Y$ retain the factor $e^{-c_kB}$.
 Unscaled derivatives instead carry the corresponding powers of $t_f^{-1}$.
 
 These derivatives exist on a common neighborhood, not just on the
-set satisfying the large-field indicator inequalities. Indeed the row formulas with the event indicator omitted
+set satisfying the large-field indicator inequalities. Indeed the formulas for the components with the event indicator omitted
 extend smoothly there. If their first derivative norm is at most $C$,
-a ball of radius $c_L/[2(1+C)]$ preserves the actual gap $c_L/2$.
+a ball of radius $c_L/[2(1+C)]$ preserves the gap $c_L/2$ of $\mathsf A$.
 Every principal compression remains invertible on that ball. Inverse
 differentiation and the proof of Proposition~\ref{ch06:windows} therefore
-apply with fixed selectors even if nearby fields change their large-field indicators.
+apply with the retained components fixed even if nearby fields change their large-field indicators.
 The radius need not be uniform in arbitrary unnormalized coordinates.
 
 \subsection{The exact integral and its normalization}
@@ -669,10 +669,10 @@ the change of variables $u=m+gz$ gives
 This is the usual finite-dimensional completion of squares with an
 arbitrary reference covariance. We use it as an identity, not an
 approximation. In particular $m=m_Y$ and \eqref{ch06:windows-def} do not
-remove the linear or quadratic residual in the exponent.
+remove the remaining linear or quadratic term in the exponent.
 
 In a sector integral $F$ includes the chart indicators, the Haar density
-of every active link, the branch masses, incoming activities, and all
+of every active link, the probability weights of the auxiliary index, incoming activities, and all
 remaining action terms. It is extended by zero off its original chart.
 The frozen variables are subsequently integrated with probability Haar
 measure $dY$. When $\Gamma$ depends on $Y$, the resulting reference law is
@@ -686,17 +686,16 @@ tree coordinates preserves this combined integral, not its determinant
 factor in isolation. Zero-dimensional active sectors have determinant one
 and no Gaussian variables.
 
-\section{Differentiation on a common dependence region}
+\section{Differentiation on a common dependence set}
 
-The cutoffs and large-field indicators in the sector definition are fixed Borel tests.
+The cutoffs and large-field indicators in the sector definition are fixed Borel conditions.
 Their indicators are not differentiated. Even on a fixed sector an
 incoming large-field activity can be merely measurable. Differentiating
 it as a function of its fine links would be unjustified. A local change
 of variables instead keeps those physical fine links fixed.
 
 Write an active physical link as $U_e=\exp(u_e)(\operatorname{rep}V)_e$.
-At a base field $V_0$, set $u=m_Y(V_0)+gz$. Within a protected logarithmic
-chart define
+At a base field $V_0$, set $u=m_Y(V_0)+gz$. Within the logarithmic chart of the active links, where these logarithms are defined (its radius $d_*$ is fixed below), define
 \begin{align}
  u_V(e)&=\log\!\left(\exp(u_e)(\operatorname{rep}V_0)_e
                                   (\operatorname{rep}V)_e^{-1}\right),\notag\\
@@ -731,16 +730,16 @@ $M_e(V)=(\operatorname{rep}V_0)_e(\operatorname{rep}V)_e^{-1}$, and set
 \[
  T_Vz=g^{-1}\bigl(F_{M(V)}(m_Y(V_0)+gz)-m_Y(V)\bigr).
 \]
-The without the event indicator extension of $m_Y$ described above is used off the valid
+The extension of $m_Y$ described above, without the event indicator, is used off the valid
 sector. The map is globally smooth and invertible, and its Jacobian is
 the product of the positive bond Jacobians; the factors $g$ cancel.
-If a protected factor is supported where $|u_V(e)|\le8a_*t_f$
+Call a factor \emph{protected} when it is cut off inside this logarithmic chart. If a protected factor is supported where $|u_V(e)|\le8a_*t_f$
 and $8a_*t_f\le d_*/2$, then $|u_e|<d_*$ by the displacement bound.
 There $F_M$ equals the logarithmic map and holds the physical link fixed.
 Nested cutoffs, with the smaller support inside $|u_V|\le4a_*t_f$,
 leave a strict margin. Thus a protected measurable factor is constant
 on a neighborhood of the base parameter whenever it contributes; it
-does not have to be differentiated. Cutoff remainders must likewise
+does not have to be differentiated. Cutoff remainders (defined in the next section) must likewise
 vanish on a neighborhood, rather than only at the base point.
 
 Use one coordinate change on the union $I$ of all coordinates read by the
@@ -773,13 +772,13 @@ Higher fixed derivatives are polynomials in the coordinates, with
 coefficients controlled by the window estimates and the coordinate
 change. Ordinary Gaussian moment formulas, in particular
 Isserlis' formula~\cite{Isserlis1918}, then give polynomial bounds in $|I|$
-for fixed derivative order. The trace costs a factor proportional to
-$|I|$; it is not uniformly bounded independently of the dependence region.
-For local factors with $s$ anchors one typically has $|I|\le CB^4s$.
+for fixed derivative order. The trace contributes a factor proportional to
+$|I|$; it is not uniformly bounded independently of the dependence set.
+For local factors with $s$ base points one typically has $|I|\le CB^4s$.
 
-A factor's dependence region includes every cutoff test, block average path,
-window matrix entry and frozen coordinate needed to evaluate it. This
-region is different from the exclusion support $Y_i$ in
+A factor's dependence set includes every cutoff condition, every contour of the averaging operation,
+window matrix entry and frozen coordinate needed to evaluate it. This set
+is different from the exclusion support $Y_i$ in
 Definition~\ref{ch04:activities}. Disjoint exclusion supports imply no
 independence. Even disjoint coordinate sets give conditional Gaussian
 independence only when their cross covariance vanishes. Integration over
@@ -814,8 +813,8 @@ At the base point $T_{V_0}z=z$ and the ratio is one. Its differentiated
 logarithm is a polynomial of degree at most two in $z$ and the
 derivatives of $T_Vz$, and repeated exponential differentiation gives
 a fixed-degree polynomial bound. Matrix products are estimated in row
-and column norms; a trace costs $|I|$. Therefore, if $s$ counts the
-factor anchors and $|I|\le C B^4s$, there are fixed integers $r_k,m_k$
+and column norms; a trace contributes a factor $|I|$. Therefore, if $s$ counts the
+base points of the factors and $|I|\le C B^4s$, there are fixed integers $r_k,m_k$
 such that
 \begin{equation}
  |D^j\mathcal R_I(V_0,z)|
@@ -833,11 +832,11 @@ row bounds are used, a polynomial factor in $|I|$ suffices and is
 already allowed in \eqref{ch06:base-scores}. No assertion about
 independence of the coordinates is involved.
 
-\section{Simultaneous tail estimates}
+\section{Simultaneous estimates for large fluctuation-field events}
 
-A cutoff remainder is bounded but need not be pointwise small. Its
-smallness comes from a large-coordinate event. An event label specifies one
-particular cutoff and its anchor; repeated appearances of that event label
+A cutoff remainder, a cutoff factor minus one, is bounded but need not be pointwise small. Its
+smallness comes from a large fluctuation-field event. An event label specifies one
+particular cutoff and its base point; repeated appearances of that event label
 must be counted once. Suppose each remainder with event label $w$ vanishes
 unless
 \begin{equation}
@@ -846,13 +845,13 @@ unless
  T=\xi t_f/(2g),
  \label{ch06:tail-event}
 \end{equation}
-for fixed $\xi>0$. Verifying this implication uses the actual mean,
-block average response, and event indicators. A covariance estimate by itself cannot
+for fixed $\xi>0$. Verifying this implication uses the mean $m_Y$, the
+derivative of the averaging operation, and the cutoff factors. A covariance estimate by itself cannot
 prove it.
 
 \begin{lemma}[Joint tails with bounded local multiplicity]
 \label{ch06:joint-tails}
-Let $z$ be centered Gaussian with covariance $C\le M I$. Suppose an
+Let $z$ be zero-mean Gaussian with covariance $C\le M I$. Suppose an
 event label has at most $N$ possible witness coordinates, and each coordinate
 can witness at most $Q$ distinct event labels. For $r$ distinct event labels,
 if $T\ge M/2+HQ$ with $H>0$, then
@@ -879,7 +878,7 @@ Summing assignments proves the assertion.
 
 For the four-dimensional lattice, bounded multiplicity of coordinates
 and event labels per coarse site gives $N,Q\le C_jL^d(1+B)^4$ for a fixed
-finite power $d$. On the actual coupling band,
+finite power $d$. For $\beta$ in the coupling band,
 $t_f/g\asymp M_f^{\rm cut}=\exp((\log\log\widehat\beta_f)^2)$.
 It grows faster than every power of $\log\widehat\beta_f$. Thus, for any
 fixed $\tau>0$, one can arrange
@@ -889,30 +888,30 @@ $H\ge2\tau\log\widehat\beta_f+\log(2N)$ and obtain
                                       \le\widehat\beta_f^{-2\tau r}.
  \label{ch06:power-tail}
 \end{equation}
-The same statement holds uniformly under frozen conditioning if the
+The same statement holds uniformly under conditioning on the frozen variables if the
 covariance bound and local vanishing assertion are uniform in that
 conditioning.
 
 \subsection{The deterministic estimate behind a cutoff remainder}
 
 To distinguish the analytic issue from the probability estimate, write
-$B_p(U,V)$ for a fine curvature or block average row minus its comparison term, and
-$R_p(v)$ for its transported affine approximation on the same local
-patch. On the small-coordinate event, $v=m_Y+gz$ has size $O(t_f)$.
+$B_p(U,V)$ for a fine curvature component or averaging component minus its comparison term, and
+$R_p(v)$ for its parallel-transported affine approximation on the same local
+patch. On the complement of the large fluctuation-field event, $v=m_Y+gz$ has size $O(t_f)$.
 Taylor expansion on the common coarse gauge, with its polynomial-in-$B$
 gauge bound, gives
 \[
  |B_p(U,V)-R_p(v)|
  \le C B^a t_f^2+C B^a t_f e^{-\sigma R_*}=o(t_f).
 \]
-The first term contains the product-logarithm and transport errors;
-the second is the omitted path tail. Here the fixed cutoff
+The first term contains the product-logarithm and parallel-transport errors;
+the second is the omitted path tail. Here the fixed path-length truncation
 $R_*$ is a positive fixed multiple of $B$, so its exponential dominates
 all powers of the coupling. The row bound also gives
-$|R_p(v)-R_p(m_Y)|\le C\xi t_f$ if all noise coordinates in its
-dependence region obey $|gz_i|\le\xi t_f$.
+$|R_p(v)-R_p(m_Y)|\le C\xi t_f$ if all components $gz_i$ of the fluctuation field in its
+dependence set obey $|gz_i|\le\xi t_f$.
 
-It remains to bound the affine mean row, not just the mean:
+It remains to bound the affine component at the mean, not just the mean:
 \begin{equation}
  |R_p(m_Y)|\le C B^a t_f^2+C B^a t_f e^{-\sigma R_*},
  \label{ch06:mean-target-needed}
@@ -920,14 +919,14 @@ It remains to bound the affine mean row, not just the mean:
 or the corresponding bound after subtracting the prescribed nonzero
 linear target. If that target is within the strict plateau margin, choose
 $\xi$ so $C\xi$ is less than one third of the margin and increase the
-coupling threshold to absorb the two errors. The curvature, block average,
-and likelihood tests are then on their plateaux. The same strict
+lower bound on the reference coupling to absorb the two errors. The local factors of the two partition-of-unity weights (the weights given to the sets $A_f$ and $A_n$ by the global partition of unity of the first section, with local factors $\vartheta_f(r_p^f)$ or $1-\vartheta_f(r_p^f)$ and $\vartheta_n(n_e)$ or $1-\vartheta_n(n_e)$)
+and the normalized weights of the auxiliary index are then equal to one. The same strict
 inequalities persist on a parameter neighborhood and supply the
 zero-germ assertion used in \eqref{ch06:pointwise-jets}.
 
-There is a concrete local transfer identity for this estimate. Let $v$
+There is a concrete comparison identity for the mean behind this estimate. Let $v$
 be one candidate field on a common clean ball of radius $8B$, zero on
-the tree, with $|v|_\infty\le C B^a t_f$. Suppose every affine row in
+the tree, with $|v|_\infty\le C B^a t_f$. Suppose every affine component in
 that ball satisfies $|\mathsf Dv+b_Y|\le\epsilon$, where
 $\epsilon= C B^a t_f^2+C B^a t_f e^{-\sigma R_*}$.
 Put $E=\mathsf AP-I$. Then, with inactive identity coordinates included,
@@ -935,31 +934,31 @@ Put $E=\mathsf AP-I$. Then, with inactive identity coordinates included,
  m_Y-v=E^*v-P^*(\mathsf Av+f_Y),\qquad
  \mathsf Av+f_Y=\mathsf D^*(\mathsf Dv+b_Y)+\Pi_{\rm inactive}v.
 \]
-These are exact identities. For a target at distance greater than $30B$ from the selected
-set, all the windows in this identity lie in the $8B$ ball about the target,
-which contains no selected plaquette, mismatch edge or coarse site. The inactive term vanishes
+These are exact identities. For a target at distance greater than $30B$ from the location of $A$,
+all the windows in this identity lie in the $8B$ ball about the target,
+which contains no plaquette of $A_f$, edge of $A_n$ or site of $A_c$. The inactive term vanishes
 there, since all non-tree coordinates are active and $v$ is zero on
 the tree. Hence
 \[
  |m_Y(i)-v(i)|\le C\epsilon+C e^{-cB}|v|_\infty
  \quad\text{within distance }B\text{ of the target}.
 \]
-The row bound transfers the same estimate to the target affine row.
+The row bound transfers the same estimate to the affine component at the target.
 
-\begin{proposition}[Cancellation for the actual affine mean]
+\begin{proposition}[Cancellation for the affine mean]
 \label{ch06:mean-cancellation}
-Use the same adjacent quadratic pair in
-\eqref{ch06:flat-identities}, its stationary tree response, and the comparison term
-defined by transporting and truncating those full maps. Then
+Use the quadratic forms of the two consecutive scales as in
+\eqref{ch06:flat-identities}, the representative $W_F$, in the block axial gauge, of the linearization of their critical configuration, and the comparison term
+defined by parallel-transporting and truncating the untruncated flat maps $M_f,M_n,N$. Then
 \eqref{ch06:mean-target-needed} holds uniformly at targets farther than
-$30B$ from the selected set. The constants may depend on the fixed step.
+$30B$ from the location of $A$. The constants may depend on the fixed step.
 \end{proposition}
 \begin{proof}
-Let $a=\mathcal U_F h$ be the stationary fine response to a coarse
+Let $a=W_F h$ be the fine field that the linearization of the critical configuration, in its representative $W_F$ of \eqref{ch05:stationary-tangent}, assigns to a coarse
 logarithmic field $h$, and set $w=X_c^{\rm lin}(h)$ and
 $p=(X_f^{\rm lin}(a),Z^{\rm lin}(a,h))$. Write
 $T w=(M_fw,M_nw)$. Quadratic Gaussian matching gives
-$|p|_2^2=|w|_2^2$, with the physical counting norms. The two identities
+$|p|_2^2=|w|_2^2$, with the unnormalized $\ell^2$ norms. The two identities
 \eqref{ch06:flat-identities} give $T^*p=w$ and $T^*T+N^*N=I$.
 Consequently
 \[
@@ -967,73 +966,73 @@ Consequently
  =\|w\|_2^2-2\|w\|_2^2+\|Tw\|_2^2=-\|Nw\|_2^2.
 \]
 Both sides have opposite signs, so $p=Tw$ and $Nw=0$.
-In particular every linear row minus its comparison term vanishes. This argument
-also applies to each signed orientation with its transported forest;
-it never assumes that a rooted response commutes with the symmetry.
+In particular every linear component minus its comparison term vanishes. This argument
+also applies to each signed orientation with the image of the spanning trees under the symmetry;
+it never assumes that the operator $W_F$ for rooted trees commutes with the symmetry.
 
 Choose one coarse gauge on the clean $8B$ ball and let $h$ be its
-logarithmic field, extended by zero outside. The local tree gauge
+logarithmic field, extended by zero outside. The local axial gauge
 construction bounds $\|h\|_\infty\le C B^a t_f$.
-The tree-straightened response has a bounded row norm at fixed $L$:
-the exponentially decaying stationary kernel is summed absolutely,
-and its straightening correction is a sum along finitely many tree
+The operator $W_F$ has a bounded row norm at fixed $L$:
+the exponentially decaying kernel of the linearization is summed absolutely,
+and the correction bringing it to the block axial gauge is a sum along finitely many tree
 edges per block. Thus the relative candidate
-$v=\mathcal U_Fh-\operatorname{rep}h$ is zero on the tree and has
+$v=W_Fh-\operatorname{rep}h$ is zero on the tree and has
 $\|v\|_\infty\le C B^a t_f$.
 
-Compare an actual row in the inner ball with its full linear row.
-Taylor's theorem for the four-link curvature and fixed block average
-branch bounds the nonlinear base-row remainder by $C\|h\|_\infty^2$.
+Compare a nonlinear component in the inner ball with its untruncated linear component.
+Taylor's theorem for the four-link curvature and the fixed
+branch of the averaging operation bounds the nonlinear remainder of the component by $C\|h\|_\infty^2$.
 For a path term, differentiating its products adds powers of the
 length, summable against the exponential path bound.
 Parallel transports change by at most their length times
-$C\|h\|_\infty$; multiplying by a row input costs a further
+$C\|h\|_\infty$; multiplying by an input of the component contributes a further
 $O(\|h\|_\infty)$. The same estimates apply to the comparison term, since
-the comparison term uses exactly the transported full maps appearing in $T$.
-Its clipping is inactive on this clean stencil.
+the comparison term uses exactly the parallel-transported untruncated maps appearing in $T$.
+Its clipping is inactive on this clean link support.
 Omitted paths contribute at most
 $C B^a t_f e^{-\sigma R_*}$ after decreasing $\sigma$.
 
-Finally the actual fluctuation derivative is evaluated at the replica,
-whereas the transported flat derivative is evaluated at zero before
-transport. Their difference has row norm at most
-$C B^a t_f$, by the same second-derivative and transport estimates.
-Applied to $v$, it costs $C B^{2a}t_f^2$. No equality of these two
-matrices is used. The frozen source is absent on the clean inner ball:
+Finally the derivative in the fluctuation field is evaluated at $\operatorname{rep}V$,
+whereas the parallel-transported flat derivative is evaluated at zero before
+parallel transport. Their difference has row norm at most
+$C B^a t_f$, by the same second-derivative and parallel-transport estimates.
+Applied to $v$, it contributes $C B^{2a}t_f^2$. No equality of these two
+matrices is used. The frozen part of the inhomogeneous term is absent on the clean inner ball:
 all its non-tree coordinates are active. The exact linear cancellation
 therefore gives
 $|\mathsf Dv+b_Y|\le C B^{a'}t_f^2+
- C B^{a'}t_f e^{-\sigma R_*}$ simultaneously on every required row,
-using the one field $h$. The local transfer identity above proves
+ C B^{a'}t_f e^{-\sigma R_*}$ simultaneously on every required component,
+using the one field $h$. The comparison identity for the mean above proves
 \eqref{ch06:mean-target-needed}.
 \end{proof}
 
-This conclusion uses the aligned path realization of the full maps in
+This conclusion uses the path realization, with its factorization, of the untruncated flat maps in
 \eqref{ch06:flat-identities}. A different comparison term with the same numerical
-norm bounds would not satisfy it. It establishes the remote event indicator
-implication as follows. The direct part of the fine comparison term is at most
-$C L^{-2}t_f$, and the block average comparison term at most $C t_f$.
-Choose $L$ and the block average plateau width $W$ so these bounds lie
+norm bounds would not satisfy it. For event indicators far from the location of $A$ it establishes the
+implication as follows. The plaquette part of the fine comparison term is at most
+$C L^{-2}t_f$, and the comparison term of an averaging component at most $C t_f$.
+Choose $L$ and the plateau width $W$ for the deviations $n_e$ so these bounds lie
 strictly inside their respective plateau thresholds, as in the energy
 estimate. The preceding proposition, the nonlinear Taylor error, and
-the noise estimate then give $\|U_p-1\|_G<t_f/4$ on each tested fine
+the bound on the fluctuation field then give $\|U_p-1\|_G<t_f/4$ on each tested fine
 plaquette and $\|V_e-Q_e(U)\|_G<Wt_f$ on each tested coarse link.
-The associated likelihood factors are on their plateaux. The bond increment is bounded
+The associated factors of the partition-of-unity weights and the
+normalized weights of the auxiliary index there are equal to one. The bond increment is bounded
 by $Ct_f$ on this event, so a sufficiently broad fixed chart cutoff is
-also one. A cutoff-failure indicator assigned within the compulsory component region is
-zero by definition; every other such indicator has these small-field neighborhoods.
+also one. By convention, a cutoff factor other than a chart cutoff whose location (the projected corners of its plaquette, the endpoints of its edge, or its site) meets $A^{[300B]}$, and a chart cutoff on a link whose projected endpoints meet $A^{[304B]}$, is not written as one plus a cutoff remainder: it is kept whole as a factor of the sector, and its cutoff remainder is set to zero. Section~\ref{ch06:primitive-bounds} below imposes the corresponding conditions through distance $300B$ and retains the chart cutoffs through $304B$.\mgubi{Convention taken from Lean (YM.\allowbreak Connected\allowbreak Activity\allowbreak E6.\allowbreak Coat.\allowbreak mandatory, mayor, aura; definitions read by two agents) and existence/\allowbreak gaussian-warnings.\allowbreak tex; v3 did not state it. Not checked: that Lean's factor types are exactly v3's cutoff factors.} Every other cutoff remainder lies outside these neighborhoods and has these small-field neighborhoods.
 Replacing $\xi$ by $\xi/2$ gives strict margins on a neighborhood and
 hence the zero-germ support condition. This proves the implication
-\eqref{ch06:tail-event} for these actual event indicators, with the fixed comparison term
+\eqref{ch06:tail-event} for these event indicators, with the fixed comparison term
 and plateau choices just stated.
 
-\subsection{The bounded-jet route for local activities}
+\subsection{Derivatives of products of local factors}
 \label{ch06:bounded-jet-route}
 
-The actual local expansion offers a direct way to combine differentiation
+The local expansion offers a direct way to combine differentiation
 and rare events. It is useful even when no aggregate quadratic majorant
 has been established. Let $F(V,z)$ be a product of local factors after the
-single protected change above. Suppose, at the base point, its derivatives
+single change of variables \eqref{ch06:protected-change} above. Suppose, at the base point, its derivatives
 through order $k$ satisfy
 \begin{equation}
  |D^jF(V_0,z)|\le A_k(x)(1+s)^{m_k}
@@ -1072,18 +1071,18 @@ This uses no independence. Apply Leibniz' rule,
 Cauchy--Schwarz gives
 $\mathbb E[\mathbf1_{\mathcal E}F_I^q]
  \le\mathbb P(\mathcal E)^{1/2}(\mathbb E F_I^{2q})^{1/2}$.
-Since $N\le CB^4s$, all remaining costs are polynomial in $s$ and
+Since $N\le CB^4s$, all remaining factors are polynomial in $s$ and
 subpower in $x$, proving \eqref{ch06:actual-jet-integral}.
 
 For its application, \eqref{ch06:pointwise-jets} must be verified for the
-actual factors, with their complete dependence regions. Ordinary
+factors of the expansion, with their full dependence sets. Ordinary
 exponentiated correction terms satisfy it once their logarithmic
 derivatives have small amplitude: the partition formula for derivatives
 of $e^h-1$ gives a fixed multiple of that amplitude when $|h|\le1$.
 Large-field components use their smooth local extension only when the
 entire required coarse neighborhood is small-field. Their physical
-indicator is not differentiated. The residual Gaussian density is first
-decomposed into the actual protected linear and quadratic correction
+indicator is not differentiated. The residual Gaussian density, the exponential factor in \eqref{ch06:gaussian-identity}, is first
+decomposed into the protected linear and quadratic correction
 factors; it is not copied once for every activity. These are specific
 conditions on the exact expansion, not automatic consequences of the
 Gaussian gap.
@@ -1106,11 +1105,11 @@ form
        \prod_i a_i\prod_w M_w\mathbf1_{\mathcal E_w},
  \label{ch06:majorant-form}
 \end{equation}
-where $s$ counts anchors, $P_k$ is a fixed-degree polynomial in absolute
+where $s$ counts base points, $P_k$ is a fixed-degree polynomial in absolute
 coordinates with controlled moments, $K\ge0$, and the product over $w$
 uses distinct event labels. The numbers $a_i$ bound ordinary local factors;
-$M_w$ bound cutoff or branch likelihood amplitudes. Their number must
-include all allowed local tags. Assume
+$M_w$ bound the cutoff factors or the probability weights of the branches. Their number must
+include all allowed local values of the auxiliary index. Assume
 \begin{equation}
  \|\Gamma^{1/2}K\Gamma^{1/2}\|\le1/8,
  \qquad \tr(\Gamma^{1/2}K\Gamma^{1/2})
@@ -1119,8 +1118,8 @@ include all allowed local tags. Assume
 \end{equation}
 These are bounds on the sum of all local corrections. Smallness of each
 summand separately does not suffice when the number of factors grows.
-Exponential kernel bounds and bounded overlap of their full dependence
-regions are one way to obtain them. For the linear term, a useful estimate
+Exponential kernel bounds and bounded overlap of their full dependence sets
+are one way to obtain them. For the linear term, a useful estimate
 uses weights $w_{ia}>0$ with $\sup_a\sum_iw_{ia}\le C$; then
 $|\sum_i\eta_i(a)|^2\le C\sum_i|\eta_i(a)|^2/w_{ia}$.
 It controls the cross terms in the common square.
@@ -1139,7 +1138,7 @@ absolute differentiated integral is at most
 \]
 The statement holds after integration of the frozen Haar variables when
 all inputs are uniform in those variables. It requires no independence
-between the local factors or the tail events.
+between the local factors or the large fluctuation-field events.
 \end{proposition}
 \begin{proof}
 The standard Gaussian quadratic-exponential formula, with
@@ -1157,22 +1156,22 @@ Cauchy--Schwarz and \eqref{ch06:power-tail} give the asserted bound.
 \end{proof}
 
 Finally, Proposition~\ref{ch06:energy} contributes
-$e^{-\kappa\beta t_f^2|A|}$. Throughout the actual band,
-$\beta t_f^2\asymp(M_f^{\rm cut})^2$. Any verified per-selected-test
-logarithmic losses of size
+$e^{-\kappa\beta t_f^2|A|}$. Throughout the coupling band,
+$\beta t_f^2\asymp(M_f^{\rm cut})^2$. Any verified
+logarithmic losses per element of $A$ of size
 $O(B^d(1+\log\widehat\beta_f)^d)+\beta O(B^dt_f^3)$ are
 $o(\beta t_f^2)$. They can be included while retaining
 $e^{-\kappa'\beta t_f^2|A|}$ for any fixed $0<\kappa'<\kappa$ once the
-coupling threshold is increased. This last comparison concerns losses
-actually assigned per selected test. It cannot absorb an unexplained
+lower bound on the reference coupling is increased. This last comparison concerns losses
+actually assigned per element of $A$. It cannot absorb an unexplained
 volume-dependent normalization.
 
-\section{Weighted bounds for the primitive local factors}
+\section{Weighted bounds for the elementary local factors}
 \label{ch06:primitive-bounds}
 
-We now retain the individual correction labels, including repeated paths,
+We now retain the individual correction terms, including repeated paths,
 instead of estimating only their sum as an operator. Fix a derivative
-order $k$, a support exponent $\alpha>0$, and a halo multiplier $h$
+order $k$, a support exponent $\alpha>0$, and a multiplier $h$ such that the $hB$-neighborhoods are
 large enough to contain every window and protected variation used above.
 For a support $S$, let $c_B(S)$ be the least number of radius-$B$
 balls whose union is connected and contains $S$. For each factor
@@ -1183,7 +1182,7 @@ We bound its nonnegative amplitude $a_\lambda$ by requiring
                e^{\alpha c_B(S_\lambda)}a_\lambda\le\epsilon.
 \]
 The statement concerns the positive derivative orders available in the
-incoming path bounds. Additional fixed polynomial costs in $B$ or
+incoming path bounds. Additional fixed polynomial factors in $B$ or
 $M_f^{\rm cut}$ are subpower in $x=\widehat\beta_f$.
 
 \subsection{Gaussian correction series}
@@ -1193,7 +1192,7 @@ weighted entry and fixed derivative envelopes for $D$. For the
 interpolating precision $\mathsf A_s=I+s(\mathsf A-I)$, $0\le s\le1$,
 the same argument applies uniformly: its gap is at least
 $\min(1,c_L)$ and its weighted bounds are uniform.
-Let $P_s$ be its local inverse columns and $E_s=\mathsf A_sP_s-I$.
+Let $P_s$ be its localized approximate inverse and $E_s=\mathsf A_sP_s-I$.
 The exact inverse and trace expansions are
 \[
  \mathsf A_s^{-1}=P_s\sum_{n\ge0}(-E_s)^n,\qquad
@@ -1201,7 +1200,7 @@ The exact inverse and trace expansions are
 \]
 All series converge in weighted matrix norm. Integrating
 $\tr((\mathsf A-I)\mathsf A_s^{-1})$ gives $\log\det\mathsf A$.
-The $n=0$ term is its local diagonal normalization; the remaining words
+The $n=0$ term is its local diagonal normalization; the remaining terms of the series
 are $(\mathsf A-I)P_s(-E_s)^{n+1}$.
 The second determinant series comes from
 $\log\det(I+D)=\log\det\mathsf A+\log\det\Gamma$.
@@ -1209,26 +1208,26 @@ This determinant identity is legitimate even if $D$ is not symmetric:
 $I+D=\mathsf A\Gamma$ is similar to a positive matrix, and the
 convergent real logarithm series agrees with its positive determinant.
 
-Each word is indexed by its ordered sequence of bonds, with the intermediate Lie algebra indices contracted in each matrix product. For each fixed derivative order $k$,
+Each term is indexed by its ordered sequence of bonds, with the intermediate Lie algebra indices contracted in each matrix product. For each fixed derivative order $k$,
 the corresponding derivative of the amplitude is bounded by
 \[
  C_k(B)e^{-cB}\bigl(C_k(B)e^{-cB}\bigr)^n,
 \]
-with possibly a smaller positive $c$. The endpoint cutoffs in a quadratic
-word bound each Gaussian endpoint and its normalized derivatives by
-a subpower function. A linear residual has one such endpoint.
+with possibly a smaller positive $c$. The endpoint cutoffs in a quadratic term
+bound each Gaussian endpoint and its normalized derivatives by
+a subpower function. A remaining linear term has one such endpoint.
 Inactive endpoints give a zero germ because both precision and
 covariance have identity inactive blocks. Thus all these estimates hold
 for the protected factors on the entire sample space.
 
-For completeness, the sum over word supports is also small.
+For completeness, the sum over the supports of the terms is also small.
 Consecutive bonds have distance at most $3B+2$.
 There are at most $K=C_L(1+B)^4$ possible next bonds.
-A word of length $n+u$, for fixed $u$, has support cover at most
-$(n+u+1)s_h$, where $s_h$ depends only on the halo multiplier.
+A term of length $n+u$, for fixed $u$, has support cover at most
+$(n+u+1)s_h$, where $s_h$ depends only on the multiplier $h$.
 If that support contains a prescribed site, its starting bond has
 at most $C_L(1+B)^4(n+u+1)^4$ possible locations.
-Fixed derivatives cost an additional polynomial in $n+u$.
+Fixed derivatives contribute an additional polynomial factor in $n+u$.
 Absorb these polynomials by $C_k2^{(k+4)n}$. The containing-site sum
 is consequently bounded by
 \[
@@ -1238,32 +1237,32 @@ is consequently bounded by
 \]
 Its ratio is at most $1/2$ eventually. The sum is smaller than
 $x^{-A}$ for every prescribed $A>0$. This proves smallness of the
-individual determinant and inverse-correction labels with their full
+individual determinant and inverse-correction terms with their full
 supports, including repeated bonds, rather than merely a small
 operator norm.
 
 \subsection{Short local and inherited terms}
 
-The remaining primitive estimates can be displayed together. Each bound
-below is a containing-site bound with full fixed halos and fixed-order
+The remaining estimates for the elementary local factors can be displayed together. Each bound
+below is a containing-site bound with full fixed $hB$-neighborhoods and fixed-order
 normalized derivatives, on the coarse small-field neighborhoods needed
 for those derivatives:
 \[
 \begin{array}{l|l}
  \text{family}&\text{bound}\\ \hline
- \text{remote nonlinear action remainders}
+ \text{nonlinear action remainders far from }A
        & C_k B^{a_k}\beta t_f^3\\
- \text{remote extracted mean squares}
+ \text{extracted mean squares far from }A
        & C_k B^{a_k}\beta t_f^4\\
  \text{local determinant differences}
        & C_k B^{a_k}t_f\\
  \text{local Haar logarithms}
        & C_k B^{a_k}t_f^2\\
- \text{linear Gaussian residual and correction words}
+ \text{linear Gaussian residual and correction terms}
        & x^{-A}\quad\text{for every fixed }A\\
- \text{inherited regular activities}
+ \text{inherited localized terms}
        & C_k B^{a_k}\delta_f\\
- \text{inherited quadratic loop terms}
+ \text{inherited $\beta$-independent quadratic terms}
        & C_k B^{a_k}t_f^2\Lambda_f\\
  \text{inherited cubic and quartic terms}
        & C_k B^{a_k}\beta(t_f^3+t_f^4)\\
@@ -1271,35 +1270,35 @@ for those derivatives:
        & C_k B^{a_k}\beta t_f^2 e^{-cR_*}.
 \end{array}
 \]
-Here $\delta_f$ is the incoming regular-activity bound and $\Lambda_f$
-the quadratic loop coefficient bound. For example
+Here $\delta_f$ is the incoming bound on the localized terms and $\Lambda_f$
+the bound on the coefficients of the $\beta$-independent quadratic term. For example
 $\delta_f\le x^{-1/2}$ and $\Lambda_f\le x^{1/8}$ make every displayed
 family small by a fixed negative power of $x$.
 The factors from differentiation and counting can be absorbed by
 reducing the decay exponent if necessary.
 
-The first two lines use the affine square with the exact actual
-derivative. Taylor's remainder is quadratic in the displacement;
-multiplying by the base affine row, of size $O(t_f)$ on the protected
+The first two lines use the affine square with the exact
+derivative at the background field. Taylor's remainder is quadratic in the displacement;
+multiplying by the base affine component, of size $O(t_f)$ on the protected
 chart, gives $O(t_f^3)$. The square of the remainder is smaller.
 The extracted mean square is $O(B^a t_f^4)$ by
 Proposition~\ref{ch06:mean-cancellation}. For derivatives the directions
-are the normalized small-field directions used above; applying the
+are the directions of size $O(t_f)$ used above; applying the
 same finite Taylor formula with parameter derivatives gives the same
-powers, with their fixed path-bound costs. No derivative of a large-field indicator is taken.
+powers, with the fixed factors from the path bounds. No derivative of a large-field indicator is taken.
 
-For the third line, compare actual and flat matrices in the common
+For the third line, compare non-flat and flat matrices in the common
 small gauge on the local window. Their difference is $O(B^a t_f)$.
 The resolvent identity for each principal compression transfers this
 to the diagonal integral defining the local logarithmic normalization.
 The window size and trace introduce only powers of $B$.
 The fourth line follows from $\log J(u)=O(|u|^2)$ for the Haar density
 in exponential coordinates and from the protected chart bound.
-Every finite-halo site count is polynomial in $B$.
+Every site count in an $hB$-neighborhood is polynomial in $B$.
 
 For inherited terms there is a support issue in addition to these
-pointwise powers. If an incoming support $X$ has fine cover number
-$d=c_{B_f}(X)$, with $B_f\le2B$, then its projected $hB$ halo satisfies
+pointwise powers. If an incoming support $X$ has fine connected covering number
+$d=c_{B_f}(X)$, with $B_f\le2B$, then its projected $hB$-neighborhood satisfies
 \[
  c_B(S)\le P_h+\frac{10P_h}{L}d,\qquad
  x_0\in S\Longrightarrow
@@ -1307,65 +1306,65 @@ $d=c_{B_f}(X)$, with $B_f\le2B$, then its projected $hB$ halo satisfies
 \]
 for a fixed $P_h$. To prove the first bound, traverse a spanning tree
 of the fine covering centers, sample that walk every $LB$ steps, and
-cover each projected halo by at most $P_h$ coarse balls.
+cover each projected $hB$-neighborhood by at most $P_h$ coarse balls.
 The walk has length at most $10Bd$, giving the displayed coefficient.
-The same walk proves the anchor-distance bound. Thus an incoming
-anchor weight $e^{\sigma d}$ absorbs the coarse support weight and all
+The same walk proves the bound on the distance to the base point. Thus an incoming
+base-point weight $e^{\sigma d}$ absorbs the coarse support weight and all
 polynomial multiplicities provided
 \[
  \alpha\,10P_h/L+4\epsilon<\sigma
 \]
-for some fixed $\epsilon>0$. Counting possible anchors costs
-$C_L B^4(1+d)^4$; derivative factors cost another fixed power of
+for some fixed $\epsilon>0$. Counting possible base points contributes
+$C_L B^4(1+d)^4$; derivative factors contribute another fixed power of
 $1+d$, absorbed by $e^{\epsilon d}$. Summation of the remaining
 geometric series proves the inherited site bounds.
-For path labels the analogous cost is their true length, including
+For path terms the analogous cost is their true length, including
 winding and repetitions; the unused exponential path factor absorbs its
 support and its omitted tail. This explains why a positive incoming
 additional support decay, not merely an unweighted coefficient sum, is required.
 
 \subsection{Components and assembly under one law}
 
-All constituent factors keep their original full dependence regions, including cutoff and path tests. Their exclusion supports, defined in Definition~\ref{ch04:activities}, determine exact coverage, not independence; the parameter $\sigma$ in the weighted support sums is the exponential locality weight of \eqref{ch04:weighted-sums}.
+All constituent factors keep their original full dependence sets, including cutoff and path conditions. Their exclusion supports, defined in Definition~\ref{ch04:activities}, determine the disjoint covering families, not independence; the parameter $\sigma$ in the weighted support sums is the exponential locality weight of \eqref{ch04:weighted-sums}.
 
 The relevant energy is the remainder after Gaussian extraction,
-not the core energy alone. We specify the allocation to prevent a
+not the local energy $\mathcal E_A$ alone. We specify the assignment to prevent a
 positive affine square from being lost in this estimate.
-Let $O$ be a selected component with $n$ tests. Its assigned action
-rows have anchors within $200B$ of $O$; their core consists of the
-rows within $2B$. The remaining rows form an annulus $Q$.
-Form a graph on the selected sets by joining two sets whenever their
+Let $O$ be a component of $A$ with $n$ elements. Its assigned action
+terms have base points within $200B$ of $O$; their \emph{core} consists of the
+terms within $2B$. The remaining terms form an \emph{annulus} $Q$.
+Form a graph on the subsets of $A$ by joining two sets whenever their
 closed $500B$ neighborhoods intersect. Group the sets by the connected
-components of this graph. Distinct components then have
+components of this graph. Distinct components of this graph then have
 disjoint $500B$ neighborhoods (separation greater than $1000B$ suffices),
 so their $200B$ action and $304B$ Haar assignments cannot overlap.
 The enlarged finite-range adjacency changes only the fixed polynomial
 counting constants. This geometric disjointness does not assert
 probabilistic independence.
 
-For this component estimate impose the allocation's weak test conditions
-through distance $300B$: every unselected fine plaquette satisfies
-$\|U_p-1\|_G\le t_f/2$, every unselected block average discrepancy is at most $2Wt_f$,
-the stored coarse large-field indicators equal the actual coarse large-field indicators, and no coarse
-large-field site occurs away from the selected coarse sites. Retained frame tags
-have positive likelihood. These are conditions on the actual factor;
+For this component estimate impose the weak conditions of the partition of unity
+through distance $300B$: every fine plaquette not in $A_f$ satisfies
+$\|U_p-1\|_G\le t_f/2$, every deviation $n_e$ with $e\notin A_n$ is at most $2Wt_f$,
+the prescribed coarse large-field indicators equal those of the configuration, and no coarse
+large-field site occurs away from the sites of $A_c$. The retained values of the auxiliary index for the local gauge transformations
+have positive probability weight. These are conditions on the factor itself;
 they are stronger than the initial $5B$ consistency definition.
-For an annular anchor at distance greater than $2B$ from the selected
-set, its required $B$ neighborhood and the smaller comparison patches
-are consequently free of selected tests. All such reads fit inside
+For an annular base point at distance greater than $2B$ from the location of $A$,
+its required $B$ neighborhood and the smaller comparison patches
+are consequently free of elements of $A$. All such reads fit inside
 the retained $300B$ region. Smooth chart cutoff factors are retained
 throughout $304B$.
 Local determinant terms are assigned through $200B$, whereas Haar
 terms are assigned through $304B$; these two sets are not identified.
 
-Let $H$ be the actual fine and block average rows extracted from the
-annulus by the stencil selection. The selected stencil has radius
-at most $B/50$. A retained row meets an active coordinate outside
-the selected $10B$ neighborhood, so its entire stencil lies outside
-the $(10-2/50)B$ neighborhood and hence outside the $2B$ core.
+Let $H$ be the fine curvature and averaging components extracted from the
+annulus by the link-support rule of Section~\ref{ch06:sector}. The link support of a retained component has radius
+at most $B/50$. A retained component meets an active coordinate outside
+$A^{[10B]}$, so its entire link support lies outside
+$A^{[(10-2/50)B]}$ and hence outside the $2B$ core.
 We first work in one signed orientation, before its probability weight
-is applied. Denote its row derivative and source by
-$\mathsf D_\sigma,b_{Y,\sigma}$, including physical direct/penalty
+is applied. Denote the derivative and the inhomogeneous term of its components by
+$\mathsf D_\sigma,b_{Y,\sigma}$, including the plaquette and penalty
 coefficients but excluding the square root of the orientation weight.
 The global matrix in \eqref{ch06:actual-matrix} stacks
 $\sqrt{\omega_\sigma}\mathsf D_\sigma$.
@@ -1375,18 +1374,18 @@ Suppress $\sigma$ temporarily and set
        \sum_{j\in H}|(\mathsf D_\sigma\widetilde u_{\rm active}+b_{Y,\sigma})_j|^2.
 \]
 The orientation probability is not included in this half-square; it
-will appear once in the average below. Physical row coefficients and
-the frozen part of the signal are included once: equivalently apply the all-coordinate derivative to
-the full signal and add its replica value. The signal $\widetilde u$
-is the actual active increment, the clipped frozen logarithm on frozen
-free bonds, and zero on tree bonds. Where the retained cutoff factors are nonzero
-it reconstructs the original fine field on every selected stencil.
-Indeed the clean annular fine plaquettes and block average mismatches,
+will appear once in the average below. The coefficients of the components and
+the frozen part of the displacement field $\widetilde u$ are included once: equivalently apply the all-coordinate derivative to
+the full displacement field and add the value of the components at $\operatorname{rep}V$. The \emph{displacement field} $\widetilde u$
+is the active increment, the clipped frozen logarithm on frozen
+non-tree bonds, and zero on tree bonds. Where the retained cutoff factors are nonzero
+it reconstructs the original fine field on every retained link support.
+Indeed the clean annular fine plaquettes and deviations $n_e$,
 together with the common-tree comparison, put each frozen mismatch
 within its logarithm cutoff's inner plateau. On active bonds the
 cutoff support gives $|\widetilde u|\le2w t_f$; take the fixed width $w$
-larger than the frozen comparison constant. Both tree field and replica
-are identity on tree bonds. Thus this same signal, uniformly bounded
+larger than the frozen comparison constant. Both the tree field and $\operatorname{rep}V$
+are identity on tree bonds. Thus this same displacement field, uniformly bounded
 by $2w t_f$, may be used in the affine approximation; an unrelated
 logarithm or an unrestricted Gaussian sample cannot be substituted.
 
@@ -1400,32 +1399,32 @@ as the core. Then
  \label{ch06:annulus-extraction}
 \end{equation}
 To verify the inequality, work in one clean local gauge about each
-annular row. The actual nonlinear row minus its comparison term has norm
-$M\le C B^a t_f$ and differs from its actual affine approximation
+annular action term. Its nonlinear component minus its comparison term has norm
+$M\le C B^a t_f$ and differs from its affine approximation
 by $E\le C B^a t_f^2+C B^a t_f e^{-cR_*}$.
-Taylor expansion gives this for the actual replica derivative
-directly; comparing first to transported flat rows adds an error of
+Taylor expansion gives this for the derivative at $\operatorname{rep}V$
+directly; comparing first to parallel-transported flat components adds an error of
 the same order. Hence the difference of the two half-squares is at
-most $E(2M+E)/2$. The fine and block average energies equal their
-nonlinear residual squares plus the nonnegative difference between the squared group distance and
-the squared curvature representative. If a row is not selected, no affine square is subtracted,
-so only its nonnegative residual remains.
-The coarse counterterm costs $O(t_f^4)$.
-The null-row linear term vanishes by the cancellation in
+most $E(2M+E)/2$. The energies $E_f$ and $E_n$ equal the squares of their
+nonlinear components minus comparison terms, plus the nonnegative difference between the squared distance from the identity and
+the squared curvature representative. If a component is not retained, no affine square is subtracted,
+so only its nonnegative square remains.
+The coarse counterterm contributes $O(t_f^4)$.
+The linear term of the complement component vanishes by the cancellation in
 Proposition~\ref{ch06:mean-cancellation}; its nonlinear square is
 $O(B^a t_f^4)$. The two signed mismatch terms are a comparison term of size
-$O(t_f)$ paired with the quadratic Taylor/transport errors, hence
+$O(t_f)$ paired with the quadratic Taylor/parallel-transport errors, hence
 $O(B^a t_f^3)+O(B^a t_f^2e^{-cR_*})$.
-There are at most $C B^4n$ such rows, proving
+There are at most $C B^4n$ such terms, proving
 \eqref{ch06:annulus-extraction}.
 The clean annular fields are below the fine threshold, so the fine
-clip is its quadratic branch. The retained path tests also equal
+clip is its quadratic branch. The retained indicators of the relaxed regularity condition also equal
 one: within their nontrivial range the patch is clean, and beyond
-that range their permitted bound exceeds the uniform bound $\|u-1\|_G\le 2$ for $u\in G$. This checks the actual row formula used in the argument.
+that range their permitted bound exceeds the uniform bound $\|u-1\|_G\le 2$ for $u\in G$. This checks the formula for the components used in the argument.
 
 For precision, let $\sigma$ range over the signed lattice orientations
 with their probability weights $\omega_\sigma$, transforming the field,
-forest, tags, selection, and rows together. Every term inside the
+spanning trees, auxiliary index, index triple, and components together. Every term inside the
 following average is the unweighted single-orientation quantity just
 defined. Thus each orientation probability is counted exactly once. The energy assigned to this component
 after Gaussian extraction is exactly
@@ -1437,11 +1436,11 @@ after Gaussian extraction is exactly
  \qquad C_\sigma(m_Y)\ge0 .
  \label{ch06:component-extracted-energy}
 \end{equation}
-This is a finite row identity: every near action row is assigned once;
-a selected fine or block average row subtracts its actual affine square;
+This is a finite identity between action terms: every near action term is assigned once;
+a retained fine curvature or averaging component subtracts its affine square;
 its extracted mean square is retained with positive sign.
-Unselected rows subtract zero. The mean-square sum is $C_\sigma$.
-The near action rows partition into the core and annulus, so
+Components that are not retained subtract zero. The mean-square sum is $C_\sigma$.
+The near action terms partition into the core and annulus, so
 \eqref{ch06:component-extracted-energy} and
 \eqref{ch06:annulus-extraction}, followed by Proposition~\ref{ch06:energy},
 give
@@ -1452,20 +1451,20 @@ give
 at large coupling. This is the needed bound on the extracted energy.
 Dropping $X_H$ before proving the annular estimate would be invalid.
 
-The remaining local normalization, Haar, tag, and frozen-coordinate
-costs are bounded by $C B^a(1+\log x)^a n=o(\beta t_f^2)n$.
+The remaining local normalization, Haar, auxiliary-index, and frozen-coordinate
+contributions are bounded by $C B^a(1+\log x)^a n=o(\beta t_f^2)n$.
 The component amplitude consequently satisfies
 \[
  a_{\rm comp}\le\exp\bigl(-\kappa'\beta t_f^2n\bigr)
 \]
 for a fixed positive $\kappa'$ smaller than the retained energy
 coefficient. Fixed derivatives of its smooth extension on a fully
-small-field coarse neighborhood add polynomial costs per component
+small-field coarse neighborhood add polynomial factors per component
 and are absorbed by a further decrease of $\kappa'$. The physical Borel
 indicator is held fixed. This assertion is where the retained cutoff factors are nonzero,
-under the precise core/annulus allocation just specified; where a
-compulsory cutoff factor vanishes the full component factor is zero.
-Connected selections with prescribed root have at most
+under the precise core/annulus assignment just specified; where a
+cutoff factor kept inside the component vanishes, the full component factor is zero.
+Connected index triples with prescribed root have at most
 $\bigl(C(1+B)^a\bigr)^{n}$ possibilities: list them by a rooted spanning tree,
 using their finite-range adjacency. This entropy and
 $e^{\alpha c_B(S)}\le e^{C\alpha n}$ are absorbed by the same
@@ -1477,11 +1476,11 @@ Finally replace each small logarithm $f_\lambda$ by
 $e^{f_\lambda}-1$. For $|f_\lambda|\le1$, the exponential partition
 formula preserves its amplitude up to a constant depending on $k$.
 The previous bounds furnish the pointwise product jets
-\eqref{ch06:pointwise-jets}; derivative costs polynomial in the total
-support size are absorbed by a small further decrease of the support exponent.
-Warnings carry the joint-event factors proved above.
+\eqref{ch06:pointwise-jets}; derivative factors polynomial in the total
+support size are absorbed by a small further decrease of the support exponent $\alpha$.
+Cutoff remainders carry the joint-event factors proved above.
 Equation~\eqref{ch06:actual-jet-integral} then gives a product majorant
-under the one actual conditional Gaussian, followed by the frozen
+under the one conditional Gaussian law, followed by the frozen
 Haar probability integral. This is the local integration estimate
 required before the connected expansion. Incoming large-field
 activities retain their given amplitudes and participate in this same
@@ -1493,21 +1492,21 @@ Gaussian integration.
 
 The estimates also give the small parameter needed to compare a local
 nonlinear integral with its linear Gaussian counterpart. Fix the same
-forest, coordinate set, windows, and clean coarse field throughout the
+spanning trees, coordinate set, windows, and clean coarse field throughout the
 comparison. Write $\Gamma_{\rm lin}$ for the window covariance formed
-from the corresponding flat rows, and $v$ for the tree-straightened
-linear relative response on the common clean neighborhood.
-Taylor expansion of the actual rows and the principal resolvent identity
+from the corresponding flat components, and $v$ for the
+linear relative field $W_Fh-\operatorname{rep}h$ of the proof of Proposition~\ref{ch06:mean-cancellation} on the common clean neighborhood.
+Taylor expansion of the nonlinear components and the principal resolvent identity
 give, on those windows,
 \[
  \|\Gamma-\Gamma_{\rm lin}\|\le C B^a t_f,\qquad
  |m_Y-v|_\infty\le C B^a t_f^2+C B^a t_f e^{-cB}.
 \]
-The second estimate is the local mean transfer proved above; the first
+The second estimate is the comparison for the mean proved above; the first
 is valid in weighted row norms, or with a harmless local polynomial
 factor in an unweighted matrix norm. Both have fixed-order versions
 under the same available path derivative bounds. In particular the
-mean shift in Gaussian units costs
+mean shift in Gaussian units satisfies
 \[
  g^{-1}|m_Y-v|_\infty
        \le C B^a g(M_f^{\rm cut})^2+
@@ -1515,7 +1514,7 @@ mean shift in Gaussian units costs
 \]
 Thus it is of size $x^{-1/2+o(1)}$, rather than merely bounded.
 
-The physical coordinate comparison uses the same tree chart.
+The physical coordinate comparison uses the same block axial chart.
 Its nonlinear map and its first-order Taylor map differ by
 \[
  C B^a(t_f+g|z|)^2
@@ -1531,44 +1530,44 @@ the chart-complement events are controlled separately.
 For an interpolation of the positive covariances and of the centered
 means, differentiation of its common Gaussian density ratio therefore
 has local polynomial moments bounded by $x^{-1/2+o(1)}$, with the
-appropriate polynomial factor in the dependence-region size.
+appropriate polynomial factor in the size of the dependence set.
 Indeed the logarithmic derivative is the trace, quadratic, and linear
 score displayed after \eqref{ch06:density-ratio}; each coefficient
 contains one of the covariance or normalized mean differences just
 estimated. Integrating this derivative compares the two laws.
 For an inherited activity with only $k$ available derivatives, this
 comparison must be implemented by holding its physical fine links fixed
-with the protected change of variables. Differentiate the common
+with the change of variables \eqref{ch06:protected-change}. Differentiate the common
 density, Jacobian, smooth cutoff factors, and at most the available
 $k$ activity derivatives. Taylor expansion of
 $D^k E(U_{\rm nonlinear})-D^k E(U_{\rm linear})$ would require an
 unavailable $(k+1)$st derivative and is not justified here.
-The physical-map estimate above supplies bounds on the compensating
-map and its density scores; it is not permission to lose an extra
+The estimate above for the change of variables $T_V$ supplies bounds on
+$T_V$ and its density scores; it is not permission to lose an extra
 derivative of the incoming activity.
 This comparison applies on a local region where all the windows lie in
-the small-field region. It does not compare a seeded sector to an unseeded law,
-does not replace the tree response by a different gauge response,
+the small-field region. It does not compare the Gaussian law of a sector whose index triple has nonempty $A_f$ or $A_n$ with the law of the sector with $A_f=A_n=\emptyset$,
+does not replace $W_F$ by the representative in a different gauge,
 and does not identify separately chosen event indicators. Such replacements need
 their own tail or support decomposition.
 
 \section{What must be checked for a concrete step}
 
-The local integral estimate now follows from the actual gap, clipped
-source, cancellation of the aligned comparison terms, strict margins in the event inequalities, and the primitive
-bounds above. Its hypotheses are the adjacent pair's compatible full
-quadratic identities, actual rooted block average, exponential path bounds
-through the requested derivative order, and the incoming activity bounds
+The local integral estimate now follows from the gap of the non-flat matrix $\mathsf A$, the clipped
+inhomogeneous term, cancellation of the comparison terms under the factorization hypothesis, strict margins in the event inequalities, and the
+bounds for the elementary local factors above. Its hypotheses are the compatible untruncated
+quadratic identities of the two consecutive scales, the rooted averaging operation, exponential path bounds
+through the prescribed derivative order, and the incoming activity bounds
 with a strictly larger support exponent than the one used in the conclusion. These are incoming data, not estimates
-that can be created by selecting a scale schedule. All matrices,
-comparison terms, forests, tags, and frozen sources in the argument belong to
-that same pair.
+that can be created by choosing the schedule of Chapter~\ref{ch10:trajectory}. All matrices,
+comparison terms, spanning trees, values of the auxiliary index, and frozen inhomogeneous terms in the argument belong to
+that same pair of scales.
 
 The chapter controls local amplitudes and their integrals. Reconstruction
 of the exact block density additionally requires assigning every
-nonlinear row, determinant contribution, Haar factor, and event indicator exactly
+nonlinear component, determinant contribution, Haar factor, and event indicator exactly
 once. In particular the two near sets for local determinant terms and
 Haar terms need not coincide, and the flat determinant scalar is
-extracted only once for the whole forest. Those identities, and the
+extracted only once for the whole family of spanning trees. Those identities, and the
 subsequent connected regrouping, are distinct from the analytic bounds
 proved here.

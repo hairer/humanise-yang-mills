@@ -14,13 +14,13 @@ follow by substituting a perturbative beta function into a formal identity.
 Retain the Ward-normalized tensor $T$ of
 Proposition~\ref{ch14:normalized-stress}, the phase $\xi_*$ chosen in
 Section~\ref{ch15:selection}, and its relativistic reconstruction.
-The latter supplies a positive-cone translation spectrum and tempered
+The latter gives a positive-cone translation spectrum and tempered
 boundary correlations. We prove the stronger quantitative current
 transfer needed for the trace asymptotic, including its low-moment
 cancellations. The construction and reconstruction in the preceding
 chapters do not depend on this refinement.
 
-\section{Centering and the positive spectral measure}
+\section{The zero-mean trace and the positive spectral measure}
 \label{ch17:spectrum}
 
 Put $\tau=\sum_{a=1}^4T_{aa}$, $e_{\rm tr}=S^{\xi_*}(\tau)$ and
@@ -28,20 +28,20 @@ Put $\tau=\sum_{a=1}^4T_{aa}$, $e_{\rm tr}=S^{\xi_*}(\tau)$ and
              \Theta=\tau-e_{\rm tr}1,\qquad
              G_\Theta(r)=S_2^{\xi_*}(\Theta,\Theta;re_4,0).
 \]
-The real number $e_{\rm tr}$ is the expectation in the selected phase,
-which need not equal the mixed expectation. The unit field is retained
-through the common filtration. The fact that inserting the identity leaves correlations unchanged extends to
+The real number $e_{\rm tr}$ is the expectation in the fixed phase,
+which need not equal the expectation of the undecomposed hierarchy. The identity field is retained
+through the common filtration. The fact that inserting the identity field leaves correlations unchanged extends to
 the boundary correlations, so, on the common invariant word domain,
 \[
  \Phi_\Theta(f)=\Phi_\tau(f)
                   -e_{\rm tr}\left(\int f\right)I,
              \qquad \langle\Omega,\Phi_\Theta(f)\Omega\rangle=0.
 \]
-For completeness, the Euclidean correlation with a unit insertion is
-constant in that insertion position. Holomorphic uniqueness on ordered
+For completeness, the Euclidean correlation with an insertion of the identity field is
+constant in its insertion point. Holomorphic uniqueness on ordered
 time regions identifies its continuation with the correlation after
 deletion. Boundary values and smearing give the displayed operator
-identity on dense word matrix elements. This establishes centering on
+identity on dense word matrix elements. This establishes the zero mean on
 the domain, as well as for separated expectations.
 
 Write $p=(\boldsymbol p,E)$, $p^2=E^2-|\boldsymbol p|^2$, and
@@ -79,11 +79,11 @@ $r^8\log^2(1/r)G_\Theta(r)$ need not be monotone.
 \label{ch17:radii}
 
 Let $U_{i,d}:\mathcal M_d^{\rm Max}\to F_d$ be real comparison
-isomorphisms, preserving the unit, inclusions and signed coordinate
+isomorphisms, preserving the identity field, inclusions and signed coordinate
 symmetries. They are evaluated at a radius $r_i\downarrow0$:
-$U_{i,d}A$ is inserted at $r_ix$. The actual inverse coupling at a
-finer insertion level $k_i$ is denoted by $\beta_i$, and
-$b_i=\widehat\beta_{k_i}$ is its reference value. The radius level
+$U_{i,d}A$ is inserted at $r_ix$. The inverse coupling at a
+finer insertion scale $k_i$ is denoted by $\beta_i$, and
+$b_i=\widehat\beta_{k_i}$ is its reference value. The radius scale
 $n_i$ precedes $k_i$.
 
 The strengthened comparison, proved below, is as follows. Every prescribed
@@ -94,7 +94,7 @@ positive null sequence has a subsequence with these data such that
  \label{ch17:running-radius}
 \end{equation}
 and all fixed separated correlations and their fixed derivatives,
-with convergent moving free labels, converge to their Maxwell values.
+also for convergent sequences of free fields, converge to their Maxwell values.
 For pairs without derivatives this comparison is uniform over the
 phases, including at nearest lattice-rounded points. Shell integrals are
 included. It must use the same field quotient and lattice family as
@@ -107,7 +107,7 @@ allow
  r(n,u)=a_nM_n^u,\quad \alpha_0\le u\le\alpha_0+1,\qquad
  k(n)=\min\{m>n:\log(a_n/a_m)\ge(\log\widehat\beta_n)^{48}\}.
 \]
-At fixed degree bound $D$ and arity bound $N_*$, choose comparison
+At fixed degree bound $D$ and bound $N_*$ on the number of insertions, choose comparison
 exponents with
 \begin{gather*}
  c<0,\quad\alpha_0-\alpha_1>6,\quad
@@ -116,40 +116,40 @@ exponents with
  (\alpha_0-\alpha_2)DN_*-\alpha_0-c<0.
 \end{gather*}
 The common size of the $\alpha_j$ can be increased after their
-differences and $c$ have been fixed. The marked comparison required
-at every sufficiently late level has, uniformly in $u$, single-insertion
+differences and $c$ have been fixed. The comparison with insertions required
+at every sufficiently late scale has, uniformly in $u$, single-insertion
 seminorm bounds $CM_n^{(\alpha_0-\alpha_j)D}$ and grid errors tending
-to zero. With strip width $M_n^c$ and scaled mesh at most
+to zero. With coincident-coordinate strips of width $M_n^c$ and grid spacing at most
 $M_n^{-\alpha_0}$, the two integration errors are bounded by
 \[
  C M_n^{(\alpha_0-\alpha_1)DN_*+c},\qquad
  C M_n^{(\alpha_0-\alpha_2)DN_*-\alpha_0-c}.
 \]
-They tend to zero. Thus the strip removal and derivative-transport
-argument of Section~\ref{ch14:comparison} applies to these windows.
-Bounds uniform in the number of copies give phase uniformity by
-\eqref{ch15:moment-norm}. The next subsection verifies these window estimates, including their
-uniformity across changes of stage, from marked propagation.
+They tend to zero. Thus the bound on the coincident-coordinate strips and the argument of Proposition~\ref{ch14:smooth-comparison}
+of Section~\ref{ch14:comparison} apply to these intervals of radii.
+Bounds with constants independent of the number of reflected copies give uniformity over the phases by
+\eqref{ch15:moment-norm}. The next subsection verifies these estimates on the intervals of radii, including their
+uniformity across changes of stage, from the transfer of the densities with insertions.
 
-The coupling thresholds can be chosen to ensure $L_n\le\log\widehat\beta_n$.
+The lower bounds on the reference coupling can be chosen to ensure $L_n\le\log\widehat\beta_n$.
 Since $M_n$ increases and $L_n\le M_{n+1}$ eventually,
 $r(n,\alpha_0)\le r(n+1,\alpha_0+1)$. The intervals therefore
 cover every sufficiently small radius, as illustrated on a logarithmic
-scale in Figure~\ref{ch17:fig-radius-windows}. The first crossing places a
-prescribed radius in one of them. Diagonalize finite degree, arity,
-window and derivative requests, requiring
+scale in Figure~\ref{ch17:fig-radius-windows}. For a prescribed small radius, the first $n$ with $r(n,\alpha_0)$ at most that radius, together with continuity of $r(n,u)$ in $u$, places
+that radius in one of them. Take a diagonal subsequence over finite requests of degree, number of insertions,
+compact set and derivatives, which gives $n_i$, $k_i=k(n_i)$ and the maps $U_{i,d}$, requiring
 $(\alpha_0+1)\log M_{n_i}\le(\log\widehat\beta_{n_i})^{48}$.
-The overshoot in $k(n)$ is negligible compared with
+The excess over the target in $k(n)$ is negligible compared with
 $\widehat\beta_n$, as is the logarithm of the radius multiplier.
 The running law in Chapter~\ref{ch10:trajectory} then gives
 \eqref{ch17:running-radius}. This proves radius coverage. It remains to verify the uniform
-comparison estimates used in these windows.
+comparison estimates used on these intervals of radii.
 
 \input{figures/radius-windows}
 
 \input{chapters/17-variable-windows}
 
-\section{Tensor coordinates and the regulated current}
+\section{Tensor coordinates and the mass-regularized current}
 \label{ch17:current}
 
 Use the free scalar and tensor
@@ -160,7 +160,7 @@ Use the free scalar and tensor
 \]
 The coordinate sum in $\mathcal O$ is over ordered pairs. The symbol
 $X$ here denotes the off-diagonal tensor, not a polymer support.
-These three tensors span the centered degree-four symmetric
+These three tensors span the zero-mean degree-four symmetric
 hypercubic tensors. Before imposing the Maxwell equation, their
 vector divergences have coordinates in $E=\RR^3$, represented by
 \[
@@ -193,7 +193,7 @@ U_{\square(a,b)}^{-1})/2$ and start with
 Here $e^-$ and $e^{\rm dir}$ are the initial site and coordinate
 direction of the oriented link $e$. Thus $Y_b^x$ varies only the
 outgoing links at $x$, by left multiplication. If $\mathsf S$ is the leading
-path action without its coupling, define its current defect by
+path action without its coupling, define its \emph{current defect}, the defect of the lattice Ward identity, by
 $\mathcal E_b=\sum_a\nabla_aJ_{ab}-D\mathsf S[Y_b]$, using
 \[
  \nabla_a=\sum_{j=1}^4c_j(\mathsf s_a^j-\mathsf s_a^{-j}),
@@ -226,7 +226,7 @@ The volume normalization in $\mathsf q$ is for the translation-invariant
 action; $\mathsf l$ evaluates the anchored vector response. Define
 $\mathfrak h(Y)=\mathsf h(\operatorname{div}_{\rm Haar}Y)$.
 The second term in $\mathsf h$ corrects the lattice derivative.
-The regulated current calculation uses
+The calculation with mass regularization uses
 \[
  \Gamma_\mu=\tfrac12\log\det(H+dd^*+\mu^2I)
                  -\log\det(d^*d+\mu^2I),\quad
@@ -234,8 +234,8 @@ The regulated current calculation uses
  \mathcal D(\mu)=-\mu R'(\mu).
 \]
 Here $H$ is the left Hessian of $\mathsf S$, $d$ its infinitesimal
-gauge insertion, and $\mathsf q$ is the coefficient functional just defined. Its normalization
-counts twelve ordered transverse planes. The actual Ward calculation requires its Haar
+gauge action, and $\mathsf q$ is the coefficient functional just defined. Its normalization
+counts twelve ordered transverse planes. The Ward calculation requires its Haar
 coefficient $\mathfrak h(Y)$ to obey
 \begin{equation}
  \mathfrak h(Y)=\mathcal D(\mu)+O(\mu)+o(1),\qquad
@@ -245,14 +245,14 @@ coefficient $\mathfrak h(Y)$ to obey
 The $o(1)$ is uniform on each fixed interval $[\delta,1]$ as the
 current defect tends to zero and the period tends to infinity;
 the constant in $O(\mu)$ is independent of $\mu\le1$.
-This identity concerns the actual gauge-fixed Hessian and transferred
-current. The perturbative anomaly citation does not supply it.
+This identity concerns the gauge-fixed Hessian and transferred
+current constructed above. The perturbative anomaly citation does not give it.
 
 The next section derives this regulated identity from explicit weighted
 current bounds and convergence of the matched current jets. It keeps
 the gauge-coordinate corrections and the lattice coefficient correction.
 The following current-contraction section then verifies these hypotheses
-for repeated stationary transfer.
+for repeated transfer through the critical configuration.
 
 \input{chapters/17-trace-transfer}
 \input{chapters/17-current-contraction}
@@ -280,7 +280,7 @@ Writing $y=t_is_iy+c_i(y)k_i$ gives $|c_i(y)|\le C\|y\|$ and
 $(\lambda_is_i-\rho)y=-c_i(y)\rho(k_i)$, which proves the claim.
 
 Here are the complete rate estimates needed for the trace conclusion;
-the next section proves them for the common family.
+the next section proves them for the same family of measures.
 Write
 \[
  e_i=\exp((\log\log b_i)^2/5),\qquad
@@ -289,12 +289,12 @@ Write
 so $q_i/e_i\to0$ and both are smaller than every positive power of
 $b_i$. The letter $q_i$ in this section is a scalar bound, unrelated
 to the inserted densities of Chapter~\ref{ch11:insertions}.
-Let $B_i^L,B_i^X,B_i^D$ be the centered transferred tensors and set
+Let $B_i^L,B_i^X,B_i^D$ be the zero-mean transferred tensors and set
 \[
  A_i=\beta_i r_i^4 U_{i,4}^{-1},\qquad
  K_i=\beta_i r_i^5 U_{i,5}^{-1}\operatorname{div}.
 \]
-The required same-family current transfer estimates are
+The required current transfer estimates for the same family of measures are
 \begin{align}
  &\|\beta_iK_iB_i^L\|\le Cq_i,\quad
              \lambda_i(\beta_iK_iB_i^L)\to-\kappa_G,
@@ -307,8 +307,8 @@ The required same-family current transfer estimates are
                        \quad(Z=L,X,\ p\in\NN).\notag
 \end{align}
 These bounds are stronger than smooth free comparison. The next section
-proves them using the kernel identities and a separate low-moment
-estimate for spatial remainders.
+proves them using the bound \eqref{ch17:kernel-score} and the density identity \eqref{ch17:kernel-divergence} for the differentiated block kernel, and the low-moment
+estimate of Proposition~\ref{ch17:spatial-moments}.
 
 \input{chapters/17-marked-trace-rates}
 
@@ -340,17 +340,17 @@ $r_i^4U_{i,4}^{-1}Z_i\to L$. The faster trace bounds give
 $\beta_i\operatorname{tr}(r_i^4U_{i,4}^{-1}Z_i)
 \to-\kappa_G\mathcal O$.
 
-The conserved line gives $Z_i=\nu_iT$. Choose one free translation
+The one-dimensionality of the space of conserved tensors, \eqref{ch14:conserved-line}, gives $Z_i=\nu_iT$. Choose one free translation
 flux pairing with nonzero value. Its flux on the rescaled $Z_i$ tends
 to that value. The Ward identity for $T$ and derivative comparison
 make its corresponding flux tend to the same nonzero value.
-Their ratio is $\nu_i$, so $\nu_i\to1$. Finally centering subtracts
+Their ratio is $\nu_i$, so $\nu_i\to1$. Finally the subtracted mean term is
 $e_{\rm tr}\beta_i r_i^4 1\to0$ by \eqref{ch17:running-radius}.
 \end{proof}
 
 \begin{theorem}[The all-radius trace law]
 \label{ch17:all-radii}
-The centered trace in the selected phase satisfies
+The zero-mean trace in the fixed phase satisfies
 \begin{equation}
  \lim_{r\downarrow0}r^8\log^2(1/r)G_\Theta(r)
               =\mathcal A_G:=\frac{3\dim_\RR\gLie}{\pi^4}>0.
@@ -369,7 +369,7 @@ the two factors $1/4$ give $2\cdot24/16=3$ for each of the $d_{\gLie}$ orthogona
 
 Start with any prescribed null sequence of radii, and take its
 comparison subsequence. Proposition~\ref{ch17:coefficient} gives
-convergent moving labels, while \eqref{ch17:running-radius} cancels
+convergent sequences of free fields, while \eqref{ch17:running-radius} cancels
 the factor $\kappa_G^2$ in their pair correlation. For a generic
 pair at distance $t$, lattice rounding therefore yields
 \[
@@ -384,12 +384,12 @@ sequence has a subsequence with limit $\mathcal A_G$, which proves
 \eqref{ch17:trace-law} by the subsequence criterion.
 \end{proof}
 
-\paragraph{The dilation current at short separation.}
+\paragraph{The dilation current at short distance.}
 Let $v$ be a continuously differentiable vector field on $\RR^4$ with
 $\partial_av_b+\partial_bv_a=2\varphi\,\delta_{ab}$ for a real function
 $\varphi$. For $x_0\neq x_1$ put
 $j_a(x_0)=\sum_bv_b(x_0)\,S_2^{\xi_*}(T_{ab},\Theta;x_0,x_1)$, the current
-$\sum_bT_{ab}v_b$ at $x_0$ against the centered trace at $x_1$. Then
+$\sum_bT_{ab}v_b$ at $x_0$ against the zero-mean trace at $x_1$. Then
 \[
  \sum_a\partial_{(x_0)_a}j_a(x_0)=\varphi(x_0)\,S_2^{\xi_*}(\tau,\Theta;x_0,x_1)
        =\varphi(x_0)\,G_\Theta(|x_0-x_1|)\qquad(x_0\neq x_1).
@@ -400,16 +400,16 @@ of the correlations vanishes because $T$ is conserved
 allows $\partial_av_b$ to be replaced by
 $\tfrac12(\partial_av_b+\partial_bv_a)=\varphi\,\delta_{ab}$, and
 bilinearity leaves $\varphi\,S_2^{\xi_*}(\tau,\Theta;x_0,x_1)$. Finally
-$\tau=\Theta+e_{\rm tr}1$; a unit insertion leaves correlations unchanged
-and $\Theta$ is centered (Section~\ref{ch17:spectrum}), so
+$\tau=\Theta+e_{\rm tr}1$; an insertion of the identity field leaves correlations unchanged
+and $\Theta$ has zero mean (Section~\ref{ch17:spectrum}), so
 $S_2^{\xi_*}(\tau,\Theta;x_0,x_1)=S_2^{\xi_*}(\Theta,\Theta;x_0,x_1)
 =G_\Theta(|x_0-x_1|)$ by translation and rotation invariance.
 
 For the dilation field $v(z)=z$ one has $\varphi=1$, so for a pair at
 distance $r$ the divergence of $j$ is $G_\Theta(r)$, and
 Theorem~\ref{ch17:all-radii} gives
-$r^8\log^2(1/r)\,G_\Theta(r)\to\mathcal A_G>0$. Thus, against the centered
-trace, the dilation current is not divergence free at short separation, although the classical
+$r^8\log^2(1/r)\,G_\Theta(r)\to\mathcal A_G>0$. Thus, against the zero-mean
+trace, the dilation current is not divergence free at short distance, although the classical
 Yang--Mills action is scale invariant. In fact $G_\Theta(r)>0$ for every
 $r>0$: in \eqref{ch17:laplace} the measure $\rho_\Theta$ is positive, and
 nonzero since the limit is positive. For translations and rotations

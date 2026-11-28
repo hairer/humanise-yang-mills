@@ -1,8 +1,8 @@
 % !TEX root = ../monograph.tex
-\chapter{Marked insertions and finite-scale comparison}
+\chapter{Insertions and finite-scale comparison}
 \label{ch11:insertions}
 
-A block transformation acts linearly on an inserted density even though
+A step acts linearly on an inserted density even though
 its effective-action coordinates evolve nonlinearly. Keeping the density
 itself in view resolves two difficulties: several insertions generate
 joint terms, and an auxiliary sequence of block kernels can preserve
@@ -15,28 +15,28 @@ the source algebra alone.
 Throughout, the polynomial label space and its local section are
 $V_d$ and $P_d^{\rm loc}$ from Chapter~\ref{ch02:observables}.
 All block kernels are the normalized kernels of
-Chapter~\ref{ch04:blocking}. A history means one fixed choice of these
-kernels, inverse couplings, adjacent path pairs, and local representations.
+Chapter~\ref{ch04:blocking}. A \emph{history} means one fixed choice of these
+kernels, inverse couplings, adjacent path pairs, and local representations; the local representations are those of Chapter~\ref{ch09:renormalization}, whose activities are averaged over the forests (Section~\ref{ch09:forest-average}). Throughout this chapter we assume Assumption~\ref{ch09:forest-assumption}, which is not proved in this monograph, together with its analogue for the restarted steps of Section~\ref{ch11:restart-construction}, and, for the steps with insertions, its extension stated as Hypothesis~(H) in Section~\ref{ch11:marked-step}, which is not proved either.
 The estimates of Chapters~\ref{ch06:large-fields} and
 \ref{ch09:renormalization} are used only on that same history.
 
 The argument has four parts. First the squarefree source algebra
 and support estimates retain every joint insertion term. Next the
-single-insertion estimates and the common Gaussian comparison construct
-the restarted history and the normalized product-moment bounds.
-Backward comparison then relates local trials to the actual
+single-insertion estimates and the joint Gaussian comparison construct
+the restarted history (an auxiliary history that keeps the inverse coupling constant below a comparison scale) and the normalized product-moment bounds.
+Backward comparison then relates local trials to the
 renormalized fields and microscopic equations. Finally a common
-localization onto the polynomial label space and a larger source weight give the bound from a finite separating family, from which uniform finite-difference bounds follow.
+localization map onto the polynomial label space and a larger source weight (the weight $\omega$ of the source variables in place of $\omega_-$, Section~\ref{ch11:weight-restoration}) give the bound from a finite separating family, from which uniform finite-difference bounds follow.
 
 \section{An algebra for finitely many insertions}
 
-Let $\mathcal I$ be a finite set of insertion labels and define
+Let $\mathcal I$ be a finite set of insertion indices and define
 \[
  \mathcal A_{\mathcal I}
  =\CC[z_i:i\in\mathcal I]/(z_i^2:i\in\mathcal I),\qquad
  z_S=\prod_{i\in S}z_i.
 \]
-The variables commute; a monomial with a repeated label is zero.
+The variables commute; a monomial with a repeated index is zero.
 Every element has the unique form $\sum_{S\subseteq\mathcal I}a_Sz_S$.
 If $u$ has zero constant coefficient, then $u^{|\mathcal I|+1}=0$,
 so the series for $\exp u$ and $\log(1+u)$ terminate.
@@ -69,9 +69,9 @@ expand the finite sum and telescope each product.
 
 \subsection{The exact density and its integral}
 
-At cutoff $N$, let $\rho_N\ge0$ be the unmarked density with
+At cutoff $N$, let $\rho_N\ge0$ be the density without insertions, with
 $Z_N=\int\rho_N\,d\lambda_N>0$, where $\lambda_N$ is product Haar
-probability measure. For physical insertions $F_i$, assume every
+probability measure. For dimensionful insertions $F_i$, assume every
 $\rho_N\prod_{i\in S}F_i$ is integrable and set
 \begin{equation}
  q_N(z,U)=\rho_N(U)\prod_{i\in\mathcal I}(1+z_iF_i(U)),
@@ -85,19 +85,19 @@ of the insertions indexed by $S$.
 If one instead uses the dimensionless one-insertion density of degree
 $d$, its recursion is $H_m=L_m^d\mathcal B^{(L_m)}_\beta H_{m+1}$.
 The scalar rescaling belongs to this convention; it is absent from
-\eqref{ch11:source-density}, where the physical normalization is
-already in $F_i$. Mixing these two conventions changes the unit
-insertion. In particular the reference-level coefficient of the physical
-unit in a degree-$d$ convention is $a_{r(d)}^d e_0$, not the coefficient
+\eqref{ch11:source-density}, where the dimensionful normalization is
+already in $F_i$. Mixing these two conventions changes the identity-field
+insertion. In particular the reference-scale coefficient of the dimensionful
+identity field in a degree-$d$ convention is $a_{r(d)}^d e_0$, not the coefficient
 obtained from the individual scaling dimension of $e_0$.
 
-\begin{proposition}[Changing the block history]
+\begin{proposition}[Changing the block kernels]
 \label{ch11:mass}
-Replace any kernels below a fixed level $k$ by other normalized positive
-block kernels. Push the complete polynomial $q_k$ through them.
+Replace any kernels below a fixed scale index $k$ by other normalized positive
+block kernels. Transfer the full polynomial $q_k$ through them.
 Every coefficient integral is unchanged. A field-independent polynomial
-$J\in\mathcal A_{\mathcal I}$ commutes with every push; if
-$J_\varnothing=1$, the unmarked density and its partition integral
+$J\in\mathcal A_{\mathcal I}$ commutes with every such transfer; if
+$J_\varnothing=1$, the density without insertions and its partition integral
 are unchanged.
 \end{proposition}
 \begin{proof}
@@ -112,16 +112,16 @@ integral. Its constant coefficient proves the last assertion.
 There is also a conditional-expectation interpretation. Draw the terminal
 field with law $\rho_N\,d\lambda_N/Z_N$ and then follow the selected
 block kernels. The conditional expectation of $\prod_{i\in S}F_i$
-given the level-$m$ field is
+given the scale-$m$ field is
 $[z_S]q_m/[z_\varnothing]q_m$ almost everywhere where the denominator
 is positive. This follows by testing against a bounded function of the
-level-$m$ field. Its value on the zero-density set is immaterial.
+scale-$m$ field. Its value on the zero-density set is immaterial.
 Two histories generally have different conditional laws; the proposition
 asserts equality of their integrated moments.
 
 \section{Joint local terms and large-field components}
 
-At an intermediate level a local representation has the form
+At an intermediate scale a local representation has the form
 \begin{equation}
  e^{\Phi(U)+\sum_{S\ne\varnothing}z_S h_S(U)}
  \sum_{\mathcal F\ {\rm eligible}}
@@ -129,16 +129,16 @@ At an intermediate level a local representation has the form
           \left(K_Y(U)+\sum_{S\ne\varnothing}z_S k_{Y,S}(U)\right).
  \label{ch11:local-source}
 \end{equation}
-Each regular term carries its required small-field restriction;
+Each regular term carries its required regularity condition;
 each large-field term retains its original eligibility and large-field conditions.
-An index $S$ may contain several insertion labels. Such terms are
-generated by integration even if the terminal regular source has only
-terms linear in the sources. The full dependence region includes the insertion
-stencils, event indicators, paths, and Gaussian windows. It need not coincide
+An index $S$ may contain several insertion indices. Such terms are
+generated by integration even if the regular source at the ultraviolet cutoff has only
+terms linear in the source variables, that is, of \emph{source degree} one. The dependence set includes the link supports of the
+insertions, event indicators, paths, and Gaussian windows. It need not coincide
 with the exclusion support of a large-field activity.
 
-One must never divide a marked coefficient by $K_Y$: that activity may
-vanish. For example, two complementary insertion factors on a selected
+One must never divide a coefficient with insertions by $K_Y$: that activity may
+vanish. For example, the large-field parts of two insertion factors on a selected
 large-field support contribute
 \[
  K_Y(1+z_1b_1)(1+z_2b_2)
@@ -147,12 +147,12 @@ large-field support contribute
 The joint coefficient contains the original activity once.
 
 More generally expand the terminal product into its small-field
-parts and complementary parts. Join each complementary stencil to
-every selected large-field support it meets, and join intersecting
-complementary stencils. Exact large-field indicator coverage ensures that a complementary
-stencil containing a failed cutoff condition meets at least one selected support.
+parts and large-field parts. Merge the link support of each large-field part with
+every selected large-field support it meets, and merge intersecting
+link supports of large-field parts. The covering condition of the disjoint covering families ensures that the link support of a large-field part
+containing a failure of the regularity condition meets at least one selected support.
 Merge each resulting component, retaining the constituent indices,
-original eligibility criteria, and union of their prescribed sets of large-field sites.
+original eligibility criteria, and union of their prescribed large-field sets.
 Its value is the product of those constituents, with each selected
 activity included once. Expanding the constituent indices recovers
 the original term uniquely; hence this is an exact coefficient identity.
@@ -160,54 +160,54 @@ This algebraic construction gives all joint terminal large-field terms,
 including at zeros of the original activities.
 
 For a bound uniform in the number of inserted points, assume at most one
-insertion anchor per site and a fixed finite menu of stencil radii and
-degrees. Then a site belongs to only a bounded number of insertion
-stencils. To apply the component tree estimate of Chapter~\ref{ch08:chapter}
-to the union of the stencils, use a larger support exponent in the
+insertion point per site and a fixed finite list of link-support radii and
+degrees. Then a site belongs to only a bounded number of link supports of
+insertions. To apply the component tree estimate of Chapter~\ref{ch08:chapter}
+to the union of the link supports, use a larger support exponent in the
 bounds on the individual factors.
-At a Wilson terminal scale every new component contains an original
-large-field support, whose suppression is
-$\exp(-c\beta_Nt_N^2 n)$. Reserve half this exponent before summing
+At the ultraviolet cutoff, with the Wilson action, every new component contains an original
+large-field support, whose decay factor is
+$\exp(-c\beta_Nt_N^2 n)$. Keep half this exponent aside before summing
 attachments. A polynomial in $B_N,\widehat\beta_N$ times the remaining
-suppression tends to zero faster than every inverse power.
-This proves small joint terminal bounds when the weighted insertion
-complements themselves have a summable site bound. That latter bound
-is a quantitative local-section input; it is not implied by the
+decay factor tends to zero faster than every inverse power.
+This proves small joint terminal bounds when the weighted large-field
+parts of the insertions themselves have a summable site bound. That latter bound
+is a quantitative hypothesis on the local section; it is not implied by the
 finite polynomial identity.
 
-\section{Support bounds for several marked components}
+\section{Support bounds for several components with insertions}
 
-Fix $n$ insertion labels in each reflected replica cell. Suppose every
-elementary principal term has at least one marked point, contains its
-marked points in its full dependence region, and that region is within
-distance $\rho$ of each such point. Suppose marked points in different
+Fix $n$ insertion indices in each reflected replica cell. Suppose every
+elementary principal term has at least one insertion point, contains its
+insertion points in its dependence set, and that set is within
+distance $\rho$ of each such point. Suppose insertion points in different
 cells are separated by more than $2\rho$.
-A component formed by intersecting these full regions then lies in one
-cell. Indeed marks on adjacent terms have distance at most $2\rho$,
-so they belong to the same cell. Connect the distinct labels used by
+A component formed by intersecting these dependence sets then lies in one
+cell. Indeed insertion points on adjacent terms have distance at most $2\rho$,
+so they belong to the same cell. Connect the distinct insertion indices used by
 the component. Erasing cycles gives a path of at most $n-1$ edges.
-All its marked points are therefore within $2n\rho$ of one another,
-and every point of its full region is within $(2n+1)\rho$ of each
-marked point. This bound is independent of the number of elementary
+All its insertion points are therefore within $2n\rho$ of one another,
+and every point of its dependence set is within $(2n+1)\rho$ of each
+insertion point. This bound is independent of the number of elementary
 terms in the component.
 
 A second estimate controls increasing the source weights. Let each
-component carry a nonempty label set $S$, full region $X$, and let
+component carry a nonempty index set $S$, dependence set $X$, and let
 $t(S)$ be the number of replica cells represented in $S$.
-Suppose at most $n$ labels occur per cell. Increase the common source
+Suppose at most $n$ indices occur per cell. Increase the common source
 weight from $\omega_-$ to $\omega=H^U\omega_-$.
-For components within one cell the cost is at most $H^{Un}$.
-For components meeting several cells, retain an additional exponent in the support weight
+For components within one cell the factor is at most $H^{Un}$.
+For components meeting several cells, retain an additional margin in the support exponent
 $\sigma>0$. If
 \begin{equation}
  \sigma c_B(X)\ge Un\,t(S)\log H,
  \label{ch11:spare-support}
 \end{equation}
-then the increased label weight and decreased support weight give
+then the increased source weight and decreased support weight give
 \[
  H^{U|S|}e^{-\sigma c_B(X)}\le1.
 \]
-Consequently a marked-point incidence bound $p_1$ for single-cell terms
+Consequently an incidence bound $p_1$ at insertion points for single-cell terms
 at exponent $e$, and $p_2$ for other terms at exponent $e+\sigma$,
 give the bound $H^{Un}p_1+p_2$ at exponent $e$.
 
@@ -215,16 +215,16 @@ The geometric lower bound \eqref{ch11:spare-support} and the stronger
 incoming norm are both required. An estimate proved only at exponent
 $e$ cannot be reused at $e+\sigma$. Large-field components require
 their own joint attachment estimate because one such component may
-carry marks from many cells. The suppression reserved above, together
+carry insertion points from many cells. The half of the decay exponent kept aside above, together
 with the stronger support norm, absorbs this additional weight.
-The support exponent is therefore chosen before the marked expansion
-and before the history thresholds are selected.
+The support exponent is therefore chosen before the expansion with insertions
+and before the history thresholds are chosen.
 
-\section{One marked step with the actual local factors}
+\section{One step with insertions}
 \label{ch11:marked-step}
 
 We give quantitative bounds before applying the Gaussian comparison.
-This also specifies the support reserve needed when the number of
+This also specifies the margin in the support exponent needed when the number of
 inserted points grows with the volume. Fix an output exponent $e\ge0$,
 put $v=e+5$, and let $B_f\le2B_c$ be the adjacent support radii.
 For the prescribed enlargement $X^\uparrow$ of a fine support, the
@@ -243,42 +243,42 @@ The numerical constant describes this choice of support enlargement;
 the essential feature is its fixed additive cost and $L^{-1}$ fine
 cover cost.
 
-In one sector and tag, distinguish three kinds of factors: unmarked
-local corrections, incoming large-field factors, and insertion factors
-with nonempty sets of labels. Their full dependence regions determine
-the intersection graph. The exact-cover condition requires the unmarked local corrections in each
-component to supply every site prescribed by its incoming large-field factors. In particular a component
-with no unmarked correction has no incoming large-field factor.
-This is a condition on the exact cover decomposition, retained when
-marked factors are attached, rather than a consequence of spatial
+In one sector, which includes one forest (one rooted spanning tree in every block), and for one value of the auxiliary index, distinguish three kinds of factors:
+local corrections without insertions, incoming large-field factors, and insertion factors
+with nonempty index sets. Their dependence sets determine
+the intersection graph. The condition of disjoint covering requires the local corrections without insertions in each
+component to cover every site prescribed by its incoming large-field factors. In particular a component
+with no insertion-free correction has no incoming large-field factor.
+This is a condition on the representation as a sum over disjoint covering families, retained when
+factors with insertions are attached, rather than a consequence of spatial
 intersection alone.
 
-Let $\delta$ be the containing-site bound for unmarked correction
+Let $\delta$ be the containing-site bound for insertion-free correction
 amplitudes. Suppose the incoming large-field amplitudes, already
 weighted by $e^{\sigma_f c_{B_f}}$, have site bound $\eta$.
-Let $a$ bound the insertion incidence sum at a fixed mark after
+Let $a$ bound the insertion incidence sum at a fixed insertion point after
 \eqref{ch11:cover-transfer}, at exponent $v+2$.
-If at most $g$ marks project to a coarse site, set
+If at most $g$ insertion points project to a coarse site, set
 \[
  {\cal W}(B)=(33B)^4\sum_{j\ge0}(j+1)^4e^{-j},\qquad
  \Sigma=\delta+{\cal W}(B_c)L^4T_e\eta+{\cal W}(B_c)g a.
 \]
-The insertion and background incidence bound at a specified mark is
+The insertion and background incidence bound at a specified insertion point is
 $T_e\eta+a$; no $L^4$ occurs there. The site bound is $\Sigma$ at
 exponent $v+1$. To see the latter conversion, root a support at one of
-its actual fine sites or marks. Its covering number is at least
+its fine sites or insertion points. Its covering number is at least
 $\lfloor d(o,x)/(8B_c)\rfloor$. The number of possible roots in shell
 $j$ is at most $(33B_c)^4(j+1)^4$, while losing one support exponent
-provides $e^{-j}$. Background roots have $L^4$ possible fine residues;
-mark roots have at most $g$ choices.
+provides $e^{-j}$. Background roots have $L^4$ possible positions within the block;
+roots at insertion points have at most $g$ choices.
 
 Choose inflation factors $m,l\ge1$. The common local integral bound of
-Chapter~\ref{ch06:large-fields} may be applied with the unmarked
+Chapter~\ref{ch06:large-fields} may be applied with the insertion-free
 amplitudes inflated by $m$ for factors with a nonempty prescribed
-set of large-field sites, and by $l$ for other corrections. Smallness remains available
-by increasing the inverse coupling threshold at fixed $m,l$.
-A nonleading insertion factor is either pointwise at most its bounded
-amplitude divided by $l$, or supported on an event of actual conditional
+large-field set, and by $l$ for other corrections. Smallness remains available
+by increasing the lower bound on the reference coupling at fixed $m,l$.
+A nonprincipal insertion factor is either pointwise at most its bounded
+amplitude divided by $l$, or supported on an event of conditional
 probability at most $l^{-1}$ and bounded by that amplitude.
 For a compatible connected collection $C$, therefore,
 \begin{align}
@@ -291,15 +291,15 @@ For a compatible connected collection $C$, therefore,
  \end{cases}
  \label{ch11:integrated-component}
 \end{align}
-Here $\nu$ is the single actual Gaussian/Haar law of the sector.
-If an unmarked correction occurs, its inflated common product bound
+Here $\nu$ is the single Gaussian/Haar law of the sector, formed with its forest; by Hypothesis~(H) below the bounds $b_j$ and the factors $t_C$ do not depend on the forest.
+If an insertion-free correction occurs, its inflated common product bound
 absorbs $t_C$, while the other factors are bounded pointwise.
-If none occurs, the prescribed set of large-field sites condition removes incoming large-field
-factors; use either the pointwise or event bound for one nonleading
+If none occurs, the condition on prescribed large-field sets removes incoming large-field
+factors; use either the pointwise or event bound for one nonprincipal
 insertion. No independence is used in either case.
 
 Assume $(2B_c+1)^4\Sigma\le1$. The rooted-tree bound gives connected
-component site sum at most $\Sigma$ at exponent $v$, and marked-point
+component site sum at most $\Sigma$ at exponent $v$, and, at insertion points,
 incidence at most $T_e\eta+a$. Indeed let
 $c_i=c_{B_c}(X_i)$, $a_i=b_i e^{vc_i}$ and
 $\widehat b_i=b_i e^{(v+1)c_i}$. The sum of $\widehat b_j$ over
@@ -310,14 +310,14 @@ gives $R_i^{(q)}\le\widehat b_i$. Every finite connected collection
 has a spanning tree and is included in this upper bound.
 This is the rooted-tree majorization underlying the polymer criterion
 of Chapter~\ref{ch08:chapter}; it is applied here with the full
-marked regions, rather than proved anew for each subset of marks.
+dependence sets of terms with insertions, rather than proved anew for each subset of insertions.
 
 The split of an incoming principal factor $Wz_S$ by a local cutoff is
 exact:
 \[
  (1+\gamma Wz_S)(1+(1-\gamma)Wz_S)=1+Wz_S .
 \]
-The second term is nonleading and the actual warning estimate gives
+The second term is nonprincipal and the joint tail bound for cutoff remainders gives
 its supporting event probability at most $x^{-1}$.
 Thus $l\le x$ absorbs that term. If principal and arbitrary remainder
 incidence bounds before enlargement are $h$ and $z$, respectively,
@@ -326,32 +326,31 @@ one may take
  a=2T_eh+lT_ez.
  \label{ch11:marked-incidence}
 \end{equation}
-Both pieces retain the same incoming event indicator and dependence region.
+Both pieces retain the same incoming event indicator and dependence set.
 Purely principal connected components have the one-cell support
-bound proved earlier. Their actual integral is the joint moment
+bound proved earlier. Their integral is the joint moment
 in Proposition~\ref{ch11:joint-gaussian}, since it contains neither
-an unmarked correction nor an incoming large-field factor.
+an insertion-free correction nor an incoming large-field factor.
 
-Finally normalize the unmarked local gas by the same exact
-connected expansion as in Chapter~\ref{ch09:renormalization}.
+Finally normalize the insertion-free local gas by the same exact
+connected expansion as in Chapter~\ref{ch09:renormalization}, that is, with its activities averaged over the forests as in Proposition~\ref{ch09:forest-average-prop}; the normalization constant does not depend on the forest (part~(i) of that proposition). Assumption~\ref{ch09:forest-assumption} concerns only the construction without insertions, so the combination of the fixed-forest computation above with this average requires the following hypothesis, which is not proved in this monograph. \emph{Hypothesis~(H) (forests with insertions).}\mgubi{Issue 3: not proved. (1) Say that $F_\bullet\circ\varsigma^*$ is the pullback by the iterated lift of $\varsigma$ to the cutoff lattice. (2) The transport clause compares representations built from different insertions, so it is a claim about all finer steps, not a hypothesis on one step. (3) Locality in the forest of $[z_S]a_M^F$ for several insertions is assumed; existence/ has it as a hypothesis; Lean: no transport of insertions found.} For every forest $F$, the exact identity for the block integral of the incoming representation with insertions \eqref{ch11:local-source} has the form \eqref{ch09:fixed-forest-gas}, with the same constant $\mathscr N_F$ and function $\mathscr S$, with labels, supports $X_M$ (containing the dependence sets of the insertions carried by $M$) and prescribed large-field sets $I_M$ independent of $F$, and with activities $a_M^F(z,U)$ in $\mathcal A_{\mathcal I}$, Borel and gauge-invariant in $U$ and local on $X_M$, satisfying $\sum_M\sup_U\|a_M^F(\cdot,U)\|_\omega<\infty$; the labels comprise those of \eqref{ch09:fixed-forest-gas}, with the same supports and prescribed large-field sets and with coefficient of $z_\varnothing$ equal to the activity there, and further labels, which carry an insertion factor and whose coefficient of $z_\varnothing$ is zero; every coefficient $[z_S]a_M^F$ satisfies part~(b) of Assumption~\ref{ch09:forest-assumption}; the bounds of this section, in particular \eqref{ch11:integrated-component}, \eqref{ch11:marked-incidence} and the bounds $\Sigma$, $T_e\eta+a$, $k$, $\psi$, and every other estimate of this chapter which is made for one forest, in particular those of Section~\ref{ch11:actual-reader}, hold for every $F$ with right sides independent of $F$; and, for every $\varsigma\in\mathfrak G$, there is a bijection $M\mapsto\varsigma\cdot M$ from the labels for the insertions $F_\bullet$ onto those for the insertions $F_\bullet\circ\varsigma^*$, transporting supports and prescribed large-field sets as in part~(d), with $a^{\varsigma F}_{\varsigma\cdot M}[F_\bullet\circ\varsigma^*](z,U)=a^F_M[F_\bullet](z,\varsigma^*U)$, where $[F_\bullet]$ indicates the insertions from which the incoming representation with insertions is built. Under~(H), the proof of Proposition~\ref{ch09:forest-average-prop}(i)--(ii) applies coefficient by coefficient, because $\mathcal A_{\mathcal I}$ is commutative and the coefficients of activities with disjoint supports depend on the trees of disjoint sets of blocks: the identity holds with the averaged activities $\mathbb E_Fa_M^F$, which obey the same bounds, and its coefficient of $z_\varnothing$ is \eqref{ch09:averaged-gas}. Thus the density with insertions and the density without insertions are averaged by the same average over the forests. The estimates of this section are made for one forest and are used, through their uniformity in the forest, for the averaged activities.
 If its local normalization corrections have total site bound $k$
 at exponent $v$ after the $l$ inflation, choose an output bound
 $\psi$ with $e^\Sigma-1+k\le\psi$.
-The regular nonleading amplitudes are then bounded by $l$, the selected
-components by $m$, and the marked-point incidence by $T_e\eta+a$.
-The empty-label corrections contribute zero to that incidence.
+The regular nonprincipal amplitudes are then bounded by $l$, the selected
+components by $m$, and the incidence at insertion points by $T_e\eta+a$.
+The corrections with empty index set contribute zero to that incidence.
 In particular output incidence at most one follows from
-$T_e\eta+a\le1$; it is not an extra independence or finite-arity
-assumption. The estimates hold for every finite label set with
-the stated occupancy $g$, uniformly in the number of replica cells.
+$T_e\eta+a\le1$; it is not an extra assumption of independence or of a bound on the number of insertions. The estimates hold for every finite index set with
+the stated bound $g$ on the number of insertion points per coarse site, uniformly in the number of replica cells.
 
 \subsection{The one-insertion graph estimates}
 \label{ch11:one-graph}
 
 Fix a degree $d$ with coarse derivative order at least
-$\max(2,d+1)$, fine spatial weight at least $d$, fine kernel order
-at least $d+2$, and coarse kernel level at least $d+3$ for the
-simultaneous calculation for normalized local insertions and the regular and large-field remainders.
+$\max(2,d+1)$, fine spatial exponent at least $d$, fine smoothing order
+at least $d+2$, and coarse smoothing order at least $d+3$ for the
+simultaneous calculation for normalized local insertions (at the ultraviolet cutoff these are the observables $O_{N,p}(d,c;x)$ of Section~\ref{ch11:collected}) and the regular and large-field remainders.
 Assume the period is at least $100(1+B_c)$.
 The fixed normalized local insertion is tested with one additional
 derivative beyond each requested derivative used in a coefficient evaluation; this requirement
@@ -359,39 +358,39 @@ does not impose an additional derivative on an arbitrary incoming
 activity.
 
 Write $\kappa_i=(\epsilon_i^{\rm for})^{1/2}$ for the square root
-of the actual large-field bound at level $i$.
+of the large-field bound at scale index $i$.
 The remainder norm used here is the sum of the anchored,
 support-weighted regular majorants and $\kappa_i^{-1}$ times the
 anchored, support-weighted large-field majorants, with their original
-support--prescribed set of large-field sites indices. Thus the fine and coarse remainder norms
+indices of support and prescribed large-field set. Thus the fine and coarse remainder norms
 use $\kappa_f$ and $\kappa_c$, respectively, not a common value.
 
 For this degree write $w_i$ and $f_i$ for the scaling
 dimension and curvature-factor count of a homogeneous basis vector.
 The leading rescaling is
 $(S_Lx)_i=L^{d-w_i}x_i$, so $\|S_L^{-1}\|\le1$.
-Localization by Taylor expansion of the fine local section on the free interpolated
-coarse jet gives a triangular change of basis $T$ with diagonal
+Taylor localization, the extraction of the local polynomial part by Taylor expansion of the fine local section on the free interpolated
+coarse jet, gives the one-step localization map $T$, a triangular change of basis with diagonal
 $(t_c/t_f)^{f_i}$. Its entries and inverse are bounded at fixed
 degree and stage: the differentiated interpolation kernel has bound
 $C_{d,r}L^{-1-r}e^{-c|y-y'|}$ for $r\le d$, summable against the
 polynomial growth of a radial jet. Thus the leading map is $TS_L$.
 
 Let $G$ be an incoming linear graph of regular vanishing-jet and
-large-field remainders, with norm at most $s_f$ per coefficient.
-The actual marked step gives a linear coefficient map $M_G$ and a
-raw remainder map $R_G$. For a common error bound $\epsilon$ above the preselection bound $C_d/L+o_x(1)$, which may be chosen as $L^{-2/5}$ after the stage choices, it satisfies
+large-field remainders, with norm at most $s_f$ per coefficient. As in the graph transform for invariant manifolds, the step with insertions maps coefficient graphs at the fine scale to graphs at the coarse scale and halves the distance between two of them.
+The step with insertions gives a linear coefficient map $M_G$ and a
+raw remainder map $R_G$. For a common error bound $\epsilon$ above the bound $C_d/L+o_x(1)$, which is valid before $L$ and the lower bound on the reference coupling are chosen ($\epsilon$ may be taken to be $L^{-2/5}$ after those choices), it satisfies
 \begin{align}
  |M_Gx-TS_Lx|&\le\epsilon(|x^\circ|+\|Gx\|_{\rm rem}),\notag\\
  \|R_Gx\|_{\rm rem}&\le C_d|S_Lx^\circ|
                                   +\epsilon\|Gx\|_{\rm rem}.
  \label{ch11:graph-estimates}
 \end{align}
-The circle deletes the unit coordinate. Finite symmetry averaging
-only enlarges $C_d,\epsilon$ by fixed degree-dependent constants.
+The circle deletes the identity-field coordinate. Finite symmetry averaging
+only enlarges $C_d,\epsilon$ by fixed degree-dependent constants.\mgubi{Issue 6: this ``finite symmetry averaging'' is defined in no chapter.}
 
 Here is the smallness argument for the remainder, including large
-supports. Root the connected expansion at its unique marked factor;
+supports. Root the connected expansion at its unique factor with insertions;
 the remaining factors have the common bound already established.
 For a regular remainder on support $X$, put $r=c_{B_f}(X)$.
 If its coarse cover exceeds $B_c$, one retained unit of exponential support decay gives
@@ -405,11 +404,11 @@ $D^k(R\circ\exp)(0)[v_1,\ldots,v_k]=0$.
 To see this, write the local analytic coordinates as
 $\log(e^{q(x)}H(J)_e e^{-q(x+e_\alpha)})$, with a site gauge
 polynomial $q$ and radial coefficients $J$.
-Their differential maps weight-$a$ parameters onto polynomial link
+Their differential maps parameters of scaling dimension $a$ onto polynomial link
 fields of degree at most $a-1$: decompose a homogeneous polynomial
 one-form into its radial part and the gradient of
 $(x\cdot A(x))/(a)$, then correct the lower-degree link-average error.
-Higher derivatives preserve the summed filtration weight.
+Higher derivatives preserve the summed scaling dimension.
 Gauge invariance removes $q$; polarization of the vanishing holonomy derivatives and induction in the chain rule remove all partitions except
 the desired derivative. Locality permits screening to the tested
 links, always in the same centered lift.
@@ -422,7 +421,7 @@ The additional incoming exponential support decay absorbs this polynomial and
 all derivative costs. Multiplication by the insertion rescaling $L^d$
 therefore leaves $C_d/L$ in both cases.
 For a large-field input of physical support-weighted mass $m$,
-the incoming normalized mass is $m/\kappa_f$. Its selected slot has no purely
+the incoming normalized mass is $m/\kappa_f$. The large-field factor carrying this input lies in no purely
 principal component. The nonprincipal and selected-component estimates,
 followed by local subtraction, give
 \[
@@ -430,7 +429,7 @@ followed by local subtraction, give
  \|R_{\rm out}\|_{{\rm rem},\kappa_c}\le\eta m/\kappa_f,
  \qquad \eta=L^{-2/5}.
 \]
-The underlying real/imaginary input decomposition costs $2m$, not
+The underlying real/imaginary input decomposition contributes $2m$, not
 $2m/\kappa_f$. The factor $\kappa_f^{-1}$ enters only the input norm;
 the outgoing selected terms are weighted by $\kappa_c^{-1}$ in the
 local subtraction. The common large-field energy bound absorbs that
@@ -441,7 +440,7 @@ Taylor remainder; its coefficient error has the same small factor.
 These are the three terms in \eqref{ch11:graph-estimates}.
 A wrapping small-field remainder is never declared large-field.
 
-Choose $L$ and then the inverse coupling threshold so the coefficient
+Choose $L$ and then the lower bound on the reference coupling so the coefficient
 perturbation is smaller than half the inverse bound of $T$.
 Absorption gives $|x|\le s_f|M_Gx|$ after fixing a suitable stage
 column constant $s_f$. Thus $M_G$ is invertible.
@@ -449,7 +448,7 @@ The outgoing graph $G'=R_GM_G^{-1}$ lies in the prescribed ball
 $\|G'\|\le s_c$ if $s_c$ is chosen above the finite constant from
 \eqref{ch11:graph-estimates}. This ball invariance is part of the
 choice, not a consequence of invertibility alone.
-The unit has zero remainders and is sent exactly to $L^d$ times itself.
+The identity field has zero remainders and is sent exactly to $L^d$ times itself.
 
 All arrays and maps taking local polynomial coefficients are fixed independently of $G$.
 For graphs $G,H$ with $a=\|G-H\|/s_f$, the distinguished factor in
@@ -462,26 +461,26 @@ The same rooted sums therefore prove
  \label{ch11:graph-difference}
 \end{equation}
 The harmless $C_d$ covers the finite symmetrization.
-Increase the block ratio and threshold until $4\delta s_f\le1$,
+Increase the block ratio and the lower bound on the reference coupling until $4\delta s_f\le1$,
 together with the preceding inverse and invariance inequalities.
-These are actual raw-map difference estimates; continuity alone
-would not supply them. They are the input for the rebasing contraction
-of the coefficient graphs.
+These are raw-map difference estimates; continuity alone
+would not supply them. They are the input for the contraction estimate
+of the graph transform on the coefficient graphs.
 
-For fixed incoming data the maps are continuous in the actual inverse coupling
-and the canonical path coefficients in weighted $\ell^1$ at a strict decay-width reserve, and in the incoming activity arrays in the same strong norm. All local integrands use the same
-protected physical-coordinate change and fixed dictionaries.
+For fixed incoming data the maps are continuous in the inverse coupling
+and the canonical path coefficients in weighted $\ell^1$ with a strict margin in the decay width, and in the incoming activity arrays in the same strong norm. All local integrands use the same
+protected physical-coordinate change and fixed common index sets.
 The common integrable bounds in Chapter~\ref{ch06:large-fields}
-justify dominated convergence on each fixed finite truncation. The strict path-width reserve and the strong support reserve make the omitted countable tails uniformly small. Taking the finite truncation first and then its size to infinity proves continuity in these weighted norms. Finite localization by Taylor expansion and symmetry
+justify dominated convergence on each fixed finite truncation. The strict margins in the path width and in the support exponent make the omitted countable tails uniformly small. Taking the finite truncation first and then its size to infinity proves continuity in these weighted norms. Finite Taylor localization and symmetry
 averaging preserve continuity. Inversion preserves it on the common
 inverse-norm ball. No extra derivative of an incoming activity is
 taken when comparing equal-regularity adjacent stages.
 
-\subsection{Propagating the already formed terms involving at least two insertions}
+\subsection{Propagating the already formed terms of source degree at least two}
 \label{ch11:higher-modes}
 
-Suppose every pair of distinct marked ancestors has periodic
-maximum-distance at least $B^2$. If a full support contains $r\ge2$
+Suppose every pair of distinct ancestors with insertions has periodic
+maximum-distance at least $B^2$. If a dependence set contains $r\ge2$
 such ancestors, then
 \begin{equation}
  Br\le64c_B(X).
@@ -494,39 +493,39 @@ Their cyclic traversal costs at least $r(B^2-2B)$. For $B\ge8$
 the stated constant follows. This argument uses periodic distances.
 
 Retain two cover units beyond those needed by the connected expansion.
-If the source weights grow by $\widehat\beta_f$ per mark, then eventually
+If the source weights grow by $\widehat\beta_f$ per insertion, then eventually
 \[
  \widehat\beta_f^{|I|}e^{-c_B(X)}
        \le e^{-c_B(X)/2},\qquad |I|\ge2,
 \]
 because $64\log\widehat\beta_f/B\le1/2$.
-The second unit absorbs site conversion and attachments. Existing terms involving at least two insertions thus gain at least $e^{-B/64}$ while retaining their final support
-weights. This uses the full incoming majorant for terms involving at least two insertions before
+The second unit absorbs site conversion and attachments. Existing terms of source degree at least two thus gain at least $e^{-B/64}$ while retaining their final support
+weights. This uses the full incoming majorant for terms of source degree at least two before
 changing weights; the single-insertion bound alone would not give it.
 
 Let $H_f$ be that stronger incoming incidence bound and $\zeta$ the
-complete weighted incidence sum for terms linear in the sources. With a strict reserve in the
-unmarked site criterion of Section~\ref{ch11:marked-step}, root each
-component at an existing factor involving at least two insertions or at a factor linear in a source
-in a new join. The common integral and rooted-tree estimates give
+full weighted incidence sum for terms of source degree one. With a strict margin in the
+site criterion for insertion-free factors of Section~\ref{ch11:marked-step}, root each
+component at an existing factor of source degree at least two or at a factor of source degree one
+in a newly merged component. The common integral and rooted-tree estimates give
 \begin{equation}
  H_c\le C_e\bigl(e^{-B/64}H_f+\zeta\bigr).
  \label{ch11:higher-induction}
 \end{equation}
-The constant includes fixed support conversion and the finite degree
-menu, but not the period or number of marks.
-A new component involving several insertions has at least two individual insertion labels; using the bound for
+The constant includes the fixed change of cover radius and the finite list
+of degrees, but not the period or number of insertions.
+A new component of source degree at least two has at least two individual insertion indices; using the bound for
 one gives the deliberately weaker bound by $\zeta$.
-Existing large-field coefficients involving several insertions are treated as whole incoming factors
-with their prescribed sets of large-field sites retained. Newly selected components use the
-energy reserve of Chapter~\ref{ch06:large-fields} to absorb the fixed
+Existing large-field coefficients of source degree at least two are treated as whole incoming factors
+with their prescribed large-field sets retained. Newly selected components use the
+margin in the decay exponent of Chapter~\ref{ch06:large-fields} to absorb the fixed
 inflations in \eqref{ch11:integrated-component}.
 Choose the stage threshold so $C_e e^{-B/64}\le1/2$ and
 $C_e\zeta\le1/2$. Then $H_f\le1$ implies $H_c\le1$.
 The joint terminal construction starts the induction.
 
-If the input is specified at exponent $\sigma_f-4$, its support
-conversion must still leave the two coarse reserve units. For example,
+If the input is specified at exponent $\sigma_f-4$, its change
+of cover radius must still leave the two additional coarse units. For example,
 \[
  10\cdot15^4(e+9)\le L(\sigma_f-4)
 \]
@@ -535,12 +534,12 @@ The four removed fine units and the two retained coarse units are
 different costs. A declaration that exponents lie in $[98,100]$
 would not prove this inequality.
 
-\section{A common Gaussian comparison}
+\section{A joint Gaussian comparison}
 
 The comparison of several local polynomials must preserve their cross
 covariances. Separate Gaussian approximations for individual factors
 are insufficient. The following finite-degree statement is the useful
-form, permitting a different cutoff for every subset of marks.
+form, permitting a different cutoff for every subset of insertions.
 
 \begin{proposition}[Joint polynomial comparison with cutoffs]
 \label{ch11:joint-gaussian}
@@ -561,7 +560,7 @@ coordinates, after an allowed gauge rotation, obey
 $|\xi_{t,I,j}-a_j-\eta_{t,j}|\le\varepsilon$ on all used coordinates.
 The polynomial's invariance removes the rotation.
 
-With the same weights $\lambda_t$ for all subsets and the empty product,
+With the same probability weights $\lambda_t$ for all subsets and the empty product,
 define
 \[
  M_S=\sum_{\pi\in\mathcal P(S)}\sum_t\lambda_t
@@ -599,37 +598,37 @@ $\sqrt\ell\,\varepsilon$ times the second moment of the polynomial.
 Finally the Gaussian pairing formula~\cite{Isserlis1918} expresses each
 reference moment as a finite sum of products of means and covariances.
 Telescope these products to replace $C_t$ by $C_*$.
-This costs another $\varepsilon$ times a fixed polynomial in $A,B$.
+This contributes another $\varepsilon$ times a fixed polynomial in $A,B$.
 Average with the common probability weights and sum over finitely many
 partitions. The finite polynomial formula \eqref{ch11:cumulants} gives
 the logarithm bound. The empty coefficient is exactly one because
 the empty product has no cutoff.
 \end{proof}
 
-The proposition applies to the purely principal components of a marked
-expansion, after the scalar normalization has been extracted once.
+The proposition applies to the purely principal components of an
+expansion with insertions, after the normalization constant has been extracted once.
 It does not identify the whole interacting density with a Gaussian.
 Deleting an additive remainder for an estimate may leave the precision,
 affine mean and prescribed path data unchanged, but it changes the
-interacting density. Exact reconstruction always uses the genuine
+interacting density. Exact reconstruction always uses the full
 density. This distinction is indispensable when matching the Gaussian
-comparison to the block transformation.
+comparison to the step.
 
-\subsection{The exact cross-covariance on the selected forest}
+\subsection{The exact cross-covariance in the block axial gauge}
 \label{ch11:tree-covariance}
 
 We identify the flat reference used in the preceding comparison.
-Use physical counting coordinates on the two adjacent tori.
+Use coordinates with the unnormalized $\ell^2$ scalar products on the two adjacent tori.
 Let $D,D'$ be their bond-to-plaquette curls and let
 \[
  K=D^*M_fD,\quad K'=(D')^*M_cD',\quad
  A=K+bQ^*Q ,
 \]
-where $M_f,M_c$ are the actual positive curvature metrics and $Q$
-is the rooted gauge-covariant block average derivative. Let $I_F$ insert free forest
+where $M_f,M_c$ are the modified positive curvature metrics and $Q$
+is the rooted linearization of the averaging operation. Let $I_F$ insert the non-tree
 coordinates and $A_F=I_F^*AI_F$. The tree gap gives $A_F>0$.
 Set $X=I_FA_F^{-1}I_F^*$.
-The rooted gauge projection $\mathcal P$ onto the same forest
+The rooted gauge projection $\mathcal P$ onto the slice of the same block axial gauge
 satisfies $A\mathcal P=A$ and $D\mathcal P=D$, since its gauge
 potential vanishes at each block root. Thus $XA=\mathcal P$
 and $DXA=D$; no inverse of the gauge-degenerate full $K$ is used.
@@ -640,16 +639,16 @@ has range $(\ker D)^\perp$; similarly for $K'$.
 The matrices $P_f=DZ$ and $P_c=D'Z'$ are independent of the choices,
 symmetric and positive semidefinite.
 
-For the actual stationary forest response $W$, the adjacent
+For the linearization $W$ of the critical configuration, taken in its representative $W_F$ in the block axial gauge, the adjacent
 Gaussian identities of Chapter~\ref{ch05:gaussian} read
 \[
  KW=Q^*K',\quad AW=bQ^*,\quad DW=JD',
 \]
 where $J=H_{0,f}^{-1}T H_{0,c}$ is the curvature response.
-Here $T$ is the installed two-form transport and $H_{0,f},H_{0,c}$
-are the unmodified diagonal operators; the actual repaired metrics
+Here $T$ is the induced map on curvatures and $H_{0,f},H_{0,c}$
+are the unmodified diagonal operators; the modified metrics
 $M_f,M_c$ still define $K,K'$ and agree with them on curls.
-Thus $J$ is not the raw transport $T$.
+Thus $J$ is not the induced map $T$.
 Transpose the first identity and multiply by $Z$:
 $K'QZ=(D')^*J^*$. Multiplying by $(Z')^*$ gives
 $D'QZ=P_cJ^*$. On the other hand $AZ=D^*+bQ^*QZ$.
@@ -660,38 +659,38 @@ Multiply by $DX$ and use $DXA=D$ and $DXbQ^*=DW$ to obtain
  \label{ch11:conditional-curvature}
 \end{equation}
 This proves every cross-entry simultaneously, including different
-plaquettes and coordinates in the basis of Section~\ref{ch01:gauge}. It retains both actual metrics,
+plaquettes and coordinates in the basis of Section~\ref{ch01:gauge}. It retains both modified metrics,
 even when an adjacent pair straddles a change of stage.
 The right side is positive because the left is a covariance.
 Harmonic and gauge modes were handled through the range equations,
 not discarded.
 
-At zero background the actual row Gram is precisely $A_F$:
+At zero background the Gram matrix of the components is precisely $A_F$:
 the absolutely summed path coefficients reproduce their curvature
-factorization, the gauge-covariant block average derivative is $Q$, and each signed
+factorization, the linearization of the averaging operation is $Q$, and each signed
 orientation has the same quadratic form. Their probability average
-therefore adds no extra factor. The finite path cutoff and actual
+therefore adds no extra factor. The path-length truncation and the non-flat
 background are handled by the inverse-window comparison, not by
 changing this exact identity.
 
-\subsection{Actual local coordinate and cutoff estimates}
+\subsection{Nonlinear local coordinate and cutoff estimates}
 \label{ch11:actual-reader}
 
-Fix a clean neighborhood and one forest, tag, coarse gauge and Gaussian
+Fix a clean neighborhood and one choice of spanning trees of the blocks (a forest; the identity \eqref{ch11:conditional-curvature} holds for every forest and its right side does not depend on the forest, and the estimates below are used, by Hypothesis~(H) of Section~\ref{ch11:marked-step}, with bounds independent of the forest, so that they pass to the average over the forests), one value of the auxiliary index, one coarse gauge and one Gaussian
 sample for all coordinates read by the polynomial family.
-Section~\ref{ch06:linear-comparison} gives actual-to-flat mean error
+Section~\ref{ch06:linear-comparison} gives, against the flat model, mean error
 $O(B^a t_f^2)$ and covariance error $O(B^a t_f)$, plus exponentially
 small window tails. After multiplication by the finitely many curl
 rows and summing the finite-range window entries, these estimates
 remain $x^{-1/2+o(1)}$.
-Combining with \eqref{ch11:conditional-curvature} supplies the full
+Combining with \eqref{ch11:conditional-curvature} gives the full
 conditional curvature array, rather than only its diagonal.
-All comparisons use the same root frame; the gauge-invariance of each
-polynomial then permits its physical evaluation in a different local
-frame without changing its value.
+All comparisons use the same local gauge transformation based at the root; the gauge-invariance of each
+polynomial then permits its physical evaluation with a different local
+gauge transformation without changing its value.
 
 Here is an explicit scale choice that makes the nonlinear error small.
-Put $R=x^{-3/8}$ and $g=\beta^{-1/2}$ on the actual inverse coupling band.
+Put $R=x^{-3/8}$ and $g=\beta^{-1/2}$ on the coupling band.
 The coarse logarithm on the required patch has size
 $x^{-1/2+o(1)}=o(R)$.
 Restrict the finitely many Gaussian read coordinates so the physical
@@ -702,16 +701,16 @@ the polynomial-in-$B$ count of the local reads.
 On this event, the product-logarithm and curvature Taylor remainders
 are $O(B^a R^2)$. Dividing by $g$ gives
 $O(B^a x^{-1/4})$.
-The actual mean error in Gaussian units is
+The mean error against the flat model, in Gaussian units, is
 $O(B^a t_f^2/g)=x^{-1/2+o(1)}$.
 The omitted path tails are smaller than every power of $x$.
 
 For a smooth cutoff also requiring the fine small-field cutoff, use the
-remote event indicator conclusion of Proposition~\ref{ch06:mean-cancellation}.
-The linear fine comparison row is $O(L^{-2}t_f)$; choose the fixed
-block ratio before the inverse coupling threshold so it lies strictly within
-the fine plateau. The gauge-covariant block average comparison has its independently
-chosen strict plateau width. Restricting the local noise to the smaller
+conclusion of Proposition~\ref{ch06:mean-cancellation} for event indicators far from the large-field set.
+The linear fine comparison component is $O(L^{-2}t_f)$; choose the fixed
+block ratio before the lower bound on the reference coupling so it lies strictly within
+the fine plateau. The comparison for the averaging operation has its independently
+chosen strict plateau width. Restricting the local fluctuation variables to the smaller
 fixed fraction of $t_f/g$ required by that proposition has failure
 smaller than every power of $x$, because $t_f/g=M_f^{\rm cut}$ grows
 faster than every power of $\log x$. Intersect these cutoff events
@@ -721,27 +720,27 @@ the finitely many local reads.
 Thus for every fixed family of polynomial reads with the prescribed
 clearance and support, the hypotheses of
 Proposition~\ref{ch11:joint-gaussian} hold with, for example,
-$\varepsilon=x^{-1/32}$ after increasing the threshold.
+$\varepsilon=x^{-1/32}$ after increasing the lower bound on the reference coupling.
 The covariance error is smaller than $\varepsilon$ and cutoff loss
-smaller than $\varepsilon^2$. A common Gaussian sample and coarse
-forecast are used for all subsets. The scalar factor is the one
-extracted from the unmarked integral before marks are chosen; all
+smaller than $\varepsilon^2$. One joint Gaussian sample and one linear prediction of the fine
+curvature from the coarse field are used for all subsets. The normalization constant, which does not depend on the forest (Proposition~\ref{ch09:forest-average-prop}(i)), is the one
+extracted from the integral without insertions before the insertions are chosen; all
 remaining principal products are integrated against its normalized
 Gaussian/Haar probability law. Incoming large-field and correction
 factors belong to the other components already bounded in
 \eqref{ch11:integrated-component}, and are not absorbed into a
 subset-dependent probability measure.
 
-\section{Restarting below a comparison level}
+\section{Restarting below a comparison scale}
 
-A useful auxiliary history keeps the actual inverse coupling constant below a
-comparison level while retaining the paths, adjacent quadratic identities,
+A useful auxiliary history, the \emph{restarted history}, keeps the inverse coupling constant below a
+comparison scale while retaining the paths, adjacent quadratic identities,
 and block geometry. Proposition~\ref{ch11:mass} preserves all original
 normalized coefficient integrals along this history. The construction
 below provides its local representations and estimates on that same
 restarted history.
 
-Two changes of representation are involved. For a large reference inverse coupling parameter
+Two changes of representation are involved. For a large reference coupling parameter
 $s$, define
 \[
  H_s=e^{(\log\log s)^2},\qquad h_s=e^{(\log\log s)^{3/2}},\qquad
@@ -749,7 +748,7 @@ $s$, define
 \]
 The restarted large-field threshold is $\vartheta$, not $t$; its
 support radius is the square of the original logarithmic-square radius.
-Eventually $2\vartheta\le t$. For the piecewise quadratic/linear clip
+Eventually $2\vartheta\le t$. For the piecewise quadratic--linear function
 $d_t$, with linear coefficient $c_{\rm lin}<c_{\rm dir}/16$,
 \[
  d_t(r)-d_\vartheta(r)\ge0,\qquad
@@ -771,26 +770,26 @@ The corrected source is
 \[
  Jq_N,\qquad J=\exp(-C^{\rm ref}),
 \]
-and its exact push is $Jq_k$. Its empty coefficient remains the
-original unmarked density. One must start this comparison from the
-complete $q_k$, including all regular and large-field coefficients involving several insertions.
+and its exact image under the block maps is $Jq_k$. Its coefficient of $z_\varnothing$ remains the
+original density without insertions. One must start this comparison from the
+full $q_k$, including all regular and large-field coefficients of source degree at least two.
 Multiplying a freshly formed product of single insertions would
 discard those coefficients and would not compare the original correlations.
 
 \section{The normalized integral with several insertions}
 \label{ch11:replicated}
-Suppose the stopping representation on $V$ sites has $n$ copies,
+Suppose the representation at the stopping scale, on $V$ sites, has $n$ copies,
 weighted single-insertion bounds $x,y$, and higher regular and large-field
-incidence at most one each. Assign each marked term to one of its
-marks and each unmarked term to one site in its support. The
+incidence at most one each. Assign each term with insertions to one of its
+insertion points and each insertion-free term to one site in its support. The
 coefficient norm is bounded by
 \[
  e^{v_0+V(b_{\rm act}+\kappa)+n(x+y+2)}.
 \]
-Here $v_0$ is the scalar, $b_{\rm act}$ the absolute action cost per
-site and $\kappa$ the unmarked activity site sum. The estimate uses
+Here $v_0$ is the constant term, $b_{\rm act}$ the absolute action cost per
+site and $\kappa$ the insertion-free activity site sum. The estimate uses
 $1+t\le e^t$ for the eligible activity product and retains every
-coefficient involving several insertions. The two unit bounds on the terms involving at least two insertions come from
+coefficient of source degree at least two. The two unit bounds on the terms of source degree at least two come from
 \eqref{ch11:higher-induction}.
 
 Choose $0<\rho\le1$ below the small-field threshold. With the matrix
@@ -805,9 +804,9 @@ $V[b_{\rm act}+\beta b_{\rm loc}(\rho)]$, positivity gives
  Z\ge e^{v_0-V[b_{\rm act}+\beta b_{\rm loc}(\rho)
                          +4D_G\log(16/\rho)]}.
 \]
-Signed regular costs are included in $b_{\rm act}$. Write $q$ for the full source density at the stopping level, as in
+Signed regular costs are included in $b_{\rm act}$. Write $q$ for the full source density at the stopping scale, as in
 \eqref{ch11:source-density}, and $q^{\rm site}$ for the resulting
-per-site cost. Dividing by the lower bound on $Z$ gives
+per-site normalization exponent. Dividing by the lower bound on $Z$ gives
 \begin{align}
  \left|Z^{-1}\int[z_{\mathcal I}]q\,d\lambda\right|
  &\le\frac{e^{Vq^{\rm site}+n(x+y+2)}}{\prod_i\omega_i},\notag\\
@@ -815,7 +814,7 @@ per-site cost. Dividing by the lower bound on $Z$ gives
                   +4D_G\log(16/\rho).
  \label{ch11:replicated-bound}
 \end{align}
-The scalar cancels. Proposition~\ref{ch11:mass} identifies the
+The constant term cancels. Proposition~\ref{ch11:mass} identifies the
 coefficient integrals with the original ones. A reflected tiling at
 scale $a_m$, stopped at $a_k$, has $(a_m/a_k)^4$ sites per cell.
 Taking the number-of-cells root, with common weight $\omega_k$, gives
@@ -824,12 +823,12 @@ Taking the number-of-cells root, with common weight $\omega_k$, gives
  \label{ch11:root-bound}
 \end{equation}
 Here ${\cal R}_m$ denotes the chessboard seminorm of $F$ and
-$q_k^{\rm site}$ the per-site cost at level $k$.
+$q_k^{\rm site}$ the per-site normalization exponent at scale $k$.
 Multiplying an admissible residual weight by $c$ divides the bound
 by $c$, uniformly in the period when the local bounds are uniform.
 
 
-\subsection{An independent positional modulus}
+\subsection{An independent modulus of continuity in the insertion points}
 \label{ch11:positional}
 
 We use the usual reflection-positive transfer representation and
@@ -844,15 +843,15 @@ chessboard seminorms, including when one of them vanishes.
 
 For correlation evaluation positions separated in every coordinate, the required
 modulus follows independently of difference insertions. Represent a
-cyclic correlation as a transfer word
+cyclic correlation as a cyclic product of transfer operators
 $\tr\prod_{i=1}^q B_iT^{H_i}/Z$, where $T$ is positive,
 $B_i$ is a local slab kernel, the slab width is $w$, and the total
-tour length is $M=qw+\sum_iH_i=2sw$.
+length is $M=qw+\sum_iH_i=2sw$.
 The reflected-copy bound for a slab and its adjoint gives
 $\|B_i\|_{2s}\le A Z^{1/(2s)}$.
 The standard Schatten--H\"older inequality
-\cite[Theorem~6.32]{TroppMatrixAnalysis2022} now bounds the word with
-complex gaps $h_i$ by
+\cite[Theorem~6.32]{TroppMatrixAnalysis2022} now bounds the product with
+complex separations $h_i$ by
 \[
  \left|\tr\prod_iB_iT^{h_i}\right|
  \le\prod_i\|B_i\|_{2s}\,
@@ -863,12 +862,12 @@ provided their real parts are nonnegative and their sum equals the
 original total free length. This uses the spectral identity
 $\|T^h\|_{M/\operatorname{Re}h}=Z^{\operatorname{Re}h/M}$.
 
-Moving one insertion by $l$ lattice units changes two gaps to
-$H_0-z,H_{q-1}+z$. If both original gaps exceed $2R$,
-the normalized word is analytic and bounded by $A^q$ for $|z|\le2R$.
+Moving one insertion by $l$ lattice units changes two separations to
+$H_0-z,H_{q-1}+z$. If both original separations exceed $2R$,
+the normalized product is analytic and bounded by $A^q$ for $|z|\le2R$.
 Cauchy's estimate, integrated from $0$ to $l\le R$, gives a
 difference at most $A^q l/R$. With $R=\rho/a_N$, this is
-$A^q la_N/\rho$, a physical Lipschitz bound independent of the mesh.
+$A^q la_N/\rho$, a Lipschitz bound in continuum units, independent of the mesh.
 The chessboard bound is chosen at one fixed interior cell scale below
 the coordinate separation $\rho$.
 
@@ -879,15 +878,15 @@ $\sqrt{\mu(C_u)\mu(C_v)}K(\xi_u,\xi_v)$.
 Positivity of $T$ is preserved. Every fixed cyclic trace converges
 to its cyclic kernel integral by uniform continuity, including the
 partition trace and the finitely many norms obtained from reflected copies of the slab.
-Since $Z>0$, the normalized endpoint inequalities pass to the limit.
+Since $Z>0$, the integrated inequalities for the normalized products pass to the limit.
 Thus the argument does not assume a finite-dimensional transfer space.
-It supplies the modulus at the separated correlation configurations needed
+It gives the modulus at the separated correlation configurations needed
 in Lemma~\ref{ch11:absorption}, without using the difference estimate
 that lemma is intended to prove.
 
-Recall that $\mathsf Z_{N,p,d}$ transports a cutoff coefficient to
-its fixed reference level. A comparison coefficient is admissible
-when its inverse coordinates under $\mathsf Z_{N,p,d}$ have a
+Recall that $\mathsf Z_{N,p,d}$ transfers a cutoff coefficient to
+its fixed reference scale. A comparison coefficient is admissible
+when its inverse coordinates under $\mathsf Z_{N,p,d}$, its \emph{cutoff-scale coordinates}, have a
 uniform subpower bound. The graph norm still combines the regular
 majorant with the large-field majorant multiplied by
 $\kappa_m^{-1}=(\epsilon_m^{\rm for})^{-1/2}$.
@@ -897,11 +896,11 @@ $\kappa_m^{-1}=(\epsilon_m^{\rm for})^{-1/2}$.
 The inhomogeneous graph estimate controls local trials as well.
 Put $s_i=L_i^{1/8}$, $e_i=s_i^{-3}$ and $A_i=32(1+C_i)^2$.
 Choose $100000K_i^6(1+C_{i+1})^2\le s_i$, so the raw error is
-at most $e_i$. Subtract one normalized local insertion density from the terminal trial,
-choosing its reference coefficient so the bottom residual coefficient
+at most $e_i$. Subtract one normalized local insertion density from the trial at the ultraviolet cutoff,
+choosing its reference coefficient so the residual coefficient at the coarsest scale
 is zero. Invertibility permits this choice; exact linearity propagates
 the same subtraction through every step.
-Let $x_i$ be the residual coefficient and $c_i$ its complete remainder norm bound, including the subtracted graph of normalized local insertions. With
+Let $x_i$ be the residual coefficient and $c_i$ its full remainder norm bound, including the subtracted graph of normalized local insertions. With
 $y_i=|S_{L_i}x_{i+1}|$, the raw inequalities give
 \[
  y_i\le K_i\bigl(|x_i|+e_i(y_i+c_{i+1})\bigr),\qquad
@@ -911,8 +910,8 @@ If $A_i|x_i|\le c_i$, substitution gives
 $y_i\le4K_ie_ic_{i+1}$. The ratio choice ensures
 $4K_iA_{i+1}e_i\le1$ and $(4K_i^2+1)s_ie_i\le1$.
 Hence $A_{i+1}|x_{i+1}|\le c_{i+1}$ and $s_ic_i\le c_{i+1}$.
-The induction starts at the bottom with zero coefficient.
-If the terminal trial has coefficient plus remainder cost at most $w$,
+The induction starts at the coarsest scale with zero coefficient.
+If the trial at the ultraviolet cutoff has coefficient plus remainder cost at most $w$,
 the bound on the graph of normalized local insertions gives $c_N\le w+C_N(w+|x_N|)$.
 Absorb $|x_N|\le c_N/A_N$ to obtain $c_N\le2(1+C_N)w$.
 Thus
@@ -921,13 +920,13 @@ Thus
  \label{ch11:descent-error}
 \end{equation}
 
-For a fixed-stencil trial $f=a_N^eF$, extract its degree-$e$
-coefficient $z$ and subtract the corresponding physical section.
+For a trial $f=a_N^eF$ with fixed link support, extract its degree-$e$
+coefficient $z$ and subtract the corresponding dimensionful section.
 Split the difference with zero polynomial coefficient into its small-field part on the
-union stencil $D$ and its complementary part. Attach the latter to
+union $D$ of the link supports and its large-field part. Attach the latter to
 the original selected large-field factors; the terminal density is
 unchanged. If $c_{N,p}$ bounds local derivatives and $b_{N,p}$
-the global value, sufficient costs are
+the global value, sufficient bounds are
 \[
  q=K_ec_{N,p},\quad h=c_{N,p}+C_Nq,\quad
  r=b_{N,p}+2A_e\mathcal N_Nq,
@@ -939,16 +938,16 @@ the global value, sufficient costs are
 \]
 Here $A_e$ bounds the global section, $\mathcal N_N$ is its finite
 sum of inverse threshold powers, $\sigma_N$ the support exponent,
-$u_N>0$ the terminal attachment reserve, and $\zeta_{e,N}$ its
-source weight. Eventually the fixed stencil has cover at most81;
-two extra support units cost $e^{162}$.
-The first term absorbs the coefficient and ordinary remainder; the
-second absorbs the complementary attachment with its original prescribed set of large-field sites.
+$u_N>0$ the strict margin for attachments at the ultraviolet cutoff, and $\zeta_{e,N}$ its
+source weight. Eventually the fixed link support has connected covering number at most 81;
+two extra support units contribute the factor $e^{162}$.
+The first term absorbs the coefficient and small-field remainder; the
+second absorbs the attachment of the large-field part with its original prescribed large-field set.
 If $c_{N,p},b_{N,p},C_N,e^{81\sigma_N},\mathcal N_N,u_N^{-1}$
 are subpower in $a_N^{-1}$, then so is $E_{N,p}$.
 
-Descent and the product-moment estimate now give, at every fixed stopping
-pair $(m,k)$, a reference label $v_{N,p}$ with inverse terminal
+The backward comparison and the product-moment estimate now give, at every fixed
+pair $(m,k)$ of cell scale and stopping scale, a reference label $v_{N,p}$ with cutoff-scale
 coordinates bounded by $2E_{N,p}$ and
 \begin{equation}
  \mathcal R_m\bigl(F-O_{N,p}(e,v_{N,p})\bigr)
@@ -959,31 +958,31 @@ Indeed the residual source weight is inversely proportional to its
 bound in \eqref{ch11:descent-error}. All constants are independent
 of period when the terminal norm bounds are. Thus the discrepancy for local trials tends to zero in the chessboard
 seminorm. The same estimate applies to finite differences formed from
-translates, using the derivative bounds on the translated stencils.
-It bounds inverse terminal coordinates, not the raw reference labels.
+translates, using the derivative bounds on the translated link supports.
+It bounds cutoff-scale coordinates, not the raw reference labels.
 
-\section{Finite-dimensional detection before taking limits}
+\section{Uniform separating bounds at finite cutoff}
 \label{ch11:detectors}
 
 A useful part of the later difference argument is entirely finite
-dimensional. We record it now, keeping its analytic inputs visible.
+dimensional. We record it now, keeping its analytic hypotheses visible.
 Let $V$ be a fixed finite-dimensional label space, $E_i\subset V$
 the equation subspace at a finite cutoff, and $\Pi_i$ a bounded
 projection with kernel $E_i$. Such projections need not converge.
 Choose a fixed invariant Euclidean inner product and average an
 orthogonal projection with this kernel over the finite symmetry group,
-assuming $E_i$ is invariant. Each conjugate kills $E_i$ and differs
+assuming $E_i$ is invariant. Each conjugate annihilates $E_i$ and differs
 from the identity by a map into $E_i$. The average has these two
 properties, which imply idempotence: if $v-\Pi_i v\in E_i$, then
 $\Pi_i(v-\Pi_i v)=0$. Its norm remains bounded uniformly in $i$.
 
 Let $L_i:V\to\CC^r$ be the finite family of correlation functionals used
-to detect the quotient. Suppose
+to separate the quotient. Suppose
 \begin{equation}
  |\Pi_i v|\le Z|L_i\Pi_i v|
  \label{ch11:detector-bound}
 \end{equation}
-with one constant $Z$, independent of cutoff and physical volume.
+with one constant $Z$, independent of cutoff and of the volume in continuum units.
 This follows from a sufficiently accurate finite-cutoff comparison
 with an injective free matrix of correlation pairings: if $|c|\le K|Gc|$ and
 $\|Q-G\|\le(2K)^{-1}$, then
@@ -1000,7 +999,7 @@ for
  z_i=\frac{x_i-y_i}{1+|y_i|},
 \]
 the microscopic equation comparison gives
-$|L_i z_i|\le(2Z)^{-1}$ eventually, uniformly in the physical volume.
+$|L_i z_i|\le(2Z)^{-1}$ eventually, uniformly in the volume in continuum units.
 Then $|y_i|\le2ZC+1$.
 \end{lemma}
 \begin{proof}
@@ -1028,33 +1027,34 @@ $h\ge1$,
 \]
 For a fixed physical distance $b>0$, taking $h=\lceil b/a\rceil$ bounds the right side by
 $2\sup|F|/b$. To replace averaged correlation evaluation positions by the desired
-positions, however, one needs a positional modulus established
+positions, however, one needs a modulus of continuity in the insertion points established
 independently of the normalized difference estimate being proved.
 That modulus is an essential analytic input, not another consequence
 of this telescoping identity. Likewise the microscopic equation
-insertion must vanish against the actual distant spectator product
-at finite cutoff, uniformly over the physical volumes under
+insertion must vanish against the distant spectator product
+at finite cutoff, uniformly over the volumes in continuum units under
 consideration. An identity obtained only after an ordered limit
 would not justify the absorption lemma's uniform hypothesis.
 
 \section{Collected estimates and local calibration}
+\label{ch11:collected}
 
-The chapter now supplies the quantitative single-insertion raw-map estimates
+The chapter now gives the quantitative single-insertion raw-map estimates
 \eqref{ch11:graph-estimates}--\eqref{ch11:graph-difference},
-including ball invariance and fixed-input continuity; the complete
-recurrence for terms involving at least two insertions \eqref{ch11:higher-induction}; and the normalized
+including ball invariance and fixed-input continuity; the full
+recurrence for terms of source degree at least two \eqref{ch11:higher-induction}; and the normalized
 product-moment estimate \eqref{ch11:replicated-bound}.
 The exact tree covariance \eqref{ch11:conditional-curvature} and the
 local estimates in Section~\ref{ch11:actual-reader} identify the
-actual common Gaussian used for the principal components.
-The source weights and positive support reserves appearing in these
+joint Gaussian law used for the principal components.
+The source weights and positive margins in the support exponent appearing in these
 statements must be included in the selected stage requirements.
 
 For a finite cutoff, composing the invertible single-insertion coefficient
-maps from $N$ to the reference level defines
-$\mathsf Z_{N,p,d}$. It is real and symmetry-equivariant, and the exact
-unit rule gives the reference unit coefficient $a_{r(d)}^de_0$.
-The physical insertion is therefore
+maps from $N$ to the reference scale defines
+$\mathsf Z_{N,p,d}$. It is real and symmetry-equivariant (the equivariance uses that of the insertion-free representations, which rests on Assumption~\ref{ch09:forest-assumption}, and the transport part of Hypothesis~(H) of Section~\ref{ch11:marked-step}; it is not proved here without them), and the exact
+rule for the identity field gives its coefficient $a_{r(d)}^de_0$ at the reference scale.
+The normalized local insertion is therefore
 \[
  O_{N,p}(d,c;x)=a_N^{-d}
        P_d^{\rm loc}[S_{1/t_N}\mathsf Z_{N,p,d}^{-1}c](x),
@@ -1062,7 +1062,7 @@ The physical insertion is therefore
 with the factor-degree scaling $S_t$ of the local section.
 Uniform column estimates follow by multiplying the displayed
 one-step inverse bounds; their subpower growth requires the
-corresponding selected schedule inequalities.
+corresponding inequalities on the schedule.
 
 There remains a distinct local calibration issue before claiming the
 all-period finite-difference theorem. A translated finite difference
@@ -1072,21 +1072,21 @@ of degree $d$ has a protected local representative at degree $d+1$:
  =a_N^dO(x+a_Ne_\alpha)-a_N^dO(x).
 \]
 This cancels the explicit $a_N^{-1}$, but moving the derivative-weight
-origin costs $2^{\varpi_N q_N}$.
-The stage entrance must include
-$2^{\varpi_Nq_N}\le\widehat\beta_N$ to keep that cost subpower.
+origin contributes the factor $2^{\varpi_N q_N}$.
+The lower bound on the starting scale of the stage must include
+$2^{\varpi_Nq_N}\le\widehat\beta_N$ to keep that factor subpower.
 The same requirement applies to repeated fixed finite differences.
 
-Section~\ref{ch11:trial-descent} now supplies the trial encoding with
-subpower inverse terminal coordinates and a vanishing chessboard-seminorm
+Section~\ref{ch11:trial-descent} now gives the reference label $v_{N,p}$ of the trial, with
+subpower cutoff-scale coordinates and a vanishing chessboard-seminorm
 error, under its explicit terminal and stage bounds.
-The microscopic equation section and its comparison with the physical
-section are supplied next. The argument with the separating family proves the finite-cutoff comparisons
+The microscopic equation section and its comparison with the dimensionful
+section are given next. The argument with the separating family proves the finite-cutoff comparisons
 needed for uniform differences.
 
 \input{chapters/11-equation-calibration}
 
-\section{The moving equation space and uniform finite differences}
+\section{The cutoff-dependent equation space and uniform finite differences}
 \label{ch11:uniform-differences}
 
 All eventual assertions in this section mean: there is $N_0$ such
@@ -1110,9 +1110,9 @@ independent of $p$. The inverse-column bound makes every bounded
 coefficient family admissible. This class is closed under finite sums
 and multiplication by scalar families of modulus at most one.
 
-\begin{lemma}[Vanishing chessboard seminorms for the actual equation space]
+\begin{lemma}[Vanishing chessboard seminorms for the equation space]
 \label{ch11:uniform-sweep}
-If $z_i$ is admissible and $\Pi_i z_i=0$, its physical insertion
+If $z_i$ is admissible and $\Pi_i z_i=0$, its normalized local insertion
 has chessboard seminorm tending to zero, uniformly in $p$, at every
 sufficiently fine fixed cell scale. The assertion includes all its
 finitely many signed and conjugated orientations.
@@ -1122,24 +1122,24 @@ Put $v_i=P_{N,p,e}^{-1}X_i^{-1}z_i$.
 Its norm is subpower, and $v_i\in S_{t_N}R_e\mathcal I_e$.
 The error in \eqref{ch11:equation-root-error} is therefore at most
 $e^{-\tau_N/16}$ eventually, uniformly in $p$, after increasing
-the fixed mesh threshold.
+the fixed lower bound on $N$.
 
 The microscopic comparison insertion itself has chessboard seminorm exactly
 zero. Indeed, every other reflected copy lies outside its fixed
 microscopic equation neighborhood once the mesh is sufficiently
-fine relative to the fixed physical cell. Apply
+fine relative to the fixed cell in continuum units. Apply
 \eqref{ch02:microscopic-null} to one copy and the product of all
 other copies. That product is bounded and measurable at each
 finite cutoff, regardless of the size of its coefficients.
 There is no limiting argument in this identity.
-The smallest allowed physical period is positive, so one mesh
-threshold ensures the required nonwrapping and separation for
+The smallest allowed period in continuum units is positive, so one lower bound
+on $N$ ensures the required nonwrapping and separation for
 every period. The triangle inequality for the chessboard seminorm proves the claim.
 \end{proof}
 
 In the following local comparison, $S_t$ multiplies each basis
 coordinate by $t$ to its curvature-factor count, whereas $W_\rho$
-uses scaling dimension. Neither is the terminal map $\mathsf Z$.
+uses scaling dimension. Neither is the coefficient map $\mathsf Z$.
 The equation correction $R_d$ and its ideal $\mathcal I_d$ are
 those of Theorem~\ref{ch02:equation-adapted}; the separate map
 $P_{N,p,d}$ compares the two local sections.
@@ -1148,24 +1148,25 @@ $P_{N,p,d}$ compares the two local sections.
 \label{ch11:common-extraction}
 
 The map used to normalize free comparison columns cannot be chosen
-independently of the polynomial actually integrated.
-Here is the construction from the actual single-insertion representation.
+independently of the polynomial that is integrated.
+Here is the construction from the single-insertion representation.
 Fix a polynomial degree $D\ge d$, to be increased below, before the
 stage derivative order; require $D+1$ derivatives.
-At comparison depth $k$ put
+At the comparison scale $k$ put
 \[
  s=\widehat\beta_k,\quad H=e^{(\log\log s)^2},\quad
  M=\lceil(\log s)^2\rceil,\quad B=M^2,\quad b=8B,
  \quad \gamma=\frac1{16(D+2)}.
 \]
+\mgubi{Issue 10: here $b=8B$ is the patch radius and grows with $s$; below ($D>bd+c_d+v$, $H^{bd+c_d}$) $b$ must be a fixed exponent, chosen before $D$. existence/\allowbreak actual-rank-purchases.\allowbreak tex says so explicitly; v3 dropped the sentence. Use two letters. $B$ also has three meanings in this section.}%
 The original insertion norm uses radius $M$, whereas the restarted
 representation uses radius $B$. These are different radii.
 
-Let $A u$ be the actual local polynomial coefficient in physical
-normalization. The calibrated single-insertion bound controls the complete
+Let $A u$ be the actual local polynomial coefficient in dimensionful
+normalization. The calibrated single-insertion bound controls the full
 regular series by $C_k\|Au\|_1$.
-Split it at original connected cover number $M$.
-The part with cover number at most $M$ is contained in the
+Split it at original connected covering number $M$.
+The part with covering number at most $M$ is contained in the
 radius-$b$ patch: a connected chain of $M$ original-radius cubes
 has diameter at most $4M^2+4M\le8M^2$.
 The remaining part has norm at most
@@ -1186,7 +1187,7 @@ $C_k\|Au\|_1\|x\|^{D+1}$, up to a fixed constant.
 The finite degree-$d$ localization by radial Taylor expansion of the near sum is its
 prescribed local polynomial coordinate: all regular remainders have
 zero extracted polynomial. Applying the extraction to a Taylor polynomial instead of the
-actual holonomy curve changes this by at most
+holonomy curve itself changes this by at most
 $C(1+b)^a\theta$ times its coefficient norm.
 This follows from the local holonomy equation: the normalized
 logarithm of a threshold holonomy and its linearized edge
@@ -1195,14 +1196,14 @@ in the link location. Only finitely many terms contribute
 through degree $d$.
 
 All constants just used are fixed before $s$.
-The stage delay can impose
+A lower bound on the starting scale of the stage can impose
 \[
  C_k\le H^\gamma,\qquad
  C_D(1+n_b)^D\le H^\gamma,\qquad
  C(1+b)^a\le H^\gamma.
 \]
 The second and third inequalities follow from
-$\log b=O(\log\log s)=o(\log H)$; the first is a delay for
+$\log b=O(\log\log s)=o(\log H)$; the first is a lower bound on the starting scale for
 the already selected stage column bound.
 The discarded-support factor $\eta$ and the nonlinear ray
 error $\theta$ are smaller than every fixed inverse power of $H$.
@@ -1213,19 +1214,19 @@ uniformly in $N,p,u$.
 Convert links to linear sums of based plaquette curvatures in the
 axial gauge on this same patch. Let $W_u$ be the resulting raw
 polynomial in curvature divided by $g=\beta_{N,p,k}^{-1/2}$.
-Each axial row has coefficient sum at most $4bg/\theta$.
-The inverse coupling band gives
+Each axial row has coefficient sum at most $4bg/\theta$.\mgubi{Issue 10: this paragraph uses two facts on the patch axial gauge that v3 does not state: each link is a product of at most $4b$ plaquette holonomies, and $|x-y|\le C_Ga^2/\theta$. Both are proved in existence/\allowbreak actual-rank-purchases.\allowbreak tex.}
+The coupling band gives
 $g/\theta\le\sqrt{8/7}\,H^{-1}$, so this row sum is eventually
 at most one. Thus $\deg W_u\le D$ and
-$\|W_u\|_{\rm coeff}\le H\|Au\|_1$, after the finite delays.
+$\|W_u\|_{\rm coeff}\le H\|Au\|_1$, after the finite increases of the starting scale.
 The construction is linear in $u$ because the Taylor polynomial
-of the actual function is unique; it does not require a linear
+of the function itself is unique; it does not require a linear
 choice of its separate activity representatives.
 
-The raw polynomial also approximates the same physical insertion
+The raw polynomial also approximates the same normalized local insertion
 on the restarted small-field region. Its threshold is
 $\vartheta=s^{-1/2}e^{(\log\log s)^{3/2}}$.
-Put $a=4b\vartheta$. The actual axial link logarithm divided
+Put $a=4b\vartheta$. The nonlinear axial link logarithm divided
 by $\theta$ and the linear sum of plaquette curvatures divided
 by $\theta$ differ by at most $C_Ga^2/\theta$, and their size is
 at most $2a/\theta=H^{-1+o(1)}$.
@@ -1240,11 +1241,11 @@ $4H^\gamma H^{(-1+\gamma)(D+1)}\|Au\|_1
  =4H^{-D-15/16}\|Au\|_1$.
 The nonlinear coordinate error and discarded-support error
 are smaller than any required inverse power.
-For normalized target columns with
-$\|Au\|\le H^{c_d}$, choose $D>c_d+v$ before the stage
-orders to obtain error $H^{-v}$.
+For the solutions $u=u_{j,N,p}$ of the lift equations \eqref{ch11:simultaneous-detector-lifts} below, which satisfy
+$\|Au\|\le H^{bd+c_d}$, choose $D>bd+c_d+v$ before the stage
+orders to obtain error $H^{-v}$.\mgubi{Issue 10: impossible if $b=8B$, since $D$ is fixed before $s$.}
 
-Let $K_k$ be the original same-insertion covariance of the actual
+Let $K_k$ be the original same-insertion covariance of the
 Gaussian comparison. Define the polynomial used in Wick calculations by
 \[
  \mathscr P u=\exp\!\left(\tfrac12\Delta_{K_k}\right)W_u.
@@ -1270,10 +1271,10 @@ Since $(4b)^D\le H^\gamma$ eventually, its coefficient bound is
 $4H^{3\gamma}\|Au\|_1\le H^\alpha\|Au\|_1$,
 where $\alpha=4\gamma=1/(4(D+2))$.
 The finitely many radial Taylor coefficient functionals likewise have coefficient
-norm at most $H^\alpha$ after the stage delay.
+norm at most $H^\alpha$ after increasing the starting scale.
 These bounds are needed before applying the Wick estimate.
-The actual covariance has entry bound at most $H^{1/4}$ after
-a stage delay, so the rescaled covariance entries are at most
+The covariance itself has entry bound at most $H^{1/4}$ after
+an increase of the starting scale, so the rescaled covariance entries are at most
 $H^{-1}$ eventually.
 For polynomials of degree at most $D$, the coefficient norm of
 the difference between this Wick operator and the identity
@@ -1288,15 +1289,15 @@ value. This bound is independent of the number of ambient
 coordinates because the polynomial coefficient norm already
 sums their coefficients.
 
-Let $\mathcal E$ denote exposure in the fixed radial polynomial
-frame, and choose $c_d$ with
+Let $\mathcal E$ send $v\in V_d$ to its polynomial, of weighted degree at most $d$, in the fixed radial jet variables, expanded in the fixed radial polynomial basis.
+It is injective between finite-dimensional spaces, so one may choose $c_d\ge1$ with
 $\|v\|_1\le c_d\|\mathcal Ev\|_{\rm coeff}$.
-The low-weight coefficient extraction of $\mathscr Pu$ belongs to this frame:
+The extraction from $\mathscr Pu$ of the coefficients of low scaling dimension belongs to this basis:
 the original covariance is a real spatial matrix tensored with
 the identity on $\gLie$, so its contractions commute with the
 adjoint action. Axial conversion and weighted truncation
 also commute with that action. Define $Tu$ to be precisely
-these frame coefficients, retaining the inverse coupling scaling above.
+these basis coefficients, retaining the inverse coupling scaling above.
 Using $\alpha=1/(4(D+2))$, the preceding coefficient bounds,
 linear substitution, and the Wick estimate give
 \[
@@ -1310,12 +1311,12 @@ operation, hence $T1=1$ and $T\bar u=\overline{Tu}$.
 This constructs the same real linear map for every column;
 it is not an arbitrary replacement for $A$.
 The inverse bound and simultaneous lift equations stated below
-therefore apply to this actual localization onto the polynomial label space.
+therefore apply to this common localization map onto the polynomial label space.
 
 Finally let $\chi$ be the restarted small-field indicator on the
 whole patch. Define $f_u^{\rm near,mask}$ to be only the near sum
-with its original event indicators restored, including its scalar term.
-It equals the without its event indicator $F_u^{\rm near}$ wherever $\chi=1$,
+with its original event indicators restored, including its constant term.
+It equals $F_u^{\rm near}$ without its event indicator wherever $\chi=1$,
 because the restarted threshold is smaller than the original one.
 Then
 \[
@@ -1328,17 +1329,17 @@ $\chi=1$ and is assigned to the original prescribed large-field set.
 The distant regular sum and original large-field terms were
 retained throughout. Substituting this identity into the finite
 squarefree exponential preserves every higher source variable coefficient.
-Thus the actual density, polynomial $\mathscr P$, coefficient
-extraction $T$, and normalized lifts all refer to the same
+Thus the density, polynomial $\mathscr P$, common
+localization map $T$, and normalized lifts all refer to the same
 terminal insertion.
 
 
-The common extraction may also be chosen equivariant under the
+The common localization map may also be chosen equivariant under the
 finite signed coordinate group. Average the raw polynomial
 construction on domain and range before defining $T$.
-The actual insertion, covariance and localization by radial Taylor expansion have the
+The insertion, covariance and radial Taylor localization have the
 corresponding covariance identities, so this preserves both
-the exact density comparison and its low-weight coefficient extraction.
+the exact density comparison and its extraction of the coefficients of low scaling dimension.\mgubi{Issue 6: the covariance identities are not proved. The averaging preserves exactness only if the representation with insertions is covariant, that is, under Assumption~\ref{ch09:forest-assumption} and the transport part of Hypothesis~(H); say so here. All equivariance under the lattice group in this section comes from this step.}
 All errors are enlarged by at most a fixed finite symmetry
 norm. Since their relative bounds tend to zero, choose the
 threshold to make the averaged error at most one half.
@@ -1346,8 +1347,8 @@ Average with conjugation at the same time. This uses one
 polynomial construction for all transformed columns, rather
 than symmetrizing independently chosen lifted vectors.
 
-At a fixed comparison depth the inverse front-column bounds give
-$\|u\|_1\le D_k\|Au\|_1$, uniformly in $N,p$.
+At a fixed comparison scale $k$ the one-step bounds for the coefficient of one transferred insertion (its $\ell^1$ norm at scale $m$ is at most $C_{J(m+1)}L_m^d$ times that at scale $m+1$, with the stage column bound $C_j$ of Section~\ref{ch10:choices}), applied successively from the reference scale $r(d)$ to $k$, give\mgubi{The one-step bound is not stated in v3. It is proved in v2 (E-one-mark, Lemma ``One marked step'') and in Lean (YM.\allowbreak Work.\allowbreak G08.\allowbreak cone\_step, proof read by an agent); existence/ assumes it. It follows from \eqref{ch11:graph-estimates} if $C_j$ dominates the bound on the localization map and $s_f$, which Section~\ref{ch10:choices} does not yet require. The $C_k$ earlier in this subsection is the same constant, $C_{J(k)}$.}
+$\|u\|_1\le D_k\|Au\|_1$, uniformly in $N,p$, with $D_k=a_k^d\prod_{m=r(d)}^{k-1}C_{J(m+1)}L_m^d$; the factor $a_k^d$ undoes the dimensionful normalization of $Au$.
 The relative half-error therefore implies
 $\|u\|_1\le2D_k\|Tu\|_1$, so $T$ is injective and hence
 invertible. Let $v_1,\ldots,v_r$ be real representatives of the
@@ -1358,23 +1359,23 @@ $\rho=H^b$ solve all the equations
  S_{g/\theta}T u_{j,N,p}=W_\rho v_j.
 \end{equation}
 They have unique real solutions using the same $T$.
-The inverse coupling band gives $\theta/g\le2H$, and therefore
+The coupling band gives $\theta/g\le2H$, and therefore
 \[
  \|u_{j,N,p}\|_1
  \le2D_k\|S_{2H}W_\rho v_j\|_1.
 \]
 Their sum is a finite bound $B_k$ independent of cutoff and
-period. No bound uniform in comparison depth is needed.
+period. No bound uniform in the comparison scale is needed.
 Moreover $\|Au_j\|\le2\|Tu_j\|$ is bounded by a fixed
 power $H^{bd+c_d}$, where the additional exponent $c_d$
 depends on factor counts and the finite target list, not on
-$b$. This is the amplification used when choosing the
+$b$. This is the growth factor used when choosing the
 Taylor order and the geometric magnification.
 
-Here $c_B(X)$ is the connected cover number at radius $B$.
+Here $c_B(X)$ is the connected covering number at radius $B$.
 The support exponent multiplies $c_B(X)$ in an exponential norm,
 whereas a source weight is raised to the number of distinct
-insertion labels. Changing one of these weights does not change
+insertion indices. Changing one of these weights does not change
 the coefficient or its original prescribed large-field set.
 
 \subsection{Absorbing the larger source weight}
@@ -1383,13 +1384,13 @@ the coefficient or its original prescribed large-field set.
 A bound by one at the original source weight is not enough for the
 comparison of separating correlations. The following argument absorbs the necessary change
 of weight uniformly in the number of reflected cells. Write $n\le2$
-for the number of marks in each cell, fix $U\ge1/16$, and put
+for the number of insertions in each cell, fix $U\ge1/16$, and put
 \[
  \omega_-=H^{1/16-U},\qquad \omega=H^{1/16}.
 \]
-For a marked activity with support $X$ and source variable set $I$, its
+For an activity with insertions, with support $X$ and source variable set $I$, its
 weighted absolute bound contains $\omega_-^{|I|}e^{e_*c_B(X)}$.
-Choose $e_*=e+2$ before constructing the marked expansion.
+Choose $e_*=e+2$ before constructing the expansion with insertions.
 The same expansion, estimated at $e_*$, is used below; there is
 no change of coefficients when its support exponent is lowered.
 
@@ -1404,23 +1405,23 @@ The stage choices of sufficiently large starting scales impose a common bound $H
 on $R_{e+2}$, $C_*$, $L^4T_{e+2}$, and the fixed incidence
 constants, with $\epsilon_j\downarrow0$.
 Consequently every finite product of these constants is
-$H^{o(1)}$ along the selected comparison levels.
-This uniform delay, rather than treating a changing stage
+$H^{o(1)}$ along the selected comparison scales.
+This uniform lower bound on the starting scale, rather than treating a changing stage
 constant as an absolute constant, justifies the exponent
 comparisons below.
-This bounded-cover assertion is used at restoration levels.
+This bounded-cover assertion is used at the middle scales.
 It is not an assertion that the separated opening sites
 at distance $H^b$ fit in one radius-$AB$ ball.
-The supports of their terms involving at least two insertions are instead estimated by
+The supports of their terms of source degree at least two are instead estimated by
 \eqref{ch11:opening-higher-weight}.
-At an earlier leading step a nonzero connected principal component
-has radius at most $(6n+3)B$ around each of its own marked insertion points;
-a term involving two insertions with more widely separated insertion points is absent.
+At an earlier step of the \emph{upper interval}, from the comparison scale to the middle scale, a nonzero connected principal component
+has radius at most $(6n+3)B$ around each of its own insertion points;
+a term of source degree two with more widely separated insertion points is absent.
 Only these nonzero components enter the principal support bound.
 
 Let $Y_c$ contain all prescribed supports in cell $c$. Suppose
 these sets have mutual distance at least $D'$, and every activity
-support contains the sites of all its marks. Let $t(I)$ count
+support contains the sites of all its insertion points. Let $t(I)$ count
 the cells represented in $I$, and let $t(X)$ count the sets $Y_c$
 met by $X$. Then $|I|\le nt(I)\le nt(X)$.
 For $t(X)\ge2$, a connected $B$-cover gives
@@ -1437,19 +1438,19 @@ path segments belong to disjoint distance balls, and a cube
 cannot meet two of them. Summing proves the inequality.
 Here connected cover means the connected cover used in the
 activity norm; one cannot replace it by an arbitrary disconnected
-cover of the marked sites.
+cover of the insertion points.
 
-\begin{lemma}[Regular weight restoration]\label{ch11:restore-regular}
-Suppose the regular remainder has rooted activity norm at most
+\begin{lemma}[Regular remainders at the larger source weight]\label{ch11:restore-regular}
+Suppose the regular remainder has incidence bound at most
 $H^{\kappa-q}$ at $(\omega_-,e+2)$, with support containing its
-marked sites, and $\lambda/\log H\to\infty$.
-If $q\ge\kappa+Un+2$, its rooted activity norm at $(\omega,e)$ is at most
+insertion points, and $\lambda/\log H\to\infty$.
+If $q\ge\kappa+Un+2$, its incidence bound at $(\omega,e)$ is at most
 $H^{-1}$ for all sufficiently large $H$.
 \end{lemma}
 \begin{proof}
 Separate activities meeting one cell from those meeting at least
 two. The first class gains at most $H^{Un}$ on changing weight.
-For the second class retain one additional unit in the exponent of the support weight and use
+For the second class retain one additional unit of the support exponent and use
 \[
  H^{U|I|}e^{-c_B(X)}
  \le H^{Unt(I)}e^{-\lambda t(I)}\le1
@@ -1459,8 +1460,8 @@ $(H^{Un}+1)H^{\kappa-q}\le2H^{-2}\le H^{-1}$.
 The estimate is independent of the total number of cells.
 \end{proof}
 
-The support containment is preserved by the actual algebra.
-Initially a marked insertion contains its site. A coarse activity
+The support containment is preserved by the algebra.
+Initially an insertion contains its site. A coarse activity
 contains the projected union of the fine supports, and its source variable
 set is their union. Prescribed support enlargement, event indicator splitting
 and the connected regrouping all retain those projected points.
@@ -1474,12 +1475,12 @@ $\lambda/\log H\to\infty$, uniformly in period.
 The condition concerns the distance between replica cells, not
 between the two insertions within one cell.
 
-\begin{lemma}[Large-field weight restoration]
+\begin{lemma}[Large-field activities at the larger source weight]
 \label{ch11:restore-forced}
 Suppose the old large-field site bound is $\eta_-$ at
 $(\omega_-,e+2)$, where $\eta_-$ decays faster than every inverse
 power of $H$. Suppose each cell has at most $2^n$ additional
-failed-cutoff factors, supported in $Y_c$, whose coefficient
+\emph{failed-cutoff factors} (the terms $-(1-\chi)Rz_I$ of the factors $1-(1-\chi)Rz_I$ in the proof below, which vanish where the cutoff $\chi$ equals one), supported in $Y_c$, whose coefficient
 bounds before source variable weighting are at most $C_*=H^{o(1)}$ and whose
 support bounds at exponent $e+1$ are at most $R_{e+1}=H^{o(1)}$.
 Every nonzero such factor must meet an old large-field activity.
@@ -1501,7 +1502,7 @@ Expand it as a product of factors $1-(1-\chi)Rz_I$.
 Whenever such a factor is nonzero, its support contains a large-field indicator
 covered by an original prescribed large-field set. Thus every surviving
 connected component contains an old large-field activity.
-This is a pointwise identity of the complete marked density.
+This is a pointwise identity of the full density with insertions.
 
 Put $F=\log H$. A new failed-cutoff factor has bound
 $p_f\le H^{1/8}C_*R_{e+1}$ and assign it auxiliary bound
@@ -1517,7 +1518,7 @@ The original bound $p_o^-$ at $(\omega_-,e+2)$ gives
 \]
 For activities meeting at least two cell neighborhoods,
 \eqref{ch11:dispersal} absorbs the power of $H$.
-For the remaining activities its cost is at most $H^{Un+2^n}$.
+For the remaining activities its factor is at most $H^{Un+2^n}$.
 The old auxiliary site sum is therefore at most
 $e^gH^{Un+2^n}\eta_-$.
 
@@ -1543,7 +1544,7 @@ No independence of large-field indicators or activities is used.
 \end{proof}
 
 These lemmas explain the required stronger support estimate.
-For the same leading expansion let its regular remainder satisfy
+For the same expansion on the upper interval let its regular remainder satisfy
 \[
  z_0\le H^{-q},\qquad z_{j+1}\le(\alpha+2)z_j,\qquad
  (\alpha+2)^{k-\ell}\le H^\kappa
@@ -1554,10 +1555,10 @@ The constants at exponent $e+2$ must be fixed before $\alpha$
 and the block ratio. Applying an estimate proved only at exponent
 $e$ a second time does not establish this premise.
 
-If the corrected leading coefficients at the middle level are at
-most $H^{-31/32}$, their rooted contribution at the restored
+If the corrected principal coefficients at the middle scale are at
+most $H^{-31/32}$, their contribution to the incidence bound at the larger source
 weight is at most $2^nR_eH^{-27/32}$.
-Together with the two restoration lemmas this gives regular
+Together with the two preceding lemmas this gives regular
 bound
 \[
  H^{-1}+2^nR_eH^{-27/32}\le H^{-3/4}
@@ -1565,14 +1566,14 @@ bound
 and large-field bound at most $H^{-q}$.
 The reference connected polynomial is subtracted once, on the
 same sample and with the same subset moments.
-Its failed-cutoff part is precisely the part handled above.
+Its large-field part is precisely the part handled above.
 
-On the lower interval suppose the actual marked step has the
+On the lower interval suppose the step with insertions has the
 quantitative bound
 \begin{equation}\label{ch11:lower-weighted-step}
  z_{j+1}\le\alpha z_j+H^{1/2}z_j^2
 \end{equation}
-at the restored weight, and its large-field part stays in the
+at the larger source weight, and its large-field part stays in the
 allowed interval. If
 $(\alpha+1)^{\ell-w}\le H^{1/4}$, induction gives
 \[
@@ -1581,32 +1582,32 @@ $(\alpha+1)^{\ell-w}\le H^{1/4}$, induction gives
 Thus every step remains in the domain
 $H^{1/2}z_j\le1$ used in the induction.
 At the output the source variable incidence and large-field site bounds
-are at most one. On a torus with $q_0$ sites and $nq_0$ marks,
-the scalar majorant of the marked exponential gives
+are at most one. On a torus with $q_0$ sites and $nq_0$ insertions,
+the scalar majorant of the exponential with insertions gives
 \begin{equation}\label{ch11:weighted-output-envelope}
  \omega^{q_0|I|}|[z_I^{\rm all}]\rho_{\rm marked}(U)|
  \le\exp\bigl(\text{unmarked exponent}(U)+q_0(1+n)\bigr).
 \end{equation}
 Every cell carries the source monomial $I$ in the coefficient on the left.
-The unmarked integral is still the original partition function
+The integral without insertions is still the original partition function
 by \eqref{ch11:source-density}.
-This supplies the numerator needed in the finite separating family
-comparison, once the stronger leading recurrence and
-\eqref{ch11:lower-weighted-step} have been proved for the combined marked estimate. The ordinary bound for terms involving at least two insertions by one has neither
+This gives the numerator needed in the finite separating family
+comparison, once the stronger upper recurrence and
+\eqref{ch11:lower-weighted-step} have been proved for the combined estimate with insertions. The bound by one of \eqref{ch11:higher-induction} for terms of source degree at least two has neither
 the source weight nor the small initial remainder needed here.
 
 \paragraph{The two weighted step estimates.}
 The inflations required here depend on the inverse coupling, so the
 fixed-inflation statement alone is insufficient.
-Split the positive prescribed set of large-field sites decay of
-Chapter~\ref{ch06:large-fields} into reserved fractions and choose
-the reported bound $G(x)$ so that multiplication by $G(x)^{-2}$
+Split the decay exponent $Kh(x)^2r$ of a selected component with $r$ selected cutoff conditions, given by
+Chapter~\ref{ch06:large-fields} (Section~\ref{ch11:restart-construction}), into fractions kept aside and choose
+the reported bound $G(x)=\exp\bigl(-a_*h(x)^2\bigr)$ with $4a_*\le K/2$ so that multiplication by $G(x)^{-2}$
 leaves a fixed positive fraction. This choice is made before the
 thresholds. The amplitudes without prescribed large-field sites have a negative inverse coupling power
 times subpower factors; multiplying by $H^c$ for fixed $c$ retains
-that power, since $\log H=o(\log x)$. These reserves establish the common
+that power, since $\log H=o(\log x)$. These margins establish the common
 product bound \eqref{ch11:integrated-component} for the following
-inflations, including their product over distinct prescribed sets of large-field sites.
+inflations, including their product over distinct prescribed large-field sets.\mgubi{Issue 10: the product hypothesis used here is not stated where the inflation factors are introduced (Section~\ref{ch11:marked-step}); existence/\allowbreak actual-mixed-marked-compiler.\allowbreak tex states it.}
 
 Use $e_*=e+2$, put $T=T_{e_*}$ and choose $\alpha\ge8T$.
 For $H^{-q}\le z\le H^{-4}$ and principal incidence at most $H^{-4}$,
@@ -1616,7 +1617,7 @@ take
  \qquad m=G(x)^{-2}.
 \]
 Then $l\le\max(1,H^{q-3})$ and $l/x\le1$ eventually.
-Thus the actual cutoff-failure probability absorbs the complementary
+Thus the actual probability of a large fluctuation-field event absorbs the complementary
 principal cutoff. The insertion incidence satisfies
 \[
  a=lTz+2TH^{-4}\le\tfrac12H^{-3}.
@@ -1635,21 +1636,21 @@ The connected bound and division by $l,m$ give
 \]
 When $l=1$, its definition implies
 $H^{-3}\le\alpha z+H^{-q}$, so the first estimate still holds.
-Reassigning a principal source term to its prescribed enlarged support
-adds at most $2^nR_{e_*}y$ if its coefficient discrepancy is $y$.
+Reassigning a principal term to its prescribed enlarged support
+adds at most $2^nR_{e_*}y$ if its coefficient difference is $y$.
 The joint Gaussian estimate at the requested power gives
 $2^nR_{e_*}y\le H^{-q}$.
-Its complementary cutoff part retains the original large-field
-prescribed set of large-field sites. With $e^{-g_i}=G(x)$ the bound
+Its large-field part retains the original
+prescribed large-field set. With $e^{-g_i}=G(x)$ the bound
 \[
  e^{g_i}G(x)^2+nH^{-2}R_{e_*+1}\le H^{-1}
 \]
 gives outgoing large-field bound
 $G(x)(e^{H^{-1}}-1)\le G(x)$.
-This proves the leading recurrence
+This proves the upper recurrence
 $z_{\rm new}\le(\alpha+2)z$ at the stronger exponent.
 
-Below the middle level there are no principal factors.
+Below the middle scale there are no principal factors.
 Use exponent $e$, $l=1$, $m=G(y)^{-1}$ and incoming large-field
 bound at most $z\,a_{\rm low}(y)$, where
 $0\le a_{\rm low}(y)\le1$. The outgoing incidence is at most
@@ -1660,25 +1661,25 @@ $0\le a_{\rm low}(y)\le1$. The outgoing incidence is at most
 The site conditions hold for $H^{-q}\le z\le H^{-1/2}$
 by the same estimates, and the large-field output is at most $G(y)$.
 This proves \eqref{ch11:lower-weighted-step}.
-For the polynomial attenuation used here, the reserved exponential
-large-field decay gives $G(y)\le H^{-q}a_{\rm low}(y)$. Since
+For the polynomial attenuation used here, the exponential
+large-field decay kept aside gives $G(y)\le H^{-q}a_{\rm low}(y)$. Since
 $z\ge H^{-q}$, the outgoing large-field bound is at most
 $z\,a_{\rm low}(y)$, as required for the next step.
 
-This calculation requires the reserved decay and corrected body
-product estimate on the actual restarted representation.
+This calculation requires the decay kept aside and the inflated product bound
+\eqref{ch11:integrated-component} for the factors without insertions of the restarted representation.
 It does not transfer a bound from a different Gaussian law or
 change an incoming bound after the history is fixed.
-The same-data restart conditions remain in force.
+The restarted representation keeps the original path and clipping coefficients and Gaussian law (Section~\ref{ch11:restart-construction}).
 
 The parameter $H=e^{(\log\log s)^2}$ measures the slowly growing
 comparison scale, not a covariance or a Hilbert space.
-The actual Gaussian fluctuation scale is $g=\beta^{-1/2}$.
-The source density $q_k$ remains the full pushed polynomial of
+The Gaussian fluctuation scale at the inverse coupling $\beta$ is $g=\beta^{-1/2}$.
+The density $q_k$ with insertions remains the full transferred polynomial of
 \eqref{ch11:source-density}, including its higher coefficients;
-it is unrelated to the fixed tolerance exponent $q$.
+it is unrelated to the fixed exponent $q$ of the initial remainder bound.
 
-\subsection{The actual covariance on a comparison window}
+\subsection{The covariance on a comparison window}
 \label{ch11:window-covariance}
 
 We record the covariance estimates used in the comparison of separating correlations,
@@ -1688,13 +1689,13 @@ two-form metric symbol of Chapter~\ref{ch05:gaussian}, with
 $H(0)=I$, a positive lower bound, and uniform exponential coefficient
 bounds. Put $q_\mu(p)=e^{ip_\mu}-1$, let $X$ be exterior
 multiplication by $q$ from one-forms, and let $U$ be exterior
-multiplication from scalars. The actual curvature covariance is
+multiplication from scalars. The curvature covariance is
 \[
  P(p)=X(p)\bigl(X(p)^*H(p)X(p)+U(p)U(p)^*\bigr)^{-1}X(p)^*,
  \qquad P(0)=0.
 \]
 Indeed the completed inverse differs from the original potential
-inverse only in gradient directions, killed by $X$.
+inverse only in gradient directions, annihilated by $X$.
 The exterior identity gives coercivity at least
 $c|q|^2$. Taylor expansion at zero, with differentiated bounds, yields
 \[
@@ -1702,8 +1703,7 @@ $c|q|^2$. Taylor expansion at zero, with differentiated bounds, yields
  D^j(P(p)-P_0(p))=O(|p|^{1-j}),
  \quad P_0=X_0|p|^{-2}X_0^*,\quad X_0=ip\wedge.
 \]
-All constants are uniform in the kernel history within the
-already fixed quadratic bounds.
+All constants depend only on the bounds on $H$ just stated, which at fixed final smoothing order and penalty parameter are uniform over the blocking sequence (Section~\ref{ch05:histories}; Proposition~\ref{ch05:history-prop}). In particular they do not depend on the number of blocking steps or on the block ratios.
 
 Use a smooth compact frequency partition whose $2\pi\ZZ^4$
 translates sum to one, equal to one near zero. This leaves the
@@ -1728,13 +1728,13 @@ Consequently, for $|x|\ge1$,
  |\Delta^j\Delta^h\kappa_k(x)-\partial^j\partial^h C_{\rm Max}(x)|
  \le C|x|^{-j-h-5}+C(1+|x|)/N_{\rm per}.
 \end{equation}
-The lattice-side lower bound for the smallest physical period
+The lattice-side lower bound for the smallest period in continuum units
 makes the second term negligible on every fixed-power-$H$ window,
 uniformly in all periods.
 
-For the actual installed curvature response $\Psi_i$, one also
-needs to move differences through the response, not merely bound
-its differentiated row. The box-filter identities in the alias
+For the installed curvature response $\Psi_i$, one also
+needs to move differences through the curvature response, not merely bound
+its differentiated row. The box-multiplier identities in the alias
 formula give
 \[
  \Delta_w\Psi_i=Q_{i,w}\Delta_w,\qquad
@@ -1748,12 +1748,12 @@ their geometric-series identity has the same coarse factor.
 Sufficient smoothing order leaves the remaining powers
 nonnegative. The quotient is regular also on coordinate
 hyperplanes. Its exponential coefficient bound follows at a
-narrower width from
+narrower decay width from
 $(e^{inp}-1)/(e^{ip}-1)=\sum_{a=0}^{n-1}e^{iap}$
 for $n>0$, with the analogous negative sum for $n<0$.
-The extra factor $|n|$ is absorbed by that strict width reserve.
+The extra factor $|n|$ is absorbed by that strict margin in the decay width.
 This proves the row bound with $R$ fixed before $L$.
-The response preserves closed cochains, including harmonic ones,
+The curvature response preserves closed cochains, including harmonic ones,
 by the exact exterior-transport identities of Chapter~\ref{ch05:gaussian}.
 
 Let $\mathcal L=\Psi_{k-1}\cdots\Psi_\ell$,
@@ -1767,9 +1767,9 @@ Choose $m=\lceil(b+2)\log H/\log L\rceil$ with $b\ge6$,
 and choose $L$ after $R$ so that
 $4(b+2)\log R\le(\lambda/4)\log L$.
 Then $S\ge H^{b+2}$ and the right side is at most
-$P=H^{\lambda/4}$ after a stage delay.
-The actual middle-scale field supplies such a closed background,
-rather than an independently selected one. In axial gauge on its
+$P=H^{\lambda/4}$ after an increase of the starting scale.
+The middle-scale field gives such a closed background field,
+rather than an independently chosen one. In axial gauge on its
 radius-$B$ patch take $g^{-1}$ times the Lie-algebra curvature
 coordinate of each link, extend this one-cochain by zero, and
 take its discrete exterior derivative $u$. Then $du=0$ exactly,
@@ -1786,12 +1786,12 @@ Since $B$ grows as $(\log s)^4$, this error is smaller than every
 fixed inverse power of $H$, even after $g^{-1}=O(\sqrt s)$.
 Thus zero extension is not asserted to preserve the full
 conditional mean exactly.
-On the interior stencil its difference from the actual normalized
+On the interior stencil its difference from the nonlinear normalized
 plaquette curvature is $O(B^2\vartheta^2/g)$, smaller than every
 fixed inverse power of $H$. This follows by subtracting the
 linear sum from the four-link product in that same gauge.
-For this closed middle-scale background $u$,
-the mean $\mu=\mathcal Lu$ and the transported coarse covariance
+For this closed middle-scale background field $u$,
+the mean $\mu=\mathcal Lu$ and the conjugated coarse covariance
 $B_0=\mathcal L\kappa_\ell\mathcal L^T$ satisfy
 \[
  S^{j+2}|\Delta^j\mu|\le P^2,\qquad
@@ -1815,16 +1815,16 @@ $\rho/S\le H^{-2}$ imply weighted mean and covariance errors
 at the retained jet coordinates at most $H^{-3}$.
 The highest difference and remainder coordinates have bound $P$.
 Here the continuum approximation error contributes
-$O(\rho^{-1})=O(H^{-b})$, the transported mean contributes
-$H^{-4}P^2$, and the transported covariance contributes
+$O(\rho^{-1})=O(H^{-b})$, the mean contributes
+$H^{-4}P^2$, and the conjugated covariance contributes
 $H^{-4}P^3$. The finite-period term is smaller than these
-after the common mesh threshold.
+after the common lower bound on $N$.
 
 To turn these into one finite coordinate system, choose dual
 finite-difference functionals $\ell_\alpha$ on the polynomial
 closed curvature cochains $t_\alpha$, with
 $\ell_\alpha(t_\beta)=\delta_{\alpha\beta}$.
-They exist by descending from the highest nonzero homogeneous
+They exist by downward induction from the highest nonzero homogeneous
 curvature, exactly as in the radial-jet construction.
 Retain coordinates $\rho^{g_\alpha}\ell_\alpha f$ and,
 at every stencil point $z$, the residual coordinate
@@ -1833,16 +1833,16 @@ This gives an exact reconstruction of every stencil value.
 For a closed cochain, repeated finite-difference summation along
 coordinate paths bounds its residual by the top difference times
 a fixed power of the stencil radius.
-These costs are $H^{o(1)}$ and are absorbed by $H^{\lambda/4}$.
+These factors are $H^{o(1)}$ and are absorbed by $H^{\lambda/4}$.
 The common enlarged mean and covariance are therefore bounded by
-$H^\lambda$, and their physical jet block differs from the free
+$H^\lambda$, and their retained jet block differs from the free
 one by at most $H^{-2}$. The free comparison has zero residual
 coordinates. All subsets use this one enlarged system.
 
-\subsection{From the common polynomial localization to the corrected pair bound}
+\subsection{From the common localization map to the corrected pair bound}
 \label{ch11:corrected-pair-comparison}
 
-Solve the simultaneous lift equations using the actual $T$
+Solve the simultaneous lift equations using the map $T$
 constructed in Section~\ref{ch11:common-extraction}.
 For the finitely many free polynomials, their coefficient sizes
 are fixed. The solved lift has a bound $H^{bd+c_d}$ in normalized local insertion
@@ -1851,7 +1851,7 @@ large enough for \eqref{ch11:raw-polynomial-error}; all these
 choices precede the derivative orders and final scale thresholds.
 After the common finite-coordinate substitution, the retained
 weighted polynomial is exactly the intended free polynomial.
-Every remaining monomial has weight at least $d+1$, so its
+Every remaining monomial has scaling dimension at least $d+1$, so its
 coefficient sum is at most $H^{-2}$ by the factor
 $\rho^{-(d+1)}$ and this choice of $b$.
 
@@ -1860,7 +1860,7 @@ degree at most $D_0$, Wick recursion bounds its expectation by
 $A[2B(D_0+1)]^{D_0}$ when all means and covariance entries are
 bounded by $B\ge1$. Changing these entries by at most $\epsilon$
 changes it by at most the same expression times $\epsilon$.
-This is proved by selecting the first variable of a monomial
+This is proved by choosing the first variable of a monomial
 and summing its mean term and at most $D_0-1$ pair terms;
 subtract products one factor at a time.
 It is independent of the number of coordinates.
@@ -1870,11 +1870,11 @@ The common coordinate estimate and the coefficient tail just
 proved give, for every subset of the two insertions, moment
 error at most $C H^{-2}H^{2D\lambda}\le H^{-3/2}$.
 The empty moment is exactly one.
-The actual nonlinear-to-polynomial error has the same bound:
-use \eqref{ch11:raw-polynomial-error}, the common with a smooth cutoff
-Gaussian estimate, and telescope the finitely many polynomial
-transport steps. If a step has coefficient norm at most
-$A_{2D}$ and discrepancy at most $H^{-v}$, the product error
+The nonlinear-to-polynomial error has the same bound:
+use \eqref{ch11:raw-polynomial-error}, the
+Gaussian estimate under the joint law with a smooth cutoff, and telescope the finitely many polynomial
+transfer steps. If a step has coefficient norm at most
+$A_{2D}$ and difference at most $H^{-v}$, the product error
 over $m$ steps is at most $mH^{-v}A_{2D}^m$.
 Choose the block length after $A_{2D}$ and then $v$ so this is
 at most $H^{-3/2}$. The local-coordinate error is a negative
@@ -1888,17 +1888,17 @@ For two source variables the connected coefficients are simply the two
 means and the covariance of the polynomial values. Subtraction
 of these expressions gives a fixed polynomial bound in the
 subset moments times their errors. Their free values remain
-bounded on the selected separated configurations.
-Thus the corrected leading coefficients at the middle level
+bounded on the chosen separated configurations.
+Thus the corrected principal coefficients at the middle scale
 are at most $H^{-31/32}$, with room to spare.
-Here is the explicit estimate for the terms involving at least two insertions already present
-at the opening level. Write $C=\lceil(\log s)^2\rceil$, $B=C^2$,
+Here is the explicit estimate for the terms of source degree at least two already present
+at the opening scale. Write $C=\lceil(\log s)^2\rceil$, $B=C^2$,
 let $\theta_0>0$ be their original support exponent, and let
 $r_0=s^{-a/2}$ be their original source variable radius. Their normalized
 rooted bound is at most one by \eqref{ch11:higher-induction}.
 The new radius is $r=H^f\le1$, where $f=1/16-U\le0$.
-For a support containing $m\ge2$ distinct marked sites, the
-chosen configurations have pairwise separation at least $C^2$.
+For a support containing $m\ge2$ distinct insertion points, the
+chosen configurations have pairwise distance at least $C^2$.
 The separated-site bound and cover enlargement give
 \[
  Cm\le64c_C(X),\qquad
@@ -1914,14 +1914,14 @@ The stage thresholds can impose
 \]
 This is possible because $C$ grows like $(\log s)^2$,
 whereas $u_0=O(\log s)$ and $\log H=o(\log s)$.
-Consequently, term by term on the original marked alphabet,
+Consequently, for each term of the original expansion with insertions,
 \begin{equation}\label{ch11:opening-higher-weight}
  r^m e^{(e_*+2)c_B(X^{+8})}
  \le e^{-\Gamma}r_0^m e^{\theta_0c_C(X)}.
 \end{equation}
-This changes weights on the complete family of terms involving at least two insertions;
+This changes weights on the full family of terms of source degree at least two;
 it does not compare $r$ directly with $r_0$.
-Root-to-site conversion costs only $\mathcal W(B)=H^{o(1)}$.
+Root-to-site conversion contributes only the factor $\mathcal W(B)=H^{o(1)}$.
 At the opening all distinct sites, including those in one
 measurement cell, are separated: their distance is a fixed
 positive multiple of $H^b$, and $C^2=o(H^b)$.
@@ -1933,12 +1933,12 @@ $H^{f+bd+c_d}e^{-\theta_0 C}$. Increase $D$ to make both
 at most $H^{-q-2}$. Together with
 \eqref{ch11:opening-higher-weight} these give the initial
 regular remainder $H^{-q}$ at exponent $e_*$.
-For the large-field part perform the exact endpoint re-expression
-jointly with these marked factors, before summing components.
+For the large-field part perform the exact change of representation at the comparison scale
+jointly with these factors with insertions, before summing components.
 Every nonzero failed cutoff and every old large-field activity
 meets a new large-field site. Its selected site factor has size at
-most $e^{-2u}$, with $u=a_*\,\mathrm{hot}(s)^2$.
-Reserve $e^{-u}=G(s)$ once per component.
+most $e^{-2u}$, with $u=a_*h(s)^2$.
+Keep $e^{-u}=G(s)$ aside once per component.
 The remaining rooted sum is bounded by
 \[
  H^{-q-8}
@@ -1947,26 +1947,26 @@ The remaining rooted sum is bounded by
  +(8B+1)^4e^{-u+O(e_*)},
 \]
 which is at most $H^{-1}$ and satisfies the connected-set
-smallness condition after the stage delays.
+smallness condition after the increases of the starting scales.
 Thus its regrouped site sum is at most
 $G(s)(e^{H^{-1}}-1)\le G(s)$.
-All original and new prescribed sets of large-field sites and compatibility conditions are
+All original and new prescribed large-field sets and compatibility conditions are
 retained, and component decomposition is reversible in every
-squarefree coefficient. This proves the complete opening bound;
-no higher coefficient of the actual pushed density is discarded.
+squarefree coefficient. This proves the full opening bound;
+no higher coefficient of the transferred density is discarded.
 
-The leading interval has
+The upper interval has
 $m=\lceil(b+2)\log H/\log L\rceil$ steps.
 Before choosing $L\ge3$, fix
 $\kappa=1+2(b+2)\log(\alpha+2)/\log3$.
 Then $(\alpha+2)^m\le H^\kappa$ eventually for every allowed $L$.
 Choose $q\ge\kappa+Un+2$ before the Taylor order $D$ and
-the later block floor involving its polynomial transport norm.
+the later lower bound on the block ratio involving its polynomial transfer norm.
 This prevents a circular choice between $q,D$ and $L$.
 The lower interval only increases the cell side by a factor
 $C^{10}$, so it uses at most
 $\lceil10\log C/\log L\rceil$ steps.
-Since $\log C=O(\log\log s)=o(\log H)$, its amplification
+Since $\log C=O(\log\log s)=o(\log H)$, its growth factor
 $(\alpha+1)^{\ell-w}$ is at most $H^{1/4}$ eventually.
 The selected plateau must include these two finite windows;
 their total length is $O((\log\log s)^2)$ at a fixed stage
@@ -1974,11 +1974,11 @@ and lies inside the short interval admitted by the restart
 construction.
 
 Sections~\ref{ch11:weight-restoration} and
-\ref{ch11:common-extraction}, together with the actual restarted
-representation, now give the weighted output envelope
+\ref{ch11:common-extraction}, together with the restarted
+representation, now give the weighted output majorant
 \eqref{ch11:weighted-output-envelope}.
 To normalize it one must retain the Gaussian power in the
-partition function. Tree gauge fixing leaves $3V+1$ free links
+partition function. Axial gauge fixing leaves $3V+1$ free links
 on a four-dimensional torus of $V$ sites. Restrict each free link $U_e$
 to the ball $\|U_e-1\|_G\le g/4$ in the matrix norm
 \eqref{ch01:matrix-norm} to obtain
@@ -2004,7 +2004,7 @@ and choose the $(j,i)$ plaquette based at $x-e_j$.
 Every other free link in the chosen plaquette has smaller priority.
 The chosen plaquettes are distinct, since equality would require
 each of two links to have smaller priority than the other.
-Integrate in decreasing order. The selected link occurs once,
+Integrate in decreasing order. The chosen link occurs once,
 as $aUb$ or $aU^{-1}b$, so Haar invariance evaluates its factor.
 All other plaquette factors are at most one and may be discarded.
 This proves the stated $3V-3$ integrations, including the
@@ -2018,7 +2018,7 @@ obeys
  z|\mathbb E F|
  \le \exp\bigl(VC_{\rm stage}-4\dim(\gLie)\log g\bigr).
 \]
-The scalar $\sigma$ cancels. A genuine additive value error
+The constant term $\sigma$ cancels. A genuine additive value error
 $\delta$ contributes $2V\delta$, one copy in numerator and
 one in denominator, and is included in $C_{\rm stage}$.
 These estimates use the same nonnegative output density.
@@ -2026,51 +2026,51 @@ These estimates use the same nonnegative output density.
 At the output $V=q_0$. Its smallest-period site count grows
 exponentially in the output logarithmic scale, so
 $2\dim(\gLie)\log\beta/q_0\le1$ eventually.
-Choose the later stage delay with
+Choose the later lower bound on the starting scale with
 $C_{\rm stage}+1\le I_k=\log H/32$.
 Applying the preceding estimate to
-\eqref{ch11:weighted-output-envelope} gives
+\eqref{ch11:weighted-output-envelope} gives, for the corrected coefficients (the Wick products of the insertions with respect to the free field; the recursion defining them is written for any number of insertions in Proposition~\ref{ch11:n-mark-comparison}),
 \[
  \|\hbox{corrected coefficient }I\|_{\rm root}
  \le e^{I_k}\omega^{-|I|}
  \le e^{-I_k},\qquad \varnothing\ne I\subseteq\{1,2\}.
 \]
 This is the desired corrected pair estimate on the original
-partition denominator. At each fixed deep comparison level its
+partition denominator. At each fixed deep comparison scale its
 simultaneously normalized columns are uniformly bounded in $N,p$.
 Undoing the finite connected subtractions and then taking a
-sufficiently deep comparison level establishes
-Proposition~\ref{ch11:finite-detector-input}, using the actual small value and joint product bounds of
-Proposition~\ref{ch11:restart-family}. The estimates are before extraction and their
+sufficiently deep comparison scale establishes
+Proposition~\ref{ch11:finite-detector-input}, using the small value and joint product bounds of
+Proposition~\ref{ch11:restart-family}. The estimates hold before any subsequence is chosen and their
 thresholds are independent of the period.
 
 
-\subsection{Finite-arity comparison on a common finite set of scales}
+\subsection{Comparison for boundedly many insertions on a common finite set of scales}
 \label{ch11:finite-arity-comparison}
 
-The pair argument extends to any fixed arity, with the same
+The pair argument extends to any fixed number of insertions, with the same
 partition normalization and one polynomial localization map for each degree.
 We state the result in the form needed for smooth free-field
-comparison. All constants may depend on the fixed finite arity,
+comparison. All constants may depend on the fixed number of insertions,
 degree list and compact configuration set.
 
-\begin{proposition}[Common finite-arity Gaussian comparison]
+\begin{proposition}[Joint Gaussian comparison for boundedly many insertions]
 \label{ch11:n-mark-comparison}
 Fix $n\ge1$, finitely many real polynomial labels of bounded
 degree, and a compact set of point configurations with positive
 pairwise distance. Fix finitely many magnification exponents
 $b_1,\ldots,b_t$ large enough for the preceding local estimates.
 The selected stage requirements can be imposed for this finite
-request so that one actual localization onto the polynomial label space $T_{k,N,p,d}$
+request so that one common localization map $T_{k,N,p,d}$ onto the polynomial label space
 per degree and one restarted history serve all these scales.
 At scale $\rho_j=H^{b_j}$ use the exact simultaneous lifts
 \[
  S_{g/\theta}T_{k,N,p,d}u=W_{\rho_j}v.
 \]
 They are real and equivariant, and bounded in $N,p$ for each
-fixed comparison depth. Set $G_\varnothing=1$ and let $G_I$
+fixed comparison scale. Set $G_\varnothing=1$ and let $G_I$
 be the free moment of the chosen labels at the rescaled
-configurations. Define the corrected coefficients by
+configurations. Define the corrected coefficients, the Wick products of the $F_i$ with respect to the free field, by the recursion
 \[
  R_\varnothing=1,\qquad
  R_I=\prod_{i\in I}F_i-
@@ -2082,30 +2082,30 @@ chessboard bound on the corresponding comparison cell is
  \|R_I\|_{\rm root}\le H^{-1/(16n)}
 \end{equation}
 at all sufficiently large cutoffs, uniformly in period and
-in the stated compact configuration window.
+in the stated compact configuration set.
 The cell side can be chosen at most $a_kH^{b_j+5}$.
-The estimate requires positive point separation, but no
+The estimate requires a positive distance between the points, but no
 positive lower bound on individual coordinate differences.
 \end{proposition}
 \begin{proof}
-Make all finite requests before selecting the stage orders,
-ratios and delays. Construct $T$ at the top level $k$ from
-the actual insertion and its original same-insertion covariance.
+Make all finite requests before choosing the stage orders,
+ratios and starting scales. Construct $T$ at the comparison scale $k$ from
+the insertion and its original same-insertion covariance.
 Neither its near-support Taylor construction nor that covariance
-depends on the choice of middle or output level.
-Choose the Taylor order and derivative reserves for the
+depends on the choice of middle or output scale.
+Choose the Taylor order and derivative margins for the
 largest of the finitely many requests. Restart once on the
-longest required window. Restriction of that history supplies
-the shorter windows, with unchanged top map and endpoint.
+longest required window. Restriction of that history gives
+the shorter windows, with unchanged localization map and density at the comparison scale.
 There is no new normalization for individual spectator subsets.
 
 Work throughout in the full $n$-source squarefree algebra.
 The polynomial $\sum_I G_Iz_I$ has constant coefficient one,
-so its inverse exists there. Multiplying the actual source
+so its inverse exists there. Multiplying the density with insertions
 by this inverse gives exactly the displayed recursion.
 Equivalently subtract its finite connected logarithm.
 This operation commutes with every block integration and leaves
-the empty density, hence its partition function, unchanged.
+the density without insertions, hence its partition function, unchanged.
 
 Use
 \[
@@ -2115,14 +2115,14 @@ Use
 All support and regrouping arguments above already use $n$
 only through $n$, $2^n$, and the fixed polynomial degree.
 Choose $U\ge1/(8n)$ to control the finite list of single insertions,
-then $\kappa,q,D$, and finally the ratios and delays in the
-order already specified. The initial estimate for terms involving at least two insertions
+then $\kappa,q,D$, and finally the ratios and starting scales in the
+order already specified. The initial estimate for terms of source degree at least two
 \eqref{ch11:opening-higher-weight} applies to all cardinalities;
-the complete incoming polynomial is retained.
+the full incoming polynomial is retained.
 
-For the common Gaussian calculation use degree bound $nD$
+For the Gaussian calculation under the joint law use degree bound $nD$
 and, for example, $\lambda\le1/[32n^2(D+1)]$.
-The coefficient tails and physical covariance errors are
+The coefficient tails and the covariance errors on the retained jet block are
 $H^{-2}$, so the polynomial Wick estimate makes all subset
 moment errors at most $H^{-3/2}$.
 The finite logarithm is a polynomial of degree at most $n$
@@ -2131,29 +2131,29 @@ neighborhood of their free values, since every free subset
 moment is bounded on the compact separated configuration set.
 Hence the connected coefficient errors are also $O(H^{-3/2})$
 and in particular at most $H^{-31/32}$ eventually.
-This supplies the same corrected leading bound as before.
+This gives the same corrected principal bound as before.
 
 Each source monomial gains at most
-$\omega^{|I|}\le H^{1/8}$ at the restored weight.
-Regular weight restoration therefore gives $H^{-1}$;
-the corrected leading contribution is at most
-$2^nR_eH^{-27/32}$; and the regrouping of activities constrained to cover prescribed sites has bound
+$\omega^{|I|}\le H^{1/8}$ at the larger source weight.
+Lemma~\ref{ch11:restore-regular} therefore gives $H^{-1}$;
+the corrected principal contribution is at most
+$2^nR_eH^{-27/32}$; and the regrouping of activities constrained to cover their prescribed large-field sets has bound
 $4H^{Un+2^n}\eta_-$.
 The upper and lower recurrences then give incidence and site
-bounds at most one at the output. Their scalar envelope has
-expense at most $1+n$ per site. The actual partition
-estimate absorbs this finite expense by imposing
+bounds at most one at the output. Their scalar majorant contributes
+at most $1+n$ per site. The partition
+estimate absorbs this finite factor by imposing
 $C_{\rm stage}+1\le I_k$.
-Thus the corrected source coefficient has chessboard seminorm at most
+Thus the corrected coefficient has chessboard seminorm at most
 $e^{I_k}\omega^{-|I|}\le e^{-I_k}$, proving
 \eqref{ch11:n-mark-root}.
 
-For the geometric bound, the leading scale ratio is at most
+For the geometric bound, the scale ratio of the upper interval is at most
 $L H^{b_j+2}$ and the lower ratio at most $L C^{10}$.
-The stage delays give $L^2C^{10}\le H^3$, so the total
-physical cell side is at most $a_kH^{b_j+5}$.
+The lower bounds on the starting scales give $L^2C^{10}\le H^3$, so the total
+cell side in continuum units is at most $a_kH^{b_j+5}$.
 All covariance estimates depend only on the full displacement
-between distinct points. On the compact window its minimum
+between distinct points. On the compact configuration set its minimum
 length is positive, also after rounding at sufficiently large
 $H$. The opening-support estimate uses the same positive
 maximum-coordinate distance. Neither argument divides by a
@@ -2167,7 +2167,7 @@ lifts, but the coefficient map is identical. Consequently, if
 $b_0>b_j$, the lift normalized at $b_0$ is exactly the linear
 combination of the degree-$d$ lifts at $b_j$ obtained by
 applying $W_{H^{b_0-b_j}}$ to its free label.
-On a fixed finite-dimensional degree space that costs at most
+On a fixed finite-dimensional degree space that contributes a factor at most
 $C H^{(b_0-b_j)d}$ in coefficient norm.
 The chessboard estimate for a single insertion and its free expectation therefore
 give the same factor for its chessboard seminorm.
@@ -2176,15 +2176,15 @@ bounds at three scales; it does not assert that one fixed
 unnormalized label has a small corrected error at all three.
 
 
-We can now state the finite-cutoff comparison supplied by these estimates.
+We can now state the finite-cutoff comparison given by these estimates.
 
 \begin{proposition}[Comparison of the separating correlations at finite cutoff]
 \label{ch11:finite-detector-input}
-On the selected trajectory with the stage orders, block floors and
+On the common trajectory with the stage orders, lower bounds on the block ratio and
 choices of sufficiently large starting scales specified above, for each $e$ there is an injective free measurement matrix
 $G:\CC^r\to\CC^s$ and the following finite-cutoff approximations.
 For arbitrarily small $\eta>0$ one can choose a fixed comparison
-depth $k$, bounded real local polynomial coefficient families
+scale $k$, bounded real local polynomial coefficient families
 $u_{1,i},\ldots,u_{r,i}$ with $\|u_{j,i}\|_1\le B_k$, and finitely
 many bounded families of normalized local spectator insertions, all on the selected
 history, such that their point-correlation matrix $Q_i^0$
@@ -2193,42 +2193,42 @@ satisfies
  \|Q_i^0-G\|_{\max}\le\eta
 \]
 eventually for every period. The correlation configurations and small
-neighborhoods of them have a positive common coordinate separation
-and lie inside the smallest physical period. All these bounded
+neighborhoods of them have a positive common coordinate distance
+and lie inside the smallest period in continuum units. All these bounded
 normalized local insertion families have uniform chessboard bounds at every
 sufficiently fine fixed cell depth.
 \end{proposition}
 \begin{proof}
 Choose the free basis and separating configurations from
-Chapter~\ref{ch03:maxwell}. Construct their actual common
-polynomial localization and simultaneous lifts by
+Chapter~\ref{ch03:maxwell}. Construct their common
+localization map and simultaneous lifts by
 Section~\ref{ch11:common-extraction}, and use the restarted family
 of Proposition~\ref{ch11:restart-family}.
-The opening estimate, stronger support bounds, restored source weight and output normalization in
+The opening estimate, stronger support bounds, larger source weight and output normalization in
 Section~\ref{ch11:corrected-pair-comparison} give corrected
 subset chessboard-seminorm error $e^{-I_k}$, uniformly in cutoff and period.
 Undoing the connected subtractions gives point-matrix error at
 most $C_ke^{-I_k}$, where $C_k$ is a polynomial in the finitely
 many free subset moments. These moments remain bounded as the
 rounded, rescaled configurations approach their fixed separated
-targets. Thus choose one sufficiently deep $k$ to obtain the
+limit configurations. Thus choose one sufficiently deep $k$ to obtain the
 requested $\eta$. The exact lift equations give a fixed bound
-$B_k$ for all cutoffs and periods at that depth.
-The product-moment estimate supplies the chessboard bounds for normalized local insertions.
+$B_k$ for all cutoffs and periods at that scale.
+The product-moment estimate gives the chessboard bounds for normalized local insertions.
 No convergence or choice of a limiting equation subspace is used.
 \end{proof}
 
-This is a comparison before any cutoff limit. Its common coefficient
-extraction, auxiliary density and normalized lifts are the ones
+This is a comparison before any cutoff limit. Its common localization
+map, auxiliary density and normalized lifts are the ones
 constructed above.
 
-Recall the exact moving equation kernel
+Recall the exact cutoff-dependent equation kernel
 $K_i=\mathsf Z_{N,p,e}P_{N,p,e}S_{t_N}R_e\mathcal I_e$.
 Its bounded projection $\Pi_i$ is distinct from the near-identity
 section comparison $P_{N,p,e}$. The latter is invertible; the
 former has kernel $K_i$.
 
-\begin{proposition}[A separating correlation family on the entire moving complement]
+\begin{proposition}[A separating correlation family on the entire cutoff-dependent complement]
 \label{ch11:uniform-detector}
 Using Proposition~\ref{ch11:finite-detector-input}, for every fixed
 finite difference word $l$ there are averaged separating correlation functionals $L_i$ and
@@ -2237,16 +2237,16 @@ a constant $Z$, independent of $N,p$, such that
  \|\Pi_i v\|_1\le Z\|L_i\Pi_i v\|_\infty
  \quad(v\in V_e)
 \]
-eventually for every period. Their tested correlation of a finite difference
-$D_lF$ of a normalized local insertion with bounded chessboard seminorm is uniformly bounded.
-Their tested correlation of any trial whose chessboard seminorm tends to zero tends to
+eventually for every period. Their values on a finite difference
+$D_lF$ of a normalized local insertion with bounded chessboard seminorm are uniformly bounded.
+Their values on any trial whose chessboard seminorm tends to zero tend to
 zero uniformly in period.
 \end{proposition}
 \begin{proof}
 Choose $K$ with $\|c\|_\infty\le K\|Gc\|_\infty$ and put
 $\delta=(2Kr)^{-1}$. The case $r=0$ is immediate.
 Use the assumed comparison with entrywise error at most $\delta/4$.
-The positional modulus for normalized local insertions from
+The modulus of continuity in the insertion points for normalized local insertions from
 Section~\ref{ch11:positional} holds on the separated neighborhoods
 with one constant and threshold for this finite list.
 
@@ -2257,9 +2257,9 @@ Average over the shifts $0,\ldots,h_N-1$ once in each coordinate
 listed in $l$, always in the distinguished slot. These normalized
 averages define $L_i$. For the empty word take no averages.
 
-The rows $(I-\Pi_i)u_{j,i}$ are bounded, hence admissible.
+The vectors $(I-\Pi_i)u_{j,i}$ are bounded, hence admissible.
 Lemma~\ref{ch11:uniform-sweep} and the chessboard inequality with one distinguished insertion
-show that their averaged measurements tend to zero.
+show that the values of the averaged functionals on them tend to zero.
 Thus the matrix
 \[
  Q_i=(L_i\Pi_i u_{j,i})_{j=1}^r
@@ -2280,7 +2280,7 @@ exactly $r$. Writing $\Pi_i v=\sum_jc_j\Pi_i u_{j,i}$ gives
 \]
 Take $Z\ge\max(1,2ArB_kK)$.
 
-For the tested correlation assertions, inserting a distinguished trial of chessboard seminorm $u_i$ with the bounded spectator fields gives a bound $Cu_i$
+For the assertions on the values of the averaged functionals, inserting a distinguished trial of chessboard seminorm $u_i$ with the bounded spectator fields gives a bound $Cu_i$
 uniformly throughout the neighborhoods. Averaging preserves it.
 For a difference word, differences commute with these averages,
 and each coordinate telescopes exactly:
@@ -2292,30 +2292,30 @@ and each coordinate telescopes exactly:
 Iteration bounds the averaged difference by
 $(2/b)^{|l|}$ times the undifferentiated correlation bound.
 All endpoints stay in the chosen neighborhoods.
-This proves the tested correlation bound without assuming any pointwise
+This proves the bound on these values without assuming any pointwise
 bound on the differentiated field.
 \end{proof}
 
 \begin{theorem}[Uniform bounds for finite differences]
 \label{ch11:all-period-differences}
-For the selected trajectory with the trial estimates of
+For the common trajectory with the trial estimates of
 Section~\ref{ch11:trial-descent} and the stage requirements already
 specified for their uniformity, every fixed finite list of
 fields, every finite difference word applied separately to its
 slots, and every $r_0>0$, their finite-volume correlation is bounded
 by one constant for all sufficiently large $N$, every period $p$,
 and every tuple with pairwise periodic maximum-coordinate distance
-at least $r_0$ in physical units.
+at least $r_0$ in continuum units.
 \end{theorem}
 \begin{proof}
 Start with a bounded local polynomial coefficient and a difference word $l$.
 The exact physical difference identity and the translated local
-section bound make this a protected trial at degree $e=d+|l|$.
-The factor $a_N^{|l|}$ in its normalization index cancels all inverse mesh
-powers. Its stencil uses at most $2^{|l|}$ fixed translates;
-its derivative cost grows by at most
+section bound make this a trial at degree $e=d+|l|$ satisfying the hypotheses of \eqref{ch11:trial-error}.
+The factor $a_N^{|l|}$ in the normalization at its filtration index cancels all inverse mesh
+powers. Its link support uses at most $2^{|l|}$ fixed translates;
+its derivative bound grows by at most
 $(1+2^{\varpi_Nq_N})^{|l|}$, a subpower quantity under the stage
-requirement on the starting scale. Trial descent gives an admissible coefficient
+requirement on the starting scale. The backward comparison gives an admissible coefficient
 $x_i$ and an error $E_i=O(x_i)-D_lF$ with chessboard seminorm tending to zero.
 
 The correlation pairings just proved give $\|L_ix_i\|\le C$.
@@ -2324,7 +2324,7 @@ $y_i=\Pi_i x_i$ and
 $z_i=(x_i-y_i)/(1+\|y_i\|_1)$.
 The latter family is admissible: its first term is a bounded
 scalar multiple of $x_i$, and its second is norm bounded.
-It lies in the exact kernel of $\Pi_i$, so its tested correlation tends to
+It lies in the exact kernel of $\Pi_i$, so the values of the correlation functionals on it tend to
 zero by Lemma~\ref{ch11:uniform-sweep}.
 Consequently $\|y_i\|_1\le2ZC+1$.
 The chessboard bound for normalized local insertions applies to $O(y_i)$,
@@ -2336,11 +2336,11 @@ has vanishing chessboard seminorm. The identity
 gives a uniform chessboard bound for the difference trial.
 Repeat for the finite list of orientations and slots.
 
-For clarity, two cell scales are needed to plant a separated tuple.
+For clarity, two cell scales are needed to place a separated tuple in distinct cells.
 Choose a fixed coarse cell side $a_\ell<r_0$.
 Choose a finer fixed depth $k\ge\ell$, beyond all the finitely many
 scale thresholds for the chessboard bounds, with $6na_k<a_\ell$.
-At mesh $N$ the corresponding integer spans $t,T$ satisfy
+At mesh $N$ the corresponding integer cell sides $t,T$ satisfy
 $a_Nt=a_k$ and $a_NT=a_\ell$.
 In each coordinate one point forbids at most $6t$ translations
 of the coarse tiling if a margin $3t$ is required.
@@ -2353,9 +2353,9 @@ tilings transfers the depth-$k$ bounds to these interior cells;
 it follows from the repeated chessboard inequality (maximizing
 the position of a repeated copy in its containing cell).
 Translation invariance alone is not this comparison.
-Planting the finitely many trials now bounds the correlation by
+Placing the finitely many trials in distinct cells now bounds the correlation by
 the product of their fixed chessboard bounds.
-All spans, margins and mesh thresholds were chosen independently
+All cell sides, margins and lower bounds on $N$ were chosen independently
 of $p$. The periodic difference identity also holds at wrapped
 sites, completing the proof.
 \end{proof}

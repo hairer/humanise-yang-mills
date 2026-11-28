@@ -14,12 +14,12 @@ of Chapter~\ref{ch17:trace}.
 
 Choose the compact matrix group $G$ with simple nonabelian real Lie
 algebra, its trace inner product as in Section~\ref{ch01:gauge}, and a
-positive soft-block penalty $b$. Fix a sufficiently large coarse inverse
-coupling $\bar\beta$. The common schedule of
-Chapter~\ref{ch10:trajectory} selects all block lengths, derivative
-orders, support weights, coupling thresholds and admissible physical
-periods $R_p$. At cutoff $N$ and period index $p$, shooting from the
-Wilson measure gives its bare coupling $\beta_{N,p,N}$ with prescribed
+positive penalty parameter $b$. Fix a sufficiently large coarse inverse
+coupling $\bar\beta$. The choices of
+Chapter~\ref{ch10:trajectory} select all block lengths, derivative
+orders, support exponents, lower bounds on the reference coupling and admissible
+periods $R_p$ in continuum units. At cutoff $N$ and period index $p$, the bare coupling $\beta_{N,p,N}$ of the
+Wilson measure is tuned so that it gives the prescribed
 coarse endpoint $\bar\beta$.
 
 The same finite histories must define the coefficient normalizations
@@ -27,50 +27,50 @@ of every local insertion. One cannot separately choose convenient
 histories for convergence, for free separating families and for the trace law.
 The microscopic sections are fixed before $N,p$, and their comparison
 maps act simultaneously on all labels and spectator correlation pairings. Any additional
-finite stage requirements, such as the equation calibration floor,
-belong to the selection of this one schedule.
+finite stage requirements, such as the lower bound \eqref{ch11:calibration-floor} on the block ratio,
+belong to these same choices.
 
-For each fixed physical volume the first limit is the full limit
-$N\to\infty$. Only afterwards is a subsequence of physical volumes
+For each fixed volume in continuum units the first limit is the full limit
+$N\to\infty$. Only afterwards is a subsequence of these volumes
 extracted. Given any increasing sequence of period indices, a single
-refinement supplies all arities, degree bounds, label basis elements and
+subsequence gives all numbers of insertions, degree bounds, label basis elements and
 derivatives of the separated kernels. Auxiliary coefficient limit points
-may be selected on ordered tails; they do not change this full inner
+may be chosen on ordered tails; they do not change this full inner
 limit of the correlations. Scaling comparison sequences and the choice
 of a phase are later operations on the same continuum family.
 
 \section{Assembly of the construction}
 \label{ch19:theorem-section}
 
-The hypotheses used along the construction have now been supplied for
-one common family. Chapters~\ref{ch09:renormalization} and
-\ref{ch10:trajectory} give the actual block estimates and fixed-input
-convergence. Chapter~\ref{ch11:insertions} supplies the marked comparisons,
+The hypotheses used along the construction have now been given for
+one lattice family. Chapters~\ref{ch09:renormalization} and
+\ref{ch10:trajectory} give the block estimates and fixed-input
+convergence. Chapter~\ref{ch11:insertions} gives the comparisons with insertions,
 including restarted histories and arbitrary fixed numbers of insertions.
-Chapter~\ref{ch13:continuum} constructs the bounded approximations and
+Chapter~\ref{ch13:continuum} proves Proposition~\ref{ch13:bounded-singleton}, Corollary~\ref{ch13:bounded-word} and the
 local product estimates. The free comparison and annular estimates in
 Chapter~\ref{ch14:ward}, and the repeated estimate for a separating family in
 Chapter~\ref{ch15:phases}, use these same objects. Thus they are not
 additional assumptions in the following assembly statement.
 
-\begin{theorem}[Assembly of the common Wilson family]
+\begin{theorem}[Assembly for the lattice family]
 \label{ch19:conditional}
 The chosen Wilson family has the following
 properties. For every prescribed increasing volume sequence there is
 one subsequence along which the cutoff limits converge to a hierarchy $S$ of smooth separated Euclidean
 correlations and compatible finite-dimensional field spaces $F_d$.
 Their dimensions and orthogonal representations agree with those of
-the invariant free Maxwell comparison spaces. The filtration $(F_d)$ contains the unit field. Its inclusion maps are
+the invariant free Maxwell comparison spaces. The filtration $(F_d)$ contains the identity field. Its inclusion maps are
 injective, and its four coordinate derivatives commute.
 
-There is a compact metrizable phase space $\Xi$, a full-support
+There is a compact metrizable space of phases $\Xi$, a full-support
 probability measure $\nu$, and phase hierarchies $S^\xi$ with
-$S=\int S^\xi\,d\nu$. All phases have the same field-null spaces,
+$S=\int S^\xi\,d\nu$. All phases have the same null spaces of the correlations,
 Euclidean covariance and reflection positivity. Each phase reconstructs
 a local relativistic quantum field theory with tempered Wightman
 correlations, a faithful common field filtration, a positive-cone
 translation spectrum and a unique invariant vacuum. Its weak field
-commutant is scalar. These statements are uniform over the phases in
+commutant consists of multiples of the identity. These statements are uniform over the phases in
 the finite-list senses specified in the preceding chapters.
 
 The common real stress tensor is symmetric and conserved, with its
@@ -81,7 +81,7 @@ Section~\ref{ch18:prescription} gives the phase-uniform finite-order
 coefficient and remainder bounds \eqref{ch18:ope-bound}. Independently,
 the fixed subtraction prescription
 of Section~\ref{ch18:extension} extends all separated correlations to
-finite-order distributions across collision diagonals, compatibly
+finite-order distributions across the diagonals, compatibly
 with the field inclusions, translations, rotations and permutations.
 \end{theorem}
 \begin{proof}
@@ -96,21 +96,21 @@ later reconstruction or operator products.
 Coordinate reflection positivity, the free comparison and the annular
 estimates give the conserved tensor, its local charges, Euclidean
 rotations and Ward normalization in Chapter~\ref{ch14:ward}.
-Chapter~\ref{ch15:phases} then compresses whole words to the mixed
-ground space. The real approximation and moments for separating families prove
+Chapter~\ref{ch15:phases} then compresses whole words to the zero-energy
+subspace of the reflection Hilbert space of the undecomposed family. The real approximation and moments for separating families prove
 symmetries and the equality of field spaces in every character, beyond
 what abstract commutative algebra alone gives.
 
-The slab bounds supply joint boundary distributions in
+The slab bounds give joint boundary distributions in
 Chapter~\ref{ch16:reconstruction}. Covariance gives the spectral cone,
 analytic continuation gives locality, and word reconstruction gives
 the relativistic fields. The unitary equivalence of the reconstructed and reflection-positive Hilbert spaces and the
-phase-uniform low-energy estimate remove exceptional vacua. The same
+phase-uniform low-energy estimate extend uniqueness of the vacuum to every phase. The same
 chapter proves weak irreducibility and continues the stress charge law.
 
 The finite OPE and contact extension follow from their separate arguments in
 Chapter~\ref{ch18:products}. Each step preserves the originally chosen
-family and the already selected correlation limits.
+family and the correlation limits along the chosen subsequence.
 \end{proof}
 
 \begin{corollary}[The trace law]
@@ -123,7 +123,7 @@ Then
  \lim_{r\downarrow0}r^8\log^2(1/r)G_\Theta(r)
                     =\frac{3\dim_\RR\gLie}{\pi^4}.
 \]
-Consequently the centered trace cannot agree near zero with any finite linear combination of products of the
+Consequently the zero-mean trace cannot agree near zero with any finite linear combination of products of the
 mass-shell Laplace kernels specified in Section~\ref{ch17:exclusion}.
 \end{corollary}
 \begin{proof}
@@ -132,7 +132,7 @@ squeeze of Chapter~\ref{ch17:trace}. The positive spectral measure
 required there already follows from reconstruction.
 \end{proof}
 
-\section{Conclusions that are not supplied}
+\section{Conclusions that are not obtained}
 \label{ch19:scope}
 
 The logarithmic ultraviolet law and the low-energy estimate describe
@@ -142,9 +142,9 @@ vacuum. A positive mass gap is not proved.
 
 Vacuum uniqueness within each phase does not imply uniqueness of the
 phase, a point-mass phase measure, or uniqueness of the infinite-volume
-limit. The construction uses a refinement of a prescribed volume
+limit. The construction uses a subsequence of a prescribed volume
 sequence. It does not prove a simultaneous continuum and infinite-volume
-limit, independence of the block penalty or all normalization choices,
+limit, independence of the penalty parameter or all normalization choices,
 or a separate lattice realization of each character phase.
 
 The trace comparison excludes the finite class explicitly defined in
@@ -153,14 +153,14 @@ field or every infinite Wick expansion on the basis of one two-point
 function. The OPE is an expansion to each fixed finite degree; no
 infinite series convergence has been asserted. The contact extension
 has a specified subtraction convention and may have larger local order
-than an optimized prescription. Positivity at contacts, contact Ward
-identities, the fact that inserting the identity leaves correlations unchanged, and uniqueness of contact
+than an optimized prescription. Positivity at coincident points, contact Ward
+identities, compatibility with removal of an identity field, and uniqueness of contact
 terms require additional normalization conditions.
 
 The trace argument uses more than convergence to the free tensor. Its
 low-moment estimate distinguishes field degree from scaling dimension:
 a quadratic expression with extra spatial differences is still quadratic
-in the field. Exact polynomial preservation by the linear response,
-together with the normalized Gaussian fluctuation estimate, supplies the
+in the field. Exact polynomial preservation by the linearization of the critical configuration,
+together with the normalized Gaussian fluctuation estimate, gives the
 required decay in Proposition~\ref{ch17:spatial-moments}. This is why
 that additional calculation is needed after reconstruction.

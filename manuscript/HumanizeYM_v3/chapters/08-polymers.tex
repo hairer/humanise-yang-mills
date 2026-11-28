@@ -15,7 +15,7 @@ application. It does not prove another cluster-expansion theorem. We use
 Koteck\'y--Preiss convergence\cite{KoteckyPreiss1986}, in the explicit rooted
 form of Ueltschi\cite[Theorem~1]{Ueltschi2004}, and explain how support weights,
 activity derivatives and large-field constraints enter. The distinction
-between a general cluster estimate and a bound on the actual gauge-theory
+between a general cluster estimate and a bound on the gauge-theory
 activities will remain explicit throughout.
 
 \section{Activities, supports and incompatibility}
@@ -25,8 +25,8 @@ Let $\Lambda$ be a finite set of lattice sites. A \emph{polymer label}
 $\gamma$ belongs to a finite or countable set $\mathcal P$, has a nonempty
 support $X_\gamma\subset\Lambda$, and carries a complex number
 $z_\gamma$, called its \emph{activity}. Different labels may have the same
-support. The labels can retain information about an integration sector,
-derivative or local Taylor coefficient; they are not identified solely by
+support. The labels can retain information about an integration sector, a
+derivative or a local Taylor coefficient; they are not identified solely by
 their supports.
 
 A symmetric, reflexive relation $\gamma\not\sim\eta$ specifies
@@ -73,7 +73,7 @@ For $\alpha\ge0$ define the site norm
                   |z_\gamma|e^{\alpha c(X_\gamma)}.
 \end{equation}
 It counts every polymer at each site in its support. A norm which counts
-only the chosen anchor of a polymer is different. Passing from an anchored
+a polymer only at a chosen base point, an \emph{anchored} norm, is different. Passing from an anchored
 bound to \eqref{ch08:site-norm} requires a support-size estimate or a loss
 in the exponential weight. This distinction matters when checking a
 cluster criterion for an effective density.
@@ -191,7 +191,7 @@ Replacing the condition $x\in X(\boldsymbol\gamma)$ by
 ``at least one occurrence belongs to $\mathcal Q$'' in
 \eqref{ch08:weighted-tail} gives $b_{\mathcal Q}q^{k-1}$ on the right.
 This is useful when a cluster has to meet a prescribed insertion.
-An insertion selected in this way is a distinguished occurrence in the
+An insertion chosen in this way is a distinguished occurrence in the
 combinatorial expansion, not yet a renormalized quantum field.
 
 For a family satisfying \eqref{ch08:reserve} with the same constants in
@@ -228,8 +228,8 @@ $|Y|\gamma_0q^{k-1}$. Counting a cluster more than once when it meets
 several sites of $Y$ only increases the upper bound.
 
 The same mechanism controls changes of activities in a bounded region.
-If two families of activities agree away from $Y$, their logarithmic
-cluster terms cancel unless a cluster contains a changed activity.
+If two families of activities agree away from $Y$, the terms of the cluster
+expansions of the logarithms of their partition functions cancel unless a cluster contains a changed activity.
 A quantitative Lipschitz estimate additionally needs a bound on the
 difference of those activities, or a uniformly admissible interpolation
 between them. Agreement of supports alone gives locality of the
@@ -268,8 +268,8 @@ The mixed derivative of $\log Z$ at zero is the connected correlation
 The cluster representation expresses such derivatives through clusters
 carrying the distinguished source occurrences; see
 \cite[\S3]{Ueltschi2004}. To use this representation in the gauge theory,
-the source-deformed activities must satisfy a uniform criterion on an
-actual complex neighbourhood of zero. Boundedness of the undeformed gas
+the activities depending on the source parameters, the \emph{source-dependent activities}, must satisfy a uniform criterion on a
+complex neighborhood of zero. Boundedness of the gas without sources
 does not imply that estimate.
 
 There is a second way to insert observables: differentiate the unnormalized
@@ -279,22 +279,22 @@ Bounds are assigned to the inserted activity itself. The usual mnemonic
 ``differentiate the logarithm of each activity'' is not a valid definition
 in that situation.
 
-\section{Large-field constraints and exact reassembly}
+\section{Large-field constraints and the factorization identity}
 \label{ch08:forced}
 
 An effective gauge density includes regions where a small-field expansion
 is not available. Fix a configuration of the coarse variables for the
-moment, and let $D\subset\Lambda$ be the set of sites declared to be in
-the large-field region. In addition to the regular activities
+moment, and let $D\subset\Lambda$ be the set of sites prescribed as lying in
+the large-field region. In addition to the polymer activities
 $z_\gamma$, introduce large-field activities $K_\eta$ with supports
 $Y_\eta$ and nonempty sets $I_\eta\subset D\cap Y_\eta$.
-The set $I_\eta$ records the large-field sites assigned to that activity.
+The set $I_\eta$, the \emph{prescribed large-field set} of that activity, consists of the large-field sites attributed to it.
 Let $\mathfrak C(D)$ consist of the allowed finite families $B$ of such
 labels with disjoint supports and
 \[
  \bigcup_{\eta\in B} I_\eta=D.
 \]
-The exact rules for eligibility are part of the definition of an effective
+The exact rules deciding which covering families are allowed are part of the definition of an effective
 density; they may exclude some otherwise possible covers. When $D$ is
 empty, the empty family is permitted. Figure~\ref{ch08:fig-exact-cover}
 shows two covers of the same set \(D\) and how the exclusion rule can fail
@@ -318,22 +318,22 @@ Applying \eqref{ch08:deletion-identity} gives the exact factorization
          e^{-\mathcal L_{Y(B)}(z)}.
 \end{equation}
 For finite sums this is algebra; the same identity holds for absolutely
-convergent sums. It is the basic reason that removing regular polymers
+convergent sums. It is the basic reason that removing polymers $\gamma$
 near a large-field region can be absorbed into modified activities.
 
 The expression $\mathcal L_{Y(B)}$ need not split as a sum over individual
-members of $B$. A connected regular cluster can meet two large-field
+members of $B$. A connected cluster of polymers $\gamma$ can meet two large-field
 supports. Such a cluster couples them, and the modified activity belongs
 on their union together with the cluster support. Grouping by connected
 components is the appropriate reorganization. An arbitrary product of
 independently corrected large-field activities would omit these terms.
 
 Formula \eqref{ch08:reassembly} does not by itself bound the sum over
-$B$. That estimate requires suppression of large-field activities by the
-action, bounds on the number and geometry of eligible supports, and enough
-additional exponential support decay to absorb the regular clusters attached to them.
+$B$. That estimate requires a decay factor for the large-field activities from the
+action, bounds on the number and geometry of allowed supports, and a sufficient
+margin in the support exponent to absorb the clusters of polymers $\gamma$ attached to them.
 These are analytic inputs to the nonlinear renormalization step. The
-abstract theorem bounds the regular cluster sum once those inputs have
+abstract theorem bounds the cluster sum of the polymer activities $z_\gamma$ once those inputs have
 been established; it does not establish them.
 
 Two support notions must be distinguished in this application. The set
@@ -344,9 +344,9 @@ covering sets therefore need not imply disjoint dependence on links.
 The abstract gas above needs the overlap implication
 \eqref{ch08:overlap} for its chosen exclusion supports; it does not assume
 statistical independence. When a local integration or factorization
-argument also requires full dependence supports, those enlarged sets
+argument also requires the dependence sets, those enlarged sets
 and their geometric estimates must be specified separately. One must not
-silently replace the covering sets by enlarged sets in an exact covering
+silently replace the covering sets by enlarged sets in a disjoint covering
 identity.
 
 \section{What an application must supply}
@@ -354,17 +354,17 @@ identity.
 
 The reusable conclusions of this chapter are the connected expansion
 \eqref{ch08:log}, the local tail \eqref{ch08:weighted-tail}, parameter
-differentiation under a uniform complex-domain bound, and exact removal
-and reassembly formulas. They are statements about a specified family
+differentiation under a uniform complex-domain bound, and the exact deletion
+and factorization identities \eqref{ch08:deletion-identity} and \eqref{ch08:reassembly}. They are statements about a specified family
 of activities. To apply them after a block integration one must give:
 \begin{enumerate}
  \item an exact expansion of the integrated density, including the
- scalar factor and every large-field sector;
+ normalization constant and every large-field sector;
  \item supports containing every link and cutoff condition on which an
  activity depends, and a definite incompatibility relation;
- \item a site-norm bound with a strictly positive support-weight reserve,
+ \item a site-norm bound with a strictly positive margin $\delta$ in the support exponent,
  satisfying \eqref{ch08:reserve} uniformly in the period;
- \item corresponding estimates for the source-deformed or inserted
+ \item corresponding estimates for the source-dependent or inserted
  activities whenever a connected observable is required;
  \item an absolutely summable bound for the constrained large-field
  families and the clusters attached to them.
@@ -374,4 +374,4 @@ obstruction in the construction. The general summation mechanism is
 already available in the literature. What must be proved for the Wilson
 model is that exact blocking, stationary integration, the large-field
 decomposition and the chosen observable normalization produce activities
-obeying those requirements on the same trajectory.
+obeying those requirements on the same renormalization-group trajectory.

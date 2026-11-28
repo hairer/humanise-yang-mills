@@ -1,0 +1,976 @@
+% Draft repair, 24 November 2026; revised after one independent review; the revision itself is not reviewed
+% !TEX root = ../monograph.tex
+\subsection{Lattice symmetries and the average over forests}
+\label{ch09:forest-average}
+
+The expansion just described is carried out with one fixed forest,
+that is, one rooted spanning tree in every block
+(Section~\ref{ch05:actual-coordinates} and
+Chapter~\ref{ch06:large-fields}). The block integral
+$\mathscr Z_{\rm blk}$ does not involve a forest, but its individual
+polymer activities do: the tree decides which fine links are
+integration variables. A rooted tree also singles out directions in its
+block. Indeed, for $L\ge3$ no spanning tree of the centered block which
+is rooted at the center is invariant under the coordinate permutations:
+the site $(1,1,1,1)$ is fixed by all of them, so its parent would be
+fixed too, and none of its neighbors is. There is therefore no reason
+for the lattice symmetries to transport the terms of a fixed-forest
+expansion into one another.
+Later in this chapter these symmetries are used term by term, namely in
+the localization \eqref{ch09:localization} and in the identification of
+the inverse coupling correction in Section~\ref{ch09:subtraction}.
+We therefore average the polymer activities over the forests before
+taking the logarithm. The average must be taken over independent
+choices in the different blocks; an average over one global choice
+would not preserve the product structure of the gas. This subsection
+states what is averaged, which properties of the fixed-forest
+construction are used, and what follows. One of those properties is
+proved here, namely that the normalization constant does not depend on the
+forest. The others are collected in
+Assumption~\ref{ch09:forest-assumption}; they concern the construction
+of Chapter~\ref{ch06:large-fields} and are not derived in this draft.
+The paragraph at the end of the subsection lists what is proved, what
+is assumed and what has not been adapted.
+
+\subsubsection*{Symmetries and equivariant families}
+
+Let $\Lambda$ be the coarse torus and $\Lambda^{\rm f}$ the fine torus,
+and write $\mathbb B(y)=Ly+\mathbb B_{(L-1)/2}$ for the block of
+$y\in\Lambda$. As in Chapter~\ref{ch01:lattice}, an element
+$\varrho\in H_4$ and a site $z\in\Lambda$ define the bijection
+$\varsigma(y)=\varrho y+z$ of $\Lambda$. We write $\varrho$ and
+$\varsigma$ for these maps, instead of the letters $h$ and $g$, because
+$h_X$ denotes the small-field indicator and $g$ a coupling in this
+chapter. The maps $\varsigma$ form a finite group
+$\mathfrak G=\mathfrak G(\Lambda)$; $\varsigma_z$ denotes the
+translation $y\mapsto y+z$. The element $\varsigma$ also acts on fine
+sites, by $x\mapsto\varrho x+Lz$; we use the same letter. Since $L$ is
+odd and the blocks are centered, $\varsigma$ maps $\mathbb B(y)$ onto
+$\mathbb B(\varsigma y)$, its center to the center, and internal block
+edges to internal block edges. For a link configuration $U$ and an
+ordered pair $(x,x')$ of nearest neighbors write $U(x,x')$ for the link
+variable from $x$ to $x'$, so that $U(x',x)=U(x,x')^{-1}$. As in
+Chapter~\ref{ch01:lattice}, $\varsigma$ acts on configurations by
+\[
+ (\varsigma^*U)(x,x')=U(\varsigma x,\varsigma x').
+\]
+Then $(\varsigma_1\varsigma_2)^*=\varsigma_2^*\varsigma_1^*$, a
+function local on $X$ composed with $\varsigma^*$ is local on
+$\varsigma X$, and
+\begin{equation}
+ \operatorname{Bad}_m(\varsigma^*U)
+     =\varsigma^{-1}\operatorname{Bad}_m(U),
+ \qquad h_X(\varsigma^*U)=h_{\varsigma X}(U).
+ \label{ch09:bad-transport}
+\end{equation}
+The same definitions apply on the fine torus, and on the auxiliary tori
+$\Lambda_i$ used below, each with its own group.
+
+\begin{definition}[Equivariant families]
+\label{ch09:equivariant}
+A family of localized terms $(X_i,o_i,E_i)_{i\in I}$ is
+\emph{equivariant} if for every $\varsigma\in\mathfrak G$ there is a
+bijection $i\mapsto\varsigma\cdot i$ of $I$ such that
+\[
+ X_{\varsigma\cdot i}=\varsigma X_i,\qquad
+ o_{\varsigma\cdot i}=\varsigma o_i,\qquad
+ E_{\varsigma\cdot i}(U)=E_i(\varsigma^*U)\quad\text{for every }U .
+\]
+A family of large-field activities
+$(Y_i,I_i^{\rm bad},\mathcal E_i^{\rm extra},K_i)_{i\in I}$ is
+equivariant if there are such bijections with
+$Y_{\varsigma\cdot i}=\varsigma Y_i$,
+$I^{\rm bad}_{\varsigma\cdot i}=\varsigma I^{\rm bad}_i$,
+$K_{\varsigma\cdot i}(U)=K_i(\varsigma^*U)$, and
+$U\in\mathcal E^{\rm extra}_{\varsigma\cdot i}$ exactly when
+$\varsigma^*U\in\mathcal E^{\rm extra}_i$. Representation data
+are equivariant if both their families are. The same terminology is used
+for any family of functions labelled with supports, and with base points
+when they have them.
+\end{definition}
+
+Three elementary remarks will be used. First, a subfamily of an
+equivariant family is equivariant when its index set is mapped to
+itself by the bijections. Second, a fine family which is equivariant
+for the group of the fine torus is in particular transported by the
+maps $x\mapsto\varrho x+Lz$; only these enter a block step. Third, the
+definition constrains the choice of base points. A support may be mapped to
+itself by a symmetry that moves each of its sites, so one base point per
+support cannot always be chosen. A function $f$ on such a support $X$ is
+then divided into the $|X|$ equal shares $f/|X|$, one with base point at each
+site of $X$, as is done for the selected terms in
+Section~\ref{ch09:improvement}.
+
+\subsubsection*{The normalization constant does not depend on the forest}
+
+A forest $F$ consists of one spanning tree $F(y)$ of each block
+$\mathbb B(y)$, made of internal block edges and rooted at $Ly$. Write
+$\mathcal T_y$ for the finite set of such trees and
+$\mathfrak T=\prod_{y\in\Lambda}\mathcal T_y$ for the set of forests.
+As in Section~\ref{ch05:actual-coordinates}, $\iota_F$ extends
+coordinates on the edges outside $F$ by zero on the tree edges.
+Let $N_{\rm free}(F)$ be the number of positive fine edges outside $F$.
+
+\begin{lemma}[Flat reference determinant]
+\label{ch09:forest-determinant}
+Let $\mathsf A^0$ be a real symmetric matrix acting on $\gLie$-valued
+functions of the positive fine edges, and suppose that
+$\mathsf A^0d_{0,f}\phi=0$ for every site function $\phi$ which vanishes
+at all block roots. Then $N_{\rm free}(F)$ and
+$\det(\iota_F^*\mathsf A^0\iota_F)$ do not depend on $F\in\mathfrak T$.
+\end{lemma}
+
+The hypothesis holds for the restriction of the flat quadratic form
+\eqref{ch05:actual-hessian} to the fine variables. Write
+$\mathcal Q_{\rm av}$ for the derivative of the averaging operation, which is
+denoted $\mathcal Q$ in \eqref{ch05:actual-Q}; the subscript is added
+because $\mathcal Q$ is the quadratic part of the path action in this
+chapter. The form is
+$d_{1,f}^*H_fd_{1,f}+b\,\mathcal Q_{\rm av}^*\mathcal Q_{\rm av}$,
+with $b$ the coefficient of \eqref{ch05:actual-hessian}. A gradient has
+no curl, and
+$\mathcal Q_{\rm av}d_{0,f}\phi=d_{0,c}(\phi|_{L\Lambda})=0$ by
+\eqref{ch05:actual-Q}. The hypothesis persists when further flat components
+with the same property are added, and for each signed orientation,
+because the elements of $H_4$ map gradients of functions vanishing at
+the block roots to such gradients.
+
+\begin{proof}
+A spanning tree of a block has $L^4-1$ edges. Hence every forest has
+$|\Lambda|(L^4-1)$ tree edges, and
+$N_{\rm free}(F)=4L^4|\Lambda|-|\Lambda|(L^4-1)$.
+
+Let $P_F$ be the coordinate projection onto functions supported on the
+edges of $F$, and $D_F=1-P_F=\iota_F\iota_F^*$. For an edge function $u$
+and a fine site $x$ let $\alpha_Fu(x)$ be the sum of $u$ along the path
+in $F$ from $x$ to the root of its block, an edge traversed against its
+orientation being counted with the opposite sign. With the convention
+$(d_{0,f}\phi)(e)=\phi(e_+)-\phi(e_-)$, put
+\[
+ B_Fu=u+d_{0,f}\alpha_Fu .
+\]
+Summation along tree paths gives four facts: $\alpha_Fu$ vanishes at
+every block root; $B_Fu$ vanishes on the edges of $F$; $B_Fu=u$ if $u$
+already vanishes there, because then $\alpha_Fu=0$; and
+$B_Fd_{0,f}\phi=0$ if $\phi$ vanishes at every block root, because then
+$\alpha_Fd_{0,f}\phi=-\phi$.
+
+Let $F,H\in\mathfrak T$. They have equally many tree edges; choose a
+bijection between the edges of $F$ and those of $H$, and let $\Xi$
+carry a function supported on the edges of $F$ to the function on the
+edges of $H$ with the corresponding values. Define
+\[
+ T_{FH}u=\Xi P_Fu+B_HD_Fu .
+\]
+Since $B_HD_Fu$ vanishes on the edges of $H$, we have
+$P_HT_{FH}u=\Xi P_Fu$ and $D_HT_{FH}u=B_HD_Fu$. Define $T_{HF}$ in
+the same way with $\Xi^{-1}$. Then
+\[
+ T_{HF}T_{FH}u=P_Fu+B_FB_HD_Fu
+   =P_Fu+B_F\bigl(D_Fu+d_{0,f}\alpha_HD_Fu\bigr)=P_Fu+D_Fu=u .
+\]
+The third equality uses the last two facts above, for the forest $F$,
+and the vanishing of $\alpha_HD_Fu$ at the block roots. Exchanging the
+roles of $F$ and $H$ gives $T_{FH}T_{HF}=1$. Both maps act on the edge
+index by matrices with integer entries and trivially on $\gLie$. Their
+determinants are therefore integers with product one, and
+$|\det T_{FH}|=1$.
+
+By hypothesis $\mathsf A^0B_HD_F=\mathsf A^0D_F$, and by symmetry of
+$\mathsf A^0$ also $(B_HD_F)^*\mathsf A^0=D_F\mathsf A^0$. Moreover
+$\langle T_{FH}u,P_HT_{FH}u\rangle=|\Xi P_Fu|^2=|P_Fu|^2$, so that
+$T_{FH}^*P_HT_{FH}=P_F$. Hence
+\[
+ T_{FH}^*\bigl(D_H\mathsf A^0D_H+P_H\bigr)T_{FH}
+   =D_F\mathsf A^0D_F+P_F .
+\]
+The matrix $D_F\mathsf A^0D_F+P_F$ is the direct sum of
+$\iota_F^*\mathsf A^0\iota_F$ on the edges outside $F$ and the identity
+on the edges of $F$. Taking determinants gives
+$\det(\iota_F^*\mathsf A^0\iota_F)=\det(\iota_H^*\mathsf A^0\iota_H)$.
+\end{proof}
+
+The lemma is unconditional. Its application to the flat reference
+determinant of this section is not: that determinant is described at
+the beginning of the section in words, not by a formula, and that it is
+$\det(\iota_F^*\mathsf A^0\iota_F)$ for a matrix of the kind just
+described is part~(a) of the assumption below.
+
+\subsubsection*{The fixed-forest expansion as a function of the forest}
+
+For every $\varsigma\in\mathfrak G$ and every $y$, the map $\varsigma$
+carries the trees of $\mathbb B(y)$ bijectively onto those of
+$\mathbb B(\varsigma y)$. Thus
+$(\varsigma F)(\varsigma y)=\varsigma(F(y))$ defines a bijection
+$F\mapsto\varsigma F$ of $\mathfrak T$.
+
+The Mayer expansion of this section was described for one forest. The
+following assumption records, in the form of identities, its output,
+its dependence on the forest, and the further properties of the
+construction which the remainder of this subsection uses. In it,
+$a_M^F$ denotes the integrated activity of a connected component $M$
+computed with the forest $F$, summed over the remaining sector data as
+described above. A \emph{local identification} between two tori
+$\Lambda'$ and $\Lambda''$ is a bijection $\jmath$ between a set
+$S'\subset\Lambda'$ and a set $S''\subset\Lambda''$, each contained in a
+cube of side smaller than the period of its torus, which is the
+restriction of a translation between these two cubes. It carries the
+blocks of $S'$, their fine sites and links, their trees, and the link
+variables read there to the corresponding objects for $S''$.
+
+\begin{assumption}[Fixed-forest expansion]
+\label{ch09:forest-assumption}
+\mgubi{Issue 2: not proved. In existence/: (a) derived for one forest, its mask form asserted; (b), (e) argued; (c), (d) asserted; (f) a hypothesis. Lean has counterparts of (b), (c), (d), but for its own construction, not that of Chapter~\ref{ch06:large-fields}.}%
+Under the hypotheses of Theorem~\ref{ch09:step-theorem} other than the
+present assumption, with an equivariant incoming representation
+data, the construction of this section has the following six
+properties.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item \emph{Form.} For every forest $F\in\mathfrak T$ there are a
+ countable set $\mathcal M$ of labels, each with a nonempty support
+ $X_M\subset\Lambda$ containing its full dependence set and a
+ prescribed large-field set $I_M\subset X_M$, possibly empty,
+ all independent of $F$; real Borel gauge-invariant functions $a_M^F$
+ of the coarse field, with $a_M^F$ local on $X_M$ and
+ $\sum_M\sup_U|a_M^F(U)|<\infty$; a Borel function $\mathscr S$
+ independent of $F$; and a constant $\mathscr N_F>0$, such that at every
+ coarse field
+ \begin{equation}
+  \mathscr Z_{\rm blk}(U)=\mathscr N_Fe^{-\mathscr S(U)}
+   \sum_{\mathcal A}\prod_{M\in\mathcal A}a_M^F(U).
+  \label{ch09:fixed-forest-gas}
+ \end{equation}
+ The sum is over the finite sets $\mathcal A\subset\mathcal M$ whose
+ supports are pairwise disjoint and for which
+ $\bigcup_{M\in\mathcal A}I_M=\operatorname{Bad}_m(U)$. The constant is
+ that of the bookkeeping at the beginning of this section:
+ $\mathscr N_F=\mathscr N_0\,\mathfrak m^{N_{\rm free}(F)}
+ \det(\iota_F^*\mathsf A^0\iota_F)^{-1/2}$, where $\mathscr N_0$ does
+ not depend on $F$ and $\mathsf A^0$ is a matrix independent of $F$
+ which satisfies the hypothesis of Lemma~\ref{ch09:forest-determinant}.
+ For a label with $I_M=\varnothing$ there is a real Borel
+ gauge-invariant function $f_M^F$, local on $X_M$, with
+ \begin{equation}
+  a_M^F=h_{X_M}f_M^F .
+  \label{ch09:mask-form}
+ \end{equation}
+ Parts \textup{(b)}--\textup{(d)} hold for the functions $f_M^F$ as
+ well as for the $a_M^F$.
+\item \emph{Locality in the forest.} If $F(y)=F'(y)$ for every
+ $y\in X_M$, then $a_M^F=a_M^{F'}$.
+\item \emph{Uniform bounds.} The estimate \eqref{ch09:joint-input}, the
+ majorants of the table following it, and the comparison estimates of
+ Section~\ref{ch09:improvement} hold for every $F$ with right sides
+ that do not depend on $F$.
+\item \emph{Transport.} For every $\varsigma\in\mathfrak G$ there is a
+ bijection $M\mapsto\varsigma\cdot M$ of $\mathcal M$ with
+ \[
+  X_{\varsigma\cdot M}=\varsigma X_M,\qquad
+  I_{\varsigma\cdot M}=\varsigma I_M,\qquad
+  a^{\varsigma F}_{\varsigma\cdot M}(U)=a^F_M(\varsigma^*U),
+ \]
+ and $\mathscr S(\varsigma^*U)=\mathscr S(U)$. The classification of
+ labels used below (the number and kind of elementary factors, the
+ presence of an incoming activity, and path lengths) is preserved by
+ these bijections. A label which contains exactly one incoming localized
+ term records its index $i$; the label $\varsigma\cdot M$ then
+ records the index $\varsigma\cdot i$ given by the equivariance of the
+ incoming family, and the coarse site $y$ with $o_i\in\mathbb B(y)$
+ belongs to $X_M$.
+\item \emph{Selected terms and agreement between tori.} The pure
+ small-field construction, without incoming activities, is carried out
+ with the same choices on each auxiliary torus $\Lambda_i$,
+ $0\le i\le4$, of Section~\ref{ch09:improvement}, and parts
+ \textup{(a)}--\textup{(d)} hold there with the group
+ $\mathfrak G(\Lambda_i)$. On each torus $\Lambda'$ among
+ $\Lambda,\Lambda_0,\ldots,\Lambda_4$ the selected low-order terms form
+ a finite set. Its elements are tuples of labels with empty prescribed
+ sets, and path terms which are terms of a path action averaged over
+ $H_4$ as in Lemma~\ref{ch09:path-channels}. This set is mapped to
+ itself by $\mathfrak G(\Lambda')$. For every local identification
+ $\jmath$ between two of these tori, the labels occurring in selected
+ tuples supported in $S'$ correspond bijectively to those supported in
+ $S''$, with supports mapped by $\jmath$ and the classification of
+ part~\textup{(d)} preserved; a tuple is selected exactly when the
+ corresponding tuple is; and
+ $f^{F''}_{\jmath M}(U'')=f^{F'}_M(U')$ whenever $U''$ corresponds to
+ $U'$ and $F''(\jmath y)$ corresponds to $F'(y)$ for every $y\in X_M$.
+ The selected path terms supported in $S'$ and in $S''$ correspond in
+ the same way, with base points mapped by $\jmath$ and equal values at
+ corresponding fields.
+\item \emph{Preliminary families.} The regular functions $f_i$ of
+ \eqref{ch09:early} are the terms of the logarithm of the averaged
+ regular gas other than the selected ones, the tail of the truncation
+ included, with the supports and base points of
+ Proposition~\ref{ch09:family-equivariance}\textup{(ii)}, together
+ with the localized terms $G_x$ of \eqref{ch09:localization} after the
+ symmetrization of Lemma~\ref{ch09:symmetric-localization}. The preliminary large-field activities
+ $(Y_i,I_i^{\rm bad},\mathcal E_i^{\rm extra},k_i)$ of
+ \eqref{ch09:early} form an equivariant family.
+\end{enumerate}
+\end{assumption}
+
+We comment on the six parts. Part~(a) is the reassembly described at
+the beginning of this section and at the end of
+Chapter~\ref{ch06:large-fields}; it is not displayed there as a formula,
+and the objects $\mathscr S$, $\mathscr N_0$, $\mathsf A^0$ and the
+labels are not identified there by name.
+A label records the positions and kinds of its elementary factors. The
+label set is made independent of $F$ by giving a factor which is absent
+for a particular forest, such as a Haar remainder at a link belonging to
+that forest, the value zero for that forest. The form
+\eqref{ch09:mask-form} is the one used in the definition of $F_x$ and
+$M_x$ in Section~\ref{ch09:improvement}, where the selected terms
+appear both with and without their small-field indicator. The function
+$f_M^F$ is an extension of $a_M^F$ beyond the configurations which are
+small-field on $X_M$. Such an extension is a choice, and its properties
+do not follow from those of $a_M^F$; this is why
+\textup{(b)}--\textup{(d)} are required of it separately.
+Part~(b) expresses that a
+factor reads a tree only in the blocks which meet its dependence set.
+For the Haar factors this requires comparing two local coordinate
+systems as images of the same product Haar measure. Part~(c) is how the
+constants of Chapters~\ref{ch05:gaussian} and~\ref{ch06:large-fields}
+are stated: there are finitely many tree shapes at fixed $L$, and the
+constants in \eqref{ch05:tree-comparison} are uniform in the allowed
+trees. Part~(d) holds when every ingredient is transported together
+with the forest. For the block kernel this is
+Proposition~\ref{ch04:kernel-properties}; the path action
+\eqref{ch04:path-action} is invariant; the incoming families are
+equivariant by hypothesis. The remaining choices of
+Chapter~\ref{ch06:large-fields}, namely the cutoff functions, the
+finite-range covariances, the assignment of index triples to components
+and the labels, must be made by rules which commute with $\mathfrak G$.
+Part~(e) makes precise the phrase ``the same local formula on
+$\Lambda_i$'' of Section~\ref{ch09:improvement}. The fixed-forest
+agreement which it asserts rests on the fact that every quantity
+entering a selected term is computed from data in its dependence
+set: local windows of the quadratic form, their inverses, values
+of the averaging operation and link words. This chapter and
+Chapter~\ref{ch06:large-fields} contain no statement comparing two
+tori, so the agreement is assumed. Part~(f) is needed because the
+regrouping which leads from the gas to \eqref{ch09:early} is not
+displayed as a formula in this chapter. For the large-field family it
+is supported by part~(d) for the labels with $I_M\ne\varnothing$ and by
+the fact that the deletion identity \eqref{ch08:deletion-identity}
+refers only to supports.
+We have not verified parts~(b)--(f) against every step of
+Chapter~\ref{ch06:large-fields}; this is why they are stated as an
+assumption.
+
+\subsubsection*{The average}
+
+Give $\mathfrak T$ the uniform probability measure. It is the product
+of the uniform measures on the sets $\mathcal T_y$: the trees in
+different blocks are chosen independently. Write $\mathbb E_F$ for the
+corresponding average and set
+\begin{equation}
+ \bar a_M(U)=\mathbb E_Fa_M^F(U)
+   =\frac1{|\mathfrak T|}\sum_{F\in\mathfrak T}a_M^F(U),
+ \qquad
+ \bar f_M(U)=\mathbb E_Ff_M^F(U)\quad\text{if }I_M=\varnothing .
+ \label{ch09:averaged-activity}
+\end{equation}
+
+\begin{proposition}[Average over forests]
+\label{ch09:forest-average-prop}
+Assume parts \textup{(a)} and \textup{(b)} of
+Assumption~\ref{ch09:forest-assumption}. Then:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\mathscr N_F=\mathscr N$ does not depend on $F$, and at every
+ coarse field
+ \begin{equation}
+  \mathscr Z_{\rm blk}(U)=\mathscr Ne^{-\mathscr S(U)}
+   \sum_{\mathcal A}\prod_{M\in\mathcal A}\bar a_M(U),
+  \label{ch09:averaged-gas}
+ \end{equation}
+ with the same sets $\mathcal A$ as in \eqref{ch09:fixed-forest-gas}.
+\item $\bar a_M$ is a real Borel gauge-invariant function local on
+ $X_M$. It equals the average of $a_M^F$ over the trees $F(y)$,
+ $y\in X_M$, alone. Every bound on $a_M^F$ or on its derivatives
+ whose right side does not depend on $F$ holds for $\bar a_M$. Under
+ part~\textup{(c)} this includes \eqref{ch09:joint-input}, with
+ $\int G_M\,d\nu$ understood for each forest. If $I_M=\varnothing$,
+ the same statements hold for $\bar f_M$, and
+ $\bar a_M=h_{X_M}\bar f_M$.
+\item Under part~\textup{(d)},
+ $\bar a_{\varsigma\cdot M}(U)=\bar a_M(\varsigma^*U)$ for every
+ $\varsigma\in\mathfrak G$, and likewise for $\bar f_M$ if
+ $I_M=\varnothing$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) The first statement is Lemma~\ref{ch09:forest-determinant} applied
+to the formula for $\mathscr N_F$ in part~(a). Fix $U$ and a finite set
+$\mathcal A$ with pairwise disjoint supports. By part~(b), $a_M^F(U)$
+is a function of the trees $(F(y))_{y\in X_M}$. For different
+$M\in\mathcal A$ these are disjoint sets of coordinates of a product
+measure, so
+\[
+ \mathbb E_F\prod_{M\in\mathcal A}a_M^F(U)
+       =\prod_{M\in\mathcal A}\bar a_M(U).
+\]
+The index set of the sum in \eqref{ch09:fixed-forest-gas} does not
+depend on $F$, and for each $F$ the sum converges absolutely, since
+$\sum_{\mathcal A}\prod_{M\in\mathcal A}|a_M^F|
+\le\exp(\sum_M\sup|a_M^F|)$. The left side of
+\eqref{ch09:fixed-forest-gas} and the factor
+$\mathscr Ne^{-\mathscr S(U)}$ do not depend on $F$. Averaging the
+identity over the finite set $\mathfrak T$ and exchanging the finite
+average with the absolutely convergent sum gives
+\eqref{ch09:averaged-gas}.
+
+(ii) A finite average of Borel, gauge-invariant, local functions has
+these properties, and the triangle inequality gives the bounds. The
+second statement is part~(b) and the product form of the measure. The
+indicator $h_{X_M}$ does not depend on $F$, so averaging
+\eqref{ch09:mask-form} gives $\bar a_M=h_{X_M}\bar f_M$; the other
+statements about $\bar f_M$ follow as for $\bar a_M$, since
+parts~(b) and~(c) are assumed for $f_M^F$.
+
+(iii) The map $F\mapsto\varsigma F$ is a bijection of $\mathfrak T$,
+so $\varsigma F$ is uniformly distributed when $F$ is. Therefore
+\[
+ \bar a_{\varsigma\cdot M}(U)
+     =\mathbb E_Fa^{\varsigma F}_{\varsigma\cdot M}(U)
+     =\mathbb E_Fa^F_M(\varsigma^*U)=\bar a_M(\varsigma^*U),
+\]
+and the same computation applies to $\bar f_M$.
+\end{proof}
+
+The product formula in the proof is where independence of the trees in
+different blocks is used. It is not available for a general probability
+measure on $\mathfrak T$, for instance for the uniform measure on the
+translates and signed images of one reference forest.
+
+From here on the polymer activities of the Mayer expansion are the averaged activities
+$\bar a_M$. The identity \eqref{ch09:averaged-gas} has the form of
+\eqref{ch09:fixed-forest-gas} with the same labels, supports, prescribed
+sets, majorants and normalization constant. The cluster theorem and the
+operations of the following sections therefore apply to it without
+change. Two points deserve mention. An estimate of a single activity
+which is made in one forest, with the same forest on both sides of a
+comparison, passes to the average when it is uniform in the forest;
+this is the case for the inherited term of
+Section~\ref{ch09:improvement} under part~(c). By contrast, a cluster
+term of the averaged gas with several polymers is a product of
+independent averages and is not the average of the corresponding
+fixed-forest cluster term. This does not affect
+Sections~\ref{ch09:stationary-remainder}--\ref{ch09:centered-log}:
+their estimate \eqref{ch09:pure-small-bound} concerns the logarithm of
+the complete pure block integral, which involves no forest. Its
+comparison with the sum of the selected terms is unchanged provided the
+remaining terms are removed through their majorants, as in
+Section~\ref{ch09:improvement}.
+
+The second statement of (ii) also gives the comparison between tori
+required for $F_y^{(i)}$ in \eqref{ch09:localization}. Let $\jmath$ be
+a local identification as in part~(e) of the assumption, and let $M$ be
+a label of a selected tuple supported in $S'$. The fixed-forest values
+of $f_M$ and $f_{\jmath M}$ agree at corresponding fields when the
+trees in the blocks of $X_M$ and of $\jmath X_M$ correspond. The
+averaged functions $\bar f_M$ and $\bar f_{\jmath M}$ are averages over
+the products of the sets of trees of these blocks with their uniform
+measures, and $\jmath$ induces a bijection between the two products.
+Hence $\bar f_{\jmath M}(U'')=\bar f_M(U')$ at corresponding fields.
+Since $\jmath$ is injective, it also preserves the intersections of
+supports, hence the incompatibility graph and the coefficient
+\eqref{ch08:ursell} of a tuple, and the number of sites of a support,
+hence the shares. The sums of selected terms at corresponding sites
+therefore agree whenever all selected terms with a nonzero share at
+these sites are supported in $S'$ and in $S''$.
+
+\subsubsection*{Equivariance of the terms of the expansion}
+
+The path action enters through its individual terms. Their transport
+is elementary and is recorded first, since it is used twice below.
+
+\begin{lemma}[Terms of the path action]
+\label{ch09:path-channels}
+Let the terms of $P^{\rm raw}$ in \eqref{ch04:path-action} be indexed
+by $d$, with supports $Y_d$, base points $o_d$ and values
+$L_d(U)$, as in Section~\ref{ch09:path-reset}. The terms of
+$P^{\rm path}$ are then indexed by the pairs $(\varrho',d)$,
+$\varrho'\in H_4$, with value $|H_4|^{-1}L_d(\varrho'^*U)$, support
+$\varrho'Y_d$ and base point $\varrho'o_d$. This family is equivariant
+under $\mathfrak G$. The same holds for the quadratic expressions
+$a_dP_d$ without event indicators and for the cubic and quartic terms.
+\end{lemma}
+
+\begin{proof}
+The expression $P^{\rm raw}$ is a sum over all sites of one expression
+whose coefficients do not depend on the site. Hence the translate of a
+term $d$ by $z$ is a term $d+z$, with $Y_{d+z}=Y_d+z$,
+$o_{d+z}=o_d+z$ and $L_{d+z}(U)=L_d(\varsigma_z^*U)$. For
+$\varrho''\in H_4$,
+\[
+ L_d(\varrho'^*\varrho''^*U)=L_d((\varrho''\varrho')^*U),
+\]
+so the value of $(\varrho',d)$ at $\varrho''^*U$ is the value of
+$(\varrho''\varrho',d)$ at $U$, and
+$(\varrho',d)\mapsto(\varrho''\varrho',d)$ is a bijection which maps
+supports and base points by $\varrho''$. For a translation,
+$\varsigma_z\varrho'=\varrho'\varsigma_{\varrho'^{-1}z}$ gives
+$\varrho'^*\varsigma_z^*=\varsigma_{\varrho'^{-1}z}^*\varrho'^*$, so
+the value of $(\varrho',d)$ at $\varsigma_z^*U$ is the value of
+$(\varrho',d+\varrho'^{-1}z)$ at $U$. The support of the latter is
+$\varrho'(Y_d+\varrho'^{-1}z)=\varrho'Y_d+z$, and similarly for the
+base point. Translations and $H_4$ generate $\mathfrak G$. The argument
+uses only the form of $P^{\rm raw}$ and applies to each of its parts.
+\end{proof}
+
+\begin{proposition}[Equivariant terms]
+\label{ch09:family-equivariance}
+Assume parts \textup{(a)}--\textup{(e)} of
+Assumption~\ref{ch09:forest-assumption}, and form the gas from the
+averaged activities.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item For a tuple $\Gamma=(M_1,\ldots,M_n)$ of labels with
+ $I_{M_r}=\varnothing$, let
+ $c_\Gamma=\frac1{n!}\varphi^T(\Gamma)\prod_r\bar a_{M_r}$ be its term
+ in \eqref{ch08:log}, let
+ $c^0_\Gamma=\frac1{n!}\varphi^T(\Gamma)\prod_r\bar f_{M_r}$, and let
+ $X_\Gamma=\bigcup_rX_{M_r}$. Then $c_\Gamma=h_{X_\Gamma}c^0_\Gamma$.
+ With
+ $\varsigma\cdot\Gamma=(\varsigma\cdot M_1,\ldots,\varsigma\cdot M_n)$,
+ \[
+  X_{\varsigma\cdot\Gamma}=\varsigma X_\Gamma,\qquad
+  c_{\varsigma\cdot\Gamma}(U)=c_\Gamma(\varsigma^*U),\qquad
+  c^0_{\varsigma\cdot\Gamma}(U)=c^0_\Gamma(\varsigma^*U).
+ \]
+\item Let a set of such tuples be mapped to itself by every
+ $\varsigma\in\mathfrak G$, and give each of its terms equal shares at
+ the sites of its support, with base points there. The resulting family is
+ equivariant. This applies to the terms of degree at least three and
+ to the selected low-order cluster terms and their tail. The terms
+ linear in an incoming localized term are not divided: such a term
+ keeps the single coarse base point $y$ for which $\mathbb B(y)$ contains
+ the base point of the incoming term, and with these base points they form
+ an equivariant family as well. The selected path terms, with their
+ base points, form an equivariant family. With $f_a^0$ running over the
+ selected terms, namely the functions $c^0_\Gamma$ of the selected
+ tuples and the selected path terms,
+ \begin{equation}
+  F_{\varsigma x}(U)=F_x(\varsigma^*U),\qquad
+  M_{\varsigma x}(U)=M_x(\varsigma^*U)
+  \label{ch09:share-equivariance}
+ \end{equation}
+ for the functions of Section~\ref{ch09:improvement}; in particular
+ $F_x(1)$ does not depend on $x$.
+\item The same statements hold on each auxiliary torus $\Lambda_i$
+ with its group $\mathfrak G(\Lambda_i)$, for the pure small-field
+ construction carried out there with its own average over forests.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) If $X_\Gamma$ is small-field, every indicator $h_{X_{M_r}}$ equals
+one. If it is not, a large-field site belongs to some $X_{M_r}$, and
+the factor $\bar a_{M_r}=h_{X_{M_r}}\bar f_{M_r}$ vanishes. This gives
+$c_\Gamma=h_{X_\Gamma}c^0_\Gamma$, also when labels are repeated. The
+supports are transported by part~(d) of the assumption. Two labels are
+incompatible when their supports intersect, and
+$\varsigma X\cap\varsigma X'=\varsigma(X\cap X')$. Hence $\Gamma$ and
+$\varsigma\cdot\Gamma$ have the same incompatibility graph and the
+same coefficient \eqref{ch08:ursell}. The values are transported by
+Proposition~\ref{ch09:forest-average-prop}(iii).
+
+(ii) The bijection $\Gamma\mapsto\varsigma\cdot\Gamma$ preserves the
+set by hypothesis, and maps the sites of $X_\Gamma$ onto those of
+$X_{\varsigma\cdot\Gamma}$; the share $c_\Gamma/|X_\Gamma|$ with base point
+$x$ is sent to the share of $\varsigma\cdot\Gamma$ with base point
+$\varsigma x$. The set of tuples of degree at least three is mapped to
+itself because part~(d) preserves the classification; the selected set
+is mapped to itself by part~(e), and then so is its complement among
+the low-order tuples, which forms the tail. For a term linear in an
+incoming localized term with index $i$, part~(d) gives the index
+$\varsigma\cdot i$ for the transported term. Its incoming base point is
+$o_{\varsigma\cdot i}=\varsigma o_i$, which lies in
+$\varsigma\mathbb B(y)=\mathbb B(\varsigma y)$ when $o_i\in\mathbb B(y)$.
+So the coarse base point of the transported term is $\varsigma y$. The
+selected path terms are terms of an averaged path action by
+part~(e); they are permuted with their base points by
+Lemma~\ref{ch09:path-channels}, and their selected set is mapped to
+itself by part~(e). For \eqref{ch09:share-equivariance}, write
+$a'=\varsigma\cdot a$; then $p_{\varsigma x,a'}=p_{xa}$,
+$f^0_{a'}(U)=f^0_a(\varsigma^*U)$ by (i) and by the lemma, and
+$h_{X_{a'}}(U)=h_{X_a}(\varsigma^*U)$ by \eqref{ch09:bad-transport};
+the sum over selected $a'$ is a reindexing of the sum over selected
+$a$. The flat configuration is fixed by $\varsigma^*$, and the
+translations act transitively on $\Lambda$.
+
+(iii) Part~(e) provides parts~(a)--(d) on $\Lambda_i$. The proofs of
+(i) and (ii) and of Proposition~\ref{ch09:forest-average-prop} use no
+property of the original torus that $\Lambda_i$ does not share.
+\end{proof}
+
+The base points in (ii) are those counted in
+Section~\ref{ch09:improvement}: the bound for the inherited term there
+counts the $L^4$ fine base points above one coarse base point, which is the
+base point kept here. For the terms which are divided into equal shares
+the following point is open. The norm $\|\cdot\|_m$ measures
+derivatives from the base point, and placing a share of a cluster term at
+an arbitrary site of its support, instead of at one distinguished
+site, contributes at most a polynomial factor in the diameter of the support. That
+this polynomial is absorbed by the margin in the support exponent in
+\eqref{ch09:early-bounds} is used and has not been checked here.
+
+The equivariance of the preliminary families of \eqref{ch09:early}
+is now as follows. For the regular family $(f_i)$ it follows from
+part~(f) of the assumption, from (ii), and from the symmetrization of
+the localized terms carried out next. For the large-field family
+$(k_i)$ it is part~(f) itself and is not proved here.
+
+\subsubsection*{Symmetrizing the localization}
+
+The functions $G_x$ and $L_x$ of \eqref{ch09:localization} are built
+with the reflection map $q\mapsto x+\pi_{w+i}(q)$, whose image is the cube
+$x+\{0,\ldots,w+i\}^4$. This cube is not symmetric about $x$: an axis
+reflection about $x$ moves it by an amount which depends on $i$. The
+family $(G_x)$ is transported by translations, but there is no reason
+for it to be transported by axis reflections. Since the localization
+identity is linear in $G_x$ and $L_x$, the missing symmetry is restored
+by averaging.
+
+\begin{lemma}[Symmetrized localization]
+\label{ch09:symmetric-localization}
+Suppose \eqref{ch09:share-equivariance} holds, and let $G_x,L_x$ be
+defined by \eqref{ch09:localization}. Suppose, as is derived in
+Section~\ref{ch09:improvement}, that
+$L_x(U)=0$ whenever $N_{2\bar w}(x)$ is small-field and that, at every
+$U$,
+\begin{equation}
+ \sum_xM_x(U)=|\Lambda|F_0(1)
+   +\sum_xh_{N_{\bar w}(x)}(U)G_x(U)+\sum_xL_x(U).
+ \label{ch09:localization-sum}
+\end{equation}
+For $\varrho\in H_4$ acting on $\Lambda$ by $y\mapsto\varrho y$, define
+\[
+ \widehat G_x(U)=\frac1{|H_4|}\sum_{\varrho\in H_4}
+                        G_{\varrho^{-1}x}(\varrho^*U),
+ \qquad
+ \widehat L_x(U)=\frac1{|H_4|}\sum_{\varrho\in H_4}
+                        L_{\varrho^{-1}x}(\varrho^*U).
+\]
+Then \eqref{ch09:localization-sum} holds with
+$\widehat G_x,\widehat L_x$ in place of $G_x,L_x$;
+$\widehat L_x(U)=0$ whenever $N_{2\bar w}(x)$ is small-field for $U$;
+$\widehat G_x$ reads $U$ only on the cubes
+$x+\varrho(\{0,\ldots,w+4\}^4)$, $\varrho\in H_4$; and the
+families $(\widehat G_x)_x$, $(\widehat L_x)_x$, with base point $x$, are
+equivariant under $\mathfrak G$.
+\end{lemma}
+
+\begin{proof}
+Fix $\varrho$ and apply \eqref{ch09:localization-sum} to $\varrho^*U$.
+By \eqref{ch09:share-equivariance},
+$\sum_xM_x(\varrho^*U)=\sum_xM_{\varrho x}(U)=\sum_xM_x(U)$.
+Neighborhoods are transported, $N_r(\varrho x)=\varrho N_r(x)$, so
+$h_{N_{\bar w}(x)}(\varrho^*U)=h_{N_{\bar w}(\varrho x)}(U)$ by
+\eqref{ch09:bad-transport}. Substituting $x=\varrho^{-1}x'$ in the two
+site sums gives
+\[
+ \sum_xM_x(U)=|\Lambda|F_0(1)
+  +\sum_{x'}h_{N_{\bar w}(x')}(U)G_{\varrho^{-1}x'}(\varrho^*U)
+  +\sum_{x'}L_{\varrho^{-1}x'}(\varrho^*U).
+\]
+Averaging over $\varrho$ proves the identity. If $N_{2\bar w}(x)$ is
+small-field for $U$, then $N_{2\bar w}(\varrho^{-1}x)$ is small-field
+for $\varrho^*U$, so every term of $\widehat L_x(U)$ vanishes. The
+function $U\mapsto G_{\varrho^{-1}x}(\varrho^*U)$ is the expression for
+$G_x$ with the reflection map $q\mapsto x+\varrho\pi_{w+i}(q)$ in place of
+$q\mapsto x+\pi_{w+i}(q)$, which gives the dependence set.
+
+For $\varrho''\in H_4$, substituting $\varrho=\varrho''\varrho'$ gives
+\[
+ \widehat G_{\varrho''x}(U)=\frac1{|H_4|}\sum_{\varrho'}
+        G_{\varrho'^{-1}x}(\varrho'^*\varrho''^*U)
+                   =\widehat G_x(\varrho''^*U).
+\]
+By construction $G_{x+z}(U)=G_x(\varsigma_z^*U)$ for the translation
+$\varsigma_z$, because $U_{i,x+z}=(\varsigma_z^*U)_{i,x}$.
+Since $\varsigma_z\varrho=\varrho\varsigma_{\varrho^{-1}z}$,
+\[
+ G_{\varrho^{-1}(x+z)}(\varrho^*U)
+   =G_{\varrho^{-1}x}(\varsigma_{\varrho^{-1}z}^*\varrho^*U)
+   =G_{\varrho^{-1}x}(\varrho^*\varsigma_z^*U),
+\]
+and averaging gives
+$\widehat G_{x+z}(U)=\widehat G_x(\varsigma_z^*U)$.
+Translations and $H_4$ generate $\mathfrak G$. The same computation
+applies to $L_x$, whose translation covariance follows from that of
+$M_x$, of $F_x(1)$ and of the last sum in \eqref{ch09:localization}.
+\end{proof}
+
+The bounds stated for $G_x$ and $L_x$ in
+Section~\ref{ch09:improvement} are used for $\widehat G_x$ and
+$\widehat L_x$. For $\widehat L_x$ the supremum bound passes to the
+average directly. For $\widehat G_x$ the reason is that the bound on
+$G_x$ is obtained from the bound on the auxiliary sums and from the
+reflection map, of which it uses only that nearest neighbors are mapped
+to nearest neighbors within distance $w+i$ of the base point; the maps
+$q\mapsto x+\varrho\pi_{w+i}(q)$ have this property. The derivation of
+the bound on $G_x$ is given in Section~\ref{ch09:improvement} in one
+sentence, and the corresponding statement for the maps with $\varrho$
+has the same status: it is not proved in detail here. The
+dependence set of $\widehat G_x$ extends to distance $w+4$ on all
+sides of $x$; it is contained in the neighborhood $N_{\bar w}(x)$
+already used for its indicator.
+
+\subsubsection*{The summed affine Hessian}
+
+For $\varrho\in H_4$ write $\varrho e_a=\omega_ae_{\varrho(a)}$; this
+defines signs $\omega_a=\pm1$ and a permutation $a\mapsto\varrho(a)$ of
+the four axes. For an orientation $q=(a,b)$, $a<b$, let $\varrho\cdot q$
+be the pair $\{\varrho(a),\varrho(b)\}$ in increasing order, and
+\[
+ s_\varrho(q)=\omega_a\omega_b
+        \operatorname{sgn}(\varrho(b)-\varrho(a)).
+\]
+With the convention $t_{ba}=-t_{ab}$ for an antisymmetric array $t$,
+this means
+$\omega_a\omega_bt_{\varrho(a)\varrho(b)}=s_\varrho(q)t_{\varrho\cdot q}$.
+
+\begin{lemma}[Isotropy of the summed coefficient]
+\label{ch09:isotropy}
+Let $(X_i,o_i,f_i)_{i\in I}$ be an equivariant family of preliminary
+regular functions as in \eqref{ch09:early}, with
+$\sum_{o_i=o}|q_{f_i}(q,r)|<\infty$ for every $o$, $q$, $r$. Let
+$\varsigma(y)=\varrho y+z$.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $q_{f_{\varsigma\cdot i}}(\varrho\cdot q,\varrho\cdot r)
+ =s_\varrho(q)s_\varrho(r)\,q_{f_i}(q,r)$, and
+ $F^{\rm cl}_q(\varsigma^*U,o)
+ =s_\varrho(q)F^{\rm cl}_{\varrho\cdot q}(U,\varsigma o)$.
+\item There is a real number $\Delta$ with
+ $\sum_{o_i=o}q_{f_i}(q,r)=\Delta\delta_{qr}$ for every $o$.
+\end{enumerate}
+Part \textup{(ii)} uses three kinds of symmetries: translations give
+independence of $o$; the reflection of one axis about $o$ gives the
+vanishing for $q\ne r$; coordinate permutations about $o$, without
+signs, give equality of the diagonal entries.
+\end{lemma}
+
+\begin{proof}
+(i) Put $Z_i=X_i\cup N_2(o_i)$; then
+$Z_{\varsigma\cdot i}=\varsigma Z_i$, and one of them wraps exactly
+when the other does, in which case both coefficients vanish by
+definition. Otherwise the coordinate lifts are displacements in $\ZZ^4$
+and $\xi_{\varsigma o}(\varsigma y)=\varrho\xi_o(y)$. Let $A$ be an
+affine potential on $Z_{\varsigma\cdot i}$ with
+$A(y,y+e_c)=u_c+\sum_\nu\xi_{\varsigma o}(y)^\nu v_{c\nu}$, and
+$A(y',y)=-A(y,y')$. Its curl is the antisymmetric array
+$(\mathrm dA)_{ab}=v_{ba}-v_{ab}$. The pullback
+$(\varsigma^*A)(x,x')=A(\varsigma x,\varsigma x')$ satisfies
+$\exp(\varsigma^*A)=\varsigma^*\exp A$. If $\omega_a=1$,
+$(\varsigma^*A)(x,x+e_a)=A(\varsigma x,\varsigma x+e_{\varrho(a)})$;
+if $\omega_a=-1$,
+$(\varsigma^*A)(x,x+e_a)=-A(\varsigma x-e_{\varrho(a)},\varsigma x)$,
+which differs from $-A(\varsigma x,\varsigma x+e_{\varrho(a)})$ by the
+constant $v_{\varrho(a)\varrho(a)}$. In both cases, since
+$(\varrho\xi)^{\varrho(\nu)}=\omega_\nu\xi^\nu$,
+\[
+ (\varsigma^*A)(x,x+e_a)=u'_a+\sum_\nu\xi_o(x)^\nu
+     \omega_a\omega_\nu v_{\varrho(a)\varrho(\nu)} .
+\]
+So $\varsigma^*A$ is affine on $Z_i$ with curl
+$(\mathrm d\varsigma^*A)_{ab}
+=\omega_a\omega_b(\mathrm dA)_{\varrho(a)\varrho(b)}$, that is,
+$(\mathrm d\varsigma^*A)_q=s_\varrho(q)(\mathrm dA)_{\varrho\cdot q}$.
+
+By Section~\ref{ch09:subtraction}, $f$ and $Q_f$ have the same
+Hessian on affine potentials. The derivative of $F^{\rm cl}_q$ at the
+identity is the curl component $(\mathrm dA)_q$, and $q_f$ is
+symmetric. Hence, for affine potentials $A,\widetilde A$,
+\[
+ D^2[f(\exp\cdot)](0)[A,\widetilde A]
+     =\sum_{q,r}q_f(q,r)
+      \langle(\mathrm dA)_q,(\mathrm d\widetilde A)_r\rangle .
+\]
+Apply this to $f_{\varsigma\cdot i}=f_i\circ\varsigma^*$:
+\[
+ \sum_{q',r'}q_{f_{\varsigma\cdot i}}(q',r')
+       \langle(\mathrm dA)_{q'},(\mathrm d\widetilde A)_{r'}\rangle
+ =\sum_{q,r}q_{f_i}(q,r)s_\varrho(q)s_\varrho(r)
+       \langle(\mathrm dA)_{\varrho\cdot q},
+              (\mathrm d\widetilde A)_{\varrho\cdot r}\rangle .
+\]
+The curls are arbitrary and $q\mapsto\varrho\cdot q$ is a bijection of
+the six orientations, which gives the first formula.
+
+For the clover curvature, the loop of $\varsigma^*U$ which starts at
+$o$ and follows
+$\varepsilon e_a,\eta e_b,-\varepsilon e_a,-\eta e_b$ is the loop of
+$U$ which starts at $\varsigma o$ and follows
+$\varepsilon\omega_ae_{\varrho(a)},\eta\omega_be_{\varrho(b)}$ and
+their negatives. Substituting $\varepsilon'=\varepsilon\omega_a$,
+$\eta'=\eta\omega_b$ in the definition gives the factor
+$\omega_a\omega_b$. If $\varrho(a)>\varrho(b)$ the loop is the
+inverse of the one in the definition of
+$F^{\rm cl}_{\varrho(b)\varrho(a)}$, and
+$\operatorname{proj}_{\gLie}(u-u^{-1})$ is odd under inversion. This is
+the second formula.
+
+(ii) Put $\Delta_o(q,r)=\sum_{o_i=o}q_{f_i}(q,r)$. The bijection
+$i\mapsto\varsigma\cdot i$ maps $\{i:o_i=o\}$ onto
+$\{i:o_i=\varsigma o\}$. Reindexing the absolutely convergent sum and
+using (i),
+\[
+ \Delta_{\varsigma o}(\varrho\cdot q,\varrho\cdot r)
+     =s_\varrho(q)s_\varrho(r)\Delta_o(q,r).
+\]
+For a translation, $\varrho=1$ and $\Delta_{o+z}=\Delta_o$. Let
+$q\ne r$. They are distinct two-element subsets of $\{1,2,3,4\}$, so
+some axis $c$ belongs to exactly one of them. Let $\varsigma$ be the
+reflection of the axis $c$ about $o$. Then $\varsigma o=o$,
+$\varrho\cdot q=q$, $\varrho\cdot r=r$ and
+$s_\varrho(q)s_\varrho(r)=-1$, so $\Delta_o(q,r)=0$. Finally let
+$q,q'$ be two orientations, and let $\varsigma$ fix $o$ and have as
+linear part a permutation matrix $\varrho$, without signs, which
+carries the pair $q$ to the pair $q'$. Then all $\omega_a=1$, so
+$s_\varrho(q)^2=1$ and $\Delta_o(q',q')=\Delta_o(q,q)$.
+\end{proof}
+
+\subsubsection*{Equivariance of the output}
+
+\begin{proposition}[The step preserves equivariance]
+\label{ch09:output-equivariance}
+Suppose the families $(X_i,o_i,f_i)$ and
+$(Y_i,I_i^{\rm bad},\mathcal E_i^{\rm extra},k_i)$ of
+\eqref{ch09:early} are equivariant, and let $L_x$ denote the
+symmetrized corrections of Lemma~\ref{ch09:symmetric-localization}.
+Then the localized terms and the large-field activities of the
+output tuple constructed in
+Sections~\ref{ch09:subtraction}--\ref{ch09:fusion} form equivariant
+families.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{ch09:isotropy}(i),
+\[
+ Q_{f_i}(\varsigma^*U)
+   =\tfrac12\sum_{q,r}q_{f_i}(q,r)s_\varrho(q)s_\varrho(r)
+   \langle F^{\rm cl}_{\varrho\cdot q}(U,\varsigma o_i),
+           F^{\rm cl}_{\varrho\cdot r}(U,\varsigma o_i)\rangle
+   =Q_{f_{\varsigma\cdot i}}(U).
+\]
+With \eqref{ch09:bad-transport} and
+$f_{\varsigma\cdot i}(1)=f_i(1)$ this gives
+$R_{f_{\varsigma\cdot i}}(U)=R_{f_i}(\varsigma^*U)$ and
+$\zeta_{f_{\varsigma\cdot i}}(U)=\zeta_{f_i}(\varsigma^*U)$, on the
+supports $Z_{\varsigma\cdot i}=\varsigma Z_i$.
+
+By Lemma~\ref{ch09:path-channels}, $\mathfrak G$ permutes the terms
+of the path action, with their supports and base points, and transports
+the quadratic expression $a_dP_d$ together with its quadratic term. The clover
+substitute of a quadratic term is transported by
+Lemma~\ref{ch09:isotropy}(i). Since $\alpha$ and $\Delta$ are numbers,
+$F_d$ and $J_d$ are transported as well, and likewise the cubic and
+quartic terms.
+
+Hence the large-field corrections $\ell_a$ of
+Section~\ref{ch09:fusion} (terms of the exponent supported where an enlarged neighborhood contains a large-field site), which are the $\zeta_{f_i}$, the $J_d$ and
+the symmetrized $L_x$, form an equivariant family with supports $Z_a$.
+A finite connected family $P$ of preliminary large-field labels and
+correction labels is mapped by $\varsigma$ to the family
+$\varsigma\cdot P$ of the transported labels. It is again connected,
+with $Y_{\varsigma\cdot P}=\varsigma Y_P$ and
+$I_{\varsigma\cdot P}=\varsigma I_P$, and by
+\eqref{ch09:bad-transport}
+\[
+ \mathbf1_{\{Y_{\varsigma\cdot P}\cap\operatorname{Bad}_m(U)
+              =I_{\varsigma\cdot P}\}}
+ =\mathbf1_{\{Y_P\cap\operatorname{Bad}_m(\varsigma^*U)=I_P\}} .
+\]
+The products in $K_P$ and the inherited additional conditions are
+transported factor by factor. So
+$K_{\varsigma\cdot P}(U)=K_P(\varsigma^*U)$. The
+localized terms of the output are the functions
+$h_{Z_i}R_{f_i}$ and the regular terms composing $F$, which
+have been treated.
+\end{proof}
+
+At the Wilson start of Section~\ref{ch09:wilson} the regular term of a
+plaquette $p$ is a class function of $U_p$ which is even under
+inversion, so it depends neither on the base point nor on the
+orientation of $p$. Divided into four equal shares with base points at the
+vertices of $p$, these terms form an equivariant family. The components
+$I$ of large-field sites, their supports $N_{2B}(I)$ and their
+energies $d_I$ are defined by rules which commute with $\mathfrak G$,
+so the family $(K_I)$ is equivariant. Under
+Assumption~\ref{ch09:forest-assumption},
+Propositions~\ref{ch09:family-equivariance}
+and~\ref{ch09:output-equivariance} then propagate equivariance from
+each scale index to the next.
+
+\paragraph{Status of this subsection.}
+\emph{Proved here, with complete proofs.}
+Lemma~\ref{ch09:forest-determinant}: the number of free edges and the
+flat determinant are the same for all forests.
+Lemma~\ref{ch09:path-channels}: the lattice symmetries permute the
+terms of the averaged path action.
+Lemma~\ref{ch09:symmetric-localization}: the localization identity
+survives the average of $G_x$ and $L_x$ over $H_4$, and the averaged
+families are equivariant.
+Lemma~\ref{ch09:isotropy}: for an equivariant family the summed
+quadratic coefficient is a multiple of the identity.
+Proposition~\ref{ch09:output-equivariance}: subtraction, path
+replacement and exact regrouping (Proposition~\ref{ch09:fusion-prop}) preserve equivariance.
+Propositions~\ref{ch09:forest-average-prop}
+and~\ref{ch09:family-equivariance} are proved from
+Assumption~\ref{ch09:forest-assumption} and are no stronger than it.
+
+\emph{Assumed.} The six parts of
+Assumption~\ref{ch09:forest-assumption}, none of which is proved in
+this monograph at present.
+Part~(a): the exact identity for the block integral with one forest,
+the formula for its normalization constant, and the form
+\eqref{ch09:mask-form} of the activities without large-field sites;
+the beginning of this section and the last section of
+Chapter~\ref{ch06:large-fields} describe this reassembly in words and
+state that its identities are separate from the bounds proved there.
+Part~(b): an activity reads the forest only in the blocks of its
+support; Chapter~\ref{ch06:large-fields} defines the dependence set
+of a factor as containing every window entry and frozen coordinate
+which it reads, but does not state the consequence.
+Part~(c): bounds uniform in the forest; Chapter~\ref{ch05:gaussian}
+takes common constants over the finitely many tree shapes and states
+\eqref{ch05:tree-comparison} uniformly in the allowed trees, while the
+uniformity of \eqref{ch09:joint-input} and of the comparison estimates
+is not stated.
+Part~(d): transport of the activities by the lattice symmetries
+together with the forest; proved for the block kernel
+(Proposition~\ref{ch04:kernel-properties}) and built into the path
+action \eqref{ch04:path-action}, not examined for the cutoffs,
+covariances and assignment rules of Chapter~\ref{ch06:large-fields}.
+Part~(e): the same construction on the auxiliary tori, selected sets
+which are mapped to themselves and correspond between tori, and equal
+fixed-forest values under local identifications; supported only by the
+locality of the constructions of Chapters~\ref{ch05:gaussian}
+and~\ref{ch06:large-fields}, which contain no comparison of two tori.
+Part~(f): the list of the preliminary regular functions and the
+equivariance of the preliminary large-field activities;
+the regrouping which produces them is not displayed in this chapter.
+
+\emph{Used and not proved, apart from the assumption.} The vanishing
+of $L_x$ on small-field neighborhoods and the identity
+\eqref{ch09:localization-sum}, which Section~\ref{ch09:improvement}
+derives by a classification of sites that is only sketched there; the
+derivative bound for the localized terms after the average over $H_4$;
+and the absorption, by the margin in the support exponent, of the polynomial factor from placing the base points of
+equal shares at all sites of a support.
+
+\emph{Adapted under a further hypothesis.} The expansions with insertions of
+Chapter~\ref{ch11:insertions} average their activities with insertions over the forests by the same average, under
+Hypothesis~(H) of Section~\ref{ch11:marked-step}, which is not proved; under it the coefficient of $z_\varnothing$ is
+\eqref{ch09:averaged-gas}. The restarted steps of Section~\ref{ch11:restart-construction} use analogues of
+Assumption~\ref{ch09:forest-assumption} and of Hypothesis~(H) which are neither stated nor proved.
+
+\emph{Not yet adapted.} The histories of
+Chapter~\ref{ch10:trajectory} depend on the assumption through
+Theorem~\ref{ch09:step-theorem}. Chapter~\ref{ch06:large-fields} does
+not yet say that its forest is averaged afterwards. The zero-background
+computation of Section~\ref{ch17:quadratic-current} uses one translated
+forest and relies on an unproved independence of the forest for
+gauge-invariant quantities.

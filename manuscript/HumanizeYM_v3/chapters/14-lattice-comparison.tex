@@ -20,14 +20,14 @@ $\alpha_i$ together until the last inequality holds and all are
 positive. Increasing their common part does not alter the preceding
 inequalities.
 
-At an admissible comparison depth $k$ put
+At a comparison scale $k$ whose comparison window lies in a single stage put\mgubi{Issue 10: say for which scales this holds ($k=k_j$ suffices for the limit taken below) and cite Chapter~\ref{ch10:trajectory}.}
 $H_k=\exp((\log\log\widehat\beta_k)^2)$ and set
 \[
  r_k=a_kH_k^{\alpha_0},\qquad s_k=H_k^{-\alpha_0},\qquad
  \delta_k=H_k^c.
 \]
-Thus $r_ks_k=a_k$: grid rounding occurs on the actual construction
-lattice. Use one common polynomial extraction $T$ from
+Thus $r_ks_k=a_k$: grid rounding occurs on the construction
+lattice. Use one common localization map $T$ from
 Section~\ref{ch11:common-extraction}. If $v$ is a fixed real polynomial
 representative of a free quotient field, its lift $u_{k,N,p}$ solves
 \[
@@ -39,11 +39,10 @@ $g=\beta_{N,p,k}^{-1/2}$ and $\theta$ is the local normalization
 used for $T$. These two dilations have different purposes.
 The inverse bound in \eqref{ch11:simultaneous-detector-lifts} gives
 bounded lifts at each fixed $k$, uniformly in the cutoffs and periods.
-Their real, unit and signed symmetry identities are exact. No separate
+Their identities for reality, the identity field and signed symmetries are exact. No separate
 choice is made for different spectator words.
 
-For clarity, the finite-arity use of the corrected-source estimate is
-as follows. Write $I_i$ for the lattice insertion in slot $i$. For a subset
+For clarity, here is how the estimate for the corrected coefficients is used for finitely many insertions. Write $I_i$ for the lattice insertion in argument $i$. For a subset
 $J$ of the insertion indices, let $G_J$ be the free correlation of the
 corresponding fields at the rescaled positions. Define recursively
 \[
@@ -51,16 +50,17 @@ corresponding fields at the rescaled positions. Define recursively
  R_I=\prod_{i\in I}I_i-
           \sum_{\varnothing\ne J\subseteq I}G_JR_{I\setminus J}.
 \]
+These are the Wick products of the insertions with respect to the free field (the moments $G_J$ are those of the free field, not of the lattice measure).
 Equivalently, introduce commuting variables $s_i$ with $s_i^2=0$ and write
 $s_J=\prod_{i\in J}s_i$. Then $R_I$ is the coefficient of $s_I$ in
 $\prod_i(1+s_i I_i)/(1+\sum_{J\ne\varnothing}G_Js_J)$. The denominator has
 constant coefficient one and hence an exact inverse in the finite
 squarefree algebra. For the limiting Gaussian variables every
 nonempty coefficient has expectation zero. The extraction of coefficients of source monomials,
-covariance comparison and marker-weight restoration of
+covariance comparison and absorption of the larger source weight of
 Proposition~\ref{ch11:n-mark-comparison} apply to this \emph{entire}
 finite algebra, including its joint incoming terms.
-With $q=\log H_k/(16n)$ and marker amplitude $e^{2q}$, the output
+With $q=\log H_k/(16n)$ and source weight $e^{2q}$, the output
 normalization is at most $e^q$ per reflected cell, and extraction gives
 \begin{equation}
  \|R_I\|_{\mathrm{cell}}
@@ -68,20 +68,20 @@ normalization is at most $e^q$ per reflected cell, and extraction gives
        \quad(\varnothing\ne I\subseteq\{1,\ldots,n\}).
  \label{ch14:subset-root}
 \end{equation}
-The stage coupling threshold is chosen after this fixed arity and its source
-constants. The estimate is on the original positive partition
+The lower bound on the reference coupling at the stage is chosen after this fixed number of insertions and the constants of the
+insertions. The estimate is on the original positive partition
 function and includes every reflected copy. Uniformity on $K$ uses
 positive point separation in the covariance estimate; it does not
 require a positive lower bound on each coordinate difference.
 Unwinding the finite recursion and applying the chessboard inequality
 therefore gives the grid error $C_KH_k^{-1/(16n)}$ at generic grid
-points. Distinct coordinates there differ by at least $a_k$ in physical
+points. Distinct coordinates there differ by at least $a_k$ in continuum
 units, so the assignments to lattice sites require no rounding.
 
 Apply the same coefficient map and the same finite comparison request
 also at exponents $\alpha_1$ and $\alpha_2$. At its own normalization
 a single insertion has chessboard seminorm at most $1+|G_{\{i\}}|$. Changing its
-scaling dilation to $\alpha_0$ costs at most
+scaling dilation to $\alpha_0$ loses at most a factor
 $CH_k^{(\alpha_0-\alpha_j)D}$. Set
 \[
  A_k=CH_k^{(\alpha_0-\alpha_1)D},\qquad
@@ -91,12 +91,12 @@ The comparison cells have sides at most $a_kH_k^{\alpha_j+5}$.
 Consequently the first cells are $o(r_k)$, and the second are
 $o(r_k\delta_k)$, by \eqref{ch14:comparison-exponents}.
 The chessboard inequality gives $|S_k|\le A_k^n$ on $K$.
-The positional modulus of Section~\ref{ch11:positional}, applied
-with physical margin $r_k\delta_k$, gives
-$|\nabla S_k|\le4nV_k^n/\delta_k$ outside the coordinate strips.
-Include the finitely many coordinate hybrids used in rounding in the
-excluded strips; their total volume is still $O(\delta_k)$.
-The physical windows lie inside the smallest period for large $k$,
+The modulus of continuity in the insertion points of Section~\ref{ch11:positional}, applied
+with margin $r_k\delta_k$ in continuum units, gives
+$|\nabla S_k|\le4nV_k^n/\delta_k$ outside the coincident-coordinate strips.
+Include a strip for each configuration taking every coordinate from the point or
+from its rounding (finitely many); the total volume of the strips is still $O(\delta_k)$.
+The compact configuration sets in continuum units lie inside the smallest period for large $k$,
 so the periodic and ordinary separations agree.
 
 Take an ordered limit point of the lifts at each fixed $k$. The

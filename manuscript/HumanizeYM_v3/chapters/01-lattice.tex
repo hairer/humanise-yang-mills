@@ -8,7 +8,7 @@ functional integral. The construction problem is to choose its coupling and
 its local observables as the lattice is refined, and to control their
 correlations uniformly enough to remove the cutoff.
 
-Two limits have different roles. At a fixed physical volume, the lattice
+Two limits have different roles. At a fixed volume in continuum units, the lattice
 spacing will tend to zero along a prescribed sequence. Only afterwards will
 the volume tend to infinity, along a subsequence. Keeping these operations
 separate is essential: compactness can produce a subsequence, but cannot by
@@ -76,7 +76,7 @@ This is the normalization of the one-loop coefficient of
 Gross--Wilczek and Politzer~\cite{GrossWilczek1973,Politzer1973}.
 The exact control of the error in that law is a later construction problem.
 
-\section{Links, holonomies and the Wilson measure}
+\section{Links, contour variables and the Wilson measure}
 \label{ch01:wilson-section}
 
 For an integer $s\ge1$, set
@@ -86,9 +86,9 @@ For an integer $s\ge1$, set
 \]
 The element $(y,\mu)$ of $E_s$ represents the oriented link from $y$ to
 $y+e_\mu$. A configuration is $U\in G^{E_s}$. The variable on the reversed
-link is, by definition, $U(y,\mu)^{-1}$. A path holonomy is the ordered
-product of its link variables, with this inverse convention on backward
-steps. We use row transport: multiplying a row vector at the initial point
+link is, by definition, $U(y,\mu)^{-1}$. A \emph{contour} is a lattice path along which the link variables are multiplied; its \emph{contour variable} is the ordered
+product of its link variables, with this inverse convention on links traversed
+backward; for a closed contour it is called a \emph{holonomy}. We use row transport: multiplying a row vector at the initial point
 by that ordered product transports it to the final point.
 
 The elementary positively oriented plaquette in the $(\mu,\nu)$-plane,
@@ -131,8 +131,8 @@ A site gauge transformation $g:\Lambda_s\to G$ acts by
  U^g(y,\mu)=g(y)U(y,\mu)g(y+e_\mu)^{-1}.
  \label{ch01:gauge-action}
 \end{equation}
-If $\gamma$ is a path from $y$ to $z$, its holonomy transforms as
-$U_\gamma^g=g(y)U_\gamma g(z)^{-1}$. Thus a closed holonomy transforms by
+If $\gamma$ is a contour from $y$ to $z$, its contour variable transforms as
+$U_\gamma^g=g(y)U_\gamma g(z)^{-1}$. Thus a holonomy transforms by
 conjugation. Together with left and right invariance of Haar measure, this
 proves gauge invariance of the energy and of the law. These are the basic
 properties of Wilson's lattice formulation~\cite{Wilson1974}; no gauge
@@ -154,7 +154,7 @@ Gauge transformations also explain why small fields must be defined
 through plaquettes rather than individual links. The pure-gauge
 configuration $U(y,\mu)=g(y)g(y+e_\mu)^{-1}$ can have links far from the
 identity while every plaquette holonomy is the identity. Later,
-small-field regions will be specified by bounds on $\|U_{y;\mu\nu}-1\|_G$.
+small-field regions will be specified by a regularity condition (Section~\ref{ch04:density-coordinates}), a bound on $\|U_{y;\mu\nu}-1\|_G$.
 
 The connection with classical curvature is most cleanly stated using exact
 parallel transport. For a smooth $\gLie$-valued connection $A$, let the
@@ -176,10 +176,10 @@ This familiar classical expansion motivates the action. It is not a
 regularity assertion about typical lattice configurations, nor about an
 eventual continuum random connection.
 
-\section{Physical scales and lattice symmetries}
+\section{Continuum scales and lattice symmetries}
 \label{ch01:scales-section}
 
-We keep distances in lattice units distinct from physical distances.
+We keep distances in lattice units distinct from distances in continuum units.
 For $y\in\Lambda_s$, let $r_s(y)$ be its unique representative in
 $(-s/2,s/2]^4\cap\ZZ^4$. The periodic distance in lattice units is
 \[
@@ -207,14 +207,14 @@ Choose odd integers $L_m\ge3$ and set
  \qquad a_m=D_m^{-1},\qquad \tau_m=\log D_m.
  \label{ch01:scale-sequence}
 \end{equation}
-Choose strictly increasing physical periods $R_p$, each an integer multiple
-of four. At scale $m$ and volume index $p$, the lattice has
-$s_{m,p}=R_pD_m$ sites per side and physical spacing $a_m$.
+Choose strictly increasing periods $R_p$ (the side lengths of the tori in continuum units), each an integer multiple
+of four. At scale index $m$ and volume index $p$, the lattice has
+$s_{m,p}=R_pD_m$ sites per side and spacing $a_m$ in continuum units.
 \end{definition}
-Its physical side is exactly $a_ms_{m,p}=R_p$. Increasing $m$ means refining
-the lattice; integrating out one scale goes from $m+1$ to $m$. The index
-$N$ will denote the finest scale in a finite renormalization trajectory.
-At cutoff $N$, a lattice site has physical placement
+Its side in continuum units is exactly $a_ms_{m,p}=R_p$. We call $a_m$ the \emph{scale} and $m$ the \emph{scale index}; in~\cite{Balaban1987RG} the index runs the other way, from zero on the finest lattice. Increasing $m$ means refining
+the lattice; integrating out one scale, in one step (the renormalization transformation of Chapter~\ref{ch04:blocking}), goes from $m+1$ to $m$. The index
+$N$ will denote the finest scale index in a finite renormalization-group trajectory.
+At ultraviolet cutoff $N$, a lattice site has the position in continuum units
 \begin{equation}
  \widehat y=a_N r_{R_pD_N}(y)\in(-R_p/2,R_p/2]^4.
  \label{ch01:placement}
@@ -227,12 +227,12 @@ boundary sites. At a step of ratio $L$, every fine site can be written
 uniquely as $Ly+z$, with a coarse site $y$ and
 $z\in\{-(L-1)/2,\ldots,(L-1)/2\}^4$. The resulting parent map commutes
 with signed coordinate permutations. The corresponding coarse point and
-its fine representative have the same physical position.
+its fine representative have the same position in continuum units.
 
-If an observable uses a fixed stencil $\Sigma\subset\ZZ^4$, its physical
-support has diameter at most $a_N\operatorname{diam}(\Sigma)$. Such an
+If an observable uses a fixed stencil $\Sigma\subset\ZZ^4$, its
+support has diameter at most $a_N\operatorname{diam}(\Sigma)$ in continuum units. Such an
 observable becomes local at a point as $N\to\infty$. This is different
-from a loop of fixed physical size, whose number of links grows with
+from a loop of fixed size in continuum units, whose number of links grows with
 $N$. The latter is not included merely by proving estimates for every
 fixed stencil.
 
@@ -249,10 +249,10 @@ FrohlichIsraelLiebSimon1978,Seiler1982}.
 Here are the support and orientation conventions for the finite-volume
 positivity statement. Fix an even side $s=2h$ and one coordinate, temporarily
 called $t$. A site reflection acts by $t\mapsto-t$ modulo $2h$; a link
-reflection acts by $t\mapsto-1-t$. Their positive sectors are respectively
+reflection acts by $t\mapsto-1-t$. Their positive halves are respectively
 $1\le t<h$ and $0\le t<h$. In the first case the two fixed time slices
 are excluded. In either case observables in the positive algebra depend
-only on links whose two endpoints are in the indicated sector.
+only on links whose two endpoints are in the indicated half.
 
 If the reflected coordinate is $\mu$ and the reflection of sites is
 $\vartheta$, the reflected configuration is
@@ -289,10 +289,10 @@ planes. Positivity of the Boltzmann density, by itself, would not imply
 \end{proof}
 
 For clarity, one version of the chessboard construction can be described
-without observables on seams. Write $s=2q\ell$ and cut each coordinate into
+without observables on the reflection planes of the tiling. Write $s=2q\ell$ and cut each coordinate into
 $2q$ intervals of length $\ell$. Let the base cell consist of sites with
 all coordinates strictly between $0$ and $\ell$. An observable local on
-this cell reads no seam links. Reflecting the cell repeatedly through the
+this cell reads no link meeting a reflection plane. Reflecting the cell repeatedly through the
 planes at multiples of $\ell$ gives its copies in all
 $M=(2q)^4$ cells. Figure~\ref{ch01:fig-chessboard} shows the action of
 two of these reflections on an oriented loop. Denote the resulting real pullback of a function $F$ to
@@ -322,20 +322,20 @@ Apply the abstract chessboard theorem
 observables $|F_C|$, one coordinate at a time. The slots are the $2q$
 strips in that coordinate: translation by $\ell$ gives cyclicity, and
 Proposition~\ref{ch01:lattice-rp} gives its reflection Cauchy--Schwarz
-hypothesis across the strip seams. The involution reflects the local
+hypothesis across the reflection planes bounding the strips. The involution reflects the local
 strip coordinates, including link orientation. Repeating in the other
 three coordinates gives the reflected copies in
 \eqref{ch01:chessboard-root}. No power-of-two restriction on $2q$ is
 needed. Empty cells are filled with the constant one.
 More flexible placements used later require explicit control of support,
-seams and divisibility. They are not consequences of changing the tiling
+reflection planes and divisibility. They are not consequences of changing the tiling
 symbol in \eqref{ch01:chessboard-root} without checking those conditions.
 
 \section{Correlations and the order of the limits}
 \label{ch01:limits}
 
-Recall that $a_N$ is the lattice spacing and $R_p$ the physical side of the
-torus, as in Definition~\ref{ch01:scales}. For now let $\mathcal T$ be an
+Recall that $a_N$ is the lattice spacing and $R_p$ the side of the
+torus, both in continuum units, as in Definition~\ref{ch01:scales}. For now let $\mathcal T$ be an
 arbitrary set of local-observable labels. A family of insertions assigns to
 $v\in\mathcal T$ and $y\in\Lambda_{R_pD_N}$ a continuous gauge-invariant
 function $I_{N,p}(v,y;U)$. For each fixed $v$, require locality on a translate
@@ -355,7 +355,7 @@ $\mu_{N,p}=\mu_{R_pD_N,\beta_{N,p}}$, the Wilson probability from
                    M^{\mathrm{lat}}_{N,p}(v;y).
  \label{ch01:lattice-smear}
 \end{align}
-The factor $a_N^{4n}$ is the physical volume element for $n$ insertions.
+The factor $a_N^{4n}$ is the volume element in continuum units for $n$ insertions.
 No limit is built into these definitions.
 
 \begin{definition}[Separated test functions]
@@ -370,13 +370,13 @@ in $((-R_p/2,R_p/2)^4)^n$.
 \end{definition}
 Such test functions can depend jointly on all positions; they need not factor into
 one-point test functions. Compactness of their support gives a positive distance
-from the collision diagonals. We write
+from the diagonals $x_i=x_j$, $i\ne j$. We write
 $\operatorname{sep}_\infty(x)=\min_{i\ne j}|x_i-x_j|_\infty$, with value
 $+\infty$ for $n\le1$.
 
 \begin{definition}[Ordered convergence]
 \label{ch01:ordered-limit}
-A lattice family converges to kernels $S_n(v;x)$ along an increasing
+A lattice family (the measures $\mu_{N,p}$ and the insertions $I_{N,p}$ above) converges to kernels $S_n(v;x)$ along an increasing
 volume-index map $P$ if, for every $n$, every list $v$ and every separated
 test function $f$, the following hold. At each admissible fixed volume $p$ there is
 a limit
@@ -384,7 +384,7 @@ a limit
  \lim_{N\to\infty}C^{\mathrm{lat}}_{N,p}(v;f)=C_p^{\mathrm{UV}}(v;f),
  \label{ch01:uv-limit}
 \end{equation}
-and the retained volumes satisfy
+and the volumes $P(k)$ satisfy
 \begin{equation}
  \lim_{k\to\infty} C_{P(k)}^{\mathrm{UV}}(v;f)
        =\int_{\Conf_n} f(x)S_n(v;x)\,dx.
@@ -392,13 +392,13 @@ and the retained volumes satisfy
 \end{equation}
 The test function is eventually admissible along $P$.
 \end{definition}
-The first limit uses every cutoff $N$ in the chosen spacing sequence. The
+The first limit uses every ultraviolet cutoff $N$ in the chosen spacing sequence. The
 second may require a subsequence of volumes. The desired construction has
 the stronger quantifier order
 \begin{enumerate}[label=\textup{(\roman*)}]
 \item choose one lattice family;
 \item prescribe any increasing sequence of volume indices;
-\item extract one refinement that serves every label list and separated test function.
+\item extract one subsequence that serves every label list and separated test function.
 \end{enumerate}
 In symbols, for every strictly increasing map $p_{\rm seq}:\NN\to\NN$
 there should be a strictly increasing $q_{\rm seq}$ such that
@@ -413,25 +413,25 @@ The bare inverse coupling is to satisfy
  \quad(N\to\infty),\qquad\text{uniformly in }p,
 \]
 with $\kappa_G$ as in \eqref{ch01:slope}. This is one part of the target,
-not a hypothesis that supplies the required continuum bounds. A fixed
-parameter $b>0$ specifies the soft constraint in the block transformation;
+not a hypothesis that gives the required continuum bounds. A fixed
+penalty parameter $b>0$ specifies the penalty term in the renormalization transformation (Section~\ref{ch04:kernel-section});
 it is distinct from $\beta$ and from the coefficient $b_0$ in
 \eqref{ch01:slope}.
 
 The eventual limit is a family of correlations of gauge-invariant local
 fields. It is not presented as a probability measure on continuum
-connections. Its decomposition into phases, reconstruction as relativistic
+connections. Its decomposition into phases (characters of a commutative operator algebra, Section~\ref{ch15:characters}), reconstruction as relativistic
 fields, and stress tensor require additional arguments. In particular,
 reflection positivity alone does not establish the full reconstruction
 theorem. Likewise, a unique vacuum in each reconstructed phase does not
 imply a positive mass gap. Neither a mass gap, uniqueness of the
-infinite-volume limit, nor independence of the block parameter $b$ is
+infinite-volume limit, nor independence of the penalty parameter $b$ is
 included in the conclusions described here.
 
 Finally, \eqref{ch01:volume-limit} concerns separated positions. Extending
 correlations as distributions across coincident points is a later
 renormalization problem. Such an extension is not automatically a limit
-of the unsubtracted lattice correlations at collisions. This distinction
+of the unsubtracted lattice correlations at coincident points. This distinction
 will remain important when products of local fields are considered.
 
 \section{How the construction is organized}
@@ -445,7 +445,7 @@ some of these changes, but it does not bound the integral over all gauge
 configurations. The construction therefore keeps the finite integral exact
 while organizing its estimates by scale.
 
-An exact block transformation integrates out information between two
+An exact renormalization transformation integrates out information between two
 successive lattice spacings and leaves a density on the coarser links.
 The transformed density generally has many interactions, even when the
 original action is a sum of plaquette terms. The useful question is whether
@@ -457,20 +457,20 @@ holonomy; it does not mean that every link is close to the identity in an
 arbitrary gauge.
 
 These two parts of configuration space require different estimates.
-On the small-curvature part, a stationary background and its Gaussian
-fluctuations organize the local integral. Taylor coefficients of low order
+On the small-curvature part, a background field (a critical configuration, Chapter~\ref{ch05:gaussian}) and the Gaussian
+fluctuation field about it organize the local integral. Taylor coefficients of low order
 modify the prescribed action. The other terms must gain enough powers of
 the block ratio or the inverse coupling to remain small after summing over
-their positions. On the complement, positive action supplies an exponential
-penalty. Connected sets of defects are summed with their full combinatorial
+their positions. On the complement, positive action gives an exponentially
+small factor. Connected sets of defects are summed with their full combinatorial
 multiplicity. This is the role of the polymer expansion: it controls the
 sum once the local integral and energy estimates have been proved.
-It does not supply those estimates by itself.
+It does not give those estimates by itself.
 
 The leading change in the coefficient of curvature squared is logarithmic
 in the block ratio. Matching this change determines the constant
 $\kappa_G$ in \eqref{ch01:slope}. One must then tune a whole finite-cutoff
-trajectory so that its coarse endpoint has a prescribed coupling.
+trajectory so that its coarse endpoint, at unit scale, has a prescribed coupling.
 The same choice must work with all the estimates that will be required for
 local observables. Choosing a different trajectory each time an observable
 is introduced would not construct a single quantum field theory.
@@ -478,11 +478,11 @@ is introduced would not construct a single quantum field theory.
 Local observables bring an additional finite-dimensional problem.
 A monomial with $r$ curvature factors and $k$ derivatives has
 \emph{scaling dimension} $2r+k$. Gauge-invariant polynomials in curvature and
-its derivatives can mix under blocking. A transfer matrix records this mixing at each fixed scaling
+its derivatives can mix under blocking. The matrix of one step records this mixing at each fixed scaling
 dimension. Bounds for this matrix and for the remainder of each inserted
 density are needed in addition to bounds for the density without
 insertions. Several insertions also require estimates uniform away from
-their collision diagonals. Bounds for lattice differences are essential:
+the diagonals. Bounds for lattice differences are essential:
 bounded correlations alone would not give smooth continuum kernels.
 
 The free Maxwell theory enters as a local comparison at short distances.
@@ -493,10 +493,10 @@ Gaussian. It must be established for the same finite-cutoff family whose
 continuum limit is being taken.
 
 After these estimates are available, two separate arguments remove the
-cutoffs. At a fixed physical volume, stability of the renormalization
+cutoffs. At a fixed volume in continuum units, stability of the renormalization-group
 trajectory gives a Cauchy property as the ultraviolet cutoff increases.
-Uniform estimates in the physical volume then permit one common
-infinite-volume subsequence, as specified in
+Estimates uniform in the volume then permit one
+infinite-volume subsequence for all correlations, as specified in
 Definition~\ref{ch01:ordered-limit}. Neither argument can replace the other.
 
 Finally, lattice symmetries and positivity must be promoted to the
@@ -505,7 +505,7 @@ positivity gives an initial Hilbert-space structure. Bounds on translation
 operators, continuous Euclidean symmetries, and control of the correlations
 must be established with compatible normalizations. Decomposition into
 phases and relativistic reconstruction follow only after these steps.
-The trace identity and the expansion of products at short separation
+The trace identity and the expansion of products at short distance
 require further estimates of their own. This order explains why the book
 keeps the exact finite model, the local analytic estimates, the choice of a
-common family, and the continuum consequences distinct.
+single lattice family, and the continuum consequences distinct.

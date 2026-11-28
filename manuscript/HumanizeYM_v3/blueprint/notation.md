@@ -15,7 +15,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 - `S` and `S_n` denote continuum correlations, never a lattice action. Use `E_s^W` for the Wilson energy and `V_ρ` for the effective action.
 - `a_m` is always a spacing. Rename Martin's local quadratic/cubic/quartic coefficient arrays as `A_m^{(2)},A_m^{(3)},A_m^{(4)}`. `A_μ` is a connection component; in Gaussian sections use `K` for the kinetic operator, `Q` for linear block averaging and `C` or `Γ` for covariance, after giving their spaces. A localized approximate covariance is not necessarily the inverse of the original precision.
 - `N_fac` is factor-count operator (Scott mathsf N); N without subscript is a cutoff index. `d` is scaling-dimension cutoff; `d_g` is dimension of the Lie algebra. A filtration index d bounds the scaling dimension and fixes the insertion normalization.
-- Reserve `mathcal H` for Hilbert spaces, `H₄` for signed coordinate permutations and `mathcal D` for the common operator domain. `Ξ` is phase space, ξ a character and ξ_* selected phase. Do not use X for phase space because X is polymer support.
+- Reserve `mathcal H` for Hilbert spaces, `H₄` for signed coordinate permutations and `mathcal D` for the common operator domain. `Ξ` is phase space, ξ a character and ξ_* the fixed phase. Do not use X for phase space because X is polymer support.
 - Reserve `mathsf Z_{N,p,d}` for terminal coefficient maps and `Z_{s,β}` for partition functions. Reserve `mathscr U_{k,d}` for scaling maps and `U(g)` for relativistic unitaries; `U_e` remains a lattice link variable.
 
 ## Lattice geometry and gauge theory
@@ -168,7 +168,7 @@ Source locators below use Scott labels unless marked M for Martin. A chapter wri
 | all-shot, all-arity | uniform over every finite number of insertions, with dependence stated |
 | contact extension | distribution extending a kernel from the complement of collision diagonals |
 
-Do not translate a source metaphor by guessing: its domain, codomain, quantifiers and estimates determine its meaning. Distinguish support roles: large-field activities depend on internal links of Y_i **and flags in Y_i**; evaluating flags reads plaquettes within distance one beyond Y_i. Exact covers and the stated large-field norm use Y_i, while connected-expansion overlap graphs use full dependence regions Y_i^read. Disjoint exclusion supports may have overlapping dependence regions. Any conversion between these support conventions requires its own geometry and norm estimate. 'Phase' here means a character in the constructed compression algebra; do not assume uniqueness, lattice realizability, or equivalence to an extremal DLR state. 'Non-free' must specify the excluded finite Wick-profile class; the two-point trace law alone does not exclude generalized free fields.
+Do not translate a source metaphor by guessing: its domain, codomain, quantifiers and estimates determine its meaning. Distinguish support roles: large-field activities depend on internal links of Y_i **and flags in Y_i**; evaluating flags reads plaquettes within distance one beyond Y_i. Disjoint covering families and the stated large-field norm use Y_i, while connected-expansion overlap graphs use full dependence regions Y_i^read. Disjoint exclusion supports may have overlapping dependence regions. Any conversion between these support conventions requires its own geometry and norm estimate. 'Phase' here means a character in the constructed compression algebra; do not assume uniqueness, lattice realizability, or equivalence to an extremal DLR state. 'Non-free' must specify the excluded finite Wick-profile class; the two-point trace law alone does not exclude generalized free fields.
 
 ## Mandatory consistency checks
 
@@ -176,7 +176,7 @@ Do not translate a source metaphor by guessing: its domain, codomain, quantifier
 2. At level m the integer period is R_pD_m and physical spacing a_m; blocking decreases m.
 3. Unit label in V_d is 1, but normalized degree-d unit coefficient is a_{r(d)}^d1.
 4. Distinguish scaling dimension, factor count and filtration index whenever transferring a label.
-5. Record all constant dependencies: group, b, fixed degree/arity, derivative order, separation, but never silently N or p in a uniform estimate.
+5. Record all constant dependencies: group, b, fixed degree/number of insertions, derivative order, separation, but never silently N or p in a uniform estimate.
 6. Do not turn pointwise-in-degree estimates into uniform-in-degree OPE convergence.
 7. A common family and common volume refinement must be maintained through later constructions.
 8. Separate Hilbert-space field-null relations from equality of formal polynomials and from Maxwell equation ideals.
@@ -205,7 +205,7 @@ These names supersede shorthand in the planning tables where they differ. Defini
 | E_j, Q_j, O_{j,a} | Fixed invariant degree summand, its projection, and basis for OPE/contact prescriptions | ch18:graded |
 | rho(x), a_h(x), T_{h,k}, mathcal W | Smooth minimum-distance scale, nearest-pair weights, normal Taylor operator, contact subtraction | ch18:pair-weights--ch18:subtraction |
 
-The Chapter18 contact prescription now uses the invariant summands E_j for one consistent multilinear family across degree inclusions. Its conservative Taylor order is k+1 with k+1>P for the established separated-kernel exponent P. It is distinct from the unverified sharper source forest prescription. The selected phase remains xi_* and the mixed family S is never silently replaced by S^xi_*.
+The Chapter18 contact prescription now uses the invariant summands E_j for one consistent multilinear family across degree inclusions. Its conservative Taylor order is k+1 with k+1>P for the established separated-kernel exponent P. It is distinct from the unverified sharper source forest prescription. The fixed phase remains xi_* and the mixed family S is never silently replaced by S^xi_*.
 
 
 ## Additional local notation in the integrated proof
@@ -215,7 +215,7 @@ The Chapter18 contact prescription now uses the invariant summands E_j for one c
 | H(x), h(x), r(x) | Original and reduced cutoff amplitudes, and recording-scale change; r is not a physical radius in this subsection | ch11:restart-construction |
 | D_k (mathscr), sigma_k | Actual restarted density and its scalar normalization; its integral is the original partition function | ch11:restart-density |
 | T, S_t, W_rho | Common polynomial extraction, factor-count dilation, scaling-dimension dilation; in comparison sections T is not the stress tensor | ch11:common-extraction; ch11:simultaneous-detector-lifts |
-| R_I, G_I, omega | Corrected subset source, free subset moment, and source amplitude in the fixed-arity squarefree algebra | ch11:n-mark-comparison |
+| R_I, G_I, omega | Corrected subset source, free subset moment, and source amplitude in the squarefree algebra for a fixed number of insertions | ch11:n-mark-comparison |
 | zeta_i, phi_i, omega_i^res | Small singleton allowance, adjacent source-weight ratio, and residual source weight | ch13:coarse-residual-supplier |
 | A_i, mathscr A_h | Full support exponent in the residual induction; separately, the complete pushed source polynomial at h | ch13:coarse-residual-supplier |
 | J_h, E_h, Q_h | Coarse trial coefficient matrix, complete trial bound, ordinary small-field trial bound | ch13:coarse-matrix |
@@ -241,4 +241,4 @@ The residual marker weight is written omega_i^res, never t_i: t_i is already res
 | Sigma_k, j_k | Nonclassical marked current coefficient and coefficient of current divergence; the complete zero-moment coefficient is Sigma_k−beta j_k | ch17:finite-sigma |
 | v_i^eq | beta_i^(-1) Sigma_(k_i)−j_i, the approximate equation direction in the finite-dimensional vector space | ch17:marked-rates |
 
-In this chapter the scale index n is never the arity; fixed arity is N_*. The smooth gauge-fixed response W_s and the actual forest-coordinate response W_a must be distinguished. Polynomial transport is proved for W_s; using it for W_a requires the gauge-coordinate comparison. A remainder of high scaling dimension may still have field degree two; never infer an extra threshold factor from scaling dimension alone.
+In this chapter the scale index n is never the number of insertions; the bound on that number is N_*. Three operators must be distinguished: the straight-average W_s, the smooth representative W_a = W_s - d_f E R W_s, and the forest-coordinate W_F (the derivative of the stationary map); they differ by fine gradients. Polynomial transport is proved for W_s; using it for W_a requires the gauge-coordinate comparison. A remainder of high scaling dimension may still have field degree two; never infer an extra threshold factor from scaling dimension alone.

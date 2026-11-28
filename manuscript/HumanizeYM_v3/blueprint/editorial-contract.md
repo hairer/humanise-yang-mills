@@ -42,7 +42,7 @@ Use original publications for attribution, with an accessible author/institution
 
 ## Scope of the final theorem
 
-Keep explicit: no mass gap is established; no uniqueness of the infinite-volume limit or independence of block penalty is asserted; the lattice limit is the mixed state; reconstruction concerns phases; the trace asymptotic is in a selected phase. The operator product expansion is a remainder estimate at each finite degree, not convergence of an infinite series. Contact extensions are constructed after separated limits, and do not automatically inherit positivity or contact Ward identities. Excluding finite Wick profiles does not exclude all generalized free fields.
+Keep explicit: no mass gap is established; no uniqueness of the infinite-volume limit or independence of block penalty is asserted; the lattice limit is the mixed state; reconstruction concerns phases; the trace asymptotic is in a fixed phase. The operator product expansion is a remainder estimate at each finite degree, not convergence of an infinite series. Contact extensions are constructed after separated limits, and do not automatically inherit positivity or contact Ward identities. Excluding finite Wick profiles does not exclude all generalized free fields.
 
 ## Chapter delivery
 

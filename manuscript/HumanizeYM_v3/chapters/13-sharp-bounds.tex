@@ -1,19 +1,19 @@
 % !TEX root = ../monograph.tex
 % Fragment for Chapter13: insert after the coarse separated bound.
-\section{Sharp fixed-arity short-distance bounds}
+\section{Sharp short-distance bounds for a fixed number of insertions}
 \label{ch13:sharp-section}
 
 For a fixed number of insertions the loss in
 \eqref{ch13:power} can be reduced to an arbitrarily small excess over
 the sum of their degrees. This uses the normalized integral over the reflected tiling,
-not the stronger Gaussian comparison used for rank detection. We keep
-all incoming joint marked components; replacing them by a product of
-terms linear in the sources would invalidate the estimate.
+not the stronger Gaussian comparison used for the separating families. We keep
+all incoming joint components with insertions; replacing them by a product of
+terms of source degree one would invalidate the estimate.
 
 Write $\tau_m=\log(1/a_m)$, so
 $\widehat\beta_m=\bar\beta+\kappa_G\tau_m$. Let $C_j\ge1$ include
 the inverse-column, finite-section and source constants at stage $j$.
-The stage ratio and coupling threshold may be chosen to satisfy
+The stage ratio and the lower bound on the reference coupling may be chosen to satisfy
 \begin{equation}
  \frac{\log C_j}{\log \mathscr L_j}\longrightarrow0,\qquad
  B_{i+1}^2\le2B_i^2,\qquad
@@ -22,28 +22,28 @@ The stage ratio and coupling threshold may be chosen to satisfy
  \label{ch13:sharp-schedule}
 \end{equation}
 Here $B_i$ is the support-block radius, and $q_i^{\rm site}\ge1$ is
-the per-site normalization cost of \eqref{ch11:replicated-bound};
-it is not a marked density or the scalar coupling correction.
-For the admissible path-action representation one can use
+the per-site normalization exponent of \eqref{ch11:replicated-bound};
+it is not a density with insertions or the coefficient of the coupling constant renormalization.
+For the path-action representation of the density one can use
 $q_i^{\rm site}\le C_{J(i)}(1+\log\widehat\beta_i)$.
-Indeed the scalar-free exponent is at most $C_{J(i)}V$. Set
+Indeed the exponent without its constant term is at most $C_{J(i)}V$. Set
 $\rho=\widehat\beta_i^{-1/2}$ and restrict every link to
 $\|U_e-1\|_G\le\rho/4$, using the matrix norm \eqref{ch01:matrix-norm}.
 On this event the exponent is at least $-C_{J(i)}V$ and all large-field
 indicators vanish. Exponential summability in the path length bounds the
 leading positive path quadratic by $C_{J(i)}\widehat\beta_i\rho^2V$.
 Signed regular costs and the absolute
-activity site sum have their admissible bounds. The Haar-ball argument
-of Section~\ref{ch11:replicated} therefore costs only
-$C_{J(i)}V+2D_GV\log\widehat\beta_i$, where $D_G$ is an ambient
+activity site sum satisfy the bounds \eqref{ch04:activity-bounds}. The lower bound for the partition function
+of Section~\ref{ch11:replicated} therefore adds only
+$C_{J(i)}V+2D_GV\log\widehat\beta_i$ to the exponent, where $D_G$ is an ambient
 real matrix dimension for the gauge group.
 
-These requirements are compatible with sufficiently large coupling thresholds. At each fixed
+These requirements are compatible with sufficiently large lower bounds on the reference coupling. At each fixed
 stage $B_i=O_j((\log(2+\tau_i))^2)$ and
 $q_i^{\rm site}=O_j(1+\log(2+\tau_i))$, so the last quotient in
 \eqref{ch13:sharp-schedule} tends to zero at its fixed ratio. Choose
-the ratio after $C_j$, then increase the coupling threshold until that quotient is at
-most $1/j$ for both adjacent-stage choices. The same threshold choice gives
+the ratio after $C_j$, then increase the lower bound on the reference coupling until that quotient is at
+most $1/j$ for both adjacent-stage choices. The same choice gives
 the displayed bound on consecutive $B_i$,
 $\log L_i=o(\tau_i)$, and $\log C_{J(i+1)}=o(\tau_i)$
 at transitions. Choose each ratio against both adjacent-stage column
@@ -61,18 +61,18 @@ coefficient space of $V_d$. Set
 The fixed section constant $C_{d,R}^{\rm sec}$ includes the coefficient radius and all its signed and
 conjugated images. Choose the fixed integer $w_d$ large enough to absorb
 the finite powers of the inverse small-field threshold in the degree-$d$
-section and its counterpart constrained to cover the prescribed large-field sites, as well as the source attachment bound. Multiplication of the single-insertion inverse bounds gives the
+section and its counterpart with a prescribed large-field set, as well as the source attachment bound. Multiplication of the single-insertion inverse bounds gives the
 factor $E_k$; the scaling normalization is exactly $a_k^{-d}$.
-Thus multiplication of the \emph{complete} source by $\omega_k$
-makes the exponential bound for its regular term linear in the sources
-less than three and the bound for its large-field term linear in the sources
+Thus multiplication of the \emph{full} insertion by $\omega_k$
+makes the exponential bound for its regular term of source degree one
+less than three and the bound for its large-field term of source degree one
 less than one. Its remaining normalized size can be placed below the
 attachment bound by increasing $w_d$.
 
-The bounds in Chapter~\ref{ch11:insertions} for terms involving at least two insertions retain every
-incoming source term and every original eligibility event. Decreasing all mark
-weights only decreases their absolute mode sums. The source attachment
-inequalities at the intervening levels propagate this chosen small
+The bounds in Chapter~\ref{ch11:insertions} for terms of source degree at least two retain every
+incoming source term and every original eligibility event. Decreasing all source
+weights only decreases their sums of absolute coefficients. The source attachment
+inequalities at the intervening scales propagate this chosen small
 weight; they require the same inverse-column and threshold powers already
 included in $E_k,w_d$. Consequently \eqref{ch11:root-bound}, with
 $x=3,y=1$, gives
@@ -82,9 +82,9 @@ $x=3,y=1$, gives
            \exp\bigl((a_m/a_k)^4q_k^{\rm site}+6\bigr).
  \label{ch13:sharp-root}
 \end{equation}
-It holds on a full cutoff tail uniformly in period and in the coefficient
-ball, whenever the reflected anchors at the stopping level have spacing
-at least $B_k^2$. Their spacing stays adequate at finer levels because
+It holds for all sufficiently large $N$ uniformly in period and in the coefficient
+ball, whenever the reflected insertion points at the stopping scale have spacing
+at least $B_k^2$. Their spacing stays adequate at finer scales because
 $L_i\ge3$ whereas $B_{i+1}^2/B_i^2\le2$.
 
 The logarithm of $E_k$ is $o(\tau_k)$: split its sum into a finite
@@ -102,15 +102,15 @@ extra scaling degree.
 
 \subsection{The stopping scale and centered estimate}
 
-Choose $k=k(m)$ as the first level $k\ge m$ with
+Choose $k=k(m)$ as the first scale $k\ge m$ with
 $B_k^2\le a_m/a_k$. It exists because $B_k$ grows subexponentially
 in $\tau_k$, whereas $a_m/a_k=e^{\tau_k-\tau_m}$. By minimality,
 \[
  (a_m/a_k)^4q_k^{\rm site}
        \le (L_{k-1}B_{k-1}^2)^4q_k^{\rm site}=o(\tau_k).
 \]
-If the first level already qualifies the same conclusion follows from
-the fixed-stage cost bound. Since $q_k^{\rm site}\ge1$,
+If the first scale already qualifies the same conclusion follows from
+the fixed-stage bound. Since $q_k^{\rm site}\ge1$,
 \[
  0\le\tau_k-\tau_m=\log(a_m/a_k)
        \le(a_m/a_k)^4q_k^{\rm site}=o(\tau_k).
@@ -134,18 +134,18 @@ is interior in that cell on the same tail.
 \begin{proof}
 For all sufficiently large $m$, the logarithm of the right side of
 \eqref{ch13:sharp-root} is at most $(d+\epsilon)\tau_m$ by the
-preceding limits. For the finite remaining set of $m$, use its selected
-fixed stopping level and take the maximum of the finite constants.
-The fixed lattice stencil becomes interior at every fixed physical cell
-scale as $N\to\infty$. Translation covariance makes the threshold
+preceding limits. For the finite remaining set of $m$, use its chosen
+fixed stopping scale and take the maximum of the finite constants.
+The fixed link support becomes interior at every fixed cell
+scale in continuum units as $N\to\infty$. Translation covariance makes the lower bound on $N$
 independent of $y$.
 \end{proof}
 
 \subsection{Arbitrary separated points}
 
-The slow ratio condition gives a sharper first-below-scale estimate
+The slow ratio condition gives a sharper estimate of the first scale below a length
 than \eqref{ch13:scale-thickness}. For any fixed $c>0$, let $m(r)$
-be the first level with $a_m<cr$. Then
+be the first scale with $a_m<cr$. Then
 \begin{equation}
             \frac{\log(1/a_{m(r)})}{\log(1/r)}\longrightarrow1
                          \quad(r\downarrow0).
@@ -153,11 +153,11 @@ be the first level with $a_m<cr$. Then
 \end{equation}
 Indeed $a_{m-1}\ge cr>a_m=a_{m-1}/L_{m-1}$, and the logarithm of
 the overshoot is at most $\log L_{m-1}=o(\tau_{m-1})$.
-Any fixed finite iteration of first-below choices has the same property.
+Any fixed finite iteration of such choices of a first scale has the same property.
 
-For a fixed arity $n$ and mutually separated anchors, first choose a
+For a fixed number $n$ of insertions and mutually separated insertion points, first choose a
 cell side below a fixed small multiple of their minimum separation $r$.
-Translate its boundaries away from all anchors. Then choose a centered
+Translate its boundaries away from all insertion points. Then choose a centered
 scale smaller than this side divided by $6(n+1)$.
 The interior-cell comparison and the chessboard inequality apply.
 Both chosen scales have logarithm $(1+o(1))\log(1/r)$ by

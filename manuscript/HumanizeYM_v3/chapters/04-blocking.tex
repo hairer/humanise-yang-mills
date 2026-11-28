@@ -1,64 +1,64 @@
 % !TEX root = ../monograph.tex
-\chapter{Exact blocking and effective densities}
+\chapter{The renormalization transformation and the effective density}
 \label{ch04:blocking}
 
-A renormalization step is first an exact integration, and only then an
+A renormalization transformation, called a step, is first an exact integration, and only then an
 estimate. We define that integration on every fine configuration, including
 large fields. Its output is generally not a Wilson density. We therefore
-also introduce coordinates for the effective density: a prescribed leading
-action, a scalar normalization, local corrections on small-field regions,
+also introduce a representation of the effective density: a prescribed leading
+action, a normalization constant, localized terms on small-field regions,
 and a sum over polymers covering the large-field sites.
 
 We use the gauge group and Haar measure of Chapter~\ref{ch01:lattice}
 and the normalized matrix norm $\|\cdot\|_G$ of \eqref{ch01:matrix-norm}.
 Left or right multiplication by a group element preserves this norm.
-Recall that $a_m=D_m^{-1}$ is the physical
-spacing, $R_p$ is the physical period, and the odd ratio $L_m$ relates
-levels $m+1$ and $m$. In this chapter we examine a single step
-$m+1\to m$. Write $L=L_m$, fix a positive integer smoothing order $j$,
+Recall that $a_m=D_m^{-1}$ is the lattice
+spacing and $R_p$ the period, both in continuum units, and the odd ratio $L_m$ relates
+the scales with indices $m+1$ and $m$. In this chapter we examine a single step
+$m+1\to m$; unlike in~\cite{Balaban1984Propagators}, a step is not followed by a rescaling to the unit lattice. Write $L=L_m$, fix a positive integer \emph{smoothing order} $j$ (the number of convolution factors in the averaging weight $w^{\rm av}$ of Section~\ref{ch04:kernel-section}),
 and set $R=(j+3)L$. Fine links $U$ live on $\Lambda_{R_pD_{m+1}}$ and coarse
-links $V$ on $\Lambda_{R_pD_m}$. Patches are first described on the covering
-lattice and then placed periodically. The constants and path coefficients
-introduced here are inputs; their simultaneous choice along a trajectory
+links $V$ on $\Lambda_{R_pD_m}$. Patches are first described on the infinite
+lattice $\ZZ^4$ and then placed periodically. The constants and path coefficients
+introduced here are inputs; their simultaneous choice along a renormalization-group trajectory
 will require the later estimates.
 
-\section{Local gauges and a symmetric frame choice}
+\section{Local gauge transformations and a symmetric choice}
 \label{ch04:frames}
 
 A choice of gauge on a patch assigns a frame to each site. Relative to
 the original frames, this choice is specified by a family of matrices
-$h_x\in G$: a transport $U_{xy}$ then has matrix $h_xU_{xy}h_y^{-1}$.
+$h_x\in G$: a contour variable $U_{xy}$ then has matrix $h_xU_{xy}h_y^{-1}$.
 We choose $h_0=1$, so that $h_x$ expresses vectors at $x$ in the frame
-at the patch centre. This lets us compare fine transports before averaging. A deterministic axial gauge is convenient for bounds
+at the patch centre. This lets us compare contour variables of the fine field before averaging. A deterministic axial gauge is convenient for bounds
 but singles out coordinate directions. We combine a symmetric minimizing
 choice near the flat field with a finite randomized choice elsewhere.
-The use of gauge-covariant averages in a block transformation belongs to
+The use of gauge-covariant averages in a renormalization transformation belongs to
 Ba\l{}aban's renormalization-group method~\cite{Balaban1987RG}; the precise
 branch rules below are part of the present construction.
 
 Let $\mathbb B_R=\{-R,\ldots,R\}^4$. For a permutation $o$ of the four
-coordinate directions, denote by $T_U(x\to y;o)$ the transport along the
-path which changes coordinates in order $o$. For a root $z\in\mathbb B_R$,
+coordinate directions, denote by $T_U(x\to y;o)$ the contour variable along the
+contour which changes coordinates in order $o$. For an initial point $z\in\mathbb B_R$,
 put
 \begin{equation}
  g_x^{z,o}=T_U(z\to x;o),\qquad
  h_x^{z,o}=(g_0^{z,o})^{-1}g_x^{z,o}.
  \label{ch04:axial-frame}
 \end{equation}
-The normalized frame satisfies $h_0^{z,o}=1$. The unnormalized frame gives
+These are \emph{local gauge transformations}, that is, $G$-valued functions on the sites of $\mathbb B_R$; they bring $U$ to an axial gauge with initial point $z$, and we call them \emph{axial}. The normalized one satisfies $h_0^{z,o}=1$. The unnormalized one gives
 link coordinates
 $U_{(x,\mu)}^{z,o}=g_x^{z,o}U(x,\mu)(g_{x+e_\mu}^{z,o})^{-1}$.
-Their distances from the identity are unchanged if the normalized frame is used instead,
+Their distances from the identity are unchanged if the normalized transformation is used instead,
 since that change conjugates every transformed link by the same matrix.
 
-A symmetric choice is possible if all relevant loop transports are small.
-For $x,y\in\mathbb B_R$ and orders $o,o_0$, define the loop based at the
+A symmetric choice is possible if all relevant holonomies are close to the identity.
+For $x,y\in\mathbb B_R$ and orders $o,o_0$, define the holonomy based at the
 patch center by
 \[
  \mathcal T_{xy;o}^{o_0}
    =g_x^{0,o_0}T_U(x\to y;o)(g_y^{0,o_0})^{-1}.
 \]
-Gauge transformations conjugate this loop transport, preserving its distance from the identity. Fix a small constant $\delta_{\rm fr}>0$.
+Gauge transformations conjugate this holonomy, preserving its distance from the identity. Fix a small constant $\delta_{\rm fr}>0$.
 If $\|\mathcal T_{xy;o}^{o_0}-1\|_G<\delta_{\rm fr}$ for every
 $x,y\in\mathbb B_R$ and every $o,o_0\in S_4$, use the
 normalized minimizer, with $h_0=1$, of
@@ -68,10 +68,10 @@ normalized minimizer, with $h_0=1$, of
        \bigl\|h_xT_U(x\to y;o)-h_y\bigr\|_G^2.
  \label{ch04:frame-energy}
 \end{equation}
-The test includes every order $o_0$, so it does not privilege a preliminary
+The condition that all these distances be strictly below $\delta_{\rm fr}$, the \emph{loop condition}, includes every order $o_0$, so it does not privilege a preliminary
 axial gauge.
 
-If the test fails, use axial frames. Fix $a_{\rm ax}\ge16$ and call a pair
+If the loop condition fails, use axial gauge transformations. Fix $a_{\rm ax}\ge16$ and call a pair
 $(z,o)$ eligible when
 \begin{equation}
  \sum_{e\text{ internal to }\mathbb B_R}\|U_e^{z,o}-1\|_G
@@ -80,23 +80,23 @@ $(z,o)$ eligible when
  \label{ch04:axial-eligible}
 \end{equation}
 Choose one pair $(z,o)\in\mathbb B_R\times S_4$ uniformly among all
-eligible pairs. Use this same root and order throughout the patch:
+eligible pairs. Use this same initial point and order throughout the patch:
 the gauge at each $x\in\mathbb B_R$ is given by $h_x^{z,o}$ in
 \eqref{ch04:axial-frame}. The coordinate paths from $z$ form a spanning
 tree, and in this gauge every link of that tree is the identity. On the minimizing branch give all
-pairs the same uniform mass, but let each pair specify the same minimizing
-frame. The redundant labels allow both branches to be described by one
+pairs the same uniform probability weight, but let each pair specify the same minimizing
+gauge transformation. The redundant values of the index $(z,o)$ allow both branches to be described by one
 finite sum.
 
 The following local assertion ensures that these rules are well-defined.
 Its uniformity in the size of the patch is essential.
 
-\begin{lemma}[Uniform frame choice]
+\begin{lemma}[Uniform choice of the local gauge transformation]
 \label{ch04:frame-lemma}
 There is a $\delta_{\rm fr}>0$, depending only on the matrix group, for
 which the minimizer of \eqref{ch04:frame-energy} with $h_0=1$ is unique
-whenever the loop test holds. For every configuration and every fixed
-coordinate order, at least one root satisfies \eqref{ch04:axial-eligible}
+whenever the loop condition holds. For every configuration and every fixed
+coordinate order, at least one initial point satisfies \eqref{ch04:axial-eligible}
 with $a_{\rm ax}=16$. These constants do not depend on $R$.
 \end{lemma}
 \begin{proof}
@@ -113,21 +113,21 @@ Lie algebra. Hence on a sufficiently small convex ball about $1$,
 This is the mean-value estimate for $D\pi-\Pi_{\gLie}$, not a new
 projection theorem.
 
-Fix $o_0\in S_4$ and use the axial gauge rooted at the origin with this
-coordinate order. In this gauge the transport from $x$ to $y$ in order
-$o$ is $\mathcal T_{xy;o}^{o_0}$. On the minimizing branch the loop test
+Fix $o_0\in S_4$ and use the axial gauge with initial point at the origin, with this
+coordinate order. In this gauge the contour variable from $x$ to $y$ in order
+$o$ is $\mathcal T_{xy;o}^{o_0}$. On the minimizing branch the loop condition
 gives $\|\mathcal T_{xy;o}^{o_0}-1\|_G<\delta_{\rm fr}$.
-Reversing a route gives its inverse and permutes the coordinate orders.
+Reversing a contour inverts its contour variable and permutes the coordinate orders.
 A minimizer exists by compactness. Common left multiplication leaves the
 energy invariant, so minimization with the normalization $h_0=1$ also gives
 an unconstrained minimizer after allowing that common multiplier.
-Comparison with the constant frame and the squared triangle inequality give
+Comparison with the constant gauge transformation and the squared triangle inequality give
 \[
  \frac{1}{|\mathbb B_R|^2}\sum_{x,y\in\mathbb B_R}\|h_x-h_y\|_G^2\le4\delta_{\rm fr}^2.
 \]
 Multiply all $h_x$ on the left by one group element
 so that $1$ is nearest to their centroid $\bar h=|\mathbb B_R|^{-1}\sum_{x\in\mathbb B_R} h_x$.
-Then $\|\bar h-1\|_G\le2\delta_{\rm fr}$. For each fixed $x$, coordinatewise minimization shows
+Then $\|\bar h-1\|_G\le2\delta_{\rm fr}$. For each fixed $x$, minimization over the value at that point shows
 that $h_x$ is nearest to
 \[
  F_x(h)=\frac{1}{24|\mathbb B_R|}\sum_{y\in\mathbb B_R}\sum_{o\in S_4}h_y(\mathcal T_{xy;o}^{o_0})^{-1}.
@@ -135,12 +135,12 @@ that $h_x$ is nearest to
 Indeed, when varying $h_x$ to $v$, retaining the old $h_x$ in the
 diagonal term $y=x$ adds a nonnegative multiple of $\|v-h_x\|_G^2$,
 which vanishes at $v=h_x$.
-Since $\|F_x(h)-\bar h\|_G\le\delta_{\rm fr}$, all feedback matrices lie
+Since $\|F_x(h)-\bar h\|_G\le\delta_{\rm fr}$, all local means $F_x(h)$ lie
 within $3\delta_{\rm fr}$ of $1$. For small enough $\delta_{\rm fr}$ they lie in the projection ball,
 and $h_x=\pi(F_x(h))$.
 
-Center two minimizers $h,k$ in this way and set
-$u=\max_x\|h_x-k_x\|_G$. Their feedback differences satisfy
+Multiply two minimizers $h,k$ on the left in this way, so that $1$ is nearest to each centroid, and set
+$u=\max_x\|h_x-k_x\|_G$. The differences of their local means satisfy
 \[
  \|F_x(h)-F_x(k)\|_G\le u,\qquad
  \|F_x(h)-F_x(k)-(\bar h-\bar k)\|_G\le \sqrt{n_G}\,\delta_{\rm fr} u.
@@ -155,16 +155,16 @@ forces $u=0$. Thus minimizers differ only by a common left multiplier,
 removed by $h_0=1$. Only averages occur in the contraction, which explains
 why its constants do not grow with the patch.
 
-For the axial alternatives, apply the usual plaquette telescoping
+For the axial gauge transformations, apply the usual plaquette telescoping
 argument to a rectangular slice $X$ with $r$ varying coordinates. Write
 $\Sigma_{\rm link}(X,U)$ and $\Sigma_{\rm plaq}(X,U)$ for the sums of
 $\|U_e-1\|_G$ over its internal positive links and
 $\|U_\square-1\|_G$ over its internal plaquettes, respectively. Choose a
-layer $X_0$ perpendicular to the last coordinate whose internal plaquette sum
-is no greater than the average over layers. Use the axial construction on
-that layer, then extend it along the last coordinate, setting those links
-to one. Every remaining link differs from its transported link on the
-chosen layer by a product of intervening plaquettes. By the triangle
+hyperplane $X_0$ of the slice perpendicular to the last coordinate whose internal plaquette sum
+is no greater than the average over such hyperplanes. Use the axial construction on
+that hyperplane, then extend it along the last coordinate, setting those links
+to one. Every remaining link differs from its translate, along the last coordinate, in the
+chosen hyperplane by a product of intervening plaquettes. By the triangle
 inequality and unitary invariance of $\|\cdot\|_G$, with $n=2R+1$ we obtain
 \[
  \Sigma_{\rm link}(X,U^{\rm ax})
@@ -173,38 +173,38 @@ inequality and unitary invariance of $\|\cdot\|_G$, with $n=2R+1$ we obtain
 \]
 Induction with the bound $4rn\Sigma_{\rm plaq}(X,U)$ closes because
 $n\Sigma_{\rm plaq}(X_0,U)\le\Sigma_{\rm plaq}(X,U)$.
-The construction follows the prescribed coordinate order; the selected
-layers specify a root. At $r=4$ the bound is \eqref{ch04:axial-eligible}
+The construction follows the prescribed coordinate order; the chosen
+hyperplanes of the successive slices, one in each dimension, specify an initial point. At $r=4$ the bound is \eqref{ch04:axial-eligible}
 with constant $16$.
 \end{proof}
 
 Only smoothness of the nearest-point projection was used here. Analytic
-stationary-field estimates will need more; they are not consequences of
+estimates for the critical configuration will need more; they are not consequences of
 this lemma alone.
 
-\section{Gauge-covariant block averaging and the exact kernel}
+\section{The gauge-covariant averaging operation and the exact kernel}
 \label{ch04:kernel-section}
 
-Translate the preceding frame construction to every patch
-$Ly+\mathbb B_R$ centered at the fine site $Ly$ corresponding to the coarse site $y$.
+Translate the preceding construction of local gauge transformations to every patch
+$Ly+\mathbb B_R$ centered at the fine site $Ly$ corresponding to the coarse site $y$, the \emph{patch of the averaging operation} at $y$.
 For $z\in\mathbb B_R$, let $h_{y,z}$ be the gauge matrix at $Ly+z$,
-normalized by $h_{y,0}=1$. For a coarse edge $e=(y,\mu)$ define
+normalized by $h_{y,0}=1$. For a coarse edge $e=(y,\mu)$ define the \emph{gauge-transformed parallel transporter}, for short the \emph{transporter},
 \begin{equation}
  Y_{e,z}=h_{y,z}
        \left(\prod_{r=0}^{L-1}U(Ly+z+re_\mu,\mu)\right)
                      h_{y+e_\mu,z}^{-1}.
  \label{ch04:connector}
 \end{equation}
-Both ends are expressed in the frames of the coarse endpoints, as shown
+Both ends are transformed by the local gauge transformations of the coarse endpoints, as shown
 for two offsets in Figure~\ref{ch04:fig-block-paths}. In
-particular, under a fine gauge transformation $g$, this connector becomes
+particular, under a fine gauge transformation $g$, this transporter becomes
 $g(Ly)Y_{e,z}g(Ly+Le_\mu)^{-1}$.
 
-Let $w^{\rm av}$ be the $j$-fold convolution of the uniform probability
+Let the \emph{averaging weight} $w^{\rm av}$ be the $j$-fold convolution of the uniform probability
 on $\mathbb B_{(L-1)/2}$. It is nonnegative, has sum one, is invariant under
 $H_4$, and is supported in $\mathbb B_{j(L-1)/2}\subset\mathbb B_R$.
-Put $\bar Y_e=\sum_{z\in\mathbb B_R} w_z^{\rm av}Y_{e,z}$. The gauge-covariant block average, obtained by projecting the weighted
-connector average to the group, minimizes
+Put $\bar Y_e=\sum_{z\in\mathbb B_R} w_z^{\rm av}Y_{e,z}$. On the first of its two branches, the value of the gauge-covariant \emph{averaging operation} is obtained by projecting the weighted
+average of the transporters to the group; it then minimizes
 \begin{equation}
  \mathcal P_e(u)=\tfrac12\sum_z w_z^{\rm av}\|Y_{e,z}-u\|_G^2,\qquad u\in G.
  \label{ch04:predictor-cost}
@@ -220,42 +220,42 @@ If $\min_{u\in G}\mathcal P_e(u)<\varepsilon_{\rm pred}$, the identity
 above gives $\min_{u\in G}\|\bar Y_e-u\|_G
 <\sqrt{2\varepsilon_{\rm pred}}$. Choose $\varepsilon_{\rm pred}$ small
 enough that $\bar Y_e$ then lies in the tubular neighborhood used in
-Lemma~\ref{ch04:frame-lemma}. The block average is then unique, independently
-of the number of connectors or the weights.
+Lemma~\ref{ch04:frame-lemma}. The value of the averaging operation is then unique, independently
+of the number of transporters or the weights.
 
 On this branch set $Q_e^{\rm pred}$ to that minimizer and assign uniform
-mass to redundant block average labels $z\in\mathbb B_R$. If the test fails,
-let label $z$ select $Q_e^{\rm pred}=Y_{e,z}$ with probability
-$w_z^{\rm av}$. Equality in either the loop test or the test on
-$\min_{u\in G}\mathcal P_e(u)$ selects the corresponding axial frame
-or connector.
+probability weight to the redundant values $z\in\mathbb B_R$ of the index of the averaging operation. If the condition on the minimum fails,
+let the index take the value $z$, and set $Q_e^{\rm pred}=Y_{e,z}$, with probability
+$w_z^{\rm av}$. Equality in either the loop condition or the condition on
+$\min_{u\in G}\mathcal P_e(u)$ selects the corresponding axial gauge transformation
+or transporter. The averaging operation $U\mapsto Q_e^{\rm pred}$ is an analogue of Ba\l{}aban's averaging operation $\bar U$~\cite{Balaban1987RG}, not the same map: on the minimizing branch it is the nearest group point to a weighted mean, where Ba\l{}aban takes the exponential of a mean of logarithms.
 
 \input{figures/block-paths}
 
-Collect all frame and block average choices in a finite label $\alpha$ and
-denote their joint probability by $\lambda(U,\alpha)$. Frame choices are
-made first, followed by conditionally independent block average choices. Thus
+Collect all choices made for the local gauge transformations and for the averaging operation in a finite \emph{auxiliary index} $\alpha$ and
+denote their joint probability, the probability weight of $\alpha$, by $\lambda(U,\alpha)$. The choices for the local gauge transformations are
+made first, followed by conditionally independent choices for the averaging operation. Thus
 \begin{equation}
  \lambda(U,\alpha)\ge0,\qquad \sum_\alpha\lambda(U,\alpha)=1.
  \label{ch04:tag-law}
 \end{equation}
-The frame lemma supplies an eligible choice whenever it is needed.
+Lemma~\ref{ch04:frame-lemma} supplies an eligible pair whenever it is needed.
 
-Fix the block penalty $b>0$.\martin{Apparently $b$ will be fixed throughout and could just be 
-taken as $b=1$. It controls the soft conditioning used here.} For $\gamma\ge0$, let
+Fix the \emph{penalty parameter} $b>0$ of the block kernel.\martin{Apparently $b$ will be fixed throughout and could just be
+taken as $b=1$. It controls the soft conditioning used here.} The renormalization transformations for gauge fields in~\cite{Balaban1984Propagators,Balaban1985Averaging,Balaban1987RG} have a delta function in place of the densities $q_{b\beta}$ used below, so that there the coarse field equals the average exactly. For $\gamma\ge0$, let
 \[
  q_\gamma(u)=Z_\gamma^{-1}e^{-\gamma\|u-1\|_G^2/2},\qquad
  Z_\gamma=\int_G e^{-\gamma\|v-1\|_G^2/2}\,dh(v).
 \]
 This is a probability density on $G$ with respect to Haar measure.
 
-For a fixed fine field $U$ and choice $\alpha$, the block average
+For a fixed fine field $U$ and choice $\alpha$, the value of the averaging operation
 $Q_e=Q_e^{\rm pred}(U,\alpha)$ represents transport across the coarse
 edge $e$. We impose agreement of $V_e$ with $Q_e$ by a soft constraint.
 By unitary invariance its energy is $\tfrac12 b\beta\|V_e-Q_e\|_G^2$.
 This penalizes the discrepancy in a gauge-invariant way, since $V_e$
 and $Q_e$ transform by the same matrices at their endpoints. At large
-$b\beta$ the conditional law thus concentrates near the block average.
+$b\beta$ the conditional law thus concentrates near the value of the averaging operation.
 Given $U$ and $\alpha$, we sample the coarse links independently with
 these normalized densities. Averaging their product over $\alpha$ gives
 the conditional density of $V$ given $U$; integrating against the fine
@@ -265,8 +265,8 @@ density gives its coarse marginal.
 \label{ch04:block-map}
 The superscript $(L)$ denotes the block ratio: on a coarse torus
 $\Lambda_s$ the fine torus is $\Lambda_{Ls}$. The period $s$, smoothing
-order $j$ and penalty $b$ are understood. For $\beta\ge0$, define the
-kernel and its action on fine densities by
+order $j$ and penalty parameter $b$ are understood. For $\beta\ge0$, define the
+block kernel of the step and its action on fine densities by
 \begin{align}
  k^{(L)}_\beta(U,V)
    &=\sum_\alpha\lambda(U,\alpha)
@@ -284,10 +284,10 @@ respective link spaces.
 For fixed $\beta$ this is a bounded Borel kernel. Indeed, the loop
 inequalities of Section~\ref{ch04:frames} and the axial eligibility
 inequality \eqref{ch04:axial-eligible} compare continuous functions of
-the fine links. Once the frames are chosen, the condition for using the
-minimizing block average on edge $e$ is
+the fine links. Once the local gauge transformations are chosen, the condition for using the
+minimizing branch of the averaging operation on edge $e$ is
 $\min_{u\in G}\mathcal P_e(u)<\varepsilon_{\rm pred}$. This minimum is
-continuous in the connector matrices $(Y_{e,z})_z$ by compactness of $G$.
+continuous in the transporters $(Y_{e,z})_z$ by compactness of $G$.
 On each minimizing branch the unique minimizer depends continuously on
 its data. Thus the choices and their probabilities in the finite sum
 \eqref{ch04:kernel} are Borel functions of $U$. Boundedness follows
@@ -314,10 +314,10 @@ For normalization, integrate each coarse-link factor using right invariance
 of Haar measure, then sum \eqref{ch04:tag-law}. Fubini gives
 \eqref{ch04:exact-integral}, with absolute integrability following from
 the same computation applied to $|f|$.
-For covariance, gauge transformations conjugate rooted loop tests and
+For covariance, gauge transformations conjugate the holonomies of the loop conditions and
 transform the endpoints of \eqref{ch04:connector}; signed lattice
-isometries permute roots, orders and offsets and invert reversed links.
-The objective functions and eligibility tests are unchanged. Uniqueness
+isometries permute initial points, orders and offsets and invert reversed links.
+The objective functions and eligibility conditions are unchanged. Uniqueness
 on the minimizing branches, and reindexing of the finite alternatives,
 then give the stated covariance of the kernel.
 \end{proof}
@@ -332,8 +332,8 @@ has terms beyond the Wilson plaquette action.
 
 We bound the distance of a coarse plaquette holonomy from the identity
 in terms of the fine plaquette holonomies in a surrounding box and the
-discrepancies between the four coarse boundary links and their block
-averages. Fix a site $y$ of the coarse torus
+discrepancies between the four coarse boundary links and the values of
+the averaging operation on them. Fix a site $y$ of the coarse torus
 $\Lambda_s$. Choose a lift $\tilde y\in\ZZ^4$ and form the fine lattice box
 \[
  M_y=L\tilde y+\mathbb B_{(j+7)L}.
@@ -350,8 +350,9 @@ orientation per square.
 
 \begin{lemma}[Coarse plaquette estimate]
 \label{ch04:predictor-comparison}
-Fix the smoothing order $j$ and the constants in the frame and block
-average choices of Sections~\ref{ch04:frames} and~\ref{ch04:kernel-section}.
+Fix the smoothing order $j$ and the constants in the choices of the local
+gauge transformations and of the averaging operation in
+Sections~\ref{ch04:frames} and~\ref{ch04:kernel-section}.
 Suppose $s\ge100(j+8)$. Let $p$ be a coarse plaquette whose four
 vertices lie within periodic sup distance $2$ of $y$ in coarse lattice
 units. In particular, $y$ may be any vertex of $p$. For every fine field
@@ -366,10 +367,10 @@ write $Q_e(U)=Q_e^{\rm pred}(U,\alpha)$. Then
 The constant $C_j$ is independent of $L$ and $s$.
 \end{lemma}
 
-\begin{lemma}[Mean distance from a constant frame]
+\begin{lemma}[Mean distance from a constant gauge transformation]
 \label{ch04:minimizing-frame-bound}
 Let $U$ be a link field on a finite lattice box $X$, and let $h$ minimize
-the frame energy \eqref{ch04:frame-energy} on $X$. Take uniform averages
+the objective \eqref{ch04:frame-energy} on $X$. Take uniform averages
 over the indicated sites $x,z\in X$ and coordinate orders $o\in S_4$.
 There exists $c\in G$ such that
 \begin{equation}
@@ -381,14 +382,14 @@ where $C_G$ depends only on $G$.
 \end{lemma}
 \begin{proof}
 Put $d_x=\operatorname{av}_{z,o}\|T_U(x\to z;o)-1\|_G$ and
-$\bar d=\operatorname{av}_x d_x$. The constant frame has energy at most $\bar d$, since each path distance
+$\bar d=\operatorname{av}_x d_x$. The constant gauge transformation has energy at most $\bar d$, since each path distance
 is at most two. Minimality and the squared triangle inequality give
 $\operatorname{av}_{x,z}\|h_x-h_z\|_G^2\le8\bar d$.
 Let $m=\operatorname{av}_z h_z$ and
 $m_x=\operatorname{av}_{z,o}h_zT_U(x\to z;o)^{-1}$, so
 $\|m_x-m\|_G\le d_x$. As in the proof of Lemma~\ref{ch04:frame-lemma},
 varying $h_x$ shows that it is a nearest group element to $m_x$.
-Indeed, reversing the path interchanges the two off-diagonal terms
+Indeed, reversing the contour interchanges the two off-diagonal terms
 involving $x$. Freezing the second endpoint of the diagonal term adds
 a nonnegative squared distance that vanishes at $h_x$.
 
@@ -404,7 +405,7 @@ Averaging gives \eqref{ch04:frame-first-power}. For
 $8\bar d\ge\varepsilon^2$ the bound follows from $\|h_x-c\|_G\le2$.
 The same proof applies on any finite
 set for a uniformly averaged family of paths paired under reversal
-with identity transports on the diagonal.
+with identity contour variables on the diagonal.
 \end{proof}
 
 \begin{proof}[Proof of Lemma~\ref{ch04:predictor-comparison}]
@@ -427,16 +428,16 @@ the sum of link distances along its entire coordinate line. Its expectation
 is therefore at most $\ell^{-3}$ times the sum over all positive
 $\mu$-links in $X$. Sum over $\mu$ and multiply by $N^2$.
 
-Let $H$ be any gauge on $X$. If $f$ is the minimizing frame for $U$,
-then $h_x=f_xH_x^{-1}$ minimizes the frame energy for $H\cdot U$,
+Let $H$ be any gauge transformation on $X$. If $f$ is the minimizing local gauge transformation for $U$,
+then $h_x=f_xH_x^{-1}$ minimizes the objective \eqref{ch04:frame-energy} for $H\cdot U$,
 since substituting $h$ gives the same energy term by term. A common
 left multiplication can restore the normalization at the centre.
 Applying Lemma~\ref{ch04:minimizing-frame-bound} and the path bound gives
 \[
  \sum_{x\in X}\|f_x-cH_x\|_G\le C_G\ell E_X(H\cdot U)
 \]
-for some $c\in G$. For an eligible axial frame, put $g_x=f_xH_x^{-1}$.
-The pure gauge $g\cdot1$ has transport $g_xg_z^{-1}$ from $x$ to $z$,
+for some $c\in G$. For an eligible axial gauge transformation $f$, put $g_x=f_xH_x^{-1}$.
+The pure gauge $g\cdot1$ has contour variable $g_xg_z^{-1}$ from $x$ to $z$,
 and the linkwise triangle inequality gives
 $E_X(g\cdot1)\le E_X(f\cdot U)+E_X(H\cdot U)$. Applying the path
 bound to $g\cdot1$ and averaging over $z$ yields some $c=g_z$ with
@@ -448,25 +449,25 @@ By the eligibility condition \eqref{ch04:axial-eligible},
 $E_X(f\cdot U)\le a_{\rm ax}\ell\sum_{q\subset X}\|U_q-1\|_G$,
 where the sum runs over plaquettes with all four vertices in $X$.
 
-Now choose the axial gauge $H$ of Lemma~\ref{ch04:frame-lemma} on $M_y$.
+Now choose the axial gauge transformation $H$ of Lemma~\ref{ch04:frame-lemma} on $M_y$.
 Since this box has side $2(j+7)L+1$, the axial estimate gives
 $E_{M_y}(H\cdot U)\le C_j L\mathcal P_y(U)$. Lift the four vertices
-$z$ of $p$ to $\tilde y+\mathbb B_2$. Their frame patches
+$z$ of $p$ to $\tilde y+\mathbb B_2$. Their patches of the averaging operation
 $Lz+\mathbb B_R$, with $R=(j+3)L$, and the straight paths between them
 all lie in $M_y$. Each patch has side $2R+1=O_j(L)$. Applying the
-preceding bounds on that patch, for either frame choice, gives $c_z\in G$
+preceding bounds on that patch, for either choice of local gauge transformation, gives $c_z\in G$
 such that
 \begin{equation}
  \sum_{i\in\mathbb B_R}\|h_{z,i}-c_zH_{Lz+i}\|_G
                                   \le C_j L^2\mathcal P_y(U).
  \label{ch04:patch-frame-sum}
 \end{equation}
-The convolution weights satisfy $w_i^{\rm av}\le L^{-4}$. Given the
+The averaging weights satisfy $w_i^{\rm av}\le L^{-4}$. Given the
 last $j-1$ uniform points, at most one of the $L^4$ possible first
-points yields a prescribed sum. Thus each endpoint frame in the
-connector \eqref{ch04:connector} contributes at most
+points yields a prescribed sum. Thus each endpoint local gauge transformation in the
+transporter \eqref{ch04:connector} contributes at most
 $C_jL^{-2}\mathcal P_y(U)$ to the weighted discrepancy. For its middle
-path, at each of the $L$ steps translation of the offset $i$ is injective.
+contour, at each of the $L$ steps translation of the offset $i$ is injective.
 The unweighted sum of the path distances in gauge $H$ is therefore at
 most $L E_{M_y}(H\cdot U)$. Combining these bounds gives, for each link
 of $\partial p$ written in its positive orientation $e=(z,\mu)$,
@@ -475,7 +476,7 @@ of $\partial p$ written in its positive orientation $e=(z,\mu)$,
                                       \le C_jL^{-2}\mathcal P_y(U).
 \]
 
-For either choice of block average and any $u_*\in G$ we have
+For either branch of the averaging operation and any $u_*\in G$ we have
 \[
  \|Q_e(U)-u_*\|_G\le2\max\{1,\varepsilon_{\rm pred}^{-1}\}
                       \sum_i w_i^{\rm av}\|Y_{e,i}-u_*\|_G .
@@ -503,11 +504,11 @@ integer choices for $z_\mu$. The four coordinates give the stated
 bound $(2j+15)^4=O(j^4)$.
 \end{proof}
 
-\section{Small fields and density coordinates}
+\section{The regularity condition and the representation of the density}
 \label{ch04:density-coordinates}
 
-The cutoff used to distinguish small from large fields must remain fixed
-while the actual coupling is varied for tuning. To express that distinction,
+The threshold used to distinguish small from large fields must remain fixed
+while the inverse coupling $\beta$ is varied for tuning. To express that distinction,
 let $\bar\beta>1$ and use the reference values
 \begin{align}
  \widehat\beta_m&=\bar\beta+\kappa_G\tau_m,&
@@ -518,31 +519,31 @@ let $\bar\beta>1$ and use the reference values
 \end{align}
 Here $\tau_m=\log D_m$ is the logarithmic scale from
 Definition~\ref{ch01:scales}. We use these formulas only where $0<t_m\le1$.
-The actual coupling ranges in
+The inverse coupling $\beta$ ranges in
 $\mathfrak B_m=[\widehat\beta_m/2,2\widehat\beta_m]$.
 The reference value and threshold are not recomputed when that coupling
-changes. Their eventual compatibility with the scale schedule is a later
+changes. Their eventual compatibility with the schedule of Chapter~\ref{ch10:trajectory} is a later
 choice.
 
 At the present scale write $\Lambda=\Lambda_{R_pD_m}$, and let
-$\operatorname{Bad}_m(U)$ be the sites incident to at least one plaquette
-with $\|U_\square-1\|_G>t_m$. A set $X$ is small-field if
-$X\cap\operatorname{Bad}_m(U)=\varnothing$; write its indicator as $h_X(U)$.
-Thus every plaquette meeting $X$ must have small distance from the identity. This definition is
-gauge invariant and involves a closed condition on small-field sites.
+$\operatorname{Bad}_m(U)$, the \emph{large-field set} of $U$, be the sites incident to at least one plaquette
+with $\|U_\square-1\|_G>t_m$. The configuration $U$ satisfies the \emph{regularity condition} on a set $X$, which is then called a small-field region, if
+$X\cap\operatorname{Bad}_m(U)=\varnothing$; write the indicator of this condition as $h_X(U)$.
+Thus every plaquette meeting $X$ must have $\|U_\square-1\|_G\le t_m$. The term regularity condition is that of~\cite{Balaban1985Spaces}, where the spaces of regular configurations carry bounds on the plaquette variables, depending on the scale, on a nested sequence of domains, and a second condition; here the condition is a single inequality at one scale, and the large-field set is neither enlarged nor summed over. This definition is
+gauge invariant and involves a closed condition on the sites outside the large-field set.
 
-We keep two kinds of local corrections.
+We keep two kinds of local corrections: the localized terms, whose sum is the \emph{regular part of the action}, and the large-field activities.
 
-\begin{definition}[Regular and large-field activities]
+\begin{definition}[Localized terms and large-field activities]
 \label{ch04:activities}
-A regular activity consists of a support $X_i$, an anchor $o_i\in X_i$,
+A \emph{localized term} of the regular part of the action consists of a \emph{localization domain} $X_i$, a base point $o_i\in X_i$,
 and a real Borel gauge-invariant function $E_i^{\rm reg}$ local on $X_i$.
 It vanishes at the flat configuration and has the required number of
-ordered left derivatives on small-field configurations.
+ordered left derivatives on configurations satisfying the regularity condition on $X_i$.
 
-A large-field activity has an exclusion support $Y_i$, a nonempty prescribed
-set $I_i^{\rm bad}\subset Y_i$, and an additional Borel gauge-invariant
-eligibility test $\mathcal E_i^{\rm extra}$. Its real Borel value
+A \emph{large-field activity} has an \emph{exclusion support} $Y_i$, a nonempty \emph{prescribed large-field
+set} $I_i^{\rm bad}\subset Y_i$, and an additional Borel gauge-invariant
+condition, an event $\mathcal E_i^{\rm extra}$. Its real Borel value
 $K_i^{\rm lf}$ depends on links internal to $Y_i$ and on the indicators of
 large-field sites in $Y_i$, and vanishes outside
 \begin{equation}
@@ -550,28 +551,28 @@ large-field sites in $Y_i$, and vanishes outside
                          \cap\mathcal E_i^{\rm extra}.
  \label{ch04:eligibility}
 \end{equation}
-The extra test reads the same links and large-field indicators.
+The additional condition reads the same links and large-field indicators.
 \end{definition}
-Neither activity is assumed nonnegative. Activities may be indexed by a
+The names localized term, localization domain and regular part of the action are Ba\l{}aban's~\cite{Balaban1987RG,Balaban1988Expansions}. His localized terms are analytic, one for each connected localization domain, and bounded term by term; those used here are real Borel functions with finitely many derivatives, have a base point and an arbitrary localization domain, and are summed in a weighted $\ell^1$ norm. The word regular has two technical uses, as in his papers: the regular part of the action, and the regularity condition. Ba\l{}aban uses the word activity for the activities of a polymer expansion~\cite{Balaban1988Cluster}; its use for the large-field terms is particular to this book. Neither a localized term nor a large-field activity is assumed nonnegative. Both may be indexed by a
 countable set; their summability will be part of the norm conditions.
 
 There are two different meanings of support in this definition. The set
-$Y_i$ determines exclusion and coverage: selected $Y_i$ will be disjoint.
+$Y_i$ determines exclusion and coverage: the $Y_i$ of each subfamily in the sum below will be pairwise disjoint.
 But deciding whether a site belongs to $\operatorname{Bad}_m(U)$ reads
 plaquettes meeting that site, whose links can extend beyond $Y_i$. The
-\emph{full dependence region} includes those links as well as the internal
-links and any links read by other tests. Two disjoint exclusion supports
-can have overlapping full dependence regions. A connected expansion based
-on dependence must use the latter, whereas the exact-cover sum below uses
+\emph{dependence set} includes those links as well as the internal
+links and any links read by other conditions. Two disjoint exclusion supports
+can have overlapping dependence sets. A connected expansion based
+on dependence must use the latter, whereas the sum over disjoint covering families below uses
 the former. Disjoint exclusion supports do not imply probabilistic
 independence.
 
 \section{The prescribed leading action}
 \label{ch04:leading-action}
 
-The running coupling is a coordinate relative to a prescribed leading
+The running coupling is a component of the representation relative to a prescribed leading
 action. Its construction will come from Gaussian integration and local
-matching; here we specify the form of that coordinate without claiming
+matching; here we specify the form of that component without claiming
 the estimates needed to select it.
 
 At scale $m$, fix constants $c_{\rm dir},c_{\rm lin},R^{\rm rel}>0$ with
@@ -589,12 +590,12 @@ $16c_{\rm lin}<c_{\rm dir}$. Define
               \text{ for every }y,\mu<\nu\right\}.
  \label{ch04:relaxed-test}
 \end{align}
-The distance is periodic and measured in lattice units. Although written
-as a test on every plaquette, \eqref{ch04:relaxed-test} reads only a finite
-neighborhood: $\|U_{y;\mu\nu}-1\|_G\le2$ makes all tests with
+The distance is periodic and measured in lattice units. We call the condition in \eqref{ch04:relaxed-test} the \emph{relaxed regularity condition} at $x$: the regularity condition on the whole lattice, with $t_m$ replaced by the threshold $t_m e^{\operatorname{dist}(x,y)/R^{\rm rel}}$ growing exponentially with the distance from $x$. Although written
+as a condition on every plaquette, \eqref{ch04:relaxed-test} reads only a finite
+neighborhood: $\|U_{y;\mu\nu}-1\|_G\le2$ makes all conditions with
 $t_m e^{\operatorname{dist}(x,y)/R^{\rm rel}}\ge2$ automatic. Any claim of
-locality must include the remaining tested plaquettes in its dependence
-region.
+locality must include the plaquettes of the remaining conditions in its dependence
+set.
 
 For each orientation $\mathfrak p=(\mu,\nu)$, fix a summable linear
 combination of transported curvatures,
@@ -605,9 +606,9 @@ combination of transported curvatures,
 Each $\mathcal F_{\mathfrak p i}$ is a plaquette curvature transported to
 $x$, as in \eqref{ch02:transported-curvature}. Also specify local real
 invariant multilinear expressions $A_i^{(q)}(U,x)$, $q=2,3,4$, in such
-curvatures, each multiplied by the small-field indicator of its declared
-footprint. The footprint contains the paths, plaquettes and anchor; its
-event indicator may read additional adjacent plaquettes. Assume the coefficient sums
+curvatures, each multiplied by the indicator of the regularity condition on its declared
+support. The support of the expression contains the contours, plaquettes and base point; this
+indicator may read additional adjacent plaquettes. Assume the coefficient sums
 converge absolutely at the fixed finite volume. Set
 \begin{align}
  P^{\rm raw}_{N,m}(\beta,U)
@@ -625,31 +626,31 @@ converge absolutely at the fixed finite volume. Set
 The coefficients are held fixed as $\beta$ varies. Thus this action is
 affine in $\beta$. Its ultimate normalization requires the quadratic
 coefficient in the $\beta$-dependent part to be the curvature square,
-and no such coefficient in the separate quadratic correction. Those are
+and no such coefficient in the $\beta$-independent quadratic term $\sum_{x,i}A_i^{(2)}(U,x)$. Those are
 matching conditions, not consequences of the displayed form.
 
-The function called clip in \eqref{ch04:clip} is not a smooth cutoff.
+The function $\operatorname{clip}_t$ of \eqref{ch04:clip}, quadratic below $t$ and linear above, is not a smooth cutoff.
 At $r=t$ it drops from $c_{\rm dir}t^2/2$ to $c_{\rm lin}t^2$ immediately
-to the right. Effective density coordinates are therefore Borel functions,
+to the right. The terms of the representation of the effective density are therefore Borel functions,
 not globally differentiable functions of the links. Derivative estimates
-refer to the regular expressions on small-field domains with the event indicators
-held fixed. In particular, a derivative with respect to the actual coupling
+refer to the local expressions on the domains where the regularity condition holds, with the event indicators
+held fixed. In particular, a derivative with respect to the inverse coupling $\beta$
 does not differentiate the threshold or its indicator.
 
-\section{The exact-cover representation and its norms}
+\section{Representations by disjoint covering families, and their norms}
 \label{ch04:density-norms}
 
-Recall that $Y_i$ is an exclusion support and $I_i^{\rm bad}$ its prescribed
-set of large-field sites, as in Definition~\ref{ch04:activities}. Let
+Recall that $Y_i$ is an exclusion support and $I_i^{\rm bad}$ its prescribed large-field
+set, as in Definition~\ref{ch04:activities}. Let
 $\mathfrak F_m(U)$ be the finite subsets $\mathfrak a$ of large-field
 activity indices such that the $Y_i$, $i\in\mathfrak a$, are pairwise
 disjoint and
 $\bigcup_{i\in\mathfrak a}I_i^{\rm bad}=\operatorname{Bad}_m(U)$.
-These are exact covers of the large-field sites. They do not select a
+We call them the \emph{disjoint covering families} of the large-field sites (in combinatorics, exact covers). They do not select a
 preferred partition into connected components.
 
-A density coordinate tuple $\rho$ consists of $\beta$, a real scalar
-$v_{\rm sc}$ per site, the regular activities and the large-field
+\emph{Representation data} $\rho$ consist of $\beta$, a real constant
+$v_{\rm sc}$ per site, the localized terms and the large-field
 activities, with the fixed action \eqref{ch04:path-action}. Define
 \begin{align}
  V_\rho(U)&=P^{\rm path}_{N,m}(\beta,U)
@@ -662,35 +663,35 @@ activities, with the fixed action \eqref{ch04:path-action}. Define
  \label{ch04:effective-density}
 \end{align}
 The empty product is one. Because each $I_i^{\rm bad}$ is nonempty, if
-there are no large-field sites the only exact cover is empty and the sum
+there are no large-field sites the only disjoint covering family is empty and the sum
 is one. Otherwise a single support may cover two regions, or two disjoint
 supports may cover them separately; both alternatives belong in the sum.
-A tuple satisfying the definitions alone need not give a positive density.
+Representation data satisfying the definitions alone need not give a positive density.
 Positivity follows when a later construction proves that its density equals
 an exact block integral of a positive input.
 
 Fix an integer derivative order $q\ge2$, a nonnegative spatial exponent
-$\varpi$, a support-weight exponent $\sigma>0$, and the threshold $t_m$.
-For a regular activity anchored at $o_i$, use the seminorm
+$\varpi$, a support exponent $\sigma>0$ (the exponent of the support weight), and the threshold $t_m$.
+For a localized term with base point $o_i$, use the seminorm
 \begin{equation}
  \|E_i^{\rm reg}\|_m
  =\sup_{0\le k\le q}\ \sup_{U,A_1,\ldots,A_k}
         |D_{A_1}^L\cdots D_{A_k}^L E_i^{\rm reg}(U)|,
  \label{ch04:local-seminorm}
 \end{equation}
-where $U$ ranges over configurations that are small-field on $X_i$.
+where $U$ ranges over configurations that satisfy the regularity condition on $X_i$.
 Each $A_r$ is a Lie algebra valued link field satisfying, on each link $e$ with initial site $e^-$,
 $|(A_r)_e|_{\gLie}\le t_m(1+\operatorname{dist}(e^-,o_i))^\varpi$.
-The left derivatives are those of Section~\ref{ch02:bounds}. Required
-regularity includes existence and uniform bounds at the boundary of the
-small-field domain, interpreted through the regular local expression;
+The left derivatives are those of Section~\ref{ch02:bounds}. The required
+differentiability includes existence and uniform bounds at the boundary of the
+domain defined by the regularity condition, interpreted through the local expression $E_i^{\rm reg}$ itself;
 no derivative of $h_{X_i}$ is included.
 
-For a set $X\subset\Lambda$, let $\operatorname{cov}_{B_m}(X)$ be the
+For a set $X\subset\Lambda$, let the \emph{connected covering number} $\operatorname{cov}_{B_m}(X)$ be the
 minimum number of radius-$B_m$ periodic balls whose union is connected
 in the nearest-neighbor graph and covers $X$. Set $\operatorname{cov}_{B_m}(\varnothing)=0$. The covering union may
 contain additional sites. Its exponential weight penalizes extended
-supports without requiring a support itself to be connected.
+supports without requiring a support itself to be connected; the covering number plays the role of the linear size of a localization domain in~\cite{Balaban1987RG}.
 Choose majorants $e_i\ge\|E_i^{\rm reg}\|_m$ and
 $k_i\ge\sup_U|K_i^{\rm lf}(U)|$, and define
 \begin{equation}
@@ -702,11 +703,11 @@ $k_i\ge\sup_U|K_i^{\rm lf}(U)|$, and define
  \end{split}
  \label{ch04:weighted-sums}
 \end{equation}
-The first is an anchored sum: each regular activity is counted at one
+The first is a sum over the terms with base point $x$, an \emph{anchored} sum: each localized term is counted at one
 site. The second counts a large-field activity at every site of its
-exclusion support. Replacing an anchored sum by a containing-site sum
-requires a bound for the number of possible anchors; it is not a harmless
-notational change. Likewise, replacing $Y_i$ by its full dependence region
+exclusion support. Replacing an anchored sum by a sum over the terms whose localization domain contains $x$, a \emph{containing-site} sum like the second,
+requires a bound for the number of possible base points; it is not a harmless
+notational change. Likewise, replacing $Y_i$ by its dependence set
 changes the weight and requires a geometric estimate.
 
 Finite weighted sums ensure that \eqref{ch04:effective-density} is
@@ -715,18 +716,18 @@ well-defined at fixed volume. Indeed
  \sum_i\|E_i^{\rm reg}\|_m\le|\Lambda|\mathcal E_m,\qquad
  \sum_i\sup|K_i^{\rm lf}|\le|\Lambda|\mathcal K_m,
 \]
-and the absolute sum over all finite selections is at most
+and the absolute sum over all finite subfamilies is at most
 $\prod_i(1+k_i)\le\exp(|\Lambda|\mathcal K_m)$.
-Restricting to disjoint exact covers only lowers this bound. The estimate
+Restricting to disjoint covering families only lowers this bound. The estimate
 is a finite-volume convergence statement, not a uniform bound on the
 entire partition function.
 
 \section{Conditions for a one-step induction}
 \label{ch04:admissibility}
 
-The preceding coordinates describe possible densities; their smallness
+The preceding representation data describe possible densities; their smallness
 conditions will describe the inputs of a one-step theorem. There are
-additional normalization conditions. On a nonwrapping support, choose
+additional normalization conditions. On a nonwrapping localization domain\mgubi{Issue 10: ``nonwrapping'' is used in several chapters and never defined. In the sources: $10\,\mathrm{dist}(x,o)<n$ for all $x$ in the support, $n$ the period; Chapter 17 uses the factor $10$.}, choose
 centered coordinate lifts $\xi_{o_i}(y)$. For every pair of affine link
 fields of the form
 \[
@@ -736,12 +737,12 @@ fields of the form
 require the Hessian at zero of $A\mapsto E_i^{\rm reg}(\exp A)$ to vanish
 on that pair. Together with $E_i^{\rm reg}(1)=0$ and the vanishing linear
 term, this excludes the low-order local contributions assigned to the
-leading action. The first derivative vanishes for a gauge-invariant
-activity by invariance under constant gauge transformations: each
+leading action. The first derivative vanishes for a gauge-invariant localized
+term by invariance under constant gauge transformations: each
 linear coefficient would otherwise be an invariant linear functional on
 the simple Lie algebra. The meaning of the affine Hessian condition is
 fixed in the chosen local coordinates; no coordinate lift is imposed on
-a wrapping support by this definition.
+a wrapping localization domain by this definition.
 
 One may prescribe the intended size bounds
 \begin{equation}
@@ -750,15 +751,15 @@ One may prescribe the intended size bounds
  \label{ch04:activity-bounds}
 \end{equation}
 with the reference quantities of \eqref{ch04:thresholds}. In an induction,
-$q,\varpi,\sigma$ may depend on a regularity-stage index $J_m$; that index
-is different from the scale $m$. For now they remain specified input
+$q,\varpi,\sigma$ may depend on the \emph{stage} $J_m$ in force at scale $m$ (a stage specifies finitely many derivative orders, support exponents, path widths and coefficient bounds; see Section~\ref{ch10:choices}); the stage index
+is different from the scale index $m$. For now they remain specified input
 parameters. Neither \eqref{ch04:activity-bounds} nor the density identity
 proves that the block map preserves the class.
 
-Parameter continuity is also stated at fixed coordinates. A curve
-$u\mapsto\rho_u$ has fixed supports, anchors, prescribed large-field sets,
-extra tests and event indicators. Its coupling and scalar are continuous. At each
-$u_0$, differences of regular derivatives and large-field values have
+Parameter continuity is also stated for the representation data. A curve
+$u\mapsto\rho_u$ has fixed localization domains, exclusion supports, base points, prescribed large-field sets,
+additional conditions and event indicators. Its coupling and its constant $v_{\rm sc}$ are continuous. At each
+$u_0$, differences of the derivatives of the localized terms and of the values of the large-field activities have
 majorants $e_i(u),k_i(u)$ satisfying
 \[
  \sum_i e^{\sigma\operatorname{cov}_{B_m}(X_i)}e_i(u)
@@ -769,11 +770,11 @@ Both sums here are over all indices, at a fixed finite volume. This
 continuity condition is strong enough to control the density and its
 integral; it differentiates no moving large-field boundary.
 
-The analytic task remaining is now precise. Starting with a tuple at the
-fine level, one must construct a coarse tuple whose density is exactly
+The analytic task remaining is now precise. Starting with representation data at the
+fine scale, one must construct coarse representation data whose density is exactly
 $\mathcal B^{(L_m)}_\beta\operatorname{dens}(\rho)$, whose coupling has the
-claimed adjustment, and whose activities obey the coarse conditions.
+claimed adjustment, and whose localized terms and large-field activities obey the coarse conditions.
 A class defined as the outputs reachable from a Wilson starting density
 can only be introduced after that construction. It must not be confused
-with the much larger set of coordinate tuples satisfying the displayed
+with the much larger set of representation data satisfying the displayed
 norm bounds.

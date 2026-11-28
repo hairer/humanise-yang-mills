@@ -4,7 +4,7 @@
 
 Fix a scaling-dimension bound $d$ for the labels in $V_d$. The section $\mathcal V_d$ and automorphism $R_d$
 are those of Theorem~\ref{ch02:equation-adapted}; neither is chosen
-again when the cutoff or period changes. The physical section remains
+again when the cutoff or period changes. The dimensionful section remains
 $P_d^{\rm loc}$. We compare the two on the history already used to
 define $\mathsf Z_{N,p,d}$.
 
@@ -12,7 +12,7 @@ We first specify an additional finite stage requirement.
 At stage $j$, let $a_{dj}$ bound the derivatives of $\mathcal V_d$
 requested by that stage, for every $d\le j$. These are finite constants
 by the powered-curvature-factor estimate in Chapter~\ref{ch02:observables}.
-Let $q_d$ bound the fixed union stencil and put
+Let $q_d$ bound the fixed union of the link supports and put
 \[
  Q_{dj}=2+e^{81\sigma_j}(a_{dj}+C_j+2q_d).
 \]
@@ -26,10 +26,10 @@ $\delta_d=(2\mathcal O_d^2)^{-1}$. Include the finite maximum
  \max_{d\le j}2(1+C_j)Q_{dj}\delta_d^{-1}
  \label{ch11:calibration-floor}
 \end{equation}
-in the stage-$j$ block floor. Include
+in the stage-$j$ lower bound on the block ratio. Include
 $\widehat\beta_N\ge a_{d,J(N)}$ in the adjacent stage conditions on the starting scale. These requests are compatible with the selection order:
 the section and its derivative constants are fixed first, then the
-length, then the inverse coupling threshold. Raising a later threshold does
+length, then the lower bound on the reference coupling. Raising a later such bound does
 not change the section. Thus they can be imposed for all stages
 before selecting the common history, with no dependence on $p$.
 
@@ -54,15 +54,15 @@ unscaled equation section.
 
 \begin{proposition}[One comparison map for all equation labels]
 \label{ch11:equation-comparison}
-Under \eqref{ch11:calibration-floor} and the terminal attachment
-bounds of Section~\ref{ch11:trial-descent}, there is, for every
+Under \eqref{ch11:calibration-floor} and the attachment
+bounds at the ultraviolet cutoff of Section~\ref{ch11:trial-descent}, there is, for every
 sufficiently large $N$ and every $p$, one real equivariant map
 $P_{N,p,d}:V_d\to V_d$ such that
 \[
  \|P_{N,p,d}-I\|_{1\to1}\le\tfrac12,\qquad
  \|P_{N,p,d}^{-1}\|_{1\to1}\le2.
 \]
-For each fixed stopping pair $(m,k)$,
+For each fixed pair $(m,k)$ of cell scale and stopping scale,
 \begin{equation}
  \mathcal R_m\!\left(
  O^{\mathcal V}_{N,p}(v)
@@ -74,13 +74,13 @@ where $E_N$ is subpower in $a_N^{-1}$, uniformly in $p$.
 The map $P_{N,p,d}$ is independent of the other insertions in the correlation.
 \end{proposition}
 \begin{proof}
-For each basis vector, the exact terminal decomposition used in
+For each basis vector, the exact decomposition at the ultraviolet cutoff used in
 Section~\ref{ch11:trial-descent} applies to the fixed section
-$\mathcal V_d$. Its part with zero polynomial coefficient is localized on the union
-stencil; the complementary part is attached to the original
+$\mathcal V_d$. Its part with zero polynomial coefficient is localized on the union of the
+link supports; its large-field part is attached to the original
 large-field selection, with no change of density.
-It gives coefficient $e_j$, ordinary norm bound
-$Q_N=Q_{d,J(N)}$, and complete source norm bound
+It gives coefficient $e_j$, small-field norm bound
+$Q_N=Q_{d,J(N)}$, and full norm bound of the insertion
 \[
  E_N=4(1+C_N)Q_N+
  e^{81\sigma_N+162}Z_N^{\rm val}\zeta_{d,N}u_N^{-1}.
@@ -89,17 +89,17 @@ Here
 $Z_N^{\rm val}=(A_{\mathcal V}+2A_{\rm loc})
  \sum_jt_N^{-s_j}$, with $A_{\mathcal V},A_{\rm loc}$
 the global value norms of the two fixed sections.
-The ordinary terminal norm bound uses a sharper attachment estimate
-than the general trial bound. If $w_N^{\rm for}$ is the terminal
-large-field bound and $D$ the union stencil, its contribution
+The small-field norm bound at the ultraviolet cutoff uses a sharper attachment estimate
+than the general trial bound. If $w_N^{\rm for}$ is the large-field bound at the
+ultraviolet cutoff and $D$ the union of the link supports, its contribution
 to the remainder norm normalized by $\sqrt{w_N^{\rm for}}$ is
 \[
  2|D|\sqrt{w_N^{\rm for}}\,
        e^{\sigma_N c_{B_N}(D)}Z_N^{\rm val}.
 \]
-Indeed attach the complementary local function to the original
+Indeed attach the large-field part of the local function to the original
 nonempty prescribed large-field set and sum its possible distinguished
-sites in $D$; the remaining large-field suppression bounds this
+sites in $D$; the remaining large-field decay factor bounds this
 normalized mass. The same exact attachment retains reserved mass
 $e^{(\sigma_N+2)c_{B_N}(D)}Z_N^{\rm val}$.
 Impose the additional conditions on the starting scale
@@ -107,29 +107,29 @@ Impose the additional conditions on the starting scale
  |D|w_N^{\rm for}\le1,\qquad c_{B_N}(D)\le81,\qquad
  \sqrt{w_N^{\rm for}}Z_N^{\rm val}\le1.
 \]
-Then $|D|\le q_d$ bounds the ordinary contribution by
+Then $|D|\le q_d$ bounds the small-field contribution by
 $2q_de^{81\sigma_N}$, explaining exactly the definition of $Q_N$.
-These are post-length threshold conditions. At fixed adjacent
+These conditions are imposed after the block length is fixed. At fixed adjacent
 stages the value norm is a fixed polynomial in the inverse
 small-field threshold, whereas the large-field bound decays
 faster than every such power. Their finite simultaneous threshold
 therefore exists. The unweighted reserved mass is not discarded.
-This last term is required: the ordinary derivative bound alone
-does not bound the complementary large-field contribution.
+This last term is required: the small-field derivative bound alone
+does not bound the contribution of the large-field part.
 
 Backward comparison gives a reference coefficient $v_j$ and the
 chessboard-seminorm error in \eqref{ch11:trial-error}. Put
 $u_j=\mathsf Z_{N,p,d}^{-1}v_j$.
 There is a slightly stronger endpoint estimate than the displayed
-bulk descent bound. At the last step its cone inequality gives
+bulk bound of the backward comparison. At the last step its cone inequality gives
 \[
  |e_j-u_j|\le
  4K_{N-1}L_{N-1}^{-3/8}c_N
  \le L_{N-1}^{-1/8}c_N
  \le 2(1+C_N)Q_N L_{N-1}^{-1/8}.
 \]
-The middle inequality follows from the previously imposed block
-floor. Requirement \eqref{ch11:calibration-floor} bounds this by
+The middle inequality follows from the previously imposed lower
+bound on the block ratio. Requirement \eqref{ch11:calibration-floor} bounds this by
 $\delta_d$.
 
 Let $Ue_j=u_j$. Average $U$ by conjugation with the finite geometric
@@ -144,13 +144,13 @@ history, all source monomials, and one common map.
 
 Finally $C_N$, $e^{81\sigma_N}$, $t_N^{-1}$,
 $\zeta_{d,N}$, and $u_N^{-1}$ have the subpower bounds already
-required for trial descent. The extra condition on the starting scale bounds
+required for the backward comparison. The extra condition on the starting scale bounds
 $a_{d,J(N)}$ by $\widehat\beta_N$, which is subpower.
 Finite sums and products preserve this property, proving the claim
 for $E_N$.
 \end{proof}
 
-The varying equation subspace in reference coordinates is therefore
+The cutoff-dependent equation subspace in reference coordinates is therefore
 \begin{equation}
  \mathsf E_{N,p,d}
    =\mathsf Z_{N,p,d}P_{N,p,d}
@@ -160,14 +160,14 @@ The varying equation subspace in reference coordinates is therefore
 For $v_N\in I_{N,d}^{\mathcal V}$ of subpower norm, the first term
 in \eqref{ch11:equation-root-error} has exactly zero correlation
 against every bounded spectator outside its microscopic stencil,
-by \eqref{ch02:microscopic-null}. For fixed positive physical
-separation, this exclusion holds at every sufficiently fine mesh,
+by \eqref{ch02:microscopic-null}. For fixed positive distance in continuum
+units, this exclusion holds at every sufficiently fine mesh,
 uniformly in period. Holder's chessboard bound then shows that the
-physical insertion with coefficient
+normalized local insertion with coefficient
 $\mathsf Z_{N,p,d}P_{N,p,d}v_N$ has vanishing separated correlations
 against any finite family of spectators with bounded chessboard seminorms. This proves the equation inclusion needed for the
 argument using a finite separating family; equality with the full null space still
-uses the free nondegeneracy and detection estimates.
+uses the free nondegeneracy and separating-family estimates.
 
 The scaling in \eqref{ch11:actual-equation-subspace} also has a
 useful check. Since $R_d-I$ never lowers factor count and $t_N\to0$,
@@ -180,5 +180,5 @@ themselves, prove that this equation subspace approaches the
 unmodified Maxwell ideal. No such identification is required here: use bounded projections
 with kernel exactly \eqref{ch11:actual-equation-subspace} and establish
 the bound from the separating family \eqref{ch11:detector-bound} on their complements.
-The terminal map $\mathsf Z$ already includes the scaling-dimension
+The coefficient map $\mathsf Z$ already includes the scaling-dimension
 evolution; its physical convention has not been changed.

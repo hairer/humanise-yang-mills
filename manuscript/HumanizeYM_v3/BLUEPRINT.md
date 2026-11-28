@@ -16,9 +16,9 @@ The book concerns gauge-invariant local correlations, their ordered continuum li
 
 ## Implemented dependency refinement
 
-The original chapter allocation below remains a ceiling, rather than a request to fill pages. In the working draft, Chapter 13 also contains the sharp fixed-arity bounds, bounded real approximations, graded quotient estimate and mixed local cluster replacement. The latter is the lattice/probe part of Scott `part2/J-section.tex:17–414`, followed by its fixed-spectator consequence. It uses Chapters 10–13 only. Chapter 14 uses it to prove the annular annihilator bound with error `r^(1−epsilon)`, before phases or rotations have been constructed. Chapter 18 then converts the same lattice estimate to a phase-uniform norm estimate and the fixed OPE prescription. Do not duplicate the local cluster proof there or introduce a backward dependency through phase decomposition.
+The original chapter allocation below remains a ceiling, rather than a request to fill pages. In the working draft, Chapter 13 also contains the sharp bounds for a fixed number of insertions, bounded real approximations, graded quotient estimate and mixed local cluster replacement. The latter is the lattice/probe part of Scott `part2/J-section.tex:17–414`, followed by its fixed-spectator consequence. It uses Chapters 10–13 only. Chapter 14 uses it to prove the annular annihilator bound with error `r^(1−epsilon)`, before phases or rotations have been constructed. Chapter 18 then converts the same lattice estimate to a phase-uniform norm estimate and the fixed OPE prescription. Do not duplicate the local cluster proof there or introduce a backward dependency through phase decomposition.
 
-The three-scale free comparison is proved in `chapters/14-lattice-comparison.tex` using the fixed-arity export of Chapter 11; its source packet is Scott `part2/G-section.tex:223–310`. Chapter 11's polynomial extraction must be common to all three scales and all spectators. At each scale use its own normalized singleton, then compare them by the exact scaling-dimension dilation.
+The three-scale free comparison is proved in `chapters/14-lattice-comparison.tex` using the comparison for a fixed number of insertions exported by Chapter 11; its source packet is Scott `part2/G-section.tex:223–310`. Chapter 11's polynomial extraction must be common to all three scales and all spectators. At each scale use its own normalized singleton, then compare them by the exact scaling-dimension dilation.
 
 Proof fragments are included by the master chapter files. Their historical filename or label prefix need not equal their current chapter number: `18-graded-quotient.tex` and `18-lattice-products.tex` belong in Chapter 13. Follow `monograph.tex` and its actual inputs. `tools/check_draft.py` checks that input graph and reports unattached fragments, so a label in an unintegrated file cannot conceal a missing reference.
 
@@ -31,13 +31,13 @@ The current Chapter17 includes a proved comparison over windows crossing arbitra
 | 1 | Lattice gauge theory and the continuum problem | 18 | [Foundations, Chapter 1](blueprint/foundations-chapters.md) |
 | 2 | Local gauge-invariant observables | 16 | [Foundations, Chapter 2](blueprint/foundations-chapters.md) |
 | 3 | The free Maxwell comparison theory | 20 | [Continuum C1](blueprint/continuum-chapters.md) |
-| 4 | Exact blocking and effective densities | 18 | [UV U2](blueprint/uv-chapters.md) |
+| 4 | The renormalization transformation and the effective density | 18 | [UV U2](blueprint/uv-chapters.md) |
 | 5 | Gaussian kernels and stationary backgrounds | 26 | [UV U3](blueprint/uv-chapters.md) |
 | 6 | Large fields and local Gaussian integration | 24 | [UV U4](blueprint/uv-chapters.md) |
 | 7 | Local matching and the running coupling coefficient | 26 | [UV U5](blueprint/uv-chapters.md) |
 | 8 | Polymer expansions and connected correlations | 18 | [UV cluster tools, split from U6](blueprint/uv-chapters.md) |
 | 9 | The nonlinear renormalization step | 30 | [UV U6](blueprint/uv-chapters.md) |
-| 10 | A common trajectory and fixed-scale stability | 24 | [UV U7](blueprint/uv-chapters.md) |
+| 10 | A common trajectory and convergence at fixed scales | 24 | [UV U7](blueprint/uv-chapters.md) |
 | 11 | Renormalized insertions and uniform difference estimates | 30 | [UV U8](blueprint/uv-chapters.md) |
 | 12 | The full ultraviolet limit at fixed volume | 24 | [UV U9](blueprint/uv-chapters.md) |
 | 13 | Continuum correlations and local fields | 20 | [Continuum C2](blueprint/continuum-chapters.md) |

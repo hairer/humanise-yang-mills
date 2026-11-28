@@ -2,44 +2,44 @@
 \chapter{The ultraviolet limit at fixed volume}
 \label{ch12:ultraviolet}
 
-We keep the physical period $R_p$ fixed and let the ultraviolet cutoff
-$N$ tend to infinity. The level $m$ has spacing $a_m=D_m^{-1}$;
+We keep the period $R_p$ in continuum units fixed and let the ultraviolet cutoff
+$N$ tend to infinity. The scale $m$ has spacing $a_m=D_m^{-1}$;
 blocking proceeds from $m+1$ to $m$. The purpose of this chapter is to
 compare different cutoffs on one fixed configuration space. Compactness
 by itself would give only a subsequence. The additional ingredient is an
-estimate for stopping the marked evolution at an intermediate level,
-with a constant independent of that level.
+estimate for deleting the terms of higher source degree at an intermediate scale,
+with a constant independent of that scale.
 
 The common trajectory of Chapter~\ref{ch10:trajectory} and the
-marked estimates of Chapter~\ref{ch11:insertions} supply the stability
+estimates with insertions of Chapter~\ref{ch11:insertions} give the stability
 and finite-difference estimates used here. We state their precise
 forms to distinguish a change of cutoff from comparison of two
 insertions under one fixed transformation.
 
-\section{Fixed-level convergence data}
+\section{Fixed-scale convergence data}
 \label{ch12:inputs}
 
-Fix finitely many labels $v_i\in V_{d_i}$ and distinct physical origins.
-At a fixed level $m$ above their reference levels, index the activities
-by the same local supports and prescribed sets of large-field sites for
-every cutoff $N>m$. The small-field indicators and eligibility criteria
-are also fixed at level $m$. A large-field profile is the sum of activities
-having one particular support and prescribed set of large-field sites; the original activity
-list can be infinite even though the number of such profiles on a
+Fix finitely many labels $v_i\in V_{d_i}$ and distinct insertion points in continuum units.
+At a fixed scale $m$ above their reference scales, index the activities
+by the same local supports and prescribed large-field sets for
+every cutoff $N>m$. The indicators of small-field events and eligibility conditions
+are also fixed at scale $m$. A \emph{total large-field activity} is the sum of activities
+having one particular support and prescribed large-field set; the original activity
+list can be infinite even though the number of such sums on a
 fixed finite torus is finite.
 
-The required background convergence consists of Cauchy convergence of
+The required convergence of the action data consists of Cauchy convergence of
 $\beta_{N,p,m}$, of the path coefficients in their exponentially
-weighted sums, and of the regular and large-field activity arrays in
+weighted sums, and of the arrays of localized terms and large-field activities in
 the norms of Section~\ref{ch04:activities}. The scalar multiple of the
-density need not converge. For the marked transformation we need
-fixed-input continuity across cutoffs: at each fixed level, applying
-the cutoff-dependent marked map to any fixed admissible remainder
-graph gives Cauchy output graphs and coefficient maps. This condition
+density need not converge. For the step with insertions we need
+fixed-input continuity across cutoffs: at each fixed scale, applying
+the cutoff-dependent step with insertions to any fixed admissible remainder
+graph (Section~\ref{ch12:graphs}) gives Cauchy output graphs and coefficient maps. This condition
 is stronger than contraction for two graphs acted on by the same map.
-For the common construction, Theorem~\ref{ch10:convergence} supplies
-the background limits. The marked estimates and fixed-input comparison
-in Section~\ref{ch11:one-graph} supply the corresponding single-insertion
+For the common trajectory, Theorem~\ref{ch10:convergence} gives
+the limits of the action data. The estimates with insertions and fixed-input comparison
+in Section~\ref{ch11:one-graph} give the corresponding single-insertion
 maps. We keep the needed forms explicit to show how the two
 comparisons enter this argument.
 
@@ -51,7 +51,7 @@ $w>v$. Writing $c_a=\lim_{N\to\infty}c_{N,a}$ and $C$ for the common bound, we h
  |c_{N,a}-c_a|e^{v\ell(a)}\le 2C e^{-(w-v)\ell(a)}.
 \]
 The canonical indices enumerate displacement vectors and finitely many
-plaquette directions, rather than all walks of a given length. For a
+plaquette directions, rather than all paths of a given length. For a
 row their length is $|x|_1+4$, and
 \[
  \sum_{x\in\ZZ^4}e^{-\delta(|x|_1+4)}
@@ -59,25 +59,25 @@ row their length is $|x|_1+4$, and
 \]
 For an atom of degree $q$ the analogous sum has $q-1$ displacement
 vectors and exponent $4(q-1)$. Dominated convergence therefore gives
-convergence in the smaller width $v$. A strict width reserve makes
-coordinatewise coefficient convergence sufficient for the actual
+convergence in the smaller width $v$. A strict width margin makes
+coordinatewise coefficient convergence sufficient for the
 path-action norm; convergence of an unrelated finite-volume matrix
 would not do so.
 
-\section{Contraction of the complete marked remainder}
+\section{Contraction of the full remainder with insertions}
 \label{ch12:graphs}
 
 For a fixed degree, let $\mathcal R_m$ denote the space of remainder
-arrays at level $m$. Its seminorm is the infimum of the sum of the
+arrays at scale $m$. Its seminorm is the infimum of the sum of the
 regular derivative majorants and the large-field value majorants
 multiplied by $\kappa_m^{-1}$, where
 $\kappa_m=(\epsilon_m^{\rm for})^{1/2}$ is the square root of the
-actual level-$m$ large-field bound, as in
+scale-$m$ large-field bound, as in
 Section~\ref{ch11:one-graph}. We keep the arrays themselves, without
 identifying different arrays merely because their evaluations agree.
-Evaluation of the regular sum and of each large-field profile is a
+Evaluation of the regular sum and of each total large-field activity is a
 bounded linear map in this seminorm. This follows first for any
-admissible majorant and then by taking its infimum.
+majorant admitted in the infimum and then by taking the infimum.
 
 An admissible graph $G:V_d\to\mathcal R_m$ obeys
 $\|Gx\|_{\mathcal R_m}\le s_m\|x\|_1$, where $s_m\ge1$ is fixed
@@ -86,7 +86,7 @@ by the finite-degree construction. Set
  d_m(G,H)=\sup_{x\ne0}
        \frac{\|(G-H)x\|_{\mathcal R_m}}{s_m\|x\|_1}.
 \]
-Thus any two admissible graphs have distance at most two. A marked step
+Thus any two admissible graphs have distance at most two. A step with insertions
 from $m+1$ to $m$ sends the input $(x,Gx)$ to $(I_Gx,J_Gx)$, where
 $I_Gx$ is the new polynomial coefficient and $J_Gx$ the new remainder.
 Using the new coefficient as independent variable gives the output graph
@@ -94,8 +94,8 @@ $\Phi G=J_GI_G^{-1}$.
 
 \begin{lemma}[Graph contraction]
 \label{ch12:contraction}
-Suppose the marked step maps admissible graphs into admissible graphs,
-and the common-support marked difference estimates give, for
+Suppose the step with insertions maps admissible graphs into admissible graphs,
+and the difference estimates with insertions on common supports give, for
 $a=d_{m+1}(G,H)$,
 \[
  \|I_G-I_H\|\le\delta_m a,\qquad
@@ -113,42 +113,42 @@ For $y=I_G^{-1}x$, use $J_H=(\Phi H)I_H$ to write
 Its norm is at most $(1+s_m)\delta_m a s_{m+1}\|x\|_1$,
 which is at most $as_m\|x\|_1/2$.
 \end{proof}
-The difference estimates are for the complete regular and large-field
+The difference estimates are for the full regular and large-field
 remainder on common supports. Linearity of a single insertion
 allows its local polynomial part to cancel. A contraction only for the regular
-part would not prove this lemma for the actual inserted density.
-For the actual transformation, \eqref{ch11:graph-estimates} gives
+part would not prove this lemma for the inserted density.
+For the step with insertions, \eqref{ch11:graph-estimates} gives
 ball invariance and the inverse bound, while
 \eqref{ch11:graph-difference} gives these two differences with
 $\delta_m=C_d\epsilon_m s_{m+1}$.
-The selected ratio and thresholds for the starting scales impose
+The selected ratio and lower bounds on the starting scales impose
 $4\delta_m s_{m+1}\le1$. The fine and coarse remainder norms retain
 their distinct factors $\kappa_{m+1}^{-1}$ and $\kappa_m^{-1}$.
-Weighted path continuity at a strict width reserve and activity-norm
+Weighted path continuity at a strict width margin and activity-norm
 continuity in Section~\ref{ch11:one-graph}, together with
 Theorem~\ref{ch10:convergence}, give the fixed-input cutoff
 continuity as well.
 
-\begin{proposition}[Independence of the terminal graph in the cutoff limit]
+\begin{proposition}[Cauchy convergence of the graphs at a fixed scale]
 \label{ch12:forgetting}
-For the selected trajectory, the graph contraction and fixed-input
+For the common trajectory of Chapter~\ref{ch10:trajectory}, the graph contraction and fixed-input
 cutoff continuity just verified imply that the selected
-graphs and coefficients normalized at one reference level are Cauchy
-at every fixed level.
+graphs and coefficients normalized at one reference scale are Cauchy
+at every fixed scale.
 \end{proposition}
 \begin{proof}
 Fix $m$ and a positive integer $h$. Replace the selected graph at
 $m+h$ by one fixed admissible graph and propagate down $h$ steps.
 The resulting graphs are Cauchy as $N\to\infty$: fixed-input
 continuity and contraction give this by finite induction. Their
-distance from the actual graphs is at most $2^{1-h}$. First let $h$
+distance from the selected graphs is at most $2^{1-h}$. First let $h$
 be large and then let both cutoffs tend to infinity. This proves the
 Cauchy assertion without an infinite product of inverse maps.
 
-The coefficient at its reference level is the prescribed label.
-For each subsequent fixed level solve the finite-dimensional relation
+The coefficient at its reference scale is the prescribed label.
+For each subsequent fixed scale solve the finite-dimensional relation
 $x_{m,N}=I_{m,N}x_{m+1,N}$. The maps are Cauchy and their inverses
-uniformly bounded at this fixed level. The identity
+uniformly bounded at this fixed scale. The identity
 \[
  \|I_{m,N}^{-1}x_{m,N}-I_{m,M}^{-1}x_{m,M}\|_1
  \le C_m\bigl(\|x_{m,N}-x_{m,M}\|_1
@@ -158,37 +158,37 @@ proves the assertion by finite induction. Evaluation of $G_{m,N}x_{m,N}$
 is Cauchy by the graph bound and its bounded evaluation maps.
 \end{proof}
 
-Consequently the complete functions multiplying a single source $f_{i,N,m}(U)$ and
-large-field profiles linear in the sources $k_{i,N,m,Q}(U)$ converge uniformly in
-$U$. Here $Q$ is a support together with its exact prescribed set of large-field sites.
-Multiplication by a fixed Borel event indicator preserves uniform convergence;
-no continuity of the event indicator as a function of $U$ is required.
+Consequently the full functions multiplying a single source variable $f_{i,N,m}(U)$ and
+total large-field activities of source degree one $k_{i,N,m,Q}(U)$ converge uniformly in
+$U$. Here $Q$ is a support together with its exact prescribed large-field set.
+Multiplication by the indicator of a fixed Borel event preserves uniform convergence;
+no continuity of this indicator as a function of $U$ is required.
 
-\section{The scalar normalization cancels}
+\section{The normalization constant cancels}
 \label{ch12:normalization}
 
-Write $\rho_{N,m}$ for the actual positive density at the fixed period,
-$s_{N,m}$ for its extensive scalar term, and
+Write $\rho_{N,m}$ for the positive density at the fixed period,
+$s_{N,m}$ for its extensive constant term, and
 \[
  \widetilde\rho_{N,m}=e^{-s_{N,m}}\rho_{N,m},\qquad
  Z^0_{N,m}=\int\widetilde\rho_{N,m}\,d\mu_{m,p},
 \]
-where $\mu_{m,p}$ is product probability Haar measure. Background
-convergence makes $\widetilde\rho_{N,m}$ uniformly Cauchy. Indeed,
+where $\mu_{m,p}$ is product probability Haar measure. Convergence
+of the action data makes $\widetilde\rho_{N,m}$ uniformly Cauchy. Indeed,
 curvatures are bounded on the compact group, so weighted path
-convergence implies uniform action convergence. Summing a rooted
-activity norm over the finitely many sites gives uniform convergence
-of the regular sum and every large-field profile. The exact-cover gas
-is a finite polynomial in the latter profiles and fixed eligibility
-indicators. Its product with the exponential of the regular action
+convergence implies uniform action convergence. Summing the norms of
+\eqref{ch04:weighted-sums} over the finitely many sites gives uniform convergence
+of the regular sum and every total large-field activity. The sum over disjoint covering families
+is a finite polynomial in the latter activities and the fixed indicators of the
+eligibility conditions. Its product with the exponential of the regular action
 therefore converges uniformly.
 
 The limit of $Z^0_{N,m}$ is strictly positive. Choose a fixed link ball
 $\mathcal U_m$ about the identity small enough that every inspected
-plaquette satisfies the level-$m$ cutoff. On this set there are no
-large-field sites, so the exact-cover sum is one. The action and the
-regular sum are bounded above by a constant $A_{m,p}$ uniformly on
-the cutoff tail. Since Haar measure assigns positive mass to every
+plaquette satisfies the regularity condition at scale $m$. On this set there are no
+large-field sites, so the sum over disjoint covering families is one. The action and the
+regular sum are bounded above by a constant $A_{m,p}$ uniformly for
+all sufficiently large $N$. Since Haar measure assigns positive mass to every
 nonempty open link ball,
 \begin{equation}
  Z^0_{N,m}\ge e^{-A_{m,p}}\mu_{m,p}(\mathcal U_m)>0.
@@ -199,15 +199,15 @@ to $\mathcal U_m$. Positivity of each partition function alone would
 not imply a positive limit.
 
 Let $z_1,\ldots,z_n$ be commuting variables with $z_i^2=0$, and write
-$z_S=\prod_{i\in S}z_i$. The exact marked density at level $m$ has
-regular terms linear in the sources $\sum_i z_i f_i$, higher regular entries
+$z_S=\prod_{i\in S}z_i$. The exact density with insertions at scale $m$ has
+regular terms of source degree one $\sum_i z_i f_i$, regular terms of source degree at least two
 $H_X$, and large-field factors
 \[
  K_Q+\sum_i z_i k_{i,Q}+K_Q^{\ge2}.
 \]
 Every term in $H_X$ and $K_Q^{\ge2}$ contains at least two distinct
-source variables. All insertion origins belong to its support. Keep the complete
-terms linear in the sources and set only these higher entries to zero. Call the
+source variables. All insertion points belong to its support. Keep the full
+terms of source degree one and set only these terms of higher source degree to zero. Call the
 resulting density $\mathscr X^0_{N,m}(z,U)$. The expression
 \begin{equation}
  C_{N,p,m}(v;x)=
@@ -217,92 +217,92 @@ resulting density $\mathscr X^0_{N,m}(z,U)$. The expression
  \label{ch12:stopped}
 \end{equation}
 is Cauchy in $N$ for fixed $m$. Its numerator is a finite polynomial
-in uniformly convergent grouped profiles and functions multiplying a single source,
+in uniformly convergent total large-field activities and functions multiplying a single source variable,
 multiplied by a uniformly convergent exponential. Its denominator has
-the positive limit in \eqref{ch12:positive-partition}. The same scalar
-has been removed from both. In particular, deleting terms involving at least two insertions does
-not mean deleting the large-field profiles linear in the sources.
+the positive limit in \eqref{ch12:positive-partition}. The same constant term
+has been removed from both. In particular, deleting terms of source degree at least two does
+not mean deleting the total large-field activities of source degree one.
 
-\section{A stopping estimate uniform in the stopping level}
+\section{An estimate uniform in the scale at which terms of higher source degree are deleted}
 \label{ch12:stopping}
 
 Recall that $B_m$ is the support radius from \eqref{ch04:thresholds}
-and $\operatorname{cov}_{B_m}(X)$ counts a connected cover of $X$ by
-radius-$B_m$ boxes. Suppose the physical origins belong to one common
-lattice and are distinct modulo $R_p$. Their separation at level $m$
+and $\operatorname{cov}_{B_m}(X)$ counts a connected covering of $X$ by
+radius-$B_m$ boxes. Suppose the insertion points, in continuum units, belong to one common
+lattice and are distinct modulo $R_p$. Their separation at scale $m$
 is at least $\eta/a_m$ for some $\eta>0$. Since $a_mB_m^2\to0$,
-choose a fixed base level $r$ so that separation is at least $B_m^2$
-for every $m\ge r$. Enlarge $r$ to include all reference levels.
+choose a fixed base scale $r$ so that separation is at least $B_m^2$
+for every $m\ge r$. Enlarge $r$ to include all reference scales.
 
-We use the following marked norm conclusion. Terms involving at least two insertions have rooted
-majorant sums at most one at support exponent $\sigma_m$. The transfer
+We use the following conclusion for the norms with insertions. Terms of source degree at least two have incidence
+bounds at most one at support exponent $\sigma_m$. The transfer
 accepts exponent $\sigma_{m+1}-4$ and restores exponent $\sigma_m$.
-It retains all inventories and insertion origins. Moreover, after transfer
-to the fixed base level, normalized coefficient extraction is bounded
+It retains all prescribed large-field sets and insertion points. Moreover, after transfer
+to the fixed base scale, normalized coefficient extraction is bounded
 by
 \begin{equation}
  C_r=\frac{\exp\bigl(|\Lambda_{r,p}|q_r^{\rm site}+n(x_r+y_r+2)\bigr)}
                  {\prod_i w_i}.
  \label{ch12:root-bound}
 \end{equation}
-Here $q_r^{\rm site}$ is the per-site normalization cost in \eqref{ch11:replicated-bound}; $w_i>0$ are fixed source weights; $x_r$ bounds the weighted regular sizes of the terms linear in the sources; and $y_r$
-bounds their weighted large-field profile sums. Such weights can be
-chosen uniformly on the cutoff tail: the fixed-level coefficients linear in the sources are bounded, so scale each weight down to its positive
+Here $q_r^{\rm site}$ is the per-site normalization exponent of \eqref{ch11:replicated-bound}; $w_i>0$ are fixed source weights; $x_r$ bounds the weighted regular sizes of the terms of source degree one; and $y_r$
+bounds their weighted sums of total large-field activities. Such weights can be
+chosen uniformly for all sufficiently large $N$: the fixed-scale coefficients of source degree one are bounded, so scale each weight down to its positive
 allowed size. Crucially all four quantities in \eqref{ch12:root-bound}
-are evaluated at $r$, not at the later stopping level $m$.
-These statements concern the complete actual marked transfer.
-They follow from the estimate for terms involving at least two insertions
+are evaluated at $r$, not at the later scale $m$ at which the terms of higher source degree are deleted.
+These statements concern the full transfer with insertions.
+They follow from the estimate for terms of source degree at least two
 \eqref{ch11:higher-induction} and the normalized chessboard bound
 \eqref{ch11:root-bound}.
 
-\begin{lemma}[Removal of terms involving at least two insertions]
+\begin{lemma}[Removal of terms of source degree at least two]
 \label{ch12:omission}
-Under these marked norm and transfer bounds, for each $m>r$ and all
+Under these norm and transfer bounds with insertions, for each $m>r$ and all
 sufficiently large $N$,
 \[
  |M_{N,p}(v;x/a_N)-C_{N,p,m}(v;x)|
        \le 2C_r e^{-B_m/64}.
 \]
-The constant $C_r$ is independent of $m,N$; the cutoff threshold can
+The constant $C_r$ is independent of $m,N$; the lower bound on $N$ can
 depend on $m$.
 \end{lemma}
 \begin{proof}
-A support containing two origins separated by $B_m^2$ has cover
+A support containing two insertion points separated by $B_m^2$ has covering
 number at least $B_m/64$. Multiply every term of source degree at least two, and only those
-entries, by a complex scalar $u$. For $|u|<S_m=e^{B_m/64}$ its
+terms, by a complex scalar $u$. For $|u|<S_m=e^{B_m/64}$ its
 majorant still fits exponent $\sigma_m-2$, since
 \[
  |u|e^{(\sigma_m-2)\operatorname{cov}_{B_m}(X)}
        \le e^{\sigma_m\operatorname{cov}_{B_m}(X)}.
 \]
-Transport the entire modified marked density to $r$. The support
-reserve allows its first and subsequent steps, and the constant and
-coefficients linear in the sources are unchanged. If a source monomial contains $q$ origins,
+Transfer the entire modified density with insertions to $r$. The margin in the support
+exponent allows its first and subsequent steps, and the constant and
+coefficients of source degree one are unchanged. If a source monomial contains $q$ insertions,
 the stronger geometric bound $B_mq\le64\operatorname{cov}_{B_m}(X)$
 also absorbs a change of each source weight by at most $e^{B_m/128}$.
-This is the weight reserve needed when using the marked transfer.
+This is the margin in the source weights needed for the transfer with insertions.
 
 Let $F_{N,m}(u)$ be the normalized integral of its full-source
 coefficient. Exact probability-kernel integration preserves that
-integral and its vacuum denominator. The fixed-base estimate gives
+integral and its denominator without insertions. The fixed-base estimate gives
 $|F_{N,m}(u)|\le C_r$ throughout the disk. The source algebra is
-nilpotent; after grouping the finitely many support and prescribed-site profiles,
+nilpotent; after grouping into the finitely many total large-field activities,
 $F_{N,m}$ is a polynomial in $u$, hence holomorphic. For $S_m>2$,
 Cauchy's derivative estimate on circles of radius $S_m/2$ about points
 of $[0,1]$ gives
 $|F_{N,m}(1)-F_{N,m}(0)|\le2C_r/S_m$. These two values are the
-actual cutoff moment and \eqref{ch12:stopped}, respectively.
+lattice correlation at the cutoff and \eqref{ch12:stopped}, respectively.
 \end{proof}
 
 \begin{proposition}[Cauchy convergence on common lattice points]
 \label{ch12:dense-cauchy}
-For the selected trajectory, the correlations converge along the whole cutoff sequence at every
+For the common trajectory of Chapter~\ref{ch10:trajectory}, the correlations converge along the whole cutoff sequence at every
 configuration of distinct points belonging to one common lattice.
 \end{proposition}
 \begin{proof}
-Given an error tolerance, first choose $m$ so that the two stopping
-errors in Lemma~\ref{ch12:omission} are small. Keep $m$ fixed. The
-stopped expression \eqref{ch12:stopped} is Cauchy as both cutoffs tend
+Given an error tolerance, first choose $m$ so that the
+error in Lemma~\ref{ch12:omission} is small for both cutoffs. Keep $m$ fixed. The
+expression \eqref{ch12:stopped} is Cauchy as both cutoffs tend
 to infinity. The triangle inequality proves the assertion. No new
 subsequence is chosen.
 \end{proof}
@@ -351,29 +351,29 @@ Apply this to periodic lifts on
  U_{p,n}=\{(x_1,\ldots,x_n)\in(\RR^4)^n:
                          x_i-x_j\notin R_p\ZZ^4\text{ for }i\ne j\}.
 \]
-The union of the nested physical lattices is dense here. Its points
-supply Proposition~\ref{ch12:dense-cauchy}; the all-order separated
-finite-difference bounds supply the other hypothesis. Points sharing
+The union of the nested lattices, in continuum units, is dense here. Its points
+are covered by Proposition~\ref{ch12:dense-cauchy}; the all-order separated
+finite-difference bounds give the other hypothesis. Points sharing
 one or several coordinate projections are allowed. Only coincidences
 of the full four-dimensional points modulo the period are excluded.
 The limiting function, denoted $M^{\rm UV}_{p,v}$, is smooth and
 periodic on this domain.
-The difference hypothesis is supplied by
+The difference hypothesis is given by
 Theorem~\ref{ch11:all-period-differences}: on a compact subset
 of $U_{p,n}$ the periodic separation has a positive lower bound,
 and any fixed shifted difference stencil stays in a slightly
-larger separated compact set on the cutoff tail.
+larger separated compact set for all sufficiently large $N$.
 
 \section{The fixed-volume conclusion}
 \label{ch12:conclusion}
 
 \begin{theorem}[Full ultraviolet limit]
 \label{ch12:uv-theorem}
-For the common selected trajectory with the strengthened stage
+For the common trajectory with the strengthened stage
 requirements of Chapters~\ref{ch10:trajectory} and
 \ref{ch11:insertions}, the correlations have the smooth
 full-sequence limit
-$M^{\rm UV}_{p,v}$ at every fixed physical period. For every
+$M^{\rm UV}_{p,v}$ at every fixed period. For every
 $f\in C_c^\infty(U_{p,n})$ supported in an admissible period cell
 and every finite coordinate list $\alpha$,
 \[
@@ -381,27 +381,27 @@ and every finite coordinate list $\alpha$,
     f(a_Ny)\Delta_{N,\alpha}M_{N,p}(v;y)
        =\int f(x)\partial^\alpha M^{\rm UV}_{p,v}(x)\,dx.
 \]
-Here differences in the summand are divided by their physical step
-lengths. Their shifted sites must lie in the slightly enlarged
-separated set, which holds on a cutoff tail.
+Here differences in the summand are divided by their step
+lengths in continuum units. Their shifted sites must lie in the slightly enlarged
+separated set, which holds for all sufficiently large $N$.
 \end{theorem}
 \begin{proof}
 The preceding section gives the full smooth limit on separated configurations.
 The last assertion is a Riemann-sum consequence of locally uniform
 convergence. Fixed forward, backward or centered stencils give the
 same limit: telescope each stencil as a finite average of shifted
-unit forward differences. The averaging weights sum to one and the
+unit forward differences. The weights of this average sum to one and the
 shifted points approach the same point.
 \end{proof}
 
-The convergence threshold in this theorem may depend on $p$. Bounds
+The lower bound on $N$ in this theorem may depend on $p$. Bounds
 on compact separated sets that were uniform in $p$ remain uniform
 for the limiting kernels, by passage to the limit. These two
 quantifier statements serve different purposes: the former removes
 the ultraviolet cutoff; the latter permits the subsequent
-infinite-volume extraction. Finite reflection inequalities also pass
+infinite-volume limit along a subsequence. Finite reflection inequalities also pass
 to the limit whenever every correlation in their finite quadratic
-form is supported away from collisions. Neither this argument nor
+form is supported away from coincident points. Neither this argument nor
 reflection positivity asserts an unsubtracted limit at coincident
 points. Distributional extensions and reconstruction require their
 own arguments.
