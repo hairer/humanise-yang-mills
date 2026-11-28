@@ -319,12 +319,12 @@ on $r_q^f$ allows the factor $L^{-2}$ to be retained when summing the
 fine plaquette contributions over coarse sites.
 
 The same bound localizes coarse plaquettes with $r_p^c>\delta$.
-If every variable $r_q^f$ or $n_e$ in their fixed macro-box is at most
+If every variable $r_q^f$ or $n_e$ in the box $M_y$ of such a plaquette is at most
 $t_{\rm hi}$, \eqref{ch06:macro-comparison} bounds $r_p^c$ by
 $C_{j,L}t_{\rm hi}<\delta$ after increasing the lower bound on the reference coupling.
-Thus each such plaquette has a plaquette or edge of $D$ in that macro-box. The fixed
-macro-box fits inside the $B$-neighborhood used to define $H$, and bounded
-multiplicity of the macro-boxes gives the asserted count $K|D|$.
+Thus each such plaquette has a plaquette or edge of $D$ in that box. The box
+$M_y$ fits inside the $B$-neighborhood used to define $H$, and bounded
+multiplicity of the boxes $M_y$ gives the asserted count $K|D|$.
 Separating the small-distance contribution from the large-field contribution $\Delta_p$ gives
 $r_p^c\le C_{j,L,W}t_f+\Delta_p$ with
 $\sum_p\Delta_p\le C(L^{-2}R_f+R_n)$.
@@ -335,7 +335,7 @@ its upper bound into the enlarged loss constants. It is not a new
 positivity assertion for $E_L$.
 
 Outside $H$, all fine plaquette distances $r_q^f$ from the identity and deviations $n_e$ in the
-surrounding fixed macro-boxes are at most $t_{\rm hi}$. The variables at
+surrounding boxes $M_y$ are at most $t_{\rm hi}$. The variables at
 plaquettes and edges outside $A_f$, $A_n$ obey this too, since $2Wt_f\le t_{\rm hi}$ eventually. The
 comparison \eqref{ch06:macro-comparison} bounds $r_p^c$ there by
 $C_{j,L,W}t_{\rm hi}$. Choose a coarse axial gauge on a box of radius
@@ -343,9 +343,9 @@ $B/2$. In that gauge the sum of $\|V_e-1\|_G$ over its internal bonds is at most
 To compare a fine link with the corresponding link of $\operatorname{rep}V$, join its two
 endpoints to their block roots along the tree. All contour variables along the tree
 are the identity. The resulting contour lies in two neighboring blocks.
-In an axial gauge on the macro-box the distance of the contour variable from $1$ is at most
+In an axial gauge on the box $M_y$ the distance of the contour variable from $1$ is at most
 the length of the contour times the sum of $\|U_b-1\|_G$ over bonds $b$
-in the macro-box in that gauge. Comparing a crossing contour with the value of the averaging operation
+in $M_y$ in that gauge. Comparing a crossing contour with the value of the averaging operation
 adds the errors of the local gauge transformations at the two endpoints, bounded by
 \eqref{ch04:patch-frame-sum}, and then the deviation $n_e$.
 Consequently, with a constant depending on the fixed tree family and $L$,
@@ -477,15 +477,15 @@ specified block axial gauge:
                     +|\mathcal Q a(e_c)|.
  \label{ch06:tree-control}
 \end{equation}
-Here $\mathcal P_e$ is the set of fine plaquettes of a fixed macro-box,
+Here $\mathcal P_e$ is the set of fine plaquettes of a fixed box $M_y$,
 $e_c$ is the coarse edge in the direction of $e$, and $\mathcal Q$ is
 the derivative of the averaging operation at the identity. The inequality
 is for arrays vanishing on the chosen tree, extended by zero on frozen
 edges. For internal edges the last term may be omitted. Its nonlinear
 origin is worth specifying: join the endpoints of $e$ to their block
 roots along the same tree, compare the resulting contour variable with the value of the
-averaging operation in a common axial gauge on the macro-box, and bound the difference by the
-plaquette sum of the macro-box. Differentiating this comparison at the identity
+averaging operation in a common axial gauge on that box, and bound the difference by the
+plaquette sum of that box. Differentiating this comparison at the identity
 gives \eqref{ch06:tree-control}. The contour constants and endpoint bounds are those proved above for the
 same trees and the same values of the auxiliary index. No coordinate change to an unrelated tree is made.
 
@@ -495,7 +495,7 @@ tree coordinates are zero, and the averaging operation is the rooted one, with t
 of \eqref{ch05:actual-Q}. Thus the retained plaquette components and the retained components containing the averaging operation, for short \emph{averaging components},
 are exactly its derivatives, multiplied by their fixed positive
 square weights. Each such derivative differs, in one common gauge on its
-macro-box, from its flat derivative by at most $\varepsilon$ times the
+box $M_y$, from its flat derivative by at most $\varepsilon$ times the
 sum of input norms on its fixed link support. This follows from continuity of
 the finite-patch derivative on the minimizing branch once clearance and
 small coarse plaquettes put that entire patch in a small common gauge.
@@ -603,7 +603,7 @@ frozen Haar logarithm by a small logarithm.
 Here is why the inhomogeneous term is uniformly small. A retained component has an active
 coordinate outside $A^{[10B]}$. Its whole
 link support has radius at most $B/50$; hence its base point, endpoints, and fixed
-macro-boxes have more than $9B$ clearance for large $B$. All coarse
+boxes $M_y$ have more than $9B$ clearance for large $B$. All coarse
 variables $r_p^c$, $n_e$ used by the component are therefore small. In the common local gauge,
 the four-link curvature formula, the absolute path-coefficient bounds,
 and the smooth branch of the averaging operation give
