@@ -20,7 +20,7 @@ Local observables, finite-stencil representatives | ch02:local-sections
 Maxwell fields, separating insertions | ch03:bounded-detector
 Minimizing local gauge transformation | ch04:frame-lemma ch05:frame-linearization
 Minimizing lift | ch05:schur-data ch05:actual-tangent
-Plaquette energy | ch01:chord
+Plaquette energy | ch01:wilson-energy
 Polynomial labels | ch02:labels
 Reflection positivity | ch01:lattice-rp ch03:reflection
 Small-field bounds, local observables | ch02:section-bounds
